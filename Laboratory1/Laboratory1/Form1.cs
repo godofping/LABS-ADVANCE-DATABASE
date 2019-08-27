@@ -42,7 +42,7 @@ namespace Laboratory1
             {
                 strResult = "E";
             }
-            else if (intGrade <= 75 && intGrade >= 70)
+            else if (intGrade <= 75 && intGrade >= 60)
             {
                 strResult = "F";
             }

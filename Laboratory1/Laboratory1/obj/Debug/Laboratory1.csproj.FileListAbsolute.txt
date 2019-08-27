@@ -7,3 +7,13 @@ C:\Users\Dade Murphy\source\repos\Laboratory1\Laboratory1\obj\Debug\Laboratory1.
 C:\Users\Dade Murphy\source\repos\Laboratory1\Laboratory1\obj\Debug\Laboratory1.csproj.CoreCompileInputs.cache
 C:\Users\Dade Murphy\source\repos\Laboratory1\Laboratory1\obj\Debug\Laboratory1.exe
 C:\Users\Dade Murphy\source\repos\Laboratory1\Laboratory1\obj\Debug\Laboratory1.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\Laboratory1\Laboratory1\bin\Debug\Laboratory1.exe.config
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\Laboratory1\Laboratory1\bin\Debug\Laboratory1.exe
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\Laboratory1\Laboratory1\bin\Debug\Laboratory1.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\Laboratory1\Laboratory1\obj\Debug\Laboratory1.csprojAssemblyReference.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\Laboratory1\Laboratory1\obj\Debug\Laboratory1.Form1.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\Laboratory1\Laboratory1\obj\Debug\Laboratory1.Properties.Resources.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\Laboratory1\Laboratory1\obj\Debug\Laboratory1.csproj.GenerateResource.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\Laboratory1\Laboratory1\obj\Debug\Laboratory1.csproj.CoreCompileInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\Laboratory1\Laboratory1\obj\Debug\Laboratory1.exe
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\Laboratory1\Laboratory1\obj\Debug\Laboratory1.pdb
