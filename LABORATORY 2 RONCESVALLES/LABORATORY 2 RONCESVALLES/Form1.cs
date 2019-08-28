@@ -9,7 +9,6 @@ namespace LABORATORY_2_RONCESVALLES
         string strEmaployeeName;
         string strPosition;
 
-        string previousInput = "";
 
         double dblHourlyWage;
         double dblHoursOfWork;
@@ -26,7 +25,7 @@ namespace LABORATORY_2_RONCESVALLES
         double dblTotalMonthlyDedcutions;
         double dblMonthlySavings;
         double dblYearlySavings;
-       
+
 
 
 
@@ -89,7 +88,7 @@ namespace LABORATORY_2_RONCESVALLES
 
             bool isNum = Double.TryParse(Convert.ToString(Expression), System.Globalization.NumberStyles.Any, System.Globalization.NumberFormatInfo.InvariantInfo, out retNum);
 
-            if(isNum == true)
+            if (isNum == true)
             {
                 return retNum;
             }
@@ -98,7 +97,7 @@ namespace LABORATORY_2_RONCESVALLES
                 return 0.00;
             }
 
-            
+
         }
 
         private void getData()
@@ -120,7 +119,7 @@ namespace LABORATORY_2_RONCESVALLES
             onlynumwithsinglepoint(sender, e);
         }
 
-        
+
         private void TxtHoursOfWork_KeyPress(object sender, KeyPressEventArgs e)
         {
             onlynumwithsinglepoint(sender, e);
@@ -221,6 +220,6 @@ namespace LABORATORY_2_RONCESVALLES
             calculate();
         }
 
-       
+
     }
 }
