@@ -1,0 +1,8 @@
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\bin\Debug\pos.DL.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\bin\Debug\pos.DL.pdb
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\bin\Debug\mysql.data.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\bin\Debug\pos.EL.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\bin\Debug\pos.EL.pdb
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\obj\Debug\pos.DL.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\obj\Debug\pos.DL.pdb

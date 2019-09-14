@@ -28,9 +28,6 @@ namespace LABORATORY_2_RONCESVALLES
 
 
 
-
-
-
         public Form1()
         {
             InitializeComponent();
