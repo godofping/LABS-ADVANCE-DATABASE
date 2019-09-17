@@ -26,6 +26,8 @@ namespace pos.PL.Registrations
             CustomerInfo.Age = Convert.ToInt32(txtAge.Text);
             CustomerInfo.Address = txtAddress.Text;
             CustomerInfo.Tribe = txtTribe.Text;
+
+
             pos.BL.Registrations.Customers CustomerBL = new pos.BL.Registrations.Customers();
             bool isSuccessfull = CustomerBL.Insert(CustomerInfo);
             if (isSuccessfull)
@@ -35,7 +37,51 @@ namespace pos.PL.Registrations
             else
             {
 
-                MessageBox.Show("Addding Record Failed!");
+                MessageBox.Show("Adding Record Failed!");
+            }
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            pos.EL.Registrations.Customers CustomerInfo = new pos.EL.Registrations.Customers();
+            CustomerInfo.Customerid = Convert.ToInt32(txtCustomersID.Text);
+            CustomerInfo.Lastname = txtLastName.Text;
+            CustomerInfo.Firstname = txtLastName.Text;
+            CustomerInfo.Middleinitial = txtMiddleInitial.Text;
+            CustomerInfo.Age = Convert.ToInt32(txtAge.Text);
+            CustomerInfo.Address = txtAddress.Text;
+            CustomerInfo.Tribe = txtTribe.Text;
+
+
+            pos.BL.Registrations.Customers CustomerBL = new pos.BL.Registrations.Customers();
+            bool isSuccessfull = CustomerBL.Update(CustomerInfo);
+            if (isSuccessfull)
+            {
+                MessageBox.Show("Record Successfully Updated!");
+            }
+            else
+            {
+
+                MessageBox.Show("Updating Record Failed!");
+            }
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+
+            pos.EL.Registrations.Customers CustomerInfo = new pos.EL.Registrations.Customers();
+            CustomerInfo.Customerid = Convert.ToInt32(txtCustomersID.Text);
+    
+            pos.BL.Registrations.Customers CustomerBL = new pos.BL.Registrations.Customers();
+            bool isSuccessfull = CustomerBL.Delete(CustomerInfo);
+            if (isSuccessfull)
+            {
+                MessageBox.Show("Record Successfully Deleted!");
+            }
+            else
+            {
+
+                MessageBox.Show("Deleting Record Failed!");
             }
         }
     }
