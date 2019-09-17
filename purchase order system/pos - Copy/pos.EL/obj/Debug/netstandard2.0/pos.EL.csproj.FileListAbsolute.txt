@@ -1,0 +1,26 @@
+C:\Users\Dade Murphy\Desktop\C#\pos\pos.EL\bin\Debug\netstandard2.0\pos.EL.deps.json
+C:\Users\Dade Murphy\Desktop\C#\pos\pos.EL\bin\Debug\netstandard2.0\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\pos\pos.EL\bin\Debug\netstandard2.0\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.csproj.CoreCompileInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.AssemblyInfoInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.AssemblyInfo.cs
+C:\Users\Dade Murphy\Desktop\C#\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.EL\bin\Debug\netstandard2.0\pos.EL.deps.json
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.EL\bin\Debug\netstandard2.0\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.EL\bin\Debug\netstandard2.0\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.csprojAssemblyReference.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.csproj.CoreCompileInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.AssemblyInfoInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.AssemblyInfo.cs
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.EL\obj\Debug\netstandard2.0\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos - Copy\pos.EL\bin\Debug\netstandard2.0\pos.EL.deps.json
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos - Copy\pos.EL\bin\Debug\netstandard2.0\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos - Copy\pos.EL\bin\Debug\netstandard2.0\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos - Copy\pos.EL\obj\Debug\netstandard2.0\pos.EL.csprojAssemblyReference.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos - Copy\pos.EL\obj\Debug\netstandard2.0\pos.EL.csproj.CoreCompileInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos - Copy\pos.EL\obj\Debug\netstandard2.0\pos.EL.AssemblyInfoInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos - Copy\pos.EL\obj\Debug\netstandard2.0\pos.EL.AssemblyInfo.cs
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos - Copy\pos.EL\obj\Debug\netstandard2.0\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos - Copy\pos.EL\obj\Debug\netstandard2.0\pos.EL.pdb

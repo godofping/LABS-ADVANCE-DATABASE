@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "BouncyCastle/1.8.5": {
+        "type": "package",
+        "compile": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        }
+      },
       "BouncyCastle.NetCore/1.8.3": {
         "type": "package",
         "dependencies": {
@@ -1005,6 +1014,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "BouncyCastle": "1.8.5",
           "MySql.Data": "8.0.17",
           "pos.EL": "1.0.0"
         },
@@ -1018,6 +1028,9 @@
       "pos.EL/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MySql.Data": "8.0.17"
+        },
         "compile": {
           "bin/placeholder/pos.EL.dll": {}
         },
@@ -1028,6 +1041,19 @@
     }
   },
   "libraries": {
+    "BouncyCastle/1.8.5": {
+      "sha512": "196QWfvglefGd/Cr2C4hIdmA9HYkLFZovxJ7L0BAOFlNn+qlmVxqpxpcKGoC5AF4rOuoUq3ylzLgKZW5j4nmDQ==",
+      "type": "package",
+      "path": "bouncycastle/1.8.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "bouncycastle.1.8.5.nupkg.sha512",
+        "bouncycastle.nuspec",
+        "lib/BouncyCastle.Crypto.dll"
+      ]
+    },
     "BouncyCastle.NetCore/1.8.3": {
       "sha512": "jAy3uHN1U9DpoT/TgLqDTEhlccn/4doOVxhSmmNsnoSsGfHT9Lwr634ac9D0YFujAhNw61nWF4UIpHyzv0aQww==",
       "type": "package",
@@ -4213,6 +4239,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "MySql.Data >= 8.0.17",
       "NETStandard.Library >= 2.0.3",
       "pos.DL >= 1.0.0",
       "pos.EL >= 1.0.0"
@@ -4266,6 +4293,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "MySql.Data": {
+            "target": "Package",
+            "version": "[8.0.17, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
@@ -4280,5 +4311,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BouncyCastle 1.8.5' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }
