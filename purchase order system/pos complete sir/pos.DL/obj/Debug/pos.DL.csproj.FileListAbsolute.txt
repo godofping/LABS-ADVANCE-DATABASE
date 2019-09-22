@@ -1,0 +1,18 @@
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\bin\Debug\pos.DL.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\bin\Debug\pos.DL.pdb
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\bin\Debug\mysql.data.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\bin\Debug\pos.EL.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\bin\Debug\pos.EL.pdb
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\obj\Debug\pos.DL.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.DL\obj\Debug\pos.DL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.DL\bin\Debug\pos.DL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.DL\bin\Debug\pos.DL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.DL\bin\Debug\mysql.data.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.DL\bin\Debug\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.DL\bin\Debug\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.DL\obj\Debug\pos.DL.csprojAssemblyReference.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.DL\obj\Debug\pos.DL.csproj.CoreCompileInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.DL\obj\Debug\pos.DL.csproj.CopyComplete
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.DL\obj\Debug\pos.DL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.DL\obj\Debug\pos.DL.pdb

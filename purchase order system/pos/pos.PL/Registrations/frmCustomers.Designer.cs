@@ -46,6 +46,8 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.dtCustomers = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtCustomers)).BeginInit();
             this.SuspendLayout();
             // 
             // txtLastName
@@ -200,11 +202,25 @@
             this.button4.Text = "New";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // dtCustomers
+            // 
+            this.dtCustomers.AllowUserToAddRows = false;
+            this.dtCustomers.AllowUserToDeleteRows = false;
+            this.dtCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtCustomers.Location = new System.Drawing.Point(425, 60);
+            this.dtCustomers.Name = "dtCustomers";
+            this.dtCustomers.ReadOnly = true;
+            this.dtCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtCustomers.Size = new System.Drawing.Size(422, 380);
+            this.dtCustomers.TabIndex = 18;
+            this.dtCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
+            // 
             // frmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 472);
+            this.Controls.Add(this.dtCustomers);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -224,7 +240,10 @@
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtLastName);
             this.Name = "frmCustomers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCustomers";
+            this.Load += new System.EventHandler(this.FrmCustomers_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtCustomers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +269,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dtCustomers;
     }
 }

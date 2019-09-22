@@ -1,0 +1,34 @@
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\bin\Debug\pos.PL.exe
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\bin\Debug\pos.PL.pdb
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\obj\Debug\pos.PL.Properties.Resources.resources
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\obj\Debug\pos.PL.Registrations.frmCustomers.resources
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\obj\Debug\pos.PL.Transactions.frmOrders.resources
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\obj\Debug\pos.PL.csproj.GenerateResource.Cache
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\obj\Debug\pos.PL.exe
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\obj\Debug\pos.PL.pdb
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\bin\Debug\pos.BL.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\bin\Debug\pos.EL.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\bin\Debug\pos.DL.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\bin\Debug\MySql.Data.dll
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\bin\Debug\pos.DL.pdb
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\bin\Debug\pos.BL.pdb
+C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.PL\bin\Debug\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\bin\Debug\pos.PL.exe
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\bin\Debug\pos.PL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\bin\Debug\pos.BL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\bin\Debug\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\bin\Debug\pos.DL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\bin\Debug\MySql.Data.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\bin\Debug\pos.BL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\bin\Debug\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\bin\Debug\pos.DL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\obj\Debug\pos.PL.csprojAssemblyReference.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\obj\Debug\pos.PL.Properties.Resources.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\obj\Debug\pos.PL.Registrations.frmCustomers.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\obj\Debug\pos.PL.Transactions.frmOrders.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\obj\Debug\pos.PL.csproj.GenerateResource.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\obj\Debug\pos.PL.csproj.CoreCompileInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\obj\Debug\pos.PL.csproj.CopyComplete
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\obj\Debug\pos.PL.exe
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos complete sir\pos.PL\obj\Debug\pos.PL.pdb

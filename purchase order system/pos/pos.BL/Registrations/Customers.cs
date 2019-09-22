@@ -53,5 +53,16 @@ namespace pos.BL.Registrations
             }
         }
 
+        public System.Data.DataTable List(pos.EL.Registrations.Customers cus)
+        {
+            pos.DL.Registrations.Customers customerDL = new pos.DL.Registrations.Customers();
+            return customerDL.List(cus);
+        }
+        public pos.EL.Registrations.Customers Select(pos.EL.Registrations.Customers cus)
+        {
+            pos.DL.Registrations.Customers customerDL = new pos.DL.Registrations.Customers();
+            return customerDL.Select(cus);
+        }
+
     }
 }
