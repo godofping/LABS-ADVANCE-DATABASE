@@ -3,3 +3,9 @@ C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.EL\bin\Debug\pos.EL.pdb
 C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.EL\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.EL\obj\Debug\pos.EL.dll
 C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.EL\obj\Debug\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.EL\bin\Debug\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.EL\bin\Debug\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.EL\obj\Debug\pos.EL.csprojAssemblyReference.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.EL\obj\Debug\pos.EL.csproj.CoreCompileInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.EL\obj\Debug\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.EL\obj\Debug\pos.EL.pdb

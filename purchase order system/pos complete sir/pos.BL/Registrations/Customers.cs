@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace pos.BL.Registrations
 {
@@ -23,7 +20,7 @@ namespace pos.BL.Registrations
         public Boolean Update(pos.EL.Registrations.Customers cus)
         {
 
-           pos.DL.Registrations.Customers customerDL = new pos.DL.Registrations.Customers();
+            pos.DL.Registrations.Customers customerDL = new pos.DL.Registrations.Customers();
             if (customerDL.Update(cus))
             {
                 return true;
@@ -34,7 +31,7 @@ namespace pos.BL.Registrations
             }
         }
 
-        
+
 
         public Boolean Delete(pos.EL.Registrations.Customers cus)
         {
@@ -47,7 +44,7 @@ namespace pos.BL.Registrations
             {
                 return false;
             }
-            
+
         }
 
         public System.Data.DataTable List(pos.EL.Registrations.Customers cus)

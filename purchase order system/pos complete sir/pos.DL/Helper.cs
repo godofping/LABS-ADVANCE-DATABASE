@@ -10,7 +10,7 @@ namespace pos.DL
     public class Helper
     {
          //public string ConnectionString { get { return "Server=localhost;port=3306;UID=root;PWD=1234;database=hisdb;Convert Zero Datetime=True"; } }
-        static string ConnectionString = "Server=localhost;port=3306;UID=root;PWD=1234*;database=mit_pos;Convert Zero Datetime=True";
+        static string ConnectionString = "Server=localhost;port=3306;UID=root;PWD=;database=pos;Convert Zero Datetime=True";
         
         public static Boolean executeNonQuery(string _Query)
         {

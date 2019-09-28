@@ -8,3 +8,15 @@ C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.BL\bin\Debug\pos.DL.pdb
 C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.BL\bin\Debug\pos.EL.pdb
 C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.BL\obj\Debug\pos.BL.dll
 C:\Users\monkey67\Desktop\MIT 112\Apresto\pos\pos.BL\obj\Debug\pos.BL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\bin\Debug\pos.BL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\bin\Debug\pos.BL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\bin\Debug\pos.DL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\bin\Debug\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\bin\Debug\MySql.Data.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\bin\Debug\pos.DL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\bin\Debug\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\obj\Debug\pos.BL.csprojAssemblyReference.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\obj\Debug\pos.BL.csproj.CoreCompileInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\obj\Debug\pos.BL.csproj.CopyComplete
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\obj\Debug\pos.BL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.BL\obj\Debug\pos.BL.pdb
