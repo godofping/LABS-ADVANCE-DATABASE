@@ -72,3 +72,4 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.PL\obj\Debug\pos.PL.pdb
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.PL\bin\Debug\MySql.Data.dll
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.PL\bin\Debug\MySql.Data.xml
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.PL\obj\Debug\pos.PL.Transactions.frmLogin.resources

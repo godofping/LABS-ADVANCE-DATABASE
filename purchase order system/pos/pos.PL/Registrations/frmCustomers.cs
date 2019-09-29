@@ -15,7 +15,7 @@ namespace pos.PL.Registrations
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            pos.EL.Registrations.Customers CustomerInfo = new pos.EL.Registrations.Customers();
+            
             CustomerInfo.Lastname = txtLastName.Text;
             CustomerInfo.Firstname = txtLastName.Text;
             CustomerInfo.Middleinitial = txtMiddleInitial.Text;
@@ -40,7 +40,7 @@ namespace pos.PL.Registrations
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            pos.EL.Registrations.Customers CustomerInfo = new pos.EL.Registrations.Customers();
+    
             CustomerInfo.Customerid = Convert.ToInt32(txtCustomersID.Text);
             CustomerInfo.Lastname = txtLastName.Text;
             CustomerInfo.Firstname = txtLastName.Text;
@@ -67,7 +67,7 @@ namespace pos.PL.Registrations
         private void BtnDelete_Click(object sender, EventArgs e)
         {
 
-            pos.EL.Registrations.Customers CustomerInfo = new pos.EL.Registrations.Customers();
+           
             CustomerInfo.Customerid = Convert.ToInt32(txtCustomersID.Text);
 
             pos.BL.Registrations.Customers CustomerBL = new pos.BL.Registrations.Customers();
@@ -102,7 +102,9 @@ namespace pos.PL.Registrations
 
                 txtCustomersID.Text = dtCustomers.Rows[e.RowIndex].Cells["customerid"].Value.ToString();
                 CustomerInfo.Customerid = Convert.ToInt32(txtCustomersID.Text);
+
                 CustomerBL.Select(CustomerInfo);
+
                 txtLastName.Text = CustomerInfo.Lastname;
                 txtFirstName.Text = CustomerInfo.Firstname;
                 txtMiddleInitial.Text = CustomerInfo.Middleinitial;
