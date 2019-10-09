@@ -61,8 +61,8 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="contactdetails" view="colnames">
-<left>1137</left>
-<top>389</top>
+<left>1094</left>
+<top>350</top>
 <width>131</width>
 <height>146</height>
 <sql_create_table>CREATE TABLE `contactdetails` (
@@ -103,8 +103,8 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="inventories" view="colnames">
-<left>714</left>
-<top>1</top>
+<left>740</left>
+<top>13</top>
 <width>138</width>
 <height>146</height>
 <sql_create_table>CREATE TABLE `inventories` (
@@ -201,8 +201,8 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="purchaseorderdetails" view="colnames">
-<left>17</left>
-<top>442</top>
+<left>32</left>
+<top>391</top>
 <width>229</width>
 <height>199</height>
 <sql_create_table>CREATE TABLE `purchaseorderdetails` (
@@ -229,8 +229,8 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="purchaseorders" view="colnames">
-<left>323</left>
-<top>517</top>
+<left>389</left>
+<top>554</top>
 <width>211</width>
 <height>220</height>
 <sql_create_table>CREATE TABLE `purchaseorders` (
@@ -287,8 +287,8 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="statuses" view="colnames">
-<left>630</left>
-<top>444</top>
+<left>692</left>
+<top>457</top>
 <width>145</width>
 <height>132</height>
 <sql_create_table>CREATE TABLE `statuses` (
@@ -323,8 +323,8 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="vendors" view="colnames">
-<left>874</left>
-<top>575</top>
+<left>1028</left>
+<top>566</top>
 <width>146</width>
 <height>162</height>
 <sql_create_table>CREATE TABLE `vendors` (
@@ -340,8 +340,8 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="dates" view="colnames">
-<left>644</left>
-<top>652</top>
+<left>834</left>
+<top>665</top>
 <width>81</width>
 <height>112</height>
 <sql_create_table>CREATE TABLE `dates` (
