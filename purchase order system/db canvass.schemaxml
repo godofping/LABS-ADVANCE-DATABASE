@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">pos</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="addresses" view="colnames">
+<left>1316</left>
+<top>450</top>
+<width>101</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `addresses` (
+  `addressid` int(6) NOT NULL AUTO_INCREMENT,
+  `address` varchar(60) DEFAULT NULL,
+  `city` varchar(60) DEFAULT NULL,
+  `zipcode` varchar(60) DEFAULT NULL,
+  `province` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`addressid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="amounts" view="colnames">
+<left>467</left>
+<top>326</top>
+<width>99</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `amounts` (
+  `amountid` int(6) NOT NULL AUTO_INCREMENT,
+  `amount` float DEFAULT NULL,
+  PRIMARY KEY (`amountid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="basicinformations" view="colnames">
+<left>1136</left>
+<top>26</top>
+<width>150</width>
+<height>177</height>
+<sql_create_table>CREATE TABLE `basicinformations` (
+  `basicinformationid` int(6) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(60) DEFAULT NULL,
+  `middlename` varchar(60) DEFAULT NULL,
+  `lastname` varchar(60) DEFAULT NULL,
+  `genderid` int(6) DEFAULT NULL,
+  `birthdate` int(6) DEFAULT NULL,
+  PRIMARY KEY (`basicinformationid`),
+  KEY `FK_basicinformations` (`genderid`),
+  KEY `FK_basicinfosrmations` (`birthdate`),
+  CONSTRAINT `FK_basicinformations` FOREIGN KEY (`genderid`) REFERENCES `genders` (`genderid`),
+  CONSTRAINT `FK_basicinfosrmations` FOREIGN KEY (`birthdate`) REFERENCES `dates` (`dateid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="categories" view="colnames">
+<left>8</left>
+<top>233</top>
+<width>128</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `categories` (
+  `categoryid` int(6) NOT NULL AUTO_INCREMENT,
+  `categoryname` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`categoryid`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="contactdetails" view="colnames">
+<left>1137</left>
+<top>389</top>
+<width>131</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `contactdetails` (
+  `contactdetailid` int(6) NOT NULL AUTO_INCREMENT,
+  `addressid` int(6) DEFAULT NULL,
+  `contactnumber` varchar(60) DEFAULT NULL,
+  `emailaddress` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`contactdetailid`),
+  KEY `FK_contactdetails` (`addressid`),
+  CONSTRAINT `FK_contactdetails` FOREIGN KEY (`addressid`) REFERENCES `addresses` (`addressid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="customers" view="colnames">
+<left>1316</left>
+<top>269</top>
+<width>150</width>
+<height>138</height>
+<sql_create_table>CREATE TABLE `customers` (
+  `customerid` int(11) NOT NULL AUTO_INCREMENT,
+  `contactdetailid` int(6) DEFAULT NULL,
+  `basicinformationid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`customerid`),
+  KEY `FK_customers1` (`contactdetailid`),
+  KEY `FK_customers` (`basicinformationid`),
+  CONSTRAINT `FK_customers` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`),
+  CONSTRAINT `FK_customers1` FOREIGN KEY (`contactdetailid`) REFERENCES `contactdetails` (`contactdetailid`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="genders" view="colnames">
+<left>1370</left>
+<top>107</top>
+<width>96</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `genders` (
+  `genderid` int(6) NOT NULL AUTO_INCREMENT,
+  `gender` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`genderid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="inventories" view="colnames">
+<left>714</left>
+<top>1</top>
+<width>138</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `inventories` (
+  `inventoryid` int(6) NOT NULL AUTO_INCREMENT,
+  `productid` int(6) DEFAULT NULL,
+  `quantityinstocks` int(6) DEFAULT NULL,
+  `reorderlevel` int(6) DEFAULT NULL,
+  PRIMARY KEY (`inventoryid`),
+  KEY `FK_inventories` (`productid`),
+  CONSTRAINT `FK_inventories` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="orderdetails" view="colnames">
+<left>495</left>
+<top>25</top>
+<width>189</width>
+<height>197</height>
+<sql_create_table>CREATE TABLE `orderdetails` (
+  `orderdetailid` int(6) NOT NULL AUTO_INCREMENT,
+  `orderid` int(6) DEFAULT NULL,
+  `productid` int(6) DEFAULT NULL,
+  `orderdetailquantity` int(6) DEFAULT NULL,
+  `orderdetailamount` int(6) DEFAULT NULL,
+  `orderdetailstatus` int(6) DEFAULT NULL,
+  `orderdetailproductprice` int(6) DEFAULT NULL,
+  PRIMARY KEY (`orderdetailid`),
+  KEY `FK_orderdetails` (`orderid`),
+  KEY `FK_orderdetails1` (`productid`),
+  KEY `FK_orderdetailsw` (`orderdetailstatus`),
+  KEY `FK_orderdetailswasda` (`orderdetailamount`),
+  KEY `FK_ords89s8erdetails` (`orderdetailquantity`),
+  KEY `FK_orderdd56etails` (`orderdetailproductprice`),
+  CONSTRAINT `FK_orderdd56etails` FOREIGN KEY (`orderdetailproductprice`) REFERENCES `prices` (`priceid`),
+  CONSTRAINT `FK_orderdetails` FOREIGN KEY (`orderid`) REFERENCES `orders` (`orderid`),
+  CONSTRAINT `FK_orderdetails1` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`),
+  CONSTRAINT `FK_orderdetailsw` FOREIGN KEY (`orderdetailstatus`) REFERENCES `statuses` (`statusid`),
+  CONSTRAINT `FK_orderdetailswasda` FOREIGN KEY (`orderdetailamount`) REFERENCES `amounts` (`amountid`),
+  CONSTRAINT `FK_ords89s8erdetails` FOREIGN KEY (`orderdetailquantity`) REFERENCES `quantities` (`quantityid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="orders" view="colnames">
+<left>792</left>
+<top>247</top>
+<width>145</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `orders` (
+  `orderid` int(6) NOT NULL AUTO_INCREMENT,
+  `customerid` int(6) DEFAULT NULL,
+  `staffid` int(6) DEFAULT NULL,
+  `orderstatus` int(6) DEFAULT NULL,
+  `ordertotalamount` int(6) DEFAULT NULL,
+  `orderdate` int(6) DEFAULT NULL,
+  PRIMARY KEY (`orderid`),
+  KEY `fkcustomerid` (`customerid`),
+  KEY `FK_orders` (`staffid`),
+  KEY `FK_orders56s` (`orderstatus`),
+  KEY `FK_ordersd89` (`ordertotalamount`),
+  KEY `FK_orders8s98` (`orderdate`),
+  CONSTRAINT `FK_orders` FOREIGN KEY (`staffid`) REFERENCES `staffs` (`staffid`),
+  CONSTRAINT `FK_orders56s` FOREIGN KEY (`orderstatus`) REFERENCES `statuses` (`statusid`),
+  CONSTRAINT `FK_orders8s98` FOREIGN KEY (`orderdate`) REFERENCES `dates` (`dateid`),
+  CONSTRAINT `FK_ordersd89` FOREIGN KEY (`ordertotalamount`) REFERENCES `amounts` (`amountid`),
+  CONSTRAINT `fkcustomerid` FOREIGN KEY (`customerid`) REFERENCES `customers` (`customerid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="prices" view="colnames">
+<left>381</left>
+<top>157</top>
+<width>84</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `prices` (
+  `priceid` int(6) NOT NULL AUTO_INCREMENT,
+  `price` float DEFAULT NULL,
+  PRIMARY KEY (`priceid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="products" view="colnames">
+<left>211</left>
+<top>14</top>
+<width>151</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `products` (
+  `productid` int(6) NOT NULL AUTO_INCREMENT,
+  `productname` varchar(100) DEFAULT NULL,
+  `productdescription` varchar(60) DEFAULT NULL,
+  `subcategoryid` int(6) DEFAULT NULL,
+  `productsku` varchar(60) DEFAULT NULL,
+  `productprice` int(6) DEFAULT NULL,
+  PRIMARY KEY (`productid`),
+  KEY `FK_items` (`subcategoryid`),
+  KEY `FK_products` (`productprice`),
+  CONSTRAINT `FK_items` FOREIGN KEY (`subcategoryid`) REFERENCES `subcategories` (`subcategoryid`),
+  CONSTRAINT `FK_products` FOREIGN KEY (`productprice`) REFERENCES `prices` (`priceid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="purchaseorderdetails" view="colnames">
+<left>17</left>
+<top>442</top>
+<width>229</width>
+<height>199</height>
+<sql_create_table>CREATE TABLE `purchaseorderdetails` (
+  `purchaseorderdetailsid` int(6) NOT NULL AUTO_INCREMENT,
+  `productid` int(6) DEFAULT NULL,
+  `purchaseorderdetailquantity` int(6) DEFAULT NULL,
+  `purchaseorderdetailamount` int(6) DEFAULT NULL,
+  `purchaseorderid` int(6) DEFAULT NULL,
+  `purchaseorderdetailstatus` int(6) DEFAULT NULL,
+  `purchaseorderdetailprice` int(6) DEFAULT NULL,
+  PRIMARY KEY (`purchaseorderdetailsid`),
+  KEY `FK_purchaseorderdetails` (`purchaseorderid`),
+  KEY `FK_purchaseorderdetails1` (`productid`),
+  KEY `FK_purchaseorderdetails2` (`purchaseorderdetailamount`),
+  KEY `FK_purchaseordderdetails` (`purchaseorderdetailquantity`),
+  KEY `FK_purchaseorde1rdetails` (`purchaseorderdetailstatus`),
+  KEY `FK_purchaseord2erdetails` (`purchaseorderdetailprice`),
+  CONSTRAINT `FK_purchaseord2erdetails` FOREIGN KEY (`purchaseorderdetailprice`) REFERENCES `prices` (`priceid`),
+  CONSTRAINT `FK_purchaseordderdetails` FOREIGN KEY (`purchaseorderdetailquantity`) REFERENCES `quantities` (`quantityid`),
+  CONSTRAINT `FK_purchaseorde1rdetails` FOREIGN KEY (`purchaseorderdetailstatus`) REFERENCES `statuses` (`statusid`),
+  CONSTRAINT `FK_purchaseorderdetails` FOREIGN KEY (`purchaseorderid`) REFERENCES `purchaseorders` (`purchaseorderid`),
+  CONSTRAINT `FK_purchaseorderdetails1` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`),
+  CONSTRAINT `FK_purchaseorderdetails2` FOREIGN KEY (`purchaseorderdetailamount`) REFERENCES `amounts` (`amountid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="purchaseorders" view="colnames">
+<left>323</left>
+<top>517</top>
+<width>211</width>
+<height>220</height>
+<sql_create_table>CREATE TABLE `purchaseorders` (
+  `purchaseorderid` int(6) NOT NULL AUTO_INCREMENT,
+  `staffid` int(6) DEFAULT NULL,
+  `vendorid` int(6) DEFAULT NULL,
+  `purchaseorderstatus` int(6) DEFAULT NULL,
+  `purchasetotalorderamount` int(6) DEFAULT NULL,
+  `purchaseorderdatedelivered` int(6) DEFAULT NULL,
+  `purchaseorderdaterequested` int(6) DEFAULT NULL,
+  PRIMARY KEY (`purchaseorderid`),
+  KEY `FK_purchaseorders2` (`vendorid`),
+  KEY `FK_purchaseorders1` (`staffid`),
+  KEY `FK_purchaseordersw` (`purchaseorderstatus`),
+  KEY `FK_purc6565haseorders` (`purchasetotalorderamount`),
+  KEY `FK_pus43rchaseorders` (`purchaseorderdatedelivered`),
+  KEY `FK_purs4545chaseorders` (`purchaseorderdaterequested`),
+  CONSTRAINT `FK_purc6565haseorders` FOREIGN KEY (`purchasetotalorderamount`) REFERENCES `amounts` (`amountid`),
+  CONSTRAINT `FK_purchaseorders1` FOREIGN KEY (`staffid`) REFERENCES `staffs` (`staffid`),
+  CONSTRAINT `FK_purchaseorders2` FOREIGN KEY (`vendorid`) REFERENCES `vendors` (`vendorid`),
+  CONSTRAINT `FK_purchaseorderss` FOREIGN KEY (`purchaseorderstatus`) REFERENCES `statuses` (`statusid`),
+  CONSTRAINT `FK_purchaseordersw` FOREIGN KEY (`purchaseorderstatus`) REFERENCES `statuses` (`statusid`),
+  CONSTRAINT `FK_purs4545chaseorders` FOREIGN KEY (`purchaseorderdaterequested`) REFERENCES `dates` (`dateid`),
+  CONSTRAINT `FK_pus43rchaseorders` FOREIGN KEY (`purchaseorderdatedelivered`) REFERENCES `dates` (`dateid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="quantities" view="colnames">
+<left>327</left>
+<top>280</top>
+<width>102</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `quantities` (
+  `quantityid` int(6) NOT NULL AUTO_INCREMENT,
+  `quantity` int(6) DEFAULT NULL,
+  PRIMARY KEY (`quantityid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="staffs" view="colnames">
+<left>951</left>
+<top>10</top>
+<width>150</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `staffs` (
+  `staffid` int(6) NOT NULL AUTO_INCREMENT,
+  `username` varchar(60) DEFAULT NULL,
+  `password` varchar(60) DEFAULT NULL,
+  `contactdetailid` int(6) DEFAULT NULL,
+  `basicinformationid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`staffid`),
+  KEY `FK_staffs` (`contactdetailid`),
+  KEY `FK_staffsdff` (`basicinformationid`),
+  CONSTRAINT `FK_staffs` FOREIGN KEY (`contactdetailid`) REFERENCES `contactdetails` (`contactdetailid`),
+  CONSTRAINT `FK_staffsdff` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="statuses" view="colnames">
+<left>630</left>
+<top>444</top>
+<width>145</width>
+<height>132</height>
+<sql_create_table>CREATE TABLE `statuses` (
+  `statusid` int(6) NOT NULL AUTO_INCREMENT,
+  `status` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`statusid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="subcategories" view="colnames">
+<left>55</left>
+<top>18</top>
+<width>126</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `subcategories` (
+  `subcategoryid` int(6) NOT NULL AUTO_INCREMENT,
+  `subcategory` varchar(60) DEFAULT NULL,
+  `categoryid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`subcategoryid`),
+  KEY `FK_subcategories` (`categoryid`),
+  CONSTRAINT `FK_subcategories` FOREIGN KEY (`categoryid`) REFERENCES `categories` (`categoryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="vendorcategories" view="colnames">
+<left>1279</left>
+<top>647</top>
+<width>146</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `vendorcategories` (
+  `vendorcategoryid` int(6) NOT NULL AUTO_INCREMENT,
+  `vendorcategory` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`vendorcategoryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="vendors" view="colnames">
+<left>874</left>
+<top>575</top>
+<width>146</width>
+<height>162</height>
+<sql_create_table>CREATE TABLE `vendors` (
+  `vendorid` int(6) NOT NULL AUTO_INCREMENT,
+  `vendor` varchar(60) DEFAULT NULL,
+  `contactdetailid` int(6) DEFAULT NULL,
+  `vendorcategoryid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`vendorid`),
+  KEY `FK_vendors` (`contactdetailid`),
+  KEY `FK_vendors1` (`vendorcategoryid`),
+  CONSTRAINT `FK_vendors` FOREIGN KEY (`contactdetailid`) REFERENCES `contactdetails` (`contactdetailid`),
+  CONSTRAINT `FK_vendors1` FOREIGN KEY (`vendorcategoryid`) REFERENCES `vendorcategories` (`vendorcategoryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="dates" view="colnames">
+<left>644</left>
+<top>652</top>
+<width>81</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `dates` (
+  `dateid` int(6) NOT NULL AUTO_INCREMENT,
+  `dates` date DEFAULT NULL,
+  PRIMARY KEY (`dateid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="vendorproducts" view="colnames">
+<left>13</left>
+<top>652</top>
+<width>139</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `vendorproducts` (
+  `vendorproductid` int(6) NOT NULL AUTO_INCREMENT,
+  `productid` int(6) DEFAULT NULL,
+  `vendorid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`vendorproductid`),
+  KEY `FK_vendorproducts` (`productid`),
+  KEY `FK_ve1ndorproducts` (`vendorid`),
+  CONSTRAINT `FK_ve1ndorproducts` FOREIGN KEY (`vendorid`) REFERENCES `vendors` (`vendorid`),
+  CONSTRAINT `FK_vendorproducts` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

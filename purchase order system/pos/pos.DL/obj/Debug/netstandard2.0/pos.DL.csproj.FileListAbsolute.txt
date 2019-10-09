@@ -27,7 +27,6 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.DL\bin\Debug\netstandard2.0\pos.DL.pdb
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.DL\bin\Debug\netstandard2.0\pos.EL.dll
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.DL\bin\Debug\netstandard2.0\pos.EL.pdb
-C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.DL\obj\Debug\netstandard2.0\pos.DL.csproj.CoreCompileInputs.cache
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.DL\obj\Debug\netstandard2.0\pos.DL.AssemblyInfoInputs.cache
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.DL\obj\Debug\netstandard2.0\pos.DL.AssemblyInfo.cs
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos\pos.DL\obj\Debug\netstandard2.0\pos.DL.csproj.CopyComplete

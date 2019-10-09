@@ -73,17 +73,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrations\frmCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrations\frmCategories.Designer.cs">
+      <DependentUpon>frmCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registrations\frmCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registrations\frmCustomers.Designer.cs">
       <DependentUpon>frmCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transactions\frmLogin.cs">
+    <Compile Include="Registrations\frmItems.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transactions\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="Registrations\frmItems.Designer.cs">
+      <DependentUpon>frmItems.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactions\frmOrderDetails.cs">
       <SubType>Form</SubType>
@@ -106,11 +112,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registrations\frmCategories.resx">
+      <DependentUpon>frmCategories.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registrations\frmCustomers.resx">
       <DependentUpon>frmCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transactions\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Registrations\frmItems.resx">
+      <DependentUpon>frmItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmOrderDetails.resx">
       <DependentUpon>frmOrderDetails.cs</DependentUpon>
