@@ -9,12 +9,12 @@ namespace pos.DL
         //public string ConnectionString { get { return "Server=localhost;port=3306;UID=root;PWD=1234;database=hisdb;Convert Zero Datetime=True"; } }
         static string ConnectionString = "Server=localhost;port=3306;UID=root;PWD=;database=pos;Convert Zero Datetime=True";
 
-        public static Boolean executeNonQuery(string _Query)
+        public static long executeNonQuery(string _Query)
         {
 
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
-                bool rslt = false;
+                long rslt = 0;
                 MySqlCommand cmd = new MySqlCommand();
                 MySqlTransaction trans = null;
                 try
@@ -30,14 +30,14 @@ namespace pos.DL
                     {
                         if (cmd.ExecuteNonQuery() >= 1)
                         {
-                            rslt = true;
+                            rslt = cmd.LastInsertedId;
                         }
                         trans.Commit();
 
                     }
                     catch (Exception ex)
                     {
-                        rslt = false;
+                        rslt = 0;
                         trans.Rollback();
                         throw ex;
                     }

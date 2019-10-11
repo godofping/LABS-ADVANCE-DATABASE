@@ -8,16 +8,16 @@ namespace pos.EL.Transactions
     {
         int orderid;
         int customerid;
-        int orderstatus;
-        int orderamountpaid;
-        int ordertotalamount;
-        int orderdate;
+        string orderstatus;
+        float orderamountpaid;
+        float ordertotalamount;
+        string orderdate;
 
         public int Orderid { get => orderid; set => orderid = value; }
         public int Customerid { get => customerid; set => customerid = value; }
-        public int Orderstatus { get => orderstatus; set => orderstatus = value; }
-        public int Orderamountpaid { get => orderamountpaid; set => orderamountpaid = value; }
-        public int Ordertotalamount { get => ordertotalamount; set => ordertotalamount = value; }
-        public int Orderdate { get => orderdate; set => orderdate = value; }
+        public string Orderstatus { get => orderstatus; set => orderstatus = value; }
+        public float Orderamountpaid { get => orderamountpaid; set => orderamountpaid = value; }
+        public float Ordertotalamount { get => ordertotalamount; set => ordertotalamount = value; }
+        public string Orderdate { get => orderdate; set => orderdate = value; }
     }
 }

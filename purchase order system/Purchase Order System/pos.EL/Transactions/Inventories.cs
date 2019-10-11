@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace pos.EL.Registrations
+namespace pos.EL.Transactions
 {
    public class Inventories
     {

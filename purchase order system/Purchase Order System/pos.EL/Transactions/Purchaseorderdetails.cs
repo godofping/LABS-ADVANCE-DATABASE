@@ -9,17 +9,17 @@ namespace pos.EL.Transactions
         int purchaseorderdetailsid;
         int productid;
         int purchaseorderdetailquantity;
-        int purchaseorderdetailamount;
+        float purchaseorderdetailamount;
         int purchaseorderid;
-        int purchaseorderdetailstatus;
-        int purchaseorderdetailprice;
+        string purchaseorderdetailstatus;
+        float purchaseorderdetailprice;
 
         public int Purchaseorderdetailsid { get => purchaseorderdetailsid; set => purchaseorderdetailsid = value; }
         public int Productid { get => productid; set => productid = value; }
         public int Purchaseorderdetailquantity { get => purchaseorderdetailquantity; set => purchaseorderdetailquantity = value; }
-        public int Purchaseorderdetailamount { get => purchaseorderdetailamount; set => purchaseorderdetailamount = value; }
+        public float Purchaseorderdetailamount { get => purchaseorderdetailamount; set => purchaseorderdetailamount = value; }
         public int Purchaseorderid { get => purchaseorderid; set => purchaseorderid = value; }
-        public int Purchaseorderdetailstatus { get => purchaseorderdetailstatus; set => purchaseorderdetailstatus = value; }
-        public int Purchaseorderdetailprice { get => purchaseorderdetailprice; set => purchaseorderdetailprice = value; }
+        public string Purchaseorderdetailstatus { get => purchaseorderdetailstatus; set => purchaseorderdetailstatus = value; }
+        public float Purchaseorderdetailprice { get => purchaseorderdetailprice; set => purchaseorderdetailprice = value; }
     }
 }

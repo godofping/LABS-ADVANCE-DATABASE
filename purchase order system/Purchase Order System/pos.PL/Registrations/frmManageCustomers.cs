@@ -12,7 +12,7 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageCustomers : Form
     {
-        BL.Registrations.ManageCustomers ManageCustomersBL = new BL.Registrations.ManageCustomers();
+        BL.Registrations.Customers CustomerBL = new BL.Registrations.Customers();
 
         public frmManageCustomers()
         {
@@ -24,13 +24,11 @@ namespace pos.PL.Registrations
             dgvManageCustomers.Columns["contactdetailid"].Visible = false;
             dgvManageCustomers.Columns["basicinformationid"].Visible = false;
             dgvManageCustomers.Columns["addressid"].Visible = false;
-            dgvManageCustomers.Columns["genderid"].Visible = false;
-            dgvManageCustomers.Columns["birthdate"].Visible = false;
         }
 
-        private void LoadData()
+         public void LoadData()
         {
-            dgvManageCustomers.DataSource = ManageCustomersBL.List();
+            dgvManageCustomers.DataSource = CustomerBL.List();
         }
 
         private void frmManageCustomers_Load(object sender, EventArgs e)
@@ -41,7 +39,7 @@ namespace pos.PL.Registrations
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddCustomer FormAddCustomer = new frmAddCustomer();
+            frmAddCustomer FormAddCustomer = new frmAddCustomer(this);
             FormAddCustomer.Show();
         }
     }
