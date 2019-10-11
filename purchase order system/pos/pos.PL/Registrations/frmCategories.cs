@@ -13,8 +13,8 @@ namespace pos.PL.Registrations
     public partial class frmCategories : Form
     {
 
-        pos.BL.Registrations.Categories CategoryBL = new pos.BL.Registrations.Categories();
-        pos.EL.Registrations.Categories CategoryInfo = new pos.EL.Registrations.Categories();
+        BL.Registrations.Categories CategoryBL = new BL.Registrations.Categories();
+        EL.Registrations.Categories CategoryInfo = new EL.Registrations.Categories();
 
         public frmCategories()
         {

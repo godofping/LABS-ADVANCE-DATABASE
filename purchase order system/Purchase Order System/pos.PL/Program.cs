@@ -16,7 +16,7 @@ namespace pos.PL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Transactions.LoginForm());
+            Application.Run(new Registrations.frmAddCustomer());
         }
     }
 }

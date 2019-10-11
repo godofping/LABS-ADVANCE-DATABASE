@@ -1,0 +1,13 @@
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\bin\Debug\netstandard2.0\pos.BL.deps.json
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\bin\Debug\netstandard2.0\pos.BL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\bin\Debug\netstandard2.0\pos.BL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\bin\Debug\netstandard2.0\pos.DL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\bin\Debug\netstandard2.0\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\bin\Debug\netstandard2.0\pos.DL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\bin\Debug\netstandard2.0\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\obj\Debug\netstandard2.0\pos.BL.csprojAssemblyReference.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\obj\Debug\netstandard2.0\pos.BL.AssemblyInfoInputs.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\obj\Debug\netstandard2.0\pos.BL.AssemblyInfo.cs
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\obj\Debug\netstandard2.0\pos.BL.csproj.CopyComplete
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\obj\Debug\netstandard2.0\pos.BL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.BL\obj\Debug\netstandard2.0\pos.BL.pdb

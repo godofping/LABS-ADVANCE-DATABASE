@@ -1,0 +1,7 @@
+practice populate dropdown
+create login
+create staffs
+create categories
+create subcategories
+create products
+	

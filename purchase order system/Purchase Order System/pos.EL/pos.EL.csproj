@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Transactions\" />
-    <Folder Include="Registrations\" />
+    <PackageReference Include="MySql.Data" Version="8.0.17" />
   </ItemGroup>
 
 </Project>

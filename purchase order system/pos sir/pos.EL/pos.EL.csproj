@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Registrations\Customers.cs" />
+    <Compile Include="Registrations\Staffs.cs" />
     <Compile Include="Transactions\OrderDetails.cs" />
     <Compile Include="Transactions\Orders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
