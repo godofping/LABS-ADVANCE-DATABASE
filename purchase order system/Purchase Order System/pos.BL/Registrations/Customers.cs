@@ -4,16 +4,21 @@ namespace pos.BL.Registrations
 {
     public class Customers
     {
-        public DataTable List()
+
+        DL.Registrations.Customers CustomerDL = new DL.Registrations.Customers();
+        public DataTable List(string keywords)
         {
-            DL.Registrations.Customers CustomersDL = new DL.Registrations.Customers();
-            return CustomersDL.List();
+            return CustomerDL.List(keywords);
         }
 
         public long Insert(EL.Registrations.Customers customer)
         {
-            DL.Registrations.Customers CustomerDL = new DL.Registrations.Customers();
             return CustomerDL.Insert(customer);
+        }
+
+        public bool Delete(EL.Registrations.Customers customer)
+        {
+            return CustomerDL.Delete(customer);
         }
 
     }

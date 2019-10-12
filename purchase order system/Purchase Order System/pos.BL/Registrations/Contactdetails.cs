@@ -6,10 +6,16 @@ namespace pos.BL.Registrations
 {
     public class Contactdetails
     {
+        DL.Registrations.Contactdetails ContactDetailDL = new DL.Registrations.Contactdetails();
+
         public long Insert(EL.Registrations.Contactdetails contactdetail)
         {
-            DL.Registrations.Contactdetails ContactDetailDL = new DL.Registrations.Contactdetails();
             return ContactDetailDL.Insert(contactdetail);
+        }
+
+        public bool Update(EL.Registrations.Contactdetails contactdetail)
+        {
+            return ContactDetailDL.Update(contactdetail);
         }
     }
 }

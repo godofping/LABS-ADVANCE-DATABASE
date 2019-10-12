@@ -208,6 +208,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
