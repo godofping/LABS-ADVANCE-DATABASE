@@ -17,7 +17,7 @@
   `zipcode` varchar(60) DEFAULT NULL,
   `province` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`addressid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="categories" view="colnames">
 <left>8</left>
@@ -43,7 +43,7 @@
   PRIMARY KEY (`contactdetailid`),
   KEY `FK_contactdetails` (`addressid`),
   CONSTRAINT `FK_contactdetails` FOREIGN KEY (`addressid`) REFERENCES `addresses` (`addressid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="customers" view="colnames">
 <left>917</left>
@@ -54,12 +54,13 @@
   `customerid` int(11) NOT NULL AUTO_INCREMENT,
   `contactdetailid` int(6) DEFAULT NULL,
   `basicinformationid` int(6) DEFAULT NULL,
+  `isdeleted` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`customerid`),
   KEY `FK_customers1` (`contactdetailid`),
   KEY `FK_customers` (`basicinformationid`),
   CONSTRAINT `FK_customers` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`),
   CONSTRAINT `FK_customers1` FOREIGN KEY (`contactdetailid`) REFERENCES `contactdetails` (`contactdetailid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="orderdetails" view="colnames">
 <left>522</left>
@@ -115,6 +116,7 @@
   `contactdetailid` int(6) DEFAULT NULL,
   `basicinformationid` int(6) DEFAULT NULL,
   `staffpositionid` int(6) DEFAULT NULL,
+  `isdeleted` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`staffid`),
   KEY `FK_staffs` (`contactdetailid`),
   KEY `FK_staffsdff` (`basicinformationid`),
@@ -205,7 +207,7 @@
   PRIMARY KEY (`basicinformationid`),
   KEY `FK_basicinformations` (`gender`),
   KEY `FK_basicinfosrmations` (`birthdate`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="purchaseorders" view="colnames">
 <left>238</left>

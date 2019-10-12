@@ -1,10 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Data;
 
 namespace pos.DL.Registrations
 {
-    class Staffpositions
+    public class Staffpositions
     {
+        public DataTable List()
+        {
+            String sQuery = "select * from staffpositions_view";
+
+            return Helper.executeQuery(sQuery);
+        }
     }
 }

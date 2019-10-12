@@ -4,7 +4,7 @@ using System.Text;
 
 namespace pos.BL.Registrations
 {
-    class Vendorcategories
+    public class Vendorcategories
     {
     }
 }
