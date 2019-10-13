@@ -46,19 +46,19 @@ namespace pos.PL.Registrations
 
         private void HiddenColumns()
         {
-            dgvManageStaffs.Columns["Staff ID"].Visible = false;
-            dgvManageStaffs.Columns["contactdetailid"].Visible = false;
-            dgvManageStaffs.Columns["basicinformationid"].Visible = false;
-            dgvManageStaffs.Columns["addressid"].Visible = false;
-            dgvManageStaffs.Columns["staffpositionid"].Visible = false;
-            dgvManageStaffs.Columns["password"].Visible = false;
-            dgvManageStaffs.Columns["isdeleted"].Visible = false;
+            dgv.Columns["Staff ID"].Visible = false;
+            dgv.Columns["contactdetailid"].Visible = false;
+            dgv.Columns["basicinformationid"].Visible = false;
+            dgv.Columns["addressid"].Visible = false;
+            dgv.Columns["staffpositionid"].Visible = false;
+            dgv.Columns["password"].Visible = false;
+            dgv.Columns["isdeleted"].Visible = false;
         }
 
 
         private void LoadData(string keywords)
         {
-            dgvManageStaffs.DataSource = StaffBL.List(keywords);
+            dgv.DataSource = StaffBL.List(keywords);
             
         }
 
@@ -74,7 +74,7 @@ namespace pos.PL.Registrations
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
-            dgvManageStaffs.Enabled = !status;
+            dgv.Enabled = !status;
             txtSearch.Enabled = !status;
         }
 
@@ -266,7 +266,7 @@ namespace pos.PL.Registrations
 
         private void GetDataFromDataGridView()
         {
-            foreach (DataGridViewRow row in dgvManageStaffs.SelectedRows)
+            foreach (DataGridViewRow row in dgv.SelectedRows)
             {
                 AddressInfo.Addressid = Convert.ToInt32(row.Cells["addressid"].Value);
                 AddressInfo.Address = row.Cells["Address"].Value.ToString();

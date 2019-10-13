@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvManageCustomers = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbInformations = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvManageCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gbInformations.SuspendLayout();
             this.gbControls.SuspendLayout();
@@ -98,25 +98,26 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Search";
             // 
-            // dgvManageCustomers
+            // dgv
             // 
-            this.dgvManageCustomers.AllowUserToAddRows = false;
-            this.dgvManageCustomers.AllowUserToDeleteRows = false;
-            this.dgvManageCustomers.AllowUserToResizeColumns = false;
-            this.dgvManageCustomers.AllowUserToResizeRows = false;
-            this.dgvManageCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvManageCustomers.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvManageCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManageCustomers.Location = new System.Drawing.Point(12, 286);
-            this.dgvManageCustomers.Name = "dgvManageCustomers";
-            this.dgvManageCustomers.ReadOnly = true;
-            this.dgvManageCustomers.RowHeadersVisible = false;
-            this.dgvManageCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvManageCustomers.Size = new System.Drawing.Size(1179, 240);
-            this.dgvManageCustomers.TabIndex = 5;
-            this.dgvManageCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCustomers_CellContentClick);
-            this.dgvManageCustomers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCustomers_CellDoubleClick);
-            this.dgvManageCustomers.SelectionChanged += new System.EventHandler(this.dgvManageCustomers_SelectionChanged);
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.AllowUserToResizeColumns = false;
+            this.dgv.AllowUserToResizeRows = false;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(12, 286);
+            this.dgv.MultiSelect = false;
+            this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersVisible = false;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(1179, 240);
+            this.dgv.TabIndex = 5;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCustomers_CellContentClick);
+            this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCustomers_CellDoubleClick);
+            this.dgv.SelectionChanged += new System.EventHandler(this.dgvManageCustomers_SelectionChanged);
             // 
             // errorProvider1
             // 
@@ -427,7 +428,7 @@
             this.ClientSize = new System.Drawing.Size(1203, 544);
             this.Controls.Add(this.gbInformations);
             this.Controls.Add(this.gbControls);
-            this.Controls.Add(this.dgvManageCustomers);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
@@ -437,7 +438,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCustomers";
             this.Load += new System.EventHandler(this.frmManageCustomers_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvManageCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.gbInformations.ResumeLayout(false);
             this.gbInformations.PerformLayout();
@@ -450,7 +451,7 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvManageCustomers;
+        private System.Windows.Forms.DataGridView dgv;
         public System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox gbInformations;

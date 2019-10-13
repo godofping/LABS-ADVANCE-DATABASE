@@ -40,16 +40,16 @@ namespace pos.PL.Registrations
 
         private void HiddenColumns()
         {
-            dgvManageSuppliers.Columns["Supplier ID"].Visible = false;
-            dgvManageSuppliers.Columns["contactdetailid"].Visible = false;
-            dgvManageSuppliers.Columns["addressid"].Visible = false;
-            dgvManageSuppliers.Columns["isdeleted"].Visible = false;
+            dgv.Columns["Supplier ID"].Visible = false;
+            dgv.Columns["contactdetailid"].Visible = false;
+            dgv.Columns["addressid"].Visible = false;
+            dgv.Columns["isdeleted"].Visible = false;
 
         }
 
         private void LoadData(string keywords)
         {
-            dgvManageSuppliers.DataSource = SupplierBL.List(keywords);
+            dgv.DataSource = SupplierBL.List(keywords);
         }
 
 
@@ -57,7 +57,7 @@ namespace pos.PL.Registrations
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
-            dgvManageSuppliers.Enabled = !status;
+            dgv.Enabled = !status;
             txtSearch.Enabled = !status;
         }
 
@@ -166,7 +166,7 @@ namespace pos.PL.Registrations
 
         private void GetDataFromDataGridView()
         {
-            foreach (DataGridViewRow row in dgvManageSuppliers.SelectedRows)
+            foreach (DataGridViewRow row in dgv.SelectedRows)
             {
                 AddressInfo.Addressid = Convert.ToInt32(row.Cells["addressid"].Value);
                 AddressInfo.Address = row.Cells["Address"].Value.ToString();

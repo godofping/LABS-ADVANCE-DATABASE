@@ -49,6 +49,8 @@
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.productsCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productsSubcategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +110,9 @@
             // smiProducts
             // 
             this.smiProducts.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manageProductsToolStripMenuItem});
+            this.manageProductsToolStripMenuItem,
+            this.productsCategoriesToolStripMenuItem,
+            this.productsSubcategoriesToolStripMenuItem});
             this.smiProducts.Name = "smiProducts";
             this.smiProducts.Size = new System.Drawing.Size(66, 20);
             this.smiProducts.Text = "Products";
@@ -218,6 +222,19 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // productsCategoriesToolStripMenuItem
+            // 
+            this.productsCategoriesToolStripMenuItem.Name = "productsCategoriesToolStripMenuItem";
+            this.productsCategoriesToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.productsCategoriesToolStripMenuItem.Text = "Products Categories";
+            this.productsCategoriesToolStripMenuItem.Click += new System.EventHandler(this.productsCategoriesToolStripMenuItem_Click);
+            // 
+            // productsSubcategoriesToolStripMenuItem
+            // 
+            this.productsSubcategoriesToolStripMenuItem.Name = "productsSubcategoriesToolStripMenuItem";
+            this.productsSubcategoriesToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.productsSubcategoriesToolStripMenuItem.Text = "Products Subcategories";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,5 +281,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem SuppliersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageSuppliersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productsCategoriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productsSubcategoriesToolStripMenuItem;
     }
 }

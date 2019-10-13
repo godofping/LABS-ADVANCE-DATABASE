@@ -70,11 +70,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbControls = new System.Windows.Forms.GroupBox();
-            this.dgvManageStaffs = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.gbInformations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gbControls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvManageStaffs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // label13
@@ -462,25 +462,26 @@
             this.gbControls.TabStop = false;
             this.gbControls.Text = "Controls";
             // 
-            // dgvManageStaffs
+            // dgv
             // 
-            this.dgvManageStaffs.AllowUserToAddRows = false;
-            this.dgvManageStaffs.AllowUserToDeleteRows = false;
-            this.dgvManageStaffs.AllowUserToResizeColumns = false;
-            this.dgvManageStaffs.AllowUserToResizeRows = false;
-            this.dgvManageStaffs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvManageStaffs.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvManageStaffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManageStaffs.Location = new System.Drawing.Point(12, 286);
-            this.dgvManageStaffs.Name = "dgvManageStaffs";
-            this.dgvManageStaffs.ReadOnly = true;
-            this.dgvManageStaffs.RowHeadersVisible = false;
-            this.dgvManageStaffs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvManageStaffs.Size = new System.Drawing.Size(1179, 246);
-            this.dgvManageStaffs.TabIndex = 56;
-            this.dgvManageStaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageStaffs_CellContentClick);
-            this.dgvManageStaffs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageStaffs_CellDoubleClick);
-            this.dgvManageStaffs.SelectionChanged += new System.EventHandler(this.dgvManageStaffs_SelectionChanged);
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.AllowUserToResizeColumns = false;
+            this.dgv.AllowUserToResizeRows = false;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(12, 286);
+            this.dgv.MultiSelect = false;
+            this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersVisible = false;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(1179, 246);
+            this.dgv.TabIndex = 56;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageStaffs_CellContentClick);
+            this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageStaffs_CellDoubleClick);
+            this.dgv.SelectionChanged += new System.EventHandler(this.dgvManageStaffs_SelectionChanged);
             // 
             // frmManageStaffs
             // 
@@ -492,7 +493,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gbControls);
-            this.Controls.Add(this.dgvManageStaffs);
+            this.Controls.Add(this.dgv);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageStaffs";
@@ -503,7 +504,7 @@
             this.gbInformations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.gbControls.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvManageStaffs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,7 +547,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbControls;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dgvManageStaffs;
+        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.ComboBox cbPosition;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;

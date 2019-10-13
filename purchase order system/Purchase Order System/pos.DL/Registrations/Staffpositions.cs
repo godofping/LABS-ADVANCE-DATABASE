@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 
 namespace pos.DL.Registrations
 {
@@ -7,7 +6,7 @@ namespace pos.DL.Registrations
     {
         public DataTable List()
         {
-            String sQuery = "select * from staffpositions_view";
+            string sQuery = "select * from staffpositions_view";
 
             return Helper.executeQuery(sQuery);
         }

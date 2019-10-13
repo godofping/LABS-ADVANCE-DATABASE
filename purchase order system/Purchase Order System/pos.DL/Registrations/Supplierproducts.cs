@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace pos.DL.Registrations
+﻿namespace pos.DL.Registrations
 {
-    class Supplierproducts
+    public class Supplierproducts
     {
     }
 }

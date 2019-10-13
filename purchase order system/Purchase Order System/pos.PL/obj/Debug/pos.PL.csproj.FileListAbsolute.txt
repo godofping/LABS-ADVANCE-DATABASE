@@ -41,3 +41,4 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purc
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\bin\Debug\Syncfusion.DataSource.WinForms.xml
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.frmLogin.resources
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmManageSuppliers.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmManageCategories.resources
