@@ -8,7 +8,7 @@ namespace pos.DL.Transactions
         public int StaffLogin(pos.EL.Transactions.Login staff)
         {
 
-            String sQuery = "Select * from staffs_view where Username = '" + staff.Username + "' and password = '" + staff.Password + "' and isdeleted = 0 ";
+            String sQuery = "Select * from staffs_view where Username = '" + staff.Username + "' and password = '" + staff.Password + "' ";
 
             DataTable dt = Helper.executeQuery(sQuery);
 

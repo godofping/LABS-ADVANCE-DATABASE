@@ -36,7 +36,7 @@ namespace pos.PL.Registrations
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                cp.ExStyle |= 0x02000000;
                 return cp;
             }
         }
@@ -51,6 +51,7 @@ namespace pos.PL.Registrations
 
         private void HiddenColumns()
         {
+            dgvManageCustomers.Columns["Customer ID"].Visible = false;
             dgvManageCustomers.Columns["contactdetailid"].Visible = false;
             dgvManageCustomers.Columns["basicinformationid"].Visible = false;
             dgvManageCustomers.Columns["addressid"].Visible = false;
@@ -357,8 +358,13 @@ namespace pos.PL.Registrations
 
         private void dgvManageCustomers_SelectionChanged(object sender, EventArgs e)
         {
+
             GetDataFromDataGridView();
-          
+        }
+
+        private void dgvManageCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -412,5 +418,7 @@ namespace pos.PL.Registrations
                 Delete();
             }
         }
+
+        
     }
 }

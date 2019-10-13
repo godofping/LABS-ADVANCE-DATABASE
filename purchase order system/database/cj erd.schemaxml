@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">cj_db</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="administrators_table" view="colnames">
+<left>640</left>
+<top>641</top>
+<width>202</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `administrators_table` (
+  `administratorUserId` int(6) NOT NULL AUTO_INCREMENT,
+  `administratorEmail` varchar(60) DEFAULT NULL,
+  `administratorUserPassword` varchar(60) DEFAULT NULL,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  `administratorFullName` varchar(60) DEFAULT NULL,
+  `isActivated` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`administratorUserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="inventory_logs_table" view="colnames">
+<left>977</left>
+<top>2</top>
+<width>165</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `inventory_logs_table` (
+  `inventorylogId` int(6) NOT NULL AUTO_INCREMENT,
+  `productVariationId` int(6) DEFAULT NULL,
+  `inOrOut` varchar(60) DEFAULT NULL,
+  `quantity` int(6) DEFAULT NULL,
+  `transactionDateTime` datetime DEFAULT NULL,
+  `inventoryLogRemark` text,
+  PRIMARY KEY (`inventorylogId`),
+  KEY `FK_inventory_logs_table` (`productVariationId`),
+  CONSTRAINT `FK_inventory_logs_table` FOREIGN KEY (`productVariationId`) REFERENCES `product_variations_table` (`productVariationId`)
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="notifications_table" view="colnames">
+<left>874</left>
+<top>524</top>
+<width>163</width>
+<height>214</height>
+<sql_create_table>CREATE TABLE `notifications_table` (
+  `notificationId` int(6) NOT NULL AUTO_INCREMENT,
+  `userId` int(6) DEFAULT NULL,
+  `administratorUserId` int(6) DEFAULT NULL,
+  `notificationMessage` text,
+  `notificationDateTime` varchar(60) DEFAULT NULL,
+  `notificationIsRead` tinyint(1) DEFAULT NULL,
+  `orderId` int(6) DEFAULT NULL,
+  `productVariationId` int(6) DEFAULT NULL,
+  PRIMARY KEY (`notificationId`),
+  KEY `FK_notifications_table` (`userId`),
+  KEY `FK_notifications_table1` (`administratorUserId`),
+  KEY `FK_notifications_table12` (`orderId`),
+  KEY `FK_notifications_table3` (`productVariationId`),
+  CONSTRAINT `FK_notifications_table1` FOREIGN KEY (`orderId`) REFERENCES `orders_table` (`orderId`),
+  CONSTRAINT `FK_notifications_table123123` FOREIGN KEY (`administratorUserId`) REFERENCES `administrators_table` (`administratorUserId`),
+  CONSTRAINT `FK_notifications_table2` FOREIGN KEY (`userId`) REFERENCES `users_table` (`userId`),
+  CONSTRAINT `FK_notifications_table3` FOREIGN KEY (`productVariationId`) REFERENCES `product_variations_table` (`productVariationId`)
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="order_details_table" view="colnames">
+<left>221</left>
+<top>599</top>
+<width>152</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `order_details_table` (
+  `orderDetailId` int(6) NOT NULL AUTO_INCREMENT,
+  `productVariationId` int(6) DEFAULT NULL,
+  `orderId` int(6) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `price` float DEFAULT NULL,
+  PRIMARY KEY (`orderDetailId`),
+  KEY `FK_order_details_table2` (`orderId`),
+  KEY `FK_order_details_table1` (`productVariationId`),
+  CONSTRAINT `FK_order_details_table` FOREIGN KEY (`orderId`) REFERENCES `orders_table` (`orderId`)
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="orders_table" view="colnames">
+<left>435</left>
+<top>287</top>
+<width>182</width>
+<height>461</height>
+<sql_create_table>CREATE TABLE `orders_table` (
+  `orderId` int(6) NOT NULL AUTO_INCREMENT,
+  `orderPickupDate` date DEFAULT NULL,
+  `orderPlacedDate` datetime DEFAULT NULL,
+  `orderShippingAddress` text,
+  `orderType` varchar(60) DEFAULT NULL,
+  `orderShipFirstName` varchar(60) DEFAULT NULL,
+  `orderShipLastName` varchar(60) DEFAULT NULL,
+  `orderShipEmail` varchar(60) DEFAULT NULL,
+  `orderShipPhoneNumber` varchar(60) DEFAULT NULL,
+  `orderStatus` varchar(60) DEFAULT NULL,
+  `orderTotalAmount` float DEFAULT NULL,
+  `orderShippingFee` float DEFAULT '0',
+  `userId` int(6) DEFAULT NULL,
+  `orderDeliveryMethod` varchar(60) DEFAULT NULL,
+  `billingAddress` text,
+  `billingFirstName` varchar(60) DEFAULT NULL,
+  `billingLastName` varchar(60) DEFAULT NULL,
+  `billingEmail` varchar(60) DEFAULT NULL,
+  `billingPhoneNumber` varchar(60) DEFAULT NULL,
+  `orderModeOfPayment` varchar(60) DEFAULT NULL,
+  `orderRemarks` text,
+  `orderPaymentStatus` varchar(60) DEFAULT NULL,
+  `orderIsReschedule` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`orderId`),
+  KEY `FK_order_details_table` (`userId`),
+  CONSTRAINT `FK_orders_table` FOREIGN KEY (`userId`) REFERENCES `users_table` (`userId`)
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="payments_table" view="colnames">
+<left>821</left>
+<top>205</top>
+<width>201</width>
+<height>214</height>
+<sql_create_table>CREATE TABLE `payments_table` (
+  `paymentId` int(6) NOT NULL AUTO_INCREMENT,
+  `paymentAmount` varchar(60) DEFAULT NULL,
+  `orderId` int(6) DEFAULT NULL,
+  `paymentRecieptImage` text,
+  `paymentStatus` varchar(60) DEFAULT NULL,
+  `nameOfRemmitanceCenter` varchar(60) DEFAULT NULL,
+  `controlNumber` varchar(60) DEFAULT NULL,
+  `paymentTransactionDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`paymentId`),
+  KEY `FK_payments_table` (`orderId`),
+  CONSTRAINT `FK_payments_table` FOREIGN KEY (`orderId`) REFERENCES `orders_table` (`orderId`)
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="product_categories_table" view="colnames">
+<left>29</left>
+<top>124</top>
+<width>154</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `product_categories_table` (
+  `productCategoryId` int(6) NOT NULL AUTO_INCREMENT,
+  `productCategory` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`productCategoryId`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="product_images_table" view="colnames">
+<left>9</left>
+<top>504</top>
+<width>173</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `product_images_table` (
+  `productImageId` int(6) NOT NULL AUTO_INCREMENT,
+  `productImageLocation` text,
+  `isThumbnail` tinyint(1) DEFAULT '0',
+  `productId` int(6) DEFAULT NULL,
+  PRIMARY KEY (`productImageId`),
+  KEY `FK_product_images_table` (`productId`),
+  CONSTRAINT `FK_product_images_table` FOREIGN KEY (`productId`) REFERENCES `products_table` (`productId`)
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="product_reviews_table" view="colnames">
+<left>1235</left>
+<top>156</top>
+<width>157</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `product_reviews_table` (
+  `productReviewId` int(6) NOT NULL AUTO_INCREMENT,
+  `productVariationId` int(6) DEFAULT NULL,
+  `productReview` text,
+  `productReviewDate` date DEFAULT NULL,
+  `userId` int(6) DEFAULT NULL,
+  PRIMARY KEY (`productReviewId`),
+  KEY `FK_product_reviews_table` (`productVariationId`),
+  KEY `FK_product_reviews_table1` (`userId`),
+  CONSTRAINT `FK_product_reviews_table` FOREIGN KEY (`userId`) REFERENCES `users_table` (`userId`),
+  CONSTRAINT `FK_product_reviews_table1` FOREIGN KEY (`productVariationId`) REFERENCES `product_variations_table` (`productVariationId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="product_sub_categories_table" view="colnames">
+<left>306</left>
+<top>14</top>
+<width>176</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `product_sub_categories_table` (
+  `productSubCategoryId` int(6) NOT NULL AUTO_INCREMENT,
+  `productSubCategory` varchar(60) DEFAULT NULL,
+  `productCategoryId` int(6) DEFAULT NULL,
+  PRIMARY KEY (`productSubCategoryId`),
+  KEY `FK_product_sub_categories_table` (`productCategoryId`),
+  CONSTRAINT `FK_product_sub_categories_table` FOREIGN KEY (`productCategoryId`) REFERENCES `product_categories_table` (`productCategoryId`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="product_variations_table" view="colnames">
+<left>523</left>
+<top>59</top>
+<width>201</width>
+<height>214</height>
+<sql_create_table>CREATE TABLE `product_variations_table` (
+  `productVariationId` int(6) NOT NULL AUTO_INCREMENT,
+  `productId` int(6) DEFAULT NULL,
+  `productStock` int(6) DEFAULT NULL,
+  `productStocksReorderPoint` int(6) DEFAULT NULL,
+  `productOption1` varchar(60) DEFAULT NULL,
+  `productOption2` varchar(60) DEFAULT NULL,
+  `productVariationIsDeleted` tinyint(1) DEFAULT NULL,
+  `productPrice` float DEFAULT NULL,
+  PRIMARY KEY (`productVariationId`),
+  KEY `FK_product_variations_table1` (`productId`),
+  CONSTRAINT `FK_product_variations_table` FOREIGN KEY (`productId`) REFERENCES `products_table` (`productId`)
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="products_table" view="colnames">
+<left>198</left>
+<top>247</top>
+<width>176</width>
+<height>184</height>
+<sql_create_table>CREATE TABLE `products_table` (
+  `productId` int(6) NOT NULL AUTO_INCREMENT COMMENT 'product primary key ',
+  `productName` varchar(60) DEFAULT NULL COMMENT 'product name',
+  `productSubCategoryId` int(6) DEFAULT NULL COMMENT 'product category fk',
+  `productDetails` text COMMENT 'product details',
+  `productUpdateDate` datetime DEFAULT NULL COMMENT 'when ging update ang product',
+  `productIsDeleted` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`productId`),
+  KEY `FK_products_table123` (`productSubCategoryId`),
+  CONSTRAINT `FK_products_table` FOREIGN KEY (`productSubCategoryId`) REFERENCES `product_sub_categories_table` (`productSubCategoryId`)
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="user_feedbacks_table" view="colnames">
+<left>1275</left>
+<top>431</top>
+<width>152</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `user_feedbacks_table` (
+  `userFeedbackId` int(6) NOT NULL AUTO_INCREMENT,
+  `userId` int(6) DEFAULT NULL,
+  `userFeedback` text,
+  `userFeedbackDate` date DEFAULT NULL,
+  PRIMARY KEY (`userFeedbackId`),
+  KEY `FK_customer_feedbacks_table` (`userId`),
+  CONSTRAINT `FK_user_feedbacks_table` FOREIGN KEY (`userId`) REFERENCES `users_table` (`userId`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="users_table" view="colnames">
+<left>1055</left>
+<top>388</top>
+<width>166</width>
+<height>265</height>
+<sql_create_table>CREATE TABLE `users_table` (
+  `userId` int(6) NOT NULL AUTO_INCREMENT,
+  `userEmail` varchar(60) DEFAULT NULL,
+  `userPassword` varchar(60) DEFAULT NULL,
+  `userFirstName` varchar(60) DEFAULT NULL,
+  `userLastName` varchar(60) DEFAULT NULL,
+  `userAddress` varchar(60) DEFAULT NULL,
+  `userRegistrationDate` date DEFAULT NULL,
+  `userPhoneNumber` varchar(60) DEFAULT NULL,
+  `userType` varchar(60) DEFAULT NULL,
+  `userIsBlocked` tinyint(1) DEFAULT NULL,
+  `userIsActivated` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

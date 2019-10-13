@@ -21,7 +21,7 @@ namespace pos.DL.Registrations
 
         public bool Update(EL.Registrations.Staffs staff)
         {
-            return Helper.executeNonQueryBool("update staffs set username = '" + staff.Username + "', password = '" + staff.Password + "' where staffid = '" + staff.Staffid + "' ");
+            return Helper.executeNonQueryBool("update staffs set username = '" + staff.Username + "', password = '" + staff.Password + "', staffpositionid = '" + staff.Staffpositionid + "' where staffid = '" + staff.Staffid + "' ");
         }
 
         public bool Delete(EL.Registrations.Staffs staff)

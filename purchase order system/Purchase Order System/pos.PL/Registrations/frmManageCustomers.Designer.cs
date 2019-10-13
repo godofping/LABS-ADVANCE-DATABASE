@@ -114,6 +114,7 @@
             this.dgvManageCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvManageCustomers.Size = new System.Drawing.Size(1179, 240);
             this.dgvManageCustomers.TabIndex = 5;
+            this.dgvManageCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCustomers_CellContentClick);
             this.dgvManageCustomers.SelectionChanged += new System.EventHandler(this.dgvManageCustomers_SelectionChanged);
             // 
             // errorProvider1

@@ -481,6 +481,7 @@
             this.dgvManageStaffs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvManageStaffs.Size = new System.Drawing.Size(1179, 246);
             this.dgvManageStaffs.TabIndex = 56;
+            this.dgvManageStaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageStaffs_CellContentClick);
             this.dgvManageStaffs.SelectionChanged += new System.EventHandler(this.dgvManageStaffs_SelectionChanged);
             // 
             // frmManageStaffs

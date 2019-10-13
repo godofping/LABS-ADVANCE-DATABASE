@@ -28,7 +28,6 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos 
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.PL\obj\Debug\pos.PL.Registrations.frmCustomers.resources
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.PL\obj\Debug\pos.PL.Transactions.frmOrders.resources
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.PL\obj\Debug\pos.PL.csproj.GenerateResource.cache
-C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.PL\obj\Debug\pos.PL.csproj.CoreCompileInputs.cache
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.PL\obj\Debug\pos.PL.csproj.CopyComplete
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.PL\obj\Debug\pos.PL.exe
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\pos sir\pos.PL\obj\Debug\pos.PL.pdb

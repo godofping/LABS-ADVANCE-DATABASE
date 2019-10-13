@@ -95,6 +95,18 @@
     <Compile Include="Registrations\frmManageStaffs.Designer.cs">
       <DependentUpon>frmManageStaffs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registrations\frmVendorCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrations\frmVendorCategories.Designer.cs">
+      <DependentUpon>frmVendorCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registrations\frmManageVendors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrations\frmManageVendors.Designer.cs">
+      <DependentUpon>frmManageVendors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registrations\frmManageStaffs.resx">
       <DependentUpon>frmManageStaffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrations\frmVendorCategories.resx">
+      <DependentUpon>frmVendorCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrations\frmManageVendors.resx">
+      <DependentUpon>frmManageVendors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

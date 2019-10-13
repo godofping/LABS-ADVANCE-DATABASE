@@ -31,7 +31,7 @@ namespace pos.PL.Registrations
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                cp.ExStyle |= 0x02000000; 
                 return cp;
             }
         }
@@ -46,6 +46,7 @@ namespace pos.PL.Registrations
 
         private void HiddenColumns()
         {
+            dgvManageStaffs.Columns["Staff ID"].Visible = false;
             dgvManageStaffs.Columns["contactdetailid"].Visible = false;
             dgvManageStaffs.Columns["basicinformationid"].Visible = false;
             dgvManageStaffs.Columns["addressid"].Visible = false;
@@ -65,7 +66,7 @@ namespace pos.PL.Registrations
         {
            
             cbPosition.DisplayMember = "staffposition";
-            cbPosition.ValueMember = "staffposition";
+            cbPosition.ValueMember = "staffpositionid";
             cbPosition.DataSource = StaffPositionBL.List();
         }
 
@@ -255,7 +256,7 @@ namespace pos.PL.Registrations
             BasicInformationInfo.Gender = cbGender.Text;
             BasicInformationInfo.Birthdate = dtpBirthDate.Text;
 
-            StaffPositionInfo.Staffposition = cbPosition.Text;
+            StaffPositionInfo.Staffpositionid = Convert.ToInt32(cbPosition.SelectedValue);
 
             StaffInfo.Username = txtUsername.Text;
             StaffInfo.Password = txtPassword.Text;
@@ -309,9 +310,9 @@ namespace pos.PL.Registrations
             txtCity.Text = AddressInfo.City;
             txtProvince.Text = AddressInfo.Province;
             txtZipCode.Text = AddressInfo.Zipcode;
- 
-            cbPosition.ValueMember = StaffInfo.Staffpositionid.ToString();
-            cbPosition.DisplayMember = StaffPositionInfo.Staffposition;
+
+            cbPosition.SelectedText = StaffPositionInfo.Staffposition;
+
             txtUsername.Text = StaffInfo.Username;
             txtPassword.Text = StaffInfo.Password;
 
@@ -325,7 +326,7 @@ namespace pos.PL.Registrations
             ContactDetailInfo.Addressid = Convert.ToInt32(AddressBL.Insert(AddressInfo));
             StaffInfo.Contactdetailid = Convert.ToInt32(ContacDetailBL.Insert(ContactDetailInfo));
             StaffInfo.Basicinformationid = Convert.ToInt32(BasicInformationBL.Insert(BasicInformationInfo));
-            StaffInfo.Staffpositionid = Convert.ToInt32(StaffInfo.Staffpositionid);
+            StaffInfo.Staffpositionid = Convert.ToInt32(StaffPositionInfo.Staffpositionid);
       
 
             if (StaffBL.Insert(StaffInfo) > 0)
@@ -339,6 +340,36 @@ namespace pos.PL.Registrations
                 MessageBox.Show("Failed");
             }
         }
+
+        private void Edit()
+        {
+            GetDataFromForm();
+            if (AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo) & StaffBL.Update(StaffInfo))
+            {
+                LoadData(txtSearch.Text);
+                MessageBox.Show("Success");
+            }
+            else
+            {
+                MessageBox.Show("Failed");
+            }
+        }
+
+
+        private void Delete()
+        {
+            GetDataFromForm();
+            if (StaffBL.Delete(StaffInfo))
+            {
+                LoadData(txtSearch.Text);
+                MessageBox.Show("Success");
+            }
+            else
+            {
+                MessageBox.Show("Failed");
+            }
+        }
+
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -383,6 +414,11 @@ namespace pos.PL.Registrations
             GetDataFromDataGridView();
         }
 
+        private void dgvManageStaffs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (CheckErrors())
@@ -394,7 +430,7 @@ namespace pos.PL.Registrations
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    //Edit();
+                    Edit();
                 }
 
                 ManageForm(false);
@@ -431,8 +467,10 @@ namespace pos.PL.Registrations
             }
             else
             {
-                //Delete();
+                Delete();
             }
         }
+
+       
     }
 }

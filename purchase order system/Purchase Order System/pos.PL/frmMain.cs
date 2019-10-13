@@ -9,8 +9,7 @@ namespace pos.PL
 
 
         Transactions.frmLogin Frm;
-        Registrations.frmManageCustomers FormManageCustomers = new Registrations.frmManageCustomers();
-        Registrations.frmManageStaffs FormManageStaffs = new Registrations.frmManageStaffs();
+       
 
 
         public frmMain(pos.EL.Transactions.Login staffEL, Transactions.frmLogin frm)
@@ -26,7 +25,7 @@ namespace pos.PL
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                cp.ExStyle |= 0x02000000; 
                 return cp;
             }
         }
@@ -55,23 +54,52 @@ namespace pos.PL
             Frm.Show();
         }
 
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDateTime.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm tt");
+        }
+
         private void smiManageStaffs_Click(object sender, EventArgs e)
         {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageStaffs objForm = new Registrations.frmManageStaffs();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
 
         }
 
         private void smiManageCustomers_Click(object sender, EventArgs e)
         {
-            FormManageCustomers.TopLevel = false;
-            FormManageCustomers.AutoScroll = true;
-            pnlMain.Controls.Add(FormManageCustomers);
-            FormManageCustomers.FormBorderStyle = FormBorderStyle.None;
-            FormManageCustomers.Show();
+            pnlMain.Controls.Clear();
+            Registrations.frmManageCustomers objForm = new Registrations.frmManageCustomers();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+
+        }
+        private void manageVendorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageVendors objForm = new Registrations.frmManageVendors();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+
+        private void manageVendorCategoriesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lblDateTime.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm tt");
+            pnlMain.Controls.Clear();
+            Registrations.frmVendorCategories objForm = new Registrations.frmVendorCategories();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
         }
     }
 }
