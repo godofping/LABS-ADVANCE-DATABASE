@@ -29,5 +29,12 @@ namespace pos.DL.Registrations
             return Helper.executeNonQueryBool("update staffs set isdeleted = 1 where staffid = '" + staff.Staffid + "' ");
         }
 
+
+        public DataTable Login(EL.Registrations.Staffs staff)
+        {
+            String sQuery = "select * from staffs_view where `Username` = '" + staff.Username + "' and password = '" + staff.Password + "' ";
+            return Helper.executeQuery(sQuery);
+        }
+
     }
 }

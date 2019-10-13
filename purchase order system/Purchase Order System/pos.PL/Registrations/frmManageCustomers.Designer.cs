@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvManageCustomers = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.gbCustomerInformation = new System.Windows.Forms.GroupBox();
+            this.gbInformations = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManageCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.gbCustomerInformation.SuspendLayout();
+            this.gbInformations.SuspendLayout();
             this.gbControls.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,46 +115,47 @@
             this.dgvManageCustomers.Size = new System.Drawing.Size(1179, 240);
             this.dgvManageCustomers.TabIndex = 5;
             this.dgvManageCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCustomers_CellContentClick);
+            this.dgvManageCustomers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCustomers_CellDoubleClick);
             this.dgvManageCustomers.SelectionChanged += new System.EventHandler(this.dgvManageCustomers_SelectionChanged);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // gbCustomerInformation
+            // gbInformations
             // 
-            this.gbCustomerInformation.Controls.Add(this.label14);
-            this.gbCustomerInformation.Controls.Add(this.txtCustomerID);
-            this.gbCustomerInformation.Controls.Add(this.label13);
-            this.gbCustomerInformation.Controls.Add(this.txtFirstName);
-            this.gbCustomerInformation.Controls.Add(this.txtMiddleName);
-            this.gbCustomerInformation.Controls.Add(this.btnCancel);
-            this.gbCustomerInformation.Controls.Add(this.label12);
-            this.gbCustomerInformation.Controls.Add(this.btnSave);
-            this.gbCustomerInformation.Controls.Add(this.txtLastName);
-            this.gbCustomerInformation.Controls.Add(this.label11);
-            this.gbCustomerInformation.Controls.Add(this.label3);
-            this.gbCustomerInformation.Controls.Add(this.txtZipCode);
-            this.gbCustomerInformation.Controls.Add(this.cbGender);
-            this.gbCustomerInformation.Controls.Add(this.label10);
-            this.gbCustomerInformation.Controls.Add(this.label4);
-            this.gbCustomerInformation.Controls.Add(this.txtProvince);
-            this.gbCustomerInformation.Controls.Add(this.label5);
-            this.gbCustomerInformation.Controls.Add(this.label9);
-            this.gbCustomerInformation.Controls.Add(this.dtpBirthDate);
-            this.gbCustomerInformation.Controls.Add(this.txtCity);
-            this.gbCustomerInformation.Controls.Add(this.txtContactNumber);
-            this.gbCustomerInformation.Controls.Add(this.label8);
-            this.gbCustomerInformation.Controls.Add(this.label6);
-            this.gbCustomerInformation.Controls.Add(this.txtAddress);
-            this.gbCustomerInformation.Controls.Add(this.txtEmailAddress);
-            this.gbCustomerInformation.Controls.Add(this.label7);
-            this.gbCustomerInformation.Location = new System.Drawing.Point(12, 41);
-            this.gbCustomerInformation.Name = "gbCustomerInformation";
-            this.gbCustomerInformation.Size = new System.Drawing.Size(1031, 203);
-            this.gbCustomerInformation.TabIndex = 59;
-            this.gbCustomerInformation.TabStop = false;
-            this.gbCustomerInformation.Text = "Customer Information";
+            this.gbInformations.Controls.Add(this.label14);
+            this.gbInformations.Controls.Add(this.txtCustomerID);
+            this.gbInformations.Controls.Add(this.label13);
+            this.gbInformations.Controls.Add(this.txtFirstName);
+            this.gbInformations.Controls.Add(this.txtMiddleName);
+            this.gbInformations.Controls.Add(this.btnCancel);
+            this.gbInformations.Controls.Add(this.label12);
+            this.gbInformations.Controls.Add(this.btnSave);
+            this.gbInformations.Controls.Add(this.txtLastName);
+            this.gbInformations.Controls.Add(this.label11);
+            this.gbInformations.Controls.Add(this.label3);
+            this.gbInformations.Controls.Add(this.txtZipCode);
+            this.gbInformations.Controls.Add(this.cbGender);
+            this.gbInformations.Controls.Add(this.label10);
+            this.gbInformations.Controls.Add(this.label4);
+            this.gbInformations.Controls.Add(this.txtProvince);
+            this.gbInformations.Controls.Add(this.label5);
+            this.gbInformations.Controls.Add(this.label9);
+            this.gbInformations.Controls.Add(this.dtpBirthDate);
+            this.gbInformations.Controls.Add(this.txtCity);
+            this.gbInformations.Controls.Add(this.txtContactNumber);
+            this.gbInformations.Controls.Add(this.label8);
+            this.gbInformations.Controls.Add(this.label6);
+            this.gbInformations.Controls.Add(this.txtAddress);
+            this.gbInformations.Controls.Add(this.txtEmailAddress);
+            this.gbInformations.Controls.Add(this.label7);
+            this.gbInformations.Location = new System.Drawing.Point(12, 41);
+            this.gbInformations.Name = "gbInformations";
+            this.gbInformations.Size = new System.Drawing.Size(1031, 203);
+            this.gbInformations.TabIndex = 59;
+            this.gbInformations.TabStop = false;
+            this.gbInformations.Text = "Customer Information";
             // 
             // label14
             // 
@@ -256,7 +257,6 @@
             this.txtZipCode.Name = "txtZipCode";
             this.txtZipCode.Size = new System.Drawing.Size(172, 20);
             this.txtZipCode.TabIndex = 39;
-       
             this.txtZipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZipCode_KeyPress);
             // 
             // cbGender
@@ -425,7 +425,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 544);
-            this.Controls.Add(this.gbCustomerInformation);
+            this.Controls.Add(this.gbInformations);
             this.Controls.Add(this.gbControls);
             this.Controls.Add(this.dgvManageCustomers);
             this.Controls.Add(this.label2);
@@ -439,8 +439,8 @@
             this.Load += new System.EventHandler(this.frmManageCustomers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvManageCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.gbCustomerInformation.ResumeLayout(false);
-            this.gbCustomerInformation.PerformLayout();
+            this.gbInformations.ResumeLayout(false);
+            this.gbInformations.PerformLayout();
             this.gbControls.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -453,7 +453,7 @@
         private System.Windows.Forms.DataGridView dgvManageCustomers;
         public System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.GroupBox gbCustomerInformation;
+        private System.Windows.Forms.GroupBox gbInformations;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.Label label13;

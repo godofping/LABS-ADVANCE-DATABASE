@@ -46,7 +46,7 @@
             this.txtProvince = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.gbStaffInformation = new System.Windows.Forms.GroupBox();
+            this.gbInformations = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbControls = new System.Windows.Forms.GroupBox();
             this.dgvManageStaffs = new System.Windows.Forms.DataGridView();
-            this.gbStaffInformation.SuspendLayout();
+            this.gbInformations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gbControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManageStaffs)).BeginInit();
@@ -225,46 +225,46 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // gbStaffInformation
+            // gbInformations
             // 
-            this.gbStaffInformation.Controls.Add(this.label17);
-            this.gbStaffInformation.Controls.Add(this.txtPassword);
-            this.gbStaffInformation.Controls.Add(this.label16);
-            this.gbStaffInformation.Controls.Add(this.txtUsername);
-            this.gbStaffInformation.Controls.Add(this.cbPosition);
-            this.gbStaffInformation.Controls.Add(this.label15);
-            this.gbStaffInformation.Controls.Add(this.label14);
-            this.gbStaffInformation.Controls.Add(this.txtStaffID);
-            this.gbStaffInformation.Controls.Add(this.label13);
-            this.gbStaffInformation.Controls.Add(this.txtFirstName);
-            this.gbStaffInformation.Controls.Add(this.txtMiddleName);
-            this.gbStaffInformation.Controls.Add(this.btnCancel);
-            this.gbStaffInformation.Controls.Add(this.label12);
-            this.gbStaffInformation.Controls.Add(this.btnSave);
-            this.gbStaffInformation.Controls.Add(this.txtLastName);
-            this.gbStaffInformation.Controls.Add(this.label11);
-            this.gbStaffInformation.Controls.Add(this.label3);
-            this.gbStaffInformation.Controls.Add(this.txtZipCode);
-            this.gbStaffInformation.Controls.Add(this.cbGender);
-            this.gbStaffInformation.Controls.Add(this.label10);
-            this.gbStaffInformation.Controls.Add(this.label4);
-            this.gbStaffInformation.Controls.Add(this.txtProvince);
-            this.gbStaffInformation.Controls.Add(this.label5);
-            this.gbStaffInformation.Controls.Add(this.label9);
-            this.gbStaffInformation.Controls.Add(this.dtpBirthDate);
-            this.gbStaffInformation.Controls.Add(this.txtCity);
-            this.gbStaffInformation.Controls.Add(this.txtContactNumber);
-            this.gbStaffInformation.Controls.Add(this.label8);
-            this.gbStaffInformation.Controls.Add(this.label6);
-            this.gbStaffInformation.Controls.Add(this.txtAddress);
-            this.gbStaffInformation.Controls.Add(this.txtEmailAddress);
-            this.gbStaffInformation.Controls.Add(this.label7);
-            this.gbStaffInformation.Location = new System.Drawing.Point(12, 41);
-            this.gbStaffInformation.Name = "gbStaffInformation";
-            this.gbStaffInformation.Size = new System.Drawing.Size(1031, 203);
-            this.gbStaffInformation.TabIndex = 57;
-            this.gbStaffInformation.TabStop = false;
-            this.gbStaffInformation.Text = "Customer Information";
+            this.gbInformations.Controls.Add(this.label17);
+            this.gbInformations.Controls.Add(this.txtPassword);
+            this.gbInformations.Controls.Add(this.label16);
+            this.gbInformations.Controls.Add(this.txtUsername);
+            this.gbInformations.Controls.Add(this.cbPosition);
+            this.gbInformations.Controls.Add(this.label15);
+            this.gbInformations.Controls.Add(this.label14);
+            this.gbInformations.Controls.Add(this.txtStaffID);
+            this.gbInformations.Controls.Add(this.label13);
+            this.gbInformations.Controls.Add(this.txtFirstName);
+            this.gbInformations.Controls.Add(this.txtMiddleName);
+            this.gbInformations.Controls.Add(this.btnCancel);
+            this.gbInformations.Controls.Add(this.label12);
+            this.gbInformations.Controls.Add(this.btnSave);
+            this.gbInformations.Controls.Add(this.txtLastName);
+            this.gbInformations.Controls.Add(this.label11);
+            this.gbInformations.Controls.Add(this.label3);
+            this.gbInformations.Controls.Add(this.txtZipCode);
+            this.gbInformations.Controls.Add(this.cbGender);
+            this.gbInformations.Controls.Add(this.label10);
+            this.gbInformations.Controls.Add(this.label4);
+            this.gbInformations.Controls.Add(this.txtProvince);
+            this.gbInformations.Controls.Add(this.label5);
+            this.gbInformations.Controls.Add(this.label9);
+            this.gbInformations.Controls.Add(this.dtpBirthDate);
+            this.gbInformations.Controls.Add(this.txtCity);
+            this.gbInformations.Controls.Add(this.txtContactNumber);
+            this.gbInformations.Controls.Add(this.label8);
+            this.gbInformations.Controls.Add(this.label6);
+            this.gbInformations.Controls.Add(this.txtAddress);
+            this.gbInformations.Controls.Add(this.txtEmailAddress);
+            this.gbInformations.Controls.Add(this.label7);
+            this.gbInformations.Location = new System.Drawing.Point(12, 41);
+            this.gbInformations.Name = "gbInformations";
+            this.gbInformations.Size = new System.Drawing.Size(1031, 203);
+            this.gbInformations.TabIndex = 57;
+            this.gbInformations.TabStop = false;
+            this.gbInformations.Text = "Customer Information";
             // 
             // label17
             // 
@@ -479,6 +479,7 @@
             this.dgvManageStaffs.Size = new System.Drawing.Size(1179, 246);
             this.dgvManageStaffs.TabIndex = 56;
             this.dgvManageStaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageStaffs_CellContentClick);
+            this.dgvManageStaffs.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageStaffs_CellDoubleClick);
             this.dgvManageStaffs.SelectionChanged += new System.EventHandler(this.dgvManageStaffs_SelectionChanged);
             // 
             // frmManageStaffs
@@ -486,7 +487,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 544);
-            this.Controls.Add(this.gbStaffInformation);
+            this.Controls.Add(this.gbInformations);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
@@ -498,8 +499,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmStaffs";
             this.Load += new System.EventHandler(this.frmManageStaffs_Load);
-            this.gbStaffInformation.ResumeLayout(false);
-            this.gbStaffInformation.PerformLayout();
+            this.gbInformations.ResumeLayout(false);
+            this.gbInformations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.gbControls.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvManageStaffs)).EndInit();
@@ -527,7 +528,7 @@
         private System.Windows.Forms.TextBox txtProvince;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.GroupBox gbStaffInformation;
+        private System.Windows.Forms.GroupBox gbInformations;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.ComboBox cbGender;

@@ -24,5 +24,10 @@ namespace pos.BL.Registrations
         {
             return StaffDL.Delete(staff);
         }
+
+        public DataTable Login(EL.Registrations.Staffs staff)
+        {
+            return StaffDL.Login(staff);
+        }
     }
 }

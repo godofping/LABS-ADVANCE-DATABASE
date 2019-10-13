@@ -21,7 +21,6 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purc
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\bin\Debug\MySql.Data.xml
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\bin\Debug\Renci.SshNet.xml
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.frmMain.resources
-C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Transactions.frmLogin.resources
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmManageCustomers.resources
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmManageStaffs.resources
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\bin\Debug\Syncfusion.Core.WinForms.dll
@@ -40,5 +39,5 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purc
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\bin\Debug\Syncfusion.SfListView.WinForms.xml
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\bin\Debug\Syncfusion.Shared.Base.xml
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\bin\Debug\Syncfusion.DataSource.WinForms.xml
-C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmVendorCategories.resources
-C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmManageVendors.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.frmLogin.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmManageSuppliers.resources

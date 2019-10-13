@@ -13,7 +13,7 @@ namespace pos.PL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Transactions.frmLogin());
+            Application.Run(new frmLogin());
         }
     }
 }

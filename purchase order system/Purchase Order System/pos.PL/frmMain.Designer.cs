@@ -37,6 +37,8 @@
             this.smiPurchaseOrders = new System.Windows.Forms.ToolStripMenuItem();
             this.smiProducts = new System.Windows.Forms.ToolStripMenuItem();
             this.manageProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SuppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageSuppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smiCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.smiManageCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.smiStaffs = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,9 +49,6 @@
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.vendorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageVendorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageVendorCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +61,7 @@
             this.smiOrders,
             this.smiPurchaseOrders,
             this.smiProducts,
-            this.vendorsToolStripMenuItem,
+            this.SuppliersToolStripMenuItem,
             this.smiCustomers,
             this.smiStaffs});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -117,8 +116,23 @@
             // manageProductsToolStripMenuItem
             // 
             this.manageProductsToolStripMenuItem.Name = "manageProductsToolStripMenuItem";
-            this.manageProductsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageProductsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.manageProductsToolStripMenuItem.Text = "Manage Products";
+            // 
+            // SuppliersToolStripMenuItem
+            // 
+            this.SuppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manageSuppliersToolStripMenuItem});
+            this.SuppliersToolStripMenuItem.Name = "SuppliersToolStripMenuItem";
+            this.SuppliersToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.SuppliersToolStripMenuItem.Text = "Suppliers";
+            // 
+            // manageSuppliersToolStripMenuItem
+            // 
+            this.manageSuppliersToolStripMenuItem.Name = "manageSuppliersToolStripMenuItem";
+            this.manageSuppliersToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.manageSuppliersToolStripMenuItem.Text = "Manage Suppliers";
+            this.manageSuppliersToolStripMenuItem.Click += new System.EventHandler(this.manageSuppliersToolStripMenuItem_Click);
             // 
             // smiCustomers
             // 
@@ -204,29 +218,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // vendorsToolStripMenuItem
-            // 
-            this.vendorsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manageVendorsToolStripMenuItem,
-            this.manageVendorCategoriesToolStripMenuItem});
-            this.vendorsToolStripMenuItem.Name = "vendorsToolStripMenuItem";
-            this.vendorsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.vendorsToolStripMenuItem.Text = "Vendors";
-            // 
-            // manageVendorsToolStripMenuItem
-            // 
-            this.manageVendorsToolStripMenuItem.Name = "manageVendorsToolStripMenuItem";
-            this.manageVendorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.manageVendorsToolStripMenuItem.Text = "Manage Vendors";
-            this.manageVendorsToolStripMenuItem.Click += new System.EventHandler(this.manageVendorsToolStripMenuItem_Click);
-            // 
-            // manageVendorCategoriesToolStripMenuItem
-            // 
-            this.manageVendorCategoriesToolStripMenuItem.Name = "manageVendorCategoriesToolStripMenuItem";
-            this.manageVendorCategoriesToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.manageVendorCategoriesToolStripMenuItem.Text = "Manage Vendor Categories";
-            this.manageVendorCategoriesToolStripMenuItem.Click += new System.EventHandler(this.manageVendorCategoriesToolStripMenuItem_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,8 +262,7 @@
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem vendorsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageVendorsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageVendorCategoriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SuppliersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageSuppliersToolStripMenuItem;
     }
 }

@@ -67,7 +67,7 @@ namespace pos.PL.Registrations
 
         private void ManageForm(bool status)
         {
-            gbCustomerInformation.Enabled = status;
+            gbInformations.Enabled = status;
             gbControls.Enabled = !status;
             dgvManageCustomers.Enabled = !status;
             txtSearch.Enabled = !status;
@@ -90,7 +90,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void clearBoxes()
+        private void ClearFields()
         {
             txtCustomerID.ResetText();
             txtFirstName.ResetText();
@@ -344,7 +344,7 @@ namespace pos.PL.Registrations
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            clearBoxes();
+            ClearFields();
             ManageForm(true);
             this.ActiveControl = txtFirstName;
             current = "ADD";
@@ -366,6 +366,11 @@ namespace pos.PL.Registrations
             GetDataFromDataGridView();
         }
 
+        private void dgvManageCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (CheckErrors())
@@ -381,14 +386,14 @@ namespace pos.PL.Registrations
                 }
 
                 ManageForm(false);
-                clearBoxes();
+                ClearFields();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ManageForm(false);
-            clearBoxes();
+            ClearFields();
             ClearErrors();
         }
 
@@ -418,6 +423,6 @@ namespace pos.PL.Registrations
             }
         }
 
-     
+      
     }
 }

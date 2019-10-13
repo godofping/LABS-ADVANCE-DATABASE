@@ -5,18 +5,26 @@ namespace pos.PL
 {
     public partial class frmMain : Form
     {
-        pos.EL.Transactions.Login StaffEL;
+        EL.Registrations.Staffs StaffInfo;
+        EL.Registrations.Contactdetails ContactDetailInfo;
+        EL.Registrations.Basicinformations BasicInformationInfo;
+        EL.Registrations.Staffpositions StaffpositionInfo;
+        EL.Registrations.Addresses AddressInfo;
 
 
-        Transactions.frmLogin Frm;
-       
+        frmLogin FrmLogin;
 
 
-        public frmMain(pos.EL.Transactions.Login staffEL, Transactions.frmLogin frm)
+      
+        public frmMain(EL.Registrations.Staffs staffInfo, EL.Registrations.Contactdetails contactDetailInfo, EL.Registrations.Basicinformations basicInformationInfo, EL.Registrations.Staffpositions staffpositionInfo, EL.Registrations.Addresses addressInfo, frmLogin frmLogin)
         {
             InitializeComponent();
-            StaffEL = staffEL;
-            Frm = frm;
+            StaffInfo = staffInfo;
+            ContactDetailInfo = contactDetailInfo;
+            BasicInformationInfo = basicInformationInfo;
+            StaffpositionInfo = staffpositionInfo;
+            AddressInfo = addressInfo;
+            FrmLogin = frmLogin;
 
         }
 
@@ -51,7 +59,7 @@ namespace pos.PL
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            Frm.Show();
+            FrmLogin.Show();
         }
 
 
@@ -81,21 +89,18 @@ namespace pos.PL
             objForm.Show();
 
         }
-        private void manageVendorsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlMain.Controls.Clear();
-            Registrations.frmManageVendors objForm = new Registrations.frmManageVendors();
-            objForm.TopLevel = false;
-            objForm.AutoScroll = true;
-            pnlMain.Controls.Add(objForm);
-            objForm.Show();
-        }
+     
 
 
         private void manageVendorCategoriesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+        
+        }
+
+        private void manageSuppliersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             pnlMain.Controls.Clear();
-            Registrations.frmVendorCategories objForm = new Registrations.frmVendorCategories();
+            Registrations.frmManageSuppliers objForm = new Registrations.frmManageSuppliers();
             objForm.TopLevel = false;
             objForm.AutoScroll = true;
             pnlMain.Controls.Add(objForm);
