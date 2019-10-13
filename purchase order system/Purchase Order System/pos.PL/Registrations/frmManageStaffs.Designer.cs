@@ -302,9 +302,6 @@
             // 
             this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPosition.FormattingEnabled = true;
-            this.cbPosition.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
             this.cbPosition.Location = new System.Drawing.Point(416, 132);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(172, 21);

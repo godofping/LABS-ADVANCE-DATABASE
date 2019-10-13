@@ -316,7 +316,6 @@ namespace pos.PL.Registrations
 
 
 
-
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
         {
             onlynumwithsinglepoint(sender, e);
@@ -419,6 +418,6 @@ namespace pos.PL.Registrations
             }
         }
 
-        
+     
     }
 }
