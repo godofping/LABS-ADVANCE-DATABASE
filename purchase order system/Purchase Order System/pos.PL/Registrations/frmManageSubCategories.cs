@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace pos.PL.Registrations
 {
-    public partial class frmManageCategories : Form
+    public partial class frmManageSubCategories : Form
     {
+        EL.Registrations.Subcategories SubCategoryInfo = new EL.Registrations.Subcategories();
         EL.Registrations.Categories CategoryInfo = new EL.Registrations.Categories();
 
+
+        BL.Registrations.Subcategories SubCategoryBL = new BL.Registrations.Subcategories();
         BL.Registrations.Categories CategoryBL = new BL.Registrations.Categories();
 
         string current = "";
 
-        public frmManageCategories()
+        public frmManageSubCategories()
         {
             InitializeComponent();
         }
@@ -43,69 +39,96 @@ namespace pos.PL.Registrations
 
         private void HiddenColumns()
         {
-            dgvManageCategories.Columns["Category ID"].Visible = false;
-            dgvManageCategories.Columns["isdeleted"].Visible = false;
+            dgv.Columns["Sub Category ID"].Visible = false;
+            dgv.Columns["categoryid"].Visible = false;
+            dgv.Columns["isdeleted"].Visible = false;
+            dgv.Columns["categoriesisdeleted"].Visible = false;
         }
 
         private void LoadData(string keywords)
         {
-            dgvManageCategories.DataSource = CategoryBL.List(keywords);
+            dgv.DataSource = SubCategoryBL.List(keywords);
+        }
+
+        private void PopulateControls()
+        {
+
+            cbCategoryName.DisplayMember = "Category Name";
+            cbCategoryName.ValueMember = "Category ID";
+            cbCategoryName.DataSource = CategoryBL.List("");
         }
 
         private void ManageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
-            dgvManageCategories.Enabled = !status;
+            dgv.Enabled = !status;
             txtSearch.Enabled = !status;
         }
 
         private void ClearErrors()
         {
-            errorProvider1.SetError(txtCategoryName, "");
-
+            errorProvider1.SetError(txtSubCategoryName, "");
+            errorProvider1.SetError(cbCategoryName, "");
         }
 
         private void ClearFields()
         {
-            txtCategoryID.ResetText();
-            txtCategoryName.ResetText();
+            txtSubCategoryID.ResetText();
+            txtSubCategoryName.ResetText();
+            cbCategoryName.ResetText();
         }
 
         private bool CheckErrors()
         {
             bool status = true;
 
-            if (txtCategoryName.Text.Equals(""))
+            if (txtSubCategoryName.Text.Equals(""))
             {
-                errorProvider1.SetError(txtCategoryName, "This field is required.");
+                errorProvider1.SetError(txtSubCategoryName, "This field is required.");
                 status = false;
             }
             else
-                errorProvider1.SetError(txtCategoryName, "");
+                errorProvider1.SetError(txtSubCategoryName, "");
+
+            if (cbCategoryName.Text.Equals(""))
+            {
+                errorProvider1.SetError(cbCategoryName, "This field is required.");
+                status = false;
+            }
+            else
+                errorProvider1.SetError(cbCategoryName, "");
 
             return status;
         }
 
         private void GetDataFromForm()
         {
-            CategoryInfo.Categoryname = txtCategoryName.Text;
+            SubCategoryInfo.Subcategoryname = txtSubCategoryName.Text;
+
+            SubCategoryInfo.Categoryid = Convert.ToInt32(cbCategoryName.SelectedValue);
 
         }
 
         private void GetDataFromDataGridView()
         {
-            foreach (DataGridViewRow row in dgvManageCategories.SelectedRows)
+            foreach (DataGridViewRow row in dgv.SelectedRows)
             {
-             
-                CategoryInfo.Categoryid = Convert.ToInt32(row.Cells["Category ID"].Value);
+
+                SubCategoryInfo.Subcategoryid = Convert.ToInt32(row.Cells["Sub Category ID"].Value);
+                SubCategoryInfo.Subcategoryname = row.Cells["Sub Category Name"].Value.ToString();
+                SubCategoryInfo.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
+                SubCategoryInfo.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
+
+                CategoryInfo.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
                 CategoryInfo.Categoryname = row.Cells["Category Name"].Value.ToString();
-                CategoryInfo.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
+                CategoryInfo.Isdeleted = Convert.ToInt32(row.Cells["categoriesisdeleted"].Value);
 
             }
 
-            txtCategoryID.Text = CategoryInfo.Categoryid.ToString();
-            txtCategoryName.Text = CategoryInfo.Categoryname.ToString();
+            txtSubCategoryID.Text = SubCategoryInfo.Subcategoryid.ToString();
+            txtSubCategoryName.Text = SubCategoryInfo.Subcategoryname.ToString();
+            cbCategoryName.SelectedText = CategoryInfo.Categoryname;
 
 
         }
@@ -114,7 +137,7 @@ namespace pos.PL.Registrations
         {
             GetDataFromForm();
 
-            if (CategoryBL.Insert(CategoryInfo) > 0)
+            if (SubCategoryBL.Insert(SubCategoryInfo) > 0)
             {
                 LoadData(txtSearch.Text);
                 MessageBox.Show("Success");
@@ -129,7 +152,7 @@ namespace pos.PL.Registrations
         private void Edit()
         {
             GetDataFromForm();
-            if (CategoryBL.Update(CategoryInfo))
+            if (SubCategoryBL.Update(SubCategoryInfo))
             {
                 LoadData(txtSearch.Text);
                 MessageBox.Show("Success");
@@ -143,7 +166,7 @@ namespace pos.PL.Registrations
         private void Delete()
         {
             GetDataFromForm();
-            if (CategoryBL.Delete(CategoryInfo))
+            if (SubCategoryBL.Delete(SubCategoryInfo))
             {
                 LoadData(txtSearch.Text);
                 MessageBox.Show("Success");
@@ -154,61 +177,62 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmCategories_Load(object sender, EventArgs e)
+        private void frmManageSubCategories_Load(object sender, EventArgs e)
         {
             LoadData(txtSearch.Text);
             HiddenColumns();
             ManageForm(false);
- 
+            PopulateControls();
         }
 
- 
+
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadData(txtSearch.Text);
         }
 
-        private void dgvManageCategories_SelectionChanged(object sender, EventArgs e)
+        private void dgv_SelectionChanged(object sender, EventArgs e)
         {
             GetDataFromDataGridView();
         }
 
-        private void dgvManageCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             GetDataFromDataGridView();
         }
 
-        private void dgvManageCategories_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             GetDataFromDataGridView();
         }
 
+        
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearFields();
             ManageForm(true);
-            this.ActiveControl = txtCategoryName;
+            this.ActiveControl = txtSubCategoryName;
             current = "ADD";
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtCategoryID.Text.Equals(""))
+            if (txtSubCategoryID.Text.Equals(""))
             {
                 MessageBox.Show("No selected client. Please select first.");
             }
             else
             {
                 ManageForm(true);
-                this.ActiveControl = txtCategoryName;
+                this.ActiveControl = txtSubCategoryName;
                 current = "EDIT";
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtCategoryID.Text.Equals(""))
+            if (txtSubCategoryID.Text.Equals(""))
             {
                 MessageBox.Show("No selected item. Please select first.");
             }

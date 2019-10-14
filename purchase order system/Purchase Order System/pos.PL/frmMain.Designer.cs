@@ -234,6 +234,7 @@
             this.productsSubcategoriesToolStripMenuItem.Name = "productsSubcategoriesToolStripMenuItem";
             this.productsSubcategoriesToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.productsSubcategoriesToolStripMenuItem.Text = "Products Subcategories";
+            this.productsSubcategoriesToolStripMenuItem.Click += new System.EventHandler(this.productsSubcategoriesToolStripMenuItem_Click);
             // 
             // frmMain
             // 

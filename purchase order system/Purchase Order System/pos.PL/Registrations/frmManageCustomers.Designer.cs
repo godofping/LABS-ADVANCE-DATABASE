@@ -156,7 +156,6 @@
             this.gbInformations.Size = new System.Drawing.Size(1031, 203);
             this.gbInformations.TabIndex = 59;
             this.gbInformations.TabStop = false;
-            this.gbInformations.Text = "Customer Information";
             // 
             // label14
             // 

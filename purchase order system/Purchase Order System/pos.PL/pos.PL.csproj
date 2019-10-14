@@ -101,6 +101,12 @@
     <Compile Include="Registrations\frmManageStaffs.Designer.cs">
       <DependentUpon>frmManageStaffs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registrations\frmManageSubCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrations\frmManageSubCategories.Designer.cs">
+      <DependentUpon>frmManageSubCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registrations\frmManageSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registrations\frmManageStaffs.resx">
       <DependentUpon>frmManageStaffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrations\frmManageSubCategories.resx">
+      <DependentUpon>frmManageSubCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registrations\frmManageSuppliers.resx">
       <DependentUpon>frmManageSuppliers.cs</DependentUpon>

@@ -7,12 +7,12 @@ namespace pos.EL.Registrations
     public class Subcategories
     {
         int subcategoryid;
-        string subcategory;
+        string subcategoryname;
         int categoryid;
         int isdeleted;
 
         public int Subcategoryid { get => subcategoryid; set => subcategoryid = value; }
-        public string Subcategory { get => subcategory; set => subcategory = value; }
+        public string Subcategoryname { get => subcategoryname; set => subcategoryname = value; }
         public int Categoryid { get => categoryid; set => categoryid = value; }
         public int Isdeleted { get => isdeleted; set => isdeleted = value; }
     }

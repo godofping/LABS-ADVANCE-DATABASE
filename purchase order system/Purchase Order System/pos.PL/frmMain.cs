@@ -117,6 +117,14 @@ namespace pos.PL
             objForm.Show();
         }
 
-    
+        private void productsSubcategoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageSubCategories objForm = new Registrations.frmManageSubCategories();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+        }
     }
 }

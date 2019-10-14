@@ -396,13 +396,6 @@ namespace pos.PL.Registrations
             PopulateControls();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            ClearFields();
-            ManageForm(true);
-            this.ActiveControl = txtFirstName;
-            current = "ADD";
-        }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -424,30 +417,13 @@ namespace pos.PL.Registrations
             GetDataFromDataGridView();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (CheckErrors())
-            {
-                GetDataFromForm();
-                if (current.Equals("ADD"))
-                {
-                    Add();
-                }
-                else if (current.Equals("EDIT"))
-                {
-                    Edit();
-                }
-
-                ManageForm(false);
-                ClearFields();
-            }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            ManageForm(false);
             ClearFields();
-            ClearErrors();
+            ManageForm(true);
+            this.ActiveControl = txtFirstName;
+            current = "ADD";
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -476,6 +452,32 @@ namespace pos.PL.Registrations
             }
         }
 
-      
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (CheckErrors())
+            {
+                GetDataFromForm();
+                if (current.Equals("ADD"))
+                {
+                    Add();
+                }
+                else if (current.Equals("EDIT"))
+                {
+                    Edit();
+                }
+
+                ManageForm(false);
+                ClearFields();
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ManageForm(false);
+            ClearFields();
+            ClearErrors();
+        }
+
+
     }
 }
