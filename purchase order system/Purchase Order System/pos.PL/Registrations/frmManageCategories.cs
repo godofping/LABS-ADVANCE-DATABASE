@@ -41,6 +41,13 @@ namespace pos.PL.Registrations
             }
         }
 
+        private void frmCategories_Load(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+        }
+
         private void HiddenColumns()
         {
             dgvManageCategories.Columns["Category ID"].Visible = false;
@@ -154,36 +161,6 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmCategories_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
- 
-        }
-
- 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-        }
-
-        private void dgvManageCategories_SelectionChanged(object sender, EventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        private void dgvManageCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        private void dgvManageCategories_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearFields();
@@ -243,5 +220,27 @@ namespace pos.PL.Registrations
             ClearFields();
             ClearErrors();
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
+        }
+
+        private void dgvManageCategories_SelectionChanged(object sender, EventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void dgvManageCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void dgvManageCategories_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+
     }
 }

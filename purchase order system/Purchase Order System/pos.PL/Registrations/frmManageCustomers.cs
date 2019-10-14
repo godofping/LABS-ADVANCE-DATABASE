@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace pos.PL.Registrations
 {
     public partial class frmManageCustomers : Form
     {
-        
+
 
         EL.Registrations.Customers CustomerInfo = new EL.Registrations.Customers();
         EL.Registrations.Contactdetails ContactDetailInfo = new EL.Registrations.Contactdetails();
@@ -49,6 +42,14 @@ namespace pos.PL.Registrations
             }
         }
 
+        private void frmManageCustomers_Load(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            txtZipCode.MaxLength = 6;
+        }
+
         private void HiddenColumns()
         {
             dgv.Columns["Customer ID"].Visible = false;
@@ -56,14 +57,13 @@ namespace pos.PL.Registrations
             dgv.Columns["basicinformationid"].Visible = false;
             dgv.Columns["addressid"].Visible = false;
             dgv.Columns["isdeleted"].Visible = false;
-            
+
         }
 
-         private void LoadData(string keywords)
+        private void LoadData(string keywords)
         {
             dgv.DataSource = CustomerBL.List(keywords);
         }
-
 
         private void ManageForm(bool status)
         {
@@ -72,7 +72,6 @@ namespace pos.PL.Registrations
             dgv.Enabled = !status;
             txtSearch.Enabled = !status;
         }
-
 
         private void ClearErrors()
         {
@@ -105,7 +104,6 @@ namespace pos.PL.Registrations
             txtProvince.ResetText();
             txtZipCode.ResetText();
         }
-
 
         private bool CheckErrors()
         {
@@ -220,7 +218,6 @@ namespace pos.PL.Registrations
             BasicInformationInfo.Birthdate = dtpBirthDate.Text;
         }
 
-
         private void GetDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
@@ -264,7 +261,6 @@ namespace pos.PL.Registrations
 
         }
 
-
         private void Add()
         {
             GetDataFromForm();
@@ -277,14 +273,13 @@ namespace pos.PL.Registrations
             {
                 LoadData(txtSearch.Text);
                 MessageBox.Show("Success");
-             
+
             }
             else
             {
                 MessageBox.Show("Failed");
             }
         }
-
 
         private void Edit()
         {
@@ -314,57 +309,6 @@ namespace pos.PL.Registrations
             }
         }
 
-
-
-        private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            onlynumwithsinglepoint(sender, e);
-        }
-
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            TextBox txtDecimal = sender as TextBox;
-            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-        }
-
-
-
-        private void frmManageCustomers_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            txtZipCode.MaxLength = 6;
-        }
-
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-        }
-
-        private void dgvManageCustomers_SelectionChanged(object sender, EventArgs e)
-        {
-
-            GetDataFromDataGridView();
-        }
-
-        private void dgvManageCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        private void dgvManageCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-  
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearFields();
@@ -423,6 +367,43 @@ namespace pos.PL.Registrations
             ManageForm(false);
             ClearFields();
             ClearErrors();
+        }
+
+        private void dgvManageCustomers_SelectionChanged(object sender, EventArgs e)
+        {
+
+            GetDataFromDataGridView();
+        }
+
+        private void dgvManageCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void dgvManageCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            onlynumwithsinglepoint(sender, e);
+        }
+
+        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
         }
 
 

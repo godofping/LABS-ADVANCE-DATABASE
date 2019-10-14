@@ -44,6 +44,15 @@ namespace pos.PL.Registrations
             }
         }
 
+        private void frmManageStaffs_Load(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            txtZipCode.MaxLength = 6;
+            PopulateControls();
+        }
+
         private void HiddenColumns()
         {
             dgv.Columns["Staff ID"].Visible = false;
@@ -54,7 +63,6 @@ namespace pos.PL.Registrations
             dgv.Columns["password"].Visible = false;
             dgv.Columns["isdeleted"].Visible = false;
         }
-
 
         private void LoadData(string keywords)
         {
@@ -239,7 +247,6 @@ namespace pos.PL.Registrations
             return status;
         }
 
-
         private void GetDataFromForm()
         {
             AddressInfo.Address = txtAddress.Text;
@@ -318,7 +325,6 @@ namespace pos.PL.Registrations
 
         }
 
-
         private void Add()
         {
             GetDataFromForm();
@@ -355,7 +361,6 @@ namespace pos.PL.Registrations
             }
         }
 
-
         private void Delete()
         {
             GetDataFromForm();
@@ -370,54 +375,6 @@ namespace pos.PL.Registrations
             }
         }
 
-
-        private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            onlynumwithsinglepoint(sender, e);
-        }
-
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            TextBox txtDecimal = sender as TextBox;
-            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void frmManageStaffs_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            txtZipCode.MaxLength = 6;
-            PopulateControls();
-        }
-
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-        }
-
-        private void dgvManageStaffs_SelectionChanged(object sender, EventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        private void dgvManageStaffs_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        private void dgvManageStaffs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearFields();
@@ -478,6 +435,41 @@ namespace pos.PL.Registrations
             ClearErrors();
         }
 
+        private void dgvManageStaffs_SelectionChanged(object sender, EventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void dgvManageStaffs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void dgvManageStaffs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            onlynumwithsinglepoint(sender, e);
+        }
+
+        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
+        }
 
     }
 }

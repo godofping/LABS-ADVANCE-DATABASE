@@ -38,6 +38,15 @@ namespace pos.PL.Registrations
             }
         }
 
+        private void frmManageVendors_Load(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            txtZipCode.MaxLength = 6;
+
+        }
+
         private void HiddenColumns()
         {
             dgv.Columns["Supplier ID"].Visible = false;
@@ -51,7 +60,6 @@ namespace pos.PL.Registrations
         {
             dgv.DataSource = SupplierBL.List(keywords);
         }
-
 
         private void ManageForm(bool status)
         {
@@ -84,7 +92,6 @@ namespace pos.PL.Registrations
             txtProvince.ResetText();
             txtZipCode.ResetText();
         }
-
 
         private bool CheckErrors()
         {
@@ -244,54 +251,6 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            onlynumwithsinglepoint(sender, e);
-        }
-
-
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            TextBox txtDecimal = sender as TextBox;
-            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void frmManageVendors_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            txtZipCode.MaxLength = 6;
-          
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-        }
-
-        private void dgvManageVendors_SelectionChanged(object sender, EventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        private void dgvManageVendors_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        private void dgvManageSuppliers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearFields();
@@ -352,6 +311,41 @@ namespace pos.PL.Registrations
             ClearErrors();
         }
 
+        private void dgvManageVendors_SelectionChanged(object sender, EventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void dgvManageVendors_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void dgvManageSuppliers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            onlynumwithsinglepoint(sender, e);
+        }
+
+        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
+        }
 
     }
 }

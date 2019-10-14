@@ -37,6 +37,14 @@ namespace pos.PL.Registrations
             }
         }
 
+        private void frmManageSubCategories_Load(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            PopulateControls();
+        }
+
         private void HiddenColumns()
         {
             dgv.Columns["Sub Category ID"].Visible = false;
@@ -177,37 +185,6 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmManageSubCategories_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            PopulateControls();
-        }
-
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-        }
-
-        private void dgv_SelectionChanged(object sender, EventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            GetDataFromDataGridView();
-        }
-
-        
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearFields();
@@ -266,6 +243,26 @@ namespace pos.PL.Registrations
             ManageForm(false);
             ClearFields();
             ClearErrors();
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadData(txtSearch.Text);
         }
     }
 }
