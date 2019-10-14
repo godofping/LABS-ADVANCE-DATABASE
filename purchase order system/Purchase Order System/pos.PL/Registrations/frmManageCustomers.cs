@@ -75,6 +75,7 @@ namespace pos.PL.Registrations
 
         private void ClearErrors()
         {
+
             errorProvider1.SetError(txtFirstName, "");
             errorProvider1.SetError(txtMiddleName, "");
             errorProvider1.SetError(txtLastName, "");
@@ -91,6 +92,7 @@ namespace pos.PL.Registrations
 
         private void ClearFields()
         {
+            dgv.ClearSelection();
             txtCustomerID.ResetText();
             txtFirstName.ResetText();
             txtMiddleName.ResetText();
@@ -261,6 +263,21 @@ namespace pos.PL.Registrations
 
         }
 
+        private void ShowMessageBox(bool condition)
+        {
+            if (condition)
+            {
+                LoadData(txtSearch.Text);
+                ClearFields();
+                MessageBox.Show("Success");
+
+            }
+            else
+            {
+                MessageBox.Show("Failed");
+            }
+        }
+
         private void Add()
         {
             GetDataFromForm();
@@ -269,44 +286,19 @@ namespace pos.PL.Registrations
             CustomerInfo.Contactdetailid = Convert.ToInt32(ContacDetailBL.Insert(ContactDetailInfo));
             CustomerInfo.Basicinformationid = Convert.ToInt32(BasicInformationBL.Insert(BasicInformationInfo));
 
-            if (CustomerBL.Insert(CustomerInfo) > 0)
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+            ShowMessageBox(CustomerBL.Insert(CustomerInfo) > 0);
         }
 
         private void Edit()
         {
             GetDataFromForm();
-            if (AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo))
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+            ShowMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo));
         }
 
         private void Delete()
         {
             GetDataFromForm();
-            if (CustomerBL.Delete(CustomerInfo))
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+            ShowMessageBox(CustomerBL.Delete(CustomerInfo));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

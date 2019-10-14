@@ -43,11 +43,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gbInformations = new System.Windows.Forms.GroupBox();
-            this.dgvManageCategories = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbControls.SuspendLayout();
             this.gbInformations.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvManageCategories)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,26 +187,26 @@
             this.gbInformations.TabIndex = 65;
             this.gbInformations.TabStop = false;
             // 
-            // dgvManageCategories
+            // dgv
             // 
-            this.dgvManageCategories.AllowUserToAddRows = false;
-            this.dgvManageCategories.AllowUserToDeleteRows = false;
-            this.dgvManageCategories.AllowUserToResizeColumns = false;
-            this.dgvManageCategories.AllowUserToResizeRows = false;
-            this.dgvManageCategories.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvManageCategories.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvManageCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvManageCategories.Location = new System.Drawing.Point(14, 291);
-            this.dgvManageCategories.MultiSelect = false;
-            this.dgvManageCategories.Name = "dgvManageCategories";
-            this.dgvManageCategories.ReadOnly = true;
-            this.dgvManageCategories.RowHeadersVisible = false;
-            this.dgvManageCategories.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvManageCategories.Size = new System.Drawing.Size(1179, 240);
-            this.dgvManageCategories.TabIndex = 64;
-            this.dgvManageCategories.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCategories_CellContentClick);
-            this.dgvManageCategories.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCategories_CellDoubleClick);
-            this.dgvManageCategories.SelectionChanged += new System.EventHandler(this.dgvManageCategories_SelectionChanged);
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.AllowUserToResizeColumns = false;
+            this.dgv.AllowUserToResizeRows = false;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(14, 291);
+            this.dgv.MultiSelect = false;
+            this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersVisible = false;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(1179, 240);
+            this.dgv.TabIndex = 64;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCategories_CellContentClick);
+            this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvManageCategories_CellDoubleClick);
+            this.dgv.SelectionChanged += new System.EventHandler(this.dgvManageCategories_SelectionChanged);
             // 
             // errorProvider1
             // 
@@ -222,7 +222,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gbInformations);
-            this.Controls.Add(this.dgvManageCategories);
+            this.Controls.Add(this.dgv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageCategories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -231,7 +231,7 @@
             this.gbControls.ResumeLayout(false);
             this.gbInformations.ResumeLayout(false);
             this.gbInformations.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvManageCategories)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -254,7 +254,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gbInformations;
-        private System.Windows.Forms.DataGridView dgvManageCategories;
+        private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

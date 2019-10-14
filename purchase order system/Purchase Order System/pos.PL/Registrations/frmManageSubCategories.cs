@@ -82,6 +82,7 @@ namespace pos.PL.Registrations
 
         private void ClearFields()
         {
+            dgv.ClearSelection();
             txtSubCategoryID.ResetText();
             txtSubCategoryName.ResetText();
             cbCategoryName.ResetText();
@@ -141,13 +142,12 @@ namespace pos.PL.Registrations
 
         }
 
-        private void Add()
+        private void ShowMessageBox(bool condition)
         {
-            GetDataFromForm();
-
-            if (SubCategoryBL.Insert(SubCategoryInfo) > 0)
+            if (condition)
             {
                 LoadData(txtSearch.Text);
+                ClearFields();
                 MessageBox.Show("Success");
 
             }
@@ -155,34 +155,26 @@ namespace pos.PL.Registrations
             {
                 MessageBox.Show("Failed");
             }
+        }
+
+        private void Add()
+        {
+            GetDataFromForm();
+
+            ShowMessageBox(SubCategoryBL.Insert(SubCategoryInfo) > 0);
         }
 
         private void Edit()
         {
             GetDataFromForm();
-            if (SubCategoryBL.Update(SubCategoryInfo))
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+
+            ShowMessageBox(SubCategoryBL.Update(SubCategoryInfo));
         }
 
         private void Delete()
         {
             GetDataFromForm();
-            if (SubCategoryBL.Delete(SubCategoryInfo))
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+            ShowMessageBox(SubCategoryBL.Delete(SubCategoryInfo));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

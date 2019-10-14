@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace pos.PL.Registrations
@@ -50,20 +43,20 @@ namespace pos.PL.Registrations
 
         private void HiddenColumns()
         {
-            dgvManageCategories.Columns["Category ID"].Visible = false;
-            dgvManageCategories.Columns["isdeleted"].Visible = false;
+            dgv.Columns["Category ID"].Visible = false;
+            dgv.Columns["isdeleted"].Visible = false;
         }
 
         private void LoadData(string keywords)
         {
-            dgvManageCategories.DataSource = CategoryBL.List(keywords);
+            dgv.DataSource = CategoryBL.List(keywords);
         }
 
         private void ManageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
-            dgvManageCategories.Enabled = !status;
+            dgv.Enabled = !status;
             txtSearch.Enabled = !status;
         }
 
@@ -75,6 +68,7 @@ namespace pos.PL.Registrations
 
         private void ClearFields()
         {
+            dgv.ClearSelection();
             txtCategoryID.ResetText();
             txtCategoryName.ResetText();
         }
@@ -102,9 +96,9 @@ namespace pos.PL.Registrations
 
         private void GetDataFromDataGridView()
         {
-            foreach (DataGridViewRow row in dgvManageCategories.SelectedRows)
+            foreach (DataGridViewRow row in dgv.SelectedRows)
             {
-             
+
                 CategoryInfo.Categoryid = Convert.ToInt32(row.Cells["Category ID"].Value);
                 CategoryInfo.Categoryname = row.Cells["Category Name"].Value.ToString();
                 CategoryInfo.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
@@ -117,13 +111,12 @@ namespace pos.PL.Registrations
 
         }
 
-        private void Add()
+        private void ShowMessageBox(bool condition)
         {
-            GetDataFromForm();
-
-            if (CategoryBL.Insert(CategoryInfo) > 0)
+            if (condition)
             {
                 LoadData(txtSearch.Text);
+                ClearFields();
                 MessageBox.Show("Success");
 
             }
@@ -131,34 +124,24 @@ namespace pos.PL.Registrations
             {
                 MessageBox.Show("Failed");
             }
+        }
+
+        private void Add()
+        {
+            GetDataFromForm();
+            ShowMessageBox(CategoryBL.Insert(CategoryInfo) > 0);
         }
 
         private void Edit()
         {
             GetDataFromForm();
-            if (CategoryBL.Update(CategoryInfo))
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+            ShowMessageBox(CategoryBL.Update(CategoryInfo));
         }
 
         private void Delete()
         {
             GetDataFromForm();
-            if (CategoryBL.Delete(CategoryInfo))
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+            ShowMessageBox(CategoryBL.Delete(CategoryInfo));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

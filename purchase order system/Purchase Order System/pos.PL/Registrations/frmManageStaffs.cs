@@ -107,6 +107,7 @@ namespace pos.PL.Registrations
 
         private void ClearFields()
         {
+            dgv.ClearSelection();
             txtStaffID.ResetText();
             txtFirstName.ResetText();
             txtMiddleName.ResetText();
@@ -325,6 +326,21 @@ namespace pos.PL.Registrations
 
         }
 
+        private void ShowMessageBox(bool condition)
+        {
+            if (condition)
+            {
+                LoadData(txtSearch.Text);
+                ClearFields();
+                MessageBox.Show("Success");
+
+            }
+            else
+            {
+                MessageBox.Show("Failed");
+            }
+        }
+
         private void Add()
         {
             GetDataFromForm();
@@ -333,46 +349,23 @@ namespace pos.PL.Registrations
             StaffInfo.Contactdetailid = Convert.ToInt32(ContacDetailBL.Insert(ContactDetailInfo));
             StaffInfo.Basicinformationid = Convert.ToInt32(BasicInformationBL.Insert(BasicInformationInfo));
             StaffInfo.Staffpositionid = Convert.ToInt32(StaffPositionInfo.Staffpositionid);
-      
 
-            if (StaffBL.Insert(StaffInfo) > 0)
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
 
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+            ShowMessageBox(StaffBL.Insert(StaffInfo) > 0);
         }
 
         private void Edit()
         {
             GetDataFromForm();
-            if (AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo) & StaffBL.Update(StaffInfo))
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+
+            ShowMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo) & StaffBL.Update(StaffInfo));
         }
 
         private void Delete()
         {
             GetDataFromForm();
-            if (StaffBL.Delete(StaffInfo))
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+
+            ShowMessageBox(StaffBL.Delete(StaffInfo));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

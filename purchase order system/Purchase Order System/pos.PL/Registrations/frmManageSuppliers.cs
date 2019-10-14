@@ -83,6 +83,7 @@ namespace pos.PL.Registrations
 
         private void ClearFields()
         {
+            dgv.ClearSelection();
             txtSupplierID.ResetText();
             txtSupplier.ResetText();
             txtContactNumber.ResetText();
@@ -204,6 +205,21 @@ namespace pos.PL.Registrations
 
         }
 
+        private void ShowMessageBox(bool condition)
+        {
+            if (condition)
+            {
+                LoadData(txtSearch.Text);
+                ClearFields();
+                MessageBox.Show("Success");
+
+            }
+            else
+            {
+                MessageBox.Show("Failed");
+            }
+        }
+
         private void Add()
         {
             GetDataFromForm();
@@ -211,44 +227,20 @@ namespace pos.PL.Registrations
             ContactDetailInfo.Addressid = Convert.ToInt32(AddressBL.Insert(AddressInfo));
             SupplierInfo.Contactdetailid = Convert.ToInt32(ContacDetailBL.Insert(ContactDetailInfo));
 
-            if (SupplierBL.Insert(SupplierInfo) > 0)
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+            ShowMessageBox(SupplierBL.Insert(SupplierInfo) > 0);
         }
 
         private void Edit()
         {
             GetDataFromForm();
-            if (AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & SupplierBL.Update(SupplierInfo))
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+
+            ShowMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & SupplierBL.Update(SupplierInfo));
         }
 
         private void Delete()
         {
             GetDataFromForm();
-            if (SupplierBL.Delete(SupplierInfo))
-            {
-                LoadData(txtSearch.Text);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
+            ShowMessageBox(SupplierBL.Delete(SupplierInfo));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
