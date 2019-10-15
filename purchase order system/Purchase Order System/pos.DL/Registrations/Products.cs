@@ -5,7 +5,7 @@ namespace pos.DL.Registrations
     {
         public DataTable List(string keywords)
         {
-            string sQuery = "select * from products_view where `Product ID` like '%" + keywords + "%' or `Product Name` like '%" + keywords + "%' or `Product Description` like '%" + keywords + "%' or `Product SKU` like '%" + keywords + "%' or `Product SKU` like '%" + keywords + "%' or `Product Price` like '%" + keywords + "%' or `Sub Category Name` like '%" + keywords + "%' or `Category Name` like '%" + keywords + "%'";
+            string sQuery = "select * from products_view where `Product Name` like '%" + keywords + "%' or `Product Description` like '%" + keywords + "%' or `Product SKU` like '%" + keywords + "%' or `Product Price` like '%" + keywords + "%' or `Sub Category Name` like '%" + keywords + "%' or `Category Name` like '%" + keywords + "%'";
             return Helper.executeQuery(sQuery);
         }
 

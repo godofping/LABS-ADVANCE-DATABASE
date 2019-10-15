@@ -51,6 +51,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.productsCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productsSubcategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageSupplierProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -127,7 +128,8 @@
             // SuppliersToolStripMenuItem
             // 
             this.SuppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manageSuppliersToolStripMenuItem});
+            this.manageSuppliersToolStripMenuItem,
+            this.manageSupplierProductsToolStripMenuItem});
             this.SuppliersToolStripMenuItem.Name = "SuppliersToolStripMenuItem";
             this.SuppliersToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.SuppliersToolStripMenuItem.Text = "Suppliers";
@@ -237,6 +239,13 @@
             this.productsSubcategoriesToolStripMenuItem.Text = "Products Subcategories";
             this.productsSubcategoriesToolStripMenuItem.Click += new System.EventHandler(this.productsSubcategoriesToolStripMenuItem_Click);
             // 
+            // manageSupplierProductsToolStripMenuItem
+            // 
+            this.manageSupplierProductsToolStripMenuItem.Name = "manageSupplierProductsToolStripMenuItem";
+            this.manageSupplierProductsToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.manageSupplierProductsToolStripMenuItem.Text = "Manage Supplier Products";
+            this.manageSupplierProductsToolStripMenuItem.Click += new System.EventHandler(this.manageSupplierProductsToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,5 +294,6 @@
         private System.Windows.Forms.ToolStripMenuItem manageSuppliersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productsCategoriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productsSubcategoriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageSupplierProductsToolStripMenuItem;
     }
 }

@@ -364,8 +364,7 @@ namespace pos.PL.Registrations
 
         private void dgvManageCustomers_SelectionChanged(object sender, EventArgs e)
         {
-
-            GetDataFromDataGridView();
+           GetDataFromDataGridView();
         }
 
         private void dgvManageCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)

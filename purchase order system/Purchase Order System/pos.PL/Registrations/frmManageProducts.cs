@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace pos.PL.Registrations
@@ -99,7 +92,7 @@ namespace pos.PL.Registrations
             errorProvider1.SetError(cbSubCategoryName, "");
             errorProvider1.SetError(txtProductSKU, "");
             errorProvider1.SetError(txtProductPrice, "");
-           
+
         }
 
         private void ClearFields()
@@ -180,7 +173,7 @@ namespace pos.PL.Registrations
             ProductInfo.Productdescription = txtProductDescription.Text;
             ProductInfo.Subcategoryid = Convert.ToInt32(cbSubCategoryName.SelectedValue);
             ProductInfo.Productsku = txtProductSKU.Text;
-            ProductInfo.Productprice = Convert.ToSingle(txtProductPrice.Text) ;
+            ProductInfo.Productprice = Convert.ToSingle(txtProductPrice.Text);
         }
 
         private void GetDataFromDataGridView()
@@ -351,6 +344,6 @@ namespace pos.PL.Registrations
 
         }
 
-       
+
     }
 }

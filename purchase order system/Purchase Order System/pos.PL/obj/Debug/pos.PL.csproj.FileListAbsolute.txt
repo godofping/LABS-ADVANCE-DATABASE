@@ -44,3 +44,4 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purc
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmManageCategories.resources
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmManageSubCategories.resources
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmManageProducts.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.PL\obj\Debug\pos.PL.Registrations.frmManageSupplierProducts.resources

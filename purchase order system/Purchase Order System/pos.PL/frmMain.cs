@@ -140,5 +140,15 @@ namespace pos.PL
             objForm.Show();
 
         }
+
+        private void manageSupplierProductsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageSupplierProducts objForm = new Registrations.frmManageSupplierProducts();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+        }
     }
 }

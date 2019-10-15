@@ -44,7 +44,7 @@ namespace pos.PL.Registrations
             HiddenColumns();
             ManageForm(false);
             txtZipCode.MaxLength = 6;
-  
+
 
         }
 

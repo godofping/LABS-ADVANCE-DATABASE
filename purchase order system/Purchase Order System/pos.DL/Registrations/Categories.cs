@@ -6,7 +6,7 @@ namespace pos.DL.Registrations
     {
         public DataTable List(string keywords)
         {
-            string sQuery = "select * from categories_view where `Category Id` like '%" + keywords + "%' or `Category Name` like '%" + keywords + "%' ";
+            string sQuery = "select * from categories_view where `Category Name` like '%" + keywords + "%' ";
             return Helper.executeQuery(sQuery);
         }
 
