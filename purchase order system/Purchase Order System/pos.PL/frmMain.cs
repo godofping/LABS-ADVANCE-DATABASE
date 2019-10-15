@@ -26,6 +26,8 @@ namespace pos.PL
             AddressInfo = addressInfo;
             FrmLogin = frmLogin;
 
+           
+
         }
 
         protected override CreateParams CreateParams
@@ -49,6 +51,7 @@ namespace pos.PL
         private void MainForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            lblName.Text = BasicInformationInfo.Firstname + " " + BasicInformationInfo.Middlename + " " + BasicInformationInfo.Lastname;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,6 +128,17 @@ namespace pos.PL
             objForm.AutoScroll = true;
             pnlMain.Controls.Add(objForm);
             objForm.Show();
+        }
+
+        private void manageProductsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageProducts objForm = new Registrations.frmManageProducts();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+
         }
     }
 }

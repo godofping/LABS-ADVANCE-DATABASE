@@ -95,6 +95,12 @@
     <Compile Include="Registrations\frmManageCustomers.Designer.cs">
       <DependentUpon>frmManageCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registrations\frmManageProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrations\frmManageProducts.Designer.cs">
+      <DependentUpon>frmManageProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registrations\frmManageStaffs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registrations\frmManageCustomers.resx">
       <DependentUpon>frmManageCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrations\frmManageProducts.resx">
+      <DependentUpon>frmManageProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registrations\frmManageStaffs.resx">
       <DependentUpon>frmManageStaffs.cs</DependentUpon>

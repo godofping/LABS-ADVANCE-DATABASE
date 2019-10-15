@@ -5,7 +5,13 @@ namespace pos.DL.Registrations
     {
         public DataTable List(string keywords)
         {
-            string sQuery = "select * from subcategories_view where `Sub Category Id` like '%" + keywords + "%' or `Sub Category Name` like '%" + keywords + "%' or `Category Name` like '%" + keywords + "%' ";
+            string sQuery = "select * from subcategories_view where `Sub Category ID` like '%" + keywords + "%' or `Sub Category Name` like '%" + keywords + "%' or `Category Name` like '%" + keywords + "%' ";
+            return Helper.executeQuery(sQuery);
+        }
+
+        public DataTable List(int value)
+        {
+            string sQuery = "select * from subcategories_view where categoryid = '" + value + "' ";
             return Helper.executeQuery(sQuery);
         }
 

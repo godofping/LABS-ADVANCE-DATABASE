@@ -120,8 +120,9 @@
             // manageProductsToolStripMenuItem
             // 
             this.manageProductsToolStripMenuItem.Name = "manageProductsToolStripMenuItem";
-            this.manageProductsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.manageProductsToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.manageProductsToolStripMenuItem.Text = "Manage Products";
+            this.manageProductsToolStripMenuItem.Click += new System.EventHandler(this.manageProductsToolStripMenuItem_Click);
             // 
             // SuppliersToolStripMenuItem
             // 

@@ -17,7 +17,7 @@
   `zipcode` varchar(60) DEFAULT NULL,
   `province` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`addressid`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="categories" view="colnames">
 <left>8</left>
@@ -27,8 +27,9 @@
 <sql_create_table>CREATE TABLE `categories` (
   `categoryid` int(6) NOT NULL AUTO_INCREMENT,
   `categoryname` varchar(60) DEFAULT NULL,
+  `isdeleted` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`categoryid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="contactdetails" view="colnames">
 <left>1057</left>
@@ -43,7 +44,7 @@
   PRIMARY KEY (`contactdetailid`),
   KEY `FK_contactdetails` (`addressid`),
   CONSTRAINT `FK_contactdetails` FOREIGN KEY (`addressid`) REFERENCES `addresses` (`addressid`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="customers" view="colnames">
 <left>917</left>
@@ -96,6 +97,7 @@
   `subcategoryid` int(6) DEFAULT NULL,
   `productsku` varchar(60) DEFAULT NULL,
   `productprice` float DEFAULT NULL,
+  `isdeleted` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`productid`),
   KEY `FK_items` (`subcategoryid`),
   KEY `FK_products` (`productprice`),
@@ -131,12 +133,13 @@
 <height>129</height>
 <sql_create_table>CREATE TABLE `subcategories` (
   `subcategoryid` int(6) NOT NULL AUTO_INCREMENT,
-  `subcategory` varchar(60) DEFAULT NULL,
+  `subcategoryname` varchar(60) DEFAULT NULL,
   `categoryid` int(6) DEFAULT NULL,
+  `isdeleted` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`subcategoryid`),
   KEY `FK_subcategories` (`categoryid`),
   CONSTRAINT `FK_subcategories` FOREIGN KEY (`categoryid`) REFERENCES `categories` (`categoryid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="purchaseorderdetails" view="colnames">
 <left>19</left>
@@ -189,6 +192,7 @@
   `purchasetotalorderamount` float DEFAULT NULL,
   `purchaseorderdatedelivered` date DEFAULT NULL,
   `purchaseorderdaterequested` date DEFAULT NULL,
+  `isdeleted` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`purchaseorderid`),
   KEY `FK_purchaseorders1` (`staffid`),
   KEY `FK_purchaseordersw` (`purchaseorderstatus`),
@@ -212,6 +216,7 @@
   `productid` int(6) DEFAULT NULL,
   `quantityinstocks` int(6) DEFAULT NULL,
   `reorderlevel` int(6) DEFAULT NULL,
+  `inventorylastupdated` date DEFAULT NULL,
   PRIMARY KEY (`inventoryid`),
   KEY `FK_inventories` (`productid`),
   CONSTRAINT `FK_inventories` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
@@ -230,6 +235,7 @@
   `orderamountpaid` float DEFAULT NULL,
   `ordertotalamount` float DEFAULT NULL,
   `orderdate` date DEFAULT NULL,
+  `isdeleted` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`orderid`),
   KEY `fkcustomerid` (`customerid`),
   KEY `FK_orders` (`staffid`),
@@ -265,7 +271,7 @@
   PRIMARY KEY (`supplierid`),
   KEY `FK_vendors` (`contactdetailid`),
   CONSTRAINT `FK_vendors` FOREIGN KEY (`contactdetailid`) REFERENCES `contactdetails` (`contactdetailid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="supplierproducts" view="colnames">
 <left>834</left>

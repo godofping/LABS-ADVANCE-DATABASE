@@ -51,6 +51,7 @@ namespace pos.PL.Registrations
             ManageForm(false);
             txtZipCode.MaxLength = 6;
             PopulateControls();
+            ClearFields();
         }
 
         private void HiddenColumns()
@@ -112,7 +113,7 @@ namespace pos.PL.Registrations
             txtFirstName.ResetText();
             txtMiddleName.ResetText();
             txtLastName.ResetText();
-            cbGender.ResetText();
+            cbGender.SelectedIndex = -1;
             dtpBirthDate.ResetText();
             txtContactNumber.ResetText();
             txtEmailAddress.ResetText();

@@ -126,14 +126,14 @@
             this.txtSubCategoryName.Location = new System.Drawing.Point(213, 40);
             this.txtSubCategoryName.Name = "txtSubCategoryName";
             this.txtSubCategoryName.Size = new System.Drawing.Size(172, 20);
-            this.txtSubCategoryName.TabIndex = 25;
+            this.txtSubCategoryName.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(920, 165);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 48;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -143,7 +143,7 @@
             this.btnSave.Location = new System.Drawing.Point(823, 165);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 47;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -200,7 +200,7 @@
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.BackgroundColor = System.Drawing.Color.Silver;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(15, 293);
+            this.dgv.Location = new System.Drawing.Point(12, 292);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
@@ -220,13 +220,14 @@
             // 
             this.cbCategoryName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoryName.FormattingEnabled = true;
+            this.cbCategoryName.ItemHeight = 13;
             this.cbCategoryName.Items.AddRange(new object[] {
             "Male",
             "Female"});
             this.cbCategoryName.Location = new System.Drawing.Point(416, 40);
             this.cbCategoryName.Name = "cbCategoryName";
             this.cbCategoryName.Size = new System.Drawing.Size(172, 21);
-            this.cbCategoryName.TabIndex = 73;
+            this.cbCategoryName.TabIndex = 2;
             // 
             // label4
             // 
@@ -250,7 +251,7 @@
             this.Controls.Add(this.dgv);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageSubCategories";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmManageSubCategories";
             this.Load += new System.EventHandler(this.frmManageSubCategories_Load);
             this.gbControls.ResumeLayout(false);

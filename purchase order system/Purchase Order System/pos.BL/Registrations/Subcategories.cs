@@ -9,6 +9,11 @@ namespace pos.BL.Registrations
             return SubCategoryDL.List(keywords);
         }
 
+        public DataTable List(int value)
+        {
+            return SubCategoryDL.List(value);
+        }
+
         public long Insert(EL.Registrations.Subcategories subcategory)
         {
             return SubCategoryDL.Insert(subcategory);
