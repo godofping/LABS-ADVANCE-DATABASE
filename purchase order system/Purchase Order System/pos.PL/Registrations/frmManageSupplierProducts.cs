@@ -142,12 +142,12 @@ namespace pos.PL.Registrations
                 ProductInfo.Productdescription = row.Cells["Product Description"].Value.ToString();
                 ProductInfo.Productsku = row.Cells["Product SKU"].Value.ToString();
 
-                SupplierInfo.Supplierid = Convert.ToInt32(row.Cells["Supplier ID"].Value);
+                SupplierInfo.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
                 SupplierInfo.Supplier = row.Cells["Supplier"].Value.ToString();
 
                 SupplierProductInfo.Supplierproductid = Convert.ToInt32(row.Cells["Supplier Product ID"].Value);
-                SupplierProductInfo.Supplierid = Convert.ToInt32(row.Cells["Supplier ID"].Value);
-                SupplierProductInfo.Productid = Convert.ToInt32(row.Cells["Product ID"].Value);
+                SupplierProductInfo.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
+                SupplierProductInfo.Productid = Convert.ToInt32(row.Cells["productid"].Value);
             }
 
             txtSupplierProductID.Text = SupplierProductInfo.Supplierproductid.ToString();
