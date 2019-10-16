@@ -55,6 +55,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtReorderLevel = new System.Windows.Forms.TextBox();
+            this.lblReorderLevel = new System.Windows.Forms.Label();
+            this.lblInitialStocks = new System.Windows.Forms.Label();
+            this.txtInitialStock = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gbControls.SuspendLayout();
@@ -157,6 +161,10 @@
             // 
             // gbInformations
             // 
+            this.gbInformations.Controls.Add(this.txtReorderLevel);
+            this.gbInformations.Controls.Add(this.lblReorderLevel);
+            this.gbInformations.Controls.Add(this.txtInitialStock);
+            this.gbInformations.Controls.Add(this.lblInitialStocks);
             this.gbInformations.Controls.Add(this.txtProductSKU);
             this.gbInformations.Controls.Add(this.label5);
             this.gbInformations.Controls.Add(this.cbCategoryName);
@@ -288,7 +296,7 @@
             // 
             this.cbSubCategoryName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubCategoryName.FormattingEnabled = true;
-            this.cbSubCategoryName.Location = new System.Drawing.Point(823, 40);
+            this.cbSubCategoryName.Location = new System.Drawing.Point(823, 42);
             this.cbSubCategoryName.Name = "cbSubCategoryName";
             this.cbSubCategoryName.Size = new System.Drawing.Size(172, 21);
             this.cbSubCategoryName.TabIndex = 5;
@@ -296,7 +304,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(820, 24);
+            this.label4.Location = new System.Drawing.Point(820, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 13);
             this.label4.TabIndex = 37;
@@ -318,6 +326,40 @@
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 41;
             this.label6.Text = "Product Price";
+            // 
+            // txtReorderLevel
+            // 
+            this.txtReorderLevel.Location = new System.Drawing.Point(619, 89);
+            this.txtReorderLevel.Name = "txtReorderLevel";
+            this.txtReorderLevel.Size = new System.Drawing.Size(172, 20);
+            this.txtReorderLevel.TabIndex = 61;
+            this.txtReorderLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReorderLevel_KeyPress);
+            // 
+            // lblReorderLevel
+            // 
+            this.lblReorderLevel.AutoSize = true;
+            this.lblReorderLevel.Location = new System.Drawing.Point(616, 73);
+            this.lblReorderLevel.Name = "lblReorderLevel";
+            this.lblReorderLevel.Size = new System.Drawing.Size(74, 13);
+            this.lblReorderLevel.TabIndex = 64;
+            this.lblReorderLevel.Text = "Reorder Level";
+            // 
+            // lblInitialStocks
+            // 
+            this.lblInitialStocks.AutoSize = true;
+            this.lblInitialStocks.Location = new System.Drawing.Point(820, 73);
+            this.lblInitialStocks.Name = "lblInitialStocks";
+            this.lblInitialStocks.Size = new System.Drawing.Size(62, 13);
+            this.lblInitialStocks.TabIndex = 63;
+            this.lblInitialStocks.Text = "Initial Stock";
+            // 
+            // txtInitialStock
+            // 
+            this.txtInitialStock.Location = new System.Drawing.Point(823, 89);
+            this.txtInitialStock.Name = "txtInitialStock";
+            this.txtInitialStock.Size = new System.Drawing.Size(172, 20);
+            this.txtInitialStock.TabIndex = 62;
+            this.txtInitialStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInitialStock_KeyPress);
             // 
             // frmManageProducts
             // 
@@ -373,5 +415,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtProductSKU;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtReorderLevel;
+        private System.Windows.Forms.Label lblReorderLevel;
+        private System.Windows.Forms.TextBox txtInitialStock;
+        private System.Windows.Forms.Label lblInitialStocks;
     }
 }

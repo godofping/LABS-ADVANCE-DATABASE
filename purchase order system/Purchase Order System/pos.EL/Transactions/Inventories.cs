@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace pos.EL.Transactions
+﻿namespace pos.EL.Transactions
 {
-   public class Inventories
+    public class Inventories
     {
         int inventoryid;
         int productid;
