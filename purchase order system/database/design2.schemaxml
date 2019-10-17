@@ -17,7 +17,7 @@
   `zipcode` varchar(60) DEFAULT NULL,
   `province` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`addressid`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="categories" view="colnames">
 <left>8</left>
@@ -44,7 +44,7 @@
   PRIMARY KEY (`contactdetailid`),
   KEY `FK_contactdetails` (`addressid`),
   CONSTRAINT `FK_contactdetails` FOREIGN KEY (`addressid`) REFERENCES `addresses` (`addressid`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="customers" view="colnames">
 <left>917</left>
@@ -102,7 +102,7 @@
   KEY `FK_items` (`subcategoryid`),
   KEY `FK_products` (`productprice`),
   CONSTRAINT `FK_items` FOREIGN KEY (`subcategoryid`) REFERENCES `subcategories` (`subcategoryid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="staffs" view="colnames">
 <left>1166</left>
@@ -139,7 +139,7 @@
   PRIMARY KEY (`subcategoryid`),
   KEY `FK_subcategories` (`categoryid`),
   CONSTRAINT `FK_subcategories` FOREIGN KEY (`categoryid`) REFERENCES `categories` (`categoryid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="purchaseorderdetails" view="colnames">
 <left>19</left>
@@ -220,7 +220,7 @@
   PRIMARY KEY (`inventoryid`),
   KEY `FK_inventories` (`productid`),
   CONSTRAINT `FK_inventories` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="orders" view="colnames">
 <left>726</left>
@@ -271,7 +271,7 @@
   PRIMARY KEY (`supplierid`),
   KEY `FK_vendors` (`contactdetailid`),
   CONSTRAINT `FK_vendors` FOREIGN KEY (`contactdetailid`) REFERENCES `contactdetails` (`contactdetailid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="supplierproducts" view="colnames">
 <left>834</left>
@@ -287,7 +287,7 @@
   KEY `FK_ve1ndorproducts` (`supplierid`),
   CONSTRAINT `FK_ve1ndorproducts` FOREIGN KEY (`supplierid`) REFERENCES `suppliers` (`supplierid`),
   CONSTRAINT `FK_vendorproducts` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 </tables>
 </canvas>

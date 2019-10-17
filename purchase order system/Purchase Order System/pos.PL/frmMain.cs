@@ -10,13 +10,13 @@ namespace pos.PL
         EL.Registrations.Basicinformations BasicInformationInfo;
         EL.Registrations.Staffpositions StaffpositionInfo;
         EL.Registrations.Addresses AddressInfo;
-
+        EL.Registrations.Storeinformation StoreInformationInfo;
 
         frmLogin FrmLogin;
 
 
       
-        public frmMain(EL.Registrations.Staffs staffInfo, EL.Registrations.Contactdetails contactDetailInfo, EL.Registrations.Basicinformations basicInformationInfo, EL.Registrations.Staffpositions staffpositionInfo, EL.Registrations.Addresses addressInfo, frmLogin frmLogin)
+        public frmMain(EL.Registrations.Staffs staffInfo, EL.Registrations.Contactdetails contactDetailInfo, EL.Registrations.Basicinformations basicInformationInfo, EL.Registrations.Staffpositions staffpositionInfo, EL.Registrations.Addresses addressInfo, EL.Registrations.Storeinformation storeInformationInfo, frmLogin frmLogin)
         {
             InitializeComponent();
             StaffInfo = staffInfo;
@@ -24,9 +24,9 @@ namespace pos.PL
             BasicInformationInfo = basicInformationInfo;
             StaffpositionInfo = staffpositionInfo;
             AddressInfo = addressInfo;
+            StoreInformationInfo = storeInformationInfo;
             FrmLogin = frmLogin;
 
-           
 
         }
 
@@ -51,7 +51,15 @@ namespace pos.PL
         private void MainForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            lblName.Text = BasicInformationInfo.Firstname + " " + BasicInformationInfo.Middlename + " " + BasicInformationInfo.Lastname;
+            UpdateInfo();
+        }
+
+        public void UpdateInfo()
+        {
+            FrmLogin.UpdateStoreName();
+            FrmLogin.GetDataFromDataTableStaffInformation();
+            lblName.Text = "Welcome, " + BasicInformationInfo.Firstname + " " + BasicInformationInfo.Middlename + " " + BasicInformationInfo.Lastname;
+            lblStoreName.Text = StoreInformationInfo.Storename;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,11 +102,6 @@ namespace pos.PL
         }
      
 
-
-        private void manageVendorCategoriesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        
-        }
 
         private void manageSuppliersToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -145,6 +148,26 @@ namespace pos.PL
         {
             pnlMain.Controls.Clear();
             Registrations.frmManageSupplierProducts objForm = new Registrations.frmManageSupplierProducts();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+        }
+
+        private void storeInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageStoreInformation objForm = new Registrations.frmManageStoreInformation(StoreInformationInfo, this);
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+        }
+
+        private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageProfile objForm = new Registrations.frmManageProfile(StaffInfo, this);
             objForm.TopLevel = false;
             objForm.AutoScroll = true;
             pnlMain.Controls.Add(objForm);

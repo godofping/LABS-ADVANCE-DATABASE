@@ -37,21 +37,24 @@
             this.smiPurchaseOrders = new System.Windows.Forms.ToolStripMenuItem();
             this.smiProducts = new System.Windows.Forms.ToolStripMenuItem();
             this.manageProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productsCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productsSubcategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SuppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageSuppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageSupplierProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smiCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.smiManageCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.smiStaffs = new System.Windows.Forms.ToolStripMenuItem();
             this.smiManageStaffs = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblStoreName = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.productsCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productsSubcategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageSupplierProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.storeInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +69,8 @@
             this.smiProducts,
             this.SuppliersToolStripMenuItem,
             this.smiCustomers,
-            this.smiStaffs});
+            this.smiStaffs,
+            this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1203, 24);
@@ -125,6 +129,20 @@
             this.manageProductsToolStripMenuItem.Text = "Manage Products";
             this.manageProductsToolStripMenuItem.Click += new System.EventHandler(this.manageProductsToolStripMenuItem_Click);
             // 
+            // productsCategoriesToolStripMenuItem
+            // 
+            this.productsCategoriesToolStripMenuItem.Name = "productsCategoriesToolStripMenuItem";
+            this.productsCategoriesToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.productsCategoriesToolStripMenuItem.Text = "Products Categories";
+            this.productsCategoriesToolStripMenuItem.Click += new System.EventHandler(this.productsCategoriesToolStripMenuItem_Click);
+            // 
+            // productsSubcategoriesToolStripMenuItem
+            // 
+            this.productsSubcategoriesToolStripMenuItem.Name = "productsSubcategoriesToolStripMenuItem";
+            this.productsSubcategoriesToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.productsSubcategoriesToolStripMenuItem.Text = "Products Subcategories";
+            this.productsSubcategoriesToolStripMenuItem.Click += new System.EventHandler(this.productsSubcategoriesToolStripMenuItem_Click);
+            // 
             // SuppliersToolStripMenuItem
             // 
             this.SuppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -137,9 +155,16 @@
             // manageSuppliersToolStripMenuItem
             // 
             this.manageSuppliersToolStripMenuItem.Name = "manageSuppliersToolStripMenuItem";
-            this.manageSuppliersToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.manageSuppliersToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.manageSuppliersToolStripMenuItem.Text = "Manage Suppliers";
             this.manageSuppliersToolStripMenuItem.Click += new System.EventHandler(this.manageSuppliersToolStripMenuItem_Click);
+            // 
+            // manageSupplierProductsToolStripMenuItem
+            // 
+            this.manageSupplierProductsToolStripMenuItem.Name = "manageSupplierProductsToolStripMenuItem";
+            this.manageSupplierProductsToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.manageSupplierProductsToolStripMenuItem.Text = "Manage Supplier Products";
+            this.manageSupplierProductsToolStripMenuItem.Click += new System.EventHandler(this.manageSupplierProductsToolStripMenuItem_Click);
             // 
             // smiCustomers
             // 
@@ -182,7 +207,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblStoreName);
             this.panel1.Controls.Add(this.lblDateTime);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -191,15 +216,15 @@
             this.panel1.Size = new System.Drawing.Size(1203, 28);
             this.panel1.TabIndex = 2;
             // 
-            // label1
+            // lblStoreName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(529, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Rex Computer Store";
+            this.lblStoreName.AutoSize = true;
+            this.lblStoreName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStoreName.Location = new System.Drawing.Point(529, 6);
+            this.lblStoreName.Name = "lblStoreName";
+            this.lblStoreName.Size = new System.Drawing.Size(118, 15);
+            this.lblStoreName.TabIndex = 2;
+            this.lblStoreName.Text = "Rex Computer Store";
             // 
             // lblDateTime
             // 
@@ -225,26 +250,28 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // productsCategoriesToolStripMenuItem
+            // settingsToolStripMenuItem
             // 
-            this.productsCategoriesToolStripMenuItem.Name = "productsCategoriesToolStripMenuItem";
-            this.productsCategoriesToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.productsCategoriesToolStripMenuItem.Text = "Products Categories";
-            this.productsCategoriesToolStripMenuItem.Click += new System.EventHandler(this.productsCategoriesToolStripMenuItem_Click);
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.storeInformationToolStripMenuItem,
+            this.myProfileToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
             // 
-            // productsSubcategoriesToolStripMenuItem
+            // storeInformationToolStripMenuItem
             // 
-            this.productsSubcategoriesToolStripMenuItem.Name = "productsSubcategoriesToolStripMenuItem";
-            this.productsSubcategoriesToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.productsSubcategoriesToolStripMenuItem.Text = "Products Subcategories";
-            this.productsSubcategoriesToolStripMenuItem.Click += new System.EventHandler(this.productsSubcategoriesToolStripMenuItem_Click);
+            this.storeInformationToolStripMenuItem.Name = "storeInformationToolStripMenuItem";
+            this.storeInformationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.storeInformationToolStripMenuItem.Text = "Store Information";
+            this.storeInformationToolStripMenuItem.Click += new System.EventHandler(this.storeInformationToolStripMenuItem_Click);
             // 
-            // manageSupplierProductsToolStripMenuItem
+            // myProfileToolStripMenuItem
             // 
-            this.manageSupplierProductsToolStripMenuItem.Name = "manageSupplierProductsToolStripMenuItem";
-            this.manageSupplierProductsToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.manageSupplierProductsToolStripMenuItem.Text = "Manage Supplier Products";
-            this.manageSupplierProductsToolStripMenuItem.Click += new System.EventHandler(this.manageSupplierProductsToolStripMenuItem_Click);
+            this.myProfileToolStripMenuItem.Name = "myProfileToolStripMenuItem";
+            this.myProfileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.myProfileToolStripMenuItem.Text = "My Profile";
+            this.myProfileToolStripMenuItem.Click += new System.EventHandler(this.myProfileToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -289,11 +316,14 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblStoreName;
         private System.Windows.Forms.ToolStripMenuItem SuppliersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageSuppliersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productsCategoriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productsSubcategoriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageSupplierProductsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem storeInformationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem myProfileToolStripMenuItem;
     }
 }

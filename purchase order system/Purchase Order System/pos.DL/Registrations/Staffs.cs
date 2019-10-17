@@ -13,6 +13,23 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
+        public DataTable List(int id)
+        {
+            string sQuery = "select * from staffs_view where `Staff ID` = '" + id + "'";
+
+            return Helper.executeQuery(sQuery);
+        }
+
+        public DataTable CheckUsername(EL.Registrations.Staffs staff)
+        {
+            return Helper.executeQuery("select * from staffs_view where `Username` = '" + staff.Username + "'");
+        }
+
+        public DataTable CheckUsername(EL.Registrations.Staffs staff, int id)
+        {
+            return Helper.executeQuery("select * from staffs_view where `Username` = '" + staff.Username + "' and `Staff ID` <> " + id + "");
+        }
+
         public long Insert(EL.Registrations.Staffs staff)
         {
             return Helper.executeNonQueryLong("insert into staffs (username, password, contactdetailid, basicinformationid, staffpositionid) values ('" + staff.Username + "', '" + staff.Password + "', '" + staff.Contactdetailid + "', '" + staff.Basicinformationid + "', '" + staff.Staffpositionid + "')");

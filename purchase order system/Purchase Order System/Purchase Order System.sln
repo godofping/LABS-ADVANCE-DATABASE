@@ -5,11 +5,16 @@ VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pos.PL", "pos.PL\pos.PL.csproj", "{E6A1F0D7-CB91-421B-907E-9D1DAA9AB46C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pos.EL", "pos.EL\pos.EL.csproj", "{DE9CE5B6-1BE5-4B93-848C-917784BE8C76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pos.EL", "pos.EL\pos.EL.csproj", "{DE9CE5B6-1BE5-4B93-848C-917784BE8C76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pos.DL", "pos.DL\pos.DL.csproj", "{7EF069F3-AE32-41DF-A350-C79CD5F49027}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pos.DL", "pos.DL\pos.DL.csproj", "{7EF069F3-AE32-41DF-A350-C79CD5F49027}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pos.BL", "pos.BL\pos.BL.csproj", "{E10E2142-D63E-4DD2-9FD9-98054B4FCE5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pos.BL", "pos.BL\pos.BL.csproj", "{E10E2142-D63E-4DD2-9FD9-98054B4FCE5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA9BEDCF-5406-42EC-9633-974010204114}"
+	ProjectSection(SolutionItems) = preProject
+		notes.txt = notes.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -10,6 +10,21 @@ namespace pos.BL.Registrations
             return StaffDL.List(keywords);
         }
 
+        public DataTable List(int id)
+        {
+            return StaffDL.List(id);
+        }
+
+        public DataTable CheckUsername(EL.Registrations.Staffs staff)
+        {
+            return StaffDL.CheckUsername(staff);
+        }
+
+        public DataTable CheckUsername(EL.Registrations.Staffs staff, int id)
+        {
+            return StaffDL.CheckUsername(staff, id);
+        }
+
         public long Insert(EL.Registrations.Staffs staff)
         {
             return StaffDL.Insert(staff);

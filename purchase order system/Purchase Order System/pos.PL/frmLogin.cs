@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Data;
+using System.Windows.Forms;
 
 namespace pos.PL
 {
@@ -11,12 +11,14 @@ namespace pos.PL
         EL.Registrations.Basicinformations BasicInformationInfo = new EL.Registrations.Basicinformations();
         EL.Registrations.Staffpositions StaffpositionInfo = new EL.Registrations.Staffpositions();
         EL.Registrations.Addresses  AddressInfo = new EL.Registrations.Addresses();
+        EL.Registrations.Storeinformation StoreInformationInfo = new EL.Registrations.Storeinformation();
 
         BL.Registrations.Staffs StaffBL = new BL.Registrations.Staffs();
         BL.Registrations.Contactdetails ContactDetailBL = new BL.Registrations.Contactdetails();
         BL.Registrations.Basicinformations BasicInformationBL = new BL.Registrations.Basicinformations();
         BL.Registrations.Staffpositions StaffpositionBL = new BL.Registrations.Staffpositions();
         BL.Registrations.Addresses AddressBL = new BL.Registrations.Addresses();
+        BL.Registrations.Storeinformation StoreInformationBL = new BL.Registrations.Storeinformation();
 
 
         public frmLogin()
@@ -42,53 +44,31 @@ namespace pos.PL
             }
         }
 
-        private void ClearErrors()
+        private void GetDataFromDataTableStoreInformation()
         {
-            errorProvider1.SetError(txtUsername, "");
-            errorProvider1.SetError(txtPassword, "");
-        }
-
-        private void ClearFields()
-        {
-            txtUsername.ResetText();
-            txtPassword.ResetText();
-            this.ActiveControl = txtUsername;
-        }
-
-        private bool CheckErrors()
-        {
-            bool status = true;
-
-            if (txtUsername.Text.Equals(""))
+            foreach (DataRow row in StoreInformationBL.List().Rows)
             {
-                errorProvider1.SetError(txtUsername, "This field is required.");
-                status = false;
+                AddressInfo.Addressid = Convert.ToInt32(row["addressid"]);
+                AddressInfo.Address = row["Address"].ToString();
+                AddressInfo.City = row["City"].ToString();
+                AddressInfo.Province = row["Province"].ToString();
+                AddressInfo.Zipcode = row["Zip Code"].ToString();
+
+                ContactDetailInfo.Contactdetailid = Convert.ToInt32(row["contactdetailid"]);
+                ContactDetailInfo.Addressid = Convert.ToInt32(row["addressid"]);
+                ContactDetailInfo.Contactnumber = row["Contact Number"].ToString();
+                ContactDetailInfo.Emailaddress = row["Email Address"].ToString();
+
+                StoreInformationInfo.Storename = row["Store Name"].ToString();
+
             }
-            else
-                errorProvider1.SetError(txtUsername, "");
 
-            if (txtPassword.Text.Equals(""))
-            {
-                errorProvider1.SetError(txtPassword, "This field is required.");
-                status = false;
-            }
-            else
-                errorProvider1.SetError(txtPassword, "");
-
-
-            return status;
+            UpdateStoreName();
         }
 
-
-        private void GetDataFromForm()
+        public void GetDataFromDataTableStaffInformation()
         {
-            StaffInfo.Username = txtUsername.Text;
-            StaffInfo.Password = txtPassword.Text;
-        }
-
-        private void GetDataFromDataTable(DataTable Result)
-        {
-            foreach (DataRow row in Result.Rows)
+            foreach (DataRow row in StaffBL.Login(StaffInfo).Rows)
             {
                 AddressInfo.Addressid = Convert.ToInt32(row["addressid"]);
                 AddressInfo.Address = row["Address"].ToString();
@@ -122,20 +102,63 @@ namespace pos.PL
             }
         }
 
+
+        public void UpdateStoreName()
+        {
+            lblStoreName.Text = StoreInformationInfo.Storename;
+        }
+
+        private void ClearFields()
+        {
+            txtUsername.ResetText();
+            txtPassword.ResetText();
+            this.ActiveControl = txtUsername;
+        }
+
+        private bool CheckErrors()
+        {
+            bool status = true;
+
+            if (txtUsername.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtUsername, "This field is required.");
+                status = false;
+            }
+            else
+                errorProvider1.SetError(txtUsername, "");
+
+            if (txtPassword.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtPassword, "This field is required.");
+                status = false;
+            }
+            else
+                errorProvider1.SetError(txtPassword, "");
+
+            return status;
+        }
+
+
+        private void GetDataFromForm()
+        {
+            StaffInfo.Username = txtUsername.Text;
+            StaffInfo.Password = txtPassword.Text;
+        }
+
+
         private void Login()
         {
 
             GetDataFromForm();
 
-            DataTable Result = StaffBL.Login(StaffInfo);
-           
-            if (Result.Rows.Count > 0)
+
+            if (StaffBL.Login(StaffInfo).Rows.Count > 0)
             {
-                GetDataFromDataTable(Result);
+                GetDataFromDataTableStaffInformation();
 
                 MessageBox.Show("Login Successful");
 
-                frmMain frm = new frmMain(StaffInfo, ContactDetailInfo, BasicInformationInfo, StaffpositionInfo, AddressInfo, this);
+                frmMain frm = new frmMain(StaffInfo, ContactDetailInfo, BasicInformationInfo, StaffpositionInfo, AddressInfo, StoreInformationInfo, this);
                 frm.Show();
 
                 this.Hide();
@@ -151,12 +174,21 @@ namespace pos.PL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Login();
+            if(CheckErrors())
+            {
+                Login();
+            }
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            GetDataFromDataTableStoreInformation();
         }
     }
 }
