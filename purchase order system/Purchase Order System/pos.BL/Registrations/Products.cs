@@ -10,6 +10,11 @@ namespace pos.BL.Registrations
             return ProductDL.List(keywords);
         }
 
+        public DataTable List(int id)
+        {
+            return ProductDL.List(id);
+        }
+
         public long Insert(EL.Registrations.Products product)
         {
             return ProductDL.Insert(product);

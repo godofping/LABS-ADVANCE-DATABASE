@@ -51,17 +51,17 @@ namespace pos.PL.Registrations
         private void frmManageProfile_Load(object sender, EventArgs e)
         {
        
-            DisabledControls();
+            ReadOnlyControls();
             ManageForm(false);
             txtZipCode.MaxLength = 6;
 
             GetDataFromDataTable();
         }
 
-        private void DisabledControls()
+        private void ReadOnlyControls()
         {
-            txtPosition.Enabled = false;
-            txtUsername.Enabled = false;
+            txtPosition.ReadOnly = true;
+            txtUsername.ReadOnly = true;
         }
 
         private void ManageForm(bool status)

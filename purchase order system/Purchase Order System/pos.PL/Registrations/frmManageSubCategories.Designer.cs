@@ -43,10 +43,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gbInformations = new System.Windows.Forms.GroupBox();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbCategoryName = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbControls.SuspendLayout();
             this.gbInformations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -106,9 +106,9 @@
             // 
             // txtSubCategoryID
             // 
-            this.txtSubCategoryID.Enabled = false;
             this.txtSubCategoryID.Location = new System.Drawing.Point(9, 40);
             this.txtSubCategoryID.Name = "txtSubCategoryID";
+            this.txtSubCategoryID.ReadOnly = true;
             this.txtSubCategoryID.Size = new System.Drawing.Size(172, 20);
             this.txtSubCategoryID.TabIndex = 49;
             // 
@@ -191,6 +191,28 @@
             this.gbInformations.TabIndex = 71;
             this.gbInformations.TabStop = false;
             // 
+            // cbCategoryName
+            // 
+            this.cbCategoryName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoryName.FormattingEnabled = true;
+            this.cbCategoryName.ItemHeight = 13;
+            this.cbCategoryName.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cbCategoryName.Location = new System.Drawing.Point(416, 40);
+            this.cbCategoryName.Name = "cbCategoryName";
+            this.cbCategoryName.Size = new System.Drawing.Size(172, 21);
+            this.cbCategoryName.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(413, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 74;
+            this.label4.Text = "Category Name";
+            // 
             // dgv
             // 
             this.dgv.AllowUserToAddRows = false;
@@ -215,28 +237,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // cbCategoryName
-            // 
-            this.cbCategoryName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategoryName.FormattingEnabled = true;
-            this.cbCategoryName.ItemHeight = 13;
-            this.cbCategoryName.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.cbCategoryName.Location = new System.Drawing.Point(416, 40);
-            this.cbCategoryName.Name = "cbCategoryName";
-            this.cbCategoryName.Size = new System.Drawing.Size(172, 21);
-            this.cbCategoryName.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(413, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
-            this.label4.TabIndex = 74;
-            this.label4.Text = "Category Name";
             // 
             // frmManageSubCategories
             // 

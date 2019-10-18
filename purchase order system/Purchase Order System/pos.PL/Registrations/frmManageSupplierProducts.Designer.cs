@@ -32,9 +32,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbInformations = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtProductSKU = new System.Windows.Forms.TextBox();
+            this.txtProductDescription = new System.Windows.Forms.TextBox();
+            this.txtProductPrice = new System.Windows.Forms.TextBox();
+            this.cbProductName = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbCategoryName = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.cbSupplierName = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbProductName = new System.Windows.Forms.ComboBox();
+            this.cbSubCategoryName = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtSupplierProductID = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -47,6 +56,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gbInformations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -56,11 +66,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(413, 24);
+            this.label4.Location = new System.Drawing.Point(620, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.Size = new System.Drawing.Size(102, 13);
             this.label4.TabIndex = 74;
-            this.label4.Text = "Product Name";
+            this.label4.Text = "Sub Category Name";
             // 
             // errorProvider1
             // 
@@ -68,9 +78,19 @@
             // 
             // gbInformations
             // 
+            this.gbInformations.Controls.Add(this.label9);
+            this.gbInformations.Controls.Add(this.label8);
+            this.gbInformations.Controls.Add(this.label7);
+            this.gbInformations.Controls.Add(this.txtProductSKU);
+            this.gbInformations.Controls.Add(this.txtProductDescription);
+            this.gbInformations.Controls.Add(this.txtProductPrice);
+            this.gbInformations.Controls.Add(this.cbProductName);
+            this.gbInformations.Controls.Add(this.label6);
+            this.gbInformations.Controls.Add(this.cbCategoryName);
+            this.gbInformations.Controls.Add(this.label5);
             this.gbInformations.Controls.Add(this.cbSupplierName);
             this.gbInformations.Controls.Add(this.label3);
-            this.gbInformations.Controls.Add(this.cbProductName);
+            this.gbInformations.Controls.Add(this.cbSubCategoryName);
             this.gbInformations.Controls.Add(this.label4);
             this.gbInformations.Controls.Add(this.label14);
             this.gbInformations.Controls.Add(this.txtSupplierProductID);
@@ -81,6 +101,92 @@
             this.gbInformations.Size = new System.Drawing.Size(1031, 203);
             this.gbInformations.TabIndex = 77;
             this.gbInformations.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(210, 73);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 13);
+            this.label8.TabIndex = 85;
+            this.label8.Text = "Product Price";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 13);
+            this.label7.TabIndex = 84;
+            this.label7.Text = "Product SKU";
+            // 
+            // txtProductSKU
+            // 
+            this.txtProductSKU.Location = new System.Drawing.Point(9, 89);
+            this.txtProductSKU.Name = "txtProductSKU";
+            this.txtProductSKU.Size = new System.Drawing.Size(172, 20);
+            this.txtProductSKU.TabIndex = 82;
+            // 
+            // txtProductDescription
+            // 
+            this.txtProductDescription.Location = new System.Drawing.Point(417, 89);
+            this.txtProductDescription.Multiline = true;
+            this.txtProductDescription.Name = "txtProductDescription";
+            this.txtProductDescription.Size = new System.Drawing.Size(172, 69);
+            this.txtProductDescription.TabIndex = 81;
+            // 
+            // txtProductPrice
+            // 
+            this.txtProductPrice.Location = new System.Drawing.Point(213, 89);
+            this.txtProductPrice.Name = "txtProductPrice";
+            this.txtProductPrice.Size = new System.Drawing.Size(172, 20);
+            this.txtProductPrice.TabIndex = 83;
+            // 
+            // cbProductName
+            // 
+            this.cbProductName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProductName.FormattingEnabled = true;
+            this.cbProductName.ItemHeight = 13;
+            this.cbProductName.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cbProductName.Location = new System.Drawing.Point(827, 40);
+            this.cbProductName.Name = "cbProductName";
+            this.cbProductName.Size = new System.Drawing.Size(172, 21);
+            this.cbProductName.TabIndex = 79;
+            this.cbProductName.SelectedIndexChanged += new System.EventHandler(this.cbProductName_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(824, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 80;
+            this.label6.Text = "Product Name";
+            // 
+            // cbCategoryName
+            // 
+            this.cbCategoryName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoryName.FormattingEnabled = true;
+            this.cbCategoryName.ItemHeight = 13;
+            this.cbCategoryName.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cbCategoryName.Location = new System.Drawing.Point(417, 40);
+            this.cbCategoryName.Name = "cbCategoryName";
+            this.cbCategoryName.Size = new System.Drawing.Size(172, 21);
+            this.cbCategoryName.TabIndex = 77;
+            this.cbCategoryName.SelectedIndexChanged += new System.EventHandler(this.cbCategoryName_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(414, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 78;
+            this.label5.Text = "Category Name";
             // 
             // cbSupplierName
             // 
@@ -104,18 +210,19 @@
             this.label3.TabIndex = 76;
             this.label3.Text = "Supplier Name";
             // 
-            // cbProductName
+            // cbSubCategoryName
             // 
-            this.cbProductName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProductName.FormattingEnabled = true;
-            this.cbProductName.ItemHeight = 13;
-            this.cbProductName.Items.AddRange(new object[] {
+            this.cbSubCategoryName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSubCategoryName.FormattingEnabled = true;
+            this.cbSubCategoryName.ItemHeight = 13;
+            this.cbSubCategoryName.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cbProductName.Location = new System.Drawing.Point(416, 40);
-            this.cbProductName.Name = "cbProductName";
-            this.cbProductName.Size = new System.Drawing.Size(172, 21);
-            this.cbProductName.TabIndex = 2;
+            this.cbSubCategoryName.Location = new System.Drawing.Point(623, 40);
+            this.cbSubCategoryName.Name = "cbSubCategoryName";
+            this.cbSubCategoryName.Size = new System.Drawing.Size(172, 21);
+            this.cbSubCategoryName.TabIndex = 2;
+            this.cbSubCategoryName.SelectedIndexChanged += new System.EventHandler(this.cbSubCategoryName_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -128,9 +235,9 @@
             // 
             // txtSupplierProductID
             // 
-            this.txtSupplierProductID.Enabled = false;
             this.txtSupplierProductID.Location = new System.Drawing.Point(9, 40);
             this.txtSupplierProductID.Name = "txtSupplierProductID";
+            this.txtSupplierProductID.ReadOnly = true;
             this.txtSupplierProductID.Size = new System.Drawing.Size(172, 20);
             this.txtSupplierProductID.TabIndex = 49;
             // 
@@ -244,6 +351,15 @@
             this.txtSearch.TabIndex = 74;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(414, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 13);
+            this.label9.TabIndex = 86;
+            this.label9.Text = "Product Description";
+            // 
             // frmManageSupplierProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,7 +391,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox gbInformations;
-        private System.Windows.Forms.ComboBox cbProductName;
+        private System.Windows.Forms.ComboBox cbSubCategoryName;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtSupplierProductID;
         private System.Windows.Forms.Button btnCancel;
@@ -290,5 +406,15 @@
         public System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cbSupplierName;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbProductName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbCategoryName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtProductSKU;
+        private System.Windows.Forms.TextBox txtProductDescription;
+        private System.Windows.Forms.TextBox txtProductPrice;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
     }
 }

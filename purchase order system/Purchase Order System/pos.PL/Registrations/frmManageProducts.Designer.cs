@@ -39,6 +39,10 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.gbInformations = new System.Windows.Forms.GroupBox();
+            this.txtReorderLevel = new System.Windows.Forms.TextBox();
+            this.lblReorderLevel = new System.Windows.Forms.Label();
+            this.txtInitialStock = new System.Windows.Forms.TextBox();
+            this.lblInitialStocks = new System.Windows.Forms.Label();
             this.txtProductSKU = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbCategoryName = new System.Windows.Forms.ComboBox();
@@ -55,10 +59,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtReorderLevel = new System.Windows.Forms.TextBox();
-            this.lblReorderLevel = new System.Windows.Forms.Label();
-            this.lblInitialStocks = new System.Windows.Forms.Label();
-            this.txtInitialStock = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.gbControls.SuspendLayout();
@@ -187,6 +187,40 @@
             this.gbInformations.TabIndex = 63;
             this.gbInformations.TabStop = false;
             // 
+            // txtReorderLevel
+            // 
+            this.txtReorderLevel.Location = new System.Drawing.Point(619, 89);
+            this.txtReorderLevel.Name = "txtReorderLevel";
+            this.txtReorderLevel.Size = new System.Drawing.Size(172, 20);
+            this.txtReorderLevel.TabIndex = 61;
+            this.txtReorderLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReorderLevel_KeyPress);
+            // 
+            // lblReorderLevel
+            // 
+            this.lblReorderLevel.AutoSize = true;
+            this.lblReorderLevel.Location = new System.Drawing.Point(616, 73);
+            this.lblReorderLevel.Name = "lblReorderLevel";
+            this.lblReorderLevel.Size = new System.Drawing.Size(74, 13);
+            this.lblReorderLevel.TabIndex = 64;
+            this.lblReorderLevel.Text = "Reorder Level";
+            // 
+            // txtInitialStock
+            // 
+            this.txtInitialStock.Location = new System.Drawing.Point(823, 89);
+            this.txtInitialStock.Name = "txtInitialStock";
+            this.txtInitialStock.Size = new System.Drawing.Size(172, 20);
+            this.txtInitialStock.TabIndex = 62;
+            this.txtInitialStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInitialStock_KeyPress);
+            // 
+            // lblInitialStocks
+            // 
+            this.lblInitialStocks.AutoSize = true;
+            this.lblInitialStocks.Location = new System.Drawing.Point(820, 73);
+            this.lblInitialStocks.Name = "lblInitialStocks";
+            this.lblInitialStocks.Size = new System.Drawing.Size(62, 13);
+            this.lblInitialStocks.TabIndex = 63;
+            this.lblInitialStocks.Text = "Initial Stock";
+            // 
             // txtProductSKU
             // 
             this.txtProductSKU.Location = new System.Drawing.Point(9, 89);
@@ -233,9 +267,9 @@
             // 
             // txtProductID
             // 
-            this.txtProductID.Enabled = false;
             this.txtProductID.Location = new System.Drawing.Point(9, 40);
             this.txtProductID.Name = "txtProductID";
+            this.txtProductID.ReadOnly = true;
             this.txtProductID.Size = new System.Drawing.Size(172, 20);
             this.txtProductID.TabIndex = 1;
             // 
@@ -326,40 +360,6 @@
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 41;
             this.label6.Text = "Product Price";
-            // 
-            // txtReorderLevel
-            // 
-            this.txtReorderLevel.Location = new System.Drawing.Point(619, 89);
-            this.txtReorderLevel.Name = "txtReorderLevel";
-            this.txtReorderLevel.Size = new System.Drawing.Size(172, 20);
-            this.txtReorderLevel.TabIndex = 61;
-            this.txtReorderLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReorderLevel_KeyPress);
-            // 
-            // lblReorderLevel
-            // 
-            this.lblReorderLevel.AutoSize = true;
-            this.lblReorderLevel.Location = new System.Drawing.Point(616, 73);
-            this.lblReorderLevel.Name = "lblReorderLevel";
-            this.lblReorderLevel.Size = new System.Drawing.Size(74, 13);
-            this.lblReorderLevel.TabIndex = 64;
-            this.lblReorderLevel.Text = "Reorder Level";
-            // 
-            // lblInitialStocks
-            // 
-            this.lblInitialStocks.AutoSize = true;
-            this.lblInitialStocks.Location = new System.Drawing.Point(820, 73);
-            this.lblInitialStocks.Name = "lblInitialStocks";
-            this.lblInitialStocks.Size = new System.Drawing.Size(62, 13);
-            this.lblInitialStocks.TabIndex = 63;
-            this.lblInitialStocks.Text = "Initial Stock";
-            // 
-            // txtInitialStock
-            // 
-            this.txtInitialStock.Location = new System.Drawing.Point(823, 89);
-            this.txtInitialStock.Name = "txtInitialStock";
-            this.txtInitialStock.Size = new System.Drawing.Size(172, 20);
-            this.txtInitialStock.TabIndex = 62;
-            this.txtInitialStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInitialStock_KeyPress);
             // 
             // frmManageProducts
             // 

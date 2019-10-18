@@ -9,6 +9,11 @@ namespace pos.BL.Registrations
             return SupplierProductDL.List(keywords);
         }
 
+        public DataTable CheckIfExisting(EL.Registrations.Supplierproducts supplierproduct)
+        {
+            return SupplierProductDL.CheckIfExisting(supplierproduct);
+        }
+
         public long Insert(EL.Registrations.Supplierproducts supplierproduct)
         {
             return SupplierProductDL.Insert(supplierproduct);

@@ -205,9 +205,9 @@
             // 
             // txtStaffID
             // 
-            this.txtStaffID.Enabled = false;
             this.txtStaffID.Location = new System.Drawing.Point(9, 40);
             this.txtStaffID.Name = "txtStaffID";
+            this.txtStaffID.ReadOnly = true;
             this.txtStaffID.Size = new System.Drawing.Size(172, 20);
             this.txtStaffID.TabIndex = 49;
             // 

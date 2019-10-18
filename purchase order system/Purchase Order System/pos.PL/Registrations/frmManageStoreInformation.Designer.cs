@@ -126,6 +126,7 @@
             // 
             this.txtStoreName.Location = new System.Drawing.Point(9, 40);
             this.txtStoreName.Name = "txtStoreName";
+            this.txtStoreName.ReadOnly = true;
             this.txtStoreName.Size = new System.Drawing.Size(172, 20);
             this.txtStoreName.TabIndex = 25;
             // 

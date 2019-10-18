@@ -14,6 +14,7 @@ namespace pos.EL.Transactions
         float purchasetotalorderamount;
         string purchaseorderdatedelivered;
         string purchaseorderdaterequested;
+        string purchaseordercomment;
         int isdeleted;
 
         public int Purchaseorderid { get => purchaseorderid; set => purchaseorderid = value; }
@@ -24,6 +25,7 @@ namespace pos.EL.Transactions
         public float Purchasetotalorderamount { get => purchasetotalorderamount; set => purchasetotalorderamount = value; }
         public string Purchaseorderdatedelivered { get => purchaseorderdatedelivered; set => purchaseorderdatedelivered = value; }
         public string Purchaseorderdaterequested { get => purchaseorderdaterequested; set => purchaseorderdaterequested = value; }
+        public string Purchaseordercomment { get => purchaseordercomment; set => purchaseordercomment = value; }
         public int Isdeleted { get => isdeleted; set => isdeleted = value; }
     }
 }

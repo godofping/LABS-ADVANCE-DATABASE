@@ -9,6 +9,12 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
+        public DataTable CheckIfExisting(EL.Registrations.Supplierproducts supplierproduct)
+        {
+            string sQuery = "select * from supplierproducts_view where supplierid = " + supplierproduct.Supplierid + " and productid = " + supplierproduct.Productid + " ";
+            return Helper.executeQuery(sQuery);
+        }
+
         public long Insert(EL.Registrations.Supplierproducts supplierproduct)
         {
             return Helper.executeNonQueryLong("insert into supplierproducts (productid, supplierid) values ('" + supplierproduct.Productid + "', '" + supplierproduct.Supplierid + "')");

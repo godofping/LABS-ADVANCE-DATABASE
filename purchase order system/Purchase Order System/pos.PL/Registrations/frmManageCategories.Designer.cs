@@ -104,9 +104,9 @@
             // 
             // txtCategoryID
             // 
-            this.txtCategoryID.Enabled = false;
             this.txtCategoryID.Location = new System.Drawing.Point(9, 40);
             this.txtCategoryID.Name = "txtCategoryID";
+            this.txtCategoryID.ReadOnly = true;
             this.txtCategoryID.Size = new System.Drawing.Size(172, 20);
             this.txtCategoryID.TabIndex = 49;
             // 

@@ -11,6 +11,12 @@ namespace pos.DL.Transactions
             return Helper.executeQuery(sQuery);
         }
 
+        public DataTable List(int id)
+        {
+            string sQuery = "select * from inventories_view where subcategoryid = " + id + "";
+            return Helper.executeQuery(sQuery);
+        }
+
         public long Insert(EL.Transactions.Inventories inventory)
         {
             return Helper.executeNonQueryLong("insert into inventories (productid, quantityinstocks, reorderlevel, inventorylastupdated) values ('" + inventory.Productid + "', '" + inventory.Quantityinstocks + "', '" + inventory.Reorderlevel + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' )");

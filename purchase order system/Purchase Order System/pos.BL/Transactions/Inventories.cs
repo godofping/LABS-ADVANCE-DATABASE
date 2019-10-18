@@ -9,6 +9,11 @@ namespace pos.BL.Transactions
             return InventoryDL.List(keywords);
         }
 
+        public DataTable List(int id)
+        {
+            return InventoryDL.List(id);
+        }
+
         public long Insert(EL.Transactions.Inventories inventory)
         {
             return InventoryDL.Insert(inventory);

@@ -116,9 +116,9 @@
             // 
             // txtSupplierID
             // 
-            this.txtSupplierID.Enabled = false;
             this.txtSupplierID.Location = new System.Drawing.Point(9, 40);
             this.txtSupplierID.Name = "txtSupplierID";
+            this.txtSupplierID.ReadOnly = true;
             this.txtSupplierID.Size = new System.Drawing.Size(172, 20);
             this.txtSupplierID.TabIndex = 49;
             // 

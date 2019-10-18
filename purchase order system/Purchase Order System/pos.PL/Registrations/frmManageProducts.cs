@@ -72,7 +72,7 @@ namespace pos.PL.Registrations
             cbCategoryName.DataSource = CategoryBL.List("");
         }
 
-        private void PopulateControlsSub()
+        private void PopulateControlsSubCategory()
         {
             cbSubCategoryName.DisplayMember = "Sub Category Name";
             cbSubCategoryName.ValueMember = "Sub Category ID";
@@ -418,7 +418,7 @@ namespace pos.PL.Registrations
 
         private void cbCategoryName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PopulateControlsSub();
+            PopulateControlsSubCategory();
 
         }
 
