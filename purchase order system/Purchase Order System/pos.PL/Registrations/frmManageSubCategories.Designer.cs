@@ -196,9 +196,6 @@
             this.cbCategoryName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoryName.FormattingEnabled = true;
             this.cbCategoryName.ItemHeight = 13;
-            this.cbCategoryName.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
             this.cbCategoryName.Location = new System.Drawing.Point(416, 40);
             this.cbCategoryName.Name = "cbCategoryName";
             this.cbCategoryName.Size = new System.Drawing.Size(172, 21);

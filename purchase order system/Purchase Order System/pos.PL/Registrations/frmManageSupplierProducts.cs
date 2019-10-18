@@ -60,7 +60,7 @@ namespace pos.PL.Registrations
             txtProductSKU.ReadOnly = true;
             txtProductPrice.ReadOnly = true;
             txtProductDescription.ReadOnly = true;
-            
+
         }
 
         private void HiddenColumns()
@@ -111,12 +111,12 @@ namespace pos.PL.Registrations
 
         private void GetProductInfo()
         {
-            if(!cbProductName.Text.Equals(""))
+            if (!cbProductName.Text.Equals(""))
             {
                 foreach (DataRow row in ProductBL.List(Convert.ToInt32(cbProductName.SelectedValue.ToString())).Rows)
                 {
                     ProductInfo.Productsku = row["Product SKU"].ToString();
-                    ProductInfo.Productprice = Convert.ToInt32(row["Product Price"].ToString());
+                    ProductInfo.Productprice = Convert.ToInt32(row["Product Price"]);
                     ProductInfo.Productdescription = row["Product Description"].ToString();
                 }
 
@@ -128,7 +128,7 @@ namespace pos.PL.Registrations
             {
                 ClearExtendedFields();
             }
-            
+
         }
 
 
@@ -335,7 +335,7 @@ namespace pos.PL.Registrations
                 {
                     if (current.Equals("ADD"))
                     {
-                        
+
                         Add();
                     }
                     else if (current.Equals("EDIT"))
@@ -345,14 +345,11 @@ namespace pos.PL.Registrations
 
                     ManageForm(false);
                     ClearFields();
-
                 }
                 else
                 {
                     MessageBox.Show("Already existing.");
                 }
-
-                
             }
         }
 
@@ -390,15 +387,11 @@ namespace pos.PL.Registrations
 
         private void cbSubCategoryName_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-          
             PopulateControlsProducts();
-        
         }
 
         private void cbProductName_SelectedIndexChanged(object sender, EventArgs e)
         {
- 
             GetProductInfo();
         }
     }

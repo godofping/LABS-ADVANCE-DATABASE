@@ -7,5 +7,4 @@ to do
 
 
 fix
-username should be unique
-hide password
+frmTest
