@@ -211,7 +211,7 @@ namespace pos.PL.Registrations
 
         private void GetDataFromForm()
         {
-            SupplierProductInfo.Productid = Convert.ToInt32(cbSubCategoryName.SelectedValue);
+            SupplierProductInfo.Productid = Convert.ToInt32(cbProductName.SelectedValue);
             SupplierProductInfo.Supplierid = Convert.ToInt32(cbSupplierName.SelectedValue);
         }
 
@@ -331,10 +331,11 @@ namespace pos.PL.Registrations
             {
                 GetDataFromForm();
 
-                if(SupplierProductBL.CheckIfExisting(SupplierProductInfo).Rows.Count == 0)
+                if (SupplierProductBL.CheckIfExisting(SupplierProductInfo).Rows.Count == 0)
                 {
                     if (current.Equals("ADD"))
                     {
+                        
                         Add();
                     }
                     else if (current.Equals("EDIT"))
