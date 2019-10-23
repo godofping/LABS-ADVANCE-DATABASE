@@ -44,18 +44,22 @@
             this.cbSubCategoryName = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtSupplierProductID = new System.Windows.Forms.TextBox();
+            this.txtSupplierID = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(780, 179);
+            this.btnAdd.Location = new System.Drawing.Point(780, 202);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 1;
@@ -196,21 +200,21 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(17, 34);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 13);
+            this.label14.Size = new System.Drawing.Size(59, 13);
             this.label14.TabIndex = 89;
-            this.label14.Text = "Supplier Product ID";
+            this.label14.Text = "Supplier ID";
             // 
-            // txtSupplierProductID
+            // txtSupplierID
             // 
-            this.txtSupplierProductID.Location = new System.Drawing.Point(20, 50);
-            this.txtSupplierProductID.Name = "txtSupplierProductID";
-            this.txtSupplierProductID.ReadOnly = true;
-            this.txtSupplierProductID.Size = new System.Drawing.Size(172, 20);
-            this.txtSupplierProductID.TabIndex = 88;
+            this.txtSupplierID.Location = new System.Drawing.Point(20, 50);
+            this.txtSupplierID.Name = "txtSupplierID";
+            this.txtSupplierID.ReadOnly = true;
+            this.txtSupplierID.Size = new System.Drawing.Size(172, 20);
+            this.txtSupplierID.TabIndex = 88;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(971, 179);
+            this.btnDelete.Location = new System.Drawing.Point(971, 202);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 103;
@@ -220,12 +224,13 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(877, 179);
+            this.btnEdit.Location = new System.Drawing.Point(877, 202);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 104;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // dgv
             // 
@@ -238,34 +243,67 @@
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2});
-            this.dgv.Location = new System.Drawing.Point(20, 208);
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dgv.Location = new System.Drawing.Point(20, 231);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1179, 246);
+            this.dgv.Size = new System.Drawing.Size(1182, 191);
             this.dgv.TabIndex = 105;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(976, 434);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 106;
+            this.label1.Text = "Total:";
+            // 
             // Column1
             // 
-            this.Column1.HeaderText = "Column1";
+            this.Column1.HeaderText = "Product Name";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Column2";
+            this.Column2.HeaderText = "Product SKU";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Quantity";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Unit Price";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Net Price";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // frmTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1214, 467);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
@@ -284,7 +322,7 @@
             this.Controls.Add(this.cbSubCategoryName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.txtSupplierProductID);
+            this.Controls.Add(this.txtSupplierID);
             this.Controls.Add(this.btnAdd);
             this.Name = "frmTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -313,11 +351,15 @@
         private System.Windows.Forms.ComboBox cbSubCategoryName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtSupplierProductID;
+        private System.Windows.Forms.TextBox txtSupplierID;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

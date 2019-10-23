@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">sandandgravel</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="Accounts" view="standard">
+<left>164</left>
+<top>276</top>
+<width>245</width>
+<height>185</height>
+<sql_create_table>CREATE TABLE `accounts` (
+  `accountid` int(6) NOT NULL AUTO_INCREMENT,
+  `accountusername` varchar(60) DEFAULT NULL,
+  `accountpassword` varchar(60) DEFAULT NULL,
+  `accountfullname` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`accountid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="Suppliers" view="standard">
+<left>130</left>
+<top>59</top>
+<width>281</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `suppliers` (
+  `supplierid` int(6) NOT NULL AUTO_INCREMENT,
+  `suppliername` varchar(60) DEFAULT NULL,
+  `suppliercontactnumber` varchar(60) DEFAULT NULL,
+  `supplieraddress` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`supplierid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="Supplies" view="standard">
+<left>1154</left>
+<top>320</top>
+<width>230</width>
+<height>177</height>
+<sql_create_table>CREATE TABLE `supplies` (
+  `supplyid` int(6) NOT NULL AUTO_INCREMENT,
+  `supplyname` varchar(60) DEFAULT NULL,
+  `supplyunit` varchar(60) DEFAULT NULL,
+  `supplyunitprice` float DEFAULT NULL,
+  `supplystocks` int(6) DEFAULT NULL,
+  PRIMARY KEY (`supplyid`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="PurhcaseOrders" view="standard">
+<left>481</left>
+<top>113</top>
+<width>298</width>
+<height>252</height>
+<sql_create_table>CREATE TABLE `purhcaseorders` (
+  `purchaseorderid` int(6) NOT NULL AUTO_INCREMENT,
+  `supplierid` int(6) DEFAULT NULL,
+  `accountid` int(6) DEFAULT NULL,
+  `purchaseordername` varchar(60) DEFAULT NULL,
+  `purhcaseorderrequestdate` date DEFAULT NULL,
+  `purhcaseorderdeliverydate` date DEFAULT NULL,
+  `purchaseorderstatus` varchar(60) DEFAULT NULL,
+  `purhcaseordertotalamount` float DEFAULT NULL,
+  PRIMARY KEY (`purchaseorderid`),
+  KEY `FK_PurhcaseOrders` (`supplierid`),
+  KEY `FK_Purh1caseOrders` (`accountid`),
+  CONSTRAINT `FK_Purh1caseOrders` FOREIGN KEY (`accountid`) REFERENCES `accounts` (`accountid`),
+  CONSTRAINT `FK_PurhcaseOrders` FOREIGN KEY (`supplierid`) REFERENCES `suppliers` (`supplierid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="PurhcaseOrderDetails" view="standard">
+<left>840</left>
+<top>178</top>
+<width>270</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `purhcaseorderdetails` (
+  `purchaseorderdetailid` int(6) NOT NULL AUTO_INCREMENT,
+  `purchaseorderid` int(6) DEFAULT NULL,
+  `supplyid` int(6) DEFAULT NULL,
+  `purhcaseorderdetailquantity` int(6) DEFAULT NULL,
+  `purhcaseorderdetailunitprice` float DEFAULT NULL,
+  PRIMARY KEY (`purchaseorderdetailid`),
+  KEY `FK_PurhcaseOrderDetails` (`supplyid`),
+  KEY `FK_PurhcaseOrder2Details` (`purchaseorderid`),
+  CONSTRAINT `FK_PurhcaseOrder2Details` FOREIGN KEY (`purchaseorderid`) REFERENCES `purhcaseorders` (`purchaseorderid`),
+  CONSTRAINT `FK_PurhcaseOrderDetails` FOREIGN KEY (`supplyid`) REFERENCES `supplies` (`supplyid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

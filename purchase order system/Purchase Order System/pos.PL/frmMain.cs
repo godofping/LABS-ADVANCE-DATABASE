@@ -173,5 +173,15 @@ namespace pos.PL
             pnlMain.Controls.Add(objForm);
             objForm.Show();
         }
+
+        private void managePurchaseOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Transactions.frmManagePurchaseOrders objForm = new Transactions.frmManagePurchaseOrders();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+        }
     }
 }

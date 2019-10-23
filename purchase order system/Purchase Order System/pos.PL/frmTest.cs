@@ -56,6 +56,17 @@ namespace pos.PL
             }
         }
 
+        private void HiddenColumns()
+        {
+            dgv.Columns["Inventory ID"].Visible = false;
+            dgv.Columns["Product ID"].Visible = false;
+            dgv.Columns["categoryid"].Visible = false;
+            dgv.Columns["subcategoriesisdeleted"].Visible = false;
+            dgv.Columns["isdeleted"].Visible = false;
+            dgv.Columns["subcategoryid"].Visible = false;
+            dgv.Columns["categoriesisdeleted"].Visible = false;
+        }
+
 
         private void frmTest_Load(object sender, EventArgs e)
         {
@@ -137,7 +148,7 @@ namespace pos.PL
         private void ClearFields()
         {
       
-            txtSupplierProductID.ResetText();
+            txtSupplierID.ResetText();
             cbSupplierName.SelectedIndex = -1;
             cbCategoryName.SelectedIndex = -1;
             cbSubCategoryName.SelectedIndex = -1;
@@ -171,7 +182,12 @@ namespace pos.PL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dgv.Rows.Add("tae", "tae");
+            dgv.Rows.Add(ProductInfo.Productname, ProductInfo.Productsku,11 , 250, 3310 );
+
+            label1.Text = dgv.Rows.Cast<DataGridViewRow>()
+                                   .AsEnumerable()
+                                   .Sum(x => int.Parse(x.Cells[4].Value.ToString()))
+                                   .ToString();
 
         }
 
@@ -183,6 +199,11 @@ namespace pos.PL
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

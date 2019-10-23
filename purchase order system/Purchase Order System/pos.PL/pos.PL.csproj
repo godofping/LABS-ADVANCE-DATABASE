@@ -149,6 +149,18 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactions\frmManagePurchaseOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmManagePurchaseOrders.Designer.cs">
+      <DependentUpon>frmManagePurchaseOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmSelectSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmSelectSupplier.Designer.cs">
+      <DependentUpon>frmSelectSupplier.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +206,12 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmManagePurchaseOrders.resx">
+      <DependentUpon>frmManagePurchaseOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmSelectSupplier.resx">
+      <DependentUpon>frmSelectSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -208,9 +226,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Transactions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\pos.BL\pos.BL.csproj">
       <Project>{e10e2142-d63e-4dd2-9fd9-98054b4fce5c}</Project>

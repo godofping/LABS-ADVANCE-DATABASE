@@ -46,15 +46,16 @@
             this.smiManageCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.smiStaffs = new System.Windows.Forms.ToolStripMenuItem();
             this.smiManageStaffs = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.storeInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblStoreName = new System.Windows.Forms.Label();
             this.lblDateTime = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.storeInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.myProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managePurchaseOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +109,8 @@
             // 
             // smiPurchaseOrders
             // 
+            this.smiPurchaseOrders.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.managePurchaseOrdersToolStripMenuItem});
             this.smiPurchaseOrders.Name = "smiPurchaseOrders";
             this.smiPurchaseOrders.Size = new System.Drawing.Size(105, 20);
             this.smiPurchaseOrders.Text = "Purchase Orders";
@@ -196,6 +199,29 @@
             this.smiManageStaffs.Text = "Manage Staffs";
             this.smiManageStaffs.Click += new System.EventHandler(this.smiManageStaffs_Click);
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.storeInformationToolStripMenuItem,
+            this.myProfileToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // storeInformationToolStripMenuItem
+            // 
+            this.storeInformationToolStripMenuItem.Name = "storeInformationToolStripMenuItem";
+            this.storeInformationToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.storeInformationToolStripMenuItem.Text = "Store Information";
+            this.storeInformationToolStripMenuItem.Click += new System.EventHandler(this.storeInformationToolStripMenuItem_Click);
+            // 
+            // myProfileToolStripMenuItem
+            // 
+            this.myProfileToolStripMenuItem.Name = "myProfileToolStripMenuItem";
+            this.myProfileToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.myProfileToolStripMenuItem.Text = "My Profile";
+            this.myProfileToolStripMenuItem.Click += new System.EventHandler(this.myProfileToolStripMenuItem_Click);
+            // 
             // pnlMain
             // 
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Top;
@@ -250,28 +276,12 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // settingsToolStripMenuItem
+            // managePurchaseOrdersToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.storeInformationToolStripMenuItem,
-            this.myProfileToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // storeInformationToolStripMenuItem
-            // 
-            this.storeInformationToolStripMenuItem.Name = "storeInformationToolStripMenuItem";
-            this.storeInformationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.storeInformationToolStripMenuItem.Text = "Store Information";
-            this.storeInformationToolStripMenuItem.Click += new System.EventHandler(this.storeInformationToolStripMenuItem_Click);
-            // 
-            // myProfileToolStripMenuItem
-            // 
-            this.myProfileToolStripMenuItem.Name = "myProfileToolStripMenuItem";
-            this.myProfileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.myProfileToolStripMenuItem.Text = "My Profile";
-            this.myProfileToolStripMenuItem.Click += new System.EventHandler(this.myProfileToolStripMenuItem_Click);
+            this.managePurchaseOrdersToolStripMenuItem.Name = "managePurchaseOrdersToolStripMenuItem";
+            this.managePurchaseOrdersToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.managePurchaseOrdersToolStripMenuItem.Text = "Manage Purchase Orders";
+            this.managePurchaseOrdersToolStripMenuItem.Click += new System.EventHandler(this.managePurchaseOrdersToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -325,5 +335,6 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem storeInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem myProfileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem managePurchaseOrdersToolStripMenuItem;
     }
 }
