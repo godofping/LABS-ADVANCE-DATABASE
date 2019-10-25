@@ -15,6 +15,11 @@ namespace pos.BL.Registrations
             return supplyDL.List(keywords);
         }
 
+        public DataTable List(int id)
+        {
+            return supplyDL.List(id);
+        }
+
         public long Insert(EL.Registrations.Supplies supply)
         {
             return supplyDL.Insert(supply);    

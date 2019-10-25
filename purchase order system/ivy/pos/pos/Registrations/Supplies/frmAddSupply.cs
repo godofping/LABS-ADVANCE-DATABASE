@@ -115,8 +115,6 @@ namespace pos.Registrations.Supplies
                 {
                     MessageBox.Show("Failed.");
                 }
-
-
             }
 
         }

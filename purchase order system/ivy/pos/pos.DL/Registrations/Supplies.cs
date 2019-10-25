@@ -13,6 +13,11 @@ namespace pos.DL.Registrations
             return Helper.executeQuery("select * from supplies_view where `Supply Name` like '%" + keywords + "%' or `Supply Unit` like '%" + keywords + "%' or `Supply Unit Price` like '%" + keywords + "%' or `Supply Stocks` like '%" + keywords + "%' ");
         }
 
+        public DataTable List(int id)
+        {
+            return Helper.executeQuery("select * from supplies_view where `Supply ID` = " + id + "");
+        }
+
         public long Insert(EL.Registrations.Supplies supply)
         {
             return Helper.executeNonQueryLong("insert into supplies (supplyname, supplyunit, supplyunitprice, supplystocks) values ('" + supply.Supplyname + "', '" + supply.Supplyunit + "', '" + supply.Supplyunitprice + "', '" + supply.Supplystocks + "')");

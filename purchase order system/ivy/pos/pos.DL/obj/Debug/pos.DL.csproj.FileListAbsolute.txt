@@ -7,3 +7,11 @@ C:\Users\Dade Murphy\Desktop\C#\ivy\pos\pos.DL\bin\Debug\pos.EL.dll
 C:\Users\Dade Murphy\Desktop\C#\ivy\pos\pos.DL\bin\Debug\pos.EL.pdb
 C:\Users\Dade Murphy\Desktop\C#\ivy\pos\pos.DL\obj\Debug\pos.DL.csprojAssemblyReference.cache
 C:\Users\Dade Murphy\Desktop\C#\ivy\pos\pos.DL\obj\Debug\pos.DL.csproj.CopyComplete
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.DL\bin\Debug\pos.DL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.DL\bin\Debug\pos.DL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.DL\bin\Debug\pos.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.DL\bin\Debug\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.DL\obj\Debug\pos.DL.csprojAssemblyReference.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.DL\obj\Debug\pos.DL.csproj.CopyComplete
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.DL\obj\Debug\pos.DL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.DL\obj\Debug\pos.DL.pdb
