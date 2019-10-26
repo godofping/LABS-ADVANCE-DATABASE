@@ -9,25 +9,26 @@ using System.Windows.Forms;
 
 namespace pos.Transactions.Purchase_Orders
 {
-    public partial class frmAddPurchaseOrder : Form
+    public partial class frmEditPurchaseOrder : Form
     {
 
         BL.Transactions.PurchaseOrders purchaseOrderBL = new BL.Transactions.PurchaseOrders();
         BL.Transactions.PurchaseOrderDetails purchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
         BL.Registrations.Suppliers supplierBL = new BL.Registrations.Suppliers();
 
-        EL.Transactions.PurhcaseOrders purchaseOrderInfo = new EL.Transactions.PurhcaseOrders();
+        EL.Transactions.PurhcaseOrders purchaseOrderInfo;
         EL.Transactions.PurchaseOrderDetails purchaseOrderDetailInfo = new EL.Transactions.PurchaseOrderDetails();
         EL.Registrations.Suppliers supplierInfo = new EL.Registrations.Suppliers();
         EL.Registrations.Accounts accountInfo;
 
         frmPurchaseOrders frmPurchaseOrders;
 
-        public frmAddPurchaseOrder(EL.Registrations.Accounts AccountInfo, frmPurchaseOrders FrmPurchaseOrders)
+        public frmEditPurchaseOrder(EL.Registrations.Accounts AccountInfo, EL.Transactions.PurhcaseOrders PurchaseOrderInfo , frmPurchaseOrders FrmPurchaseOrders)
         {
             InitializeComponent();
             accountInfo = AccountInfo;
             frmPurchaseOrders = FrmPurchaseOrders;
+            purchaseOrderInfo = PurchaseOrderInfo;
         }
 
         private void readOnlyControls()
@@ -113,7 +114,7 @@ namespace pos.Transactions.Purchase_Orders
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Transactions.Purchase_Order_Details.frmAddSupplyPurchaseOrderDetail frmAddSupplyPurchaseOrder = new Transactions.Purchase_Order_Details.frmAddSupplyPurchaseOrderDetail(this);
+            Transactions.Purchase_Order_Details.frmAddSupplyPurchaseOrderDetail frmAddSupplyPurchaseOrder = new Transactions.Purchase_Order_Details.frmAddSupplyPurchaseOrderDetail(this, "ADD");
             frmAddSupplyPurchaseOrder.Show();
         }
 
@@ -142,7 +143,7 @@ namespace pos.Transactions.Purchase_Orders
         {
             if (dgv.SelectedRows.Count > 0)
             {
-                Transactions.Purchase_Order_Details.frmEditSupplyPurchaseOrderDetail frmEditSupplyPurchaseOrder = new Transactions.Purchase_Order_Details.frmEditSupplyPurchaseOrderDetail(this);
+                Transactions.Purchase_Order_Details.frmEditSupplyPurchaseOrderDetail frmEditSupplyPurchaseOrder = new Transactions.Purchase_Order_Details.frmEditSupplyPurchaseOrderDetail(this, "EDIT");
                 frmEditSupplyPurchaseOrder.Show();
             }
             else

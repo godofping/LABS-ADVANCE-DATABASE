@@ -57,7 +57,7 @@ namespace pos
 
         private void btnPurchaseOrders_Click(object sender, EventArgs e)
         {
-            Transactions.Purchase_Orders.frmPurchaseOrders frmPurchaseOrders = new Transactions.Purchase_Orders.frmPurchaseOrders();
+            Transactions.Purchase_Orders.frmPurchaseOrders frmPurchaseOrders = new Transactions.Purchase_Orders.frmPurchaseOrders(accountInfo);
             frmPurchaseOrders.ShowDialog();
         }
 

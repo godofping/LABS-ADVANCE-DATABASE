@@ -1,6 +1,6 @@
 ﻿namespace pos.Transactions.Purchase_Orders
 {
-    partial class frmAddPurchaseOrder
+    partial class frmEditPurchaseOrder
     {
         /// <summary>
         /// Required designer variable.

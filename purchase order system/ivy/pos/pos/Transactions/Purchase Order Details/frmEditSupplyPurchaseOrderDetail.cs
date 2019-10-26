@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace pos.Transactions.Purchase_Orders
+namespace pos.Transactions.Purchase_Order_Details
 {
-    public partial class frmEditSupplyPurchaseOrder : Form
+    public partial class frmEditSupplyPurchaseOrderDetail : Form
     {
         BL.Registrations.Supplies supplyBL = new BL.Registrations.Supplies();
 
         EL.Registrations.Supplies supplyInfo = new EL.Registrations.Supplies();
 
 
-        frmAddPurchaseOrder frmAddPurchaseOrder;
+        Transactions.Purchase_Orders.frmAddPurchaseOrder frmAddPurchaseOrder;
         int supplyID;
 
-        public frmEditSupplyPurchaseOrder(frmAddPurchaseOrder FrmAddPurchaseOrder)
+        public frmEditSupplyPurchaseOrderDetail(Transactions.Purchase_Orders.frmAddPurchaseOrder FrmAddPurchaseOrder)
         {
             InitializeComponent();
             frmAddPurchaseOrder = FrmAddPurchaseOrder;
@@ -197,6 +197,7 @@ namespace pos.Transactions.Purchase_Orders
                         MessageBox.Show("Success.");
                         clearControls();
                         this.Close();
+                        frmAddPurchaseOrder.getTotalAmount();
                     }
                     else
                     {

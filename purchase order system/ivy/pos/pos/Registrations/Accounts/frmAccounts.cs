@@ -89,11 +89,11 @@ namespace pos.Registrations.Accounts
                         if (accountBL.Delete(accountInfo))
                         {
                             loadData(txtSearch.Text);
-                            MessageBox.Show("success");
+                            MessageBox.Show("Success.");
                         }
                         else
                         {
-                            MessageBox.Show("failed");
+                            MessageBox.Show("Failed.");
                         }
                         break;
                 }

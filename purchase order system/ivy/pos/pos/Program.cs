@@ -15,8 +15,8 @@ namespace pos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new Transactions.Purchase_Orders.frmAddPurchaseOrder());
-           //Application.Run(new frmLogin());
+           //Application.Run(new Transactions.Purchase_Orders.frmAddPurchaseOrder());
+           Application.Run(new frmLogin());
         }
     }
 }

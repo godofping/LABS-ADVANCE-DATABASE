@@ -88,11 +88,11 @@ namespace pos.Registrations.Suppliers
                         if (supplierBL.Delete(supplierInfo))
                         {
                             loadData(txtSearch.Text);
-                            MessageBox.Show("success");
+                            MessageBox.Show("Success.");
                         }
                         else
                         {
-                            MessageBox.Show("failed");
+                            MessageBox.Show("Failed.");
                         }
                         break;
                 }

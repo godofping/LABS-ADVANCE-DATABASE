@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace pos.Transactions.Purchase_Orders
+namespace pos.Transactions.Purchase_Order_Details
 {
-    public partial class frmAddSupplyPurchaseOrder : Form
+    public partial class frmAddSupplyPurchaseOrderDetail : Form
     {
         BL.Registrations.Supplies supplyBL = new BL.Registrations.Supplies();
 
         EL.Registrations.Supplies supplyInfo = new EL.Registrations.Supplies();
 
+        Transactions.Purchase_Orders.frmAddPurchaseOrder frmAddPurchaseOrder;
 
-        frmAddPurchaseOrder frmAddPurchaseOrder;
-        public frmAddSupplyPurchaseOrder(frmAddPurchaseOrder FrmAddPurchaseOrder)
+        string from;
+
+        public frmAddSupplyPurchaseOrderDetail(Transactions.Purchase_Orders.frmAddPurchaseOrder FrmAddPurchaseOrder, string From)
         {
             InitializeComponent();
             frmAddPurchaseOrder = FrmAddPurchaseOrder;
+            from = From;
         }
 
 
@@ -53,7 +51,7 @@ namespace pos.Transactions.Purchase_Orders
 
             txtSupplyUnit.Text = supplyInfo.Supplyunit;
             txtSupplyUnitPrice.Text = supplyInfo.Supplyunitprice.ToString();
-           
+
 
         }
 
@@ -121,14 +119,14 @@ namespace pos.Transactions.Purchase_Orders
 
             foreach (DataGridViewRow row in frmAddPurchaseOrder.dgv.Rows)
             {
-                if(Convert.ToInt32(row.Cells[0].Value) == supplyInfo.Supplyid)
+                if (Convert.ToInt32(row.Cells[0].Value) == supplyInfo.Supplyid)
                 {
                     bol = true;
                 }
             }
 
             return bol;
-            
+
         }
 
         private void calculateAmount()
@@ -163,8 +161,8 @@ namespace pos.Transactions.Purchase_Orders
             if (validations())
             {
                 getDataFromForm();
-             
-                if(checkIfHasDuplicate())
+
+                if (checkIfHasDuplicate())
                 {
                     MessageBox.Show("This item is already added.");
                 }
@@ -176,6 +174,7 @@ namespace pos.Transactions.Purchase_Orders
                         MessageBox.Show("Success.");
                         clearControls();
                         this.Close();
+                        frmAddPurchaseOrder.getTotalAmount();
                     }
                     else
                     {
@@ -183,7 +182,7 @@ namespace pos.Transactions.Purchase_Orders
                     }
                 }
 
-                
+
             }
         }
 
