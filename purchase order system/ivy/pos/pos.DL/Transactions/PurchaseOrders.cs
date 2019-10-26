@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
+﻿using System.Data;
 
 namespace pos.DL.Transactions
 {
@@ -10,7 +6,12 @@ namespace pos.DL.Transactions
     {
         public DataTable List(string keywords)
         {
-            return Helper.executeQuery("select * from purchaseorders_view where `Purchase Order ID` like '%" + keywords + "%' or `Purchase Order Name` like '%" + keywords  + "%' or `Purchase Order Request Date` like '%" + keywords + "%' or `Purchase Order Delivery Date` like '%" + keywords + "%' or `Purchase Order Status` like '%" + keywords + "%' or `Purchase Order Total Amount` like '%" + keywords + "%' or `Supplier Name` like '%" + keywords + "%' or `Supplier Contact Number` like '%" + keywords + "%' or `Supplier Address` like '%" + keywords + "%' or `Purchase Order By` like '%" + keywords + "%'");
+            return Helper.executeQuery("select * from purchaseorders_view where `Purchase Order ID` like '%" + keywords + "%' or `Purchase Order Name` like '%" + keywords + "%' or `Purchase Order Request Date` like '%" + keywords + "%' or `Purchase Order Delivery Date` like '%" + keywords + "%' or `Purchase Order Status` like '%" + keywords + "%' or `Purchase Order Total Amount` like '%" + keywords + "%' or `Supplier Name` like '%" + keywords + "%' or `Supplier Contact Number` like '%" + keywords + "%' or `Supplier Address` like '%" + keywords + "%' or `Prepared By` like '%" + keywords + "%'");
+        }
+
+        public DataTable List(int id)
+        {
+            return Helper.executeQuery("select * from purchaseorders_view where `Purchase Order ID` = " + id + "");
         }
 
         public long Insert(EL.Transactions.PurhcaseOrders purchaseOrder)
@@ -20,7 +21,7 @@ namespace pos.DL.Transactions
 
         public bool Edit(EL.Transactions.PurhcaseOrders purchaseOrder)
         {
-            return Helper.executeNonQueryBool("update purhcaseorders set supplierid = '" + purchaseOrder.Purchaseorderid + "', purchaseordername = '" + purchaseOrder.Purchaseordername + "', purchaseorderdeliverydate = '" + purchaseOrder.Purchaseorderdeliverydate +"', purchaseorderstatus = '" + purchaseOrder.Purchaseorderstatus + "', purhcaseordertotalamount = '" + purchaseOrder.Purchaseordertotalamount + "' where purchaseorderid = " + purchaseOrder.Purchaseorderid  + "");
+            return Helper.executeNonQueryBool("update purhcaseorders set supplierid = '" + purchaseOrder.Purchaseorderid + "', purchaseordername = '" + purchaseOrder.Purchaseordername + "', purchaseorderdeliverydate = '" + purchaseOrder.Purchaseorderdeliverydate + "', purchaseorderstatus = '" + purchaseOrder.Purchaseorderstatus + "', purhcaseordertotalamount = '" + purchaseOrder.Purchaseordertotalamount + "' where purchaseorderid = " + purchaseOrder.Purchaseorderid + "");
         }
 
         public bool Delete(EL.Transactions.PurhcaseOrders purchaseOrder)

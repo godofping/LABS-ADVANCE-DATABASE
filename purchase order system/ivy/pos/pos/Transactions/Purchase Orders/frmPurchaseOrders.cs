@@ -28,6 +28,8 @@ namespace pos.Transactions.Purchase_Orders
         private void hiddenColumns()
         {
             dgv.Columns["Supplier ID"].Visible = false;
+            dgv.Columns["Supplier Contact Number"].Visible = false;
+            dgv.Columns["Supplier Address"].Visible = false;
             dgv.Columns["Account ID"].Visible = false;
             dgv.Columns["Account Username"].Visible = false;
             dgv.Columns["Account Password"].Visible = false;
@@ -109,10 +111,12 @@ namespace pos.Transactions.Purchase_Orders
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            
             if (dgv.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Printing..");
+                getDataFromDataGridView();
+                frmViewPurchaseOrder frmViewPurchaseOrder = new frmViewPurchaseOrder(purchaseOrderInfo);
+                frmViewPurchaseOrder.Show();
             }
             else
             {
@@ -120,5 +124,7 @@ namespace pos.Transactions.Purchase_Orders
             }
 
         }
+
+      
     }
 }

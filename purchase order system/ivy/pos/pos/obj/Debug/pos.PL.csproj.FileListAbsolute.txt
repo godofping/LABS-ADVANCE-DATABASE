@@ -56,3 +56,4 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos\obj\Debug\pos.pdb
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos\obj\Debug\pos.Transactions.Purchase_Order_Details.frmAddSupplyPurchaseOrderDetail.resources
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos\obj\Debug\pos.Transactions.Purchase_Order_Details.frmEditSupplyPurchaseOrderDetail.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos\obj\Debug\pos.Transactions.Purchase_Orders.frmViewPurchaseOrder.resources
