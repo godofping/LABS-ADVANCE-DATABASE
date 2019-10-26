@@ -12,13 +12,10 @@ namespace pos.Transactions.Purchase_Order_Details
 
         Transactions.Purchase_Orders.frmAddPurchaseOrder frmAddPurchaseOrder;
 
-        string from;
-
-        public frmAddSupplyPurchaseOrderDetail(Transactions.Purchase_Orders.frmAddPurchaseOrder FrmAddPurchaseOrder, string From)
+        public frmAddSupplyPurchaseOrderDetail(Transactions.Purchase_Orders.frmAddPurchaseOrder FrmAddPurchaseOrder)
         {
             InitializeComponent();
             frmAddPurchaseOrder = FrmAddPurchaseOrder;
-            from = From;
         }
 
 

@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +48,7 @@
             this.btnDelete.Size = new System.Drawing.Size(124, 55);
             this.btnDelete.TabIndex = 29;
             this.btnDelete.Text = "Delete";
+            this.toolTip1.SetToolTip(this.btnDelete, "Delete purchase order.");
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -58,17 +61,6 @@
             this.label3.Size = new System.Drawing.Size(227, 24);
             this.label3.TabIndex = 28;
             this.label3.Text = "Manage Purchase Orders";
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(688, 59);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(124, 55);
-            this.btnEdit.TabIndex = 27;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtSearch
             // 
@@ -92,11 +84,12 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(524, 59);
+            this.btnAdd.Location = new System.Drawing.Point(689, 59);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(124, 55);
             this.btnAdd.TabIndex = 24;
             this.btnAdd.Text = "Add";
+            this.toolTip1.SetToolTip(this.btnAdd, "Add purchase order.");
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -117,14 +110,26 @@
             this.dgv.Size = new System.Drawing.Size(984, 583);
             this.dgv.TabIndex = 23;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(529, 59);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(124, 55);
+            this.btnPrint.TabIndex = 30;
+            this.btnPrint.Text = "View";
+            this.toolTip1.SetToolTip(this.btnPrint, "View the information of the selected purchase order.");
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // frmPurchaseOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdd);
@@ -146,10 +151,11 @@
 
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnEdit;
         public System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

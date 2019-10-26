@@ -65,20 +65,6 @@ namespace pos.Transactions.Purchase_Orders
             frmAddPurchaseOrder.ShowDialog();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            if (dgv.SelectedRows.Count > 0)
-            {
-                getDataFromDataGridView();
-                frmEditPurchaseOrder frmEditPurchaseOrder = new frmEditPurchaseOrder(accountInfo, purchaseOrderInfo, this);
-                frmEditPurchaseOrder.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("No selected rows.");
-            }
-        }
-
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -121,6 +107,18 @@ namespace pos.Transactions.Purchase_Orders
             loadData(txtSearch.Text);
         }
 
-        
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+            if (dgv.SelectedRows.Count > 0)
+            {
+                MessageBox.Show("Printing..");
+            }
+            else
+            {
+                MessageBox.Show("No selected rows.");
+            }
+
+        }
     }
 }
