@@ -55,7 +55,7 @@
     <Compile Include="Registrations\Suppliers.cs" />
     <Compile Include="Registrations\Supplies.cs" />
     <Compile Include="Transactions\PurchaseOrderDetails.cs" />
-    <Compile Include="Transactions\PurhcaseOrders.cs" />
+    <Compile Include="Transactions\PurchaseOrders.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

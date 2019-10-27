@@ -155,7 +155,7 @@
             this.btnAdd.Size = new System.Drawing.Size(124, 55);
             this.btnAdd.TabIndex = 31;
             this.btnAdd.Text = "Add";
-            this.toolTip1.SetToolTip(this.btnAdd, "Add product on purhcase order.");
+            this.toolTip1.SetToolTip(this.btnAdd, "Add product on purchase order.");
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -168,7 +168,7 @@
             this.btnEdit.Size = new System.Drawing.Size(124, 55);
             this.btnEdit.TabIndex = 32;
             this.btnEdit.Text = "Edit";
-            this.toolTip1.SetToolTip(this.btnEdit, "Edit product on purhcase order.");
+            this.toolTip1.SetToolTip(this.btnEdit, "Edit product on purchase order.");
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -181,7 +181,7 @@
             this.btnDelete.Size = new System.Drawing.Size(124, 55);
             this.btnDelete.TabIndex = 33;
             this.btnDelete.Text = "Delete";
-            this.toolTip1.SetToolTip(this.btnDelete, "Delete product on purhcase order.");
+            this.toolTip1.SetToolTip(this.btnDelete, "Delete product on purchase order.");
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -291,7 +291,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Purhcase Order";
+            this.Text = "Add Purchase Order";
             this.Load += new System.EventHandler(this.frmAddPurchaseOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();

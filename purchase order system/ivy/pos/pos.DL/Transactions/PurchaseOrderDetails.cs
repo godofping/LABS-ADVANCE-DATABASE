@@ -10,18 +10,18 @@ namespace pos.DL.Transactions
     {
         public DataTable List(int id)
         {
-            return Helper.executeQuery("select * from purhcaseorderdetails_view where `Purchase Order ID` = " + id + "");
+            return Helper.executeQuery("select * from purchaseorderdetails_view where `Purchase Order ID` = " + id + "");
         }
 
         public long Insert(EL.Transactions.PurchaseOrderDetails purchaseOrderDetail)
         {
-            return Helper.executeNonQueryLong("insert into purhcaseorderdetails (purchaseorderid, supplyid, purhcaseorderdetailquantity, purhcaseorderdetailunitprice) values ('" + purchaseOrderDetail.Purchaseorderid + "', '" + purchaseOrderDetail.Supplyid + "', '" + purchaseOrderDetail.Purchaseorderdetailquantity + "', '" + purchaseOrderDetail.Purchaseorderdetailunitprice + "')");
+            return Helper.executeNonQueryLong("insert into purchaseorderdetails (purchaseorderid, supplyid, purchaseorderdetailquantity, purchaseorderdetailunitprice) values ('" + purchaseOrderDetail.Purchaseorderid + "', '" + purchaseOrderDetail.Supplyid + "', '" + purchaseOrderDetail.Purchaseorderdetailquantity + "', '" + purchaseOrderDetail.Purchaseorderdetailunitprice + "')");
         }
 
 
         public bool Delete(EL.Transactions.PurchaseOrderDetails purchaseOrderDetail)
         {
-            return Helper.executeNonQueryBool("delete from purhcaseorderdetails where purchaseorderid = " + purchaseOrderDetail.Purchaseorderid + "");
+            return Helper.executeNonQueryBool("delete from purchaseorderdetails where purchaseorderid = " + purchaseOrderDetail.Purchaseorderid + "");
         }
     }
 }

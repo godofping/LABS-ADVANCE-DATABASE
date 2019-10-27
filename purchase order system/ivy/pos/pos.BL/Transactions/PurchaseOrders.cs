@@ -20,17 +20,17 @@ namespace pos.BL.Transactions
             return purchaseOrderDL.List(id);
         }
 
-        public long Insert(EL.Transactions.PurhcaseOrders purchaseOrder)
+        public long Insert(EL.Transactions.PurchaseOrders purchaseOrder)
         {
             return purchaseOrderDL.Insert(purchaseOrder);   
         }
 
-        public bool Edit(EL.Transactions.PurhcaseOrders purchaseOrder)
+        public bool Edit(EL.Transactions.PurchaseOrders purchaseOrder)
         {
             return purchaseOrderDL.Edit(purchaseOrder);    
         }
 
-        public bool Delete(EL.Transactions.PurhcaseOrders purchaseOrder)
+        public bool Delete(EL.Transactions.PurchaseOrders purchaseOrder)
         {
             return purchaseOrderDL.Delete(purchaseOrder);    
         }

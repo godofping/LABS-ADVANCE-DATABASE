@@ -16,7 +16,7 @@ namespace pos.Transactions.Purchase_Orders
         BL.Transactions.PurchaseOrderDetails purchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
         BL.Registrations.Suppliers supplierBL = new BL.Registrations.Suppliers();
 
-        EL.Transactions.PurhcaseOrders purchaseOrderInfo = new EL.Transactions.PurhcaseOrders();
+        EL.Transactions.PurchaseOrders purchaseOrderInfo = new EL.Transactions.PurchaseOrders();
         EL.Transactions.PurchaseOrderDetails purchaseOrderDetailInfo = new EL.Transactions.PurchaseOrderDetails();
         EL.Registrations.Suppliers supplierInfo = new EL.Registrations.Suppliers();
         EL.Registrations.Accounts accountInfo;

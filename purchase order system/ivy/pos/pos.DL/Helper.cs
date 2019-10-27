@@ -9,7 +9,7 @@ namespace pos.DL
 {
     public class Helper
     {
-        public static string ConnectionString { get { return "Server=localhost;port=3306;UID=root;PWD=;database=sandandgravel;Convert Zero Datetime=True"; } }
+        public static string ConnectionString { get { return "Server=localhost;port=3306;UID=root;PWD=;database=constructionsupply;Convert Zero Datetime=True"; } }
 
 
         public static long executeNonQueryLong(string _Query)

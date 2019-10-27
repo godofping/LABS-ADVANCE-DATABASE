@@ -13,9 +13,9 @@ namespace pos.Transactions.Purchase_Orders
     {
         BL.Transactions.PurchaseOrders purchaseOrderBL = new BL.Transactions.PurchaseOrders();
 
-        EL.Transactions.PurhcaseOrders purchaseOrderInfo;
+        EL.Transactions.PurchaseOrders purchaseOrderInfo;
 
-        public frmViewPurchaseOrder(EL.Transactions.PurhcaseOrders PurchaseOrderInfo)
+        public frmViewPurchaseOrder(EL.Transactions.PurchaseOrders PurchaseOrderInfo)
         {
             InitializeComponent();
             purchaseOrderInfo = PurchaseOrderInfo;

@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v8.53 
-MySQL - 5.5.5-10.1.38-MariaDB : Database - sandandgravel
+MySQL - 5.5.5-10.1.38-MariaDB : Database - constructionsupply
 *********************************************************************
 */
 
@@ -11,9 +11,9 @@ MySQL - 5.5.5-10.1.38-MariaDB : Database - sandandgravel
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`sandandgravel` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`constructionsupply` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `sandandgravel`;
+USE `constructionsupply`;
 
 /*Table structure for table `accounts` */
 
@@ -31,46 +31,50 @@ CREATE TABLE `accounts` (
 
 insert  into `accounts`(`accountid`,`accountusername`,`accountpassword`,`accountfullname`) values (1,'admin','admin','admin1');
 
-/*Table structure for table `purhcaseorderdetails` */
+/*Table structure for table `purchaseorderdetails` */
 
-DROP TABLE IF EXISTS `purhcaseorderdetails`;
+DROP TABLE IF EXISTS `purchaseorderdetails`;
 
-CREATE TABLE `purhcaseorderdetails` (
+CREATE TABLE `purchaseorderdetails` (
   `purchaseorderdetailid` int(6) NOT NULL AUTO_INCREMENT,
   `purchaseorderid` int(6) DEFAULT NULL,
   `supplyid` int(6) DEFAULT NULL,
-  `purhcaseorderdetailquantity` int(6) DEFAULT NULL,
-  `purhcaseorderdetailunitprice` float DEFAULT NULL,
+  `purchaseorderdetailquantity` int(6) DEFAULT NULL,
+  `purchaseorderdetailunitprice` float DEFAULT NULL,
   PRIMARY KEY (`purchaseorderdetailid`),
-  KEY `FK_PurhcaseOrderDetails` (`supplyid`),
-  KEY `FK_PurhcaseOrder2Details` (`purchaseorderid`),
-  CONSTRAINT `FK_PurhcaseOrder2Details` FOREIGN KEY (`purchaseorderid`) REFERENCES `purhcaseorders` (`purchaseorderid`),
-  CONSTRAINT `FK_PurhcaseOrderDetails` FOREIGN KEY (`supplyid`) REFERENCES `supplies` (`supplyid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `FK_purchaseorderdetails` (`purchaseorderid`),
+  KEY `FK_purchaseord1erdetails` (`supplyid`),
+  CONSTRAINT `FK_purchaseord1erdetails` FOREIGN KEY (`supplyid`) REFERENCES `supplies` (`supplyid`),
+  CONSTRAINT `FK_purchaseorderdetails` FOREIGN KEY (`purchaseorderid`) REFERENCES `purchaseorders` (`purchaseorderid`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-/*Data for the table `purhcaseorderdetails` */
+/*Data for the table `purchaseorderdetails` */
 
-/*Table structure for table `purhcaseorders` */
+insert  into `purchaseorderdetails`(`purchaseorderdetailid`,`purchaseorderid`,`supplyid`,`purchaseorderdetailquantity`,`purchaseorderdetailunitprice`) values (1,2,5,2,2970);
 
-DROP TABLE IF EXISTS `purhcaseorders`;
+/*Table structure for table `purchaseorders` */
 
-CREATE TABLE `purhcaseorders` (
+DROP TABLE IF EXISTS `purchaseorders`;
+
+CREATE TABLE `purchaseorders` (
   `purchaseorderid` int(6) NOT NULL AUTO_INCREMENT,
   `supplierid` int(6) DEFAULT NULL,
   `accountid` int(6) DEFAULT NULL,
   `purchaseordername` varchar(60) DEFAULT NULL,
-  `purhcaseorderrequestdate` date DEFAULT NULL,
-  `purhcaseorderdeliverydate` date DEFAULT NULL,
+  `purchaseorderrequestdate` date DEFAULT NULL,
+  `purchaseorderdeliverydate` date DEFAULT NULL,
   `purchaseorderstatus` varchar(60) DEFAULT NULL,
-  `purhcaseordertotalamount` float DEFAULT NULL,
+  `purchaseordertotalamount` float DEFAULT NULL,
   PRIMARY KEY (`purchaseorderid`),
-  KEY `FK_PurhcaseOrders` (`supplierid`),
-  KEY `FK_Purh1caseOrders` (`accountid`),
-  CONSTRAINT `FK_Purh1caseOrders` FOREIGN KEY (`accountid`) REFERENCES `accounts` (`accountid`),
-  CONSTRAINT `FK_PurhcaseOrders` FOREIGN KEY (`supplierid`) REFERENCES `suppliers` (`supplierid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `FK_purchaseorders` (`supplierid`),
+  KEY `FK_pur1chaseorders` (`accountid`),
+  CONSTRAINT `FK_pur1chaseorders` FOREIGN KEY (`accountid`) REFERENCES `accounts` (`accountid`),
+  CONSTRAINT `FK_purchaseorders` FOREIGN KEY (`supplierid`) REFERENCES `suppliers` (`supplierid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
-/*Data for the table `purhcaseorders` */
+/*Data for the table `purchaseorders` */
+
+insert  into `purchaseorders`(`purchaseorderid`,`supplierid`,`accountid`,`purchaseordername`,`purchaseorderrequestdate`,`purchaseorderdeliverydate`,`purchaseorderstatus`,`purchaseordertotalamount`) values (2,2,1,'test','2019-10-27','2019-10-29','PENDING',5940);
 
 /*Table structure for table `suppliers` */
 
@@ -119,6 +123,38 @@ DROP TABLE IF EXISTS `accounts_view`;
  `Account Full Name` varchar(60) 
 )*/;
 
+/*Table structure for table `purchaseorderdetails_view` */
+
+DROP TABLE IF EXISTS `purchaseorderdetails_view`;
+
+/*!50001 DROP VIEW IF EXISTS `purchaseorderdetails_view` */;
+/*!50001 DROP TABLE IF EXISTS `purchaseorderdetails_view` */;
+
+/*!50001 CREATE TABLE  `purchaseorderdetails_view`(
+ `Purchase Order Detail ID` int(6) ,
+ `Purchase Order ID` int(6) ,
+ `Supply ID` int(6) ,
+ `Purchase Order Detail Quantity` int(6) ,
+ `Purchase Order Detail Unit Price` float ,
+ `Supplier ID` int(6) ,
+ `Account ID` int(6) ,
+ `Purchase Order Name` varchar(60) ,
+ `Purchase Order Request Date` date ,
+ `Purchase Order Delivery Date` date ,
+ `Purchase Order Status` varchar(60) ,
+ `Purchase Order Total Amount` float ,
+ `Supplier Name` varchar(60) ,
+ `Supplier Contact Number` varchar(60) ,
+ `Supplier Address` varchar(200) ,
+ `Account Username` varchar(60) ,
+ `Account password` varchar(60) ,
+ `Account Full Name` varchar(60) ,
+ `Supply Name` varchar(60) ,
+ `Supply Unit` varchar(60) ,
+ `Supply Unit Price` float ,
+ `Supply Stocks` int(6) 
+)*/;
+
 /*Table structure for table `purchaseorders_view` */
 
 DROP TABLE IF EXISTS `purchaseorders_view`;
@@ -140,39 +176,7 @@ DROP TABLE IF EXISTS `purchaseorders_view`;
  `Supplier Address` varchar(200) ,
  `Account Username` varchar(60) ,
  `Account Password` varchar(60) ,
- `Account Full Name` varchar(60) 
-)*/;
-
-/*Table structure for table `purhcaseorderdetails_view` */
-
-DROP TABLE IF EXISTS `purhcaseorderdetails_view`;
-
-/*!50001 DROP VIEW IF EXISTS `purhcaseorderdetails_view` */;
-/*!50001 DROP TABLE IF EXISTS `purhcaseorderdetails_view` */;
-
-/*!50001 CREATE TABLE  `purhcaseorderdetails_view`(
- `Account ID` int(6) ,
- `Purchase Order Name` varchar(60) ,
- `Purchase Order Request Date` date ,
- `Purchase Order Delivery Date` date ,
- `Purchase Order Status` varchar(60) ,
- `Purchase Order Total Amount` float ,
- `Supplier Name` varchar(60) ,
- `Supplier Contact Number` varchar(60) ,
- `Supplier Address` varchar(200) ,
- `Account Username` varchar(60) ,
- `Account Password` varchar(60) ,
- `Account Full Name` varchar(60) ,
- `Purchase Order Detail ID` int(6) ,
- `Purchase Order ID` int(6) ,
- `Supply ID` int(6) ,
- `Purchase Order Detail Quantity` int(6) ,
- `Purchase Order Detail Unit Price` float ,
- `Supply Name` varchar(60) ,
- `Supply Unit` varchar(60) ,
- `Supply Unit Price` float ,
- `Supply Stocks` int(6) ,
- `Supplier ID` int(6) 
+ `Prepared By` varchar(60) 
 )*/;
 
 /*Table structure for table `suppliers_view` */
@@ -211,19 +215,19 @@ DROP TABLE IF EXISTS `supplies_view`;
 
 /*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `accounts_view` AS select `accounts`.`accountid` AS `Account ID`,`accounts`.`accountusername` AS `Account Username`,`accounts`.`accountpassword` AS `Account Password`,`accounts`.`accountfullname` AS `Account Full Name` from `accounts` */;
 
+/*View structure for view purchaseorderdetails_view */
+
+/*!50001 DROP TABLE IF EXISTS `purchaseorderdetails_view` */;
+/*!50001 DROP VIEW IF EXISTS `purchaseorderdetails_view` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `purchaseorderdetails_view` AS select `purchaseorderdetails`.`purchaseorderdetailid` AS `Purchase Order Detail ID`,`purchaseorderdetails`.`purchaseorderid` AS `Purchase Order ID`,`purchaseorderdetails`.`supplyid` AS `Supply ID`,`purchaseorderdetails`.`purchaseorderdetailquantity` AS `Purchase Order Detail Quantity`,`purchaseorderdetails`.`purchaseorderdetailunitprice` AS `Purchase Order Detail Unit Price`,`purchaseorders`.`supplierid` AS `Supplier ID`,`purchaseorders`.`accountid` AS `Account ID`,`purchaseorders`.`purchaseordername` AS `Purchase Order Name`,`purchaseorders`.`purchaseorderrequestdate` AS `Purchase Order Request Date`,`purchaseorders`.`purchaseorderdeliverydate` AS `Purchase Order Delivery Date`,`purchaseorders`.`purchaseorderstatus` AS `Purchase Order Status`,`purchaseorders`.`purchaseordertotalamount` AS `Purchase Order Total Amount`,`suppliers`.`suppliername` AS `Supplier Name`,`suppliers`.`suppliercontactnumber` AS `Supplier Contact Number`,`suppliers`.`supplieraddress` AS `Supplier Address`,`accounts`.`accountusername` AS `Account Username`,`accounts`.`accountpassword` AS `Account password`,`accounts`.`accountfullname` AS `Account Full Name`,`supplies`.`supplyname` AS `Supply Name`,`supplies`.`supplyunit` AS `Supply Unit`,`supplies`.`supplyunitprice` AS `Supply Unit Price`,`supplies`.`supplystocks` AS `Supply Stocks` from ((((`purchaseorders` join `suppliers` on((`purchaseorders`.`supplierid` = `suppliers`.`supplierid`))) join `accounts` on((`purchaseorders`.`accountid` = `accounts`.`accountid`))) join `purchaseorderdetails` on((`purchaseorderdetails`.`purchaseorderid` = `purchaseorders`.`purchaseorderid`))) join `supplies` on((`purchaseorderdetails`.`supplyid` = `supplies`.`supplyid`))) */;
+
 /*View structure for view purchaseorders_view */
 
 /*!50001 DROP TABLE IF EXISTS `purchaseorders_view` */;
 /*!50001 DROP VIEW IF EXISTS `purchaseorders_view` */;
 
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `purchaseorders_view` AS select `purhcaseorders`.`purchaseorderid` AS `Purchase Order ID`,`purhcaseorders`.`supplierid` AS `Supplier ID`,`purhcaseorders`.`accountid` AS `Account ID`,`purhcaseorders`.`purchaseordername` AS `Purchase Order Name`,`purhcaseorders`.`purhcaseorderrequestdate` AS `Purchase Order Request Date`,`purhcaseorders`.`purhcaseorderdeliverydate` AS `Purchase Order Delivery Date`,`purhcaseorders`.`purchaseorderstatus` AS `Purchase Order Status`,`purhcaseorders`.`purhcaseordertotalamount` AS `Purchase Order Total Amount`,`suppliers`.`suppliername` AS `Supplier Name`,`suppliers`.`suppliercontactnumber` AS `Supplier Contact Number`,`suppliers`.`supplieraddress` AS `Supplier Address`,`accounts`.`accountusername` AS `Account Username`,`accounts`.`accountpassword` AS `Account Password`,`accounts`.`accountfullname` AS `Account Full Name` from ((`purhcaseorders` join `suppliers` on((`purhcaseorders`.`supplierid` = `suppliers`.`supplierid`))) join `accounts` on((`purhcaseorders`.`accountid` = `accounts`.`accountid`))) */;
-
-/*View structure for view purhcaseorderdetails_view */
-
-/*!50001 DROP TABLE IF EXISTS `purhcaseorderdetails_view` */;
-/*!50001 DROP VIEW IF EXISTS `purhcaseorderdetails_view` */;
-
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `purhcaseorderdetails_view` AS select `purhcaseorders`.`accountid` AS `Account ID`,`purhcaseorders`.`purchaseordername` AS `Purchase Order Name`,`purhcaseorders`.`purhcaseorderrequestdate` AS `Purchase Order Request Date`,`purhcaseorders`.`purhcaseorderdeliverydate` AS `Purchase Order Delivery Date`,`purhcaseorders`.`purchaseorderstatus` AS `Purchase Order Status`,`purhcaseorders`.`purhcaseordertotalamount` AS `Purchase Order Total Amount`,`suppliers`.`suppliername` AS `Supplier Name`,`suppliers`.`suppliercontactnumber` AS `Supplier Contact Number`,`suppliers`.`supplieraddress` AS `Supplier Address`,`accounts`.`accountusername` AS `Account Username`,`accounts`.`accountpassword` AS `Account Password`,`accounts`.`accountfullname` AS `Account Full Name`,`purhcaseorderdetails`.`purchaseorderdetailid` AS `Purchase Order Detail ID`,`purhcaseorderdetails`.`purchaseorderid` AS `Purchase Order ID`,`purhcaseorderdetails`.`supplyid` AS `Supply ID`,`purhcaseorderdetails`.`purhcaseorderdetailquantity` AS `Purchase Order Detail Quantity`,`purhcaseorderdetails`.`purhcaseorderdetailunitprice` AS `Purchase Order Detail Unit Price`,`supplies`.`supplyname` AS `Supply Name`,`supplies`.`supplyunit` AS `Supply Unit`,`supplies`.`supplyunitprice` AS `Supply Unit Price`,`supplies`.`supplystocks` AS `Supply Stocks`,`purhcaseorders`.`supplierid` AS `Supplier ID` from ((((`purhcaseorders` join `suppliers` on((`purhcaseorders`.`supplierid` = `suppliers`.`supplierid`))) join `accounts` on((`purhcaseorders`.`accountid` = `accounts`.`accountid`))) join `purhcaseorderdetails` on((`purhcaseorderdetails`.`purchaseorderid` = `purhcaseorders`.`purchaseorderid`))) join `supplies` on((`purhcaseorderdetails`.`supplyid` = `supplies`.`supplyid`))) */;
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `purchaseorders_view` AS select `purchaseorders`.`purchaseorderid` AS `Purchase Order ID`,`purchaseorders`.`supplierid` AS `Supplier ID`,`purchaseorders`.`accountid` AS `Account ID`,`purchaseorders`.`purchaseordername` AS `Purchase Order Name`,`purchaseorders`.`purchaseorderrequestdate` AS `Purchase Order Request Date`,`purchaseorders`.`purchaseorderdeliverydate` AS `Purchase Order Delivery Date`,`purchaseorders`.`purchaseorderstatus` AS `Purchase Order Status`,`purchaseorders`.`purchaseordertotalamount` AS `Purchase Order Total Amount`,`suppliers`.`suppliername` AS `Supplier Name`,`suppliers`.`suppliercontactnumber` AS `Supplier Contact Number`,`suppliers`.`supplieraddress` AS `Supplier Address`,`accounts`.`accountusername` AS `Account Username`,`accounts`.`accountpassword` AS `Account Password`,`accounts`.`accountfullname` AS `Prepared By` from ((`purchaseorders` join `suppliers` on((`purchaseorders`.`supplierid` = `suppliers`.`supplierid`))) join `accounts` on((`purchaseorders`.`accountid` = `accounts`.`accountid`))) */;
 
 /*View structure for view suppliers_view */
 

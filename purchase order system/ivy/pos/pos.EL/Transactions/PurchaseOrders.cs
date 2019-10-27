@@ -5,7 +5,7 @@ using System.Text;
 
 namespace pos.EL.Transactions
 {
-    public class PurhcaseOrders
+    public class PurchaseOrders
     {
 
         int purchaseorderid;
