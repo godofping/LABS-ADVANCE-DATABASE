@@ -43,14 +43,12 @@ CREATE TABLE `purchaseorderdetails` (
   `purchaseorderdetailunitprice` float DEFAULT NULL,
   PRIMARY KEY (`purchaseorderdetailid`),
   KEY `FK_purchaseorderdetails` (`purchaseorderid`),
-  KEY `FK_purchaseord1erdetails` (`supplyid`),
-  CONSTRAINT `FK_purchaseord1erdetails` FOREIGN KEY (`supplyid`) REFERENCES `supplies` (`supplyid`),
-  CONSTRAINT `FK_purchaseorderdetails` FOREIGN KEY (`purchaseorderid`) REFERENCES `purchaseorders` (`purchaseorderid`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  KEY `FK_purch3aseorderdetails` (`supplyid`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 /*Data for the table `purchaseorderdetails` */
 
-insert  into `purchaseorderdetails`(`purchaseorderdetailid`,`purchaseorderid`,`supplyid`,`purchaseorderdetailquantity`,`purchaseorderdetailunitprice`) values (1,2,5,2,2970);
+insert  into `purchaseorderdetails`(`purchaseorderdetailid`,`purchaseorderid`,`supplyid`,`purchaseorderdetailquantity`,`purchaseorderdetailunitprice`) values (8,7,6,2,2025),(11,9,6,6,2025),(12,10,12,2,1200),(13,11,13,3,100),(14,12,3,5,78),(15,13,3,5,78),(16,13,4,5,900);
 
 /*Table structure for table `purchaseorders` */
 
@@ -67,14 +65,12 @@ CREATE TABLE `purchaseorders` (
   `purchaseordertotalamount` float DEFAULT NULL,
   PRIMARY KEY (`purchaseorderid`),
   KEY `FK_purchaseorders` (`supplierid`),
-  KEY `FK_pur1chaseorders` (`accountid`),
-  CONSTRAINT `FK_pur1chaseorders` FOREIGN KEY (`accountid`) REFERENCES `accounts` (`accountid`),
-  CONSTRAINT `FK_purchaseorders` FOREIGN KEY (`supplierid`) REFERENCES `suppliers` (`supplierid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  KEY `FK_purchaseor2ders` (`accountid`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 /*Data for the table `purchaseorders` */
 
-insert  into `purchaseorders`(`purchaseorderid`,`supplierid`,`accountid`,`purchaseordername`,`purchaseorderrequestdate`,`purchaseorderdeliverydate`,`purchaseorderstatus`,`purchaseordertotalamount`) values (2,2,1,'test','2019-10-27','2019-10-29','PENDING',5940);
+insert  into `purchaseorders`(`purchaseorderid`,`supplierid`,`accountid`,`purchaseordername`,`purchaseorderrequestdate`,`purchaseorderdeliverydate`,`purchaseorderstatus`,`purchaseordertotalamount`) values (7,2,1,'23123','2019-10-27','2019-10-30','RECIEVED',4050),(9,1,1,'test2','2019-10-27','2019-10-29','RECIEVED',12150),(10,3,1,'23','2019-10-27','2019-10-22','RECIEVED',2400),(11,3,1,'3','2019-10-27','2019-10-27','RECIEVED',300),(12,2,1,'condullt','2019-10-27','2019-10-27','RECIEVED',390),(13,1,1,'testing','2019-10-27','2019-10-31','RECIEVED',4890);
 
 /*Table structure for table `suppliers` */
 
@@ -107,7 +103,7 @@ CREATE TABLE `supplies` (
 
 /*Data for the table `supplies` */
 
-insert  into `supplies`(`supplyid`,`supplyname`,`supplyunit`,`supplyunitprice`,`supplystocks`) values (3,'Conduit, PVC, D-25mm ','pcs',78,15),(4,'Flexible conduit, D-25mm','roll',900,10),(5,'THHN electrical wire, 12mm2','box',2970,5),(6,'THHN electrical wire, 14mm2','box',2025,4),(7,'Utility box, PVC, deep type ','pcs',30,40),(8,'Junction box, PVC, deep type','pcs',35,50),(9,'Electrical tape, big','roll',38,50),(10,'Convenience outlet, 2-gang','set',185,20),(11,'LED flourescent lamp, recessed, with housing & diffusers','set',1450,26),(12,'Sand ','cu m ',1200,25),(13,'Gravel','cu m ',100,26),(14,'Fine pea washout','cans',310,200),(15,'Primer paint/red oxide','gals',290,14);
+insert  into `supplies`(`supplyid`,`supplyname`,`supplyunit`,`supplyunitprice`,`supplystocks`) values (3,'Conduit, PVC, D-25mm ','pcs',78,25),(4,'Flexible conduit, D-25mm','roll',900,15),(5,'THHN electrical wire, 12mm2','box',2970,5),(6,'THHN electrical wire, 14mm2','box',2025,4),(7,'Utility box, PVC, deep type ','pcs',30,40),(8,'Junction box, PVC, deep type','pcs',35,50),(9,'Electrical tape, big','roll',38,50),(10,'Convenience outlet, 2-gang','set',185,20),(11,'LED flourescent lamp, recessed, with housing & diffusers','set',1450,26),(12,'Sand ','cu m ',1200,25),(13,'Gravel','cu m ',100,29),(14,'Fine pea washout','cans',310,200),(15,'Primer paint/red oxide','gals',290,14);
 
 /*Table structure for table `accounts_view` */
 
@@ -134,8 +130,6 @@ DROP TABLE IF EXISTS `purchaseorderdetails_view`;
  `Purchase Order Detail ID` int(6) ,
  `Purchase Order ID` int(6) ,
  `Supply ID` int(6) ,
- `Purchase Order Detail Quantity` int(6) ,
- `Purchase Order Detail Unit Price` float ,
  `Supplier ID` int(6) ,
  `Account ID` int(6) ,
  `Purchase Order Name` varchar(60) ,
@@ -152,7 +146,10 @@ DROP TABLE IF EXISTS `purchaseorderdetails_view`;
  `Supply Name` varchar(60) ,
  `Supply Unit` varchar(60) ,
  `Supply Unit Price` float ,
- `Supply Stocks` int(6) 
+ `Supply Stocks` int(6) ,
+ `Purchase Order Supply Unit Price` float ,
+ `Purchase Order Supply Quantity` int(6) ,
+ `Amount` double 
 )*/;
 
 /*Table structure for table `purchaseorders_view` */
@@ -220,7 +217,7 @@ DROP TABLE IF EXISTS `supplies_view`;
 /*!50001 DROP TABLE IF EXISTS `purchaseorderdetails_view` */;
 /*!50001 DROP VIEW IF EXISTS `purchaseorderdetails_view` */;
 
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `purchaseorderdetails_view` AS select `purchaseorderdetails`.`purchaseorderdetailid` AS `Purchase Order Detail ID`,`purchaseorderdetails`.`purchaseorderid` AS `Purchase Order ID`,`purchaseorderdetails`.`supplyid` AS `Supply ID`,`purchaseorderdetails`.`purchaseorderdetailquantity` AS `Purchase Order Detail Quantity`,`purchaseorderdetails`.`purchaseorderdetailunitprice` AS `Purchase Order Detail Unit Price`,`purchaseorders`.`supplierid` AS `Supplier ID`,`purchaseorders`.`accountid` AS `Account ID`,`purchaseorders`.`purchaseordername` AS `Purchase Order Name`,`purchaseorders`.`purchaseorderrequestdate` AS `Purchase Order Request Date`,`purchaseorders`.`purchaseorderdeliverydate` AS `Purchase Order Delivery Date`,`purchaseorders`.`purchaseorderstatus` AS `Purchase Order Status`,`purchaseorders`.`purchaseordertotalamount` AS `Purchase Order Total Amount`,`suppliers`.`suppliername` AS `Supplier Name`,`suppliers`.`suppliercontactnumber` AS `Supplier Contact Number`,`suppliers`.`supplieraddress` AS `Supplier Address`,`accounts`.`accountusername` AS `Account Username`,`accounts`.`accountpassword` AS `Account password`,`accounts`.`accountfullname` AS `Account Full Name`,`supplies`.`supplyname` AS `Supply Name`,`supplies`.`supplyunit` AS `Supply Unit`,`supplies`.`supplyunitprice` AS `Supply Unit Price`,`supplies`.`supplystocks` AS `Supply Stocks` from ((((`purchaseorders` join `suppliers` on((`purchaseorders`.`supplierid` = `suppliers`.`supplierid`))) join `accounts` on((`purchaseorders`.`accountid` = `accounts`.`accountid`))) join `purchaseorderdetails` on((`purchaseorderdetails`.`purchaseorderid` = `purchaseorders`.`purchaseorderid`))) join `supplies` on((`purchaseorderdetails`.`supplyid` = `supplies`.`supplyid`))) */;
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `purchaseorderdetails_view` AS select `purchaseorderdetails`.`purchaseorderdetailid` AS `Purchase Order Detail ID`,`purchaseorderdetails`.`purchaseorderid` AS `Purchase Order ID`,`purchaseorderdetails`.`supplyid` AS `Supply ID`,`purchaseorders`.`supplierid` AS `Supplier ID`,`purchaseorders`.`accountid` AS `Account ID`,`purchaseorders`.`purchaseordername` AS `Purchase Order Name`,`purchaseorders`.`purchaseorderrequestdate` AS `Purchase Order Request Date`,`purchaseorders`.`purchaseorderdeliverydate` AS `Purchase Order Delivery Date`,`purchaseorders`.`purchaseorderstatus` AS `Purchase Order Status`,`purchaseorders`.`purchaseordertotalamount` AS `Purchase Order Total Amount`,`suppliers`.`suppliername` AS `Supplier Name`,`suppliers`.`suppliercontactnumber` AS `Supplier Contact Number`,`suppliers`.`supplieraddress` AS `Supplier Address`,`accounts`.`accountusername` AS `Account Username`,`accounts`.`accountpassword` AS `Account password`,`accounts`.`accountfullname` AS `Account Full Name`,`supplies`.`supplyname` AS `Supply Name`,`supplies`.`supplyunit` AS `Supply Unit`,`supplies`.`supplyunitprice` AS `Supply Unit Price`,`supplies`.`supplystocks` AS `Supply Stocks`,`purchaseorderdetails`.`purchaseorderdetailunitprice` AS `Purchase Order Supply Unit Price`,`purchaseorderdetails`.`purchaseorderdetailquantity` AS `Purchase Order Supply Quantity`,(`purchaseorderdetails`.`purchaseorderdetailquantity` * `purchaseorderdetails`.`purchaseorderdetailunitprice`) AS `Amount` from ((((`purchaseorders` join `suppliers` on((`purchaseorders`.`supplierid` = `suppliers`.`supplierid`))) join `accounts` on((`purchaseorders`.`accountid` = `accounts`.`accountid`))) join `purchaseorderdetails` on((`purchaseorderdetails`.`purchaseorderid` = `purchaseorders`.`purchaseorderid`))) join `supplies` on((`purchaseorderdetails`.`supplyid` = `supplies`.`supplyid`))) */;
 
 /*View structure for view purchaseorders_view */
 

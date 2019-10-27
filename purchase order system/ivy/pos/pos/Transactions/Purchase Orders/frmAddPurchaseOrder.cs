@@ -33,7 +33,11 @@ namespace pos.Transactions.Purchase_Orders
         private void readOnlyControls()
         {
             txtTotalAmount.ReadOnly = true;
+        }
 
+        private void setControls()
+        {
+            dtpDeliveryDate.MinDate = DateTime.Now;
         }
 
         private void populateControls()
@@ -46,7 +50,6 @@ namespace pos.Transactions.Purchase_Orders
 
         private void clearControls()
         {
-
             cbSupplierName.SelectedIndex = -1;
             txtPurchaseOrderName.ResetText();
             dtpDeliveryDate.ResetText();
@@ -105,7 +108,9 @@ namespace pos.Transactions.Purchase_Orders
 
         private void frmAddPurchaseOrder_Load(object sender, EventArgs e)
         {
+            
             readOnlyControls();
+            setControls();
             populateControls();
             clearControls();
         }

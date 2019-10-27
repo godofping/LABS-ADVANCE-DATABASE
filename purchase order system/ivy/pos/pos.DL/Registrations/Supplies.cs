@@ -25,7 +25,7 @@ namespace pos.DL.Registrations
 
         public bool Edit(EL.Registrations.Supplies supply)
         {
-            return Helper.executeNonQueryBool("update supplies set supplyname = '" + supply.Supplyname + "', supplyunit = '" + supply.Supplyunit + "', supplyunitprice =  '" + supply.Supplyunitprice + "'  where supplyid = " + supply.Supplyid + "");
+            return Helper.executeNonQueryBool("update supplies set supplyname = '" + supply.Supplyname + "', supplyunit = '" + supply.Supplyunit + "', supplyunitprice =  '" + supply.Supplyunitprice + "', supplystocks = " + supply.Supplystocks + "  where supplyid = " + supply.Supplyid + "");
         }
 
         public bool Delete(EL.Registrations.Supplies supply)

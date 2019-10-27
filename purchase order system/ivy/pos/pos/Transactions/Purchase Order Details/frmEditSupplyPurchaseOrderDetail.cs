@@ -45,7 +45,6 @@ namespace pos.Transactions.Purchase_Order_Details
         private void readOnlyControls()
         {
             txtSupplyUnit.ReadOnly = true;
-            txtSupplyUnitPrice.ReadOnly = true;
             txtAmount.ReadOnly = true;
         }
 

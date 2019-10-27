@@ -30,12 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.btnRecieved = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblPurchaseOrderID = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblSupplierName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblPurchaseOrderStatus = new System.Windows.Forms.Label();
@@ -47,33 +50,25 @@
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.lblRequestDate = new System.Windows.Forms.Label();
             this.lblPurchaseName = new System.Windows.Forms.Label();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplyStocks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplyUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplyUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.lblPurchaseOrderID = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCancel
+            // btnClose
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(833, 644);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(124, 55);
-            this.btnCancel.TabIndex = 35;
-            this.btnCancel.Text = "Cancel";
-            this.toolTip1.SetToolTip(this.btnCancel, "Cancel changes.");
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(833, 644);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(124, 55);
+            this.btnClose.TabIndex = 35;
+            this.btnClose.Text = "Close";
+            this.toolTip1.SetToolTip(this.btnClose, "Close form.");
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnPrint
             // 
@@ -87,6 +82,19 @@
             this.toolTip1.SetToolTip(this.btnPrint, "Print Purchase Order.");
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnRecieved
+            // 
+            this.btnRecieved.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecieved.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecieved.Location = new System.Drawing.Point(12, 644);
+            this.btnRecieved.Name = "btnRecieved";
+            this.btnRecieved.Size = new System.Drawing.Size(124, 55);
+            this.btnRecieved.TabIndex = 39;
+            this.btnRecieved.Text = "Recieved";
+            this.toolTip1.SetToolTip(this.btnRecieved, "Recieved Purchase Order.");
+            this.btnRecieved.UseVisualStyleBackColor = true;
+            this.btnRecieved.Click += new System.EventHandler(this.btnRecieved_Click);
             // 
             // label5
             // 
@@ -143,6 +151,26 @@
             this.groupBox2.Size = new System.Drawing.Size(984, 287);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
+            // 
+            // lblPurchaseOrderID
+            // 
+            this.lblPurchaseOrderID.AutoSize = true;
+            this.lblPurchaseOrderID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPurchaseOrderID.Location = new System.Drawing.Point(173, 12);
+            this.lblPurchaseOrderID.Name = "lblPurchaseOrderID";
+            this.lblPurchaseOrderID.Size = new System.Drawing.Size(186, 20);
+            this.lblPurchaseOrderID.TabIndex = 49;
+            this.lblPurchaseOrderID.Text = "Purchase Order ID Value";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(49, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(118, 16);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Purchase Order ID";
             // 
             // lblSupplierName
             // 
@@ -254,43 +282,6 @@
             this.lblPurchaseName.TabIndex = 25;
             this.lblPurchaseName.Text = "Purchase Order Name Value";
             // 
-            // amount
-            // 
-            this.amount.HeaderText = "Amount";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            // 
-            // supplyStocks
-            // 
-            this.supplyStocks.HeaderText = "Supply Stocks";
-            this.supplyStocks.Name = "supplyStocks";
-            this.supplyStocks.ReadOnly = true;
-            // 
-            // supplyUnitPrice
-            // 
-            this.supplyUnitPrice.HeaderText = "Supply Unit Price";
-            this.supplyUnitPrice.Name = "supplyUnitPrice";
-            this.supplyUnitPrice.ReadOnly = true;
-            // 
-            // supplyUnit
-            // 
-            this.supplyUnit.HeaderText = "Supply Unit";
-            this.supplyUnit.Name = "supplyUnit";
-            this.supplyUnit.ReadOnly = true;
-            // 
-            // supplyName
-            // 
-            this.supplyName.HeaderText = "Supply Name";
-            this.supplyName.Name = "supplyName";
-            this.supplyName.ReadOnly = true;
-            // 
-            // supplyID
-            // 
-            this.supplyID.HeaderText = "Supply ID";
-            this.supplyID.Name = "supplyID";
-            this.supplyID.ReadOnly = true;
-            this.supplyID.Visible = false;
-            // 
             // dgv
             // 
             this.dgv.AllowUserToAddRows = false;
@@ -300,13 +291,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.supplyID,
-            this.supplyName,
-            this.supplyUnit,
-            this.supplyUnitPrice,
-            this.supplyStocks,
-            this.amount});
             this.dgv.Location = new System.Drawing.Point(12, 316);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
@@ -319,34 +303,15 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // lblPurchaseOrderID
-            // 
-            this.lblPurchaseOrderID.AutoSize = true;
-            this.lblPurchaseOrderID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPurchaseOrderID.Location = new System.Drawing.Point(173, 12);
-            this.lblPurchaseOrderID.Name = "lblPurchaseOrderID";
-            this.lblPurchaseOrderID.Size = new System.Drawing.Size(186, 20);
-            this.lblPurchaseOrderID.TabIndex = 49;
-            this.lblPurchaseOrderID.Text = "Purchase Order ID Value";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(49, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 16);
-            this.label7.TabIndex = 48;
-            this.label7.Text = "Purchase Order ID";
-            // 
             // frmViewPurchaseOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.btnRecieved);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgv);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPrint);
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "frmViewPurchaseOrder";
@@ -366,18 +331,12 @@
         #endregion
 
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplyStocks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplyUnitPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplyUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplyID;
         public System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label lblPurchaseName;
@@ -393,5 +352,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPurchaseOrderID;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnRecieved;
     }
 }

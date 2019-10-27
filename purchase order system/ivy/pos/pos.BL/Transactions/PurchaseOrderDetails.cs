@@ -17,9 +17,9 @@ namespace pos.BL.Transactions
             return purchaseOrderDetailDL.Insert(purchaseOrderDetail);
         }
 
-        public bool Delete(EL.Transactions.PurchaseOrderDetails purchaseOrderDetail)
+        public bool Delete(int id)
         {
-            return purchaseOrderDetailDL.Delete(purchaseOrderDetail);
+            return purchaseOrderDetailDL.Delete(id);
         }
     }
 }

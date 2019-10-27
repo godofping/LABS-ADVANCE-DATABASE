@@ -85,7 +85,7 @@ namespace pos.Transactions.Purchase_Orders
                         }
                         else
                         {
-                            if (purchaseOrderBL.Delete(purchaseOrderInfo))
+                            if (purchaseOrderDetailBL.Delete(purchaseOrderInfo.Purchaseorderid) & purchaseOrderBL.Delete(purchaseOrderInfo))
                             {
                                 loadData(txtSearch.Text);
                                 MessageBox.Show("Success.");
@@ -115,7 +115,7 @@ namespace pos.Transactions.Purchase_Orders
             if (dgv.SelectedRows.Count > 0)
             {
                 getDataFromDataGridView();
-                frmViewPurchaseOrder frmViewPurchaseOrder = new frmViewPurchaseOrder(purchaseOrderInfo);
+                frmViewPurchaseOrder frmViewPurchaseOrder = new frmViewPurchaseOrder(purchaseOrderInfo, this);
                 frmViewPurchaseOrder.Show();
             }
             else

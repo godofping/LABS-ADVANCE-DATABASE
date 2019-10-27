@@ -30,6 +30,11 @@ namespace pos.BL.Transactions
             return purchaseOrderDL.Edit(purchaseOrder);    
         }
 
+        public bool SetRecieved(int id)
+        {
+            return purchaseOrderDL.SetRecieved(id);
+        }
+
         public bool Delete(EL.Transactions.PurchaseOrders purchaseOrder)
         {
             return purchaseOrderDL.Delete(purchaseOrder);    

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
+﻿using System.Data;
 
 namespace pos.DL.Transactions
 {
@@ -19,9 +15,9 @@ namespace pos.DL.Transactions
         }
 
 
-        public bool Delete(EL.Transactions.PurchaseOrderDetails purchaseOrderDetail)
+        public bool Delete(int id)
         {
-            return Helper.executeNonQueryBool("delete from purchaseorderdetails where purchaseorderid = " + purchaseOrderDetail.Purchaseorderid + "");
+            return Helper.executeNonQueryBool("delete from purchaseorderdetails where purchaseorderid = " + id + "");
         }
     }
 }

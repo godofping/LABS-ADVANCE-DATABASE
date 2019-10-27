@@ -33,12 +33,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.supplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplyUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplyUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplyStocks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -51,6 +45,12 @@
             this.txtPurchaseOrderName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.supplyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplyUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplyUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplyStocks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -108,43 +108,6 @@
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(984, 255);
             this.dgv.TabIndex = 26;
-            // 
-            // supplyID
-            // 
-            this.supplyID.HeaderText = "Supply ID";
-            this.supplyID.Name = "supplyID";
-            this.supplyID.ReadOnly = true;
-            this.supplyID.Visible = false;
-            // 
-            // supplyName
-            // 
-            this.supplyName.HeaderText = "Supply Name";
-            this.supplyName.Name = "supplyName";
-            this.supplyName.ReadOnly = true;
-            // 
-            // supplyUnit
-            // 
-            this.supplyUnit.HeaderText = "Supply Unit";
-            this.supplyUnit.Name = "supplyUnit";
-            this.supplyUnit.ReadOnly = true;
-            // 
-            // supplyUnitPrice
-            // 
-            this.supplyUnitPrice.HeaderText = "Supply Unit Price";
-            this.supplyUnitPrice.Name = "supplyUnitPrice";
-            this.supplyUnitPrice.ReadOnly = true;
-            // 
-            // supplyStocks
-            // 
-            this.supplyStocks.HeaderText = "Supply Stocks";
-            this.supplyStocks.Name = "supplyStocks";
-            this.supplyStocks.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Amount";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
             // 
             // btnAdd
             // 
@@ -267,6 +230,43 @@
             this.label3.TabIndex = 38;
             this.label3.Text = "Purchase Order Name";
             // 
+            // supplyID
+            // 
+            this.supplyID.HeaderText = "Supply ID";
+            this.supplyID.Name = "supplyID";
+            this.supplyID.ReadOnly = true;
+            this.supplyID.Visible = false;
+            // 
+            // supplyName
+            // 
+            this.supplyName.HeaderText = "Supply Name";
+            this.supplyName.Name = "supplyName";
+            this.supplyName.ReadOnly = true;
+            // 
+            // supplyUnit
+            // 
+            this.supplyUnit.HeaderText = "Supply Unit";
+            this.supplyUnit.Name = "supplyUnit";
+            this.supplyUnit.ReadOnly = true;
+            // 
+            // supplyUnitPrice
+            // 
+            this.supplyUnitPrice.HeaderText = "Purchase Order Supply Unit Price";
+            this.supplyUnitPrice.Name = "supplyUnitPrice";
+            this.supplyUnitPrice.ReadOnly = true;
+            // 
+            // supplyStocks
+            // 
+            this.supplyStocks.HeaderText = "Purchase Order Supply Quantity";
+            this.supplyStocks.Name = "supplyStocks";
+            this.supplyStocks.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
             // frmAddPurchaseOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,12 +310,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplyID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplyUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplyUnitPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplyStocks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.TextBox txtTotalAmount;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpDeliveryDate;
@@ -324,5 +318,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbSupplierName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplyID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplyUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplyUnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplyStocks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
     }
 }
