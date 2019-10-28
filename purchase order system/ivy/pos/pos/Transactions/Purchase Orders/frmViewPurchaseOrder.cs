@@ -110,12 +110,8 @@ namespace pos.Transactions.Purchase_Orders
             }
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Printing...");
-        }
 
-       
+
 
         private void frmViewPurchaseOrder_Load(object sender, EventArgs e)
         {
@@ -150,6 +146,12 @@ namespace pos.Transactions.Purchase_Orders
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            Transactions.Reports.frmReportPurchaseOrder frmReportPurchaseOrder = new Transactions.Reports.frmReportPurchaseOrder(purchaseOrderDetailBL, purchaseOrderInfo);
+            frmReportPurchaseOrder.ShowDialog();
         }
     }
 }

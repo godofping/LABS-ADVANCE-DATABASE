@@ -100,9 +100,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(119, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(288, 48);
+            this.label3.Size = new System.Drawing.Size(294, 48);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Revizol Construction Supplies\r\n Purchase Order System";
+            this.label3.Text = "Morales Construction Supplies\r\n Purchase Order System";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // errorProvider1

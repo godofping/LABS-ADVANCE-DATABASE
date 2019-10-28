@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             this.btnRecieved = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,18 +70,18 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnPrint
+            // btnReport
             // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(691, 644);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(124, 55);
-            this.btnPrint.TabIndex = 34;
-            this.btnPrint.Text = "Print";
-            this.toolTip1.SetToolTip(this.btnPrint, "Print Purchase Order.");
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.btnReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.Location = new System.Drawing.Point(171, 644);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(124, 55);
+            this.btnReport.TabIndex = 34;
+            this.btnReport.Text = "Report";
+            this.toolTip1.SetToolTip(this.btnReport, "Generate Report Purchase Order.");
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnRecieved
             // 
@@ -312,7 +312,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnReport);
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "frmViewPurchaseOrder";
             this.ShowIcon = false;
@@ -332,7 +332,7 @@
 
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

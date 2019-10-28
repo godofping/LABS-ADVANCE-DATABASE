@@ -36,9 +36,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Web.Services\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -67,11 +77,37 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transactions\Reports\crPurchaseOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crPurchaseOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transactions\Reports\dsPurchaseOrder.cs">
+      <DependentUpon>dsPurchaseOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Reports\dsPurchaseOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPurchaseOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Purchase Orders\frmPrintPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Purchase Orders\frmPrintPurchaseOrder.Designer.cs">
+      <DependentUpon>frmPrintPurchaseOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\Purchase Orders\frmViewPurchaseOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transactions\Purchase Orders\frmViewPurchaseOrder.Designer.cs">
       <DependentUpon>frmViewPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Reports\frmReportPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Reports\frmReportPurchaseOrder.Designer.cs">
+      <DependentUpon>frmReportPurchaseOrder.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -117,6 +153,10 @@
       <DependentUpon>frmSupplies.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Reports\crPurchaseOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crPurchaseOrder.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactions\Purchase Orders\frmAddPurchaseOrder.resx">
       <DependentUpon>frmAddPurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +178,10 @@
     <EmbeddedResource Include="Transactions\Purchase Orders\frmViewPurchaseOrder.resx">
       <DependentUpon>frmViewPurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Reports\frmReportPurchaseOrder.resx">
+      <DependentUpon>frmReportPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -225,6 +269,17 @@
     <Compile Include="Transactions\Purchase Orders\frmPurchaseOrders.Designer.cs">
       <DependentUpon>frmPurchaseOrders.cs</DependentUpon>
     </Compile>
+    <None Include="Transactions\Reports\dsPurchaseOrder.xsc">
+      <DependentUpon>dsPurchaseOrder.xsd</DependentUpon>
+    </None>
+    <None Include="Transactions\Reports\dsPurchaseOrder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPurchaseOrder.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Transactions\Reports\dsPurchaseOrder.xss">
+      <DependentUpon>dsPurchaseOrder.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\pos.BL\pos.BL.csproj">
@@ -235,6 +290,9 @@
       <Project>{633C3229-CC95-4525-9478-0CEDEF7122AF}</Project>
       <Name>pos.EL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
