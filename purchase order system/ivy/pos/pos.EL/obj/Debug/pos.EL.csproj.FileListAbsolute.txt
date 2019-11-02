@@ -6,3 +6,4 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.EL\bin\Debug\pos.EL.pdb
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.EL\obj\Debug\pos.EL.dll
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.EL\obj\Debug\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\ivy\pos\pos.EL\obj\Debug\pos.EL.csprojAssemblyReference.cache
