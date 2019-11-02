@@ -36,23 +36,23 @@ namespace pos.PL.Registrations
 
         private void frmCategories_Load(object sender, EventArgs e)
         {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
+            loadData(txtSearch.Text);
+            hiddenColumns();
+            manageForm(false);
         }
 
-        private void HiddenColumns()
+        private void hiddenColumns()
         {
             dgv.Columns["Category ID"].Visible = false;
             dgv.Columns["isdeleted"].Visible = false;
         }
 
-        private void LoadData(string keywords)
+        private void loadData(string keywords)
         {
             dgv.DataSource = CategoryBL.List(keywords);
         }
 
-        private void ManageForm(bool status)
+        private void manageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -60,20 +60,20 @@ namespace pos.PL.Registrations
             txtSearch.Enabled = !status;
         }
 
-        private void ClearErrors()
+        private void clearErrors()
         {
             errorProvider1.SetError(txtCategoryName, "");
 
         }
 
-        private void ClearFields()
+        private void clearFields()
         {
             dgv.ClearSelection();
             txtCategoryID.ResetText();
             txtCategoryName.ResetText();
         }
 
-        private bool CheckErrors()
+        private bool checkErrors()
         {
             bool status = true;
 
@@ -88,13 +88,13 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void GetDataFromForm()
+        private void getDataFromForm()
         {
             CategoryInfo.Categoryname = txtCategoryName.Text;
 
         }
 
-        private void GetDataFromDataGridView()
+        private void getDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
@@ -111,12 +111,12 @@ namespace pos.PL.Registrations
 
         }
 
-        private void ShowMessageBox(bool condition)
+        private void showMessageBox(bool condition)
         {
             if (condition)
             {
-                LoadData(txtSearch.Text);
-                ClearFields();
+                loadData(txtSearch.Text);
+                clearFields();
                 MessageBox.Show("Success");
 
             }
@@ -126,28 +126,28 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Add()
+        private void add()
         {
-            GetDataFromForm();
-            ShowMessageBox(CategoryBL.Insert(CategoryInfo) > 0);
+            getDataFromForm();
+            showMessageBox(CategoryBL.Insert(CategoryInfo) > 0);
         }
 
-        private void Edit()
+        private void edit()
         {
-            GetDataFromForm();
-            ShowMessageBox(CategoryBL.Update(CategoryInfo));
+            getDataFromForm();
+            showMessageBox(CategoryBL.Update(CategoryInfo));
         }
 
-        private void Delete()
+        private void delete()
         {
-            GetDataFromForm();
-            ShowMessageBox(CategoryBL.Delete(CategoryInfo));
+            getDataFromForm();
+            showMessageBox(CategoryBL.Delete(CategoryInfo));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ClearFields();
-            ManageForm(true);
+            clearFields();
+            manageForm(true);
             this.ActiveControl = txtCategoryName;
             current = "ADD";
         }
@@ -160,7 +160,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                ManageForm(true);
+                manageForm(true);
                 this.ActiveControl = txtCategoryName;
                 current = "EDIT";
             }
@@ -174,54 +174,54 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                delete();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (CheckErrors())
+            if (checkErrors())
             {
-                GetDataFromForm();
+                getDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    add();
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    edit();
                 }
 
-                ManageForm(false);
-                ClearFields();
+                manageForm(false);
+                clearFields();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ManageForm(false);
-            ClearFields();
-            ClearErrors();
+            manageForm(false);
+            clearFields();
+            clearErrors();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            LoadData(txtSearch.Text);
+            loadData(txtSearch.Text);
         }
 
         private void dgvManageCategories_SelectionChanged(object sender, EventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void dgvManageCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void dgvManageCategories_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
 

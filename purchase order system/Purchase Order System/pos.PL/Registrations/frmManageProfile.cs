@@ -51,20 +51,20 @@ namespace pos.PL.Registrations
         private void frmManageProfile_Load(object sender, EventArgs e)
         {
        
-            ReadOnlyControls();
-            ManageForm(false);
+            readOnlyControls();
+            manageForm(false);
             txtZipCode.MaxLength = 6;
 
-            GetDataFromDataTable();
+            getDataFromDataTable();
         }
 
-        private void ReadOnlyControls()
+        private void readOnlyControls()
         {
             txtPosition.ReadOnly = true;
             txtUsername.ReadOnly = true;
         }
 
-        private void ManageForm(bool status)
+        private void manageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -72,7 +72,7 @@ namespace pos.PL.Registrations
         }
 
 
-        private void ClearErrors()
+        private void clearErrors()
         {
             errorProvider1.SetError(txtFirstName, "");
             errorProvider1.SetError(txtMiddleName, "");
@@ -89,7 +89,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private bool CheckErrors()
+        private bool checkErrors()
         {
             bool status = true;
 
@@ -193,7 +193,7 @@ namespace pos.PL.Registrations
         }
 
 
-        private void GetDataFromForm()
+        private void getDataFromForm()
         {
             AddressInfo.Address = txtAddress.Text;
             AddressInfo.City = txtCity.Text;
@@ -213,7 +213,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void GetDataFromDataTable()
+        private void getDataFromDataTable()
         {
             foreach (DataRow row in StaffBL.List(StaffInfo.Staffid).Rows)
             {
@@ -264,7 +264,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void ShowMessageBox(bool condition)
+        private void showMessageBox(bool condition)
         {
             if (condition)
             {
@@ -278,11 +278,11 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Edit()
+        private void edit()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
-            ShowMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo) & StaffBL.Update(StaffInfo));
+            showMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo) & StaffBL.Update(StaffInfo));
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -293,7 +293,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                ManageForm(true);
+                manageForm(true);
                 this.ActiveControl = txtFirstName;
                 current = "EDIT";
             }
@@ -301,27 +301,27 @@ namespace pos.PL.Registrations
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (CheckErrors())
+            if (checkErrors())
             {
-                GetDataFromForm();
+                getDataFromForm();
                 if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    edit();
                     frmMain.UpdateInfo();
                 }
 
-                ManageForm(false);
+                manageForm(false);
 
-                GetDataFromDataTable();
+                getDataFromDataTable();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ManageForm(false);
+            manageForm(false);
 
-            ClearErrors();
-            GetDataFromDataTable();
+            clearErrors();
+            getDataFromDataTable();
         }
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)

@@ -47,15 +47,15 @@ namespace pos.PL.Registrations
 
         private void frmManageStaffs_Load(object sender, EventArgs e)
         {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            PopulateControls();
-            ClearFields();
-            ReadOnlyControls();
+            loadData(txtSearch.Text);
+            hiddenColumns();
+            manageForm(false);
+            populateControls();
+            clearFields();
+            readOnlyControls();
         }
 
-        private void ReadOnlyControls()
+        private void readOnlyControls()
         {
             txtProductSKU.ReadOnly = true;
             txtProductPrice.ReadOnly = true;
@@ -63,7 +63,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void HiddenColumns()
+        private void hiddenColumns()
         {
             dgv.Columns["Supplier Product ID"].Visible = false;
             dgv.Columns["subcategoryid"].Visible = false;
@@ -78,12 +78,12 @@ namespace pos.PL.Registrations
 
         }
 
-        private void LoadData(string keywords)
+        private void loadData(string keywords)
         {
             dgv.DataSource = SupplierProductBL.List(keywords);
         }
 
-        private void PopulateControls()
+        private void populateControls()
         {
             cbCategoryName.DisplayMember = "Category Name";
             cbCategoryName.ValueMember = "Category ID";
@@ -95,21 +95,21 @@ namespace pos.PL.Registrations
         }
 
 
-        private void PopulateControlsSubCategory()
+        private void populateControlsSubCategory()
         {
             cbSubCategoryName.DisplayMember = "Sub Category Name";
             cbSubCategoryName.ValueMember = "Sub Category ID";
             cbSubCategoryName.DataSource = SubCategoryBL.List(Convert.ToInt32(cbCategoryName.SelectedValue));
         }
 
-        private void PopulateControlsProducts()
+        private void populateControlsProducts()
         {
             cbProductName.DisplayMember = "Product Name";
             cbProductName.ValueMember = "Product ID";
             cbProductName.DataSource = InventoryBL.List(Convert.ToInt32(cbSubCategoryName.SelectedValue));
         }
 
-        private void GetProductInfo()
+        private void getProductInfo()
         {
             if (!cbProductName.Text.Equals(""))
             {
@@ -126,13 +126,13 @@ namespace pos.PL.Registrations
             }
             else
             {
-                ClearExtendedFields();
+                clearExtendedFields();
             }
 
         }
 
 
-        private void ManageForm(bool status)
+        private void manageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -140,7 +140,7 @@ namespace pos.PL.Registrations
             txtSearch.Enabled = !status;
         }
 
-        private void ClearErrors()
+        private void clearErrors()
         {
             errorProvider1.SetError(cbSupplierName, "");
             errorProvider1.SetError(cbProductName, "");
@@ -148,7 +148,7 @@ namespace pos.PL.Registrations
             errorProvider1.SetError(cbProductName, "");
         }
 
-        private void ClearFields()
+        private void clearFields()
         {
             dgv.ClearSelection();
             txtSupplierProductID.ResetText();
@@ -156,19 +156,19 @@ namespace pos.PL.Registrations
             cbCategoryName.SelectedIndex = -1;
             cbSubCategoryName.SelectedIndex = -1;
             cbProductName.SelectedIndex = -1;
-            ClearExtendedFields();
+            clearExtendedFields();
 
 
         }
 
-        private void ClearExtendedFields()
+        private void clearExtendedFields()
         {
             txtProductSKU.ResetText();
             txtProductPrice.ResetText();
             txtProductDescription.ResetText();
         }
 
-        private bool CheckErrors()
+        private bool checkErrors()
         {
             bool status = true;
 
@@ -209,13 +209,13 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void GetDataFromForm()
+        private void getDataFromForm()
         {
             SupplierProductInfo.Productid = Convert.ToInt32(cbProductName.SelectedValue);
             SupplierProductInfo.Supplierid = Convert.ToInt32(cbSupplierName.SelectedValue);
         }
 
-        private void GetDataFromDataGridView()
+        private void getDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
@@ -255,12 +255,12 @@ namespace pos.PL.Registrations
 
         }
 
-        private void ShowMessageBox(bool condition)
+        private void showMessageBox(bool condition)
         {
             if (condition)
             {
-                LoadData(txtSearch.Text);
-                ClearFields();
+                loadData(txtSearch.Text);
+                clearFields();
                 MessageBox.Show("Success");
             }
             else
@@ -269,32 +269,32 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Add()
+        private void add()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
-            ShowMessageBox(SupplierProductBL.Insert(SupplierProductInfo) > 0);
+            showMessageBox(SupplierProductBL.Insert(SupplierProductInfo) > 0);
         }
 
-        private void Edit()
+        private void edit()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
-            ShowMessageBox(SupplierProductBL.Update(SupplierProductInfo));
+            showMessageBox(SupplierProductBL.Update(SupplierProductInfo));
         }
 
-        private void Delete()
+        private void delete()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
-            ShowMessageBox(SupplierProductBL.Delete(SupplierProductInfo));
+            showMessageBox(SupplierProductBL.Delete(SupplierProductInfo));
         }
 
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ClearFields();
-            ManageForm(true);
+            clearFields();
+            manageForm(true);
             this.ActiveControl = cbSubCategoryName;
             current = "ADD";
         }
@@ -307,7 +307,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                ManageForm(true);
+                manageForm(true);
                 this.ActiveControl = cbSubCategoryName;
                 current = "EDIT";
             }
@@ -321,30 +321,30 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                delete();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (CheckErrors())
+            if (checkErrors())
             {
-                GetDataFromForm();
+                getDataFromForm();
 
                 if (SupplierProductBL.CheckIfExisting(SupplierProductInfo).Rows.Count == 0)
                 {
                     if (current.Equals("ADD"))
                     {
 
-                        Add();
+                        add();
                     }
                     else if (current.Equals("EDIT"))
                     {
-                        Edit();
+                        edit();
                     }
 
-                    ManageForm(false);
-                    ClearFields();
+                    manageForm(false);
+                    clearFields();
                 }
                 else
                 {
@@ -355,44 +355,44 @@ namespace pos.PL.Registrations
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ManageForm(false);
-            ClearFields();
-            ClearErrors();
+            manageForm(false);
+            clearFields();
+            clearErrors();
         }
 
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            LoadData(txtSearch.Text);
+            loadData(txtSearch.Text);
         }
 
         private void cbCategoryName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PopulateControlsSubCategory();
+            populateControlsSubCategory();
         }
 
         private void cbSubCategoryName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PopulateControlsProducts();
+            populateControlsProducts();
         }
 
         private void cbProductName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetProductInfo();
+            getProductInfo();
         }
     }
 }

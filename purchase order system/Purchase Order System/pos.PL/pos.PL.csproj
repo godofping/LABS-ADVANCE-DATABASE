@@ -143,6 +143,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactions\frmAddPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmAddPurchaseOrder.Designer.cs">
+      <DependentUpon>frmAddPurchaseOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\frmManagePurchaseOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmAddPurchaseOrder.resx">
+      <DependentUpon>frmAddPurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmManagePurchaseOrders.resx">
       <DependentUpon>frmManagePurchaseOrders.cs</DependentUpon>

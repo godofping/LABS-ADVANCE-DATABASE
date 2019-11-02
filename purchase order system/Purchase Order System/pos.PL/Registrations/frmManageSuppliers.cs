@@ -40,15 +40,15 @@ namespace pos.PL.Registrations
 
         private void frmManageVendors_Load(object sender, EventArgs e)
         {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
+            loadData(txtSearch.Text);
+            hiddenColumns();
+            manageForm(false);
             txtZipCode.MaxLength = 6;
 
 
         }
 
-        private void HiddenColumns()
+        private void hiddenColumns()
         {
             dgv.Columns["Supplier ID"].Visible = false;
             dgv.Columns["contactdetailid"].Visible = false;
@@ -57,12 +57,12 @@ namespace pos.PL.Registrations
 
         }
 
-        private void LoadData(string keywords)
+        private void loadData(string keywords)
         {
             dgv.DataSource = SupplierBL.List(keywords);
         }
 
-        private void ManageForm(bool status)
+        private void manageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -70,7 +70,7 @@ namespace pos.PL.Registrations
             txtSearch.Enabled = !status;
         }
 
-        private void ClearErrors()
+        private void clearErrors()
         {
             errorProvider1.SetError(txtSupplier, ""); ;
             errorProvider1.SetError(txtContactNumber, "");
@@ -82,7 +82,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void ClearFields()
+        private void clearFields()
         {
             dgv.ClearSelection();
             txtSupplierID.ResetText();
@@ -95,7 +95,7 @@ namespace pos.PL.Registrations
             txtZipCode.ResetText();
         }
 
-        private bool CheckErrors()
+        private bool checkErrors()
         {
             bool status = true;
 
@@ -160,7 +160,7 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void GetDataFromForm()
+        private void getDataFromForm()
         {
             AddressInfo.Address = txtAddress.Text;
             AddressInfo.City = txtCity.Text;
@@ -173,7 +173,7 @@ namespace pos.PL.Registrations
             SupplierInfo.Supplier = txtSupplier.Text;
         }
 
-        private void GetDataFromDataGridView()
+        private void getDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
@@ -206,12 +206,12 @@ namespace pos.PL.Registrations
 
         }
 
-        private void ShowMessageBox(bool condition)
+        private void showMessageBox(bool condition)
         {
             if (condition)
             {
-                LoadData(txtSearch.Text);
-                ClearFields();
+                loadData(txtSearch.Text);
+                clearFields();
                 MessageBox.Show("Success");
 
             }
@@ -221,33 +221,33 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Add()
+        private void add()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
             ContactDetailInfo.Addressid = Convert.ToInt32(AddressBL.Insert(AddressInfo));
             SupplierInfo.Contactdetailid = Convert.ToInt32(ContacDetailBL.Insert(ContactDetailInfo));
 
-            ShowMessageBox(SupplierBL.Insert(SupplierInfo) > 0);
+            showMessageBox(SupplierBL.Insert(SupplierInfo) > 0);
         }
 
-        private void Edit()
+        private void edit()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
-            ShowMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & SupplierBL.Update(SupplierInfo));
+            showMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & SupplierBL.Update(SupplierInfo));
         }
 
-        private void Delete()
+        private void delete()
         {
-            GetDataFromForm();
-            ShowMessageBox(SupplierBL.Delete(SupplierInfo));
+            getDataFromForm();
+            showMessageBox(SupplierBL.Delete(SupplierInfo));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ClearFields();
-            ManageForm(true);
+            clearFields();
+            manageForm(true);
             this.ActiveControl = txtSupplier;
             current = "ADD";
         }
@@ -260,7 +260,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                ManageForm(true);
+                manageForm(true);
                 this.ActiveControl = txtSupplier;
                 current = "EDIT";
             }
@@ -274,49 +274,49 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                delete();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (CheckErrors())
+            if (checkErrors())
             {
-                GetDataFromForm();
+                getDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    add();
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    edit();
                 }
 
-                ManageForm(false);
-                ClearFields();
+                manageForm(false);
+                clearFields();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ManageForm(false);
-            ClearFields();
-            ClearErrors();
+            manageForm(false);
+            clearFields();
+            clearErrors();
         }
 
         private void dgvManageVendors_SelectionChanged(object sender, EventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void dgvManageVendors_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void dgvManageSuppliers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
@@ -337,7 +337,7 @@ namespace pos.PL.Registrations
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            LoadData(txtSearch.Text);
+            loadData(txtSearch.Text);
         }
 
     }

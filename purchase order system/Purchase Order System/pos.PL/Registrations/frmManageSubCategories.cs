@@ -39,14 +39,14 @@ namespace pos.PL.Registrations
 
         private void frmManageSubCategories_Load(object sender, EventArgs e)
         {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            PopulateControls();
-            ClearFields();
+            loadData(txtSearch.Text);
+            hiddenColumns();
+            manageForm(false);
+            populateControls();
+            clearFields();
         }
 
-        private void HiddenColumns()
+        private void hiddenColumns()
         {
             dgv.Columns["Sub Category ID"].Visible = false;
             dgv.Columns["categoryid"].Visible = false;
@@ -54,12 +54,12 @@ namespace pos.PL.Registrations
             dgv.Columns["categoriesisdeleted"].Visible = false;
         }
 
-        private void LoadData(string keywords)
+        private void loadData(string keywords)
         {
             dgv.DataSource = SubCategoryBL.List(keywords);
         }
 
-        private void PopulateControls()
+        private void populateControls()
         {
 
             cbCategoryName.DisplayMember = "Category Name";
@@ -67,7 +67,7 @@ namespace pos.PL.Registrations
             cbCategoryName.DataSource = CategoryBL.List("");
         }
 
-        private void ManageForm(bool status)
+        private void manageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -75,13 +75,13 @@ namespace pos.PL.Registrations
             txtSearch.Enabled = !status;
         }
 
-        private void ClearErrors()
+        private void clearErrors()
         {
             errorProvider1.SetError(txtSubCategoryName, "");
             errorProvider1.SetError(cbCategoryName, "");
         }
 
-        private void ClearFields()
+        private void clearFields()
         {
             dgv.ClearSelection();
             txtSubCategoryID.ResetText();
@@ -89,7 +89,7 @@ namespace pos.PL.Registrations
             cbCategoryName.SelectedIndex = -1;
         }
 
-        private bool CheckErrors()
+        private bool checkErrors()
         {
             bool status = true;
 
@@ -112,7 +112,7 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void GetDataFromForm()
+        private void getDataFromForm()
         {
             SubCategoryInfo.Subcategoryname = txtSubCategoryName.Text;
 
@@ -120,7 +120,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void GetDataFromDataGridView()
+        private void getDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
@@ -142,12 +142,12 @@ namespace pos.PL.Registrations
 
         }
 
-        private void ShowMessageBox(bool condition)
+        private void showMessageBox(bool condition)
         {
             if (condition)
             {
-                LoadData(txtSearch.Text);
-                ClearFields();
+                loadData(txtSearch.Text);
+                clearFields();
                 MessageBox.Show("Success");
 
             }
@@ -157,30 +157,30 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Add()
+        private void add()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
-            ShowMessageBox(SubCategoryBL.Insert(SubCategoryInfo) > 0);
+            showMessageBox(SubCategoryBL.Insert(SubCategoryInfo) > 0);
         }
 
-        private void Edit()
+        private void edit()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
-            ShowMessageBox(SubCategoryBL.Update(SubCategoryInfo));
+            showMessageBox(SubCategoryBL.Update(SubCategoryInfo));
         }
 
-        private void Delete()
+        private void delete()
         {
-            GetDataFromForm();
-            ShowMessageBox(SubCategoryBL.Delete(SubCategoryInfo));
+            getDataFromForm();
+            showMessageBox(SubCategoryBL.Delete(SubCategoryInfo));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ClearFields();
-            ManageForm(true);
+            clearFields();
+            manageForm(true);
             this.ActiveControl = txtSubCategoryName;
             current = "ADD";
         }
@@ -193,7 +193,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                ManageForm(true);
+                manageForm(true);
                 this.ActiveControl = txtSubCategoryName;
                 current = "EDIT";
             }
@@ -207,54 +207,54 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                delete();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (CheckErrors())
+            if (checkErrors())
             {
-                GetDataFromForm();
+                getDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    add();
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    edit();
                 }
 
-                ManageForm(false);
-                ClearFields();
+                manageForm(false);
+                clearFields();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ManageForm(false);
-            ClearFields();
-            ClearErrors();
+            manageForm(false);
+            clearFields();
+            clearErrors();
         }
 
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            LoadData(txtSearch.Text);
+            loadData(txtSearch.Text);
         }
     }
 }

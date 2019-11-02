@@ -45,20 +45,20 @@ namespace pos.PL.Registrations
 
         private void frmManageStoreInformation_Load(object sender, System.EventArgs e)
         {
-            ManageForm(false);
+            manageForm(false);
             txtZipCode.MaxLength = 6;
           
-            GetDataFromDataTable();
+            getDataFromDataTable();
         }
 
-        private void ManageForm(bool status)
+        private void manageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
 
         }
 
-        private void ClearErrors()
+        private void clearErrors()
         {
 
             errorProvider1.SetError(txtStoreName, "");
@@ -72,7 +72,7 @@ namespace pos.PL.Registrations
         }
 
 
-        private bool CheckErrors()
+        private bool checkErrors()
         {
             bool status = true;
 
@@ -137,7 +137,7 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void GetDataFromForm()
+        private void getDataFromForm()
         {
             AddressInfo.Address = txtAddress.Text;
             AddressInfo.City = txtCity.Text;
@@ -150,7 +150,7 @@ namespace pos.PL.Registrations
             StoreInformationInfo.Storename = txtStoreName.Text;
         }
 
-        private void GetDataFromDataTable()
+        private void getDataFromDataTable()
         {
             foreach (DataRow row in StoreInformationBL.List().Rows)
             {
@@ -180,7 +180,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void ShowMessageBox(bool condition)
+        private void showMessageBox(bool condition)
         {
             if (condition)
             {
@@ -194,16 +194,16 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Edit()
+        private void edit()
         {
-            GetDataFromForm();
-            ShowMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & StoreInformationBL.Update(StoreInformationInfo));
+            getDataFromForm();
+            showMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & StoreInformationBL.Update(StoreInformationInfo));
         }
 
 
         private void btnEdit_Click(object sender, System.EventArgs e)
         {
-            ManageForm(true);
+            manageForm(true);
             this.ActiveControl = txtStoreName;
             current = "EDIT";
         }
@@ -211,18 +211,18 @@ namespace pos.PL.Registrations
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
-            if (CheckErrors())
+            if (checkErrors())
             {
-                GetDataFromForm();
+                getDataFromForm();
                 if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    edit();
                     frmMain.UpdateInfo();
                 }
 
-                ManageForm(false);
+                manageForm(false);
         
-                GetDataFromDataTable();
+                getDataFromDataTable();
 
 
             }
@@ -230,10 +230,10 @@ namespace pos.PL.Registrations
 
         private void btnCancel_Click(object sender, System.EventArgs e)
         {
-            ManageForm(false);
+            manageForm(false);
  
-            ClearErrors();
-            GetDataFromDataTable();
+            clearErrors();
+            getDataFromDataTable();
         }
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)

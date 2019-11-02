@@ -34,12 +34,10 @@
             this.txtCategoryID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.gbControls = new System.Windows.Forms.GroupBox();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,8 +55,6 @@
             this.gbInformations.Controls.Add(this.txtCategoryID);
             this.gbInformations.Controls.Add(this.label13);
             this.gbInformations.Controls.Add(this.txtCategoryName);
-            this.gbInformations.Controls.Add(this.btnCancel);
-            this.gbInformations.Controls.Add(this.btnSave);
             this.gbInformations.Location = new System.Drawing.Point(13, 43);
             this.gbInformations.Name = "gbInformations";
             this.gbInformations.Size = new System.Drawing.Size(1031, 203);
@@ -98,24 +94,6 @@
             this.txtCategoryName.Size = new System.Drawing.Size(172, 20);
             this.txtCategoryName.TabIndex = 25;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(920, 165);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 48;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(823, 165);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 47;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(36, 38);
@@ -137,7 +115,7 @@
             // gbControls
             // 
             this.gbControls.Controls.Add(this.btnAdd);
-            this.gbControls.Controls.Add(this.btnEdit);
+            this.gbControls.Controls.Add(this.btnView);
             this.gbControls.Controls.Add(this.btnDelete);
             this.gbControls.Location = new System.Drawing.Point(1050, 45);
             this.gbControls.Name = "gbControls";
@@ -146,14 +124,14 @@
             this.gbControls.TabStop = false;
             this.gbControls.Text = "Controls";
             // 
-            // btnEdit
+            // btnView
             // 
-            this.btnEdit.Location = new System.Drawing.Point(36, 92);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 49;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnView.Location = new System.Drawing.Point(36, 92);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(75, 23);
+            this.btnView.TabIndex = 49;
+            this.btnView.Text = "View";
+            this.btnView.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -235,12 +213,10 @@
         private System.Windows.Forms.TextBox txtCategoryID;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtCategoryName;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox gbControls;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnView;
         public System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

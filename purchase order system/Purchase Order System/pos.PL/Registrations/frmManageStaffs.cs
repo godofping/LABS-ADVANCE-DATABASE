@@ -45,15 +45,15 @@ namespace pos.PL.Registrations
 
         private void frmManageStaffs_Load(object sender, EventArgs e)
         {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
+            loadData(txtSearch.Text);
+            hiddenColumns();
+            manageForm(false);
             txtZipCode.MaxLength = 6;
-            PopulateControls();
-            ClearFields();
+            populateControls();
+            clearFields();
         }
 
-        private void HiddenColumns()
+        private void hiddenColumns()
         {
             dgv.Columns["Staff ID"].Visible = false;
             dgv.Columns["contactdetailid"].Visible = false;
@@ -64,13 +64,13 @@ namespace pos.PL.Registrations
             dgv.Columns["isdeleted"].Visible = false;
         }
 
-        private void LoadData(string keywords)
+        private void loadData(string keywords)
         {
             dgv.DataSource = StaffBL.List(keywords);
 
         }
 
-        private void PopulateControls()
+        private void populateControls()
         {
 
             cbPosition.DisplayMember = "staffposition";
@@ -78,7 +78,7 @@ namespace pos.PL.Registrations
             cbPosition.DataSource = StaffPositionBL.List();
         }
 
-        private void ManageForm(bool status)
+        private void manageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -86,7 +86,7 @@ namespace pos.PL.Registrations
             txtSearch.Enabled = !status;
         }
 
-        private void ClearErrors()
+        private void clearErrors()
         {
             errorProvider1.SetError(txtFirstName, "");
             errorProvider1.SetError(txtMiddleName, "");
@@ -105,7 +105,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void ClearFields()
+        private void clearFields()
         {
             dgv.ClearSelection();
             txtStaffID.ResetText();
@@ -125,7 +125,7 @@ namespace pos.PL.Registrations
             txtPassword.ResetText();
         }
 
-        private bool CheckErrors()
+        private bool checkErrors()
         {
             bool status = true;
 
@@ -248,7 +248,7 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void GetDataFromForm()
+        private void getDataFromForm()
         {
             AddressInfo.Address = txtAddress.Text;
             AddressInfo.City = txtCity.Text;
@@ -275,7 +275,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void GetDataFromDataGridView()
+        private void getDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
@@ -329,12 +329,12 @@ namespace pos.PL.Registrations
 
         }
 
-        private void ShowMessageBox(bool condition)
+        private void showMessageBox(bool condition)
         {
             if (condition)
             {
-                LoadData(txtSearch.Text);
-                ClearFields();
+                loadData(txtSearch.Text);
+                clearFields();
                 MessageBox.Show("Success");
 
             }
@@ -344,9 +344,9 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Add()
+        private void add()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
             if (StaffBL.CheckUsername(StaffInfo).Rows.Count == 0)
             {
@@ -354,10 +354,10 @@ namespace pos.PL.Registrations
                 StaffInfo.Contactdetailid = Convert.ToInt32(ContacDetailBL.Insert(ContactDetailInfo));
                 StaffInfo.Basicinformationid = Convert.ToInt32(BasicInformationBL.Insert(BasicInformationInfo));
                 StaffInfo.Staffpositionid = Convert.ToInt32(StaffPositionInfo.Staffpositionid);
-                ShowMessageBox(StaffBL.Insert(StaffInfo) > 0);
+                showMessageBox(StaffBL.Insert(StaffInfo) > 0);
 
-                ManageForm(false);
-                ClearFields();
+                manageForm(false);
+                clearFields();
             }
             else
             {
@@ -365,15 +365,15 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Edit()
+        private void edit()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
             if (StaffBL.CheckUsername(StaffInfo, StaffInfo.Staffid).Rows.Count == 0)
             {
-                ShowMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo) & StaffBL.Update(StaffInfo));
-                ManageForm(false);
-                ClearFields();
+                showMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo) & StaffBL.Update(StaffInfo));
+                manageForm(false);
+                clearFields();
             }
             else
             {
@@ -382,17 +382,17 @@ namespace pos.PL.Registrations
 
         }
 
-        private void Delete()
+        private void delete()
         {
-            GetDataFromForm();
+            getDataFromForm();
 
-            ShowMessageBox(StaffBL.Delete(StaffInfo));
+            showMessageBox(StaffBL.Delete(StaffInfo));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ClearFields();
-            ManageForm(true);
+            clearFields();
+            manageForm(true);
             this.ActiveControl = txtFirstName;
             current = "ADD";
         }
@@ -405,7 +405,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                ManageForm(true);
+                manageForm(true);
                 this.ActiveControl = txtFirstName;
                 current = "EDIT";
             }
@@ -419,22 +419,22 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                delete();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (CheckErrors())
+            if (checkErrors())
             {
-                GetDataFromForm();
+                getDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    add();
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    edit();
                 }
 
                 
@@ -443,24 +443,24 @@ namespace pos.PL.Registrations
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            ManageForm(false);
-            ClearFields();
-            ClearErrors();
+            manageForm(false);
+            clearFields();
+            clearErrors();
         }
 
         private void dgvManageStaffs_SelectionChanged(object sender, EventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void dgvManageStaffs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void dgvManageStaffs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetDataFromDataGridView();
+            getDataFromDataGridView();
         }
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
@@ -481,7 +481,7 @@ namespace pos.PL.Registrations
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            LoadData(txtSearch.Text);
+            loadData(txtSearch.Text);
         }
 
     }
