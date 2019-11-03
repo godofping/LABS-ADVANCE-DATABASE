@@ -6,17 +6,17 @@ namespace pos.PL.Registrations
     public partial class frmManageStaffs : Form
     {
 
-        EL.Registrations.Staffs StaffInfo = new EL.Registrations.Staffs();
-        EL.Registrations.ContactDetails ContactDetailInfo = new EL.Registrations.ContactDetails();
-        EL.Registrations.BasicInformations BasicInformationInfo = new EL.Registrations.BasicInformations();
-        EL.Registrations.Addresses AddressInfo = new EL.Registrations.Addresses();
-        EL.Registrations.StaffPositions StaffPositionInfo = new EL.Registrations.StaffPositions();
+        EL.Registrations.Staffs staffEL = new EL.Registrations.Staffs();
+        EL.Registrations.ContactDetails contactDetailEL = new EL.Registrations.ContactDetails();
+        EL.Registrations.BasicInformations basicInformationEL = new EL.Registrations.BasicInformations();
+        EL.Registrations.Addresses addressEL = new EL.Registrations.Addresses();
+        EL.Registrations.StaffPositions staffPositionEL = new EL.Registrations.StaffPositions();
 
-        BL.Registrations.Staffs StaffBL = new BL.Registrations.Staffs();
-        BL.Registrations.ContactDetails ContacDetailBL = new BL.Registrations.ContactDetails();
-        BL.Registrations.BasicInformations BasicInformationBL = new BL.Registrations.BasicInformations();
-        BL.Registrations.Addresses AddressBL = new BL.Registrations.Addresses();
-        BL.Registrations.StaffPositions StaffPositionBL = new BL.Registrations.StaffPositions();
+        BL.Registrations.Staffs staffBL = new BL.Registrations.Staffs();
+        BL.Registrations.ContactDetails contactDetailBL = new BL.Registrations.ContactDetails();
+        BL.Registrations.BasicInformations basicInformationBL = new BL.Registrations.BasicInformations();
+        BL.Registrations.Addresses adressBL = new BL.Registrations.Addresses();
+        BL.Registrations.StaffPositions staffPositionBL = new BL.Registrations.StaffPositions();
 
         string current = "";
 
@@ -45,15 +45,15 @@ namespace pos.PL.Registrations
 
         private void frmManageStaffs_Load(object sender, EventArgs e)
         {
-            loadData(txtSearch.Text);
-            hiddenColumns();
-            manageForm(false);
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
             txtZipCode.MaxLength = 6;
-            populateControls();
-            clearFields();
+            PopulateControls();
+            ClearFields();
         }
 
-        private void hiddenColumns()
+        private void HiddenColumns()
         {
             dgv.Columns["Staff ID"].Visible = false;
             dgv.Columns["contactdetailid"].Visible = false;
@@ -64,21 +64,21 @@ namespace pos.PL.Registrations
             dgv.Columns["isdeleted"].Visible = false;
         }
 
-        private void loadData(string keywords)
+        private void LoadData(string keywords)
         {
-            dgv.DataSource = StaffBL.List(keywords);
+            dgv.DataSource = staffBL.List(keywords);
 
         }
 
-        private void populateControls()
+        private void PopulateControls()
         {
 
             cbPosition.DisplayMember = "staffposition";
             cbPosition.ValueMember = "staffpositionid";
-            cbPosition.DataSource = StaffPositionBL.List();
+            cbPosition.DataSource = staffPositionBL.List();
         }
 
-        private void manageForm(bool status)
+        private void ManageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -86,7 +86,7 @@ namespace pos.PL.Registrations
             txtSearch.Enabled = !status;
         }
 
-        private void clearErrors()
+        private void ClearErrors()
         {
             errorProvider1.SetError(txtFirstName, "");
             errorProvider1.SetError(txtMiddleName, "");
@@ -105,7 +105,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void clearFields()
+        private void ClearFields()
         {
             dgv.ClearSelection();
             txtStaffID.ResetText();
@@ -125,7 +125,7 @@ namespace pos.PL.Registrations
             txtPassword.ResetText();
         }
 
-        private bool checkErrors()
+        private bool CheckErrors()
         {
             bool status = true;
 
@@ -248,93 +248,93 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void getDataFromForm()
+        private void GetDataFromForm()
         {
-            AddressInfo.Address = txtAddress.Text;
-            AddressInfo.City = txtCity.Text;
-            AddressInfo.Zipcode = txtZipCode.Text;
-            AddressInfo.Province = txtProvince.Text;
+            addressEL.Address = txtAddress.Text;
+            addressEL.City = txtCity.Text;
+            addressEL.Zipcode = txtZipCode.Text;
+            addressEL.Province = txtProvince.Text;
 
-            ContactDetailInfo.Contactnumber = txtContactNumber.Text;
-            ContactDetailInfo.Emailaddress = txtEmailAddress.Text;
+            contactDetailEL.Contactnumber = txtContactNumber.Text;
+            contactDetailEL.Emailaddress = txtEmailAddress.Text;
 
-            BasicInformationInfo.Firstname = txtFirstName.Text;
-            BasicInformationInfo.Middlename = txtMiddleName.Text;
-            BasicInformationInfo.Lastname = txtLastName.Text;
-            BasicInformationInfo.Gender = cbGender.Text;
-            BasicInformationInfo.Birthdate = dtpBirthDate.Text;
+            basicInformationEL.Firstname = txtFirstName.Text;
+            basicInformationEL.Middlename = txtMiddleName.Text;
+            basicInformationEL.Lastname = txtLastName.Text;
+            basicInformationEL.Gender = cbGender.Text;
+            basicInformationEL.Birthdate = dtpBirthDate.Text;
 
-            StaffPositionInfo.Staffpositionid = Convert.ToInt32(cbPosition.SelectedValue);
+            staffPositionEL.Staffpositionid = Convert.ToInt32(cbPosition.SelectedValue);
 
 
-            StaffInfo.Username = txtUsername.Text;
-            StaffInfo.Password = txtPassword.Text;
-            StaffInfo.Staffpositionid = Convert.ToInt32(cbPosition.SelectedValue);
+            staffEL.Username = txtUsername.Text;
+            staffEL.Password = txtPassword.Text;
+            staffEL.Staffpositionid = Convert.ToInt32(cbPosition.SelectedValue);
 
 
 
         }
 
-        private void getDataFromDataGridView()
+        private void GetDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
-                AddressInfo.Addressid = Convert.ToInt32(row.Cells["addressid"].Value);
-                AddressInfo.Address = row.Cells["Address"].Value.ToString();
-                AddressInfo.City = row.Cells["City"].Value.ToString();
-                AddressInfo.Province = row.Cells["Province"].Value.ToString();
-                AddressInfo.Zipcode = row.Cells["Zip Code"].Value.ToString();
+                addressEL.Addressid = Convert.ToInt32(row.Cells["addressid"].Value);
+                addressEL.Address = row.Cells["Address"].Value.ToString();
+                addressEL.City = row.Cells["City"].Value.ToString();
+                addressEL.Province = row.Cells["Province"].Value.ToString();
+                addressEL.Zipcode = row.Cells["Zip Code"].Value.ToString();
 
-                ContactDetailInfo.Contactdetailid = Convert.ToInt32(row.Cells["contactdetailid"].Value);
-                ContactDetailInfo.Addressid = Convert.ToInt32(row.Cells["addressid"].Value);
-                ContactDetailInfo.Contactnumber = row.Cells["Contact Number"].Value.ToString();
-                ContactDetailInfo.Emailaddress = row.Cells["Email Address"].Value.ToString();
+                contactDetailEL.Contactdetailid = Convert.ToInt32(row.Cells["contactdetailid"].Value);
+                contactDetailEL.Addressid = Convert.ToInt32(row.Cells["addressid"].Value);
+                contactDetailEL.Contactnumber = row.Cells["Contact Number"].Value.ToString();
+                contactDetailEL.Emailaddress = row.Cells["Email Address"].Value.ToString();
 
-                BasicInformationInfo.Basicinformationid = Convert.ToInt32(row.Cells["basicinformationid"].Value);
-                BasicInformationInfo.Firstname = row.Cells["First Name"].Value.ToString();
-                BasicInformationInfo.Middlename = row.Cells["Middle Name"].Value.ToString();
-                BasicInformationInfo.Lastname = row.Cells["Last Name"].Value.ToString();
-                BasicInformationInfo.Gender = row.Cells["Gender"].Value.ToString();
-                BasicInformationInfo.Birthdate = row.Cells["Birth Date"].Value.ToString();
+                basicInformationEL.Basicinformationid = Convert.ToInt32(row.Cells["basicinformationid"].Value);
+                basicInformationEL.Firstname = row.Cells["First Name"].Value.ToString();
+                basicInformationEL.Middlename = row.Cells["Middle Name"].Value.ToString();
+                basicInformationEL.Lastname = row.Cells["Last Name"].Value.ToString();
+                basicInformationEL.Gender = row.Cells["Gender"].Value.ToString();
+                basicInformationEL.Birthdate = row.Cells["Birth Date"].Value.ToString();
 
-                StaffPositionInfo.Staffpositionid = Convert.ToInt32(row.Cells["staffpositionid"].Value);
-                StaffPositionInfo.Staffposition = row.Cells["Staff Position"].Value.ToString();
+                staffPositionEL.Staffpositionid = Convert.ToInt32(row.Cells["staffpositionid"].Value);
+                staffPositionEL.Staffposition = row.Cells["Staff Position"].Value.ToString();
 
-                StaffInfo.Staffid = Convert.ToInt32(row.Cells["Staff ID"].Value);
-                StaffInfo.Username = row.Cells["Username"].Value.ToString();
-                StaffInfo.Password = row.Cells["password"].Value.ToString();
-                StaffInfo.Staffpositionid = Convert.ToInt32(row.Cells["staffpositionid"].Value);
-                StaffInfo.Contactdetailid = Convert.ToInt32(row.Cells["contactdetailid"].Value);
-                StaffInfo.Basicinformationid = Convert.ToInt32(row.Cells["basicinformationid"].Value);
+                staffEL.Staffid = Convert.ToInt32(row.Cells["Staff ID"].Value);
+                staffEL.Username = row.Cells["Username"].Value.ToString();
+                staffEL.Password = row.Cells["password"].Value.ToString();
+                staffEL.Staffpositionid = Convert.ToInt32(row.Cells["staffpositionid"].Value);
+                staffEL.Contactdetailid = Convert.ToInt32(row.Cells["contactdetailid"].Value);
+                staffEL.Basicinformationid = Convert.ToInt32(row.Cells["basicinformationid"].Value);
 
             }
 
-            txtStaffID.Text = StaffInfo.Staffid.ToString();
-            txtFirstName.Text = BasicInformationInfo.Firstname;
-            txtMiddleName.Text = BasicInformationInfo.Middlename;
-            txtLastName.Text = BasicInformationInfo.Lastname;
-            cbGender.Text = BasicInformationInfo.Gender;
-            dtpBirthDate.Text = BasicInformationInfo.Birthdate;
-            txtContactNumber.Text = ContactDetailInfo.Contactnumber;
-            txtEmailAddress.Text = ContactDetailInfo.Emailaddress;
-            txtAddress.Text = AddressInfo.Address;
-            txtCity.Text = AddressInfo.City;
-            txtProvince.Text = AddressInfo.Province;
-            txtZipCode.Text = AddressInfo.Zipcode;
+            txtStaffID.Text = staffEL.Staffid.ToString();
+            txtFirstName.Text = basicInformationEL.Firstname;
+            txtMiddleName.Text = basicInformationEL.Middlename;
+            txtLastName.Text = basicInformationEL.Lastname;
+            cbGender.Text = basicInformationEL.Gender;
+            dtpBirthDate.Text = basicInformationEL.Birthdate;
+            txtContactNumber.Text = contactDetailEL.Contactnumber;
+            txtEmailAddress.Text = contactDetailEL.Emailaddress;
+            txtAddress.Text = addressEL.Address;
+            txtCity.Text = addressEL.City;
+            txtProvince.Text = addressEL.Province;
+            txtZipCode.Text = addressEL.Zipcode;
 
-            cbPosition.SelectedIndex = cbPosition.FindString(StaffPositionInfo.Staffposition);
+            cbPosition.SelectedIndex = cbPosition.FindString(staffPositionEL.Staffposition);
 
-            txtUsername.Text = StaffInfo.Username;
-            txtPassword.Text = StaffInfo.Password;
+            txtUsername.Text = staffEL.Username;
+            txtPassword.Text = staffEL.Password;
 
         }
 
-        private void showMessageBox(bool condition)
+        private void ShowMessageBox(bool condition)
         {
             if (condition)
             {
-                loadData(txtSearch.Text);
-                clearFields();
+                LoadData(txtSearch.Text);
+                ClearFields();
                 MessageBox.Show("Success");
 
             }
@@ -344,20 +344,20 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void add()
+        private void Add()
         {
-            getDataFromForm();
+            GetDataFromForm();
 
-            if (StaffBL.CheckUsername(StaffInfo).Rows.Count == 0)
+            if (staffBL.CheckUsername(staffEL).Rows.Count == 0)
             {
-                ContactDetailInfo.Addressid = Convert.ToInt32(AddressBL.Insert(AddressInfo));
-                StaffInfo.Contactdetailid = Convert.ToInt32(ContacDetailBL.Insert(ContactDetailInfo));
-                StaffInfo.Basicinformationid = Convert.ToInt32(BasicInformationBL.Insert(BasicInformationInfo));
-                StaffInfo.Staffpositionid = Convert.ToInt32(StaffPositionInfo.Staffpositionid);
-                showMessageBox(StaffBL.Insert(StaffInfo) > 0);
+                contactDetailEL.Addressid = Convert.ToInt32(adressBL.Insert(addressEL));
+                staffEL.Contactdetailid = Convert.ToInt32(contactDetailBL.Insert(contactDetailEL));
+                staffEL.Basicinformationid = Convert.ToInt32(basicInformationBL.Insert(basicInformationEL));
+                staffEL.Staffpositionid = Convert.ToInt32(staffPositionEL.Staffpositionid);
+                ShowMessageBox(staffBL.Insert(staffEL) > 0);
 
-                manageForm(false);
-                clearFields();
+                ManageForm(false);
+                ClearFields();
             }
             else
             {
@@ -365,15 +365,15 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void edit()
+        private void Edit()
         {
-            getDataFromForm();
+            GetDataFromForm();
 
-            if (StaffBL.CheckUsername(StaffInfo, StaffInfo.Staffid).Rows.Count == 0)
+            if (staffBL.CheckUsername(staffEL, staffEL.Staffid).Rows.Count == 0)
             {
-                showMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo) & StaffBL.Update(StaffInfo));
-                manageForm(false);
-                clearFields();
+                ShowMessageBox(adressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & basicInformationBL.Update(basicInformationEL) & staffBL.Update(staffEL));
+                ManageForm(false);
+                ClearFields();
             }
             else
             {
@@ -382,17 +382,17 @@ namespace pos.PL.Registrations
 
         }
 
-        private void delete()
+        private void Delete()
         {
-            getDataFromForm();
+            GetDataFromForm();
 
-            showMessageBox(StaffBL.Delete(StaffInfo));
+            ShowMessageBox(staffBL.Delete(staffEL));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            clearFields();
-            manageForm(true);
+            ClearFields();
+            ManageForm(true);
             this.ActiveControl = txtFirstName;
             current = "ADD";
         }
@@ -405,7 +405,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                manageForm(true);
+                ManageForm(true);
                 this.ActiveControl = txtFirstName;
                 current = "EDIT";
             }
@@ -419,48 +419,48 @@ namespace pos.PL.Registrations
             }
             else
             {
-                delete();
+                Delete();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (checkErrors())
+            if (CheckErrors())
             {
-                getDataFromForm();
+                GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    add();
+                    Add();
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    edit();
+                    Edit();
                 }
 
-                
+
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            manageForm(false);
-            clearFields();
-            clearErrors();
+            ManageForm(false);
+            ClearFields();
+            ClearErrors();
         }
 
         private void dgvManageStaffs_SelectionChanged(object sender, EventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void dgvManageStaffs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void dgvManageStaffs_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
@@ -481,7 +481,7 @@ namespace pos.PL.Registrations
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            loadData(txtSearch.Text);
+            LoadData(txtSearch.Text);
         }
 
     }

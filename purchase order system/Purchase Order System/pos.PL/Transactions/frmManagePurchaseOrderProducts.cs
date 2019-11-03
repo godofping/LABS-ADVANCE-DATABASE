@@ -13,10 +13,10 @@ namespace pos.PL.Transactions
     public partial class frmManagePurchaseOrderProducts : Form
     {
         frmManagePurchaseOrders frmManagePurchaseOrders;
-        public frmManagePurchaseOrderProducts(frmManagePurchaseOrders FrmManagePurchaseOrders)
+        public frmManagePurchaseOrderProducts(frmManagePurchaseOrders _frmManagePurchaseOrders)
         {
             InitializeComponent();
-            frmManagePurchaseOrders = FrmManagePurchaseOrders;
+            frmManagePurchaseOrders = _frmManagePurchaseOrders;
         }
 
         protected override CreateParams CreateParams

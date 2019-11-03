@@ -6,19 +6,19 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageSupplierProducts : Form
     {
-        EL.Registrations.SupplierProducts SupplierProductInfo = new EL.Registrations.SupplierProducts();
-        EL.Registrations.Products ProductInfo = new EL.Registrations.Products();
-        EL.Registrations.Suppliers SupplierInfo = new EL.Registrations.Suppliers();
-        EL.Transactions.Inventories InventoryInfo = new EL.Transactions.Inventories();
-        EL.Registrations.Categories CategoryInfo = new EL.Registrations.Categories();
-        EL.Registrations.SubCategories SubCategoryInfo = new EL.Registrations.SubCategories();
+        EL.Registrations.SupplierProducts supplierProductEL = new EL.Registrations.SupplierProducts();
+        EL.Registrations.Products productEL = new EL.Registrations.Products();
+        EL.Registrations.Suppliers supplierEL = new EL.Registrations.Suppliers();
+        EL.Transactions.Inventories inventoryEL = new EL.Transactions.Inventories();
+        EL.Registrations.Categories categoryEL = new EL.Registrations.Categories();
+        EL.Registrations.SubCategories subCategoryEL = new EL.Registrations.SubCategories();
 
-        BL.Registrations.SupplierProducts SupplierProductBL = new BL.Registrations.SupplierProducts();
-        BL.Registrations.Products ProductBL = new BL.Registrations.Products();
-        BL.Registrations.Suppliers SupplierBL = new BL.Registrations.Suppliers();
-        BL.Transactions.Inventories InventoryBL = new BL.Transactions.Inventories();
-        BL.Registrations.Categories CategoryBL = new BL.Registrations.Categories();
-        BL.Registrations.SubCategories SubCategoryBL = new BL.Registrations.SubCategories();
+        BL.Registrations.SupplierProducts supplierProductBL = new BL.Registrations.SupplierProducts();
+        BL.Registrations.Products productBL = new BL.Registrations.Products();
+        BL.Registrations.Suppliers supplierBL = new BL.Registrations.Suppliers();
+        BL.Transactions.Inventories inventoryBL = new BL.Transactions.Inventories();
+        BL.Registrations.Categories categoryBL = new BL.Registrations.Categories();
+        BL.Registrations.SubCategories subCategoryBL = new BL.Registrations.SubCategories();
 
         string current = "";
 
@@ -47,15 +47,15 @@ namespace pos.PL.Registrations
 
         private void frmManageStaffs_Load(object sender, EventArgs e)
         {
-            loadData(txtSearch.Text);
-            hiddenColumns();
-            manageForm(false);
-            populateControls();
-            clearFields();
-            readOnlyControls();
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            PopulateControls();
+            ClearFields();
+            ReadOnlyControls();
         }
 
-        private void readOnlyControls()
+        private void ReadOnlyControls()
         {
             txtProductSKU.ReadOnly = true;
             txtProductPrice.ReadOnly = true;
@@ -63,7 +63,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void hiddenColumns()
+        private void HiddenColumns()
         {
             dgv.Columns["Supplier Product ID"].Visible = false;
             dgv.Columns["subcategoryid"].Visible = false;
@@ -78,61 +78,61 @@ namespace pos.PL.Registrations
 
         }
 
-        private void loadData(string keywords)
+        private void LoadData(string keywords)
         {
-            dgv.DataSource = SupplierProductBL.List(keywords);
+            dgv.DataSource = supplierProductBL.List(keywords);
         }
 
-        private void populateControls()
+        private void PopulateControls()
         {
             cbCategoryName.DisplayMember = "Category Name";
             cbCategoryName.ValueMember = "Category ID";
-            cbCategoryName.DataSource = CategoryBL.List("");
+            cbCategoryName.DataSource = categoryBL.List("");
 
             cbSupplierName.DisplayMember = "Supplier";
             cbSupplierName.ValueMember = "Supplier ID";
-            cbSupplierName.DataSource = SupplierBL.List("");
+            cbSupplierName.DataSource = supplierBL.List("");
         }
 
 
-        private void populateControlsSubCategory()
+        private void PopulateControlsSubCategory()
         {
             cbSubCategoryName.DisplayMember = "Sub Category Name";
             cbSubCategoryName.ValueMember = "Sub Category ID";
-            cbSubCategoryName.DataSource = SubCategoryBL.List(Convert.ToInt32(cbCategoryName.SelectedValue));
+            cbSubCategoryName.DataSource = subCategoryBL.List(Convert.ToInt32(cbCategoryName.SelectedValue));
         }
 
-        private void populateControlsProducts()
+        private void PopulateControlsProducts()
         {
             cbProductName.DisplayMember = "Product Name";
             cbProductName.ValueMember = "Product ID";
-            cbProductName.DataSource = InventoryBL.List(Convert.ToInt32(cbSubCategoryName.SelectedValue));
+            cbProductName.DataSource = inventoryBL.List(Convert.ToInt32(cbSubCategoryName.SelectedValue));
         }
 
-        private void getProductInfo()
+        private void GetProductInfo()
         {
             if (!cbProductName.Text.Equals(""))
             {
-                foreach (DataRow row in ProductBL.List(Convert.ToInt32(cbProductName.SelectedValue.ToString())).Rows)
+                foreach (DataRow row in productBL.List(Convert.ToInt32(cbProductName.SelectedValue.ToString())).Rows)
                 {
-                    ProductInfo.Productsku = row["Product SKU"].ToString();
-                    ProductInfo.Productprice = Convert.ToInt32(row["Product Price"]);
-                    ProductInfo.Productdescription = row["Product Description"].ToString();
+                    productEL.Productsku = row["Product SKU"].ToString();
+                    productEL.Productprice = Convert.ToInt32(row["Product Price"]);
+                    productEL.Productdescription = row["Product Description"].ToString();
                 }
 
-                txtProductSKU.Text = ProductInfo.Productsku;
-                txtProductPrice.Text = ProductInfo.Productprice.ToString();
-                txtProductDescription.Text = ProductInfo.Productdescription;
+                txtProductSKU.Text = productEL.Productsku;
+                txtProductPrice.Text = productEL.Productprice.ToString();
+                txtProductDescription.Text = productEL.Productdescription;
             }
             else
             {
-                clearExtendedFields();
+                ClearExtendedFields();
             }
 
         }
 
 
-        private void manageForm(bool status)
+        private void ManageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -140,7 +140,7 @@ namespace pos.PL.Registrations
             txtSearch.Enabled = !status;
         }
 
-        private void clearErrors()
+        private void ClearErrors()
         {
             errorProvider1.SetError(cbSupplierName, "");
             errorProvider1.SetError(cbProductName, "");
@@ -148,7 +148,7 @@ namespace pos.PL.Registrations
             errorProvider1.SetError(cbProductName, "");
         }
 
-        private void clearFields()
+        private void ClearFields()
         {
             dgv.ClearSelection();
             txtSupplierProductID.ResetText();
@@ -156,17 +156,17 @@ namespace pos.PL.Registrations
             cbCategoryName.SelectedIndex = -1;
             cbSubCategoryName.SelectedIndex = -1;
             cbProductName.SelectedIndex = -1;
-            clearExtendedFields();
+            ClearExtendedFields();
         }
 
-        private void clearExtendedFields()
+        private void ClearExtendedFields()
         {
             txtProductSKU.ResetText();
             txtProductPrice.ResetText();
             txtProductDescription.ResetText();
         }
 
-        private bool checkErrors()
+        private bool CheckErrors()
         {
             bool status = true;
 
@@ -207,58 +207,58 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void getDataFromForm()
+        private void GetDataFromForm()
         {
-            SupplierProductInfo.Productid = Convert.ToInt32(cbProductName.SelectedValue);
-            SupplierProductInfo.Supplierid = Convert.ToInt32(cbSupplierName.SelectedValue);
+            supplierProductEL.Productid = Convert.ToInt32(cbProductName.SelectedValue);
+            supplierProductEL.Supplierid = Convert.ToInt32(cbSupplierName.SelectedValue);
         }
 
-        private void getDataFromDataGridView()
+        private void GetDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
-                CategoryInfo.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
-                CategoryInfo.Categoryname = row.Cells["Category Name"].Value.ToString();
+                categoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
+                categoryEL.Categoryname = row.Cells["Category Name"].Value.ToString();
 
-                SubCategoryInfo.Subcategoryid = Convert.ToInt32(row.Cells["subcategoryid"].Value);
-                SubCategoryInfo.Subcategoryname = row.Cells["Sub Category Name"].Value.ToString();
-                SubCategoryInfo.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
+                subCategoryEL.Subcategoryid = Convert.ToInt32(row.Cells["subcategoryid"].Value);
+                subCategoryEL.Subcategoryname = row.Cells["Sub Category Name"].Value.ToString();
+                subCategoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
 
 
-                ProductInfo.Productid = Convert.ToInt32(row.Cells["productid"].Value);
-                ProductInfo.Productname = row.Cells["Product Name"].Value.ToString();
-                ProductInfo.Productdescription = row.Cells["Product Description"].Value.ToString();
-                ProductInfo.Productsku = row.Cells["Product SKU"].Value.ToString();
-                ProductInfo.Productprice = Convert.ToInt32(row.Cells["Product Price"].Value);
-                ProductInfo.Isdeleted = Convert.ToInt32(row.Cells["productsisdeleted"].Value);
+                productEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
+                productEL.Productname = row.Cells["Product Name"].Value.ToString();
+                productEL.Productdescription = row.Cells["Product Description"].Value.ToString();
+                productEL.Productsku = row.Cells["Product SKU"].Value.ToString();
+                productEL.Productprice = Convert.ToInt32(row.Cells["Product Price"].Value);
+                productEL.Isdeleted = Convert.ToInt32(row.Cells["productsisdeleted"].Value);
 
-                SupplierInfo.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
-                SupplierInfo.Supplier = row.Cells["Supplier"].Value.ToString();
-                SupplierInfo.Supplierid = Convert.ToInt32(row.Cells["isdeleted"].Value);
+                supplierEL.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
+                supplierEL.Supplier = row.Cells["Supplier"].Value.ToString();
+                supplierEL.Supplierid = Convert.ToInt32(row.Cells["isdeleted"].Value);
 
-                SupplierProductInfo.Supplierproductid = Convert.ToInt32(row.Cells["Supplier Product ID"].Value);
-                SupplierProductInfo.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
-                SupplierProductInfo.Productid = Convert.ToInt32(row.Cells["productid"].Value);
+                supplierProductEL.Supplierproductid = Convert.ToInt32(row.Cells["Supplier Product ID"].Value);
+                supplierProductEL.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
+                supplierProductEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
             }
 
-            txtSupplierProductID.Text = SupplierProductInfo.Supplierproductid.ToString();
-            cbSupplierName.SelectedIndex = cbSupplierName.FindString(SupplierInfo.Supplier);
-            cbCategoryName.SelectedIndex = cbCategoryName.FindString(CategoryInfo.Categoryname);
-            cbSubCategoryName.SelectedIndex = cbSubCategoryName.FindString(SubCategoryInfo.Subcategoryname);
-            cbProductName.SelectedIndex = cbProductName.FindString(ProductInfo.Productname);
+            txtSupplierProductID.Text = supplierProductEL.Supplierproductid.ToString();
+            cbSupplierName.SelectedIndex = cbSupplierName.FindString(supplierEL.Supplier);
+            cbCategoryName.SelectedIndex = cbCategoryName.FindString(categoryEL.Categoryname);
+            cbSubCategoryName.SelectedIndex = cbSubCategoryName.FindString(subCategoryEL.Subcategoryname);
+            cbProductName.SelectedIndex = cbProductName.FindString(productEL.Productname);
 
-            txtProductSKU.Text = ProductInfo.Productsku;
-            txtProductPrice.Text = ProductInfo.Productprice.ToString();
-            txtProductDescription.Text = ProductInfo.Productdescription;
+            txtProductSKU.Text = productEL.Productsku;
+            txtProductPrice.Text = productEL.Productprice.ToString();
+            txtProductDescription.Text = productEL.Productdescription;
 
         }
 
-        private void showMessageBox(bool condition)
+        private void ShowMessageBox(bool condition)
         {
             if (condition)
             {
-                loadData(txtSearch.Text);
-                clearFields();
+                LoadData(txtSearch.Text);
+                ClearFields();
                 MessageBox.Show("Success");
             }
             else
@@ -267,32 +267,32 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void add()
+        private void Add()
         {
-            getDataFromForm();
+            GetDataFromForm();
 
-            showMessageBox(SupplierProductBL.Insert(SupplierProductInfo) > 0);
+            ShowMessageBox(supplierProductBL.Insert(supplierProductEL) > 0);
         }
 
-        private void edit()
+        private void Edit()
         {
-            getDataFromForm();
+            GetDataFromForm();
 
-            showMessageBox(SupplierProductBL.Update(SupplierProductInfo));
+            ShowMessageBox(supplierProductBL.Update(supplierProductEL));
         }
 
-        private void delete()
+        private void Delete()
         {
-            getDataFromForm();
+            GetDataFromForm();
 
-            showMessageBox(SupplierProductBL.Delete(SupplierProductInfo));
+            ShowMessageBox(supplierProductBL.Delete(supplierProductEL));
         }
 
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            clearFields();
-            manageForm(true);
+            ClearFields();
+            ManageForm(true);
             this.ActiveControl = cbSubCategoryName;
             current = "ADD";
         }
@@ -305,7 +305,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                manageForm(true);
+                ManageForm(true);
                 this.ActiveControl = cbSubCategoryName;
                 current = "EDIT";
             }
@@ -319,30 +319,30 @@ namespace pos.PL.Registrations
             }
             else
             {
-                delete();
+                Delete();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (checkErrors())
+            if (CheckErrors())
             {
-                getDataFromForm();
+                GetDataFromForm();
 
-                if (SupplierProductBL.CheckIfExisting(SupplierProductInfo).Rows.Count == 0)
+                if (supplierProductBL.CheckIfExisting(supplierProductEL).Rows.Count == 0)
                 {
                     if (current.Equals("ADD"))
                     {
 
-                        add();
+                        Add();
                     }
                     else if (current.Equals("EDIT"))
                     {
-                        edit();
+                        Edit();
                     }
 
-                    manageForm(false);
-                    clearFields();
+                    ManageForm(false);
+                    ClearFields();
                 }
                 else
                 {
@@ -353,44 +353,44 @@ namespace pos.PL.Registrations
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            manageForm(false);
-            clearFields();
-            clearErrors();
+            ManageForm(false);
+            ClearFields();
+            ClearErrors();
         }
 
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            loadData(txtSearch.Text);
+            LoadData(txtSearch.Text);
         }
 
         private void cbCategoryName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            populateControlsSubCategory();
+            PopulateControlsSubCategory();
         }
 
         private void cbSubCategoryName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            populateControlsProducts();
+            PopulateControlsProducts();
         }
 
         private void cbProductName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            getProductInfo();
+            GetProductInfo();
         }
     }
 }

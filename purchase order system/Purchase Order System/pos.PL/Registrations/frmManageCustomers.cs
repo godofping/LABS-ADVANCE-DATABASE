@@ -7,15 +7,15 @@ namespace pos.PL.Registrations
     {
 
 
-        EL.Registrations.Customers CustomerInfo = new EL.Registrations.Customers();
-        EL.Registrations.ContactDetails ContactDetailInfo = new EL.Registrations.ContactDetails();
-        EL.Registrations.BasicInformations BasicInformationInfo = new EL.Registrations.BasicInformations();
-        EL.Registrations.Addresses AddressInfo = new EL.Registrations.Addresses();
+        EL.Registrations.Customers customerEL = new EL.Registrations.Customers();
+        EL.Registrations.ContactDetails contactDetailEL = new EL.Registrations.ContactDetails();
+        EL.Registrations.BasicInformations basicInformationEL = new EL.Registrations.BasicInformations();
+        EL.Registrations.Addresses addressEL = new EL.Registrations.Addresses();
 
-        BL.Registrations.Customers CustomerBL = new BL.Registrations.Customers();
-        BL.Registrations.ContactDetails ContacDetailBL = new BL.Registrations.ContactDetails();
-        BL.Registrations.BasicInformations BasicInformationBL = new BL.Registrations.BasicInformations();
-        BL.Registrations.Addresses AddressBL = new BL.Registrations.Addresses();
+        BL.Registrations.Customers customerBL = new BL.Registrations.Customers();
+        BL.Registrations.ContactDetails contactDetailBL = new BL.Registrations.ContactDetails();
+        BL.Registrations.BasicInformations basicInformationBL = new BL.Registrations.BasicInformations();
+        BL.Registrations.Addresses addressBL = new BL.Registrations.Addresses();
 
         string current = "";
 
@@ -44,14 +44,14 @@ namespace pos.PL.Registrations
 
         private void frmManageCustomers_Load(object sender, EventArgs e)
         {
-            loadData(txtSearch.Text);
-            hiddenColumns();
-            manageForm(false);
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
             txtZipCode.MaxLength = 6;
-            clearFields();
+            ClearFields();
         }
 
-        private void hiddenColumns()
+        private void HiddenColumns()
         {
             dgv.Columns["Customer ID"].Visible = false;
             dgv.Columns["contactdetailid"].Visible = false;
@@ -61,12 +61,12 @@ namespace pos.PL.Registrations
 
         }
 
-        private void loadData(string keywords)
+        private void LoadData(string keywords)
         {
-            dgv.DataSource = CustomerBL.List(keywords);
+            dgv.DataSource = customerBL.List(keywords);
         }
 
-        private void manageForm(bool status)
+        private void ManageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -74,7 +74,7 @@ namespace pos.PL.Registrations
             txtSearch.Enabled = !status;
         }
 
-        private void clearErrors()
+        private void ClearErrors()
         {
 
             errorProvider1.SetError(txtFirstName, "");
@@ -91,7 +91,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void clearFields()
+        private void ClearFields()
         {
             dgv.ClearSelection();
             txtCustomerID.ResetText();
@@ -108,7 +108,7 @@ namespace pos.PL.Registrations
             txtZipCode.ResetText();
         }
 
-        private bool checkErrors()
+        private bool CheckErrors()
         {
             bool status = true;
 
@@ -204,72 +204,72 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void getDataFromForm()
+        private void GetDataFromForm()
         {
-            AddressInfo.Address = txtAddress.Text;
-            AddressInfo.City = txtCity.Text;
-            AddressInfo.Zipcode = txtZipCode.Text;
-            AddressInfo.Province = txtProvince.Text;
+            addressEL.Address = txtAddress.Text;
+            addressEL.City = txtCity.Text;
+            addressEL.Zipcode = txtZipCode.Text;
+            addressEL.Province = txtProvince.Text;
 
-            ContactDetailInfo.Contactnumber = txtContactNumber.Text;
-            ContactDetailInfo.Emailaddress = txtEmailAddress.Text;
+            contactDetailEL.Contactnumber = txtContactNumber.Text;
+            contactDetailEL.Emailaddress = txtEmailAddress.Text;
 
-            BasicInformationInfo.Firstname = txtFirstName.Text;
-            BasicInformationInfo.Middlename = txtMiddleName.Text;
-            BasicInformationInfo.Lastname = txtLastName.Text;
-            BasicInformationInfo.Gender = cbGender.Text;
-            BasicInformationInfo.Birthdate = dtpBirthDate.Text;
+            basicInformationEL.Firstname = txtFirstName.Text;
+            basicInformationEL.Middlename = txtMiddleName.Text;
+            basicInformationEL.Lastname = txtLastName.Text;
+            basicInformationEL.Gender = cbGender.Text;
+            basicInformationEL.Birthdate = dtpBirthDate.Text;
         }
 
-        private void getDataFromDataGridView()
+        private void GetDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
-                AddressInfo.Addressid = Convert.ToInt32(row.Cells["addressid"].Value);
-                AddressInfo.Address = row.Cells["Address"].Value.ToString();
-                AddressInfo.City = row.Cells["City"].Value.ToString();
-                AddressInfo.Province = row.Cells["Province"].Value.ToString();
-                AddressInfo.Zipcode = row.Cells["Zip Code"].Value.ToString();
+                addressEL.Addressid = Convert.ToInt32(row.Cells["addressid"].Value);
+                addressEL.Address = row.Cells["Address"].Value.ToString();
+                addressEL.City = row.Cells["City"].Value.ToString();
+                addressEL.Province = row.Cells["Province"].Value.ToString();
+                addressEL.Zipcode = row.Cells["Zip Code"].Value.ToString();
 
-                ContactDetailInfo.Contactdetailid = Convert.ToInt32(row.Cells["contactdetailid"].Value);
-                ContactDetailInfo.Addressid = Convert.ToInt32(row.Cells["addressid"].Value);
-                ContactDetailInfo.Contactnumber = row.Cells["Contact Number"].Value.ToString();
-                ContactDetailInfo.Emailaddress = row.Cells["Email Address"].Value.ToString();
+                contactDetailEL.Contactdetailid = Convert.ToInt32(row.Cells["contactdetailid"].Value);
+                contactDetailEL.Addressid = Convert.ToInt32(row.Cells["addressid"].Value);
+                contactDetailEL.Contactnumber = row.Cells["Contact Number"].Value.ToString();
+                contactDetailEL.Emailaddress = row.Cells["Email Address"].Value.ToString();
 
-                BasicInformationInfo.Basicinformationid = Convert.ToInt32(row.Cells["basicinformationid"].Value);
-                BasicInformationInfo.Firstname = row.Cells["First Name"].Value.ToString();
-                BasicInformationInfo.Middlename = row.Cells["Middle Name"].Value.ToString();
-                BasicInformationInfo.Lastname = row.Cells["Last Name"].Value.ToString();
-                BasicInformationInfo.Gender = row.Cells["Gender"].Value.ToString();
-                BasicInformationInfo.Birthdate = row.Cells["Birth Date"].Value.ToString();
+                basicInformationEL.Basicinformationid = Convert.ToInt32(row.Cells["basicinformationid"].Value);
+                basicInformationEL.Firstname = row.Cells["First Name"].Value.ToString();
+                basicInformationEL.Middlename = row.Cells["Middle Name"].Value.ToString();
+                basicInformationEL.Lastname = row.Cells["Last Name"].Value.ToString();
+                basicInformationEL.Gender = row.Cells["Gender"].Value.ToString();
+                basicInformationEL.Birthdate = row.Cells["Birth Date"].Value.ToString();
 
-                CustomerInfo.Customerid = Convert.ToInt32(row.Cells["Customer ID"].Value);
-                CustomerInfo.Contactdetailid = Convert.ToInt32(row.Cells["contactdetailid"].Value);
-                CustomerInfo.Basicinformationid = Convert.ToInt32(row.Cells["basicinformationid"].Value);
+                customerEL.Customerid = Convert.ToInt32(row.Cells["Customer ID"].Value);
+                customerEL.Contactdetailid = Convert.ToInt32(row.Cells["contactdetailid"].Value);
+                customerEL.Basicinformationid = Convert.ToInt32(row.Cells["basicinformationid"].Value);
 
             }
 
-            txtCustomerID.Text = CustomerInfo.Customerid.ToString();
-            txtFirstName.Text = BasicInformationInfo.Firstname;
-            txtMiddleName.Text = BasicInformationInfo.Middlename;
-            txtLastName.Text = BasicInformationInfo.Lastname;
-            cbGender.Text = BasicInformationInfo.Gender;
-            dtpBirthDate.Text = BasicInformationInfo.Birthdate;
-            txtContactNumber.Text = ContactDetailInfo.Contactnumber;
-            txtEmailAddress.Text = ContactDetailInfo.Emailaddress;
-            txtAddress.Text = AddressInfo.Address;
-            txtCity.Text = AddressInfo.City;
-            txtProvince.Text = AddressInfo.Province;
-            txtZipCode.Text = AddressInfo.Zipcode;
+            txtCustomerID.Text = customerEL.Customerid.ToString();
+            txtFirstName.Text = basicInformationEL.Firstname;
+            txtMiddleName.Text = basicInformationEL.Middlename;
+            txtLastName.Text = basicInformationEL.Lastname;
+            cbGender.Text = basicInformationEL.Gender;
+            dtpBirthDate.Text = basicInformationEL.Birthdate;
+            txtContactNumber.Text = contactDetailEL.Contactnumber;
+            txtEmailAddress.Text = contactDetailEL.Emailaddress;
+            txtAddress.Text = addressEL.Address;
+            txtCity.Text = addressEL.City;
+            txtProvince.Text = addressEL.Province;
+            txtZipCode.Text = addressEL.Zipcode;
 
         }
 
-        private void showMessageBox(bool condition)
+        private void ShowMessageBox(bool condition)
         {
             if (condition)
             {
-                loadData(txtSearch.Text);
-                clearFields();
+                LoadData(txtSearch.Text);
+                ClearFields();
                 MessageBox.Show("Success");
 
             }
@@ -279,33 +279,33 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void add()
+        private void Add()
         {
-            getDataFromForm();
+            GetDataFromForm();
 
-            ContactDetailInfo.Addressid = Convert.ToInt32(AddressBL.Insert(AddressInfo));
-            CustomerInfo.Contactdetailid = Convert.ToInt32(ContacDetailBL.Insert(ContactDetailInfo));
-            CustomerInfo.Basicinformationid = Convert.ToInt32(BasicInformationBL.Insert(BasicInformationInfo));
+            contactDetailEL.Addressid = Convert.ToInt32(addressBL.Insert(addressEL));
+            customerEL.Contactdetailid = Convert.ToInt32(contactDetailBL.Insert(contactDetailEL));
+            customerEL.Basicinformationid = Convert.ToInt32(basicInformationBL.Insert(basicInformationEL));
 
-            showMessageBox(CustomerBL.Insert(CustomerInfo) > 0);
+            ShowMessageBox(customerBL.Insert(customerEL) > 0);
         }
 
-        private void edit()
+        private void Edit()
         {
-            getDataFromForm();
-            showMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & BasicInformationBL.Update(BasicInformationInfo));
+            GetDataFromForm();
+            ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & basicInformationBL.Update(basicInformationEL));
         }
 
-        private void delete()
+        private void Delete()
         {
-            getDataFromForm();
-            showMessageBox(CustomerBL.Delete(CustomerInfo));
+            GetDataFromForm();
+            ShowMessageBox(customerBL.Delete(customerEL));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            clearFields();
-            manageForm(true);
+            ClearFields();
+            ManageForm(true);
             this.ActiveControl = txtFirstName;
             current = "ADD";
         }
@@ -318,7 +318,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                manageForm(true);
+                ManageForm(true);
                 this.ActiveControl = txtFirstName;
                 current = "EDIT";
             }
@@ -332,49 +332,49 @@ namespace pos.PL.Registrations
             }
             else
             {
-                delete();
+                Delete();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (checkErrors())
+            if (CheckErrors())
             {
-                getDataFromForm();
+                GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    add();
+                    Add();
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    edit();
+                    Edit();
                 }
 
-                manageForm(false);
-                clearFields();
+                ManageForm(false);
+                ClearFields();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            manageForm(false);
-            clearFields();
-            clearErrors();
+            ManageForm(false);
+            ClearFields();
+            ClearErrors();
         }
 
         private void dgvManageCustomers_SelectionChanged(object sender, EventArgs e)
         {
-           getDataFromDataGridView();
+           GetDataFromDataGridView();
         }
 
         private void dgvManageCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void dgvManageCustomers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
@@ -395,7 +395,7 @@ namespace pos.PL.Registrations
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            loadData(txtSearch.Text);
+            LoadData(txtSearch.Text);
         }
 
 

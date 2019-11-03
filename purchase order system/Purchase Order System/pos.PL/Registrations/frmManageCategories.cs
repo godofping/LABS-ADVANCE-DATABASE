@@ -5,9 +5,9 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageCategories : Form
     {
-        EL.Registrations.Categories CategoryInfo = new EL.Registrations.Categories();
+        EL.Registrations.Categories categoryEL = new EL.Registrations.Categories();
 
-        BL.Registrations.Categories CategoryBL = new BL.Registrations.Categories();
+        BL.Registrations.Categories categoryBL = new BL.Registrations.Categories();
 
         string current = "";
 
@@ -36,23 +36,23 @@ namespace pos.PL.Registrations
 
         private void frmCategories_Load(object sender, EventArgs e)
         {
-            loadData(txtSearch.Text);
-            hiddenColumns();
-            manageForm(false);
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
         }
 
-        private void hiddenColumns()
+        private void HiddenColumns()
         {
             dgv.Columns["Category ID"].Visible = false;
             dgv.Columns["isdeleted"].Visible = false;
         }
 
-        private void loadData(string keywords)
+        private void LoadData(string keywords)
         {
-            dgv.DataSource = CategoryBL.List(keywords);
+            dgv.DataSource = categoryBL.List(keywords);
         }
 
-        private void manageForm(bool status)
+        private void ManageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -60,20 +60,20 @@ namespace pos.PL.Registrations
             txtSearch.Enabled = !status;
         }
 
-        private void clearErrors()
+        private void ClearErrors()
         {
             errorProvider1.SetError(txtCategoryName, "");
 
         }
 
-        private void clearFields()
+        private void ClearFields()
         {
             dgv.ClearSelection();
             txtCategoryID.ResetText();
             txtCategoryName.ResetText();
         }
 
-        private bool checkErrors()
+        private bool CheckErrors()
         {
             bool status = true;
 
@@ -88,35 +88,35 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void getDataFromForm()
+        private void GetDataFromForm()
         {
-            CategoryInfo.Categoryname = txtCategoryName.Text;
+            categoryEL.Categoryname = txtCategoryName.Text;
 
         }
 
-        private void getDataFromDataGridView()
+        private void GetDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
 
-                CategoryInfo.Categoryid = Convert.ToInt32(row.Cells["Category ID"].Value);
-                CategoryInfo.Categoryname = row.Cells["Category Name"].Value.ToString();
-                CategoryInfo.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
+                categoryEL.Categoryid = Convert.ToInt32(row.Cells["Category ID"].Value);
+                categoryEL.Categoryname = row.Cells["Category Name"].Value.ToString();
+                categoryEL.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
 
             }
 
-            txtCategoryID.Text = CategoryInfo.Categoryid.ToString();
-            txtCategoryName.Text = CategoryInfo.Categoryname.ToString();
+            txtCategoryID.Text = categoryEL.Categoryid.ToString();
+            txtCategoryName.Text = categoryEL.Categoryname.ToString();
 
 
         }
 
-        private void showMessageBox(bool condition)
+        private void ShowMessageBox(bool condition)
         {
             if (condition)
             {
-                loadData(txtSearch.Text);
-                clearFields();
+                LoadData(txtSearch.Text);
+                ClearFields();
                 MessageBox.Show("Success");
 
             }
@@ -126,28 +126,28 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void add()
+        private void Add()
         {
-            getDataFromForm();
-            showMessageBox(CategoryBL.Insert(CategoryInfo) > 0);
+            GetDataFromForm();
+            ShowMessageBox(categoryBL.Insert(categoryEL) > 0);
         }
 
-        private void edit()
+        private void Edit()
         {
-            getDataFromForm();
-            showMessageBox(CategoryBL.Update(CategoryInfo));
+            GetDataFromForm();
+            ShowMessageBox(categoryBL.Update(categoryEL));
         }
 
-        private void delete()
+        private void Delete()
         {
-            getDataFromForm();
-            showMessageBox(CategoryBL.Delete(CategoryInfo));
+            GetDataFromForm();
+            ShowMessageBox(categoryBL.Delete(categoryEL));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            clearFields();
-            manageForm(true);
+            ClearFields();
+            ManageForm(true);
             this.ActiveControl = txtCategoryName;
             current = "ADD";
         }
@@ -160,7 +160,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                manageForm(true);
+                ManageForm(true);
                 this.ActiveControl = txtCategoryName;
                 current = "EDIT";
             }
@@ -174,54 +174,54 @@ namespace pos.PL.Registrations
             }
             else
             {
-                delete();
+                Delete();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (checkErrors())
+            if (CheckErrors())
             {
-                getDataFromForm();
+                GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    add();
+                    Add();
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    edit();
+                    Edit();
                 }
 
-                manageForm(false);
-                clearFields();
+                ManageForm(false);
+                ClearFields();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            manageForm(false);
-            clearFields();
-            clearErrors();
+            ManageForm(false);
+            ClearFields();
+            ClearErrors();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            loadData(txtSearch.Text);
+            LoadData(txtSearch.Text);
         }
 
         private void dgvManageCategories_SelectionChanged(object sender, EventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void dgvManageCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void dgvManageCategories_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
 

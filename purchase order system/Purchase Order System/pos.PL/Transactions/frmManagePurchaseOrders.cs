@@ -13,13 +13,13 @@ namespace pos.PL.Transactions
     public partial class frmManagePurchaseOrders : Form
     {
 
-        EL.Registrations.Suppliers SupplierInfo = new EL.Registrations.Suppliers();
-        EL.Transactions.PurchaseOrders PurchaseOrderInfo = new EL.Transactions.PurchaseOrders();
-        EL.Transactions.PurchaseOrderDetails PurchaseOrderDetailInfo = new EL.Transactions.PurchaseOrderDetails();
+        EL.Registrations.Suppliers supplierEL = new EL.Registrations.Suppliers();
+        EL.Transactions.PurchaseOrders purchaseOrderEL = new EL.Transactions.PurchaseOrders();
+        EL.Transactions.PurchaseOrderDetails purchaseOrderDetailEL = new EL.Transactions.PurchaseOrderDetails();
 
-        BL.Registrations.Suppliers SupplierBL = new BL.Registrations.Suppliers();
-        BL.Transactions.PurchaseOrders PurchaseOrderBL = new BL.Transactions.PurchaseOrders();
-        BL.Transactions.PurchaseOrderDetails PurchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
+        BL.Registrations.Suppliers supplierBL = new BL.Registrations.Suppliers();
+        BL.Transactions.PurchaseOrders purchaseOrderBL = new BL.Transactions.PurchaseOrders();
+        BL.Transactions.PurchaseOrderDetails purchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
 
         frmManagePurchaseOrderProducts frmManagePurchaseOrderProducts;
 
@@ -48,7 +48,7 @@ namespace pos.PL.Transactions
             }
         }
 
-        private void hiddenColumns()
+        private void HiddenColumns()
         {
             dgv.Columns["Supplier Product ID"].Visible = false;
             dgv.Columns["subcategoryid"].Visible = false;
@@ -63,12 +63,12 @@ namespace pos.PL.Transactions
 
         }
 
-        private void loadData(string keywords)
+        private void LoadData(string keywords)
         {
-            dgv.DataSource = PurchaseOrderBL.List(keywords);
+            dgv.DataSource = purchaseOrderBL.List(keywords);
         }
 
-        public void manageForm(bool status)
+        public void ManageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
@@ -76,7 +76,7 @@ namespace pos.PL.Transactions
             txtSearch.Enabled = !status;
         }
 
-        private void clearErrors()
+        private void ClearErrors()
         {
             errorProvider1.SetError(txtPurchaseOrderName, "");
             errorProvider1.SetError(cbPaymentMethod, "");
@@ -87,13 +87,13 @@ namespace pos.PL.Transactions
         }
 
 
-        private void disabledControls()
+        private void DisabledControls()
         {
             cbSupplierName.Enabled = false;
             txtTotalAmount.Enabled = false;
         }
 
-        private void clearFields()
+        private void ClearFields()
         {
             dgv.ClearSelection();
             txtPurchaseOrderID.ResetText();
@@ -117,7 +117,7 @@ namespace pos.PL.Transactions
             
         }
 
-        private bool checkErrors()
+        private bool CheckErrors()
         {
             bool status = true;
 
@@ -176,13 +176,13 @@ namespace pos.PL.Transactions
             return status;
         }
 
-        private void getDataFromForm()
+        private void GetDataFromForm()
         {
-            PurchaseOrderInfo.Purchaseordername = txtPurchaseOrderName.Text;
-            PurchaseOrderInfo.Paymentmethodid = Convert.ToInt32(cbPaymentMethod.SelectedValue);
-            PurchaseOrderInfo.Shippingmethodid = Convert.ToInt32(cbShippingMethod.SelectedValue);
-            PurchaseOrderInfo.Purchaseorderdatedelivered = dtpDeliveryDate.Value.ToString("yyyy-MM-dd");
-            PurchaseOrderInfo.Purchaseordercomment = txtPurchaseOrderComment.Text;
+            purchaseOrderEL.Purchaseordername = txtPurchaseOrderName.Text;
+            purchaseOrderEL.Paymentmethodid = Convert.ToInt32(cbPaymentMethod.SelectedValue);
+            purchaseOrderEL.Shippingmethodid = Convert.ToInt32(cbShippingMethod.SelectedValue);
+            purchaseOrderEL.Purchaseorderdatedelivered = dtpDeliveryDate.Value.ToString("yyyy-MM-dd");
+            purchaseOrderEL.Purchaseordercomment = txtPurchaseOrderComment.Text;
 
         }
 
@@ -226,12 +226,12 @@ namespace pos.PL.Transactions
 
         //}
 
-        private void showMessageBox(bool condition)
+        private void ShowMessageBox(bool condition)
         {
             if (condition)
             {
                 //loadData(txtSearch.Text);
-                clearFields();
+                ClearFields();
                 MessageBox.Show("Success");
             }
             else
@@ -240,12 +240,12 @@ namespace pos.PL.Transactions
             }
         }
 
-        private void populateControls()
+        private void PopulateControls()
         {
 
             cbSupplierName.DisplayMember = "Supplier";
             cbSupplierName.ValueMember = "Supplier ID";
-            cbSupplierName.DataSource = SupplierBL.List("");
+            cbSupplierName.DataSource = supplierBL.List("");
         }
 
         private void btnManagePurchaseOrderProducts_Click(object sender, EventArgs e)
@@ -256,16 +256,16 @@ namespace pos.PL.Transactions
         
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmSelectSupplier frmSelectSupplier = new frmSelectSupplier(this, SupplierInfo);
+            frmSelectSupplier frmSelectSupplier = new frmSelectSupplier(this, supplierEL);
             frmSelectSupplier.ShowDialog();
         }
 
         private void frmManagePurchaseOrders_Load(object sender, EventArgs e)
         {
-            disabledControls();
-            populateControls();
-            manageForm(false);
-            clearFields();
+            DisabledControls();
+            PopulateControls();
+            ManageForm(false);
+            ClearFields();
         }
 
         private void btnView_Click(object sender, EventArgs e)
@@ -285,9 +285,9 @@ namespace pos.PL.Transactions
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            manageForm(false);
-            clearFields();
-            clearErrors();
+            ManageForm(false);
+            ClearFields();
+            ClearErrors();
         }
 
 

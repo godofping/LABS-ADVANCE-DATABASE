@@ -6,23 +6,23 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageStoreInformation : Form
     {
-        EL.Registrations.StoreInformation StoreInformationInfo;
-        EL.Registrations.ContactDetails ContactDetailInfo = new EL.Registrations.ContactDetails();
-        EL.Registrations.Addresses AddressInfo = new EL.Registrations.Addresses();
+        EL.Registrations.StoreInformation storeInformationEL;
+        EL.Registrations.ContactDetails contactDetailEL = new EL.Registrations.ContactDetails();
+        EL.Registrations.Addresses addressEL = new EL.Registrations.Addresses();
 
-        BL.Registrations.StoreInformation StoreInformationBL = new BL.Registrations.StoreInformation();
-        BL.Registrations.ContactDetails ContacDetailBL = new BL.Registrations.ContactDetails();
-        BL.Registrations.Addresses AddressBL = new BL.Registrations.Addresses();
+        BL.Registrations.StoreInformation storeInformationBL = new BL.Registrations.StoreInformation();
+        BL.Registrations.ContactDetails contactDetailBL = new BL.Registrations.ContactDetails();
+        BL.Registrations.Addresses addressBL = new BL.Registrations.Addresses();
 
         PL.frmMain frmMain;
 
         string current = "";
 
-        public frmManageStoreInformation(EL.Registrations.StoreInformation storeInformationInfo, PL.frmMain FrmMain)
+        public frmManageStoreInformation(EL.Registrations.StoreInformation _storeInformationEL, PL.frmMain _frmMain)
         {
             InitializeComponent();
-            StoreInformationInfo = storeInformationInfo;
-            frmMain = FrmMain;
+            storeInformationEL = _storeInformationEL;
+            frmMain = _frmMain;
         }
 
         protected override CreateParams CreateParams
@@ -45,20 +45,20 @@ namespace pos.PL.Registrations
 
         private void frmManageStoreInformation_Load(object sender, System.EventArgs e)
         {
-            manageForm(false);
+            ManageForm(false);
             txtZipCode.MaxLength = 6;
           
-            getDataFromDataTable();
+            GetDataFromDataTable();
         }
 
-        private void manageForm(bool status)
+        private void ManageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
 
         }
 
-        private void clearErrors()
+        private void ClearErrors()
         {
 
             errorProvider1.SetError(txtStoreName, "");
@@ -72,7 +72,7 @@ namespace pos.PL.Registrations
         }
 
 
-        private bool checkErrors()
+        private bool CheckErrors()
         {
             bool status = true;
 
@@ -137,50 +137,50 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void getDataFromForm()
+        private void GetDataFromForm()
         {
-            AddressInfo.Address = txtAddress.Text;
-            AddressInfo.City = txtCity.Text;
-            AddressInfo.Zipcode = txtZipCode.Text;
-            AddressInfo.Province = txtProvince.Text;
+            addressEL.Address = txtAddress.Text;
+            addressEL.City = txtCity.Text;
+            addressEL.Zipcode = txtZipCode.Text;
+            addressEL.Province = txtProvince.Text;
 
-            ContactDetailInfo.Contactnumber = txtContactNumber.Text;
-            ContactDetailInfo.Emailaddress = txtEmailAddress.Text;
+            contactDetailEL.Contactnumber = txtContactNumber.Text;
+            contactDetailEL.Emailaddress = txtEmailAddress.Text;
 
-            StoreInformationInfo.Storename = txtStoreName.Text;
+            storeInformationEL.Storename = txtStoreName.Text;
         }
 
-        private void getDataFromDataTable()
+        private void GetDataFromDataTable()
         {
-            foreach (DataRow row in StoreInformationBL.List().Rows)
+            foreach (DataRow row in storeInformationBL.List().Rows)
             {
-                AddressInfo.Addressid = Convert.ToInt32(row["addressid"]);
-                AddressInfo.Address = row["Address"].ToString();
-                AddressInfo.City = row["City"].ToString();
-                AddressInfo.Province = row["Province"].ToString();
-                AddressInfo.Zipcode = row["Zip Code"].ToString();
+                addressEL.Addressid = Convert.ToInt32(row["addressid"]);
+                addressEL.Address = row["Address"].ToString();
+                addressEL.City = row["City"].ToString();
+                addressEL.Province = row["Province"].ToString();
+                addressEL.Zipcode = row["Zip Code"].ToString();
 
-                ContactDetailInfo.Contactdetailid = Convert.ToInt32(row["contactdetailid"]);
-                ContactDetailInfo.Addressid = Convert.ToInt32(row["addressid"]);
-                ContactDetailInfo.Contactnumber = row["Contact Number"].ToString();
-                ContactDetailInfo.Emailaddress = row["Email Address"].ToString();
+                contactDetailEL.Contactdetailid = Convert.ToInt32(row["contactdetailid"]);
+                contactDetailEL.Addressid = Convert.ToInt32(row["addressid"]);
+                contactDetailEL.Contactnumber = row["Contact Number"].ToString();
+                contactDetailEL.Emailaddress = row["Email Address"].ToString();
 
-                StoreInformationInfo.Storename = row["Store Name"].ToString();
+                storeInformationEL.Storename = row["Store Name"].ToString();
        
 
             }
 
-            txtStoreName.Text = StoreInformationInfo.Storename;
-            txtContactNumber.Text = ContactDetailInfo.Contactnumber;
-            txtEmailAddress.Text = ContactDetailInfo.Emailaddress;
-            txtAddress.Text = AddressInfo.Address;
-            txtCity.Text = AddressInfo.City;
-            txtProvince.Text = AddressInfo.Province;
-            txtZipCode.Text = AddressInfo.Zipcode;
+            txtStoreName.Text = storeInformationEL.Storename;
+            txtContactNumber.Text = contactDetailEL.Contactnumber;
+            txtEmailAddress.Text = contactDetailEL.Emailaddress;
+            txtAddress.Text = addressEL.Address;
+            txtCity.Text = addressEL.City;
+            txtProvince.Text = addressEL.Province;
+            txtZipCode.Text = addressEL.Zipcode;
 
         }
 
-        private void showMessageBox(bool condition)
+        private void ShowMessageBox(bool condition)
         {
             if (condition)
             {
@@ -194,16 +194,16 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void edit()
+        private void Edit()
         {
-            getDataFromForm();
-            showMessageBox(AddressBL.Update(AddressInfo) & ContacDetailBL.Update(ContactDetailInfo) & StoreInformationBL.Update(StoreInformationInfo));
+            GetDataFromForm();
+            ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & storeInformationBL.Update(storeInformationEL));
         }
 
 
         private void btnEdit_Click(object sender, System.EventArgs e)
         {
-            manageForm(true);
+            ManageForm(true);
             this.ActiveControl = txtStoreName;
             current = "EDIT";
         }
@@ -211,18 +211,18 @@ namespace pos.PL.Registrations
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
-            if (checkErrors())
+            if (CheckErrors())
             {
-                getDataFromForm();
+                GetDataFromForm();
                 if (current.Equals("EDIT"))
                 {
-                    edit();
+                    Edit();
                     frmMain.UpdateInfo();
                 }
 
-                manageForm(false);
+                ManageForm(false);
         
-                getDataFromDataTable();
+                GetDataFromDataTable();
 
 
             }
@@ -230,10 +230,10 @@ namespace pos.PL.Registrations
 
         private void btnCancel_Click(object sender, System.EventArgs e)
         {
-            manageForm(false);
+            ManageForm(false);
  
-            clearErrors();
-            getDataFromDataTable();
+            ClearErrors();
+            GetDataFromDataTable();
         }
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)

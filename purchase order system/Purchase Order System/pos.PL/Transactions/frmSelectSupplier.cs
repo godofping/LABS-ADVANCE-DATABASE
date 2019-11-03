@@ -13,18 +13,18 @@ namespace pos.PL.Transactions
     public partial class frmSelectSupplier : Form
     {
 
-        EL.Registrations.Suppliers SupplierInfo;
+        EL.Registrations.Suppliers supplierEL;
 
-        BL.Registrations.Suppliers SupplierBL = new BL.Registrations.Suppliers();
+        BL.Registrations.Suppliers supplierBL = new BL.Registrations.Suppliers();
 
 
         frmManagePurchaseOrders frmManagePurchaseOrders;
 
-        public frmSelectSupplier(frmManagePurchaseOrders FrmManagePurchaseOrders, EL.Registrations.Suppliers supplierInfo)
+        public frmSelectSupplier(frmManagePurchaseOrders _frmManagePurchaseOrders, EL.Registrations.Suppliers _supplierEL)
         {
             InitializeComponent();
-            frmManagePurchaseOrders = FrmManagePurchaseOrders;
-            SupplierInfo = supplierInfo;
+            frmManagePurchaseOrders = _frmManagePurchaseOrders;
+            supplierEL = _supplierEL;
         }
 
         protected override CreateParams CreateParams
@@ -45,27 +45,27 @@ namespace pos.PL.Transactions
             }
         }
 
-        private void populateControls()
+        private void PopulateControls()
         {
             cbSupplierName.DisplayMember = "Supplier";
             cbSupplierName.ValueMember = "Supplier ID";
-            cbSupplierName.DataSource = SupplierBL.List("");
+            cbSupplierName.DataSource = supplierBL.List("");
         }
 
         private void frmSelectSupplier_Load(object sender, EventArgs e)
         {
-            populateControls();
+            PopulateControls();
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            SupplierInfo.Supplierid = Convert.ToInt32(cbSupplierName.SelectedValue);
-            SupplierInfo.Supplier = cbSupplierName.Text;
+            supplierEL.Supplierid = Convert.ToInt32(cbSupplierName.SelectedValue);
+            supplierEL.Supplier = cbSupplierName.Text;
 
             
 
             frmManagePurchaseOrders.cbSupplierName.SelectedIndex = frmManagePurchaseOrders.cbSupplierName.FindString(cbSupplierName.Text);
-            frmManagePurchaseOrders.manageForm(true);
+            frmManagePurchaseOrders.ManageForm(true);
             this.Close();
         }
     }

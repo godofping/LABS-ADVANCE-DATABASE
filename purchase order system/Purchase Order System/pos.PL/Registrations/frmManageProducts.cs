@@ -5,15 +5,15 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageProducts : Form
     {
-        EL.Registrations.Products ProductInfo = new EL.Registrations.Products();
-        EL.Registrations.SubCategories SubCategoryInfo = new EL.Registrations.SubCategories();
-        EL.Registrations.Categories CategoryInfo = new EL.Registrations.Categories();
-        EL.Transactions.Inventories InventoryInfo = new EL.Transactions.Inventories();
+        EL.Registrations.Products productEL = new EL.Registrations.Products();
+        EL.Registrations.SubCategories subCategoryEL = new EL.Registrations.SubCategories();
+        EL.Registrations.Categories categoryEL = new EL.Registrations.Categories();
+        EL.Transactions.Inventories inventoryEL = new EL.Transactions.Inventories();
 
-        BL.Registrations.Products ProductBL = new BL.Registrations.Products();
-        BL.Registrations.SubCategories SubCategoryBL = new BL.Registrations.SubCategories();
-        BL.Registrations.Categories CategoryBL = new BL.Registrations.Categories();
-        BL.Transactions.Inventories InventoryBL = new BL.Transactions.Inventories();
+        BL.Registrations.Products productBL = new BL.Registrations.Products();
+        BL.Registrations.SubCategories subCategoryBL = new BL.Registrations.SubCategories();
+        BL.Registrations.Categories categoryBL = new BL.Registrations.Categories();
+        BL.Transactions.Inventories inventoryBL = new BL.Transactions.Inventories();
 
         string current = "";
 
@@ -42,14 +42,14 @@ namespace pos.PL.Registrations
 
         private void frmManageStaffs_Load(object sender, EventArgs e)
         {
-            loadData(txtSearch.Text);
-            hiddenColumns();
-            manageForm(false);
-            populateControls();
-            clearFields();
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            PopulateControls();
+            ClearFields();
         }
 
-        private void hiddenColumns()
+        private void HiddenColumns()
         {
             dgv.Columns["Inventory ID"].Visible = false;
             dgv.Columns["Product ID"].Visible = false;
@@ -60,36 +60,36 @@ namespace pos.PL.Registrations
             dgv.Columns["categoriesisdeleted"].Visible = false;
         }
 
-        private void loadData(string keywords)
+        private void LoadData(string keywords)
         {
-            dgv.DataSource = InventoryBL.List(keywords);
+            dgv.DataSource = inventoryBL.List(keywords);
         }
 
-        private void populateControls()
+        private void PopulateControls()
         {
             cbCategoryName.DisplayMember = "Category Name";
             cbCategoryName.ValueMember = "Category ID";
-            cbCategoryName.DataSource = CategoryBL.List("");
+            cbCategoryName.DataSource = categoryBL.List("");
         }
 
-        private void populateControlsSubCategory()
+        private void PopulateControlsSubCategory()
         {
             cbSubCategoryName.DisplayMember = "Sub Category Name";
             cbSubCategoryName.ValueMember = "Sub Category ID";
-            cbSubCategoryName.DataSource = SubCategoryBL.List(Convert.ToInt32(cbCategoryName.SelectedValue));
+            cbSubCategoryName.DataSource = subCategoryBL.List(Convert.ToInt32(cbCategoryName.SelectedValue));
         }
 
-        private void manageForm(bool status)
+        private void ManageForm(bool status)
         {
-            manageFields(status);
+            ManageFields(status);
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
             dgv.Enabled = !status;
             txtSearch.Enabled = !status;
-            
+
         }
 
-        private void manageFields(bool status)
+        private void ManageFields(bool status)
         {
             if (current.Equals("ADD"))
             {
@@ -120,7 +120,7 @@ namespace pos.PL.Registrations
 
         }
 
-            private void clearErrors()
+        private void ClearErrors()
         {
             errorProvider1.SetError(txtProductName, "");
             errorProvider1.SetError(txtProductDescription, "");
@@ -133,7 +133,7 @@ namespace pos.PL.Registrations
 
         }
 
-        private void clearFields()
+        private void ClearFields()
         {
             dgv.ClearSelection();
             txtProductID.ResetText();
@@ -147,7 +147,7 @@ namespace pos.PL.Registrations
             txtInitialStock.ResetText();
         }
 
-        private bool checkErrors()
+        private bool CheckErrors()
         {
             bool status = true;
 
@@ -224,58 +224,58 @@ namespace pos.PL.Registrations
             return status;
         }
 
-        private void getDataFromForm()
+        private void GetDataFromForm()
         {
-            ProductInfo.Productname = txtProductName.Text;
-            ProductInfo.Productdescription = txtProductDescription.Text;
-            ProductInfo.Subcategoryid = Convert.ToInt32(cbSubCategoryName.SelectedValue);
-            ProductInfo.Productsku = txtProductSKU.Text;
-            ProductInfo.Productprice = Convert.ToSingle(txtProductPrice.Text);
-            InventoryInfo.Reorderlevel = Convert.ToInt32(txtReorderLevel.Text);
-            InventoryInfo.Quantityinstocks = Convert.ToInt32(txtInitialStock.Text);
+            productEL.Productname = txtProductName.Text;
+            productEL.Productdescription = txtProductDescription.Text;
+            productEL.Subcategoryid = Convert.ToInt32(cbSubCategoryName.SelectedValue);
+            productEL.Productsku = txtProductSKU.Text;
+            productEL.Productprice = Convert.ToSingle(txtProductPrice.Text);
+            inventoryEL.Reorderlevel = Convert.ToInt32(txtReorderLevel.Text);
+            inventoryEL.Quantityinstocks = Convert.ToInt32(txtInitialStock.Text);
         }
 
-        private void getDataFromDataGridView()
+        private void GetDataFromDataGridView()
         {
             foreach (DataGridViewRow row in dgv.SelectedRows)
             {
-                CategoryInfo.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
-                CategoryInfo.Categoryname = row.Cells["Category Name"].Value.ToString();
+                categoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
+                categoryEL.Categoryname = row.Cells["Category Name"].Value.ToString();
 
-                SubCategoryInfo.Subcategoryid = Convert.ToInt32(row.Cells["subcategoryid"].Value);
-                SubCategoryInfo.Subcategoryname = row.Cells["Sub Category Name"].Value.ToString();
+                subCategoryEL.Subcategoryid = Convert.ToInt32(row.Cells["subcategoryid"].Value);
+                subCategoryEL.Subcategoryname = row.Cells["Sub Category Name"].Value.ToString();
 
-                ProductInfo.Productid = Convert.ToInt32(row.Cells["Product ID"].Value);
-                ProductInfo.Productname = row.Cells["Product Name"].Value.ToString();
-                ProductInfo.Productdescription = row.Cells["Product Description"].Value.ToString();
-                ProductInfo.Productsku = row.Cells["Product SKU"].Value.ToString();
-                ProductInfo.Productprice = Convert.ToSingle(row.Cells["Product Price"].Value);
-                ProductInfo.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
+                productEL.Productid = Convert.ToInt32(row.Cells["Product ID"].Value);
+                productEL.Productname = row.Cells["Product Name"].Value.ToString();
+                productEL.Productdescription = row.Cells["Product Description"].Value.ToString();
+                productEL.Productsku = row.Cells["Product SKU"].Value.ToString();
+                productEL.Productprice = Convert.ToSingle(row.Cells["Product Price"].Value);
+                productEL.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
 
-                InventoryInfo.Inventoryid = Convert.ToInt32(row.Cells["Inventory ID"].Value);
-                InventoryInfo.Reorderlevel = Convert.ToInt32(row.Cells["Reorder Level"].Value);
-                InventoryInfo.Quantityinstocks = Convert.ToInt32(row.Cells["Quantity In Stocks"].Value);
+                inventoryEL.Inventoryid = Convert.ToInt32(row.Cells["Inventory ID"].Value);
+                inventoryEL.Reorderlevel = Convert.ToInt32(row.Cells["Reorder Level"].Value);
+                inventoryEL.Quantityinstocks = Convert.ToInt32(row.Cells["Quantity In Stocks"].Value);
             }
 
-            txtProductID.Text = ProductInfo.Productid.ToString();
-            txtProductName.Text = ProductInfo.Productname;
-            txtProductDescription.Text = ProductInfo.Productdescription;
-            cbCategoryName.SelectedIndex = cbCategoryName.FindString(CategoryInfo.Categoryname);
-            cbSubCategoryName.SelectedIndex = cbSubCategoryName.FindString(SubCategoryInfo.Subcategoryname);
-            txtProductSKU.Text = ProductInfo.Productsku;
-            txtProductPrice.Text = ProductInfo.Productprice.ToString();
-            txtReorderLevel.Text = InventoryInfo.Reorderlevel.ToString();
-            txtInitialStock.Text = InventoryInfo.Quantityinstocks.ToString();
+            txtProductID.Text = productEL.Productid.ToString();
+            txtProductName.Text = productEL.Productname;
+            txtProductDescription.Text = productEL.Productdescription;
+            cbCategoryName.SelectedIndex = cbCategoryName.FindString(categoryEL.Categoryname);
+            cbSubCategoryName.SelectedIndex = cbSubCategoryName.FindString(subCategoryEL.Subcategoryname);
+            txtProductSKU.Text = productEL.Productsku;
+            txtProductPrice.Text = productEL.Productprice.ToString();
+            txtReorderLevel.Text = inventoryEL.Reorderlevel.ToString();
+            txtInitialStock.Text = inventoryEL.Quantityinstocks.ToString();
 
 
         }
 
-        private void showMessageBox(bool condition)
+        private void ShowMessageBox(bool condition)
         {
             if (condition)
             {
-                loadData(txtSearch.Text);
-                clearFields();
+                LoadData(txtSearch.Text);
+                ClearFields();
                 MessageBox.Show("Success");
 
             }
@@ -285,33 +285,33 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void add()
+        private void Add()
         {
-            getDataFromForm();
+            GetDataFromForm();
 
-            InventoryInfo.Productid = Convert.ToInt32(ProductBL.Insert(ProductInfo));
-            showMessageBox(InventoryBL.Insert(InventoryInfo) > 0);
+            inventoryEL.Productid = Convert.ToInt32(productBL.Insert(productEL));
+            ShowMessageBox(inventoryBL.Insert(inventoryEL) > 0);
         }
 
-        private void edit()
+        private void Edit()
         {
-            getDataFromForm();
+            GetDataFromForm();
 
-            showMessageBox(ProductBL.Update(ProductInfo) & InventoryBL.Update(InventoryInfo));
+            ShowMessageBox(productBL.Update(productEL) & inventoryBL.Update(inventoryEL));
         }
 
-        private void delete()
+        private void Delete()
         {
-            getDataFromForm();
+            GetDataFromForm();
 
-            showMessageBox(ProductBL.Delete(ProductInfo));
+            ShowMessageBox(productBL.Delete(productEL));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             current = "ADD";
-            clearFields();
-            manageForm(true);
+            ClearFields();
+            ManageForm(true);
             this.ActiveControl = txtProductName;
         }
 
@@ -324,9 +324,9 @@ namespace pos.PL.Registrations
             else
             {
                 current = "EDIT";
-                manageForm(true);
+                ManageForm(true);
                 this.ActiveControl = txtProductName;
-                
+
             }
         }
 
@@ -338,50 +338,50 @@ namespace pos.PL.Registrations
             }
             else
             {
-                delete();
+                Delete();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (checkErrors())
+            if (CheckErrors())
             {
-                getDataFromForm();
+                GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    add();
+                    Add();
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    edit();
+                    Edit();
                 }
 
-                manageForm(false);
-                clearFields();
+                ManageForm(false);
+                ClearFields();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             current = "";
-            manageForm(false);
-            clearFields();
-            clearErrors();
+            ManageForm(false);
+            ClearFields();
+            ClearErrors();
         }
 
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            getDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void txtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -413,15 +413,15 @@ namespace pos.PL.Registrations
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            loadData(txtSearch.Text);
+            LoadData(txtSearch.Text);
         }
 
         private void cbCategoryName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            populateControlsSubCategory();
+            PopulateControlsSubCategory();
 
         }
 
-       
+
     }
 }
