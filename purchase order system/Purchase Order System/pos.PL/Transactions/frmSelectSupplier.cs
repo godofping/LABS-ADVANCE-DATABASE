@@ -62,7 +62,6 @@ namespace pos.PL.Transactions
             supplierEL.Supplierid = Convert.ToInt32(cbSupplierName.SelectedValue);
             supplierEL.Supplier = cbSupplierName.Text;
 
-            
 
             frmManagePurchaseOrders.cbSupplierName.SelectedIndex = frmManagePurchaseOrders.cbSupplierName.FindString(cbSupplierName.Text);
             frmManagePurchaseOrders.ManageForm(true);

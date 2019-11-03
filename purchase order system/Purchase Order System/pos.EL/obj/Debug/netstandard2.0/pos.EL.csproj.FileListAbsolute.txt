@@ -5,3 +5,4 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purc
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.EL\obj\Debug\netstandard2.0\pos.EL.AssemblyInfo.cs
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.EL\obj\Debug\netstandard2.0\pos.EL.dll
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.EL\obj\Debug\netstandard2.0\pos.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\Purchase Order System\pos.EL\obj\Debug\netstandard2.0\pos.EL.csprojAssemblyReference.cache

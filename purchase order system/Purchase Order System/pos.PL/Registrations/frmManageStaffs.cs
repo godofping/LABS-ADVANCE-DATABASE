@@ -113,6 +113,7 @@ namespace pos.PL.Registrations
             txtMiddleName.ResetText();
             txtLastName.ResetText();
             cbGender.SelectedIndex = -1;
+            cbGender.Text = "";
             dtpBirthDate.ResetText();
             txtContactNumber.ResetText();
             txtEmailAddress.ResetText();
@@ -120,7 +121,8 @@ namespace pos.PL.Registrations
             txtCity.ResetText();
             txtProvince.ResetText();
             txtZipCode.ResetText();
-            cbPosition.ResetText();
+            cbPosition.SelectedIndex = -1;
+            cbPosition.Text = "";
             txtUsername.ResetText();
             txtPassword.ResetText();
         }
