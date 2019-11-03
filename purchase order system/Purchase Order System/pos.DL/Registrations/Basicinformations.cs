@@ -4,7 +4,7 @@ using System.Text;
 
 namespace pos.DL.Registrations
 {
-    public class Basicinformations
+    public class BasicInformations
     {
         public long Insert(EL.Registrations.Basicinformations basicinformation)
         {

@@ -4,7 +4,7 @@ namespace pos.BL.Registrations
 {
     public class Staffpositions
     {
-        DL.Registrations.Staffpositions StaffPositionDL = new DL.Registrations.Staffpositions();
+        DL.Registrations.StaffPositions StaffPositionDL = new DL.Registrations.StaffPositions();
 
         public DataTable List()
         {

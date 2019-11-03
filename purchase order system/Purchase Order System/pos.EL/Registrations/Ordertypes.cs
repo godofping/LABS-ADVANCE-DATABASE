@@ -1,6 +1,6 @@
 ﻿namespace pos.EL.Registrations
 {
-    public class Ordertypes
+    public class OrderTypes
     {
         int ordertypeid;
         string ordertype;

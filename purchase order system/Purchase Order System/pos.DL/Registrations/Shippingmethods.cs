@@ -2,7 +2,7 @@
 
 namespace pos.DL.Registrations
 {
-    public class Shippingmethods
+    public class ShippingMethods
     {
         public DataTable List()
         {

@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace pos.BL.Registrations
+﻿namespace pos.BL.Registrations
 {
     public class Basicinformations
     {
-        DL.Registrations.Basicinformations BasicinformationDL = new DL.Registrations.Basicinformations();
+        DL.Registrations.BasicInformations basicInformationDL = new DL.Registrations.BasicInformations();
 
         public long Insert(EL.Registrations.Basicinformations basicinformation)
         {
-            return BasicinformationDL.Insert(basicinformation);
+            return basicInformationDL.Insert(basicinformation);
         }
 
         public bool Update(EL.Registrations.Basicinformations basicinformation)
         {
-            return BasicinformationDL.Update(basicinformation);
+            return basicInformationDL.Update(basicinformation);
         }
     }
 }

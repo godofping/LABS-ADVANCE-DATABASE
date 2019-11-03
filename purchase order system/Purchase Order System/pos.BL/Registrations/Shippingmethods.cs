@@ -4,7 +4,7 @@ namespace pos.BL.Registrations
 {
     public class Shippingmethods
     {
-        DL.Registrations.Shippingmethods ShippingMethodDL = new DL.Registrations.Shippingmethods();
+        DL.Registrations.ShippingMethods ShippingMethodDL = new DL.Registrations.ShippingMethods();
 
         public DataTable List()
         {

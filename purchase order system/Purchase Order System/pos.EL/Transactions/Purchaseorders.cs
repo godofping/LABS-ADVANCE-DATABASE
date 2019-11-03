@@ -8,7 +8,10 @@ namespace pos.EL.Transactions
     {
         int purchaseorderid;
         int staffid;
+        string purchaseordername;
         int supplierid;
+        int paymentmethodid;
+        int shippingmethodid;
         string purchaseorderstatus;
         float purchaseorderamountpaid;
         float purchasetotalorderamount;
@@ -19,7 +22,10 @@ namespace pos.EL.Transactions
 
         public int Purchaseorderid { get => purchaseorderid; set => purchaseorderid = value; }
         public int Staffid { get => staffid; set => staffid = value; }
+        public string Purchaseordername { get => purchaseordername; set => purchaseordername = value; }
         public int Supplierid { get => supplierid; set => supplierid = value; }
+        public int Paymentmethodid { get => paymentmethodid; set => paymentmethodid = value; }
+        public int Shippingmethodid { get => shippingmethodid; set => shippingmethodid = value; }
         public string Purchaseorderstatus { get => purchaseorderstatus; set => purchaseorderstatus = value; }
         public float Purchaseorderamountpaid { get => purchaseorderamountpaid; set => purchaseorderamountpaid = value; }
         public float Purchasetotalorderamount { get => purchasetotalorderamount; set => purchasetotalorderamount = value; }

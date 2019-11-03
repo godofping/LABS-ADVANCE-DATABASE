@@ -40,12 +40,9 @@
             this.cbSupplierName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSupplierName.FormattingEnabled = true;
             this.cbSupplierName.ItemHeight = 13;
-            this.cbSupplierName.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
             this.cbSupplierName.Location = new System.Drawing.Point(24, 71);
             this.cbSupplierName.Name = "cbSupplierName";
-            this.cbSupplierName.Size = new System.Drawing.Size(172, 21);
+            this.cbSupplierName.Size = new System.Drawing.Size(411, 21);
             this.cbSupplierName.TabIndex = 77;
             // 
             // label3
@@ -69,7 +66,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(121, 117);
+            this.btnCancel.Location = new System.Drawing.Point(360, 113);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 81;
@@ -78,18 +75,19 @@
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(24, 117);
+            this.btnSelect.Location = new System.Drawing.Point(263, 113);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(75, 23);
             this.btnSelect.TabIndex = 80;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // frmSelectSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(218, 162);
+            this.ClientSize = new System.Drawing.Size(447, 162);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.label1);
@@ -99,6 +97,7 @@
             this.Name = "frmSelectSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSelectSupplier";
+            this.Load += new System.EventHandler(this.frmSelectSupplier_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

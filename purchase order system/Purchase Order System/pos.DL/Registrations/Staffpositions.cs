@@ -2,7 +2,7 @@
 
 namespace pos.DL.Registrations
 {
-    public class Staffpositions
+    public class StaffPositions
     {
         public DataTable List()
         {

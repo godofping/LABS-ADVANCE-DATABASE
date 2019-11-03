@@ -157,8 +157,6 @@ namespace pos.PL.Registrations
             cbSubCategoryName.SelectedIndex = -1;
             cbProductName.SelectedIndex = -1;
             clearExtendedFields();
-
-
         }
 
         private void clearExtendedFields()

@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querybuilder version="8.3">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">pos</database>
+</source>
+<canvas>
+<table tablename="purchaseorders" alias="" left="124" top="31" width="236" height="308" />
+<table tablename="suppliers" alias="" left="683" top="2" width="150" height="128" />
+<table tablename="paymentmethods" alias="" left="652" top="154" width="150" height="113" />
+<table tablename="shippingmethods" alias="" left="694" top="305" width="150" height="113" />
+<table tablename="staffs" alias="" left="868" top="86" width="150" height="203" />
+<table tablename="basicinformations" alias="" left="1101" top="254" width="150" height="188" />
+<table tablename="contactdetails" alias="" left="1161" top="142" width="150" height="113" />
+<table tablename="contactdetails" alias="contactdetails_1" left="1099" top="0" width="150" height="113" />
+<table tablename="addresses" alias="" left="1320" top="289" width="150" height="128" />
+<table tablename="addresses" alias="addresses_1" left="1299" top="4" width="188" height="128" />
+<table tablename="staffpositions" alias="" left="923" top="330" width="150" height="113" />
+<join type = "Inner Join">
+<from tablename = "purchaseorders" alias = "">supplierid</from>
+<to tablename = "suppliers" alias = "">supplierid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "purchaseorders" alias = "">paymentmethodid</from>
+<to tablename = "paymentmethods" alias = "">paymentmethodid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "purchaseorders" alias = "">shippingmethodid</from>
+<to tablename = "shippingmethods" alias = "">shippingmethodid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "purchaseorders" alias = "">staffid</from>
+<to tablename = "staffs" alias = "">staffid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "suppliers" alias = "">contactdetailid</from>
+<to tablename = "contactdetails" alias = "contactdetails_1">contactdetailid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "staffs" alias = "">basicinformationid</from>
+<to tablename = "basicinformations" alias = "">basicinformationid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "staffs" alias = "">contactdetailid</from>
+<to tablename = "contactdetails" alias = "">contactdetailid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "contactdetails" alias = "">addressid</from>
+<to tablename = "addresses" alias = "">addressid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "contactdetails" alias = "contactdetails_1">addressid</from>
+<to tablename = "addresses" alias = "addresses_1">addressid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "staffs" alias = "">staffpositionid</from>
+<to tablename = "staffpositions" alias = "">staffpositionid</to>
+</join>
+</canvas>
+<grid>
+<column id="1">
+<table tablename="purchaseorders"></table>
+<field>purchaseorderid</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="2">
+<table tablename="purchaseorders"></table>
+<field>staffid</field>
+<alias>Purchase Order Staff ID</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="3">
+<table tablename="purchaseorders"></table>
+<field>purchaseordername</field>
+<alias>Purchase Order Name</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="4">
+<table tablename="purchaseorders"></table>
+<field>supplierid</field>
+<alias>Purchase Order Supplier Id</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="5">
+<table tablename="purchaseorders"></table>
+<field>paymentmethodid</field>
+<alias>Purchase Order Payment Method ID</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="6">
+<table tablename="purchaseorders"></table>
+<field>shippingmethodid</field>
+<alias>Purchase Order Shipping Method ID</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="7">
+<table tablename="purchaseorders"></table>
+<field>purchaseorderstatus</field>
+<alias>Purchase Order Status</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="8">
+<table tablename="purchaseorders"></table>
+<field>purchaseorderamountpaid</field>
+<alias>Purchase Order Amount Paid</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="9">
+<table tablename="purchaseorders"></table>
+<field>purchasetotalorderamount</field>
+<alias>Purchase Order Total Amount</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="10">
+<table tablename="purchaseorders"></table>
+<field>purchaseorderdatedelivered</field>
+<alias>Purchase Order Date Delivered</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="11">
+<table tablename="purchaseorders"></table>
+<field>purchaseorderdaterequested</field>
+<alias>Purchase Order Date Requested</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="12">
+<table tablename="purchaseorders"></table>
+<field>purchaseordercomment</field>
+<alias>Purchase Order Comment</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="13">
+<table tablename="purchaseorders"></table>
+<field>isdeleted</field>
+<alias>Purchase Order Is Deleted</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="14">
+<table tablename="suppliers"></table>
+<field>supplier</field>
+<alias>Supplier</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="15">
+<table tablename="suppliers"></table>
+<field>contactdetailid</field>
+<alias>Supplier Contact Detail ID</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="16">
+<table tablename="suppliers"></table>
+<field>isdeleted</field>
+<alias>Supplier Is Deleted</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="17">
+<table tablename="contactdetails">contactdetails_1</table>
+<field>addressid</field>
+<alias>Supplier Address ID</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="18">
+<table tablename="contactdetails">contactdetails_1</table>
+<field>contactnumber</field>
+<alias>Supplier Contact Number</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="19">
+<table tablename="contactdetails">contactdetails_1</table>
+<field>emailaddress</field>
+<alias>Supplier Email Address</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="20">
+<table tablename="addresses">addresses_1</table>
+<field>address</field>
+<alias>Supplier Address</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="21">
+<table tablename="addresses">addresses_1</table>
+<field>city</field>
+<alias>Supplier City</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="22">
+<table tablename="addresses">addresses_1</table>
+<field>zipcode</field>
+<alias>Supplier Zip Code</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="23">
+<table tablename="addresses">addresses_1</table>
+<field>province</field>
+<alias>Supplier Province</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="24">
+<table tablename="paymentmethods"></table>
+<field>paymentmethod</field>
+<alias>Payment Method</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="25">
+<table tablename="shippingmethods"></table>
+<field>shippingmethod</field>
+<alias>Shipping Method</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="26">
+<table tablename="staffs"></table>
+<field>username</field>
+<alias>Staff Username</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="27">
+<table tablename="staffs"></table>
+<field>password</field>
+<alias>Staff Password</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="28">
+<table tablename="staffs"></table>
+<field>contactdetailid</field>
+<alias>Staff Contact Detail ID</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="29">
+<table tablename="staffs"></table>
+<field>basicinformationid</field>
+<alias>Staff Basic Information ID</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="30">
+<table tablename="staffs"></table>
+<field>staffpositionid</field>
+<alias>Staff Position ID</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="31">
+<table tablename="staffs"></table>
+<field>isdeleted</field>
+<alias>Staff Is Deleted</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="32">
+<table tablename="staffpositions"></table>
+<field>staffposition</field>
+<alias>Staff Position</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="33">
+<table tablename="basicinformations"></table>
+<field>firstname</field>
+<alias>Staff First Name</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="34">
+<table tablename="basicinformations"></table>
+<field>middlename</field>
+<alias>Staff Middle Name</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="35">
+<table tablename="basicinformations"></table>
+<field>lastname</field>
+<alias>Staff Last Name</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="36">
+<table tablename="basicinformations"></table>
+<field>gender</field>
+<alias>Staff Gender</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="37">
+<table tablename="basicinformations"></table>
+<field>birthdate</field>
+<alias>Staff Birth Date</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="38">
+<table tablename="contactdetails"></table>
+<field>addressid</field>
+<alias>Staff Address ID</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="39">
+<table tablename="contactdetails"></table>
+<field>contactnumber</field>
+<alias>Staff Contact Number</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="40">
+<table tablename="contactdetails"></table>
+<field>emailaddress</field>
+<alias>Staff Email Address</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="41">
+<table tablename="addresses"></table>
+<field>address</field>
+<alias>Staff Address</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="42">
+<table tablename="addresses"></table>
+<field>city</field>
+<alias>Staff City</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="43">
+<table tablename="addresses"></table>
+<field>zipcode</field>
+<alias>Staff Zip Code</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="44">
+<table tablename="addresses"></table>
+<field>province</field>
+<alias>Staff Province</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+</grid>
+</querybuilder>
