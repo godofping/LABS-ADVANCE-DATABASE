@@ -9,6 +9,12 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
+        public DataTable List(int id, int id1)
+        {
+            string sQuery = "select * from supplierproducts_view where supplierid = " + id + " and subcategoryid = " + id1 + "";
+            return Helper.executeQuery(sQuery);
+        }
+
         public DataTable CheckIfExisting(EL.Registrations.SupplierProducts supplierProductEL)
         {
             string sQuery = "select * from supplierproducts_view where supplierid = " + supplierProductEL.Supplierid + " and productid = " + supplierProductEL.Productid + " ";

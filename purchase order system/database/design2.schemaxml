@@ -17,7 +17,7 @@
   `zipcode` varchar(60) DEFAULT NULL,
   `province` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`addressid`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="categories" view="colnames">
 <left>8</left>
@@ -44,7 +44,7 @@
   PRIMARY KEY (`contactdetailid`),
   KEY `FK_contactdetails` (`addressid`),
   CONSTRAINT `FK_contactdetails` FOREIGN KEY (`addressid`) REFERENCES `addresses` (`addressid`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="customers" view="colnames">
 <left>917</left>
@@ -64,7 +64,7 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="orderdetails" view="colnames">
-<left>521</left>
+<left>480</left>
 <top>199</top>
 <width>186</width>
 <height>214</height>
@@ -102,7 +102,7 @@
   KEY `FK_items` (`subcategoryid`),
   KEY `FK_products` (`productprice`),
   CONSTRAINT `FK_items` FOREIGN KEY (`subcategoryid`) REFERENCES `subcategories` (`subcategoryid`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=112 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="staffs" view="colnames">
 <left>1166</left>
@@ -147,12 +147,12 @@
 <width>209</width>
 <height>228</height>
 <sql_create_table>CREATE TABLE `purchaseorderdetails` (
-  `purchaseorderdetailsid` int(6) NOT NULL AUTO_INCREMENT,
+  `purchaseorderdetailid` int(6) NOT NULL AUTO_INCREMENT,
   `productid` int(6) DEFAULT NULL,
   `purchaseorderdetailquantity` int(6) DEFAULT NULL,
   `purchaseorderid` int(6) DEFAULT NULL,
   `purchaseorderdetailprice` float DEFAULT NULL,
-  PRIMARY KEY (`purchaseorderdetailsid`),
+  PRIMARY KEY (`purchaseorderdetailid`),
   KEY `FK_purchaseorderdetails` (`purchaseorderid`),
   KEY `FK_purchaseorderdetails1` (`productid`),
   KEY `FK_purchaseordderdetails` (`purchaseorderdetailquantity`),
@@ -228,7 +228,7 @@
   PRIMARY KEY (`inventoryid`),
   KEY `FK_inventories` (`productid`),
   CONSTRAINT `FK_inventories` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="orders" view="colnames">
 <left>726</left>
@@ -284,7 +284,7 @@
   PRIMARY KEY (`supplierid`),
   KEY `FK_vendors` (`contactdetailid`),
   CONSTRAINT `FK_vendors` FOREIGN KEY (`contactdetailid`) REFERENCES `contactdetails` (`contactdetailid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="supplierproducts" view="colnames">
 <left>893</left>
@@ -300,7 +300,7 @@
   KEY `FK_ve1ndorproducts` (`supplierid`),
   CONSTRAINT `FK_ve1ndorproducts` FOREIGN KEY (`supplierid`) REFERENCES `suppliers` (`supplierid`),
   CONSTRAINT `FK_vendorproducts` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="storeinformation" view="colnames">
 <left>990</left>
@@ -323,7 +323,7 @@
   `paymentmethodid` int(6) NOT NULL AUTO_INCREMENT,
   `paymentmethod` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`paymentmethodid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="shippingmethods" view="colnames">
 <left>761</left>
@@ -334,7 +334,7 @@
   `shippingmethodid` int(6) NOT NULL AUTO_INCREMENT,
   `shippingmethod` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`shippingmethodid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 </tables>
 </canvas>
