@@ -10,19 +10,19 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
-        public long Insert(EL.Registrations.Categories category)
+        public long Insert(EL.Registrations.Categories categoryEL)
         {
-            return Helper.executeNonQueryLong("insert into categories (categoryname) values ('" + category.Categoryname + "')");
+            return Helper.executeNonQueryLong("insert into categories (categoryname) values ('" + categoryEL.Categoryname + "')");
         }
 
-        public bool Update(EL.Registrations.Categories category)
+        public bool Update(EL.Registrations.Categories categoryEL)
         {
-            return Helper.executeNonQueryBool("update categories set categoryname = '" + category.Categoryname + "' where categoryid = '" + category.Categoryid + "' ");
+            return Helper.executeNonQueryBool("update categories set categoryname = '" + categoryEL.Categoryname + "' where categoryid = '" + categoryEL.Categoryid + "' ");
         }
 
-        public bool Delete(EL.Registrations.Categories category)
+        public bool Delete(EL.Registrations.Categories categoryEL)
         {
-            return Helper.executeNonQueryBool("update categories set isdeleted = 1 where categoryid = '" + category.Categoryid + "' ");
+            return Helper.executeNonQueryBool("update categories set isdeleted = 1 where categoryid = '" + categoryEL.Categoryid + "' ");
         }
     }
 }

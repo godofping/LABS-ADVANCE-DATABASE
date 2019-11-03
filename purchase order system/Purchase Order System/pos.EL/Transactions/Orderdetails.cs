@@ -4,7 +4,7 @@ using System.Text;
 
 namespace pos.EL.Transactions
 {
-   public class Orderdetails
+   public class OrderDetails
     {
         int orderdetailid;
         int orderid;

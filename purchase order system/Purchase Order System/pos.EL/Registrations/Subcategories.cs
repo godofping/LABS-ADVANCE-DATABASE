@@ -4,7 +4,7 @@ using System.Text;
 
 namespace pos.EL.Registrations
 {
-    public class Subcategories
+    public class SubCategories
     {
         int subcategoryid;
         string subcategoryname;

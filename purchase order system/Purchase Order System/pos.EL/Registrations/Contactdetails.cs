@@ -4,7 +4,7 @@ using System.Text;
 
 namespace pos.EL.Registrations
 {
-    public class Contactdetails
+    public class ContactDetails
     {
         int contactdetailid;
         int addressid;

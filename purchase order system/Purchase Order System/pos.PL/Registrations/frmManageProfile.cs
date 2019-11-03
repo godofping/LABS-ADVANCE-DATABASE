@@ -7,16 +7,16 @@ namespace pos.PL.Registrations
     public partial class frmManageProfile : Form
     {
         EL.Registrations.Staffs StaffInfo;
-        EL.Registrations.Contactdetails ContactDetailInfo = new EL.Registrations.Contactdetails();
-        EL.Registrations.Basicinformations BasicInformationInfo = new EL.Registrations.Basicinformations();
+        EL.Registrations.ContactDetails ContactDetailInfo = new EL.Registrations.ContactDetails();
+        EL.Registrations.BasicInformations BasicInformationInfo = new EL.Registrations.BasicInformations();
         EL.Registrations.Addresses AddressInfo = new EL.Registrations.Addresses();
-        EL.Registrations.Staffpositions StaffPositionInfo = new EL.Registrations.Staffpositions();
+        EL.Registrations.StaffPositions StaffPositionInfo = new EL.Registrations.StaffPositions();
 
         BL.Registrations.Staffs StaffBL = new BL.Registrations.Staffs();
-        BL.Registrations.Contactdetails ContacDetailBL = new BL.Registrations.Contactdetails();
-        BL.Registrations.Basicinformations BasicInformationBL = new BL.Registrations.Basicinformations();
+        BL.Registrations.ContactDetails ContacDetailBL = new BL.Registrations.ContactDetails();
+        BL.Registrations.BasicInformations BasicInformationBL = new BL.Registrations.BasicInformations();
         BL.Registrations.Addresses AddressBL = new BL.Registrations.Addresses();
-        BL.Registrations.Staffpositions StaffPositionBL = new BL.Registrations.Staffpositions();
+        BL.Registrations.StaffPositions StaffPositionBL = new BL.Registrations.StaffPositions();
 
         frmMain frmMain;
 

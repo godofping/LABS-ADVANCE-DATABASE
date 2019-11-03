@@ -1,7 +1,7 @@
 ﻿using System.Data;
 namespace pos.DL.Registrations
 {
-    public class Supplierproducts
+    public class SupplierProducts
     {
         public DataTable List(string keywords)
         {
@@ -9,25 +9,25 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
-        public DataTable CheckIfExisting(EL.Registrations.Supplierproducts supplierproduct)
+        public DataTable CheckIfExisting(EL.Registrations.SupplierProducts supplierProductEL)
         {
-            string sQuery = "select * from supplierproducts_view where supplierid = " + supplierproduct.Supplierid + " and productid = " + supplierproduct.Productid + " ";
+            string sQuery = "select * from supplierproducts_view where supplierid = " + supplierProductEL.Supplierid + " and productid = " + supplierProductEL.Productid + " ";
             return Helper.executeQuery(sQuery);
         }
 
-        public long Insert(EL.Registrations.Supplierproducts supplierproduct)
+        public long Insert(EL.Registrations.SupplierProducts supplierProductEL)
         {
-            return Helper.executeNonQueryLong("insert into supplierproducts (productid, supplierid) values ('" + supplierproduct.Productid + "', '" + supplierproduct.Supplierid + "')");
+            return Helper.executeNonQueryLong("insert into supplierproducts (productid, supplierid) values ('" + supplierProductEL.Productid + "', '" + supplierProductEL.Supplierid + "')");
         }
 
-        public bool Update(EL.Registrations.Supplierproducts supplierproduct)
+        public bool Update(EL.Registrations.SupplierProducts supplierProductEL)
         {
-            return Helper.executeNonQueryBool("update supplierproducts set productid = '" + supplierproduct.Productid + "', supplierid = '" + supplierproduct.Supplierid + "' where supplierproductid = '" + supplierproduct.Supplierproductid + "'");
+            return Helper.executeNonQueryBool("update supplierproducts set productid = '" + supplierProductEL.Productid + "', supplierid = '" + supplierProductEL.Supplierid + "' where supplierproductid = '" + supplierProductEL.Supplierproductid + "'");
         }
 
-        public bool Delete(EL.Registrations.Supplierproducts supplierproduct)
+        public bool Delete(EL.Registrations.SupplierProducts supplierProductEL)
         {
-            return Helper.executeNonQueryBool("delete from supplierproducts where supplierproductid = '" + supplierproduct.Supplierproductid + "' ");
+            return Helper.executeNonQueryBool("delete from supplierproducts where supplierproductid = '" + supplierProductEL.Supplierproductid + "' ");
         }
     }
 }

@@ -14,12 +14,12 @@ namespace pos.PL.Transactions
     {
 
         EL.Registrations.Suppliers SupplierInfo = new EL.Registrations.Suppliers();
-        EL.Transactions.Purchaseorders PurchaseOrderInfo = new EL.Transactions.Purchaseorders();
-        EL.Transactions.Purchaseorderdetails PurchaseOrderDetailInfo = new EL.Transactions.Purchaseorderdetails();
+        EL.Transactions.PurchaseOrders PurchaseOrderInfo = new EL.Transactions.PurchaseOrders();
+        EL.Transactions.PurchaseOrderDetails PurchaseOrderDetailInfo = new EL.Transactions.PurchaseOrderDetails();
 
         BL.Registrations.Suppliers SupplierBL = new BL.Registrations.Suppliers();
-        BL.Transactions.Purchaseorders PurchaseOrderBL = new BL.Transactions.Purchaseorders();
-        BL.Transactions.Purchaseorderdetails PurchaseOrderDetailBL = new BL.Transactions.Purchaseorderdetails();
+        BL.Transactions.PurchaseOrders PurchaseOrderBL = new BL.Transactions.PurchaseOrders();
+        BL.Transactions.PurchaseOrderDetails PurchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
 
         frmManagePurchaseOrderProducts frmManagePurchaseOrderProducts;
 

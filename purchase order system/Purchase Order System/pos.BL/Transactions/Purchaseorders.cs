@@ -2,7 +2,7 @@
 
 namespace pos.BL.Transactions
 {
-    public class Purchaseorders
+    public class PurchaseOrders
     {
         DL.Transactions.PurchaseOrders purchaseOrderDL = new DL.Transactions.PurchaseOrders();
 
@@ -16,19 +16,19 @@ namespace pos.BL.Transactions
             return purchaseOrderDL.List(id);
         }
 
-        public long Insert(EL.Transactions.Purchaseorders purchaseOrders)
+        public long Insert(EL.Transactions.PurchaseOrders purchaseOrderEL)
         {
-            return purchaseOrderDL.Insert(purchaseOrders);
+            return purchaseOrderDL.Insert(purchaseOrderEL);
         }
 
-        public bool Update(EL.Transactions.Purchaseorders purchaseOrders)
+        public bool Update(EL.Transactions.PurchaseOrders purchaseOrderEL)
         {
-            return purchaseOrderDL.Update(purchaseOrders);
+            return purchaseOrderDL.Update(purchaseOrderEL);
         }
 
-        public bool Delete(EL.Transactions.Purchaseorders purchaseOrders)
+        public bool Delete(EL.Transactions.PurchaseOrders purchaseOrderEL)
         {
-            return purchaseOrderDL.Delete(purchaseOrders);
+            return purchaseOrderDL.Delete(purchaseOrderEL);
         }
     }
 }

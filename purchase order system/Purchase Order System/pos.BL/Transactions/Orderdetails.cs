@@ -1,7 +1,7 @@
 ﻿
 namespace pos.BL.Transactions
 {
-   public class Orderdetails
+   public class OrderDetails
     {
     }
 }

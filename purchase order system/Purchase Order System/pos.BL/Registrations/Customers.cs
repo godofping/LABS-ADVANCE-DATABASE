@@ -11,14 +11,14 @@ namespace pos.BL.Registrations
             return CustomerDL.List(keywords);
         }
 
-        public long Insert(EL.Registrations.Customers customer)
+        public long Insert(EL.Registrations.Customers customerEL)
         {
-            return CustomerDL.Insert(customer);
+            return CustomerDL.Insert(customerEL);
         }
 
-        public bool Delete(EL.Registrations.Customers customer)
+        public bool Delete(EL.Registrations.Customers customerEL)
         {
-            return CustomerDL.Delete(customer);
+            return CustomerDL.Delete(customerEL);
         }
 
     }

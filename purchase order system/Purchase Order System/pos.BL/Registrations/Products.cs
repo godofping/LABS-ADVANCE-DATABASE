@@ -15,19 +15,19 @@ namespace pos.BL.Registrations
             return ProductDL.List(id);
         }
 
-        public long Insert(EL.Registrations.Products product)
+        public long Insert(EL.Registrations.Products productEL)
         {
-            return ProductDL.Insert(product);
+            return ProductDL.Insert(productEL);
         }
 
-        public bool Update(EL.Registrations.Products product)
+        public bool Update(EL.Registrations.Products productEL)
         {
-            return ProductDL.Update(product);
+            return ProductDL.Update(productEL);
         }
 
-        public bool Delete(EL.Registrations.Products product)
+        public bool Delete(EL.Registrations.Products productEL)
         {
-            return ProductDL.Delete(product);
+            return ProductDL.Delete(productEL);
         }
     }
 }

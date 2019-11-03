@@ -2,9 +2,9 @@
 
 namespace pos.BL.Registrations
 {
-    public class Paymentmethods
+    public class PaymentMethods
     {
-        DL.Registrations.Paymentmethods PaymentMethodDL = new DL.Registrations.Paymentmethods();
+        DL.Registrations.PaymentMethods PaymentMethodDL = new DL.Registrations.PaymentMethods();
 
         public DataTable List()
         {

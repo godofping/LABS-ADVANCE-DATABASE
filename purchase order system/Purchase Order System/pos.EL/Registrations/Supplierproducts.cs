@@ -4,7 +4,7 @@ using System.Text;
 
 namespace pos.EL.Registrations
 {
-    public class Supplierproducts
+    public class SupplierProducts
     {
         int supplierproductid;
         int productid;

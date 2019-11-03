@@ -1,6 +1,6 @@
 ﻿namespace pos.EL.Registrations
 {
-    public class Paymentmethods
+    public class PaymentMethods
     {
         int paymentmethodid;
         string paymentmethod;

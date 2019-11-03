@@ -1,32 +1,32 @@
 ﻿using System.Data;
 namespace pos.BL.Registrations
 {
-    public class Supplierproducts
+    public class SupplierProducts
     {
-        DL.Registrations.Supplierproducts SupplierProductDL = new DL.Registrations.Supplierproducts();
+        DL.Registrations.SupplierProducts SupplierProductDL = new DL.Registrations.SupplierProducts();
         public DataTable List(string keywords)
         {
             return SupplierProductDL.List(keywords);
         }
 
-        public DataTable CheckIfExisting(EL.Registrations.Supplierproducts supplierproduct)
+        public DataTable CheckIfExisting(EL.Registrations.SupplierProducts supplierProductEL)
         {
-            return SupplierProductDL.CheckIfExisting(supplierproduct);
+            return SupplierProductDL.CheckIfExisting(supplierProductEL);
         }
 
-        public long Insert(EL.Registrations.Supplierproducts supplierproduct)
+        public long Insert(EL.Registrations.SupplierProducts supplierProductEL)
         {
-            return SupplierProductDL.Insert(supplierproduct);
+            return SupplierProductDL.Insert(supplierProductEL);
         }
 
-        public bool Update(EL.Registrations.Supplierproducts supplierproduct)
+        public bool Update(EL.Registrations.SupplierProducts supplierProductEL)
         {
-            return SupplierProductDL.Update(supplierproduct);
+            return SupplierProductDL.Update(supplierProductEL);
         }
 
-        public bool Delete(EL.Registrations.Supplierproducts supplierproduct)
+        public bool Delete(EL.Registrations.SupplierProducts supplierProductEL)
         {
-            return SupplierProductDL.Delete(supplierproduct);
+            return SupplierProductDL.Delete(supplierProductEL);
         }
     }
 }

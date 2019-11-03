@@ -6,14 +6,14 @@ namespace pos.DL.Registrations
 {
     public class BasicInformations
     {
-        public long Insert(EL.Registrations.Basicinformations basicinformation)
+        public long Insert(EL.Registrations.BasicInformations basicInformationEL)
         {
-            return Helper.executeNonQueryLong("insert into basicinformations (firstname, middlename, lastname, gender, birthdate) values ('" + basicinformation.Firstname + "', '" + basicinformation.Middlename + "', '" + basicinformation.Lastname + "', '" + basicinformation.Gender + "', '" + basicinformation.Birthdate + "')");
+            return Helper.executeNonQueryLong("insert into basicinformations (firstname, middlename, lastname, gender, birthdate) values ('" + basicInformationEL.Firstname + "', '" + basicInformationEL.Middlename + "', '" + basicInformationEL.Lastname + "', '" + basicInformationEL.Gender + "', '" + basicInformationEL.Birthdate + "')");
         }
 
-        public bool Update(EL.Registrations.Basicinformations basicinformation)
+        public bool Update(EL.Registrations.BasicInformations basicInformationEL)
         {
-            return Helper.executeNonQueryBool("update basicinformations set firstname = '" + basicinformation.Firstname + "', middlename = '" + basicinformation.Middlename + "', lastname = '" + basicinformation.Lastname + "', gender = '" + basicinformation.Gender + "', birthdate = '" + basicinformation.Birthdate + "' where basicinformationid = '" + basicinformation.Basicinformationid + "'");
+            return Helper.executeNonQueryBool("update basicinformations set firstname = '" + basicInformationEL.Firstname + "', middlename = '" + basicInformationEL.Middlename + "', lastname = '" + basicInformationEL.Lastname + "', gender = '" + basicInformationEL.Gender + "', birthdate = '" + basicInformationEL.Birthdate + "' where basicinformationid = '" + basicInformationEL.Basicinformationid + "'");
         }
     }
 }

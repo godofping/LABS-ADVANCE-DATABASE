@@ -6,11 +6,11 @@ namespace pos.PL.Registrations
     public partial class frmManageSuppliers : Form
     {
         EL.Registrations.Suppliers SupplierInfo = new EL.Registrations.Suppliers();
-        EL.Registrations.Contactdetails ContactDetailInfo = new EL.Registrations.Contactdetails();
+        EL.Registrations.ContactDetails ContactDetailInfo = new EL.Registrations.ContactDetails();
         EL.Registrations.Addresses AddressInfo = new EL.Registrations.Addresses();
 
         BL.Registrations.Suppliers SupplierBL = new BL.Registrations.Suppliers();
-        BL.Registrations.Contactdetails ContacDetailBL = new BL.Registrations.Contactdetails();
+        BL.Registrations.ContactDetails ContacDetailBL = new BL.Registrations.ContactDetails();
         BL.Registrations.Addresses AddressBL = new BL.Registrations.Addresses();
 
         string current = "";

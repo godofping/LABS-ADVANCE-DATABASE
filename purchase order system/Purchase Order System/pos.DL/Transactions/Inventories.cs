@@ -17,14 +17,14 @@ namespace pos.DL.Transactions
             return Helper.executeQuery(sQuery);
         }
 
-        public long Insert(EL.Transactions.Inventories inventory)
+        public long Insert(EL.Transactions.Inventories inventoryEL)
         {
-            return Helper.executeNonQueryLong("insert into inventories (productid, quantityinstocks, reorderlevel, inventorylastupdated) values ('" + inventory.Productid + "', '" + inventory.Quantityinstocks + "', '" + inventory.Reorderlevel + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' )");
+            return Helper.executeNonQueryLong("insert into inventories (productid, quantityinstocks, reorderlevel, inventorylastupdated) values ('" + inventoryEL.Productid + "', '" + inventoryEL.Quantityinstocks + "', '" + inventoryEL.Reorderlevel + "', '" + DateTime.Today.ToString("yyyy-MM-dd") + "' )");
         }
 
-        public bool Update(EL.Transactions.Inventories inventory)
+        public bool Update(EL.Transactions.Inventories inventoryEL)
         {
-            return Helper.executeNonQueryBool("update inventories set reorderlevel = '" + inventory.Reorderlevel + "', inventorylastupdated = '" + DateTime.Today.ToString("yyyy-MM-dd") + "'  where inventoryid = '" + inventory.Inventoryid + "'");
+            return Helper.executeNonQueryBool("update inventories set reorderlevel = '" + inventoryEL.Reorderlevel + "', inventorylastupdated = '" + DateTime.Today.ToString("yyyy-MM-dd") + "'  where inventoryid = '" + inventoryEL.Inventoryid + "'");
         }
 
     }

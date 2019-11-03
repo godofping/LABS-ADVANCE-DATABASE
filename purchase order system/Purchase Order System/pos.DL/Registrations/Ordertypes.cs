@@ -2,7 +2,7 @@
 
 namespace pos.DL.Registrations
 {
-    public class Ordertypes
+    public class OrderTypes
     {
         public DataTable List()
         {

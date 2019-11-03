@@ -1,7 +1,7 @@
 ﻿
 namespace pos.DL.Transactions
 {
-   public class Purchaseorderdetails
+   public class PurchaseOrderDetails
     {
     }
 }

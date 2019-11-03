@@ -15,19 +15,19 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
-        public long Insert(EL.Registrations.Products product)
+        public long Insert(EL.Registrations.Products productEL)
         {
-            return Helper.executeNonQueryLong("insert into products (productname, productdescription, subcategoryid, productsku, productprice) values ('" + product.Productname + "', '" + product.Productdescription + "', '" + product.Subcategoryid + "', '" + product.Productsku + "', '" + product.Productprice + "')");
+            return Helper.executeNonQueryLong("insert into products (productname, productdescription, subcategoryid, productsku, productprice) values ('" + productEL.Productname + "', '" + productEL.Productdescription + "', '" + productEL.Subcategoryid + "', '" + productEL.Productsku + "', '" + productEL.Productprice + "')");
         }
 
-        public bool Update(EL.Registrations.Products product)
+        public bool Update(EL.Registrations.Products productEL)
         {
-            return Helper.executeNonQueryBool("update products set productname = '" + product.Productname + "', productdescription = '" + product.Productdescription + "', subcategoryid = '" + product.Subcategoryid + "', productsku = '" + product.Productsku + "', productprice = '" + product.Productprice + "' where productid = '" + product.Productid + "' ");
+            return Helper.executeNonQueryBool("update products set productname = '" + productEL.Productname + "', productdescription = '" + productEL.Productdescription + "', subcategoryid = '" + productEL.Subcategoryid + "', productsku = '" + productEL.Productsku + "', productprice = '" + productEL.Productprice + "' where productid = '" + productEL.Productid + "' ");
         }
 
-        public bool Delete(EL.Registrations.Products product)
+        public bool Delete(EL.Registrations.Products productEL)
         {
-            return Helper.executeNonQueryBool("update products set isdeleted = 1 where productid = '" + product.Productid + "' ");
+            return Helper.executeNonQueryBool("update products set isdeleted = 1 where productid = '" + productEL.Productid + "' ");
         }
     }
 }

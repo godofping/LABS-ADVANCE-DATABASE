@@ -2,7 +2,7 @@
 
 namespace pos.BL.Registrations
 {
-    public class Shippingmethods
+    public class ShippingMethods
     {
         DL.Registrations.ShippingMethods ShippingMethodDL = new DL.Registrations.ShippingMethods();
 

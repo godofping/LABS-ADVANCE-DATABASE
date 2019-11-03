@@ -2,9 +2,9 @@
 
 namespace pos.BL.Registrations
 {
-    public class Ordertypes
+    public class OrderTypes
     {
-        DL.Registrations.Ordertypes OrderTypeDL = new DL.Registrations.Ordertypes();
+        DL.Registrations.OrderTypes OrderTypeDL = new DL.Registrations.OrderTypes();
 
         public DataTable List()
         {

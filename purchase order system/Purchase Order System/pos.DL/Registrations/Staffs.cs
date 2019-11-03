@@ -20,35 +20,35 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
-        public DataTable CheckUsername(EL.Registrations.Staffs staff)
+        public DataTable CheckUsername(EL.Registrations.Staffs staffEL)
         {
-            return Helper.executeQuery("select * from staffs_view where `Username` = '" + staff.Username + "'");
+            return Helper.executeQuery("select * from staffs_view where `Username` = '" + staffEL.Username + "'");
         }
 
-        public DataTable CheckUsername(EL.Registrations.Staffs staff, int id)
+        public DataTable CheckUsername(EL.Registrations.Staffs staffEL, int id)
         {
-            return Helper.executeQuery("select * from staffs_view where `Username` = '" + staff.Username + "' and `Staff ID` <> " + id + "");
+            return Helper.executeQuery("select * from staffs_view where `Username` = '" + staffEL.Username + "' and `Staff ID` <> " + id + "");
         }
 
-        public long Insert(EL.Registrations.Staffs staff)
+        public long Insert(EL.Registrations.Staffs staffEL)
         {
-            return Helper.executeNonQueryLong("insert into staffs (username, password, contactdetailid, basicinformationid, staffpositionid) values ('" + staff.Username + "', '" + staff.Password + "', '" + staff.Contactdetailid + "', '" + staff.Basicinformationid + "', '" + staff.Staffpositionid + "')");
+            return Helper.executeNonQueryLong("insert into staffs (username, password, contactdetailid, basicinformationid, staffpositionid) values ('" + staffEL.Username + "', '" + staffEL.Password + "', '" + staffEL.Contactdetailid + "', '" + staffEL.Basicinformationid + "', '" + staffEL.Staffpositionid + "')");
         }
 
-        public bool Update(EL.Registrations.Staffs staff)
+        public bool Update(EL.Registrations.Staffs staffEL)
         {
-            return Helper.executeNonQueryBool("update staffs set username = '" + staff.Username + "', password = '" + staff.Password + "', staffpositionid = '" + staff.Staffpositionid + "' where staffid = '" + staff.Staffid + "' ");
+            return Helper.executeNonQueryBool("update staffs set username = '" + staffEL.Username + "', password = '" + staffEL.Password + "', staffpositionid = '" + staffEL.Staffpositionid + "' where staffid = '" + staffEL.Staffid + "' ");
         }
 
-        public bool Delete(EL.Registrations.Staffs staff)
+        public bool Delete(EL.Registrations.Staffs staffEL)
         {
-            return Helper.executeNonQueryBool("update staffs set isdeleted = 1 where staffid = '" + staff.Staffid + "' ");
+            return Helper.executeNonQueryBool("update staffs set isdeleted = 1 where staffid = '" + staffEL.Staffid + "' ");
         }
 
 
-        public DataTable Login(EL.Registrations.Staffs staff)
+        public DataTable Login(EL.Registrations.Staffs staffEL)
         {
-            string sQuery = "select * from staffs_view where `Username` = '" + staff.Username + "' and password = '" + staff.Password + "' ";
+            string sQuery = "select * from staffs_view where `Username` = '" + staffEL.Username + "' and password = '" + staffEL.Password + "' ";
             return Helper.executeQuery(sQuery);
         }
 

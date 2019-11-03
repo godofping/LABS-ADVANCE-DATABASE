@@ -4,24 +4,24 @@ namespace pos.BL.Registrations
 {
     public class Suppliers
     {
-        DL.Registrations.Suppliers VendorDL = new DL.Registrations.Suppliers();
+        DL.Registrations.Suppliers supplierDL = new DL.Registrations.Suppliers();
         public DataTable List(string keywords)
         {
-            return VendorDL.List(keywords);
+            return supplierDL.List(keywords);
         }
 
-        public long Insert(EL.Registrations.Suppliers vendor)
+        public long Insert(EL.Registrations.Suppliers supplierEL)
         {
-            return VendorDL.Insert(vendor);
+            return supplierDL.Insert(supplierEL);
         }
-        public bool Update(EL.Registrations.Suppliers vendor)
+        public bool Update(EL.Registrations.Suppliers supplierEL)
         {
-            return VendorDL.Update(vendor);
+            return supplierDL.Update(supplierEL);
         }
 
-        public bool Delete(EL.Registrations.Suppliers vendor)
+        public bool Delete(EL.Registrations.Suppliers supplierEL)
         {
-            return VendorDL.Delete(vendor);
+            return supplierDL.Delete(supplierEL);
         }
 
     }

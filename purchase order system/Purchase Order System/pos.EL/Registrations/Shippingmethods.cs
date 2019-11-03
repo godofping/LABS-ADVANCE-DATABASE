@@ -1,6 +1,6 @@
 ﻿namespace pos.EL.Registrations
 {
-    public class Shippingmethods
+    public class ShippingMethods
     {
         int shippingmethodid;
         string shippingmethod;

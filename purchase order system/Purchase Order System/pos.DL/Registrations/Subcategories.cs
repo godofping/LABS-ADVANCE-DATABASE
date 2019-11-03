@@ -1,7 +1,7 @@
 ﻿using System.Data;
 namespace pos.DL.Registrations
 {
-    public class Subcategories
+    public class SubCategories
     {
         public DataTable List(string keywords)
         {
@@ -15,19 +15,19 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
-        public long Insert(EL.Registrations.Subcategories subcategory)
+        public long Insert(EL.Registrations.SubCategories subCategoryEL)
         {
-            return Helper.executeNonQueryLong("insert into subcategories (subcategoryname, categoryid) values ('" + subcategory.Subcategoryname + "', '" + subcategory.Categoryid + "')");
+            return Helper.executeNonQueryLong("insert into subcategories (subcategoryname, categoryid) values ('" + subCategoryEL.Subcategoryname + "', '" + subCategoryEL.Categoryid + "')");
         }
 
-        public bool Update(EL.Registrations.Subcategories subcategory)
+        public bool Update(EL.Registrations.SubCategories subCategoryEL)
         {
-            return Helper.executeNonQueryBool("update subcategories set subcategoryname = '" + subcategory.Subcategoryname + "', categoryid = '" + subcategory.Categoryid + "' where subcategoryid = '" + subcategory.Subcategoryid + "' ");
+            return Helper.executeNonQueryBool("update subcategories set subcategoryname = '" + subCategoryEL.Subcategoryname + "', categoryid = '" + subCategoryEL.Categoryid + "' where subcategoryid = '" + subCategoryEL.Subcategoryid + "' ");
         }
 
-        public bool Delete(EL.Registrations.Subcategories subcategory)
+        public bool Delete(EL.Registrations.SubCategories subCategoryEL)
         {
-            return Helper.executeNonQueryBool("update subcategories set isdeleted = 1 where subcategoryid = '" + subcategory.Subcategoryid + "' ");
+            return Helper.executeNonQueryBool("update subcategories set isdeleted = 1 where subcategoryid = '" + subCategoryEL.Subcategoryid + "' ");
         }
     }
 }

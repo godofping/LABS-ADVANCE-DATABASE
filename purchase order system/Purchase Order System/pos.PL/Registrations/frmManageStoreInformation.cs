@@ -6,19 +6,19 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageStoreInformation : Form
     {
-        EL.Registrations.Storeinformation StoreInformationInfo;
-        EL.Registrations.Contactdetails ContactDetailInfo = new EL.Registrations.Contactdetails();
+        EL.Registrations.StoreInformation StoreInformationInfo;
+        EL.Registrations.ContactDetails ContactDetailInfo = new EL.Registrations.ContactDetails();
         EL.Registrations.Addresses AddressInfo = new EL.Registrations.Addresses();
 
-        BL.Registrations.Storeinformation StoreInformationBL = new BL.Registrations.Storeinformation();
-        BL.Registrations.Contactdetails ContacDetailBL = new BL.Registrations.Contactdetails();
+        BL.Registrations.StoreInformation StoreInformationBL = new BL.Registrations.StoreInformation();
+        BL.Registrations.ContactDetails ContacDetailBL = new BL.Registrations.ContactDetails();
         BL.Registrations.Addresses AddressBL = new BL.Registrations.Addresses();
 
         PL.frmMain frmMain;
 
         string current = "";
 
-        public frmManageStoreInformation(EL.Registrations.Storeinformation storeInformationInfo, PL.frmMain FrmMain)
+        public frmManageStoreInformation(EL.Registrations.StoreInformation storeInformationInfo, PL.frmMain FrmMain)
         {
             InitializeComponent();
             StoreInformationInfo = storeInformationInfo;

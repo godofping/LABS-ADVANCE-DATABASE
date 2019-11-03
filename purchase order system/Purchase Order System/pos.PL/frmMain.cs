@@ -6,17 +6,17 @@ namespace pos.PL
     public partial class frmMain : Form
     {
         EL.Registrations.Staffs StaffInfo;
-        EL.Registrations.Contactdetails ContactDetailInfo;
-        EL.Registrations.Basicinformations BasicInformationInfo;
-        EL.Registrations.Staffpositions StaffpositionInfo;
+        EL.Registrations.ContactDetails ContactDetailInfo;
+        EL.Registrations.BasicInformations BasicInformationInfo;
+        EL.Registrations.StaffPositions StaffpositionInfo;
         EL.Registrations.Addresses AddressInfo;
-        EL.Registrations.Storeinformation StoreInformationInfo;
+        EL.Registrations.StoreInformation StoreInformationInfo;
 
         frmLogin FrmLogin;
 
 
       
-        public frmMain(EL.Registrations.Staffs staffInfo, EL.Registrations.Contactdetails contactDetailInfo, EL.Registrations.Basicinformations basicInformationInfo, EL.Registrations.Staffpositions staffpositionInfo, EL.Registrations.Addresses addressInfo, EL.Registrations.Storeinformation storeInformationInfo, frmLogin frmLogin)
+        public frmMain(EL.Registrations.Staffs staffInfo, EL.Registrations.ContactDetails contactDetailInfo, EL.Registrations.BasicInformations basicInformationInfo, EL.Registrations.StaffPositions staffpositionInfo, EL.Registrations.Addresses addressInfo, EL.Registrations.StoreInformation storeInformationInfo, frmLogin frmLogin)
         {
             InitializeComponent();
             StaffInfo = staffInfo;

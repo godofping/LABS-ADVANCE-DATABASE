@@ -15,34 +15,34 @@ namespace pos.BL.Registrations
             return StaffDL.List(id);
         }
 
-        public DataTable CheckUsername(EL.Registrations.Staffs staff)
+        public DataTable CheckUsername(EL.Registrations.Staffs staffEL)
         {
-            return StaffDL.CheckUsername(staff);
+            return StaffDL.CheckUsername(staffEL);
         }
 
-        public DataTable CheckUsername(EL.Registrations.Staffs staff, int id)
+        public DataTable CheckUsername(EL.Registrations.Staffs staffEL, int id)
         {
-            return StaffDL.CheckUsername(staff, id);
+            return StaffDL.CheckUsername(staffEL, id);
         }
 
-        public long Insert(EL.Registrations.Staffs staff)
+        public long Insert(EL.Registrations.Staffs staffEL)
         {
-            return StaffDL.Insert(staff);
+            return StaffDL.Insert(staffEL);
         }
 
-        public bool Update(EL.Registrations.Staffs staff)
+        public bool Update(EL.Registrations.Staffs staffEL)
         {
-            return StaffDL.Update(staff);
+            return StaffDL.Update(staffEL);
         }
 
-        public bool Delete(EL.Registrations.Staffs staff)
+        public bool Delete(EL.Registrations.Staffs staffEL)
         {
-            return StaffDL.Delete(staff);
+            return StaffDL.Delete(staffEL);
         }
 
-        public DataTable Login(EL.Registrations.Staffs staff)
+        public DataTable Login(EL.Registrations.Staffs staffEL)
         {
-            return StaffDL.Login(staff);
+            return StaffDL.Login(staffEL);
         }
     }
 }

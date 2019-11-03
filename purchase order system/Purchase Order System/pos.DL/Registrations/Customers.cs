@@ -12,14 +12,14 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
-        public long Insert(EL.Registrations.Customers customer)
+        public long Insert(EL.Registrations.Customers customerEL)
         {
-            return Helper.executeNonQueryLong("insert into customers (contactdetailid, basicinformationid) values ('" + customer.Contactdetailid + "', '" + customer.Basicinformationid + "')");
+            return Helper.executeNonQueryLong("insert into customers (contactdetailid, basicinformationid) values ('" + customerEL.Contactdetailid + "', '" + customerEL.Basicinformationid + "')");
         }
 
-        public bool Delete(EL.Registrations.Customers customer)
+        public bool Delete(EL.Registrations.Customers customerEL)
         {
-            return Helper.executeNonQueryBool("update customers set isdeleted = 1 where customerid = '" + customer.Customerid + "' ");
+            return Helper.executeNonQueryBool("update customers set isdeleted = 1 where customerid = '" + customerEL.Customerid + "' ");
         }
 
     }

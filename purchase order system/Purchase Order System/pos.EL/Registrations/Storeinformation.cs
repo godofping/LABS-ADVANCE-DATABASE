@@ -1,6 +1,6 @@
 ﻿namespace pos.EL.Registrations
 {
-    public class Storeinformation
+    public class StoreInformation
     {
         string storename;
         int contactdetailid;

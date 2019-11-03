@@ -11,19 +11,19 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
-        public long Insert(EL.Registrations.Suppliers supplier)
+        public long Insert(EL.Registrations.Suppliers supplierEL)
         {
-            return Helper.executeNonQueryLong("insert into suppliers (supplier, contactdetailid) values ('" + supplier.Supplier + "', '" + supplier.Contactdetailid + "')");
+            return Helper.executeNonQueryLong("insert into suppliers (supplier, contactdetailid) values ('" + supplierEL.Supplier + "', '" + supplierEL.Contactdetailid + "')");
         }
 
-        public bool Update(EL.Registrations.Suppliers supplier)
+        public bool Update(EL.Registrations.Suppliers supplierEL)
         {
-            return Helper.executeNonQueryBool("update suppliers set supplier = '" + supplier.Supplier + "' where supplierid = '" + supplier.Supplierid + "' ");
+            return Helper.executeNonQueryBool("update suppliers set supplier = '" + supplierEL.Supplier + "' where supplierid = '" + supplierEL.Supplierid + "' ");
         }
 
-        public bool Delete(EL.Registrations.Suppliers supplier)
+        public bool Delete(EL.Registrations.Suppliers supplierEL)
         {
-            return Helper.executeNonQueryBool("update suppliers set isdeleted = 1 where supplierid = '" + supplier.Supplierid + "' ");
+            return Helper.executeNonQueryBool("update suppliers set isdeleted = 1 where supplierid = '" + supplierEL.Supplierid + "' ");
         }
     }
 }

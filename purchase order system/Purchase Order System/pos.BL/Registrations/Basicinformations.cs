@@ -1,17 +1,17 @@
 ﻿namespace pos.BL.Registrations
 {
-    public class Basicinformations
+    public class BasicInformations
     {
         DL.Registrations.BasicInformations basicInformationDL = new DL.Registrations.BasicInformations();
 
-        public long Insert(EL.Registrations.Basicinformations basicinformation)
+        public long Insert(EL.Registrations.BasicInformations basicInformationEL)
         {
-            return basicInformationDL.Insert(basicinformation);
+            return basicInformationDL.Insert(basicInformationEL);
         }
 
-        public bool Update(EL.Registrations.Basicinformations basicinformation)
+        public bool Update(EL.Registrations.BasicInformations basicInformationEL)
         {
-            return basicInformationDL.Update(basicinformation);
+            return basicInformationDL.Update(basicInformationEL);
         }
     }
 }

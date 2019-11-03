@@ -2,14 +2,14 @@
 {
     public class Addresses
     {
-        public long Insert(EL.Registrations.Addresses address)
+        public long Insert(EL.Registrations.Addresses addressEL)
         {
-            return Helper.executeNonQueryLong("insert into addresses (address, city, zipcode, province) values ('" + address.Address + "', '" + address.City + "', '" + address.Zipcode + "', '" + address.Province + "')");
+            return Helper.executeNonQueryLong("insert into addresses (address, city, zipcode, province) values ('" + addressEL.Address + "', '" + addressEL.City + "', '" + addressEL.Zipcode + "', '" + addressEL.Province + "')");
         }
 
-        public bool Update(EL.Registrations.Addresses address)
+        public bool Update(EL.Registrations.Addresses addressEL)
         {
-            return Helper.executeNonQueryBool("update addresses set address = '" + address.Address + "', city = '" + address.City + "', zipcode = '" + address.Zipcode + "', province = '" + address.Province + "' where addressid = '" + address.Addressid + "'");
+            return Helper.executeNonQueryBool("update addresses set address = '" + addressEL.Address + "', city = '" + addressEL.City + "', zipcode = '" + addressEL.Zipcode + "', province = '" + addressEL.Province + "' where addressid = '" + addressEL.Addressid + "'");
         }
     }
 }

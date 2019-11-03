@@ -12,6 +12,7 @@ namespace pos.PL.Registrations
     public partial class frmCustomers : Form
     {
         pos.BL.Registrations.Customers CustomerBL = new pos.BL.Registrations.Customers();
+
         pos.EL.Registrations.Customers CustomerInfo = new pos.EL.Registrations.Customers();
         public frmCustomers()
         {

@@ -1,9 +1,9 @@
 ﻿using System.Data;
 namespace pos.BL.Registrations
 {
-    public class Subcategories
+    public class SubCategories
     {
-        DL.Registrations.Subcategories SubCategoryDL = new DL.Registrations.Subcategories();
+        DL.Registrations.SubCategories SubCategoryDL = new DL.Registrations.SubCategories();
         public DataTable List(string keywords)
         {
             return SubCategoryDL.List(keywords);
@@ -14,19 +14,19 @@ namespace pos.BL.Registrations
             return SubCategoryDL.List(value);
         }
 
-        public long Insert(EL.Registrations.Subcategories subcategory)
+        public long Insert(EL.Registrations.SubCategories subCategoryEL)
         {
-            return SubCategoryDL.Insert(subcategory);
+            return SubCategoryDL.Insert(subCategoryEL);
         }
 
-        public bool Update(EL.Registrations.Subcategories subcategory)
+        public bool Update(EL.Registrations.SubCategories subCategoryEL)
         {
-            return SubCategoryDL.Update(subcategory);
+            return SubCategoryDL.Update(subCategoryEL);
         }
 
-        public bool Delete(EL.Registrations.Subcategories subcategory)
+        public bool Delete(EL.Registrations.SubCategories subCategoryEL)
         {
-            return SubCategoryDL.Delete(subcategory);
+            return SubCategoryDL.Delete(subCategoryEL);
         }
     }
 }

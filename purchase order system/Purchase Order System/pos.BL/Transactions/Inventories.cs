@@ -14,14 +14,14 @@ namespace pos.BL.Transactions
             return InventoryDL.List(id);
         }
 
-        public long Insert(EL.Transactions.Inventories inventory)
+        public long Insert(EL.Transactions.Inventories inventoryEL)
         {
-            return InventoryDL.Insert(inventory);
+            return InventoryDL.Insert(inventoryEL);
         }
 
-        public bool Update(EL.Transactions.Inventories inventory)
+        public bool Update(EL.Transactions.Inventories inventoryEL)
         {
-            return InventoryDL.Update(inventory);
+            return InventoryDL.Update(inventoryEL);
         }
 
     }

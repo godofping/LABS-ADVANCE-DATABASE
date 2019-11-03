@@ -16,17 +16,17 @@ namespace pos.DL.Transactions
             return Helper.executeQuery(sQuery);
         }
 
-        public long Insert(EL.Transactions.Purchaseorders purchaseOrderInfo)
+        public long Insert(EL.Transactions.PurchaseOrders purchaseOrderEL)
         {
             return Helper.executeNonQueryLong("");
         }
 
-        public bool Update(EL.Transactions.Purchaseorders purchaseOrderInfo)
+        public bool Update(EL.Transactions.PurchaseOrders purchaseOrderEL)
         {
             return Helper.executeNonQueryBool("");
         }
 
-        public bool Delete(EL.Transactions.Purchaseorders purchaseOrderInfo)
+        public bool Delete(EL.Transactions.PurchaseOrders purchaseOrderEL)
         {
             return Helper.executeNonQueryBool("");
         }

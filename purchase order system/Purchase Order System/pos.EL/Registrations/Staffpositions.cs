@@ -4,7 +4,7 @@ using System.Text;
 
 namespace pos.EL.Registrations
 {
-    public class Staffpositions
+    public class StaffPositions
     {
         int staffpositionid;
         string staffposition;

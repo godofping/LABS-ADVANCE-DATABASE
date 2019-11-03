@@ -7,18 +7,18 @@ namespace pos.PL
     public partial class frmLogin : Form
     {
         EL.Registrations.Staffs StaffInfo = new EL.Registrations.Staffs();
-        EL.Registrations.Contactdetails ContactDetailInfo = new EL.Registrations.Contactdetails();
-        EL.Registrations.Basicinformations BasicInformationInfo = new EL.Registrations.Basicinformations();
-        EL.Registrations.Staffpositions StaffpositionInfo = new EL.Registrations.Staffpositions();
+        EL.Registrations.ContactDetails ContactDetailInfo = new EL.Registrations.ContactDetails();
+        EL.Registrations.BasicInformations BasicInformationInfo = new EL.Registrations.BasicInformations();
+        EL.Registrations.StaffPositions StaffpositionInfo = new EL.Registrations.StaffPositions();
         EL.Registrations.Addresses  AddressInfo = new EL.Registrations.Addresses();
-        EL.Registrations.Storeinformation StoreInformationInfo = new EL.Registrations.Storeinformation();
+        EL.Registrations.StoreInformation StoreInformationInfo = new EL.Registrations.StoreInformation();
 
         BL.Registrations.Staffs StaffBL = new BL.Registrations.Staffs();
-        BL.Registrations.Contactdetails ContactDetailBL = new BL.Registrations.Contactdetails();
-        BL.Registrations.Basicinformations BasicInformationBL = new BL.Registrations.Basicinformations();
-        BL.Registrations.Staffpositions StaffpositionBL = new BL.Registrations.Staffpositions();
+        BL.Registrations.ContactDetails ContactDetailBL = new BL.Registrations.ContactDetails();
+        BL.Registrations.BasicInformations BasicInformationBL = new BL.Registrations.BasicInformations();
+        BL.Registrations.StaffPositions StaffpositionBL = new BL.Registrations.StaffPositions();
         BL.Registrations.Addresses AddressBL = new BL.Registrations.Addresses();
-        BL.Registrations.Storeinformation StoreInformationBL = new BL.Registrations.Storeinformation();
+        BL.Registrations.StoreInformation StoreInformationBL = new BL.Registrations.StoreInformation();
 
 
         public frmLogin()

@@ -1,6 +1,6 @@
 ﻿namespace pos.EL.Registrations
 {
-    public class Basicinformations
+    public class BasicInformations
     {
         int basicinformationid;
         string firstname;

@@ -2,7 +2,7 @@
 
 namespace pos.DL.Registrations
 {
-    public class Storeinformation
+    public class StoreInformation
     {
         public DataTable List()
         {
@@ -11,9 +11,9 @@ namespace pos.DL.Registrations
         }
 
 
-        public bool Update(EL.Registrations.Storeinformation storeinformation)
+        public bool Update(EL.Registrations.StoreInformation storeInformationEL)
         {
-            return Helper.executeNonQueryBool("update storeinformation set storename = '" + storeinformation.Storename + "' ");
+            return Helper.executeNonQueryBool("update storeinformation set storename = '" + storeInformationEL.Storename + "' ");
         }
 
 

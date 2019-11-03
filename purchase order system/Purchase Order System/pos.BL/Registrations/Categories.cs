@@ -10,19 +10,19 @@ namespace pos.BL.Registrations
             return CategoryDL.List(keywords);
         }
 
-        public long Insert(EL.Registrations.Categories category)
+        public long Insert(EL.Registrations.Categories categoryEL)
         {
-            return CategoryDL.Insert(category);
+            return CategoryDL.Insert(categoryEL);
         }
 
-        public bool Update(EL.Registrations.Categories category)
+        public bool Update(EL.Registrations.Categories categoryEL)
         {
-            return CategoryDL.Update(category);
+            return CategoryDL.Update(categoryEL);
         }
 
-        public bool Delete(EL.Registrations.Categories category)
+        public bool Delete(EL.Registrations.Categories categoryEL)
         {
-            return CategoryDL.Delete(category);
+            return CategoryDL.Delete(categoryEL);
         }
     }
 }

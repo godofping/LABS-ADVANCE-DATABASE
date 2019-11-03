@@ -2,17 +2,17 @@
 
 namespace pos.BL.Registrations
 {
-    public class Storeinformation
+    public class StoreInformation
     {
-        DL.Registrations.Storeinformation StoreInformationDL = new DL.Registrations.Storeinformation();
+        DL.Registrations.StoreInformation StoreInformationDL = new DL.Registrations.StoreInformation();
         public DataTable List()
         {
             return StoreInformationDL.List();
         }
 
-        public bool Update(EL.Registrations.Storeinformation storeinformation)
+        public bool Update(EL.Registrations.StoreInformation storeInformationEL)
         {
-            return StoreInformationDL.Update(storeinformation);
+            return StoreInformationDL.Update(storeInformationEL);
         }
 
     }

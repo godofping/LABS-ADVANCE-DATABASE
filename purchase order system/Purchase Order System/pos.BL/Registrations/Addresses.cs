@@ -5,14 +5,15 @@ namespace pos.BL.Registrations
     public class Addresses
     {
         DL.Registrations.Addresses addressDL = new DL.Registrations.Addresses();
-        public long Insert(EL.Registrations.Addresses address)
+
+        public long Insert(EL.Registrations.Addresses addressEL)
         {
-            return addressDL.Insert(address);
+            return addressDL.Insert(addressEL);
         }
 
-        public bool Update(EL.Registrations.Addresses address)
+        public bool Update(EL.Registrations.Addresses addressEL)
         {
-            return addressDL.Update(address);
+            return addressDL.Update(addressEL);
         }
 
 

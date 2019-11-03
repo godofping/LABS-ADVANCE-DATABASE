@@ -2,7 +2,7 @@
 
 namespace pos.DL.Registrations
 {
-    public class Paymentmethods
+    public class PaymentMethods
     {
         public DataTable List()
         {

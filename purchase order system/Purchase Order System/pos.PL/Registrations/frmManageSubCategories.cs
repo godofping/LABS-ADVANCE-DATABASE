@@ -5,11 +5,11 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageSubCategories : Form
     {
-        EL.Registrations.Subcategories SubCategoryInfo = new EL.Registrations.Subcategories();
+        EL.Registrations.SubCategories SubCategoryInfo = new EL.Registrations.SubCategories();
         EL.Registrations.Categories CategoryInfo = new EL.Registrations.Categories();
 
 
-        BL.Registrations.Subcategories SubCategoryBL = new BL.Registrations.Subcategories();
+        BL.Registrations.SubCategories SubCategoryBL = new BL.Registrations.SubCategories();
         BL.Registrations.Categories CategoryBL = new BL.Registrations.Categories();
 
         string current = "";

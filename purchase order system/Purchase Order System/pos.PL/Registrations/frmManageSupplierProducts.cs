@@ -6,19 +6,19 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageSupplierProducts : Form
     {
-        EL.Registrations.Supplierproducts SupplierProductInfo = new EL.Registrations.Supplierproducts();
+        EL.Registrations.SupplierProducts SupplierProductInfo = new EL.Registrations.SupplierProducts();
         EL.Registrations.Products ProductInfo = new EL.Registrations.Products();
         EL.Registrations.Suppliers SupplierInfo = new EL.Registrations.Suppliers();
         EL.Transactions.Inventories InventoryInfo = new EL.Transactions.Inventories();
         EL.Registrations.Categories CategoryInfo = new EL.Registrations.Categories();
-        EL.Registrations.Subcategories SubCategoryInfo = new EL.Registrations.Subcategories();
+        EL.Registrations.SubCategories SubCategoryInfo = new EL.Registrations.SubCategories();
 
-        BL.Registrations.Supplierproducts SupplierProductBL = new BL.Registrations.Supplierproducts();
+        BL.Registrations.SupplierProducts SupplierProductBL = new BL.Registrations.SupplierProducts();
         BL.Registrations.Products ProductBL = new BL.Registrations.Products();
         BL.Registrations.Suppliers SupplierBL = new BL.Registrations.Suppliers();
         BL.Transactions.Inventories InventoryBL = new BL.Transactions.Inventories();
         BL.Registrations.Categories CategoryBL = new BL.Registrations.Categories();
-        BL.Registrations.Subcategories SubCategoryBL = new BL.Registrations.Subcategories();
+        BL.Registrations.SubCategories SubCategoryBL = new BL.Registrations.SubCategories();
 
         string current = "";
 

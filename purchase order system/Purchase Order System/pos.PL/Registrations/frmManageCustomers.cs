@@ -8,13 +8,13 @@ namespace pos.PL.Registrations
 
 
         EL.Registrations.Customers CustomerInfo = new EL.Registrations.Customers();
-        EL.Registrations.Contactdetails ContactDetailInfo = new EL.Registrations.Contactdetails();
-        EL.Registrations.Basicinformations BasicInformationInfo = new EL.Registrations.Basicinformations();
+        EL.Registrations.ContactDetails ContactDetailInfo = new EL.Registrations.ContactDetails();
+        EL.Registrations.BasicInformations BasicInformationInfo = new EL.Registrations.BasicInformations();
         EL.Registrations.Addresses AddressInfo = new EL.Registrations.Addresses();
 
         BL.Registrations.Customers CustomerBL = new BL.Registrations.Customers();
-        BL.Registrations.Contactdetails ContacDetailBL = new BL.Registrations.Contactdetails();
-        BL.Registrations.Basicinformations BasicInformationBL = new BL.Registrations.Basicinformations();
+        BL.Registrations.ContactDetails ContacDetailBL = new BL.Registrations.ContactDetails();
+        BL.Registrations.BasicInformations BasicInformationBL = new BL.Registrations.BasicInformations();
         BL.Registrations.Addresses AddressBL = new BL.Registrations.Addresses();
 
         string current = "";

@@ -6,12 +6,12 @@ namespace pos.PL.Registrations
     public partial class frmManageProducts : Form
     {
         EL.Registrations.Products ProductInfo = new EL.Registrations.Products();
-        EL.Registrations.Subcategories SubCategoryInfo = new EL.Registrations.Subcategories();
+        EL.Registrations.SubCategories SubCategoryInfo = new EL.Registrations.SubCategories();
         EL.Registrations.Categories CategoryInfo = new EL.Registrations.Categories();
         EL.Transactions.Inventories InventoryInfo = new EL.Transactions.Inventories();
 
         BL.Registrations.Products ProductBL = new BL.Registrations.Products();
-        BL.Registrations.Subcategories SubCategoryBL = new BL.Registrations.Subcategories();
+        BL.Registrations.SubCategories SubCategoryBL = new BL.Registrations.SubCategories();
         BL.Registrations.Categories CategoryBL = new BL.Registrations.Categories();
         BL.Transactions.Inventories InventoryBL = new BL.Transactions.Inventories();
 

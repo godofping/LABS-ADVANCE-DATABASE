@@ -2,7 +2,7 @@
 
 namespace pos.BL.Registrations
 {
-    public class Staffpositions
+    public class StaffPositions
     {
         DL.Registrations.StaffPositions StaffPositionDL = new DL.Registrations.StaffPositions();
 
