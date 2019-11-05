@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseorderdetailquantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
             this.gbControls = new System.Windows.Forms.GroupBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.gbInformations = new System.Windows.Forms.GroupBox();
             this.cbProductName = new System.Windows.Forms.ComboBox();
@@ -57,12 +61,8 @@
             this.cbCategoryName = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseorderdetailquantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.gbControls.SuspendLayout();
             this.gbInformations.SuspendLayout();
@@ -92,6 +92,37 @@
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(595, 207);
             this.dgv.TabIndex = 65;
+            // 
+            // productid
+            // 
+            this.productid.HeaderText = "Product ID";
+            this.productid.Name = "productid";
+            this.productid.ReadOnly = true;
+            this.productid.Visible = false;
+            // 
+            // productname
+            // 
+            this.productname.HeaderText = "Product Name";
+            this.productname.Name = "productname";
+            this.productname.ReadOnly = true;
+            // 
+            // productprice
+            // 
+            this.productprice.HeaderText = "Product Price";
+            this.productprice.Name = "productprice";
+            this.productprice.ReadOnly = true;
+            // 
+            // purchaseorderdetailquantity
+            // 
+            this.purchaseorderdetailquantity.HeaderText = "Quantity";
+            this.purchaseorderdetailquantity.Name = "purchaseorderdetailquantity";
+            this.purchaseorderdetailquantity.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
             // 
             // btnClose
             // 
@@ -123,15 +154,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(36, 92);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 49;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -351,37 +374,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // productid
-            // 
-            this.productid.HeaderText = "Product ID";
-            this.productid.Name = "productid";
-            this.productid.ReadOnly = true;
-            this.productid.Visible = false;
-            // 
-            // productname
-            // 
-            this.productname.HeaderText = "Product Name";
-            this.productname.Name = "productname";
-            this.productname.ReadOnly = true;
-            // 
-            // productprice
-            // 
-            this.productprice.HeaderText = "Product Price";
-            this.productprice.Name = "productprice";
-            this.productprice.ReadOnly = true;
-            // 
-            // purchaseorderdetailquantity
-            // 
-            this.purchaseorderdetailquantity.HeaderText = "Quantity";
-            this.purchaseorderdetailquantity.Name = "purchaseorderdetailquantity";
-            this.purchaseorderdetailquantity.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Amount";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            // 
             // lblTotalAmount
             // 
             this.lblTotalAmount.AutoSize = true;
@@ -391,6 +383,16 @@
             this.lblTotalAmount.Size = new System.Drawing.Size(40, 18);
             this.lblTotalAmount.TabIndex = 91;
             this.lblTotalAmount.Text = "####";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(36, 92);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 49;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // frmManagePurchaseOrderProducts
             // 
@@ -424,7 +426,6 @@
         public System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.GroupBox gbControls;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox gbInformations;
         private System.Windows.Forms.TextBox txtQuantity;
@@ -454,5 +455,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn purchaseorderdetailquantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.Label lblTotalAmount;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

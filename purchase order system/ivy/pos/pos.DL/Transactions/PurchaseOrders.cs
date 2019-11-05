@@ -29,8 +29,12 @@ namespace pos.DL.Transactions
             return Helper.executeNonQueryBool("update purchaseorders set purchaseorderstatus = 'RECIEVED' where purchaseorderid = " + id + "");
         }
 
+        public bool SetCancelled(int id)
+        {
+            return Helper.executeNonQueryBool("update purchaseorders set purchaseorderstatus = 'CANCELLED' where purchaseorderid = " + id + "");
+        }
 
-        
+
         public bool Delete(EL.Transactions.PurchaseOrders purchaseOrder)
         {
             return Helper.executeNonQueryBool("delete from purchaseorders where purchaseorderid = " + purchaseOrder.Purchaseorderid + "");

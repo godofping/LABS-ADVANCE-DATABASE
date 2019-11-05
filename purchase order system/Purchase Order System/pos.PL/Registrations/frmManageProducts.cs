@@ -140,7 +140,10 @@ namespace pos.PL.Registrations
             txtProductName.ResetText();
             txtProductDescription.ResetText();
             cbCategoryName.SelectedIndex = -1;
+            cbSubCategoryName.ResetText();
             cbSubCategoryName.SelectedIndex = -1;
+            cbSubCategoryName.DataSource = null;
+            cbSubCategoryName.Items.Clear();
             txtProductSKU.ResetText();
             txtProductPrice.ResetText();
             txtReorderLevel.ResetText();

@@ -152,10 +152,24 @@ namespace pos.PL.Registrations
         {
             dgv.ClearSelection();
             txtSupplierProductID.ResetText();
+
             cbSupplierName.SelectedIndex = -1;
+      
             cbCategoryName.SelectedIndex = -1;
+            cbCategoryName.ResetText();
+
             cbSubCategoryName.SelectedIndex = -1;
+            cbSubCategoryName.ResetText();
+            cbSubCategoryName.DataSource = null;
+            cbSubCategoryName.Items.Clear();
+
             cbProductName.SelectedIndex = -1;
+            cbProductName.ResetText();
+            cbProductName.DataSource = null;
+            cbProductName.Items.Clear();
+
+
+
             ClearExtendedFields();
         }
 

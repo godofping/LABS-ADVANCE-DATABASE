@@ -81,9 +81,10 @@ namespace pos.Transactions.Purchase_Orders
             lblPreparedBy.Text = accountInfo.Accountfullname;
             lblPurchaseOrderStatus.Text = purchaseOrderInfo.Purchaseorderstatus;
 
-            if(purchaseOrderInfo.Purchaseorderstatus.Equals("RECIEVED"))
+            if(purchaseOrderInfo.Purchaseorderstatus.Equals("RECIEVED") | purchaseOrderInfo.Purchaseorderstatus.Equals("CANCELLED"))
             {
                 btnRecieved.Enabled = false;
+                btnCancel.Enabled = false;
             }
 
         }
@@ -122,7 +123,7 @@ namespace pos.Transactions.Purchase_Orders
 
         private void btnRecieved_Click(object sender, EventArgs e)
         {
-            switch (MessageBox.Show(this, "Confirming to update the Purchase Order Status to 'RECIEVED'. This changes is final.", "Confirming", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, "Confirming to update the Purchase Order Status to 'RECIEVED'. This change is final.", "Confirming", MessageBoxButtons.YesNo))
             {
                 case DialogResult.No:
                     break;
@@ -148,7 +149,31 @@ namespace pos.Transactions.Purchase_Orders
             this.Close();
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
+ 
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            switch (MessageBox.Show(this, "Confirming to update the Purchase Order Status to 'CANCELLED'. This change is final.", "Confirming", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    break;
+                default:
+
+                    if (purchaseOrderBL.SetCancelled(purchaseOrderInfo.Purchaseorderid))
+                    {
+                        getDataFromDatabase();
+                        frmPurchaseOrders.loadData(frmPurchaseOrders.txtSearch.Text);
+                        MessageBox.Show("Success.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed.");
+                    }
+                    break;
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
         {
             Transactions.Reports.frmReportPurchaseOrder frmReportPurchaseOrder = new Transactions.Reports.frmReportPurchaseOrder(purchaseOrderDetailBL, purchaseOrderInfo);
             frmReportPurchaseOrder.ShowDialog();

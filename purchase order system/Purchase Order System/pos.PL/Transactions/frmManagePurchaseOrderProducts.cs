@@ -53,24 +53,9 @@ namespace pos.PL.Transactions
         }
 
 
-        private void HiddenColumns()
-        {
-            dgv.Columns["Supplier Product ID"].Visible = false;
-            dgv.Columns["subcategoryid"].Visible = false;
-            dgv.Columns["contactdetailid"].Visible = false;
-            dgv.Columns["productsisdeleted"].Visible = false;
-            dgv.Columns["isdeleted"].Visible = false;
-            dgv.Columns["productid"].Visible = false;
-            dgv.Columns["supplierid"].Visible = false;
-            dgv.Columns["categoryid"].Visible = false;
-            dgv.Columns["subcategoriesisdeleted"].Visible = false;
-            dgv.Columns["categoriesisdeleted"].Visible = false;
-        }
-
         private void ReadOnlyControls()
         {
             txtProductSKU.ReadOnly = true;
-            txtProductPrice.ReadOnly = true;
             txtProductDescription.ReadOnly = true;
             txtCurrentStock.ReadOnly = true;
             txtReorderLevel.ReadOnly = true;
@@ -95,12 +80,14 @@ namespace pos.PL.Transactions
         private void PopulateControlsProducts()
         {
             cbProductName.DisplayMember = "Product Name";
-            cbProductName.ValueMember = "Product ID";
+            cbProductName.ValueMember = "productid" +
+                "";
             cbProductName.DataSource = supplierProductBL.List(Convert.ToInt32(frmManagePurchaseOrders.cbSupplierName.SelectedValue), Convert.ToInt32(cbSubCategoryName.SelectedValue));
         }
 
         private void GetProductInfo()
         {
+
             if (!cbProductName.Text.Equals(""))
             {
                 foreach (DataRow row in productBL.List(Convert.ToInt32(cbProductName.SelectedValue.ToString())).Rows)
@@ -147,9 +134,17 @@ namespace pos.PL.Transactions
 
             cbSubCategoryName.SelectedIndex = -1;
             cbSubCategoryName.ResetText();
+            cbSubCategoryName.DataSource = null;
+            cbSubCategoryName.Items.Clear();
+
+            cbProductName.SelectedIndex = -1;
+            cbProductName.ResetText();
+            cbProductName.DataSource = null;
+            cbProductName.Items.Clear();
 
             txtProductPrice.ResetText();
             txtQuantity.ResetText();
+
 
             ClearExtendedFields();
         }
@@ -263,7 +258,6 @@ namespace pos.PL.Transactions
 
         private bool CheckIfHasDuplicate()
         {
-
             bool bol = false;
 
             foreach (DataGridViewRow row in dgv.Rows)
@@ -309,9 +303,17 @@ namespace pos.PL.Transactions
 
         private void Add()
         {
-            GetDataFromForm();
+        
+           
 
-           // ShowMessageBox(supplierProductBL.Insert(supplierProductEL) > 0);
+            if (CheckIfHasDuplicate())
+            {
+                MessageBox.Show("This item is already added.");
+            }
+            else
+            {
+                ShowMessageBox(dgv.Rows.Add(purchaseOrderDetailEL.Productid, productEL.Productname, purchaseOrderDetailEL.Purchaseorderdetailprice, purchaseOrderDetailEL.Purchaseorderdetailquantity, purchaseOrderDetailEL.Purchaseorderdetailprice * purchaseOrderDetailEL.Purchaseorderdetailquantity) != -1);
+            }
         }
 
         private void Edit()
@@ -335,8 +337,11 @@ namespace pos.PL.Transactions
 
         private void frmManagePurchaseOrderProducts_Load(object sender, EventArgs e)
         {
-            ReadOnlyControls();
+      
+            ManageForm(false);
             PopulateControls();
+            ClearFields();
+            ReadOnlyControls();
         }
 
         private void cbCategoryName_SelectedIndexChanged(object sender, EventArgs e)
@@ -351,34 +356,25 @@ namespace pos.PL.Transactions
 
         private void cbProductName_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            GetProductInfo();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(CheckErrors())
+            if (CheckErrors())
             {
                 GetDataFromForm();
-
-                if (CheckIfHasDuplicate())
+                if (current.Equals("ADD"))
                 {
-                    MessageBox.Show("This item is already added.");
+                    Add();
                 }
-                else
+                else if (current.Equals("EDIT"))
                 {
-                    if (dgv.Rows.Add(purchaseOrderDetailEL.Productid, productEL.Productname, purchaseOrderDetailEL.Purchaseorderdetailprice, purchaseOrderDetailEL.Purchaseorderdetailquantity, purchaseOrderDetailEL.Purchaseorderdetailprice * purchaseOrderDetailEL.Purchaseorderdetailquantity) != -1)
-                    {
-                        MessageBox.Show("Success.");
-                        ClearFields();
-                        this.Close();
-                        //getTotalAmount();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error");
-                    }
-
+                    Edit();
                 }
+
+                ManageForm(false);
+                ClearFields();
             }
         }
 
@@ -386,6 +382,42 @@ namespace pos.PL.Transactions
         {
 
         }
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+            ManageForm(true);
+            this.ActiveControl = cbCategoryName;
+            current = "ADD";
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                MessageBox.Show("No selected client. Please select first.");
+            }
+            else
+            {
+                ManageForm(true);
+                this.ActiveControl = cbCategoryName;
+                current = "EDIT";
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                MessageBox.Show("No selected item. Please select first.");
+            }
+            else
+            {
+                Delete();
+            }
+        }
+
 
         private void txtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -396,5 +428,7 @@ namespace pos.PL.Transactions
         {
             onlynumwithsinglepoint(sender, e);
         }
+
+
     }
 }

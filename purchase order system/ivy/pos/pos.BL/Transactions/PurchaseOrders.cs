@@ -35,6 +35,11 @@ namespace pos.BL.Transactions
             return purchaseOrderDL.SetRecieved(id);
         }
 
+        public bool SetCancelled(int id)
+        {
+            return purchaseOrderDL.SetCancelled(id);
+        }
+
         public bool Delete(EL.Transactions.PurchaseOrders purchaseOrder)
         {
             return purchaseOrderDL.Delete(purchaseOrder);    
