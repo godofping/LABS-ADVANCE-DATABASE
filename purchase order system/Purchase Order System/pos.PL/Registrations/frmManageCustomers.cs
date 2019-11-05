@@ -281,7 +281,7 @@ namespace pos.PL.Registrations
 
         private void Add()
         {
-            GetDataFromForm();
+         
 
             contactDetailEL.Addressid = Convert.ToInt32(addressBL.Insert(addressEL));
             customerEL.Contactdetailid = Convert.ToInt32(contactDetailBL.Insert(contactDetailEL));
@@ -292,13 +292,13 @@ namespace pos.PL.Registrations
 
         private void Edit()
         {
-            GetDataFromForm();
+  
             ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & basicInformationBL.Update(basicInformationEL));
         }
 
         private void Delete()
         {
-            GetDataFromForm();
+        
             ShowMessageBox(customerBL.Delete(customerEL));
         }
 

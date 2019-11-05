@@ -348,8 +348,7 @@ namespace pos.PL.Registrations
 
         private void Add()
         {
-            GetDataFromForm();
-
+ 
             if (staffBL.CheckUsername(staffEL).Rows.Count == 0)
             {
                 contactDetailEL.Addressid = Convert.ToInt32(adressBL.Insert(addressEL));
@@ -369,7 +368,6 @@ namespace pos.PL.Registrations
 
         private void Edit()
         {
-            GetDataFromForm();
 
             if (staffBL.CheckUsername(staffEL, staffEL.Staffid).Rows.Count == 0)
             {
@@ -386,8 +384,6 @@ namespace pos.PL.Registrations
 
         private void Delete()
         {
-            GetDataFromForm();
-
             ShowMessageBox(staffBL.Delete(staffEL));
         }
 

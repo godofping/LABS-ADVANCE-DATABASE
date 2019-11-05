@@ -196,7 +196,6 @@ namespace pos.PL.Registrations
 
         private void Edit()
         {
-            GetDataFromForm();
             ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & storeInformationBL.Update(storeInformationEL));
         }
 

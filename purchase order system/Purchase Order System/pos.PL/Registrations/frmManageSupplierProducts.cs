@@ -269,22 +269,16 @@ namespace pos.PL.Registrations
 
         private void Add()
         {
-            GetDataFromForm();
-
             ShowMessageBox(supplierProductBL.Insert(supplierProductEL) > 0);
         }
 
         private void Edit()
         {
-            GetDataFromForm();
-
             ShowMessageBox(supplierProductBL.Update(supplierProductEL));
         }
 
         private void Delete()
         {
-            GetDataFromForm();
-
             ShowMessageBox(supplierProductBL.Delete(supplierProductEL));
         }
 

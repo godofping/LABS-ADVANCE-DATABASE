@@ -52,13 +52,6 @@ namespace pos.PL.Transactions
             }
         }
 
-        private void ReadOnlyControls()
-        {
-            txtProductSKU.ReadOnly = true;
-            txtProductPrice.ReadOnly = true;
-            txtProductDescription.ReadOnly = true;
-
-        }
 
         private void HiddenColumns()
         {
@@ -72,6 +65,15 @@ namespace pos.PL.Transactions
             dgv.Columns["categoryid"].Visible = false;
             dgv.Columns["subcategoriesisdeleted"].Visible = false;
             dgv.Columns["categoriesisdeleted"].Visible = false;
+        }
+
+        private void ReadOnlyControls()
+        {
+            txtProductSKU.ReadOnly = true;
+            txtProductPrice.ReadOnly = true;
+            txtProductDescription.ReadOnly = true;
+            txtCurrentStock.ReadOnly = true;
+            txtReorderLevel.ReadOnly = true;
 
         }
 
@@ -129,20 +131,26 @@ namespace pos.PL.Transactions
 
         private void ClearErrors()
         {
-            errorProvider1.SetError(cbSupplierName, "");
-            errorProvider1.SetError(cbProductName, "");
+            errorProvider1.SetError(cbCategoryName, "");
             errorProvider1.SetError(cbSubCategoryName, "");
             errorProvider1.SetError(cbProductName, "");
+            errorProvider1.SetError(txtProductPrice, "");
+            errorProvider1.SetError(txtQuantity, "");
         }
 
         private void ClearFields()
         {
             dgv.ClearSelection();
-            txtSupplierProductID.ResetText();
-            cbSupplierName.SelectedIndex = -1;
+
             cbCategoryName.SelectedIndex = -1;
+            cbCategoryName.ResetText();
+
             cbSubCategoryName.SelectedIndex = -1;
-            cbProductName.SelectedIndex = -1;
+            cbSubCategoryName.ResetText();
+
+            txtProductPrice.ResetText();
+            txtQuantity.ResetText();
+
             ClearExtendedFields();
         }
 
@@ -151,20 +159,13 @@ namespace pos.PL.Transactions
             txtProductSKU.ResetText();
             txtProductPrice.ResetText();
             txtProductDescription.ResetText();
+            txtCurrentStock.ResetText();
+            txtReorderLevel.ResetText();
         }
 
         private bool CheckErrors()
         {
             bool status = true;
-
-            if (cbSupplierName.Text.Equals(""))
-            {
-                errorProvider1.SetError(cbSupplierName, "This field is required.");
-                status = false;
-            }
-            else
-                errorProvider1.SetError(cbSupplierName, "");
-
 
             if (cbCategoryName.Text.Equals(""))
             {
@@ -183,6 +184,7 @@ namespace pos.PL.Transactions
             else
                 errorProvider1.SetError(cbSubCategoryName, "");
 
+
             if (cbProductName.Text.Equals(""))
             {
                 errorProvider1.SetError(cbProductName, "This field is required.");
@@ -191,60 +193,111 @@ namespace pos.PL.Transactions
             else
                 errorProvider1.SetError(cbProductName, "");
 
+            if (txtProductPrice.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtProductPrice, "This field is required.");
+                status = false;
+            }
+            else
+                errorProvider1.SetError(txtProductPrice, "");
+
+            if (txtQuantity.Text.Equals(""))
+            {
+                errorProvider1.SetError(txtQuantity, "This field is required.");
+                status = false;
+            }
+            else
+                errorProvider1.SetError(txtQuantity, "");
+
             return status;
         }
 
         private void GetDataFromForm()
         {
-            supplierProductEL.Productid = Convert.ToInt32(cbProductName.SelectedValue);
-            supplierProductEL.Supplierid = Convert.ToInt32(cbSupplierName.SelectedValue);
+            purchaseOrderDetailEL.Productid = Convert.ToInt32(cbProductName.SelectedValue);
+            purchaseOrderDetailEL.Purchaseorderdetailquantity = Convert.ToInt32(txtQuantity.Text);
+            purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToSingle(txtProductPrice.Text);
+            productEL.Productname = cbProductName.Text;
+
         }
 
-        private void GetDataFromDataGridView()
+        //private void GetDataFromDataGridView()
+        //{
+        //    foreach (DataGridViewRow row in dgv.SelectedRows)
+        //    {
+        //        categoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
+        //        categoryEL.Categoryname = row.Cells["Category Name"].Value.ToString();
+
+        //        subCategoryEL.Subcategoryid = Convert.ToInt32(row.Cells["subcategoryid"].Value);
+        //        subCategoryEL.Subcategoryname = row.Cells["Sub Category Name"].Value.ToString();
+        //        subCategoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
+
+
+        //        productEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
+        //        productEL.Productname = row.Cells["Product Name"].Value.ToString();
+        //        productEL.Productdescription = row.Cells["Product Description"].Value.ToString();
+        //        productEL.Productsku = row.Cells["Product SKU"].Value.ToString();
+        //        productEL.Productprice = Convert.ToInt32(row.Cells["Product Price"].Value);
+        //        productEL.Isdeleted = Convert.ToInt32(row.Cells["productsisdeleted"].Value);
+
+        //        supplierEL.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
+        //        supplierEL.Supplier = row.Cells["Supplier"].Value.ToString();
+        //        supplierEL.Supplierid = Convert.ToInt32(row.Cells["isdeleted"].Value);
+
+        //        supplierProductEL.Supplierproductid = Convert.ToInt32(row.Cells["Supplier Product ID"].Value);
+        //        supplierProductEL.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
+        //        supplierProductEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
+        //    }
+
+        //    txtSupplierProductID.Text = supplierProductEL.Supplierproductid.ToString();
+        //    cbSupplierName.SelectedIndex = cbSupplierName.FindString(supplierEL.Supplier);
+        //    cbCategoryName.SelectedIndex = cbCategoryName.FindString(categoryEL.Categoryname);
+        //    cbSubCategoryName.SelectedIndex = cbSubCategoryName.FindString(subCategoryEL.Subcategoryname);
+        //    cbProductName.SelectedIndex = cbProductName.FindString(productEL.Productname);
+
+        //    txtProductSKU.Text = productEL.Productsku;
+        //    txtProductPrice.Text = productEL.Productprice.ToString();
+        //    txtProductDescription.Text = productEL.Productdescription;
+
+        //}
+
+        private bool CheckIfHasDuplicate()
         {
-            foreach (DataGridViewRow row in dgv.SelectedRows)
+
+            bool bol = false;
+
+            foreach (DataGridViewRow row in dgv.Rows)
             {
-                categoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
-                categoryEL.Categoryname = row.Cells["Category Name"].Value.ToString();
-
-                subCategoryEL.Subcategoryid = Convert.ToInt32(row.Cells["subcategoryid"].Value);
-                subCategoryEL.Subcategoryname = row.Cells["Sub Category Name"].Value.ToString();
-                subCategoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
-
-
-                productEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
-                productEL.Productname = row.Cells["Product Name"].Value.ToString();
-                productEL.Productdescription = row.Cells["Product Description"].Value.ToString();
-                productEL.Productsku = row.Cells["Product SKU"].Value.ToString();
-                productEL.Productprice = Convert.ToInt32(row.Cells["Product Price"].Value);
-                productEL.Isdeleted = Convert.ToInt32(row.Cells["productsisdeleted"].Value);
-
-                supplierEL.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
-                supplierEL.Supplier = row.Cells["Supplier"].Value.ToString();
-                supplierEL.Supplierid = Convert.ToInt32(row.Cells["isdeleted"].Value);
-
-                supplierProductEL.Supplierproductid = Convert.ToInt32(row.Cells["Supplier Product ID"].Value);
-                supplierProductEL.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
-                supplierProductEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
+                if (Convert.ToInt32(row.Cells[0].Value) == purchaseOrderDetailEL.Productid)
+                {
+                    bol = true;
+                }
             }
 
-            txtSupplierProductID.Text = supplierProductEL.Supplierproductid.ToString();
-            cbSupplierName.SelectedIndex = cbSupplierName.FindString(supplierEL.Supplier);
-            cbCategoryName.SelectedIndex = cbCategoryName.FindString(categoryEL.Categoryname);
-            cbSubCategoryName.SelectedIndex = cbSubCategoryName.FindString(subCategoryEL.Subcategoryname);
-            cbProductName.SelectedIndex = cbProductName.FindString(productEL.Productname);
+            return bol;
 
-            txtProductSKU.Text = productEL.Productsku;
-            txtProductPrice.Text = productEL.Productprice.ToString();
-            txtProductDescription.Text = productEL.Productdescription;
+        }
 
+        private void getTotalAmount()
+        {
+            lblTotalAmount.Text = dgv.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[4].Value)).ToString();
+        }
+
+        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
 
         private void ShowMessageBox(bool condition)
         {
             if (condition)
             {
-                LoadData(txtSearch.Text);
                 ClearFields();
                 MessageBox.Show("Success");
             }
@@ -258,21 +311,21 @@ namespace pos.PL.Transactions
         {
             GetDataFromForm();
 
-            ShowMessageBox(supplierProductBL.Insert(supplierProductEL) > 0);
+           // ShowMessageBox(supplierProductBL.Insert(supplierProductEL) > 0);
         }
 
         private void Edit()
         {
             GetDataFromForm();
 
-            ShowMessageBox(supplierProductBL.Update(supplierProductEL));
+           // ShowMessageBox(supplierProductBL.Update(supplierProductEL));
         }
 
         private void Delete()
         {
             GetDataFromForm();
 
-            ShowMessageBox(supplierProductBL.Delete(supplierProductEL));
+            //ShowMessageBox(supplierProductBL.Delete(supplierProductEL));
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -299,6 +352,49 @@ namespace pos.PL.Transactions
         private void cbProductName_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if(CheckErrors())
+            {
+                GetDataFromForm();
+
+                if (CheckIfHasDuplicate())
+                {
+                    MessageBox.Show("This item is already added.");
+                }
+                else
+                {
+                    if (dgv.Rows.Add(purchaseOrderDetailEL.Productid, productEL.Productname, purchaseOrderDetailEL.Purchaseorderdetailprice, purchaseOrderDetailEL.Purchaseorderdetailquantity, purchaseOrderDetailEL.Purchaseorderdetailprice * purchaseOrderDetailEL.Purchaseorderdetailquantity) != -1)
+                    {
+                        MessageBox.Show("Success.");
+                        ClearFields();
+                        this.Close();
+                        //getTotalAmount();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error");
+                    }
+
+                }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            onlynumwithsinglepoint(sender, e);
+        }
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            onlynumwithsinglepoint(sender, e);
         }
     }
 }

@@ -280,8 +280,6 @@ namespace pos.PL.Registrations
 
         private void Edit()
         {
-            GetDataFromForm();
-
             ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & basicInformationBL.Update(basicInformationEL) & staffBL.Update(staffEL));
         }
 

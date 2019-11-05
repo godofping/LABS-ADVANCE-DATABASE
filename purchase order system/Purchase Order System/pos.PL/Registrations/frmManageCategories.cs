@@ -128,19 +128,17 @@ namespace pos.PL.Registrations
 
         private void Add()
         {
-            GetDataFromForm();
             ShowMessageBox(categoryBL.Insert(categoryEL) > 0);
         }
 
         private void Edit()
         {
-            GetDataFromForm();
+     
             ShowMessageBox(categoryBL.Update(categoryEL));
         }
 
         private void Delete()
         {
-            GetDataFromForm();
             ShowMessageBox(categoryBL.Delete(categoryEL));
         }
 

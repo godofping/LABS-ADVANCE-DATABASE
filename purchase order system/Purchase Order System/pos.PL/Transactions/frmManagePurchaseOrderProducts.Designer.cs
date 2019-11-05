@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.gbControls = new System.Windows.Forms.GroupBox();
@@ -35,6 +36,13 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.gbInformations = new System.Windows.Forms.GroupBox();
+            this.cbProductName = new System.Windows.Forms.ComboBox();
+            this.txtReorderLevel = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCurrentStock = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
@@ -48,16 +56,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbCategoryName = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.txtCurrentStock = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtReorderLevel = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cbProductName = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseorderdetailquantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.gbControls.SuspendLayout();
             this.gbInformations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
@@ -69,6 +78,12 @@
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.BackgroundColor = System.Drawing.Color.Silver;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productid,
+            this.productname,
+            this.productprice,
+            this.purchaseorderdetailquantity,
+            this.amount});
             this.dgv.Location = new System.Drawing.Point(12, 288);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
@@ -155,12 +170,75 @@
             this.gbInformations.TabIndex = 90;
             this.gbInformations.TabStop = false;
             // 
+            // cbProductName
+            // 
+            this.cbProductName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProductName.FormattingEnabled = true;
+            this.cbProductName.Location = new System.Drawing.Point(31, 130);
+            this.cbProductName.Name = "cbProductName";
+            this.cbProductName.Size = new System.Drawing.Size(172, 21);
+            this.cbProductName.TabIndex = 109;
+            this.cbProductName.SelectedIndexChanged += new System.EventHandler(this.cbProductName_SelectedIndexChanged);
+            // 
+            // txtReorderLevel
+            // 
+            this.txtReorderLevel.Location = new System.Drawing.Point(344, 176);
+            this.txtReorderLevel.Name = "txtReorderLevel";
+            this.txtReorderLevel.Size = new System.Drawing.Size(75, 20);
+            this.txtReorderLevel.TabIndex = 107;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(341, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 13);
+            this.label7.TabIndex = 108;
+            this.label7.Text = "Reorder Level";
+            // 
+            // txtCurrentStock
+            // 
+            this.txtCurrentStock.Location = new System.Drawing.Point(247, 176);
+            this.txtCurrentStock.Name = "txtCurrentStock";
+            this.txtCurrentStock.Size = new System.Drawing.Size(75, 20);
+            this.txtCurrentStock.TabIndex = 105;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(244, 160);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 106;
+            this.label3.Text = "Current Stock";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(344, 222);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 104;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(247, 222);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 103;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // txtQuantity
             // 
             this.txtQuantity.Location = new System.Drawing.Point(31, 225);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(172, 20);
             this.txtQuantity.TabIndex = 101;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // label2
             // 
@@ -177,6 +255,7 @@
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(172, 20);
             this.txtProductPrice.TabIndex = 99;
+            this.txtProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductPrice_KeyPress);
             // 
             // label6
             // 
@@ -268,71 +347,57 @@
             this.label4.TabIndex = 90;
             this.label4.Text = "Category Name";
             // 
-            // btnCancel
+            // errorProvider1
             // 
-            this.btnCancel.Location = new System.Drawing.Point(344, 222);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 104;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // btnSave
+            // productid
             // 
-            this.btnSave.Location = new System.Drawing.Point(247, 222);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 103;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.productid.HeaderText = "Product ID";
+            this.productid.Name = "productid";
+            this.productid.ReadOnly = true;
+            this.productid.Visible = false;
             // 
-            // txtCurrentStock
+            // productname
             // 
-            this.txtCurrentStock.Location = new System.Drawing.Point(247, 176);
-            this.txtCurrentStock.Name = "txtCurrentStock";
-            this.txtCurrentStock.Size = new System.Drawing.Size(75, 20);
-            this.txtCurrentStock.TabIndex = 105;
+            this.productname.HeaderText = "Product Name";
+            this.productname.Name = "productname";
+            this.productname.ReadOnly = true;
             // 
-            // label3
+            // productprice
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(244, 160);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 106;
-            this.label3.Text = "Current Stock";
+            this.productprice.HeaderText = "Product Price";
+            this.productprice.Name = "productprice";
+            this.productprice.ReadOnly = true;
             // 
-            // txtReorderLevel
+            // purchaseorderdetailquantity
             // 
-            this.txtReorderLevel.Location = new System.Drawing.Point(344, 176);
-            this.txtReorderLevel.Name = "txtReorderLevel";
-            this.txtReorderLevel.Size = new System.Drawing.Size(75, 20);
-            this.txtReorderLevel.TabIndex = 107;
+            this.purchaseorderdetailquantity.HeaderText = "Quantity";
+            this.purchaseorderdetailquantity.Name = "purchaseorderdetailquantity";
+            this.purchaseorderdetailquantity.ReadOnly = true;
             // 
-            // label7
+            // amount
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(341, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 13);
-            this.label7.TabIndex = 108;
-            this.label7.Text = "Reorder Level";
+            this.amount.HeaderText = "Amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
             // 
-            // cbProductName
+            // lblTotalAmount
             // 
-            this.cbProductName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProductName.FormattingEnabled = true;
-            this.cbProductName.Location = new System.Drawing.Point(31, 130);
-            this.cbProductName.Name = "cbProductName";
-            this.cbProductName.Size = new System.Drawing.Size(172, 21);
-            this.cbProductName.TabIndex = 109;
-            this.cbProductName.SelectedIndexChanged += new System.EventHandler(this.cbProductName_SelectedIndexChanged);
+            this.lblTotalAmount.AutoSize = true;
+            this.lblTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.Location = new System.Drawing.Point(12, 516);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(40, 18);
+            this.lblTotalAmount.TabIndex = 91;
+            this.lblTotalAmount.Text = "####";
             // 
             // frmManagePurchaseOrderProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 560);
+            this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.gbInformations);
             this.Controls.Add(this.gbControls);
             this.Controls.Add(this.btnClose);
@@ -348,7 +413,9 @@
             this.gbControls.ResumeLayout(false);
             this.gbInformations.ResumeLayout(false);
             this.gbInformations.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -380,5 +447,12 @@
         private System.Windows.Forms.TextBox txtReorderLevel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbProductName;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productprice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purchaseorderdetailquantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.Label lblTotalAmount;
     }
 }

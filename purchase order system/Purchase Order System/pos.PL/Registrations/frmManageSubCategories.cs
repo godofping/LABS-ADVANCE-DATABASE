@@ -159,21 +159,16 @@ namespace pos.PL.Registrations
 
         private void Add()
         {
-            GetDataFromForm();
-
             ShowMessageBox(subCategoryBL.Insert(subCategoryEL) > 0);
         }
 
         private void Edit()
         {
-            GetDataFromForm();
-
             ShowMessageBox(subCategoryBL.Update(subCategoryEL));
         }
 
         private void Delete()
         {
-            GetDataFromForm();
             ShowMessageBox(subCategoryBL.Delete(subCategoryEL));
         }
 

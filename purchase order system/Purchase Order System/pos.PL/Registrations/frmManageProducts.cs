@@ -287,23 +287,17 @@ namespace pos.PL.Registrations
 
         private void Add()
         {
-            GetDataFromForm();
-
             inventoryEL.Productid = Convert.ToInt32(productBL.Insert(productEL));
             ShowMessageBox(inventoryBL.Insert(inventoryEL) > 0);
         }
 
         private void Edit()
         {
-            GetDataFromForm();
-
             ShowMessageBox(productBL.Update(productEL) & inventoryBL.Update(inventoryEL));
         }
 
         private void Delete()
         {
-            GetDataFromForm();
-
             ShowMessageBox(productBL.Delete(productEL));
         }
 
