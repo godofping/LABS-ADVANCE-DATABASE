@@ -52,12 +52,6 @@ namespace pos.PL.Transactions
         }
 
 
-        private void PopulateControls()
-        {
-            cbPaymentMethod.DisplayMember = "Category Name";
-            cbPaymentMethod.ValueMember = "categoryid";
-            cbPaymentMethod.DataSource = .List(Convert.ToInt32(frmManagePurchaseOrders.cbSupplierName.SelectedValue));
-        }
 
         private void HiddenColumns()
         {
@@ -257,6 +251,14 @@ namespace pos.PL.Transactions
             cbSupplierName.DisplayMember = "Supplier";
             cbSupplierName.ValueMember = "Supplier ID";
             cbSupplierName.DataSource = supplierBL.List("");
+
+            cbPaymentMethod.DisplayMember = "Payment Method";
+            cbPaymentMethod.ValueMember = "Payment Method ID";
+            cbPaymentMethod.DataSource = paymentMethodBL.List();
+
+            cbShippingMethod.DisplayMember = "Shipping Method";
+            cbShippingMethod.ValueMember = "Shipping Method ID";
+            cbShippingMethod.DataSource = shippingMethodBL.List();
         }
 
         private void btnManagePurchaseOrderProducts_Click(object sender, EventArgs e)
