@@ -18,8 +18,11 @@ namespace pos.PL.Transactions
         EL.Transactions.PurchaseOrderDetails purchaseOrderDetailEL = new EL.Transactions.PurchaseOrderDetails();
 
         BL.Registrations.Suppliers supplierBL = new BL.Registrations.Suppliers();
+        BL.Registrations.PaymentMethods paymentMethodBL = new BL.Registrations.PaymentMethods();
+        BL.Registrations.ShippingMethods shippingMethodBL = new BL.Registrations.ShippingMethods();
         BL.Transactions.PurchaseOrders purchaseOrderBL = new BL.Transactions.PurchaseOrders();
         BL.Transactions.PurchaseOrderDetails purchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
+        
 
         frmManagePurchaseOrderProducts frmManagePurchaseOrderProducts;
 
@@ -27,7 +30,7 @@ namespace pos.PL.Transactions
         public frmManagePurchaseOrders()
         {
             InitializeComponent();
-            frmManagePurchaseOrderProducts = new frmManagePurchaseOrderProducts(this);
+            
         }
 
         protected override CreateParams CreateParams
@@ -46,6 +49,14 @@ namespace pos.PL.Transactions
             {
                 DoubleBuffered = true;
             }
+        }
+
+
+        private void PopulateControls()
+        {
+            cbPaymentMethod.DisplayMember = "Category Name";
+            cbPaymentMethod.ValueMember = "categoryid";
+            cbPaymentMethod.DataSource = .List(Convert.ToInt32(frmManagePurchaseOrders.cbSupplierName.SelectedValue));
         }
 
         private void HiddenColumns()
@@ -256,6 +267,7 @@ namespace pos.PL.Transactions
         
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            frmManagePurchaseOrderProducts = new frmManagePurchaseOrderProducts(this);
             frmSelectSupplier frmSelectSupplier = new frmSelectSupplier(this, supplierEL);
             frmSelectSupplier.ShowDialog();
         }
@@ -288,6 +300,7 @@ namespace pos.PL.Transactions
             ManageForm(false);
             ClearFields();
             ClearErrors();
+            frmManagePurchaseOrderProducts.Close();
         }
 
 

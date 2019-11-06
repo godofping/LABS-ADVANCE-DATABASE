@@ -15,6 +15,18 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
+        public DataTable List(int id)
+        {
+            string sQuery = "select * from supplierproducts_view where supplierid = " + id + " group by `Category Name`";
+            return Helper.executeQuery(sQuery);
+        }
+
+        public DataTable Lists(int id, int id1)
+        {
+            string sQuery = "select * from supplierproducts_view where supplierid = " + id + " and categoryid = " + id1 + " group by `Sub Category Name`";
+            return Helper.executeQuery(sQuery);
+        }
+
         public DataTable CheckIfExisting(EL.Registrations.SupplierProducts supplierProductEL)
         {
             string sQuery = "select * from supplierproducts_view where supplierid = " + supplierProductEL.Supplierid + " and productid = " + supplierProductEL.Productid + " ";

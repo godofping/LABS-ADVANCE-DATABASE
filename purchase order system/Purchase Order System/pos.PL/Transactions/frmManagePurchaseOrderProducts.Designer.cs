@@ -30,14 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseorderdetailquantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
             this.gbControls = new System.Windows.Forms.GroupBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.gbInformations = new System.Windows.Forms.GroupBox();
             this.cbProductName = new System.Windows.Forms.ComboBox();
@@ -62,7 +58,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblTotalAmount = new System.Windows.Forms.Label();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseorderdetailprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseorderdetailquantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subcategoryname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.gbControls.SuspendLayout();
             this.gbInformations.SuspendLayout();
@@ -81,9 +84,11 @@
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.productid,
             this.productname,
-            this.productprice,
+            this.purchaseorderdetailprice,
             this.purchaseorderdetailquantity,
-            this.amount});
+            this.amount,
+            this.categoryname,
+            this.subcategoryname});
             this.dgv.Location = new System.Drawing.Point(12, 288);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
@@ -92,37 +97,9 @@
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(595, 207);
             this.dgv.TabIndex = 65;
-            // 
-            // productid
-            // 
-            this.productid.HeaderText = "Product ID";
-            this.productid.Name = "productid";
-            this.productid.ReadOnly = true;
-            this.productid.Visible = false;
-            // 
-            // productname
-            // 
-            this.productname.HeaderText = "Product Name";
-            this.productname.Name = "productname";
-            this.productname.ReadOnly = true;
-            // 
-            // productprice
-            // 
-            this.productprice.HeaderText = "Product Price";
-            this.productprice.Name = "productprice";
-            this.productprice.ReadOnly = true;
-            // 
-            // purchaseorderdetailquantity
-            // 
-            this.purchaseorderdetailquantity.HeaderText = "Quantity";
-            this.purchaseorderdetailquantity.Name = "purchaseorderdetailquantity";
-            this.purchaseorderdetailquantity.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Amount";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
+            this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
             // 
             // btnClose
             // 
@@ -139,9 +116,9 @@
             this.gbControls.Controls.Add(this.btnAdd);
             this.gbControls.Controls.Add(this.btnEdit);
             this.gbControls.Controls.Add(this.btnDelete);
-            this.gbControls.Location = new System.Drawing.Point(465, 18);
+            this.gbControls.Location = new System.Drawing.Point(465, 13);
             this.gbControls.Name = "gbControls";
-            this.gbControls.Size = new System.Drawing.Size(142, 256);
+            this.gbControls.Size = new System.Drawing.Size(142, 261);
             this.gbControls.TabIndex = 89;
             this.gbControls.TabStop = false;
             this.gbControls.Text = "Controls";
@@ -156,6 +133,16 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(36, 92);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 49;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(36, 142);
@@ -164,6 +151,7 @@
             this.btnDelete.TabIndex = 50;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // gbInformations
             // 
@@ -378,27 +366,73 @@
             // 
             this.lblTotalAmount.AutoSize = true;
             this.lblTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalAmount.Location = new System.Drawing.Point(12, 516);
+            this.lblTotalAmount.Location = new System.Drawing.Point(115, 516);
             this.lblTotalAmount.Name = "lblTotalAmount";
             this.lblTotalAmount.Size = new System.Drawing.Size(40, 18);
             this.lblTotalAmount.TabIndex = 91;
             this.lblTotalAmount.Text = "####";
             // 
-            // btnEdit
+            // label8
             // 
-            this.btnEdit.Location = new System.Drawing.Point(36, 92);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 49;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(12, 516);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 18);
+            this.label8.TabIndex = 92;
+            this.label8.Text = "Total Amount:";
+            // 
+            // productid
+            // 
+            this.productid.HeaderText = "Product ID";
+            this.productid.Name = "productid";
+            this.productid.ReadOnly = true;
+            this.productid.Visible = false;
+            // 
+            // productname
+            // 
+            this.productname.HeaderText = "Product Name";
+            this.productname.Name = "productname";
+            this.productname.ReadOnly = true;
+            // 
+            // purchaseorderdetailprice
+            // 
+            this.purchaseorderdetailprice.HeaderText = "Product Price";
+            this.purchaseorderdetailprice.Name = "purchaseorderdetailprice";
+            this.purchaseorderdetailprice.ReadOnly = true;
+            // 
+            // purchaseorderdetailquantity
+            // 
+            this.purchaseorderdetailquantity.HeaderText = "Quantity";
+            this.purchaseorderdetailquantity.Name = "purchaseorderdetailquantity";
+            this.purchaseorderdetailquantity.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // categoryname
+            // 
+            this.categoryname.HeaderText = "categoryname";
+            this.categoryname.Name = "categoryname";
+            this.categoryname.ReadOnly = true;
+            this.categoryname.Visible = false;
+            // 
+            // subcategoryname
+            // 
+            this.subcategoryname.HeaderText = "subcategoryname";
+            this.subcategoryname.Name = "subcategoryname";
+            this.subcategoryname.ReadOnly = true;
+            this.subcategoryname.Visible = false;
             // 
             // frmManagePurchaseOrderProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 560);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.gbInformations);
             this.Controls.Add(this.gbControls);
@@ -449,12 +483,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbProductName;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productprice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn purchaseorderdetailquantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purchaseorderdetailprice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purchaseorderdetailquantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subcategoryname;
     }
 }

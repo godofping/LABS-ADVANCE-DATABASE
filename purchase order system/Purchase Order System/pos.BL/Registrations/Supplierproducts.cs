@@ -14,6 +14,16 @@ namespace pos.BL.Registrations
             return SupplierProductDL.List(id, id1);
         }
 
+        public DataTable List(int id)
+        {
+            return SupplierProductDL.List(id);
+        }
+
+        public DataTable Lists(int id, int id1)
+        {
+            return SupplierProductDL.Lists(id, id1);
+        }
+        
         public DataTable CheckIfExisting(EL.Registrations.SupplierProducts supplierProductEL)
         {
             return SupplierProductDL.CheckIfExisting(supplierProductEL);

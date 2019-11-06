@@ -404,7 +404,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnManagePurchaseOrderProducts;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTotalAmount;
         private System.Windows.Forms.ComboBox cbShippingMethod;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbPaymentMethod;
@@ -417,5 +416,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         public System.Windows.Forms.ComboBox cbSupplierName;
+        public System.Windows.Forms.TextBox txtTotalAmount;
     }
 }

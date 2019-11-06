@@ -17,12 +17,14 @@ namespace pos.PL.Transactions
         EL.Registrations.SubCategories subCategoryEL = new EL.Registrations.SubCategories();
         EL.Registrations.Products productEL = new EL.Registrations.Products();
         EL.Transactions.PurchaseOrderDetails purchaseOrderDetailEL = new EL.Transactions.PurchaseOrderDetails();
+        EL.Transactions.Inventories inventoryEL = new EL.Transactions.Inventories();
 
         BL.Registrations.Categories categoryBL = new BL.Registrations.Categories();
         BL.Registrations.SubCategories subCategoryBL = new BL.Registrations.SubCategories();
         BL.Registrations.Products productBL = new BL.Registrations.Products();
         BL.Transactions.PurchaseOrderDetails purchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
         BL.Registrations.SupplierProducts supplierProductBL = new BL.Registrations.SupplierProducts();
+        BL.Transactions.Inventories inventoryBL = new BL.Transactions.Inventories();
 
         frmManagePurchaseOrders frmManagePurchaseOrders;
 
@@ -65,41 +67,43 @@ namespace pos.PL.Transactions
         private void PopulateControls()
         {
             cbCategoryName.DisplayMember = "Category Name";
-            cbCategoryName.ValueMember = "Category ID";
-            cbCategoryName.DataSource = categoryBL.List("");
+            cbCategoryName.ValueMember = "categoryid";
+            cbCategoryName.DataSource = supplierProductBL.List(Convert.ToInt32(frmManagePurchaseOrders.cbSupplierName.SelectedValue));
         }
 
 
         private void PopulateControlsSubCategory()
         {
             cbSubCategoryName.DisplayMember = "Sub Category Name";
-            cbSubCategoryName.ValueMember = "Sub Category ID";
-            cbSubCategoryName.DataSource = subCategoryBL.List(Convert.ToInt32(cbCategoryName.SelectedValue));
+            cbSubCategoryName.ValueMember = "subcategoryid";
+            cbSubCategoryName.DataSource = supplierProductBL.Lists(Convert.ToInt32(frmManagePurchaseOrders.cbSupplierName.SelectedValue), Convert.ToInt32(cbCategoryName.SelectedValue));
         }
 
         private void PopulateControlsProducts()
         {
             cbProductName.DisplayMember = "Product Name";
-            cbProductName.ValueMember = "productid" +
-                "";
+            cbProductName.ValueMember = "productid";
             cbProductName.DataSource = supplierProductBL.List(Convert.ToInt32(frmManagePurchaseOrders.cbSupplierName.SelectedValue), Convert.ToInt32(cbSubCategoryName.SelectedValue));
         }
 
         private void GetProductInfo()
         {
-
             if (!cbProductName.Text.Equals(""))
             {
-                foreach (DataRow row in productBL.List(Convert.ToInt32(cbProductName.SelectedValue.ToString())).Rows)
+                foreach (DataRow row in inventoryBL.List(Convert.ToInt32(cbProductName.SelectedValue.ToString())).Rows)
                 {
                     productEL.Productsku = row["Product SKU"].ToString();
                     productEL.Productprice = Convert.ToInt32(row["Product Price"]);
                     productEL.Productdescription = row["Product Description"].ToString();
+                    inventoryEL.Quantityinstocks = Convert.ToInt32(row["Quantity In Stocks"]);
+                    inventoryEL.Reorderlevel = Convert.ToInt32(row["Reorder Level"]);
                 }
 
                 txtProductSKU.Text = productEL.Productsku;
                 txtProductPrice.Text = productEL.Productprice.ToString();
                 txtProductDescription.Text = productEL.Productdescription;
+                txtCurrentStock.Text = inventoryEL.Quantityinstocks.ToString();
+                txtReorderLevel.Text = inventoryEL.Reorderlevel.ToString();
             }
             else
             {
@@ -108,12 +112,26 @@ namespace pos.PL.Transactions
 
         }
 
+
+
         private void ManageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
             dgv.Enabled = !status;
 
+            if (current.Equals("EDIT"))
+            {
+                cbCategoryName.Enabled = false;
+                cbSubCategoryName.Enabled = false;
+                cbProductName.Enabled = false;
+            }
+            else
+            {
+                cbCategoryName.Enabled = true;
+                cbSubCategoryName.Enabled = true;
+                cbProductName.Enabled = true;
+            }
         }
 
         private void ClearErrors()
@@ -213,48 +231,30 @@ namespace pos.PL.Transactions
             purchaseOrderDetailEL.Purchaseorderdetailquantity = Convert.ToInt32(txtQuantity.Text);
             purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToSingle(txtProductPrice.Text);
             productEL.Productname = cbProductName.Text;
-
+            categoryEL.Categoryname = cbCategoryName.Text;
+            subCategoryEL.Subcategoryname = cbSubCategoryName.Text;
         }
 
-        //private void GetDataFromDataGridView()
-        //{
-        //    foreach (DataGridViewRow row in dgv.SelectedRows)
-        //    {
-        //        categoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
-        //        categoryEL.Categoryname = row.Cells["Category Name"].Value.ToString();
+        private void GetDataFromDataGridView()
+        {
+            foreach (DataGridViewRow row in dgv.SelectedRows)
+            {
+                purchaseOrderDetailEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
+                purchaseOrderDetailEL.Purchaseorderdetailquantity = Convert.ToInt32(row.Cells["purchaseorderdetailquantity"].Value);
+                purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToSingle(row.Cells["purchaseorderdetailprice"].Value);
+                categoryEL.Categoryname = row.Cells["categoryname"].Value.ToString();
+                subCategoryEL.Subcategoryname = row.Cells["subcategoryname"].Value.ToString();
+                productEL.Productname = row.Cells["subcategoryname"].Value.ToString(); 
+            }
 
-        //        subCategoryEL.Subcategoryid = Convert.ToInt32(row.Cells["subcategoryid"].Value);
-        //        subCategoryEL.Subcategoryname = row.Cells["Sub Category Name"].Value.ToString();
-        //        subCategoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
+            cbCategoryName.Text = categoryEL.Categoryname;
+            cbSubCategoryName.Text = subCategoryEL.Subcategoryname;
+            cbProductName.Text = productEL.Productname;
 
+            txtProductPrice.Text = purchaseOrderDetailEL.Purchaseorderdetailprice.ToString();
+            txtQuantity.Text = purchaseOrderDetailEL.Purchaseorderdetailquantity.ToString();
 
-        //        productEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
-        //        productEL.Productname = row.Cells["Product Name"].Value.ToString();
-        //        productEL.Productdescription = row.Cells["Product Description"].Value.ToString();
-        //        productEL.Productsku = row.Cells["Product SKU"].Value.ToString();
-        //        productEL.Productprice = Convert.ToInt32(row.Cells["Product Price"].Value);
-        //        productEL.Isdeleted = Convert.ToInt32(row.Cells["productsisdeleted"].Value);
-
-        //        supplierEL.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
-        //        supplierEL.Supplier = row.Cells["Supplier"].Value.ToString();
-        //        supplierEL.Supplierid = Convert.ToInt32(row.Cells["isdeleted"].Value);
-
-        //        supplierProductEL.Supplierproductid = Convert.ToInt32(row.Cells["Supplier Product ID"].Value);
-        //        supplierProductEL.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
-        //        supplierProductEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
-        //    }
-
-        //    txtSupplierProductID.Text = supplierProductEL.Supplierproductid.ToString();
-        //    cbSupplierName.SelectedIndex = cbSupplierName.FindString(supplierEL.Supplier);
-        //    cbCategoryName.SelectedIndex = cbCategoryName.FindString(categoryEL.Categoryname);
-        //    cbSubCategoryName.SelectedIndex = cbSubCategoryName.FindString(subCategoryEL.Subcategoryname);
-        //    cbProductName.SelectedIndex = cbProductName.FindString(productEL.Productname);
-
-        //    txtProductSKU.Text = productEL.Productsku;
-        //    txtProductPrice.Text = productEL.Productprice.ToString();
-        //    txtProductDescription.Text = productEL.Productdescription;
-
-        //}
+        }
 
         private bool CheckIfHasDuplicate()
         {
@@ -272,9 +272,10 @@ namespace pos.PL.Transactions
 
         }
 
-        private void getTotalAmount()
+        private void GetTotalAmount()
         {
             lblTotalAmount.Text = dgv.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[4].Value)).ToString();
+            frmManagePurchaseOrders.txtTotalAmount.Text = dgv.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[4].Value)).ToString();
         }
 
         private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
@@ -303,31 +304,32 @@ namespace pos.PL.Transactions
 
         private void Add()
         {
-        
-           
-
             if (CheckIfHasDuplicate())
             {
                 MessageBox.Show("This item is already added.");
             }
             else
             {
-                ShowMessageBox(dgv.Rows.Add(purchaseOrderDetailEL.Productid, productEL.Productname, purchaseOrderDetailEL.Purchaseorderdetailprice, purchaseOrderDetailEL.Purchaseorderdetailquantity, purchaseOrderDetailEL.Purchaseorderdetailprice * purchaseOrderDetailEL.Purchaseorderdetailquantity) != -1);
+                ShowMessageBox(dgv.Rows.Add(purchaseOrderDetailEL.Productid, productEL.Productname, purchaseOrderDetailEL.Purchaseorderdetailprice, purchaseOrderDetailEL.Purchaseorderdetailquantity, purchaseOrderDetailEL.Purchaseorderdetailprice * purchaseOrderDetailEL.Purchaseorderdetailquantity, categoryEL.Categoryname, subCategoryEL.Subcategoryname) != -1);
             }
         }
 
         private void Edit()
         {
-            GetDataFromForm();
+            foreach (DataGridViewRow row in dgv.SelectedRows)
+            {
+                row.Cells["purchaseorderdetailprice"].Value = purchaseOrderDetailEL.Purchaseorderdetailprice;
+                row.Cells["purchaseorderdetailquantity"].Value = purchaseOrderDetailEL.Purchaseorderdetailquantity;
+                row.Cells["amount"].Value = purchaseOrderDetailEL.Purchaseorderdetailprice * purchaseOrderDetailEL.Purchaseorderdetailquantity;
+            }
 
-           // ShowMessageBox(supplierProductBL.Update(supplierProductEL));
         }
 
         private void Delete()
         {
-            GetDataFromForm();
-
-            //ShowMessageBox(supplierProductBL.Delete(supplierProductEL));
+            dgv.Rows.RemoveAt(dgv.SelectedRows[0].Index);
+            GetTotalAmount();
+            ClearFields();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -375,34 +377,38 @@ namespace pos.PL.Transactions
 
                 ManageForm(false);
                 ClearFields();
+                GetTotalAmount();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            ManageForm(false);
+            ClearFields();
+            ClearErrors();
         }
 
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            current = "ADD";
             ClearFields();
             ManageForm(true);
             this.ActiveControl = cbCategoryName;
-            current = "ADD";
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dgv.SelectedRows.Count > 0)
+            if (dgv.SelectedRows.Count == 0)
             {
-                MessageBox.Show("No selected client. Please select first.");
+                MessageBox.Show("No selected item.");
             }
             else
             {
+                current = "EDIT";
                 ManageForm(true);
                 this.ActiveControl = cbCategoryName;
-                current = "EDIT";
+                
             }
         }
 
@@ -429,6 +435,31 @@ namespace pos.PL.Transactions
             onlynumwithsinglepoint(sender, e);
         }
 
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
 
+        private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            GetDataFromDataGridView();
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No selected item. Please select first.");
+            }
+            else
+            {
+                Delete();
+            }
+        }
     }
 }
