@@ -21,11 +21,6 @@ namespace pos.BL.Transactions
             return purchaseOrderDL.Insert(purchaseOrderEL);
         }
 
-        public bool Update(EL.Transactions.PurchaseOrders purchaseOrderEL)
-        {
-            return purchaseOrderDL.Update(purchaseOrderEL);
-        }
-
         public bool Delete(EL.Transactions.PurchaseOrders purchaseOrderEL)
         {
             return purchaseOrderDL.Delete(purchaseOrderEL);

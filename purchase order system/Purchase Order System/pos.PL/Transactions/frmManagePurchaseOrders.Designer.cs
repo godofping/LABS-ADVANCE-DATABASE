@@ -33,7 +33,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtPurchaseOrderComment = new System.Windows.Forms.TextBox();
+            this.txtComment = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.gbInformations.Controls.Add(this.btnCancel);
             this.gbInformations.Controls.Add(this.btnSave);
             this.gbInformations.Controls.Add(this.label8);
-            this.gbInformations.Controls.Add(this.txtPurchaseOrderComment);
+            this.gbInformations.Controls.Add(this.txtComment);
             this.gbInformations.Controls.Add(this.label7);
             this.gbInformations.Controls.Add(this.dtpDeliveryDate);
             this.gbInformations.Controls.Add(this.label6);
@@ -116,17 +116,17 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(204, 78);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 13);
+            this.label8.Size = new System.Drawing.Size(51, 13);
             this.label8.TabIndex = 88;
-            this.label8.Text = "Purchase Order Comment";
+            this.label8.Text = "Comment";
             // 
-            // txtPurchaseOrderComment
+            // txtComment
             // 
-            this.txtPurchaseOrderComment.Location = new System.Drawing.Point(207, 94);
-            this.txtPurchaseOrderComment.Multiline = true;
-            this.txtPurchaseOrderComment.Name = "txtPurchaseOrderComment";
-            this.txtPurchaseOrderComment.Size = new System.Drawing.Size(172, 92);
-            this.txtPurchaseOrderComment.TabIndex = 87;
+            this.txtComment.Location = new System.Drawing.Point(207, 94);
+            this.txtComment.Multiline = true;
+            this.txtComment.Name = "txtComment";
+            this.txtComment.Size = new System.Drawing.Size(172, 92);
+            this.txtComment.TabIndex = 87;
             // 
             // label7
             // 
@@ -347,14 +347,17 @@
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.BackgroundColor = System.Drawing.Color.Silver;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(15, 293);
+            this.dgv.Location = new System.Drawing.Point(13, 293);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1179, 240);
+            this.dgv.Size = new System.Drawing.Size(1181, 240);
             this.dgv.TabIndex = 70;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
+            this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
             // 
             // errorProvider1
             // 
@@ -412,7 +415,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpDeliveryDate;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPurchaseOrderComment;
+        private System.Windows.Forms.TextBox txtComment;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         public System.Windows.Forms.ComboBox cbSupplierName;

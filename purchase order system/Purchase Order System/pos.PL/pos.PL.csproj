@@ -161,6 +161,12 @@
     <Compile Include="Transactions\frmSelectSupplier.Designer.cs">
       <DependentUpon>frmSelectSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactions\frmViewPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmViewPurchaseOrder.Designer.cs">
+      <DependentUpon>frmViewPurchaseOrder.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmSelectSupplier.resx">
       <DependentUpon>frmSelectSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmViewPurchaseOrder.resx">
+      <DependentUpon>frmViewPurchaseOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -59,12 +59,20 @@ namespace pos.PL.Transactions
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
+            frmManagePurchaseOrders.ClearFields();
             supplierEL.Supplierid = Convert.ToInt32(cbSupplierName.SelectedValue);
             supplierEL.Supplier = cbSupplierName.Text;
 
 
             frmManagePurchaseOrders.cbSupplierName.SelectedIndex = frmManagePurchaseOrders.cbSupplierName.FindString(cbSupplierName.Text);
             frmManagePurchaseOrders.ManageForm(true);
+            
+            frmManagePurchaseOrders.current = "ADD";
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

@@ -5,27 +5,27 @@ namespace pos.PL
 {
     public partial class frmMain : Form
     {
-        EL.Registrations.Staffs StaffInfo;
-        EL.Registrations.ContactDetails ContactDetailInfo;
-        EL.Registrations.BasicInformations BasicInformationInfo;
-        EL.Registrations.StaffPositions StaffpositionInfo;
-        EL.Registrations.Addresses AddressInfo;
-        EL.Registrations.StoreInformation StoreInformationInfo;
+        EL.Registrations.Staffs staffEL;
+        EL.Registrations.ContactDetails contactDetailEL;
+        EL.Registrations.BasicInformations basicInformationEL;
+        EL.Registrations.StaffPositions staffPositionEL;
+        EL.Registrations.Addresses addressEL;
+        EL.Registrations.StoreInformation storeInformationEL;
 
-        frmLogin FrmLogin;
+        frmLogin frmLogin;
 
 
       
-        public frmMain(EL.Registrations.Staffs staffInfo, EL.Registrations.ContactDetails contactDetailInfo, EL.Registrations.BasicInformations basicInformationInfo, EL.Registrations.StaffPositions staffpositionInfo, EL.Registrations.Addresses addressInfo, EL.Registrations.StoreInformation storeInformationInfo, frmLogin frmLogin)
+        public frmMain(EL.Registrations.Staffs _staffEL, EL.Registrations.ContactDetails _contactDetailEL, EL.Registrations.BasicInformations _basicInformationEL, EL.Registrations.StaffPositions _staffPositionEL, EL.Registrations.Addresses _addressEL, EL.Registrations.StoreInformation _storeInformationEL, frmLogin _frmLogin)
         {
             InitializeComponent();
-            StaffInfo = staffInfo;
-            ContactDetailInfo = contactDetailInfo;
-            BasicInformationInfo = basicInformationInfo;
-            StaffpositionInfo = staffpositionInfo;
-            AddressInfo = addressInfo;
-            StoreInformationInfo = storeInformationInfo;
-            FrmLogin = frmLogin;
+            staffEL = _staffEL;
+            contactDetailEL = _contactDetailEL;
+            basicInformationEL = _basicInformationEL;
+            staffPositionEL = _staffPositionEL;
+            addressEL = _addressEL;
+            storeInformationEL = _storeInformationEL;
+            this.frmLogin = _frmLogin;
 
 
         }
@@ -56,10 +56,10 @@ namespace pos.PL
 
         public void UpdateInfo()
         {
-            FrmLogin.UpdateStoreName();
-            FrmLogin.GetDataFromDataTableStaffInformation();
-            lblName.Text = "Welcome, " + BasicInformationInfo.Firstname + " " + BasicInformationInfo.Middlename + " " + BasicInformationInfo.Lastname;
-            lblStoreName.Text = StoreInformationInfo.Storename;
+            frmLogin.UpdateStoreName();
+            frmLogin.GetDataFromDataTableStaffInformation();
+            lblName.Text = "Welcome, " + basicInformationEL.Firstname + " " + basicInformationEL.Middlename + " " + basicInformationEL.Lastname;
+            lblStoreName.Text = storeInformationEL.Storename;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace pos.PL
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            FrmLogin.Show();
+            frmLogin.Show();
         }
 
 
@@ -157,7 +157,7 @@ namespace pos.PL
         private void storeInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlMain.Controls.Clear();
-            Registrations.frmManageStoreInformation objForm = new Registrations.frmManageStoreInformation(StoreInformationInfo, this);
+            Registrations.frmManageStoreInformation objForm = new Registrations.frmManageStoreInformation(storeInformationEL, this);
             objForm.TopLevel = false;
             objForm.AutoScroll = true;
             pnlMain.Controls.Add(objForm);
@@ -167,7 +167,7 @@ namespace pos.PL
         private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlMain.Controls.Clear();
-            Registrations.frmManageProfile objForm = new Registrations.frmManageProfile(StaffInfo, this);
+            Registrations.frmManageProfile objForm = new Registrations.frmManageProfile(staffEL, this);
             objForm.TopLevel = false;
             objForm.AutoScroll = true;
             pnlMain.Controls.Add(objForm);
@@ -177,7 +177,7 @@ namespace pos.PL
         private void managePurchaseOrdersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlMain.Controls.Clear();
-            Transactions.frmManagePurchaseOrders objForm = new Transactions.frmManagePurchaseOrders();
+            Transactions.frmManagePurchaseOrders objForm = new Transactions.frmManagePurchaseOrders(staffEL);
             objForm.TopLevel = false;
             objForm.AutoScroll = true;
             pnlMain.Controls.Add(objForm);

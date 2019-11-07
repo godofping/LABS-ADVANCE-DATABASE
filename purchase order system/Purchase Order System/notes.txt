@@ -8,3 +8,29 @@ to do
 
 fix
 frmTest
+----------------------------------
+
+add decimal
+
+
+hide all id
+
+
+
+
+delete purchase order 
+dgv
+
+------------
+Purchase Order ID
+Supplier
+Purchase Order Name
+Payment Method
+Shipping Method
+Request Date
+Delivery Date
+Comment
+Total Amount
+Amount Paid
+Purchase Order Status
+Purchase Order By

@@ -13,7 +13,10 @@ namespace pos.PL.Transactions
     public partial class frmManagePurchaseOrders : Form
     {
 
+        EL.Registrations.Staffs staffEL;
         EL.Registrations.Suppliers supplierEL = new EL.Registrations.Suppliers();
+        EL.Registrations.PaymentMethods paymentMethodEL = new EL.Registrations.PaymentMethods();
+        EL.Registrations.ShippingMethods shippingMethodEL = new EL.Registrations.ShippingMethods();
         EL.Transactions.PurchaseOrders purchaseOrderEL = new EL.Transactions.PurchaseOrders();
         EL.Transactions.PurchaseOrderDetails purchaseOrderDetailEL = new EL.Transactions.PurchaseOrderDetails();
 
@@ -26,11 +29,12 @@ namespace pos.PL.Transactions
 
         frmManagePurchaseOrderProducts frmManagePurchaseOrderProducts;
 
+        public string current = "";
 
-        public frmManagePurchaseOrders()
+        public frmManagePurchaseOrders(EL.Registrations.Staffs _staffEL)
         {
             InitializeComponent();
-            
+            staffEL = _staffEL;
         }
 
         protected override CreateParams CreateParams
@@ -52,20 +56,49 @@ namespace pos.PL.Transactions
         }
 
 
+        private void ReadOnlyControls()
+        {
+            txtTotalAmount.ReadOnly = true;
+
+        }
 
         private void HiddenColumns()
         {
-            dgv.Columns["Supplier Product ID"].Visible = false;
-            dgv.Columns["subcategoryid"].Visible = false;
-            dgv.Columns["contactdetailid"].Visible = false;
-            dgv.Columns["productsisdeleted"].Visible = false;
-            dgv.Columns["isdeleted"].Visible = false;
-            dgv.Columns["productid"].Visible = false;
-            dgv.Columns["supplierid"].Visible = false;
-            dgv.Columns["categoryid"].Visible = false;
-            dgv.Columns["subcategoriesisdeleted"].Visible = false;
-            dgv.Columns["categoriesisdeleted"].Visible = false;
-
+            dgv.Columns["Staff First Name"].Visible = false;
+            dgv.Columns["Staff Middle Name"].Visible = false;
+            dgv.Columns["Staff Last Name"].Visible = false;
+            dgv.Columns["Purchase Order Staff ID"].Visible = false;
+            dgv.Columns["Purchase Order Supplier ID"].Visible = false;
+            dgv.Columns["Purchase Order Payment Method ID"].Visible = false;
+            dgv.Columns["Purchase Order Shipping Method ID"].Visible = false;
+            dgv.Columns["Purchase Order Is Deleted"].Visible = false;
+            dgv.Columns["Supplier Contact Detail ID"].Visible = false;
+            dgv.Columns["Supplier Is Deleted"].Visible = false;
+            dgv.Columns["Supplier Address ID"].Visible = false;
+            dgv.Columns["Supplier Contact Number"].Visible = false;
+            dgv.Columns["Supplier Email Address"].Visible = false;
+            dgv.Columns["Supplier Address"].Visible = false;
+            dgv.Columns["Supplier City"].Visible = false;
+            dgv.Columns["Supplier Zip Code"].Visible = false;
+            dgv.Columns["Supplier Province"].Visible = false;
+            dgv.Columns["Payment Method"].Visible = false;
+            dgv.Columns["Shipping Method"].Visible = false;
+            dgv.Columns["Staff Username"].Visible = false;
+            dgv.Columns["Staff Password"].Visible = false;
+            dgv.Columns["Staff Contact Detail ID"].Visible = false;
+            dgv.Columns["Staff Basic Information ID"].Visible = false;
+            dgv.Columns["Staff Position ID"].Visible = false;
+            dgv.Columns["Staff Is Deleted"].Visible = false;
+            dgv.Columns["Staff Position"].Visible = false;
+            dgv.Columns["Staff Gender"].Visible = false;
+            dgv.Columns["Staff Birth Date"].Visible = false;
+            dgv.Columns["Staff Address ID"].Visible = false;
+            dgv.Columns["Staff Contact Number"].Visible = false;
+            dgv.Columns["Staff Email Address"].Visible = false;
+            dgv.Columns["Staff Address"].Visible = false;
+            dgv.Columns["Staff City"].Visible = false;
+            dgv.Columns["Staff Zip Code"].Visible = false;
+            dgv.Columns["Staff Province"].Visible = false;
         }
 
         private void LoadData(string keywords)
@@ -87,7 +120,7 @@ namespace pos.PL.Transactions
             errorProvider1.SetError(cbPaymentMethod, "");
             errorProvider1.SetError(cbShippingMethod, "");
             errorProvider1.SetError(dtpDeliveryDate, "");
-            errorProvider1.SetError(txtPurchaseOrderComment, "");
+            errorProvider1.SetError(txtComment, "");
             errorProvider1.SetError(btnManagePurchaseOrderProducts, "");
         }
 
@@ -98,7 +131,7 @@ namespace pos.PL.Transactions
             txtTotalAmount.Enabled = false;
         }
 
-        private void ClearFields()
+        public void ClearFields()
         {
             dgv.ClearSelection();
             txtPurchaseOrderID.ResetText();
@@ -115,7 +148,7 @@ namespace pos.PL.Transactions
             cbShippingMethod.Text = "";
 
             dtpDeliveryDate.ResetText();
-            txtPurchaseOrderComment.ResetText();
+            txtComment.ResetText();
 
             txtTotalAmount.ResetText();
 
@@ -161,13 +194,13 @@ namespace pos.PL.Transactions
                 errorProvider1.SetError(dtpDeliveryDate, "");
 
 
-            if (txtPurchaseOrderComment.Text.Equals(""))
+            if (txtComment.Text.Equals(""))
             {
-                errorProvider1.SetError(txtPurchaseOrderComment, "This field is required.");
+                errorProvider1.SetError(txtComment, "This field is required.");
                 status = false;
             }
             else
-                errorProvider1.SetError(txtPurchaseOrderComment, "");
+                errorProvider1.SetError(txtComment, "");
 
 
             if (frmManagePurchaseOrderProducts.dgv.Rows.Count == 0)
@@ -183,59 +216,53 @@ namespace pos.PL.Transactions
 
         private void GetDataFromForm()
         {
+            purchaseOrderEL.Staffid = staffEL.Staffid;
             purchaseOrderEL.Purchaseordername = txtPurchaseOrderName.Text;
+            purchaseOrderEL.Supplierid = Convert.ToInt32(cbSupplierName.SelectedValue);
             purchaseOrderEL.Paymentmethodid = Convert.ToInt32(cbPaymentMethod.SelectedValue);
             purchaseOrderEL.Shippingmethodid = Convert.ToInt32(cbShippingMethod.SelectedValue);
+            purchaseOrderEL.Purchaseorderstatus = "PENDING";
+            purchaseOrderEL.Purchaseorderamountpaid = 0;
+            purchaseOrderEL.Purchasetotalorderamount = Convert.ToSingle(txtTotalAmount.Text);
             purchaseOrderEL.Purchaseorderdatedelivered = dtpDeliveryDate.Value.ToString("yyyy-MM-dd");
-            purchaseOrderEL.Purchaseordercomment = txtPurchaseOrderComment.Text;
+            purchaseOrderEL.Purchaseorderdaterequested = DateTime.Now.ToString("yyyy-MM-dd");
+            purchaseOrderEL.Purchaseordercomment = txtComment.Text;
 
         }
 
-        //private void getDataFromDataGridView()
-        //{
-        //    foreach (DataGridViewRow row in dgv.SelectedRows)
-        //    {
-        //        CategoryInfo.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
-        //        CategoryInfo.Categoryname = row.Cells["Category Name"].Value.ToString();
+        private void getDataFromDataGridView()
+        {
+            foreach (DataGridViewRow row in dgv.SelectedRows)
+            {
+                purchaseOrderEL.Purchaseorderid = Convert.ToInt32(row.Cells["Purchase Order ID"].Value);
+                supplierEL.Supplier = row.Cells["Supplier"].Value.ToString();
+                purchaseOrderEL.Purchaseordername = row.Cells["Purchase Order Name"].Value.ToString();
+                paymentMethodEL.Paymentmethod = row.Cells["Payment Method"].Value.ToString();
+                shippingMethodEL.Shippingmethod = row.Cells["Shipping Method"].Value.ToString();
+                purchaseOrderEL.Purchaseorderdaterequested = row.Cells["Request Date"].Value.ToString();
+                purchaseOrderEL.Purchaseorderdatedelivered = row.Cells["Delivery Date"].Value.ToString();
+                purchaseOrderEL.Purchaseordercomment = row.Cells["Comment"].Value.ToString();
+                purchaseOrderEL.Purchasetotalorderamount = Convert.ToSingle(row.Cells["Total Amount"].Value);
+                purchaseOrderEL.Purchaseorderamountpaid = Convert.ToSingle(row.Cells["Amount Paid"].Value);
+                purchaseOrderEL.Purchaseorderstatus = row.Cells["Purchase Order Status"].Value.ToString();
+            }
 
-        //        SubCategoryInfo.Subcategoryid = Convert.ToInt32(row.Cells["subcategoryid"].Value);
-        //        SubCategoryInfo.Subcategoryname = row.Cells["Sub Category Name"].Value.ToString();
-        //        SubCategoryInfo.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
+            txtPurchaseOrderID.Text = purchaseOrderEL.Purchaseorderid.ToString();
+            cbSupplierName.SelectedIndex = cbSupplierName.FindString(supplierEL.Supplier);
+            txtPurchaseOrderName.Text = purchaseOrderEL.Purchaseordername.ToString();
+            cbPaymentMethod.SelectedIndex = cbPaymentMethod.FindString(paymentMethodEL.Paymentmethod);
+            cbShippingMethod.SelectedIndex = cbShippingMethod.FindString(shippingMethodEL.Shippingmethod);
+            dtpDeliveryDate.Text = purchaseOrderEL.Purchaseorderdatedelivered.ToString();
+            txtComment.Text = purchaseOrderEL.Purchaseordercomment.ToString();
+            txtTotalAmount.Text = purchaseOrderEL.Purchasetotalorderamount.ToString();
 
-
-        //        ProductInfo.Productid = Convert.ToInt32(row.Cells["productid"].Value);
-        //        ProductInfo.Productname = row.Cells["Product Name"].Value.ToString();
-        //        ProductInfo.Productdescription = row.Cells["Product Description"].Value.ToString();
-        //        ProductInfo.Productsku = row.Cells["Product SKU"].Value.ToString();
-        //        ProductInfo.Productprice = Convert.ToInt32(row.Cells["Product Price"].Value);
-        //        ProductInfo.Isdeleted = Convert.ToInt32(row.Cells["productsisdeleted"].Value);
-
-        //        SupplierInfo.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
-        //        SupplierInfo.Supplier = row.Cells["Supplier"].Value.ToString();
-        //        SupplierInfo.Supplierid = Convert.ToInt32(row.Cells["isdeleted"].Value);
-
-        //        SupplierProductInfo.Supplierproductid = Convert.ToInt32(row.Cells["Supplier Product ID"].Value);
-        //        SupplierProductInfo.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
-        //        SupplierProductInfo.Productid = Convert.ToInt32(row.Cells["productid"].Value);
-        //    }
-
-        //    txtSupplierProductID.Text = SupplierProductInfo.Supplierproductid.ToString();
-        //    cbSupplierName.SelectedIndex = cbSupplierName.FindString(SupplierInfo.Supplier);
-        //    cbCategoryName.SelectedIndex = cbCategoryName.FindString(CategoryInfo.Categoryname);
-        //    cbSubCategoryName.SelectedIndex = cbSubCategoryName.FindString(SubCategoryInfo.Subcategoryname);
-        //    cbProductName.SelectedIndex = cbProductName.FindString(ProductInfo.Productname);
-
-        //    txtProductSKU.Text = ProductInfo.Productsku;
-        //    txtProductPrice.Text = ProductInfo.Productprice.ToString();
-        //    txtProductDescription.Text = ProductInfo.Productdescription;
-
-        //}
+        }
 
         private void ShowMessageBox(bool condition)
         {
             if (condition)
             {
-                //loadData(txtSearch.Text);
+                LoadData(txtSearch.Text);
                 ClearFields();
                 MessageBox.Show("Success");
             }
@@ -261,6 +288,63 @@ namespace pos.PL.Transactions
             cbShippingMethod.DataSource = shippingMethodBL.List();
         }
 
+        private void Add()
+        {
+
+            if(frmManagePurchaseOrderProducts.dgv.Rows.Count == 0)
+            {
+                MessageBox.Show("Please add products.");
+            }
+            else
+            {
+                purchaseOrderEL.Purchaseorderid = Convert.ToInt32(purchaseOrderBL.Insert(purchaseOrderEL));
+
+                if(purchaseOrderEL.Purchaseorderid > 0)
+                {
+
+                    bool stat = true;
+
+                    foreach (DataGridViewRow row in frmManagePurchaseOrderProducts.dgv.Rows)
+                    {
+                        purchaseOrderDetailEL.Productid = Convert.ToInt32(row.Cells[0].Value);
+                        purchaseOrderDetailEL.Purchaseorderdetailquantity = Convert.ToInt32(row.Cells[4].Value);
+                        purchaseOrderDetailEL.Purchaseorderid = purchaseOrderEL.Purchaseorderid;
+                        purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToInt32(row.Cells[3].Value);
+
+                        if (purchaseOrderDetailBL.Insert(purchaseOrderDetailEL) == 0)
+                        {
+                            stat = false;
+                        }
+                    }
+
+                    if (stat)
+                    {
+                        ShowMessageBox(true);
+                    }
+                    else
+                    {
+                        ShowMessageBox(false);
+                    }
+
+                }
+                else
+                {
+                    ShowMessageBox(false);
+                }
+
+                
+            }
+
+
+        }
+
+        private void Delete()
+        {
+      
+          ShowMessageBox(purchaseOrderBL.Delete(purchaseOrderEL));
+        }
+
+
         private void btnManagePurchaseOrderProducts_Click(object sender, EventArgs e)
         {
             frmManagePurchaseOrderProducts.ShowDialog();
@@ -276,25 +360,54 @@ namespace pos.PL.Transactions
 
         private void frmManagePurchaseOrders_Load(object sender, EventArgs e)
         {
-            DisabledControls();
-            PopulateControls();
+            LoadData(txtSearch.Text);
+            HiddenColumns();
             ManageForm(false);
+            PopulateControls();
             ClearFields();
+            ReadOnlyControls();
+            cbSupplierName.Enabled = false;
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
-
+            if (dgv.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No selected item. Please select first.");
+            }
+            else
+            {
+                frmViewPurchaseOrder frmViewPurchaseOrder = new frmViewPurchaseOrder(purchaseOrderEL);
+                frmViewPurchaseOrder.ShowDialog();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            if (dgv.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No selected item. Please select first.");
+            }
+            else
+            {
+                Delete();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (CheckErrors())
+            {
+                GetDataFromForm();
+                if (current.Equals("ADD"))
+                {
+                    Add();
+                }
+   
 
+                ManageForm(false);
+                ClearFields();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -305,6 +418,19 @@ namespace pos.PL.Transactions
             frmManagePurchaseOrderProducts.Close();
         }
 
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            getDataFromDataGridView();
+        }
 
+        private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            getDataFromDataGridView();
+        }
+
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            getDataFromDataGridView();
+        }
     }
 }

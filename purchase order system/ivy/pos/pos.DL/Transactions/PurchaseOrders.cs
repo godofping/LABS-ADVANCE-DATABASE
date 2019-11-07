@@ -19,11 +19,6 @@ namespace pos.DL.Transactions
             return Helper.executeNonQueryLong("insert into purchaseorders (supplierid, accountid, purchaseordername, purchaseorderrequestdate, purchaseorderdeliverydate, purchaseorderstatus, purchaseordertotalamount) values ('" + purchaseOrder.Supplierid + "', '" + purchaseOrder.Accountid + "', '" + purchaseOrder.Purchaseordername + "', '" + purchaseOrder.Purchaseorderrequestdate + "', '" + purchaseOrder.Purchaseorderdeliverydate + "', '" + purchaseOrder.Purchaseorderstatus + "', '" + purchaseOrder.Purchaseordertotalamount + "')");
         }
 
-        public bool Edit(EL.Transactions.PurchaseOrders purchaseOrder)
-        {
-            return Helper.executeNonQueryBool("update purchaseorders set supplierid = '" + purchaseOrder.Purchaseorderid + "', purchaseordername = '" + purchaseOrder.Purchaseordername + "', purchaseorderdeliverydate = '" + purchaseOrder.Purchaseorderdeliverydate + "', purchaseorderstatus = '" + purchaseOrder.Purchaseorderstatus + "', purchaseordertotalamount = '" + purchaseOrder.Purchaseordertotalamount + "' where purchaseorderid = " + purchaseOrder.Purchaseorderid + "");
-        }
-
         public bool SetRecieved(int id)
         {
             return Helper.executeNonQueryBool("update purchaseorders set purchaseorderstatus = 'RECIEVED' where purchaseorderid = " + id + "");

@@ -25,10 +25,6 @@ namespace pos.BL.Transactions
             return purchaseOrderDL.Insert(purchaseOrder);   
         }
 
-        public bool Edit(EL.Transactions.PurchaseOrders purchaseOrder)
-        {
-            return purchaseOrderDL.Edit(purchaseOrder);    
-        }
 
         public bool SetRecieved(int id)
         {
