@@ -10,6 +10,11 @@ namespace pos.BL.Transactions
             return purchaseOrderDetailDL.List(keywords);
         }
 
+        public DataTable List(int id)
+        {
+            return purchaseOrderDetailDL.List(id);
+        }
+
         public long Insert(EL.Transactions.PurchaseOrderDetails purchaseOrderDetailEL)
         {
             return purchaseOrderDetailDL.Insert(purchaseOrderDetailEL);

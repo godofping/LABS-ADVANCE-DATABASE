@@ -397,7 +397,7 @@
             // 
             // purchaseorderdetailprice
             // 
-            this.purchaseorderdetailprice.HeaderText = "Product Price";
+            this.purchaseorderdetailprice.HeaderText = "Price";
             this.purchaseorderdetailprice.Name = "purchaseorderdetailprice";
             this.purchaseorderdetailprice.ReadOnly = true;
             // 

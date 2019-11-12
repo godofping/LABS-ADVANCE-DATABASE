@@ -13,6 +13,8 @@
 <table tablename="staffs" alias="" left="958" top="218" width="150" height="173" />
 <table tablename="staffpositions" alias="" left="1193" top="295" width="150" height="113" />
 <table tablename="basicinformations" alias="" left="1393" top="221" width="150" height="173" />
+<table tablename="paymentmethods" alias="" left="157" top="317" width="150" height="113" />
+<table tablename="shippingmethods" alias="" left="385" top="370" width="150" height="113" />
 <join type = "Inner Join">
 <from tablename = "purchaseorderdetails" alias = "">purchaseorderid</from>
 <to tablename = "purchaseorders" alias = "">purchaseorderid</to>
@@ -44,6 +46,14 @@
 <join type = "Inner Join">
 <from tablename = "staffs" alias = "">basicinformationid</from>
 <to tablename = "basicinformations" alias = "">basicinformationid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "purchaseorders" alias = "">paymentmethodid</from>
+<to tablename = "paymentmethods" alias = "">paymentmethodid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "purchaseorders" alias = "">shippingmethodid</from>
+<to tablename = "shippingmethods" alias = "">shippingmethodid</to>
 </join>
 </canvas>
 <grid>
@@ -681,6 +691,36 @@
 <table tablename="basicinformations"></table>
 <field>birthdate</field>
 <alias>Birth Date</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="44">
+<table tablename="paymentmethods"></table>
+<field>paymentmethod</field>
+<alias>Payment Method</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="45">
+<table tablename="shippingmethods"></table>
+<field>shippingmethod</field>
+<alias>Shipping Method</alias>
 <show>true</show>
 <sortorder></sortorder>
 <sort></sort>

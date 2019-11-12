@@ -377,7 +377,7 @@ namespace pos.PL.Transactions
             }
             else
             {
-                frmViewPurchaseOrder frmViewPurchaseOrder = new frmViewPurchaseOrder(purchaseOrderEL);
+                frmViewPurchaseOrder frmViewPurchaseOrder = new frmViewPurchaseOrder(this, purchaseOrderEL);
                 frmViewPurchaseOrder.ShowDialog();
             }
         }

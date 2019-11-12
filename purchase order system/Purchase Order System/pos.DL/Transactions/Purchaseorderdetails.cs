@@ -5,7 +5,13 @@ namespace pos.DL.Transactions
     {
         public DataTable List(string keywords)
         {
-            string sQuery = "select * from purchaseorders_view";
+            string sQuery = "select * from purchaseorderdetails_view";
+            return Helper.executeQuery(sQuery);
+        }
+
+        public DataTable List(int id)
+        {
+            string sQuery = "select * from purchaseorderdetails_view where `Purchase Order ID` = " + id + "";
             return Helper.executeQuery(sQuery);
         }
 

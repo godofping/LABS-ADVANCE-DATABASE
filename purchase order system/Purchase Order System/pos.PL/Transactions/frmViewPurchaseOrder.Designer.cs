@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnRecieve = new System.Windows.Forms.Button();
             this.printCancel = new System.Windows.Forms.Button();
@@ -92,15 +92,15 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Payment Method";
             // 
-            // btnCancel
+            // btnClose
             // 
-            this.btnCancel.Location = new System.Drawing.Point(847, 507);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 50;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClose.Location = new System.Drawing.Point(847, 507);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 50;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnPrint
             // 
@@ -133,7 +133,7 @@
             // 
             this.txtPurchaseOrderID.Location = new System.Drawing.Point(123, 22);
             this.txtPurchaseOrderID.Name = "txtPurchaseOrderID";
-            this.txtPurchaseOrderID.Size = new System.Drawing.Size(74, 20);
+            this.txtPurchaseOrderID.Size = new System.Drawing.Size(106, 20);
             this.txtPurchaseOrderID.TabIndex = 100;
             // 
             // label5
@@ -296,7 +296,7 @@
             this.Controls.Add(this.txtPurchaseOrderID);
             this.Controls.Add(this.printCancel);
             this.Controls.Add(this.btnRecieve);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -319,7 +319,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnRecieve;
         private System.Windows.Forms.Button printCancel;
