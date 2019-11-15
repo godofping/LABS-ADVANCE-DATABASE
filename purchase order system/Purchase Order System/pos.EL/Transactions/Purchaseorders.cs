@@ -15,7 +15,7 @@ namespace pos.EL.Transactions
         string purchaseorderstatus;
         float purchaseorderamountpaid;
         float purchasetotalorderamount;
-        string purchaseorderdatedelivered;
+        string purchaseorderdatereceived;
         string purchaseorderdaterequested;
         string purchaseordercomment;
         int isdeleted;
@@ -29,7 +29,7 @@ namespace pos.EL.Transactions
         public string Purchaseorderstatus { get => purchaseorderstatus; set => purchaseorderstatus = value; }
         public float Purchaseorderamountpaid { get => purchaseorderamountpaid; set => purchaseorderamountpaid = value; }
         public float Purchasetotalorderamount { get => purchasetotalorderamount; set => purchasetotalorderamount = value; }
-        public string Purchaseorderdatedelivered { get => purchaseorderdatedelivered; set => purchaseorderdatedelivered = value; }
+        public string Purchaseorderdatereceived { get => purchaseorderdatereceived; set => purchaseorderdatereceived = value; }
         public string Purchaseorderdaterequested { get => purchaseorderdaterequested; set => purchaseorderdaterequested = value; }
         public string Purchaseordercomment { get => purchaseordercomment; set => purchaseordercomment = value; }
         public int Isdeleted { get => isdeleted; set => isdeleted = value; }

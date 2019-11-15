@@ -13,7 +13,7 @@ namespace pos.DL.Transactions
 
         public DataTable List(int id)
         {
-            string sQuery = "select * from inventories_view where subcategoryid = " + id + "";
+            string sQuery = "select * from inventories_view where `Product Id` = " + id + "";
             return Helper.executeQuery(sQuery);
         }
 
@@ -25,6 +25,11 @@ namespace pos.DL.Transactions
         public bool Update(EL.Transactions.Inventories inventoryEL)
         {
             return Helper.executeNonQueryBool("update inventories set reorderlevel = '" + inventoryEL.Reorderlevel + "', inventorylastupdated = '" + DateTime.Today.ToString("yyyy-MM-dd") + "'  where inventoryid = '" + inventoryEL.Inventoryid + "'");
+        }
+
+        public bool UpdateStocks(EL.Transactions.Inventories inventoryEL)
+        {
+            return Helper.executeNonQueryBool("update inventories set quantityinstocks = '" + inventoryEL.Quantityinstocks + "', inventorylastupdated = '" + inventoryEL.Inventorylastupdated + "' where inventoryid = '" + inventoryEL.Inventoryid + "'");
         }
 
     }

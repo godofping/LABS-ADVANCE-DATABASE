@@ -34,8 +34,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtComment = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTotalAmount = new System.Windows.Forms.TextBox();
             this.cbShippingMethod = new System.Windows.Forms.ComboBox();
@@ -70,8 +68,6 @@
             this.gbInformations.Controls.Add(this.btnSave);
             this.gbInformations.Controls.Add(this.label8);
             this.gbInformations.Controls.Add(this.txtComment);
-            this.gbInformations.Controls.Add(this.label7);
-            this.gbInformations.Controls.Add(this.dtpDeliveryDate);
             this.gbInformations.Controls.Add(this.label6);
             this.gbInformations.Controls.Add(this.txtTotalAmount);
             this.gbInformations.Controls.Add(this.cbShippingMethod);
@@ -114,7 +110,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(204, 78);
+            this.label8.Location = new System.Drawing.Point(6, 81);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 13);
             this.label8.TabIndex = 88;
@@ -122,33 +118,16 @@
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(207, 94);
+            this.txtComment.Location = new System.Drawing.Point(9, 97);
             this.txtComment.Multiline = true;
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(172, 92);
             this.txtComment.TabIndex = 87;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 75);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
-            this.label7.TabIndex = 86;
-            this.label7.Text = "Delivery Date";
-            // 
-            // dtpDeliveryDate
-            // 
-            this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDeliveryDate.Location = new System.Drawing.Point(9, 91);
-            this.dtpDeliveryDate.Name = "dtpDeliveryDate";
-            this.dtpDeliveryDate.Size = new System.Drawing.Size(172, 20);
-            this.dtpDeliveryDate.TabIndex = 85;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(401, 78);
+            this.label6.Location = new System.Drawing.Point(204, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 84;
@@ -156,7 +135,7 @@
             // 
             // txtTotalAmount
             // 
-            this.txtTotalAmount.Location = new System.Drawing.Point(404, 94);
+            this.txtTotalAmount.Location = new System.Drawing.Point(207, 96);
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.Size = new System.Drawing.Size(172, 20);
             this.txtTotalAmount.TabIndex = 83;
@@ -229,7 +208,7 @@
             // 
             // btnManagePurchaseOrderProducts
             // 
-            this.btnManagePurchaseOrderProducts.Location = new System.Drawing.Point(609, 91);
+            this.btnManagePurchaseOrderProducts.Location = new System.Drawing.Point(404, 94);
             this.btnManagePurchaseOrderProducts.Name = "btnManagePurchaseOrderProducts";
             this.btnManagePurchaseOrderProducts.Size = new System.Drawing.Size(172, 46);
             this.btnManagePurchaseOrderProducts.TabIndex = 51;
@@ -412,8 +391,6 @@
         private System.Windows.Forms.ComboBox cbPaymentMethod;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dtpDeliveryDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtComment;
         private System.Windows.Forms.Button btnCancel;

@@ -99,9 +99,10 @@ namespace pos.PL.Transactions
             dgv.Columns["Staff City"].Visible = false;
             dgv.Columns["Staff Zip Code"].Visible = false;
             dgv.Columns["Staff Province"].Visible = false;
+            dgv.Columns["Comment"].Visible = false;
         }
 
-        private void LoadData(string keywords)
+        public void LoadData(string keywords)
         {
             dgv.DataSource = purchaseOrderBL.List(keywords);
         }
@@ -119,7 +120,6 @@ namespace pos.PL.Transactions
             errorProvider1.SetError(txtPurchaseOrderName, "");
             errorProvider1.SetError(cbPaymentMethod, "");
             errorProvider1.SetError(cbShippingMethod, "");
-            errorProvider1.SetError(dtpDeliveryDate, "");
             errorProvider1.SetError(txtComment, "");
             errorProvider1.SetError(btnManagePurchaseOrderProducts, "");
         }
@@ -147,7 +147,6 @@ namespace pos.PL.Transactions
             cbShippingMethod.SelectedIndex = -1;
             cbShippingMethod.Text = "";
 
-            dtpDeliveryDate.ResetText();
             txtComment.ResetText();
 
             txtTotalAmount.ResetText();
@@ -185,15 +184,6 @@ namespace pos.PL.Transactions
             else
                 errorProvider1.SetError(cbShippingMethod, "");
 
-            if (dtpDeliveryDate.Text.Equals(""))
-            {
-                errorProvider1.SetError(dtpDeliveryDate, "This field is required.");
-                status = false;
-            }
-            else
-                errorProvider1.SetError(dtpDeliveryDate, "");
-
-
             if (txtComment.Text.Equals(""))
             {
                 errorProvider1.SetError(txtComment, "This field is required.");
@@ -224,7 +214,7 @@ namespace pos.PL.Transactions
             purchaseOrderEL.Purchaseorderstatus = "PENDING";
             purchaseOrderEL.Purchaseorderamountpaid = 0;
             purchaseOrderEL.Purchasetotalorderamount = Convert.ToSingle(txtTotalAmount.Text);
-            purchaseOrderEL.Purchaseorderdatedelivered = dtpDeliveryDate.Value.ToString("yyyy-MM-dd");
+            purchaseOrderEL.Purchaseorderdatereceived = "00-00-0000";
             purchaseOrderEL.Purchaseorderdaterequested = DateTime.Now.ToString("yyyy-MM-dd");
             purchaseOrderEL.Purchaseordercomment = txtComment.Text;
 
@@ -239,8 +229,8 @@ namespace pos.PL.Transactions
                 purchaseOrderEL.Purchaseordername = row.Cells["Purchase Order Name"].Value.ToString();
                 paymentMethodEL.Paymentmethod = row.Cells["Payment Method"].Value.ToString();
                 shippingMethodEL.Shippingmethod = row.Cells["Shipping Method"].Value.ToString();
-                purchaseOrderEL.Purchaseorderdaterequested = row.Cells["Request Date"].Value.ToString();
-                purchaseOrderEL.Purchaseorderdatedelivered = row.Cells["Delivery Date"].Value.ToString();
+                purchaseOrderEL.Purchaseorderdaterequested = row.Cells["Date Requested"].Value.ToString();
+                purchaseOrderEL.Purchaseorderdatereceived = row.Cells["Date Received"].Value.ToString();
                 purchaseOrderEL.Purchaseordercomment = row.Cells["Comment"].Value.ToString();
                 purchaseOrderEL.Purchasetotalorderamount = Convert.ToSingle(row.Cells["Total Amount"].Value);
                 purchaseOrderEL.Purchaseorderamountpaid = Convert.ToSingle(row.Cells["Amount Paid"].Value);
@@ -252,7 +242,6 @@ namespace pos.PL.Transactions
             txtPurchaseOrderName.Text = purchaseOrderEL.Purchaseordername.ToString();
             cbPaymentMethod.SelectedIndex = cbPaymentMethod.FindString(paymentMethodEL.Paymentmethod);
             cbShippingMethod.SelectedIndex = cbShippingMethod.FindString(shippingMethodEL.Shippingmethod);
-            dtpDeliveryDate.Text = purchaseOrderEL.Purchaseorderdatedelivered.ToString();
             txtComment.Text = purchaseOrderEL.Purchaseordercomment.ToString();
             txtTotalAmount.Text = purchaseOrderEL.Purchasetotalorderamount.ToString();
 
@@ -307,9 +296,9 @@ namespace pos.PL.Transactions
                     foreach (DataGridViewRow row in frmManagePurchaseOrderProducts.dgv.Rows)
                     {
                         purchaseOrderDetailEL.Productid = Convert.ToInt32(row.Cells[0].Value);
-                        purchaseOrderDetailEL.Purchaseorderdetailquantity = Convert.ToInt32(row.Cells[4].Value);
+                        purchaseOrderDetailEL.Purchaseorderdetailquantity = Convert.ToInt32(row.Cells[3].Value);
                         purchaseOrderDetailEL.Purchaseorderid = purchaseOrderEL.Purchaseorderid;
-                        purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToInt32(row.Cells[3].Value);
+                        purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToInt32(row.Cells[4].Value);
 
                         if (purchaseOrderDetailBL.Insert(purchaseOrderDetailEL) == 0)
                         {
@@ -432,5 +421,7 @@ namespace pos.PL.Transactions
         {
             getDataFromDataGridView();
         }
+
+      
     }
 }

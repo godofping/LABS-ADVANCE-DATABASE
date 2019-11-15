@@ -24,5 +24,10 @@ namespace pos.BL.Transactions
             return InventoryDL.Update(inventoryEL);
         }
 
+        public bool UpdateStocks(EL.Transactions.Inventories inventoryEL)
+        {
+            return InventoryDL.UpdateStocks(inventoryEL);
+        }
+
     }
 }
