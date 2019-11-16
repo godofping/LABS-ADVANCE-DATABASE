@@ -134,10 +134,6 @@ namespace pos.PL.Transactions
                 txtDateReceived.ResetText();
             }
 
-            
-
-
-
         }
 
         private void GetDataFromForm()
@@ -169,7 +165,7 @@ namespace pos.PL.Transactions
 
         private void ManageButtons()
         {
-            if(purchaseOrderEL.Purchaseorderstatus.Equals("PENDING"))
+            if (purchaseOrderEL.Purchaseorderstatus.Equals("PENDING"))
             {
                 btnReceive.Enabled = true;
                 btnCancel.Enabled = true;
@@ -253,7 +249,7 @@ namespace pos.PL.Transactions
 
                     if (purchaseOrderBL.Canceled(purchaseOrderEL))
                     {
-             
+                        UpdateStocks();
                         frmManagePurchaseOrders.LoadData(frmManagePurchaseOrders.txtSearch.Text);
                         LoadData();
                         getDataFromDataGridView();
