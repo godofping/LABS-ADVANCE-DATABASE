@@ -9,12 +9,14 @@
 <table tablename="products" alias="" left="714" top="9" width="150" height="203" />
 <table tablename="subcategories" alias="" left="953" top="61" width="150" height="113" />
 <table tablename="categories" alias="" left="1164" top="114" width="150" height="113" />
-<table tablename="suppliers" alias="" left="754" top="254" width="150" height="113" />
+<table tablename="suppliers" alias="" left="670" top="326" width="150" height="143" />
 <table tablename="staffs" alias="" left="958" top="218" width="150" height="173" />
-<table tablename="staffpositions" alias="" left="1193" top="295" width="150" height="113" />
-<table tablename="basicinformations" alias="" left="1393" top="221" width="150" height="173" />
+<table tablename="staffpositions" alias="" left="1214" top="313" width="150" height="113" />
+<table tablename="basicinformations" alias="" left="1399" top="213" width="150" height="173" />
 <table tablename="paymentmethods" alias="" left="157" top="317" width="150" height="113" />
 <table tablename="shippingmethods" alias="" left="385" top="370" width="150" height="113" />
+<table tablename="contactdetails" alias="" left="869" top="435" width="150" height="113" />
+<table tablename="addresses" alias="" left="1099" top="486" width="150" height="128" />
 <join type = "Inner Join">
 <from tablename = "purchaseorderdetails" alias = "">purchaseorderid</from>
 <to tablename = "purchaseorders" alias = "">purchaseorderid</to>
@@ -22,14 +24,6 @@
 <join type = "Inner Join">
 <from tablename = "purchaseorderdetails" alias = "">productid</from>
 <to tablename = "products" alias = "">productid</to>
-</join>
-<join type = "Inner Join">
-<from tablename = "products" alias = "">subcategoryid</from>
-<to tablename = "subcategories" alias = "">subcategoryid</to>
-</join>
-<join type = "Inner Join">
-<from tablename = "subcategories" alias = "">categoryid</from>
-<to tablename = "categories" alias = "">categoryid</to>
 </join>
 <join type = "Inner Join">
 <from tablename = "purchaseorders" alias = "">supplierid</from>
@@ -40,6 +34,26 @@
 <to tablename = "staffs" alias = "">staffid</to>
 </join>
 <join type = "Inner Join">
+<from tablename = "purchaseorders" alias = "">paymentmethodid</from>
+<to tablename = "paymentmethods" alias = "">paymentmethodid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "purchaseorders" alias = "">shippingmethodid</from>
+<to tablename = "shippingmethods" alias = "">shippingmethodid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "products" alias = "">subcategoryid</from>
+<to tablename = "subcategories" alias = "">subcategoryid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "subcategories" alias = "">categoryid</from>
+<to tablename = "categories" alias = "">categoryid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "suppliers" alias = "">contactdetailid</from>
+<to tablename = "contactdetails" alias = "">contactdetailid</to>
+</join>
+<join type = "Inner Join">
 <from tablename = "staffs" alias = "">staffpositionid</from>
 <to tablename = "staffpositions" alias = "">staffpositionid</to>
 </join>
@@ -48,12 +62,8 @@
 <to tablename = "basicinformations" alias = "">basicinformationid</to>
 </join>
 <join type = "Inner Join">
-<from tablename = "purchaseorders" alias = "">paymentmethodid</from>
-<to tablename = "paymentmethods" alias = "">paymentmethodid</to>
-</join>
-<join type = "Inner Join">
-<from tablename = "purchaseorders" alias = "">shippingmethodid</from>
-<to tablename = "shippingmethods" alias = "">shippingmethodid</to>
+<from tablename = "contactdetails" alias = "">addressid</from>
+<to tablename = "addresses" alias = "">addressid</to>
 </join>
 </canvas>
 <grid>
@@ -419,9 +429,9 @@
 </column>
 <column id="25">
 <table tablename="purchaseorders"></table>
-<field>purchaseorderdatedelivered</field>
-<alias>Purchase Order Date Delivered</alias>
-<show>true</show>
+<field></field>
+<alias></alias>
+<show>false</show>
 <sortorder></sortorder>
 <sort></sort>
 <groupby>false</groupby>
@@ -721,6 +731,126 @@
 <table tablename="shippingmethods"></table>
 <field>shippingmethod</field>
 <alias>Shipping Method</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="46">
+<table tablename="contactdetails"></table>
+<field>addressid</field>
+<alias>Supplier Address ID</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="47">
+<table tablename="contactdetails"></table>
+<field>contactnumber</field>
+<alias>Supplier Contact Number</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="48">
+<table tablename="contactdetails"></table>
+<field>emailaddress</field>
+<alias>Supplier Email Address</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="49">
+<table tablename="addresses"></table>
+<field>address</field>
+<alias>Supplier Address</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="50">
+<table tablename="addresses"></table>
+<field>city</field>
+<alias>Supplier City</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="51">
+<table tablename="addresses"></table>
+<field>zipcode</field>
+<alias>Supplier Zip Code</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="52">
+<table tablename="addresses"></table>
+<field>province</field>
+<alias>Supplier Province</alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="53">
+<table tablename="purchaseorders"></table>
+<field>purchaseorderdatereceived</field>
+<alias>Date Received</alias>
 <show>true</show>
 <sortorder></sortorder>
 <sort></sort>

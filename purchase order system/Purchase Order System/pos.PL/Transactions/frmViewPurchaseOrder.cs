@@ -86,6 +86,13 @@ namespace pos.PL.Transactions
             dgv.Columns["Gender"].Visible = false;
             dgv.Columns["Birth Date"].Visible = false;
             dgv.Columns["Payment Method"].Visible = false;
+            dgv.Columns["Supplier Address ID"].Visible = false;
+            dgv.Columns["Supplier Contact Number"].Visible = false;
+            dgv.Columns["Supplier Email Address"].Visible = false;
+            dgv.Columns["Supplier Address"].Visible = false;
+            dgv.Columns["Supplier City"].Visible = false;
+            dgv.Columns["Supplier Zip Code"].Visible = false;
+            dgv.Columns["Supplier Province"].Visible = false;
             dgv.Columns["Shipping Method"].Visible = false;
         }
 
@@ -194,7 +201,6 @@ namespace pos.PL.Transactions
             HiddenColumns();
             getDataFromDataGridView();
             ManageButtons();
-
         }
 
         private void ShowMessageBox(bool condition)
@@ -316,6 +322,12 @@ namespace pos.PL.Transactions
         private void btnCancele_Click(object sender, EventArgs e)
         {
             Cancel();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            frmCrystalReportViewerPurchaseOrder frmCrystalReportViewerPurchaseOrder = new frmCrystalReportViewerPurchaseOrder(purchaseOrderEL);
+            frmCrystalReportViewerPurchaseOrder.Show();
         }
     }
 }

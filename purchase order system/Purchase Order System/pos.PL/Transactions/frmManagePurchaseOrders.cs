@@ -298,7 +298,7 @@ namespace pos.PL.Transactions
                         purchaseOrderDetailEL.Productid = Convert.ToInt32(row.Cells[0].Value);
                         purchaseOrderDetailEL.Purchaseorderdetailquantity = Convert.ToInt32(row.Cells[3].Value);
                         purchaseOrderDetailEL.Purchaseorderid = purchaseOrderEL.Purchaseorderid;
-                        purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToInt32(row.Cells[4].Value);
+                        purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToInt32(row.Cells[2].Value);
 
                         if (purchaseOrderDetailBL.Insert(purchaseOrderDetailEL) == 0)
                         {

@@ -4,8 +4,6 @@
 
     partial class dsPurchaseOrder
     {
-        partial class DataTable1DataTable
-        {
-        }
+
     }
 }
