@@ -39,7 +39,7 @@ namespace pos.DL
                     {
                         rslt = 0;
                         trans.Rollback();
-                        throw ex;
+                      //  throw ex;
                     }
                     return rslt;
                 }
@@ -79,7 +79,7 @@ namespace pos.DL
                     {
                         rslt = false;
                         trans.Rollback();
-                        throw ex;
+                        //throw ex;
                     }
                     return rslt;
                 }

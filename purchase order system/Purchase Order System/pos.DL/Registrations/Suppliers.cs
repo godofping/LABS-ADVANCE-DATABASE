@@ -23,7 +23,7 @@ namespace pos.DL.Registrations
 
         public bool Delete(EL.Registrations.Suppliers supplierEL)
         {
-            return Helper.executeNonQueryBool("update suppliers set isdeleted = 1 where supplierid = '" + supplierEL.Supplierid + "' ");
+            return Helper.executeNonQueryBool("delete from suppliers where supplierid = '" + supplierEL.Supplierid + "' ");
         }
     }
 }

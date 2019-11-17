@@ -46,8 +46,6 @@ namespace pos.PL.Registrations
         {
             dgv.Columns["Sub Category ID"].Visible = false;
             dgv.Columns["categoryid"].Visible = false;
-            dgv.Columns["isdeleted"].Visible = false;
-            dgv.Columns["categoriesisdeleted"].Visible = false;
         }
 
         private void LoadData(string keywords)
@@ -124,11 +122,10 @@ namespace pos.PL.Registrations
                 subCategoryEL.Subcategoryid = Convert.ToInt32(row.Cells["Sub Category ID"].Value);
                 subCategoryEL.Subcategoryname = row.Cells["Sub Category Name"].Value.ToString();
                 subCategoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
-                subCategoryEL.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
 
                 categoryEL.Categoryid = Convert.ToInt32(row.Cells["categoryid"].Value);
                 categoryEL.Categoryname = row.Cells["Category Name"].Value.ToString();
-                categoryEL.Isdeleted = Convert.ToInt32(row.Cells["categoriesisdeleted"].Value);
+
 
             }
 

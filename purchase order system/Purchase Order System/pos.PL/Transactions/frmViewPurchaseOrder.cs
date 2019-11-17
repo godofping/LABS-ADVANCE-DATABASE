@@ -78,11 +78,8 @@ namespace pos.PL.Transactions
             dgv.Columns["Sub Category ID"].Visible = false;
             dgv.Columns["Produck SKU"].Visible = false;
             dgv.Columns["Product Price"].Visible = false;
-            dgv.Columns["Product Is Deleted"].Visible = false;
             dgv.Columns["Sub Category Name"].Visible = false;
             dgv.Columns["Category ID"].Visible = false;
-            dgv.Columns["Sub Categories Is Deleted"].Visible = false;
-            dgv.Columns["Category Is Deleted"].Visible = false;
             dgv.Columns["Staff ID"].Visible = false;
             dgv.Columns["Purchase Order Name"].Visible = false;
             dgv.Columns["Purchase Order Supplier ID"].Visible = false;
@@ -94,10 +91,8 @@ namespace pos.PL.Transactions
             dgv.Columns["Date Received"].Visible = false;
             dgv.Columns["Date Requested"].Visible = false;
             dgv.Columns["Purchase Order Comment"].Visible = false;
-            dgv.Columns["Purchase Order Is Deleted"].Visible = false;
             dgv.Columns["Supplier"].Visible = false;
             dgv.Columns["Supplier Contact Detail ID"].Visible = false;
-            dgv.Columns["Supplier Is Deleted"].Visible = false;
             dgv.Columns["Staff Username"].Visible = false;
             dgv.Columns["Staff Password"].Visible = false;
             dgv.Columns["Staff Contact Detail ID"].Visible = false;

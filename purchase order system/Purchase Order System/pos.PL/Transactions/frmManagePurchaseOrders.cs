@@ -71,9 +71,7 @@ namespace pos.PL.Transactions
             dgv.Columns["Purchase Order Supplier ID"].Visible = false;
             dgv.Columns["Purchase Order Payment Method ID"].Visible = false;
             dgv.Columns["Purchase Order Shipping Method ID"].Visible = false;
-            dgv.Columns["Purchase Order Is Deleted"].Visible = false;
             dgv.Columns["Supplier Contact Detail ID"].Visible = false;
-            dgv.Columns["Supplier Is Deleted"].Visible = false;
             dgv.Columns["Supplier Address ID"].Visible = false;
             dgv.Columns["Supplier Contact Number"].Visible = false;
             dgv.Columns["Supplier Email Address"].Visible = false;
@@ -88,7 +86,6 @@ namespace pos.PL.Transactions
             dgv.Columns["Staff Contact Detail ID"].Visible = false;
             dgv.Columns["Staff Basic Information ID"].Visible = false;
             dgv.Columns["Staff Position ID"].Visible = false;
-            dgv.Columns["Staff Is Deleted"].Visible = false;
             dgv.Columns["Staff Position"].Visible = false;
             dgv.Columns["Staff Gender"].Visible = false;
             dgv.Columns["Staff Birth Date"].Visible = false;

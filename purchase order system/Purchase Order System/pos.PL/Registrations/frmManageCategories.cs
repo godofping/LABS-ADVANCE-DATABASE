@@ -45,7 +45,6 @@ namespace pos.PL.Registrations
         private void HiddenColumns()
         {
             dgv.Columns["Category ID"].Visible = false;
-            dgv.Columns["isdeleted"].Visible = false;
         }
 
         private void LoadData(string keywords)
@@ -102,8 +101,6 @@ namespace pos.PL.Registrations
 
                 categoryEL.Categoryid = Convert.ToInt32(row.Cells["Category ID"].Value);
                 categoryEL.Categoryname = row.Cells["Category Name"].Value.ToString();
-                categoryEL.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
-
             }
 
             txtCategoryID.Text = categoryEL.Categoryid.ToString();

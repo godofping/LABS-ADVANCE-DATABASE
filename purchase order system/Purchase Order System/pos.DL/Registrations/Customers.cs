@@ -19,7 +19,7 @@ namespace pos.DL.Registrations
 
         public bool Delete(EL.Registrations.Customers customerEL)
         {
-            return Helper.executeNonQueryBool("update customers set isdeleted = 1 where customerid = '" + customerEL.Customerid + "' ");
+            return Helper.executeNonQueryBool("delete from customers where customerid = '" + customerEL.Customerid + "' ");
         }
 
     }

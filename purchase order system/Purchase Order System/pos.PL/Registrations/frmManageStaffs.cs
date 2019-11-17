@@ -54,7 +54,6 @@ namespace pos.PL.Registrations
             dgv.Columns["addressid"].Visible = false;
             dgv.Columns["staffpositionid"].Visible = false;
             dgv.Columns["password"].Visible = false;
-            dgv.Columns["isdeleted"].Visible = false;
         }
 
         private void LoadData(string keywords)

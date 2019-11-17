@@ -12,7 +12,6 @@ namespace pos.EL.Registrations
         int subcategoryid;
         string productsku;
         float productprice;
-        int isdeleted;
 
         public int Productid { get => productid; set => productid = value; }
         public string Productname { get => productname; set => productname = value; }
@@ -20,6 +19,5 @@ namespace pos.EL.Registrations
         public int Subcategoryid { get => subcategoryid; set => subcategoryid = value; }
         public string Productsku { get => productsku; set => productsku = value; }
         public float Productprice { get => productprice; set => productprice = value; }
-        public int Isdeleted { get => isdeleted; set => isdeleted = value; }
     }
 }

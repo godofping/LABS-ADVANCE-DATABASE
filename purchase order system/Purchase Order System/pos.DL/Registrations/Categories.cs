@@ -22,7 +22,7 @@ namespace pos.DL.Registrations
 
         public bool Delete(EL.Registrations.Categories categoryEL)
         {
-            return Helper.executeNonQueryBool("update categories set isdeleted = 1 where categoryid = '" + categoryEL.Categoryid + "' ");
+            return Helper.executeNonQueryBool("delete from categories where categoryid = '" + categoryEL.Categoryid + "' ");
         }
     }
 }

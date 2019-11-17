@@ -103,7 +103,7 @@ namespace pos.PL
                 StaffInfo.Contactdetailid = Convert.ToInt32(row["contactdetailid"]);
                 StaffInfo.Basicinformationid = Convert.ToInt32(row["basicinformationid"]);
                 StaffInfo.Staffpositionid = Convert.ToInt32(row["staffpositionid"]);
-                StaffInfo.Isdeleted = Convert.ToInt32(row["isdeleted"]);
+   
 
             }
         }

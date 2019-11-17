@@ -42,7 +42,7 @@ namespace pos.DL.Registrations
 
         public bool Delete(EL.Registrations.Staffs staffEL)
         {
-            return Helper.executeNonQueryBool("update staffs set isdeleted = 1 where staffid = '" + staffEL.Staffid + "' ");
+            return Helper.executeNonQueryBool("delete from staffs where staffid = '" + staffEL.Staffid + "' ");
         }
 
 

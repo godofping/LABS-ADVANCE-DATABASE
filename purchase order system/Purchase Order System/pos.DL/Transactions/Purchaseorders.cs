@@ -38,7 +38,7 @@ namespace pos.DL.Transactions
 
         public bool Delete(EL.Transactions.PurchaseOrders purchaseOrderEL)
         {
-            return Helper.executeNonQueryBool("update purchaseorders set isdeleted = 1 where purchaseorderid = " + purchaseOrderEL.Purchaseorderid + "");
+            return Helper.executeNonQueryBool("delete from purchaseorders where purchaseorderid = " + purchaseOrderEL.Purchaseorderid + "");
         }
     }
 }

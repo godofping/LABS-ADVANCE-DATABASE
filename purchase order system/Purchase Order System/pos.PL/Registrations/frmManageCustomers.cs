@@ -51,7 +51,6 @@ namespace pos.PL.Registrations
             dgv.Columns["contactdetailid"].Visible = false;
             dgv.Columns["basicinformationid"].Visible = false;
             dgv.Columns["addressid"].Visible = false;
-            dgv.Columns["isdeleted"].Visible = false;
         }
 
         private void LoadData(string keywords)

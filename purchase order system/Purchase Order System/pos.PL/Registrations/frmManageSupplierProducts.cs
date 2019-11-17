@@ -61,14 +61,9 @@ namespace pos.PL.Registrations
             dgv.Columns["Supplier Product ID"].Visible = false;
             dgv.Columns["subcategoryid"].Visible = false;
             dgv.Columns["contactdetailid"].Visible = false;
-            dgv.Columns["productsisdeleted"].Visible = false;
-            dgv.Columns["isdeleted"].Visible = false;
             dgv.Columns["productid"].Visible = false;
             dgv.Columns["supplierid"].Visible = false;
             dgv.Columns["categoryid"].Visible = false;
-            dgv.Columns["subcategoriesisdeleted"].Visible = false;
-            dgv.Columns["categoriesisdeleted"].Visible = false;
-
         }
 
         private void LoadData(string keywords)
@@ -237,11 +232,10 @@ namespace pos.PL.Registrations
                 productEL.Productdescription = row.Cells["Product Description"].Value.ToString();
                 productEL.Productsku = row.Cells["Product SKU"].Value.ToString();
                 productEL.Productprice = Convert.ToInt32(row.Cells["Product Price"].Value);
-                productEL.Isdeleted = Convert.ToInt32(row.Cells["productsisdeleted"].Value);
+          
 
                 supplierEL.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);
                 supplierEL.Supplier = row.Cells["Supplier"].Value.ToString();
-                supplierEL.Supplierid = Convert.ToInt32(row.Cells["isdeleted"].Value);
 
                 supplierProductEL.Supplierproductid = Convert.ToInt32(row.Cells["Supplier Product ID"].Value);
                 supplierProductEL.Supplierid = Convert.ToInt32(row.Cells["supplierid"].Value);

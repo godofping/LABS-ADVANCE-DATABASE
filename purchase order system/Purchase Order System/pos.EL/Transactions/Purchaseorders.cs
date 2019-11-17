@@ -18,7 +18,6 @@ namespace pos.EL.Transactions
         string purchaseorderdatereceived;
         string purchaseorderdaterequested;
         string purchaseordercomment;
-        int isdeleted;
 
         public int Purchaseorderid { get => purchaseorderid; set => purchaseorderid = value; }
         public int Staffid { get => staffid; set => staffid = value; }
@@ -32,6 +31,5 @@ namespace pos.EL.Transactions
         public string Purchaseorderdatereceived { get => purchaseorderdatereceived; set => purchaseorderdatereceived = value; }
         public string Purchaseorderdaterequested { get => purchaseorderdaterequested; set => purchaseorderdaterequested = value; }
         public string Purchaseordercomment { get => purchaseordercomment; set => purchaseordercomment = value; }
-        public int Isdeleted { get => isdeleted; set => isdeleted = value; }
     }
 }

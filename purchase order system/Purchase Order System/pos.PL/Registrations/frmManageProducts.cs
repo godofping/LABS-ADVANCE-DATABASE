@@ -51,10 +51,7 @@ namespace pos.PL.Registrations
             dgv.Columns["Inventory ID"].Visible = false;
             dgv.Columns["Product ID"].Visible = false;
             dgv.Columns["categoryid"].Visible = false;
-            dgv.Columns["subcategoriesisdeleted"].Visible = false;
-            dgv.Columns["isdeleted"].Visible = false;
             dgv.Columns["subcategoryid"].Visible = false;
-            dgv.Columns["categoriesisdeleted"].Visible = false;
         }
 
         private void LoadData(string keywords)
@@ -247,7 +244,6 @@ namespace pos.PL.Registrations
                 productEL.Productdescription = row.Cells["Product Description"].Value.ToString();
                 productEL.Productsku = row.Cells["Product SKU"].Value.ToString();
                 productEL.Productprice = Convert.ToSingle(row.Cells["Product Price"].Value);
-                productEL.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
 
                 inventoryEL.Inventoryid = Convert.ToInt32(row.Cells["Inventory ID"].Value);
                 inventoryEL.Reorderlevel = Convert.ToInt32(row.Cells["Reorder Level"].Value);

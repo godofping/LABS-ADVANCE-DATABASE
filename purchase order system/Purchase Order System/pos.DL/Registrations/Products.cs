@@ -27,7 +27,7 @@ namespace pos.DL.Registrations
 
         public bool Delete(EL.Registrations.Products productEL)
         {
-            return Helper.executeNonQueryBool("update products set isdeleted = 1 where productid = '" + productEL.Productid + "' ");
+            return Helper.executeNonQueryBool("delete from products where productid = '" + productEL.Productid + "' ");
         }
     }
 }

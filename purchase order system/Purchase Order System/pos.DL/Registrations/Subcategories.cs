@@ -27,7 +27,7 @@ namespace pos.DL.Registrations
 
         public bool Delete(EL.Registrations.SubCategories subCategoryEL)
         {
-            return Helper.executeNonQueryBool("update subcategories set isdeleted = 1 where subcategoryid = '" + subCategoryEL.Subcategoryid + "' ");
+            return Helper.executeNonQueryBool("delete from subcategories where subcategoryid = '" + subCategoryEL.Subcategoryid + "' ");
         }
     }
 }

@@ -50,8 +50,6 @@ namespace pos.PL.Registrations
             dgv.Columns["Supplier ID"].Visible = false;
             dgv.Columns["contactdetailid"].Visible = false;
             dgv.Columns["addressid"].Visible = false;
-            dgv.Columns["isdeleted"].Visible = false;
-
         }
 
         private void LoadData(string keywords)
@@ -188,7 +186,6 @@ namespace pos.PL.Registrations
                 supplierEL.Supplierid = Convert.ToInt32(row.Cells["Supplier ID"].Value);
                 supplierEL.Supplier = row.Cells["Supplier"].Value.ToString();
                 supplierEL.Contactdetailid = Convert.ToInt32(row.Cells["contactdetailid"].Value);
-                supplierEL.Isdeleted = Convert.ToInt32(row.Cells["isdeleted"].Value);
 
             }
 
