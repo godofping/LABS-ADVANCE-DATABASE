@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv = new System.Windows.Forms.DataGridView();
+            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseorderdetailprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchaseorderdetailquantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subcategoryname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
             this.gbControls = new System.Windows.Forms.GroupBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -59,13 +66,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseorderdetailprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchaseorderdetailquantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subcategoryname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.gbControls.SuspendLayout();
             this.gbInformations.SuspendLayout();
@@ -100,6 +100,51 @@
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
+            // 
+            // productid
+            // 
+            this.productid.HeaderText = "Product ID";
+            this.productid.Name = "productid";
+            this.productid.ReadOnly = true;
+            this.productid.Visible = false;
+            // 
+            // productname
+            // 
+            this.productname.HeaderText = "Product Name";
+            this.productname.Name = "productname";
+            this.productname.ReadOnly = true;
+            // 
+            // purchaseorderdetailprice
+            // 
+            this.purchaseorderdetailprice.HeaderText = "Price";
+            this.purchaseorderdetailprice.Name = "purchaseorderdetailprice";
+            this.purchaseorderdetailprice.ReadOnly = true;
+            // 
+            // purchaseorderdetailquantity
+            // 
+            this.purchaseorderdetailquantity.HeaderText = "Quantity";
+            this.purchaseorderdetailquantity.Name = "purchaseorderdetailquantity";
+            this.purchaseorderdetailquantity.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Amount";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // categoryname
+            // 
+            this.categoryname.HeaderText = "categoryname";
+            this.categoryname.Name = "categoryname";
+            this.categoryname.ReadOnly = true;
+            this.categoryname.Visible = false;
+            // 
+            // subcategoryname
+            // 
+            this.subcategoryname.HeaderText = "subcategoryname";
+            this.subcategoryname.Name = "subcategoryname";
+            this.subcategoryname.ReadOnly = true;
+            this.subcategoryname.Visible = false;
             // 
             // btnClose
             // 
@@ -151,7 +196,7 @@
             this.btnDelete.TabIndex = 50;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // gbInformations
             // 
@@ -381,51 +426,6 @@
             this.label8.Size = new System.Drawing.Size(100, 18);
             this.label8.TabIndex = 92;
             this.label8.Text = "Total Amount:";
-            // 
-            // productid
-            // 
-            this.productid.HeaderText = "Product ID";
-            this.productid.Name = "productid";
-            this.productid.ReadOnly = true;
-            this.productid.Visible = false;
-            // 
-            // productname
-            // 
-            this.productname.HeaderText = "Product Name";
-            this.productname.Name = "productname";
-            this.productname.ReadOnly = true;
-            // 
-            // purchaseorderdetailprice
-            // 
-            this.purchaseorderdetailprice.HeaderText = "Price";
-            this.purchaseorderdetailprice.Name = "purchaseorderdetailprice";
-            this.purchaseorderdetailprice.ReadOnly = true;
-            // 
-            // purchaseorderdetailquantity
-            // 
-            this.purchaseorderdetailquantity.HeaderText = "Quantity";
-            this.purchaseorderdetailquantity.Name = "purchaseorderdetailquantity";
-            this.purchaseorderdetailquantity.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Amount";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            // 
-            // categoryname
-            // 
-            this.categoryname.HeaderText = "categoryname";
-            this.categoryname.Name = "categoryname";
-            this.categoryname.ReadOnly = true;
-            this.categoryname.Visible = false;
-            // 
-            // subcategoryname
-            // 
-            this.subcategoryname.HeaderText = "subcategoryname";
-            this.subcategoryname.Name = "subcategoryname";
-            this.subcategoryname.ReadOnly = true;
-            this.subcategoryname.Visible = false;
             // 
             // frmManagePurchaseOrderProducts
             // 

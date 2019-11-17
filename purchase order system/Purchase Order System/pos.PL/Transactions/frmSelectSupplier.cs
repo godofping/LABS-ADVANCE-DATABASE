@@ -13,12 +13,13 @@ namespace pos.PL.Transactions
     public partial class frmSelectSupplier : Form
     {
 
+        #region "Variables"
+
         EL.Registrations.Suppliers supplierEL;
-
         BL.Registrations.Suppliers supplierBL = new BL.Registrations.Suppliers();
-
-
         frmManagePurchaseOrders frmManagePurchaseOrders;
+
+        #endregion
 
         public frmSelectSupplier(frmManagePurchaseOrders _frmManagePurchaseOrders, EL.Registrations.Suppliers _supplierEL)
         {
@@ -45,13 +46,16 @@ namespace pos.PL.Transactions
             }
         }
 
+        #region "Methods"
         private void PopulateControls()
         {
             cbSupplierName.DisplayMember = "Supplier";
             cbSupplierName.ValueMember = "Supplier ID";
             cbSupplierName.DataSource = supplierBL.List("");
         }
+        #endregion
 
+        #region "Events"
         private void frmSelectSupplier_Load(object sender, EventArgs e)
         {
             PopulateControls();
@@ -66,7 +70,7 @@ namespace pos.PL.Transactions
 
             frmManagePurchaseOrders.cbSupplierName.SelectedIndex = frmManagePurchaseOrders.cbSupplierName.FindString(cbSupplierName.Text);
             frmManagePurchaseOrders.ManageForm(true);
-            
+
             frmManagePurchaseOrders.current = "ADD";
             this.Close();
         }
@@ -75,5 +79,7 @@ namespace pos.PL.Transactions
         {
             this.Close();
         }
+        #endregion
+
     }
 }

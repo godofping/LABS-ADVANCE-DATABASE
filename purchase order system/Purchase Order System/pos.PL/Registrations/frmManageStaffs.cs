@@ -6,19 +6,21 @@ namespace pos.PL.Registrations
     public partial class frmManageStaffs : Form
     {
 
+        #region "Variables"
+
         EL.Registrations.Staffs staffEL = new EL.Registrations.Staffs();
         EL.Registrations.ContactDetails contactDetailEL = new EL.Registrations.ContactDetails();
         EL.Registrations.BasicInformations basicInformationEL = new EL.Registrations.BasicInformations();
         EL.Registrations.Addresses addressEL = new EL.Registrations.Addresses();
         EL.Registrations.StaffPositions staffPositionEL = new EL.Registrations.StaffPositions();
-
         BL.Registrations.Staffs staffBL = new BL.Registrations.Staffs();
         BL.Registrations.ContactDetails contactDetailBL = new BL.Registrations.ContactDetails();
         BL.Registrations.BasicInformations basicInformationBL = new BL.Registrations.BasicInformations();
         BL.Registrations.Addresses adressBL = new BL.Registrations.Addresses();
         BL.Registrations.StaffPositions staffPositionBL = new BL.Registrations.StaffPositions();
-
         string current = "";
+
+        #endregion
 
         public frmManageStaffs()
         {
@@ -43,16 +45,7 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmManageStaffs_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            txtZipCode.MaxLength = 6;
-            PopulateControls();
-            ClearFields();
-        }
-
+        #region "Methods"
         private void HiddenColumns()
         {
             dgv.Columns["Staff ID"].Visible = false;
@@ -272,9 +265,6 @@ namespace pos.PL.Registrations
             staffEL.Username = txtUsername.Text;
             staffEL.Password = txtPassword.Text;
             staffEL.Staffpositionid = Convert.ToInt32(cbPosition.SelectedValue);
-
-
-
         }
 
         private void GetDataFromDataGridView()
@@ -346,45 +336,40 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Add()
+        private void OnlyNumWithSinglePoint(object sender, KeyPressEventArgs e)
         {
- 
-            if (staffBL.CheckUsername(staffEL).Rows.Count == 0)
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
             {
-                contactDetailEL.Addressid = Convert.ToInt32(adressBL.Insert(addressEL));
-                staffEL.Contactdetailid = Convert.ToInt32(contactDetailBL.Insert(contactDetailEL));
-                staffEL.Basicinformationid = Convert.ToInt32(basicInformationBL.Insert(basicInformationEL));
-                staffEL.Staffpositionid = Convert.ToInt32(staffPositionEL.Staffpositionid);
-                ShowMessageBox(staffBL.Insert(staffEL) > 0);
-
-                ManageForm(false);
-                ClearFields();
-            }
-            else
-            {
-                MessageBox.Show("Username is taken. Please change.");
+                e.Handled = true;
             }
         }
 
-        private void Edit()
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #region "Events"
+        private void frmManageStaffs_Load(object sender, EventArgs e)
         {
-
-            if (staffBL.CheckUsername(staffEL, staffEL.Staffid).Rows.Count == 0)
-            {
-                ShowMessageBox(adressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & basicInformationBL.Update(basicInformationEL) & staffBL.Update(staffEL));
-                ManageForm(false);
-                ClearFields();
-            }
-            else
-            {
-                MessageBox.Show("Username is taken. Please change.");
-            }
-
-        }
-
-        private void Delete()
-        {
-            ShowMessageBox(staffBL.Delete(staffEL));
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            txtZipCode.MaxLength = 6;
+            PopulateControls();
+            ClearFields();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -417,7 +402,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                ShowMessageBox(staffBL.Delete(staffEL));
             }
         }
 
@@ -428,11 +413,34 @@ namespace pos.PL.Registrations
                 GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    if (staffBL.CheckUsername(staffEL).Rows.Count == 0)
+                    {
+                        contactDetailEL.Addressid = Convert.ToInt32(adressBL.Insert(addressEL));
+                        staffEL.Contactdetailid = Convert.ToInt32(contactDetailBL.Insert(contactDetailEL));
+                        staffEL.Basicinformationid = Convert.ToInt32(basicInformationBL.Insert(basicInformationEL));
+                        staffEL.Staffpositionid = Convert.ToInt32(staffPositionEL.Staffpositionid);
+                        ShowMessageBox(staffBL.Insert(staffEL) > 0);
+
+                        ManageForm(false);
+                        ClearFields();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username is taken. Please change.");
+                    }
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    if (staffBL.CheckUsername(staffEL, staffEL.Staffid).Rows.Count == 0)
+                    {
+                        ShowMessageBox(adressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & basicInformationBL.Update(basicInformationEL) & staffBL.Update(staffEL));
+                        ManageForm(false);
+                        ClearFields();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username is taken. Please change.");
+                    }
                 }
 
 
@@ -463,24 +471,14 @@ namespace pos.PL.Registrations
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
-        }
-
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            TextBox txtDecimal = sender as TextBox;
-            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
+            OnlyNumWithSinglePoint(sender, e);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadData(txtSearch.Text);
         }
+        #endregion
 
     }
 }

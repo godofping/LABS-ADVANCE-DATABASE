@@ -13,22 +13,23 @@ namespace pos.PL.Transactions
     public partial class frmManagePurchaseOrderProducts : Form
     {
 
+        #region "Variables"
+
         EL.Registrations.Categories categoryEL = new EL.Registrations.Categories();
         EL.Registrations.SubCategories subCategoryEL = new EL.Registrations.SubCategories();
         EL.Registrations.Products productEL = new EL.Registrations.Products();
         EL.Transactions.PurchaseOrderDetails purchaseOrderDetailEL = new EL.Transactions.PurchaseOrderDetails();
         EL.Transactions.Inventories inventoryEL = new EL.Transactions.Inventories();
-
         BL.Registrations.Categories categoryBL = new BL.Registrations.Categories();
         BL.Registrations.SubCategories subCategoryBL = new BL.Registrations.SubCategories();
         BL.Registrations.Products productBL = new BL.Registrations.Products();
         BL.Transactions.PurchaseOrderDetails purchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
         BL.Registrations.SupplierProducts supplierProductBL = new BL.Registrations.SupplierProducts();
         BL.Transactions.Inventories inventoryBL = new BL.Transactions.Inventories();
-
         frmManagePurchaseOrders frmManagePurchaseOrders;
-
         string current = "";
+
+        #endregion
 
         public frmManagePurchaseOrderProducts(frmManagePurchaseOrders _frmManagePurchaseOrders)
         {
@@ -54,7 +55,7 @@ namespace pos.PL.Transactions
             }
         }
 
-
+        #region "Methods"
         private void ReadOnlyControls()
         {
             txtProductSKU.ReadOnly = true;
@@ -244,7 +245,7 @@ namespace pos.PL.Transactions
                 purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToSingle(row.Cells["purchaseorderdetailprice"].Value);
                 categoryEL.Categoryname = row.Cells["categoryname"].Value.ToString();
                 subCategoryEL.Subcategoryname = row.Cells["subcategoryname"].Value.ToString();
-                productEL.Productname = row.Cells["subcategoryname"].Value.ToString(); 
+                productEL.Productname = row.Cells["subcategoryname"].Value.ToString();
             }
 
             cbCategoryName.Text = categoryEL.Categoryname;
@@ -278,7 +279,7 @@ namespace pos.PL.Transactions
             frmManagePurchaseOrders.txtTotalAmount.Text = dgv.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells[4].Value)).ToString();
         }
 
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
+        private void OnlyNumWithSinglePoint(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
             { e.Handled = true; }
@@ -301,37 +302,19 @@ namespace pos.PL.Transactions
                 MessageBox.Show("Failed");
             }
         }
+        #endregion
 
-        private void Add()
-        {
-            if (CheckIfHasDuplicate())
-            {
-                MessageBox.Show("This item is already added.");
-            }
-            else
-            {
-                ShowMessageBox(dgv.Rows.Add(purchaseOrderDetailEL.Productid, productEL.Productname, purchaseOrderDetailEL.Purchaseorderdetailprice, purchaseOrderDetailEL.Purchaseorderdetailquantity, purchaseOrderDetailEL.Purchaseorderdetailprice * purchaseOrderDetailEL.Purchaseorderdetailquantity, categoryEL.Categoryname, subCategoryEL.Subcategoryname) != -1);
-            }
-        }
 
-        private void Edit()
-        {
-            foreach (DataGridViewRow row in dgv.SelectedRows)
-            {
-                row.Cells["purchaseorderdetailprice"].Value = purchaseOrderDetailEL.Purchaseorderdetailprice;
-                row.Cells["purchaseorderdetailquantity"].Value = purchaseOrderDetailEL.Purchaseorderdetailquantity;
-                row.Cells["amount"].Value = purchaseOrderDetailEL.Purchaseorderdetailprice * purchaseOrderDetailEL.Purchaseorderdetailquantity;
-            }
 
-        }
 
-        private void Delete()
-        {
-            dgv.Rows.RemoveAt(dgv.SelectedRows[0].Index);
-            GetTotalAmount();
-            ClearFields();
-        }
 
+
+
+
+
+
+
+        #region "Events"
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -339,7 +322,7 @@ namespace pos.PL.Transactions
 
         private void frmManagePurchaseOrderProducts_Load(object sender, EventArgs e)
         {
-      
+
             ManageForm(false);
             PopulateControls();
             ClearFields();
@@ -368,11 +351,23 @@ namespace pos.PL.Transactions
                 GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    if (CheckIfHasDuplicate())
+                    {
+                        MessageBox.Show("This item is already added.");
+                    }
+                    else
+                    {
+                        ShowMessageBox(dgv.Rows.Add(purchaseOrderDetailEL.Productid, productEL.Productname, purchaseOrderDetailEL.Purchaseorderdetailprice, purchaseOrderDetailEL.Purchaseorderdetailquantity, purchaseOrderDetailEL.Purchaseorderdetailprice * purchaseOrderDetailEL.Purchaseorderdetailquantity, categoryEL.Categoryname, subCategoryEL.Subcategoryname) != -1);
+                    }
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    foreach (DataGridViewRow row in dgv.SelectedRows)
+                    {
+                        row.Cells["purchaseorderdetailprice"].Value = purchaseOrderDetailEL.Purchaseorderdetailprice;
+                        row.Cells["purchaseorderdetailquantity"].Value = purchaseOrderDetailEL.Purchaseorderdetailquantity;
+                        row.Cells["amount"].Value = purchaseOrderDetailEL.Purchaseorderdetailprice * purchaseOrderDetailEL.Purchaseorderdetailquantity;
+                    }
                 }
 
                 ManageForm(false);
@@ -408,31 +403,21 @@ namespace pos.PL.Transactions
                 current = "EDIT";
                 ManageForm(true);
                 this.ActiveControl = cbCategoryName;
-                
+
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (dgv.SelectedRows.Count > 0)
-            {
-                MessageBox.Show("No selected item. Please select first.");
-            }
-            else
-            {
-                Delete();
-            }
-        }
+      
 
 
         private void txtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
+            OnlyNumWithSinglePoint(sender, e);
         }
 
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
+            OnlyNumWithSinglePoint(sender, e);
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -450,7 +435,7 @@ namespace pos.PL.Transactions
             GetDataFromDataGridView();
         }
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgv.SelectedRows.Count == 0)
             {
@@ -458,8 +443,15 @@ namespace pos.PL.Transactions
             }
             else
             {
-                Delete();
+                dgv.Rows.RemoveAt(dgv.SelectedRows[0].Index);
+                GetTotalAmount();
+                ClearFields();
             }
         }
+
+
+        #endregion
+
+
     }
 }

@@ -12,12 +12,16 @@ namespace pos.PL.Transactions
 {
     public partial class frmCrystalReportViewerPurchaseOrder : Form
     {
+
+        #region "Variables"
+
         BL.Transactions.PurchaseOrderDetails purchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
         BL.Registrations.StoreInformation storeInformationBL = new BL.Registrations.StoreInformation();
-
         EL.Transactions.PurchaseOrders purchaseOrderEL;
         EL.Transactions.PurchaseOrderDetails purchaseOrderDetailEL = new EL.Transactions.PurchaseOrderDetails();
         EL.Registrations.StoreInformation storeInformationEL = new EL.Registrations.StoreInformation();
+
+        #endregion
 
         public frmCrystalReportViewerPurchaseOrder(EL.Transactions.PurchaseOrders _purchaseOrderEL)
         {
@@ -25,8 +29,9 @@ namespace pos.PL.Transactions
             purchaseOrderEL = _purchaseOrderEL;
         }
 
+        #region "Methods"
         private void LoadReport()
-        {        
+        {
             crPurchaseOrder crPurchaseOrder = new crPurchaseOrder();
             dsPurchaseOrder dsPurchaseOrder = new dsPurchaseOrder();
 
@@ -38,10 +43,23 @@ namespace pos.PL.Transactions
             crvPurchaseOrder.ReportSource = crPurchaseOrder;
             crvPurchaseOrder.Refresh();
         }
+        #endregion
 
+
+
+
+
+
+
+        #region "Events"
         private void frmCrystalReportViewerPurchaseOrder_Load(object sender, EventArgs e)
         {
             LoadReport();
         }
+        #endregion
+
+
+
+
     }
 }

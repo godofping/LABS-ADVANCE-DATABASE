@@ -5,17 +5,19 @@ namespace pos.PL
 {
     public partial class frmMain : Form
     {
+        #region "Variables"
+
         EL.Registrations.Staffs staffEL;
         EL.Registrations.ContactDetails contactDetailEL;
         EL.Registrations.BasicInformations basicInformationEL;
         EL.Registrations.StaffPositions staffPositionEL;
         EL.Registrations.Addresses addressEL;
         EL.Registrations.StoreInformation storeInformationEL;
-
         frmLogin frmLogin;
 
+        #endregion
 
-      
+
         public frmMain(EL.Registrations.Staffs _staffEL, EL.Registrations.ContactDetails _contactDetailEL, EL.Registrations.BasicInformations _basicInformationEL, EL.Registrations.StaffPositions _staffPositionEL, EL.Registrations.Addresses _addressEL, EL.Registrations.StoreInformation _storeInformationEL, frmLogin _frmLogin)
         {
             InitializeComponent();
@@ -26,8 +28,6 @@ namespace pos.PL
             addressEL = _addressEL;
             storeInformationEL = _storeInformationEL;
             this.frmLogin = _frmLogin;
-
-
         }
 
         protected override CreateParams CreateParams
@@ -48,18 +48,29 @@ namespace pos.PL
             }
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            timer1.Start();
-            UpdateInfo();
-        }
-
+        #region "Methods"
         public void UpdateInfo()
         {
             frmLogin.UpdateStoreName();
             frmLogin.GetDataFromDataTableStaffInformation();
             lblName.Text = "Welcome, " + basicInformationEL.Firstname + " " + basicInformationEL.Middlename + " " + basicInformationEL.Lastname;
             lblStoreName.Text = storeInformationEL.Storename;
+        }
+        #endregion
+
+
+
+
+
+
+
+
+
+        #region "Events"
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+            UpdateInfo();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,8 +111,6 @@ namespace pos.PL
             objForm.Show();
 
         }
-     
-
 
         private void manageSuppliersToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -183,5 +192,12 @@ namespace pos.PL
             pnlMain.Controls.Add(objForm);
             objForm.Show();
         }
+        #endregion
+
+
+
+
+
+
     }
 }

@@ -6,6 +6,9 @@ namespace pos.PL.Transactions
 {
     public partial class frmViewPurchaseOrder : Form
     {
+
+        #region "Variables"
+
         EL.Transactions.PurchaseOrders purchaseOrderEL;
         EL.Transactions.PurchaseOrderDetails purchaseOrderDetailEL = new EL.Transactions.PurchaseOrderDetails();
         EL.Registrations.Suppliers supplierEL = new EL.Registrations.Suppliers();
@@ -15,11 +18,12 @@ namespace pos.PL.Transactions
         EL.Registrations.BasicInformations basicInformationEL = new EL.Registrations.BasicInformations();
         EL.Registrations.Products productEL = new EL.Registrations.Products();
         EL.Transactions.Inventories inventoryEL = new EL.Transactions.Inventories();
-
         BL.Transactions.PurchaseOrders purchaseOrderBL = new BL.Transactions.PurchaseOrders();
         BL.Transactions.PurchaseOrderDetails purchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
         BL.Registrations.Products productBL = new BL.Registrations.Products();
         BL.Transactions.Inventories inventoryBL = new BL.Transactions.Inventories();
+
+        #endregion
 
 
         frmManagePurchaseOrders frmManagePurchaseOrders;
@@ -29,6 +33,26 @@ namespace pos.PL.Transactions
             frmManagePurchaseOrders = _frmManagePurchaseOrders;
             purchaseOrderEL = _purchaseOrderEL;
         }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        public class BufferedPanel : Panel
+        {
+            public BufferedPanel()
+            {
+                DoubleBuffered = true;
+            }
+        }
+
+        #region "Methods"
 
         private void ReadOnlyControls()
         {
@@ -129,7 +153,7 @@ namespace pos.PL.Transactions
             txtTotalAmountPaid.Text = purchaseOrderEL.Purchaseorderamountpaid.ToString();
             txtStatus.Text = purchaseOrderEL.Purchaseorderstatus;
 
-            if(txtDateReceived.Text.Equals("0001-01-01"))
+            if (txtDateReceived.Text.Equals("0001-01-01"))
             {
                 txtDateReceived.ResetText();
             }
@@ -179,26 +203,6 @@ namespace pos.PL.Transactions
             }
         }
 
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            TextBox txtDecimal = sender as TextBox;
-            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void frmViewPurchaseOrder_Load(object sender, EventArgs e)
-        {
-            ReadOnlyControls();
-            LoadData();
-            HiddenColumns();
-            getDataFromDataGridView();
-            ManageButtons();
-        }
-
         private void ShowMessageBox(bool condition)
         {
             if (condition)
@@ -230,13 +234,55 @@ namespace pos.PL.Transactions
                 }
             }
         }
+        #endregion
 
-        private void Edit()
+
+
+
+
+
+
+        #region "Events"
+        private void OnlyNumWithSinglePoint(object sender, KeyPressEventArgs e)
         {
-            ShowMessageBox(purchaseOrderBL.Update(purchaseOrderEL));
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
 
-        private void Receive()
+        private void frmViewPurchaseOrder_Load(object sender, EventArgs e)
+        {
+            ReadOnlyControls();
+            LoadData();
+            HiddenColumns();
+            getDataFromDataGridView();
+            ManageButtons();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (CheckErrors())
+            {
+                GetDataFromForm();
+                ShowMessageBox(purchaseOrderBL.Update(purchaseOrderEL));
+            }
+        }
+
+        private void txtTotalAmountPaid_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            OnlyNumWithSinglePoint(sender, e);
+        }
+
+        private void btnReceived_Click(object sender, EventArgs e)
         {
             switch (MessageBox.Show(this, "Are you sure you received this purchase order?", "Confirming", MessageBoxButtons.YesNo))
             {
@@ -264,7 +310,7 @@ namespace pos.PL.Transactions
             }
         }
 
-        private void Cancel()
+        private void btnCancele_Click(object sender, EventArgs e)
         {
             switch (MessageBox.Show(this, "Are you sure you want to cancel this purchase order?", "Confirming", MessageBoxButtons.YesNo))
             {
@@ -291,39 +337,12 @@ namespace pos.PL.Transactions
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (CheckErrors())
-            {
-                GetDataFromForm();
-                Edit();
-            }
-        }
-
-        private void txtTotalAmountPaid_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            onlynumwithsinglepoint(sender, e);
-        }
-
-        private void btnReceived_Click(object sender, EventArgs e)
-        {
-            Receive();
-        }
-
-        private void btnCancele_Click(object sender, EventArgs e)
-        {
-            Cancel();
-        }
-
         private void btnPrint_Click(object sender, EventArgs e)
         {
             frmCrystalReportViewerPurchaseOrder frmCrystalReportViewerPurchaseOrder = new frmCrystalReportViewerPurchaseOrder(purchaseOrderEL);
             frmCrystalReportViewerPurchaseOrder.Show();
         }
+        #endregion
+
     }
 }

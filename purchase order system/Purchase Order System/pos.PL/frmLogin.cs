@@ -6,19 +6,23 @@ namespace pos.PL
 {
     public partial class frmLogin : Form
     {
+
+        #region "Variables"
+
         EL.Registrations.Staffs StaffInfo = new EL.Registrations.Staffs();
         EL.Registrations.ContactDetails ContactDetailInfo = new EL.Registrations.ContactDetails();
         EL.Registrations.BasicInformations BasicInformationInfo = new EL.Registrations.BasicInformations();
         EL.Registrations.StaffPositions StaffpositionInfo = new EL.Registrations.StaffPositions();
-        EL.Registrations.Addresses  AddressInfo = new EL.Registrations.Addresses();
+        EL.Registrations.Addresses AddressInfo = new EL.Registrations.Addresses();
         EL.Registrations.StoreInformation StoreInformationInfo = new EL.Registrations.StoreInformation();
-
         BL.Registrations.Staffs StaffBL = new BL.Registrations.Staffs();
         BL.Registrations.ContactDetails ContactDetailBL = new BL.Registrations.ContactDetails();
         BL.Registrations.BasicInformations BasicInformationBL = new BL.Registrations.BasicInformations();
         BL.Registrations.StaffPositions StaffpositionBL = new BL.Registrations.StaffPositions();
         BL.Registrations.Addresses AddressBL = new BL.Registrations.Addresses();
         BL.Registrations.StoreInformation StoreInformationBL = new BL.Registrations.StoreInformation();
+
+        #endregion
 
 
         public frmLogin()
@@ -43,6 +47,8 @@ namespace pos.PL
                 DoubleBuffered = true;
             }
         }
+
+        #region "Methods"
 
         private void GetDataFromDataTableStoreInformation()
         {
@@ -144,41 +150,41 @@ namespace pos.PL
             StaffInfo.Username = txtUsername.Text;
             StaffInfo.Password = txtPassword.Text;
         }
+        #endregion
 
 
-        private void Login()
-        {
-
-            GetDataFromForm();
 
 
-            if (StaffBL.Login(StaffInfo).Rows.Count > 0)
-            {
-                GetDataFromDataTableStaffInformation();
 
-                MessageBox.Show("Login Successful");
 
-                frmMain frm = new frmMain(StaffInfo, ContactDetailInfo, BasicInformationInfo, StaffpositionInfo, AddressInfo, StoreInformationInfo, this);
-                frm.Show();
 
-                this.Hide();
-                
-            }
-            else
-            {
-                MessageBox.Show("Login Failed");
-            }
-
-            ClearFields();
-        }
+        #region "Events"
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(CheckErrors())
+            if (CheckErrors())
             {
-                Login();
+                GetDataFromForm();
+                if (StaffBL.Login(StaffInfo).Rows.Count > 0)
+                {
+                    GetDataFromDataTableStaffInformation();
+
+                    MessageBox.Show("Login Successful");
+
+                    frmMain frm = new frmMain(StaffInfo, ContactDetailInfo, BasicInformationInfo, StaffpositionInfo, AddressInfo, StoreInformationInfo, this);
+                    frm.Show();
+
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("Login Failed");
+                }
+
+                ClearFields();
             }
-            
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -190,5 +196,6 @@ namespace pos.PL
         {
             GetDataFromDataTableStoreInformation();
         }
+        #endregion
     }
 }

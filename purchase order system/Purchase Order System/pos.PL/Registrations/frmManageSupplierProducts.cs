@@ -6,21 +6,24 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageSupplierProducts : Form
     {
+
+        #region "Variables"
+
         EL.Registrations.SupplierProducts supplierProductEL = new EL.Registrations.SupplierProducts();
         EL.Registrations.Products productEL = new EL.Registrations.Products();
         EL.Registrations.Suppliers supplierEL = new EL.Registrations.Suppliers();
         EL.Transactions.Inventories inventoryEL = new EL.Transactions.Inventories();
         EL.Registrations.Categories categoryEL = new EL.Registrations.Categories();
         EL.Registrations.SubCategories subCategoryEL = new EL.Registrations.SubCategories();
-
         BL.Registrations.SupplierProducts supplierProductBL = new BL.Registrations.SupplierProducts();
         BL.Registrations.Products productBL = new BL.Registrations.Products();
         BL.Registrations.Suppliers supplierBL = new BL.Registrations.Suppliers();
         BL.Transactions.Inventories inventoryBL = new BL.Transactions.Inventories();
         BL.Registrations.Categories categoryBL = new BL.Registrations.Categories();
         BL.Registrations.SubCategories subCategoryBL = new BL.Registrations.SubCategories();
-
         string current = "";
+
+        #endregion
 
         public frmManageSupplierProducts()
         {
@@ -45,22 +48,12 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmManageStaffs_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            PopulateControls();
-            ClearFields();
-            ReadOnlyControls();
-        }
-
+        #region "Methods"
         private void ReadOnlyControls()
         {
             txtProductSKU.ReadOnly = true;
             txtProductPrice.ReadOnly = true;
             txtProductDescription.ReadOnly = true;
-
         }
 
         private void HiddenColumns()
@@ -154,7 +147,7 @@ namespace pos.PL.Registrations
             txtSupplierProductID.ResetText();
 
             cbSupplierName.SelectedIndex = -1;
-      
+
             cbCategoryName.SelectedIndex = -1;
             cbCategoryName.ResetText();
 
@@ -280,22 +273,25 @@ namespace pos.PL.Registrations
                 MessageBox.Show("Failed");
             }
         }
+        #endregion
 
-        private void Add()
+
+
+
+
+
+
+
+        #region "Events"
+        private void frmManageStaffs_Load(object sender, EventArgs e)
         {
-            ShowMessageBox(supplierProductBL.Insert(supplierProductEL) > 0);
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            PopulateControls();
+            ClearFields();
+            ReadOnlyControls();
         }
-
-        private void Edit()
-        {
-            ShowMessageBox(supplierProductBL.Update(supplierProductEL));
-        }
-
-        private void Delete()
-        {
-            ShowMessageBox(supplierProductBL.Delete(supplierProductEL));
-        }
-
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -327,7 +323,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                ShowMessageBox(supplierProductBL.Delete(supplierProductEL));
             }
         }
 
@@ -341,12 +337,11 @@ namespace pos.PL.Registrations
                 {
                     if (current.Equals("ADD"))
                     {
-
-                        Add();
+                        ShowMessageBox(supplierProductBL.Insert(supplierProductEL) > 0);
                     }
                     else if (current.Equals("EDIT"))
                     {
-                        Edit();
+                        ShowMessageBox(supplierProductBL.Update(supplierProductEL));
                     }
 
                     ManageForm(false);
@@ -400,5 +395,8 @@ namespace pos.PL.Registrations
         {
             GetProductInfo();
         }
+        #endregion
+
+
     }
 }

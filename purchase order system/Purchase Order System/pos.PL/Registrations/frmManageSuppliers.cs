@@ -5,15 +5,20 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageSuppliers : Form
     {
+
+        #region "Variables"
+
         EL.Registrations.Suppliers supplierEL = new EL.Registrations.Suppliers();
         EL.Registrations.ContactDetails contactDetailEL = new EL.Registrations.ContactDetails();
         EL.Registrations.Addresses addressEL = new EL.Registrations.Addresses();
-
         BL.Registrations.Suppliers supplierBL = new BL.Registrations.Suppliers();
         BL.Registrations.ContactDetails contactDetailBL = new BL.Registrations.ContactDetails();
         BL.Registrations.Addresses addressBL = new BL.Registrations.Addresses();
-
         string current = "";
+
+        #endregion
+
+
 
         public frmManageSuppliers()
         {
@@ -38,16 +43,8 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmManageVendors_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            txtZipCode.MaxLength = 6;
 
-
-        }
-
+        #region "Methods"
         private void HiddenColumns()
         {
             dgv.Columns["Supplier ID"].Visible = false;
@@ -221,24 +218,35 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Add()
+        private void OnlyNumWithSinglePoint(object sender, KeyPressEventArgs e)
         {
-            contactDetailEL.Addressid = Convert.ToInt32(addressBL.Insert(addressEL));
-            supplierEL.Contactdetailid = Convert.ToInt32(contactDetailBL.Insert(contactDetailEL));
-
-            ShowMessageBox(supplierBL.Insert(supplierEL) > 0);
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
+        #endregion
 
-        private void Edit()
+
+
+
+
+
+
+
+
+
+        #region "Events"
+        private void frmManageVendors_Load(object sender, EventArgs e)
         {
-            ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & supplierBL.Update(supplierEL));
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            txtZipCode.MaxLength = 6;
         }
-
-        private void Delete()
-        {
-            ShowMessageBox(supplierBL.Delete(supplierEL));
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearFields();
@@ -269,7 +277,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                ShowMessageBox(supplierBL.Delete(supplierEL));
             }
         }
 
@@ -280,11 +288,13 @@ namespace pos.PL.Registrations
                 GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    contactDetailEL.Addressid = Convert.ToInt32(addressBL.Insert(addressEL));
+                    supplierEL.Contactdetailid = Convert.ToInt32(contactDetailBL.Insert(contactDetailEL));
+                    ShowMessageBox(supplierBL.Insert(supplierEL) > 0);
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & supplierBL.Update(supplierEL));
                 }
 
                 ManageForm(false);
@@ -316,24 +326,14 @@ namespace pos.PL.Registrations
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
-        }
-
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            TextBox txtDecimal = sender as TextBox;
-            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
+            OnlyNumWithSinglePoint(sender, e);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             LoadData(txtSearch.Text);
         }
+        #endregion
 
     }
 }

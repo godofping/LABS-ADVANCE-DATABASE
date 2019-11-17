@@ -5,17 +5,22 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageProducts : Form
     {
+
+        #region "Variables"
+
         EL.Registrations.Products productEL = new EL.Registrations.Products();
         EL.Registrations.SubCategories subCategoryEL = new EL.Registrations.SubCategories();
         EL.Registrations.Categories categoryEL = new EL.Registrations.Categories();
         EL.Transactions.Inventories inventoryEL = new EL.Transactions.Inventories();
-
         BL.Registrations.Products productBL = new BL.Registrations.Products();
         BL.Registrations.SubCategories subCategoryBL = new BL.Registrations.SubCategories();
         BL.Registrations.Categories categoryBL = new BL.Registrations.Categories();
         BL.Transactions.Inventories inventoryBL = new BL.Transactions.Inventories();
-
         string current = "";
+
+        #endregion
+
+
 
         public frmManageProducts()
         {
@@ -40,15 +45,7 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmManageStaffs_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            PopulateControls();
-            ClearFields();
-        }
-
+        #region "Methods"
         private void HiddenColumns()
         {
             dgv.Columns["Inventory ID"].Visible = false;
@@ -115,9 +112,6 @@ namespace pos.PL.Registrations
                 lblReorderLevel.Visible = status;
                 txtReorderLevel.Visible = status;
             }
-
-
-
         }
 
         private void ClearErrors()
@@ -288,20 +282,39 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Add()
+        private void OnlyNumWithSinglePoint(object sender, KeyPressEventArgs e)
         {
-            inventoryEL.Productid = Convert.ToInt32(productBL.Insert(productEL));
-            ShowMessageBox(inventoryBL.Insert(inventoryEL) > 0);
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
+        #endregion
 
-        private void Edit()
-        {
-            ShowMessageBox(productBL.Update(productEL) & inventoryBL.Update(inventoryEL));
-        }
 
-        private void Delete()
+
+
+
+
+
+
+
+
+
+
+
+
+        #region "Events"
+        private void frmManageStaffs_Load(object sender, EventArgs e)
         {
-            ShowMessageBox(productBL.Delete(productEL));
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            PopulateControls();
+            ClearFields();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -323,7 +336,6 @@ namespace pos.PL.Registrations
                 current = "EDIT";
                 ManageForm(true);
                 this.ActiveControl = txtProductName;
-
             }
         }
 
@@ -335,7 +347,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                ShowMessageBox(productBL.Delete(productEL));
             }
         }
 
@@ -346,11 +358,12 @@ namespace pos.PL.Registrations
                 GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    inventoryEL.Productid = Convert.ToInt32(productBL.Insert(productEL));
+                    ShowMessageBox(inventoryBL.Insert(inventoryEL) > 0);
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    ShowMessageBox(productBL.Update(productEL) & inventoryBL.Update(inventoryEL));
                 }
 
                 ManageForm(false);
@@ -383,29 +396,17 @@ namespace pos.PL.Registrations
 
         private void txtProductPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
+            OnlyNumWithSinglePoint(sender, e);
         }
 
         private void txtReorderLevel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
+            OnlyNumWithSinglePoint(sender, e);
         }
 
         private void txtInitialStock_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
-        }
-
-
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            TextBox txtDecimal = sender as TextBox;
-            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
+            OnlyNumWithSinglePoint(sender, e);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -416,8 +417,30 @@ namespace pos.PL.Registrations
         private void cbCategoryName_SelectedIndexChanged(object sender, EventArgs e)
         {
             PopulateControlsSubCategory();
-
         }
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

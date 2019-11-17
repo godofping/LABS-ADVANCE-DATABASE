@@ -6,17 +6,20 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageStoreInformation : Form
     {
+
+        #region "Variables"
+
         EL.Registrations.StoreInformation storeInformationEL;
         EL.Registrations.ContactDetails contactDetailEL = new EL.Registrations.ContactDetails();
         EL.Registrations.Addresses addressEL = new EL.Registrations.Addresses();
-
         BL.Registrations.StoreInformation storeInformationBL = new BL.Registrations.StoreInformation();
         BL.Registrations.ContactDetails contactDetailBL = new BL.Registrations.ContactDetails();
         BL.Registrations.Addresses addressBL = new BL.Registrations.Addresses();
-
         PL.frmMain frmMain;
-
         string current = "";
+
+        #endregion
+
 
         public frmManageStoreInformation(EL.Registrations.StoreInformation _storeInformationEL, PL.frmMain _frmMain)
         {
@@ -43,24 +46,15 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmManageStoreInformation_Load(object sender, System.EventArgs e)
-        {
-            ManageForm(false);
-            txtZipCode.MaxLength = 6;
-          
-            GetDataFromDataTable();
-        }
-
+        #region "Methods"
         private void ManageForm(bool status)
         {
             gbInformations.Enabled = status;
             gbControls.Enabled = !status;
-
         }
 
         private void ClearErrors()
         {
-
             errorProvider1.SetError(txtStoreName, "");
             errorProvider1.SetError(txtContactNumber, "");
             errorProvider1.SetError(txtEmailAddress, "");
@@ -68,7 +62,6 @@ namespace pos.PL.Registrations
             errorProvider1.SetError(txtCity, "");
             errorProvider1.SetError(txtProvince, "");
             errorProvider1.SetError(txtZipCode, "");
-
         }
 
 
@@ -166,8 +159,6 @@ namespace pos.PL.Registrations
                 contactDetailEL.Emailaddress = row["Email Address"].ToString();
 
                 storeInformationEL.Storename = row["Store Name"].ToString();
-       
-
             }
 
             txtStoreName.Text = storeInformationEL.Storename;
@@ -184,7 +175,7 @@ namespace pos.PL.Registrations
         {
             if (condition)
             {
-      
+
                 MessageBox.Show("Success");
 
             }
@@ -194,11 +185,35 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Edit()
+        private void OnlyNumWithSinglePoint(object sender, KeyPressEventArgs e)
         {
-            ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & storeInformationBL.Update(storeInformationEL));
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
 
+        #endregion
+
+
+
+
+
+
+
+
+
+
+        #region "Events"
+        private void frmManageStoreInformation_Load(object sender, System.EventArgs e)
+        {
+            ManageForm(false);
+            txtZipCode.MaxLength = 6;
+            GetDataFromDataTable();
+        }
 
         private void btnEdit_Click(object sender, System.EventArgs e)
         {
@@ -215,42 +230,29 @@ namespace pos.PL.Registrations
                 GetDataFromForm();
                 if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & storeInformationBL.Update(storeInformationEL));
                     frmMain.UpdateInfo();
                 }
 
                 ManageForm(false);
-        
+
                 GetDataFromDataTable();
-
-
             }
         }
 
         private void btnCancel_Click(object sender, System.EventArgs e)
         {
             ManageForm(false);
- 
+
             ClearErrors();
             GetDataFromDataTable();
         }
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
+            OnlyNumWithSinglePoint(sender, e);
         }
-
-
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            TextBox txtDecimal = sender as TextBox;
-            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-        }
+        #endregion
 
         
     }

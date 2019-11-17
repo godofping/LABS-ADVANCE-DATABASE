@@ -13,23 +13,23 @@ namespace pos.PL.Transactions
     public partial class frmManagePurchaseOrders : Form
     {
 
+        #region "Variables"
+
         EL.Registrations.Staffs staffEL;
         EL.Registrations.Suppliers supplierEL = new EL.Registrations.Suppliers();
         EL.Registrations.PaymentMethods paymentMethodEL = new EL.Registrations.PaymentMethods();
         EL.Registrations.ShippingMethods shippingMethodEL = new EL.Registrations.ShippingMethods();
         EL.Transactions.PurchaseOrders purchaseOrderEL = new EL.Transactions.PurchaseOrders();
         EL.Transactions.PurchaseOrderDetails purchaseOrderDetailEL = new EL.Transactions.PurchaseOrderDetails();
-
         BL.Registrations.Suppliers supplierBL = new BL.Registrations.Suppliers();
         BL.Registrations.PaymentMethods paymentMethodBL = new BL.Registrations.PaymentMethods();
         BL.Registrations.ShippingMethods shippingMethodBL = new BL.Registrations.ShippingMethods();
         BL.Transactions.PurchaseOrders purchaseOrderBL = new BL.Transactions.PurchaseOrders();
         BL.Transactions.PurchaseOrderDetails purchaseOrderDetailBL = new BL.Transactions.PurchaseOrderDetails();
-        
-
         frmManagePurchaseOrderProducts frmManagePurchaseOrderProducts;
-
         public string current = "";
+
+        #endregion
 
         public frmManagePurchaseOrders(EL.Registrations.Staffs _staffEL)
         {
@@ -55,7 +55,7 @@ namespace pos.PL.Transactions
             }
         }
 
-
+        #region "Methods"
         private void ReadOnlyControls()
         {
             txtTotalAmount.ReadOnly = true;
@@ -151,7 +151,7 @@ namespace pos.PL.Transactions
 
             txtTotalAmount.ResetText();
 
-            
+
         }
 
         private bool CheckErrors()
@@ -276,70 +276,23 @@ namespace pos.PL.Transactions
             cbShippingMethod.ValueMember = "Shipping Method ID";
             cbShippingMethod.DataSource = shippingMethodBL.List();
         }
-
-        private void Add()
-        {
-
-            if(frmManagePurchaseOrderProducts.dgv.Rows.Count == 0)
-            {
-                MessageBox.Show("Please add products.");
-            }
-            else
-            {
-                purchaseOrderEL.Purchaseorderid = Convert.ToInt32(purchaseOrderBL.Insert(purchaseOrderEL));
-
-                if(purchaseOrderEL.Purchaseorderid > 0)
-                {
-
-                    bool stat = true;
-
-                    foreach (DataGridViewRow row in frmManagePurchaseOrderProducts.dgv.Rows)
-                    {
-                        purchaseOrderDetailEL.Productid = Convert.ToInt32(row.Cells[0].Value);
-                        purchaseOrderDetailEL.Purchaseorderdetailquantity = Convert.ToInt32(row.Cells[3].Value);
-                        purchaseOrderDetailEL.Purchaseorderid = purchaseOrderEL.Purchaseorderid;
-                        purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToInt32(row.Cells[2].Value);
-
-                        if (purchaseOrderDetailBL.Insert(purchaseOrderDetailEL) == 0)
-                        {
-                            stat = false;
-                        }
-                    }
-
-                    if (stat)
-                    {
-                        ShowMessageBox(true);
-                    }
-                    else
-                    {
-                        ShowMessageBox(false);
-                    }
-
-                }
-                else
-                {
-                    ShowMessageBox(false);
-                }
-
-                
-            }
+        #endregion
 
 
-        }
-
-        private void Delete()
-        {
-      
-          ShowMessageBox(purchaseOrderBL.Delete(purchaseOrderEL));
-        }
 
 
+
+
+
+
+
+        #region "Events"
         private void btnManagePurchaseOrderProducts_Click(object sender, EventArgs e)
         {
             frmManagePurchaseOrderProducts.ShowDialog();
         }
 
-        
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmManagePurchaseOrderProducts = new frmManagePurchaseOrderProducts(this);
@@ -379,7 +332,7 @@ namespace pos.PL.Transactions
             }
             else
             {
-                Delete();
+                ShowMessageBox(purchaseOrderBL.Delete(purchaseOrderEL));
             }
         }
 
@@ -390,9 +343,51 @@ namespace pos.PL.Transactions
                 GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    if (frmManagePurchaseOrderProducts.dgv.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Please add products.");
+                    }
+                    else
+                    {
+                        purchaseOrderEL.Purchaseorderid = Convert.ToInt32(purchaseOrderBL.Insert(purchaseOrderEL));
+
+                        if (purchaseOrderEL.Purchaseorderid > 0)
+                        {
+
+                            bool stat = true;
+
+                            foreach (DataGridViewRow row in frmManagePurchaseOrderProducts.dgv.Rows)
+                            {
+                                purchaseOrderDetailEL.Productid = Convert.ToInt32(row.Cells[0].Value);
+                                purchaseOrderDetailEL.Purchaseorderdetailquantity = Convert.ToInt32(row.Cells[3].Value);
+                                purchaseOrderDetailEL.Purchaseorderid = purchaseOrderEL.Purchaseorderid;
+                                purchaseOrderDetailEL.Purchaseorderdetailprice = Convert.ToInt32(row.Cells[2].Value);
+
+                                if (purchaseOrderDetailBL.Insert(purchaseOrderDetailEL) == 0)
+                                {
+                                    stat = false;
+                                }
+                            }
+
+                            if (stat)
+                            {
+                                ShowMessageBox(true);
+                            }
+                            else
+                            {
+                                ShowMessageBox(false);
+                            }
+
+                        }
+                        else
+                        {
+                            ShowMessageBox(false);
+                        }
+
+
+                    }
                 }
-   
+
 
                 ManageForm(false);
                 ClearFields();
@@ -421,7 +416,6 @@ namespace pos.PL.Transactions
         {
             getDataFromDataGridView();
         }
-
-      
+        #endregion
     }
 }

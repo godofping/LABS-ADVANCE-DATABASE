@@ -6,18 +6,20 @@ namespace pos.PL.Registrations
     public partial class frmManageCustomers : Form
     {
 
+        #region "Variables"
 
         EL.Registrations.Customers customerEL = new EL.Registrations.Customers();
         EL.Registrations.ContactDetails contactDetailEL = new EL.Registrations.ContactDetails();
         EL.Registrations.BasicInformations basicInformationEL = new EL.Registrations.BasicInformations();
         EL.Registrations.Addresses addressEL = new EL.Registrations.Addresses();
-
         BL.Registrations.Customers customerBL = new BL.Registrations.Customers();
         BL.Registrations.ContactDetails contactDetailBL = new BL.Registrations.ContactDetails();
         BL.Registrations.BasicInformations basicInformationBL = new BL.Registrations.BasicInformations();
         BL.Registrations.Addresses addressBL = new BL.Registrations.Addresses();
-
         string current = "";
+
+        #endregion
+
 
         public frmManageCustomers()
         {
@@ -42,15 +44,7 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmManageCustomers_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            txtZipCode.MaxLength = 6;
-            ClearFields();
-        }
-
+        #region "Methods"
         private void HiddenColumns()
         {
             dgv.Columns["Customer ID"].Visible = false;
@@ -58,7 +52,6 @@ namespace pos.PL.Registrations
             dgv.Columns["basicinformationid"].Visible = false;
             dgv.Columns["addressid"].Visible = false;
             dgv.Columns["isdeleted"].Visible = false;
-
         }
 
         private void LoadData(string keywords)
@@ -76,7 +69,6 @@ namespace pos.PL.Registrations
 
         private void ClearErrors()
         {
-
             errorProvider1.SetError(txtFirstName, "");
             errorProvider1.SetError(txtMiddleName, "");
             errorProvider1.SetError(txtLastName, "");
@@ -88,7 +80,6 @@ namespace pos.PL.Registrations
             errorProvider1.SetError(txtCity, "");
             errorProvider1.SetError(txtProvince, "");
             errorProvider1.SetError(txtZipCode, "");
-
         }
 
         private void ClearFields()
@@ -279,27 +270,37 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Add()
+        private void OnlyNumWithSinglePoint(object sender, KeyPressEventArgs e)
         {
-         
-
-            contactDetailEL.Addressid = Convert.ToInt32(addressBL.Insert(addressEL));
-            customerEL.Contactdetailid = Convert.ToInt32(contactDetailBL.Insert(contactDetailEL));
-            customerEL.Basicinformationid = Convert.ToInt32(basicInformationBL.Insert(basicInformationEL));
-
-            ShowMessageBox(customerBL.Insert(customerEL) > 0);
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
+        #endregion
 
-        private void Edit()
-        {
-  
-            ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & basicInformationBL.Update(basicInformationEL));
-        }
 
-        private void Delete()
+
+
+
+
+
+
+
+
+
+
+        #region "Events"
+        private void frmManageCustomers_Load(object sender, EventArgs e)
         {
-        
-            ShowMessageBox(customerBL.Delete(customerEL));
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            txtZipCode.MaxLength = 6;
+            ClearFields();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -332,7 +333,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                ShowMessageBox(customerBL.Delete(customerEL));
             }
         }
 
@@ -343,11 +344,14 @@ namespace pos.PL.Registrations
                 GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    contactDetailEL.Addressid = Convert.ToInt32(addressBL.Insert(addressEL));
+                    customerEL.Contactdetailid = Convert.ToInt32(contactDetailBL.Insert(contactDetailEL));
+                    customerEL.Basicinformationid = Convert.ToInt32(basicInformationBL.Insert(basicInformationEL));
+                    ShowMessageBox(customerBL.Insert(customerEL) > 0);
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & basicInformationBL.Update(basicInformationEL));
                 }
 
                 ManageForm(false);
@@ -364,7 +368,7 @@ namespace pos.PL.Registrations
 
         private void dgvManageCustomers_SelectionChanged(object sender, EventArgs e)
         {
-           GetDataFromDataGridView();
+            GetDataFromDataGridView();
         }
 
         private void dgvManageCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -379,18 +383,7 @@ namespace pos.PL.Registrations
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
-        }
-
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            TextBox txtDecimal = sender as TextBox;
-            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
+            OnlyNumWithSinglePoint(sender, e);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -398,6 +391,7 @@ namespace pos.PL.Registrations
             LoadData(txtSearch.Text);
         }
 
+        #endregion
 
     }
 }

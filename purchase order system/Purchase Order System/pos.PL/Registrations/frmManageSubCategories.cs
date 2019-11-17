@@ -5,14 +5,18 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageSubCategories : Form
     {
+
+        #region "Variables"
+
         EL.Registrations.SubCategories subCategoryEL = new EL.Registrations.SubCategories();
         EL.Registrations.Categories categoryEL = new EL.Registrations.Categories();
-
-
         BL.Registrations.SubCategories subCategoryBL = new BL.Registrations.SubCategories();
         BL.Registrations.Categories categoryBL = new BL.Registrations.Categories();
-
         string current = "";
+
+        #endregion
+
+
 
         public frmManageSubCategories()
         {
@@ -37,15 +41,7 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmManageSubCategories_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-            PopulateControls();
-            ClearFields();
-        }
-
+        #region "Methods"
         private void HiddenColumns()
         {
             dgv.Columns["Sub Category ID"].Visible = false;
@@ -156,22 +152,27 @@ namespace pos.PL.Registrations
                 MessageBox.Show("Failed");
             }
         }
+        #endregion
 
-        private void Add()
+
+
+
+
+
+
+
+
+
+
+        #region "Events"
+        private void frmManageSubCategories_Load(object sender, EventArgs e)
         {
-            ShowMessageBox(subCategoryBL.Insert(subCategoryEL) > 0);
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
+            PopulateControls();
+            ClearFields();
         }
-
-        private void Edit()
-        {
-            ShowMessageBox(subCategoryBL.Update(subCategoryEL));
-        }
-
-        private void Delete()
-        {
-            ShowMessageBox(subCategoryBL.Delete(subCategoryEL));
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             ClearFields();
@@ -202,7 +203,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                ShowMessageBox(subCategoryBL.Delete(subCategoryEL));
             }
         }
 
@@ -213,11 +214,11 @@ namespace pos.PL.Registrations
                 GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    ShowMessageBox(subCategoryBL.Insert(subCategoryEL) > 0);
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    ShowMessageBox(subCategoryBL.Update(subCategoryEL));
                 }
 
                 ManageForm(false);
@@ -251,5 +252,7 @@ namespace pos.PL.Registrations
         {
             LoadData(txtSearch.Text);
         }
+        #endregion
+
     }
 }

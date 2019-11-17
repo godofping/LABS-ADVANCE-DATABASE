@@ -6,21 +6,25 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageProfile : Form
     {
+
+        #region "Variables"
+
         EL.Registrations.Staffs staffEL;
         EL.Registrations.ContactDetails contactDetailEL = new EL.Registrations.ContactDetails();
         EL.Registrations.BasicInformations basicInformationEL = new EL.Registrations.BasicInformations();
         EL.Registrations.Addresses addressEL = new EL.Registrations.Addresses();
         EL.Registrations.StaffPositions staffPositionEL = new EL.Registrations.StaffPositions();
-
         BL.Registrations.Staffs staffBL = new BL.Registrations.Staffs();
         BL.Registrations.ContactDetails contactDetailBL = new BL.Registrations.ContactDetails();
         BL.Registrations.BasicInformations basicInformationBL = new BL.Registrations.BasicInformations();
         BL.Registrations.Addresses addressBL = new BL.Registrations.Addresses();
         BL.Registrations.StaffPositions staffPositionBL = new BL.Registrations.StaffPositions();
-
         frmMain frmMain;
-
         string current = "";
+
+        #endregion
+
+
 
         public frmManageProfile(EL.Registrations.Staffs _staffEL, frmMain _frmMain)
         {
@@ -48,13 +52,12 @@ namespace pos.PL.Registrations
             }
         }
 
+        #region "Methods"
         private void frmManageProfile_Load(object sender, EventArgs e)
         {
-       
             ReadOnlyControls();
             ManageForm(false);
             txtZipCode.MaxLength = 6;
-
             GetDataFromDataTable();
         }
 
@@ -71,7 +74,6 @@ namespace pos.PL.Registrations
 
         }
 
-
         private void ClearErrors()
         {
             errorProvider1.SetError(txtFirstName, "");
@@ -86,7 +88,6 @@ namespace pos.PL.Registrations
             errorProvider1.SetError(txtProvince, "");
             errorProvider1.SetError(txtZipCode, "");
             errorProvider1.SetError(txtPassword, "");
-
         }
 
         private bool CheckErrors()
@@ -236,7 +237,7 @@ namespace pos.PL.Registrations
                 basicInformationEL.Birthdate = row["Birth Date"].ToString();
 
                 staffPositionEL.Staffposition = row["Staff Position"].ToString();
-                
+
                 staffEL.Staffid = Convert.ToInt32(row["Staff ID"]);
                 staffEL.Username = row["Username"].ToString();
                 staffEL.Password = row["password"].ToString();
@@ -278,11 +279,30 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Edit()
+        private void OnlyNumWithSinglePoint(object sender, KeyPressEventArgs e)
         {
-            ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & basicInformationBL.Update(basicInformationEL) & staffBL.Update(staffEL));
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
 
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+        #region "Events"
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (txtStaffID.Text.Equals(""))
@@ -304,7 +324,7 @@ namespace pos.PL.Registrations
                 GetDataFromForm();
                 if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    ShowMessageBox(addressBL.Update(addressEL) & contactDetailBL.Update(contactDetailEL) & basicInformationBL.Update(basicInformationEL) & staffBL.Update(staffEL));
                     frmMain.UpdateInfo();
                 }
 
@@ -324,18 +344,10 @@ namespace pos.PL.Registrations
 
         private void txtZipCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            onlynumwithsinglepoint(sender, e);
+            OnlyNumWithSinglePoint(sender, e);
         }
 
-        private void onlynumwithsinglepoint(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
-            { e.Handled = true; }
-            TextBox txtDecimal = sender as TextBox;
-            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-        }
+        #endregion
+
     }
 }

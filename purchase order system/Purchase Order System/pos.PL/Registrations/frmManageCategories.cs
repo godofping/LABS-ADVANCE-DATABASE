@@ -5,11 +5,16 @@ namespace pos.PL.Registrations
 {
     public partial class frmManageCategories : Form
     {
+
+        #region "Variables"
+
         EL.Registrations.Categories categoryEL = new EL.Registrations.Categories();
-
         BL.Registrations.Categories categoryBL = new BL.Registrations.Categories();
-
         string current = "";
+
+        #endregion
+
+
 
         public frmManageCategories()
         {
@@ -34,12 +39,8 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmCategories_Load(object sender, EventArgs e)
-        {
-            LoadData(txtSearch.Text);
-            HiddenColumns();
-            ManageForm(false);
-        }
+
+        #region "Methods"
 
         private void HiddenColumns()
         {
@@ -108,7 +109,6 @@ namespace pos.PL.Registrations
             txtCategoryID.Text = categoryEL.Categoryid.ToString();
             txtCategoryName.Text = categoryEL.Categoryname.ToString();
 
-
         }
 
         private void ShowMessageBox(bool condition)
@@ -126,21 +126,30 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void Add()
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #region "Events"
+
+        private void frmCategories_Load(object sender, EventArgs e)
         {
-            ShowMessageBox(categoryBL.Insert(categoryEL) > 0);
+            LoadData(txtSearch.Text);
+            HiddenColumns();
+            ManageForm(false);
         }
 
-        private void Edit()
-        {
-     
-            ShowMessageBox(categoryBL.Update(categoryEL));
-        }
-
-        private void Delete()
-        {
-            ShowMessageBox(categoryBL.Delete(categoryEL));
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -172,7 +181,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                Delete();
+                ShowMessageBox(categoryBL.Delete(categoryEL));
             }
         }
 
@@ -183,11 +192,11 @@ namespace pos.PL.Registrations
                 GetDataFromForm();
                 if (current.Equals("ADD"))
                 {
-                    Add();
+                    ShowMessageBox(categoryBL.Insert(categoryEL) > 0);
                 }
                 else if (current.Equals("EDIT"))
                 {
-                    Edit();
+                    ShowMessageBox(categoryBL.Update(categoryEL));
                 }
 
                 ManageForm(false);
@@ -221,6 +230,10 @@ namespace pos.PL.Registrations
         {
             GetDataFromDataGridView();
         }
+
+        #endregion
+
+
 
 
     }
