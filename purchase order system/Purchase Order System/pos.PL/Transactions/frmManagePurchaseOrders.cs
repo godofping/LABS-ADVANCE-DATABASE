@@ -131,7 +131,7 @@ namespace pos.PL.Transactions
         public void ClearFields()
         {
             dgv.ClearSelection();
-            txtPurchaseOrderID.ResetText();
+
 
             cbSupplierName.SelectedIndex = -1;
             cbSupplierName.Text = "";
@@ -234,7 +234,7 @@ namespace pos.PL.Transactions
                 purchaseOrderEL.Purchaseorderstatus = row.Cells["Purchase Order Status"].Value.ToString();
             }
 
-            txtPurchaseOrderID.Text = purchaseOrderEL.Purchaseorderid.ToString();
+           
             cbSupplierName.SelectedIndex = cbSupplierName.FindString(supplierEL.Supplier);
             txtPurchaseOrderName.Text = purchaseOrderEL.Purchaseordername.ToString();
             cbPaymentMethod.SelectedIndex = cbPaymentMethod.FindString(paymentMethodEL.Paymentmethod);
@@ -329,7 +329,14 @@ namespace pos.PL.Transactions
             }
             else
             {
-                ShowMessageBox(purchaseOrderBL.Delete(purchaseOrderEL));
+                switch (MessageBox.Show(this, "Are you sure to delete this?", "Confirming", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.No:
+                        break;
+                    default:
+                        ShowMessageBox(purchaseOrderBL.Delete(purchaseOrderEL));
+                        break;
+                } 
             }
         }
 

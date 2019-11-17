@@ -80,7 +80,6 @@ namespace pos.PL.Registrations
         private void ClearFields()
         {
             dgv.ClearSelection();
-            txtSupplierID.ResetText();
             txtSupplier.ResetText();
             txtContactNumber.ResetText();
             txtEmailAddress.ResetText();
@@ -189,7 +188,7 @@ namespace pos.PL.Registrations
 
             }
 
-            txtSupplierID.Text = supplierEL.Supplierid.ToString();
+            
             txtSupplier.Text = supplierEL.Supplier;
             txtContactNumber.Text = contactDetailEL.Contactnumber;
             txtEmailAddress.Text = contactDetailEL.Emailaddress;
@@ -254,7 +253,7 @@ namespace pos.PL.Registrations
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtSupplierID.Text.Equals(""))
+            if (dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No selected client. Please select first.");
             }
@@ -268,13 +267,20 @@ namespace pos.PL.Registrations
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtSupplierID.Text.Equals(""))
+            if (dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No selected item. Please select first.");
             }
             else
             {
-                ShowMessageBox(supplierBL.Delete(supplierEL));
+                switch (MessageBox.Show(this, "Are you sure to delete this?", "Confirming", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.No:
+                        break;
+                    default:
+                        ShowMessageBox(supplierBL.Delete(supplierEL));
+                        break;
+                }
             }
         }
 

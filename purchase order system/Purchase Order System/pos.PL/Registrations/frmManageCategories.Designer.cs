@@ -33,8 +33,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.gbControls = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtCategoryID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -53,6 +51,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(36, 38);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
@@ -63,6 +62,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(36, 142);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
@@ -76,15 +76,16 @@
             this.gbControls.Controls.Add(this.btnAdd);
             this.gbControls.Controls.Add(this.btnEdit);
             this.gbControls.Controls.Add(this.btnDelete);
-            this.gbControls.Location = new System.Drawing.Point(1049, 43);
+            this.gbControls.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbControls.Location = new System.Drawing.Point(1049, 41);
             this.gbControls.Name = "gbControls";
-            this.gbControls.Size = new System.Drawing.Size(142, 201);
+            this.gbControls.Size = new System.Drawing.Size(142, 203);
             this.gbControls.TabIndex = 66;
             this.gbControls.TabStop = false;
-            this.gbControls.Text = "Controls";
             // 
             // btnEdit
             // 
+            this.btnEdit.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Location = new System.Drawing.Point(36, 92);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
@@ -93,42 +94,28 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 13);
-            this.label14.TabIndex = 50;
-            this.label14.Text = "Category ID";
-            // 
-            // txtCategoryID
-            // 
-            this.txtCategoryID.Location = new System.Drawing.Point(9, 40);
-            this.txtCategoryID.Name = "txtCategoryID";
-            this.txtCategoryID.ReadOnly = true;
-            this.txtCategoryID.Size = new System.Drawing.Size(172, 20);
-            this.txtCategoryID.TabIndex = 49;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(210, 24);
+            this.label13.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(27, 22);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(80, 13);
+            this.label13.Size = new System.Drawing.Size(85, 13);
             this.label13.TabIndex = 28;
             this.label13.Text = "Category Name";
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(213, 40);
+            this.txtCategoryName.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoryName.Location = new System.Drawing.Point(118, 19);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(172, 20);
+            this.txtCategoryName.Size = new System.Drawing.Size(284, 20);
             this.txtCategoryName.TabIndex = 25;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(920, 165);
+            this.btnCancel.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(950, 174);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 48;
@@ -138,7 +125,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(823, 165);
+            this.btnSave.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(853, 174);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 47;
@@ -148,6 +136,7 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(59, 265);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(272, 20);
@@ -157,26 +146,25 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(7, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 25);
+            this.label1.Size = new System.Drawing.Size(214, 24);
             this.label1.TabIndex = 61;
             this.label1.Text = "Manage Categories";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 268);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 63;
             this.label2.Text = "Search";
             // 
             // gbInformations
             // 
-            this.gbInformations.Controls.Add(this.label14);
-            this.gbInformations.Controls.Add(this.txtCategoryID);
             this.gbInformations.Controls.Add(this.label13);
             this.gbInformations.Controls.Add(this.txtCategoryName);
             this.gbInformations.Controls.Add(this.btnCancel);
@@ -223,6 +211,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gbInformations);
             this.Controls.Add(this.dgv);
+            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageCategories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -244,8 +233,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox gbControls;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtCategoryID;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.Button btnCancel;

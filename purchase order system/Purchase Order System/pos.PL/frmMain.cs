@@ -48,6 +48,7 @@ namespace pos.PL
             }
         }
 
+
         #region "Methods"
         public void UpdateInfo()
         {
@@ -56,6 +57,27 @@ namespace pos.PL
             lblName.Text = "Welcome, " + basicInformationEL.Firstname + " " + basicInformationEL.Middlename + " " + basicInformationEL.Lastname;
             lblStoreName.Text = storeInformationEL.Storename;
         }
+        
+        private void Restriction()
+        {
+            if(staffPositionEL.Staffposition.Equals("Manager"))
+            {
+                smiStaffs.Visible = true;
+                smiStoreInformation.Visible = true;
+                smiProductCategories.Visible = true;
+                smiProductSubCategories.Visible = true;
+            }
+
+            if (staffPositionEL.Staffposition.Equals("Staff"))
+            {
+                smiStaffs.Visible = false;
+                smiStoreInformation.Visible = false;
+                smiProductCategories.Visible = false;
+                smiProductSubCategories.Visible = false;
+            }
+        }
+
+
         #endregion
 
 
@@ -71,23 +93,21 @@ namespace pos.PL
         {
             timer1.Start();
             UpdateInfo();
+            pnlMain.Controls.Clear();
+            Transactions.frmManagePurchaseOrders objForm = new Transactions.frmManagePurchaseOrders(staffEL);
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            frmLogin.Show();
-        }
-
+ 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblDateTime.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm tt");
+            Restriction();
         }
 
         private void smiManageStaffs_Click(object sender, EventArgs e)
@@ -112,57 +132,7 @@ namespace pos.PL
 
         }
 
-        private void manageSuppliersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlMain.Controls.Clear();
-            Registrations.frmManageSuppliers objForm = new Registrations.frmManageSuppliers();
-            objForm.TopLevel = false;
-            objForm.AutoScroll = true;
-            pnlMain.Controls.Add(objForm);
-            objForm.Show();
-        }
-
-        private void productsCategoriesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlMain.Controls.Clear();
-            Registrations.frmManageCategories objForm = new Registrations.frmManageCategories();
-            objForm.TopLevel = false;
-            objForm.AutoScroll = true;
-            pnlMain.Controls.Add(objForm);
-            objForm.Show();
-        }
-
-        private void productsSubcategoriesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlMain.Controls.Clear();
-            Registrations.frmManageSubCategories objForm = new Registrations.frmManageSubCategories();
-            objForm.TopLevel = false;
-            objForm.AutoScroll = true;
-            pnlMain.Controls.Add(objForm);
-            objForm.Show();
-        }
-
-        private void manageProductsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlMain.Controls.Clear();
-            Registrations.frmManageProducts objForm = new Registrations.frmManageProducts();
-            objForm.TopLevel = false;
-            objForm.AutoScroll = true;
-            pnlMain.Controls.Add(objForm);
-            objForm.Show();
-
-        }
-
-        private void manageSupplierProductsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pnlMain.Controls.Clear();
-            Registrations.frmManageSupplierProducts objForm = new Registrations.frmManageSupplierProducts();
-            objForm.TopLevel = false;
-            objForm.AutoScroll = true;
-            pnlMain.Controls.Add(objForm);
-            objForm.Show();
-        }
-
+  
         private void storeInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pnlMain.Controls.Clear();
@@ -173,7 +143,65 @@ namespace pos.PL
             objForm.Show();
         }
 
-        private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+
+        private void smiLogout_Click(object sender, EventArgs e)
+        {
+            switch (MessageBox.Show(this, "Are you sure to logout?", "Confirming", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    break;
+                default:
+                    this.Close();
+                    frmLogin.Show();
+                    break;
+            }
+        }
+
+        private void smiExit_Click(object sender, EventArgs e)
+        {
+            switch (MessageBox.Show(this, "Are you sure to exit this application?", "Confirming", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    break;
+                default:
+                    Application.Exit();
+                    break;
+            }
+        }
+
+        private void smiProductCategories_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageCategories objForm = new Registrations.frmManageCategories();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+        }
+
+        private void smiProductSubCategories_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageSubCategories objForm = new Registrations.frmManageSubCategories();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+        }
+
+        private void smiManagePurchaseOrders_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Transactions.frmManagePurchaseOrders objForm = new Transactions.frmManagePurchaseOrders(staffEL);
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+        }
+
+        private void smiMyProfile_Click(object sender, EventArgs e)
         {
             pnlMain.Controls.Clear();
             Registrations.frmManageProfile objForm = new Registrations.frmManageProfile(staffEL, this);
@@ -183,20 +211,38 @@ namespace pos.PL
             objForm.Show();
         }
 
-        private void managePurchaseOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        private void smiManageSuppliers_Click(object sender, EventArgs e)
         {
             pnlMain.Controls.Clear();
-            Transactions.frmManagePurchaseOrders objForm = new Transactions.frmManagePurchaseOrders(staffEL);
+            Registrations.frmManageSuppliers objForm = new Registrations.frmManageSuppliers();
             objForm.TopLevel = false;
             objForm.AutoScroll = true;
             pnlMain.Controls.Add(objForm);
             objForm.Show();
         }
+
+        private void smiManageSupplierProducts_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageSupplierProducts objForm = new Registrations.frmManageSupplierProducts();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+        }
+
+        private void smiManageProducts_Click(object sender, EventArgs e)
+        {
+            pnlMain.Controls.Clear();
+            Registrations.frmManageProducts objForm = new Registrations.frmManageProducts();
+            objForm.TopLevel = false;
+            objForm.AutoScroll = true;
+            pnlMain.Controls.Add(objForm);
+            objForm.Show();
+        }
+
+
         #endregion
-
-
-
-
 
 
     }

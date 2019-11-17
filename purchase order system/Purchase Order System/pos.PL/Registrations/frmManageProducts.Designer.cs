@@ -47,8 +47,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbCategoryName = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtProductID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.txtProductDescription = new System.Windows.Forms.TextBox();
@@ -99,14 +97,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 265);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 61;
             this.label2.Text = "Search";
             // 
             // txtSearch
             // 
+            this.txtSearch.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(59, 262);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(272, 20);
@@ -116,10 +116,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(7, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 25);
+            this.label1.Size = new System.Drawing.Size(190, 24);
             this.label1.TabIndex = 59;
             this.label1.Text = "Manage Products";
             // 
@@ -132,12 +132,12 @@
             this.gbControls.Controls.Add(this.btnAdd);
             this.gbControls.Controls.Add(this.btnEdit);
             this.gbControls.Controls.Add(this.btnDelete);
+            this.gbControls.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbControls.Location = new System.Drawing.Point(1049, 43);
             this.gbControls.Name = "gbControls";
             this.gbControls.Size = new System.Drawing.Size(142, 201);
             this.gbControls.TabIndex = 64;
             this.gbControls.TabStop = false;
-            this.gbControls.Text = "Controls";
             // 
             // btnEdit
             // 
@@ -169,8 +169,6 @@
             this.gbInformations.Controls.Add(this.label5);
             this.gbInformations.Controls.Add(this.cbCategoryName);
             this.gbInformations.Controls.Add(this.label3);
-            this.gbInformations.Controls.Add(this.label14);
-            this.gbInformations.Controls.Add(this.txtProductID);
             this.gbInformations.Controls.Add(this.label13);
             this.gbInformations.Controls.Add(this.txtProductName);
             this.gbInformations.Controls.Add(this.txtProductDescription);
@@ -181,6 +179,7 @@
             this.gbInformations.Controls.Add(this.label4);
             this.gbInformations.Controls.Add(this.txtProductPrice);
             this.gbInformations.Controls.Add(this.label6);
+            this.gbInformations.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbInformations.Location = new System.Drawing.Point(12, 41);
             this.gbInformations.Name = "gbInformations";
             this.gbInformations.Size = new System.Drawing.Size(1031, 203);
@@ -189,51 +188,51 @@
             // 
             // txtReorderLevel
             // 
-            this.txtReorderLevel.Location = new System.Drawing.Point(619, 89);
+            this.txtReorderLevel.Location = new System.Drawing.Point(605, 99);
             this.txtReorderLevel.Name = "txtReorderLevel";
-            this.txtReorderLevel.Size = new System.Drawing.Size(172, 20);
+            this.txtReorderLevel.Size = new System.Drawing.Size(284, 20);
             this.txtReorderLevel.TabIndex = 61;
             this.txtReorderLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReorderLevel_KeyPress);
             // 
             // lblReorderLevel
             // 
             this.lblReorderLevel.AutoSize = true;
-            this.lblReorderLevel.Location = new System.Drawing.Point(616, 73);
+            this.lblReorderLevel.Location = new System.Drawing.Point(514, 102);
             this.lblReorderLevel.Name = "lblReorderLevel";
-            this.lblReorderLevel.Size = new System.Drawing.Size(74, 13);
+            this.lblReorderLevel.Size = new System.Drawing.Size(85, 13);
             this.lblReorderLevel.TabIndex = 64;
             this.lblReorderLevel.Text = "Reorder Level";
             // 
             // txtInitialStock
             // 
-            this.txtInitialStock.Location = new System.Drawing.Point(823, 89);
+            this.txtInitialStock.Location = new System.Drawing.Point(605, 125);
             this.txtInitialStock.Name = "txtInitialStock";
-            this.txtInitialStock.Size = new System.Drawing.Size(172, 20);
+            this.txtInitialStock.Size = new System.Drawing.Size(284, 20);
             this.txtInitialStock.TabIndex = 62;
             this.txtInitialStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInitialStock_KeyPress);
             // 
             // lblInitialStocks
             // 
             this.lblInitialStocks.AutoSize = true;
-            this.lblInitialStocks.Location = new System.Drawing.Point(820, 73);
+            this.lblInitialStocks.Location = new System.Drawing.Point(514, 128);
             this.lblInitialStocks.Name = "lblInitialStocks";
-            this.lblInitialStocks.Size = new System.Drawing.Size(62, 13);
+            this.lblInitialStocks.Size = new System.Drawing.Size(85, 13);
             this.lblInitialStocks.TabIndex = 63;
             this.lblInitialStocks.Text = "Initial Stock";
             // 
             // txtProductSKU
             // 
-            this.txtProductSKU.Location = new System.Drawing.Point(9, 89);
+            this.txtProductSKU.Location = new System.Drawing.Point(150, 99);
             this.txtProductSKU.Name = "txtProductSKU";
-            this.txtProductSKU.Size = new System.Drawing.Size(172, 20);
+            this.txtProductSKU.Size = new System.Drawing.Size(284, 20);
             this.txtProductSKU.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 73);
+            this.label5.Location = new System.Drawing.Point(71, 102);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 60;
             this.label5.Text = "Product SKU";
             // 
@@ -241,65 +240,48 @@
             // 
             this.cbCategoryName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoryName.FormattingEnabled = true;
-            this.cbCategoryName.Location = new System.Drawing.Point(619, 42);
+            this.cbCategoryName.Location = new System.Drawing.Point(150, 19);
             this.cbCategoryName.Name = "cbCategoryName";
-            this.cbCategoryName.Size = new System.Drawing.Size(172, 21);
+            this.cbCategoryName.Size = new System.Drawing.Size(284, 21);
             this.cbCategoryName.TabIndex = 4;
             this.cbCategoryName.SelectedIndexChanged += new System.EventHandler(this.cbCategoryName_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(616, 26);
+            this.label3.Location = new System.Drawing.Point(59, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 58;
             this.label3.Text = "Category Name";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
-            this.label14.TabIndex = 50;
-            this.label14.Text = "Product ID";
-            // 
-            // txtProductID
-            // 
-            this.txtProductID.Location = new System.Drawing.Point(9, 40);
-            this.txtProductID.Name = "txtProductID";
-            this.txtProductID.ReadOnly = true;
-            this.txtProductID.Size = new System.Drawing.Size(172, 20);
-            this.txtProductID.TabIndex = 1;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(210, 24);
+            this.label13.Location = new System.Drawing.Point(65, 76);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(75, 13);
+            this.label13.Size = new System.Drawing.Size(79, 13);
             this.label13.TabIndex = 28;
             this.label13.Text = "Product Name";
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(213, 40);
+            this.txtProductName.Location = new System.Drawing.Point(150, 73);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(172, 20);
+            this.txtProductName.Size = new System.Drawing.Size(284, 20);
             this.txtProductName.TabIndex = 2;
             // 
             // txtProductDescription
             // 
-            this.txtProductDescription.Location = new System.Drawing.Point(416, 40);
+            this.txtProductDescription.Location = new System.Drawing.Point(605, 19);
             this.txtProductDescription.Multiline = true;
             this.txtProductDescription.Name = "txtProductDescription";
-            this.txtProductDescription.Size = new System.Drawing.Size(172, 69);
+            this.txtProductDescription.Size = new System.Drawing.Size(284, 69);
             this.txtProductDescription.TabIndex = 3;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(920, 165);
+            this.btnCancel.Location = new System.Drawing.Point(950, 174);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 9;
@@ -310,15 +292,15 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(413, 24);
+            this.label12.Location = new System.Drawing.Point(478, 22);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 13);
+            this.label12.Size = new System.Drawing.Size(121, 13);
             this.label12.TabIndex = 30;
             this.label12.Text = "Product Description";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(823, 165);
+            this.btnSave.Location = new System.Drawing.Point(853, 174);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 8;
@@ -330,34 +312,34 @@
             // 
             this.cbSubCategoryName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubCategoryName.FormattingEnabled = true;
-            this.cbSubCategoryName.Location = new System.Drawing.Point(823, 42);
+            this.cbSubCategoryName.Location = new System.Drawing.Point(150, 46);
             this.cbSubCategoryName.Name = "cbSubCategoryName";
-            this.cbSubCategoryName.Size = new System.Drawing.Size(172, 21);
+            this.cbSubCategoryName.Size = new System.Drawing.Size(284, 21);
             this.cbSubCategoryName.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(820, 26);
+            this.label4.Location = new System.Drawing.Point(35, 50);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.Size = new System.Drawing.Size(109, 13);
             this.label4.TabIndex = 37;
             this.label4.Text = "Sub Category Name";
             // 
             // txtProductPrice
             // 
-            this.txtProductPrice.Location = new System.Drawing.Point(213, 89);
+            this.txtProductPrice.Location = new System.Drawing.Point(150, 125);
             this.txtProductPrice.Name = "txtProductPrice";
-            this.txtProductPrice.Size = new System.Drawing.Size(172, 20);
+            this.txtProductPrice.Size = new System.Drawing.Size(284, 20);
             this.txtProductPrice.TabIndex = 7;
             this.txtProductPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductPrice_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(210, 73);
+            this.label6.Location = new System.Drawing.Point(59, 128);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.Size = new System.Drawing.Size(85, 13);
             this.label6.TabIndex = 41;
             this.label6.Text = "Product Price";
             // 
@@ -366,12 +348,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 544);
+            this.Controls.Add(this.gbInformations);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gbControls);
-            this.Controls.Add(this.gbInformations);
+            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -399,8 +382,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox gbInformations;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtProductID;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.TextBox txtProductDescription;

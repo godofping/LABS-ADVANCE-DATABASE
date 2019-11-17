@@ -100,7 +100,6 @@ namespace pos.PL.Registrations
         private void ClearFields()
         {
             dgv.ClearSelection();
-            txtStaffID.ResetText();
             txtFirstName.ResetText();
             txtMiddleName.ResetText();
             txtLastName.ResetText();
@@ -300,7 +299,6 @@ namespace pos.PL.Registrations
 
             }
 
-            txtStaffID.Text = staffEL.Staffid.ToString();
             txtFirstName.Text = basicInformationEL.Firstname;
             txtMiddleName.Text = basicInformationEL.Middlename;
             txtLastName.Text = basicInformationEL.Lastname;
@@ -381,7 +379,7 @@ namespace pos.PL.Registrations
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtStaffID.Text.Equals(""))
+            if (dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No selected client. Please select first.");
             }
@@ -395,13 +393,20 @@ namespace pos.PL.Registrations
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtStaffID.Text.Equals(""))
+            if (dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No selected item. Please select first.");
             }
             else
             {
-                ShowMessageBox(staffBL.Delete(staffEL));
+                switch (MessageBox.Show(this, "Are you sure to delete this?", "Confirming", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.No:
+                        break;
+                    default:
+                        ShowMessageBox(staffBL.Delete(staffEL));
+                        break;
+                } 
             }
         }
 

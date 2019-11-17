@@ -247,7 +247,6 @@ namespace pos.PL.Registrations
 
             }
 
-            txtStaffID.Text = staffEL.Staffid.ToString();
             txtFirstName.Text = basicInformationEL.Firstname;
             txtMiddleName.Text = basicInformationEL.Middlename;
             txtLastName.Text = basicInformationEL.Lastname;
@@ -305,16 +304,9 @@ namespace pos.PL.Registrations
         #region "Events"
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtStaffID.Text.Equals(""))
-            {
-                MessageBox.Show("No selected client. Please select first.");
-            }
-            else
-            {
-                ManageForm(true);
-                this.ActiveControl = txtFirstName;
-                current = "EDIT";
-            }
+            ManageForm(true);
+            this.ActiveControl = txtFirstName;
+            current = "EDIT";
         }
 
         private void btnSave_Click(object sender, EventArgs e)

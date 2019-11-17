@@ -40,33 +40,33 @@
             this.cbSupplierName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSupplierName.FormattingEnabled = true;
             this.cbSupplierName.ItemHeight = 13;
-            this.cbSupplierName.Location = new System.Drawing.Point(24, 71);
+            this.cbSupplierName.Location = new System.Drawing.Point(112, 60);
             this.cbSupplierName.Name = "cbSupplierName";
-            this.cbSupplierName.Size = new System.Drawing.Size(411, 21);
+            this.cbSupplierName.Size = new System.Drawing.Size(284, 21);
             this.cbSupplierName.TabIndex = 77;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 55);
+            this.label3.Location = new System.Drawing.Point(21, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 78;
             this.label3.Text = "Supplier Name";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(19, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 25);
+            this.label1.Size = new System.Drawing.Size(190, 24);
             this.label1.TabIndex = 79;
             this.label1.Text = "Select Supplier";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(360, 113);
+            this.btnCancel.Location = new System.Drawing.Point(360, 127);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 81;
@@ -76,7 +76,7 @@
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(263, 113);
+            this.btnSelect.Location = new System.Drawing.Point(263, 127);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(75, 23);
             this.btnSelect.TabIndex = 80;
@@ -88,12 +88,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(447, 162);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbSupplierName);
             this.Controls.Add(this.label3);
+            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSelectSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

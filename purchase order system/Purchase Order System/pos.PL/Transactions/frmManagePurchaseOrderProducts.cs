@@ -443,9 +443,16 @@ namespace pos.PL.Transactions
             }
             else
             {
-                dgv.Rows.RemoveAt(dgv.SelectedRows[0].Index);
-                GetTotalAmount();
-                ClearFields();
+                switch (MessageBox.Show(this, "Are you sure to delete this?", "Confirming", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.No:
+                        break;
+                    default:
+                        dgv.Rows.RemoveAt(dgv.SelectedRows[0].Index);
+                        GetTotalAmount();
+                        ClearFields();
+                        break;
+                }
             }
         }
 

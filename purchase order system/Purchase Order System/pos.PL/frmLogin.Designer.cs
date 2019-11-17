@@ -42,15 +42,17 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(19, 74);
+            this.txtUsername.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(77, 55);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(175, 20);
+            this.txtUsername.Size = new System.Drawing.Size(284, 20);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.Text = "admin";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(19, 162);
+            this.btnLogin.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(205, 117);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 3;
@@ -61,6 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
@@ -70,24 +73,27 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 111);
+            this.label2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(19, 127);
+            this.txtPassword.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(77, 81);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(175, 20);
+            this.txtPassword.Size = new System.Drawing.Size(284, 20);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "admin";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(119, 162);
+            this.btnExit.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(286, 117);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 5;
@@ -98,10 +104,10 @@
             // lblStoreName
             // 
             this.lblStoreName.AutoSize = true;
-            this.lblStoreName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStoreName.Location = new System.Drawing.Point(44, 24);
+            this.lblStoreName.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStoreName.Location = new System.Drawing.Point(109, 21);
             this.lblStoreName.Name = "lblStoreName";
-            this.lblStoreName.Size = new System.Drawing.Size(128, 16);
+            this.lblStoreName.Size = new System.Drawing.Size(171, 19);
             this.lblStoreName.TabIndex = 6;
             this.lblStoreName.Text = "Rex Computer Store";
             this.lblStoreName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,7 +121,7 @@
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(223, 201);
+            this.ClientSize = new System.Drawing.Size(379, 158);
             this.Controls.Add(this.lblStoreName);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label2);

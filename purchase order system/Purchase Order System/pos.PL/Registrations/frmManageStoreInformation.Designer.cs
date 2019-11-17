@@ -58,10 +58,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 25);
+            this.label1.Size = new System.Drawing.Size(298, 24);
             this.label1.TabIndex = 59;
             this.label1.Text = "Manage Store Information";
             // 
@@ -72,12 +72,12 @@
             // gbControls
             // 
             this.gbControls.Controls.Add(this.btnEdit);
+            this.gbControls.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbControls.Location = new System.Drawing.Point(1051, 45);
             this.gbControls.Name = "gbControls";
-            this.gbControls.Size = new System.Drawing.Size(142, 201);
+            this.gbControls.Size = new System.Drawing.Size(142, 214);
             this.gbControls.TabIndex = 64;
             this.gbControls.TabStop = false;
-            this.gbControls.Text = "Controls";
             // 
             // btnEdit
             // 
@@ -107,31 +107,32 @@
             this.gbInformations.Controls.Add(this.txtAddress);
             this.gbInformations.Controls.Add(this.txtEmailAddress);
             this.gbInformations.Controls.Add(this.label7);
+            this.gbInformations.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbInformations.Location = new System.Drawing.Point(14, 43);
             this.gbInformations.Name = "gbInformations";
-            this.gbInformations.Size = new System.Drawing.Size(1031, 203);
+            this.gbInformations.Size = new System.Drawing.Size(1031, 216);
             this.gbInformations.TabIndex = 63;
             this.gbInformations.TabStop = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 24);
+            this.label13.Location = new System.Drawing.Point(30, 22);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(63, 13);
+            this.label13.Size = new System.Drawing.Size(67, 13);
             this.label13.TabIndex = 28;
             this.label13.Text = "Store Name";
             // 
             // txtStoreName
             // 
-            this.txtStoreName.Location = new System.Drawing.Point(9, 40);
+            this.txtStoreName.Location = new System.Drawing.Point(103, 19);
             this.txtStoreName.Name = "txtStoreName";
-            this.txtStoreName.Size = new System.Drawing.Size(172, 20);
+            this.txtStoreName.Size = new System.Drawing.Size(284, 20);
             this.txtStoreName.TabIndex = 25;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(920, 165);
+            this.btnCancel.Location = new System.Drawing.Point(950, 187);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 48;
@@ -141,7 +142,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(823, 165);
+            this.btnSave.Location = new System.Drawing.Point(853, 187);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 47;
@@ -152,97 +153,97 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(212, 65);
+            this.label11.Location = new System.Drawing.Point(42, 178);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 46;
             this.label11.Text = "Zip Code";
             // 
             // txtZipCode
             // 
-            this.txtZipCode.Location = new System.Drawing.Point(215, 84);
+            this.txtZipCode.Location = new System.Drawing.Point(103, 175);
             this.txtZipCode.Name = "txtZipCode";
-            this.txtZipCode.Size = new System.Drawing.Size(172, 20);
+            this.txtZipCode.Size = new System.Drawing.Size(284, 20);
             this.txtZipCode.TabIndex = 39;
             this.txtZipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZipCode_KeyPress);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 67);
+            this.label10.Location = new System.Drawing.Point(42, 152);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.Size = new System.Drawing.Size(55, 13);
             this.label10.TabIndex = 45;
             this.label10.Text = "Province";
             // 
             // txtProvince
             // 
-            this.txtProvince.Location = new System.Drawing.Point(11, 84);
+            this.txtProvince.Location = new System.Drawing.Point(103, 149);
             this.txtProvince.Name = "txtProvince";
-            this.txtProvince.Size = new System.Drawing.Size(172, 20);
+            this.txtProvince.Size = new System.Drawing.Size(284, 20);
             this.txtProvince.TabIndex = 38;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(822, 24);
+            this.label9.Location = new System.Drawing.Point(66, 126);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 13);
+            this.label9.Size = new System.Drawing.Size(31, 13);
             this.label9.TabIndex = 44;
             this.label9.Text = "City";
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(825, 40);
+            this.txtCity.Location = new System.Drawing.Point(103, 123);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(172, 20);
+            this.txtCity.Size = new System.Drawing.Size(284, 20);
             this.txtCity.TabIndex = 36;
             // 
             // txtContactNumber
             // 
-            this.txtContactNumber.Location = new System.Drawing.Point(215, 40);
+            this.txtContactNumber.Location = new System.Drawing.Point(103, 45);
             this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.Size = new System.Drawing.Size(172, 20);
+            this.txtContactNumber.Size = new System.Drawing.Size(284, 20);
             this.txtContactNumber.TabIndex = 32;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(618, 24);
+            this.label8.Location = new System.Drawing.Point(48, 100);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 43;
             this.label8.Text = "Address";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(212, 24);
+            this.label6.Location = new System.Drawing.Point(6, 48);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 13);
+            this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 41;
             this.label6.Text = "Contact Number";
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(621, 40);
+            this.txtAddress.Location = new System.Drawing.Point(103, 97);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(172, 20);
+            this.txtAddress.Size = new System.Drawing.Size(284, 20);
             this.txtAddress.TabIndex = 35;
             // 
             // txtEmailAddress
             // 
-            this.txtEmailAddress.Location = new System.Drawing.Point(418, 40);
+            this.txtEmailAddress.Location = new System.Drawing.Point(103, 71);
             this.txtEmailAddress.Name = "txtEmailAddress";
-            this.txtEmailAddress.Size = new System.Drawing.Size(172, 20);
+            this.txtEmailAddress.Size = new System.Drawing.Size(284, 20);
             this.txtEmailAddress.TabIndex = 34;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(415, 24);
+            this.label7.Location = new System.Drawing.Point(12, 74);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.Size = new System.Drawing.Size(85, 13);
             this.label7.TabIndex = 42;
             this.label7.Text = "Email Address";
             // 
@@ -254,6 +255,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gbControls);
             this.Controls.Add(this.gbInformations);
+            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageStoreInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

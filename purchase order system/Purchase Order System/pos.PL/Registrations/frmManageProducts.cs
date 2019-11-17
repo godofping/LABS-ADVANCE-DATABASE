@@ -127,7 +127,6 @@ namespace pos.PL.Registrations
         private void ClearFields()
         {
             dgv.ClearSelection();
-            txtProductID.ResetText();
             txtProductName.ResetText();
             txtProductDescription.ResetText();
             cbCategoryName.SelectedIndex = -1;
@@ -250,7 +249,6 @@ namespace pos.PL.Registrations
                 inventoryEL.Quantityinstocks = Convert.ToInt32(row.Cells["Quantity In Stocks"].Value);
             }
 
-            txtProductID.Text = productEL.Productid.ToString();
             txtProductName.Text = productEL.Productname;
             txtProductDescription.Text = productEL.Productdescription;
             cbCategoryName.SelectedIndex = cbCategoryName.FindString(categoryEL.Categoryname);
@@ -323,7 +321,7 @@ namespace pos.PL.Registrations
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtProductID.Text.Equals(""))
+            if (dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No selected client. Please select first.");
             }
@@ -337,13 +335,20 @@ namespace pos.PL.Registrations
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtProductID.Text.Equals(""))
+            if (dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No selected item. Please select first.");
             }
             else
             {
-                ShowMessageBox(productBL.Delete(productEL));
+                switch (MessageBox.Show(this, "Are you sure to delete this?", "Confirming", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.No:
+                        break;
+                    default:
+                        ShowMessageBox(productBL.Delete(productEL));
+                        break;
+                }
             }
         }
 

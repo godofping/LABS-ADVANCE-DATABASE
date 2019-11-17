@@ -189,7 +189,14 @@ namespace pos.PL
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            switch (MessageBox.Show(this, "Are you sure to exit this application?", "Confirming", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    break;
+                default:
+                    Application.Exit();
+                    break;
+            }
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

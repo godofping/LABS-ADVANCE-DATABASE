@@ -139,24 +139,17 @@ namespace pos.PL.Registrations
         private void ClearFields()
         {
             dgv.ClearSelection();
-            txtSupplierProductID.ResetText();
-
             cbSupplierName.SelectedIndex = -1;
-
             cbCategoryName.SelectedIndex = -1;
             cbCategoryName.ResetText();
-
             cbSubCategoryName.SelectedIndex = -1;
             cbSubCategoryName.ResetText();
             cbSubCategoryName.DataSource = null;
             cbSubCategoryName.Items.Clear();
-
             cbProductName.SelectedIndex = -1;
             cbProductName.ResetText();
             cbProductName.DataSource = null;
             cbProductName.Items.Clear();
-
-
 
             ClearExtendedFields();
         }
@@ -242,7 +235,7 @@ namespace pos.PL.Registrations
                 supplierProductEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
             }
 
-            txtSupplierProductID.Text = supplierProductEL.Supplierproductid.ToString();
+            
             cbSupplierName.SelectedIndex = cbSupplierName.FindString(supplierEL.Supplier);
             cbCategoryName.SelectedIndex = cbCategoryName.FindString(categoryEL.Categoryname);
             cbSubCategoryName.SelectedIndex = cbSubCategoryName.FindString(subCategoryEL.Subcategoryname);
@@ -297,7 +290,7 @@ namespace pos.PL.Registrations
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtSupplierProductID.Text.Equals(""))
+            if (dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No selected client. Please select first.");
             }
@@ -311,13 +304,20 @@ namespace pos.PL.Registrations
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtSupplierProductID.Text.Equals(""))
+            if (dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No selected item. Please select first.");
             }
             else
             {
-                ShowMessageBox(supplierProductBL.Delete(supplierProductEL));
+                switch (MessageBox.Show(this, "Are you sure to delete this?", "Confirming", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.No:
+                        break;
+                    default:
+                        ShowMessageBox(supplierProductBL.Delete(supplierProductEL));
+                        break;
+                }
             }
         }
 
@@ -389,8 +389,9 @@ namespace pos.PL.Registrations
         {
             GetProductInfo();
         }
+
         #endregion
 
-
+       
     }
 }

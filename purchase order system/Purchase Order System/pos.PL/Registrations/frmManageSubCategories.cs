@@ -78,7 +78,6 @@ namespace pos.PL.Registrations
         private void ClearFields()
         {
             dgv.ClearSelection();
-            txtSubCategoryID.ResetText();
             txtSubCategoryName.ResetText();
             cbCategoryName.SelectedIndex = -1;
         }
@@ -129,7 +128,6 @@ namespace pos.PL.Registrations
 
             }
 
-            txtSubCategoryID.Text = subCategoryEL.Subcategoryid.ToString();
             txtSubCategoryName.Text = subCategoryEL.Subcategoryname.ToString();
             cbCategoryName.SelectedIndex = cbCategoryName.FindString(categoryEL.Categoryname);
 
@@ -180,7 +178,7 @@ namespace pos.PL.Registrations
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (txtSubCategoryID.Text.Equals(""))
+            if (dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No selected client. Please select first.");
             }
@@ -194,13 +192,20 @@ namespace pos.PL.Registrations
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtSubCategoryID.Text.Equals(""))
+            if (dgv.SelectedRows.Count == 0)
             {
                 MessageBox.Show("No selected item. Please select first.");
             }
             else
             {
-                ShowMessageBox(subCategoryBL.Delete(subCategoryEL));
+                switch (MessageBox.Show(this, "Are you sure to delete this?", "Confirming", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.No:
+                        break;
+                    default:
+                        ShowMessageBox(subCategoryBL.Delete(subCategoryEL));
+                        break;
+                } 
             }
         }
 

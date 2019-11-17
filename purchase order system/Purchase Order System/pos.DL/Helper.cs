@@ -35,11 +35,11 @@ namespace pos.DL
                         trans.Commit();
 
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         rslt = 0;
                         trans.Rollback();
-                      //  throw ex;
+
                     }
                     return rslt;
                 }
@@ -75,11 +75,11 @@ namespace pos.DL
                         trans.Commit();
 
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         rslt = false;
                         trans.Rollback();
-                        //throw ex;
+                       
                     }
                     return rslt;
                 }

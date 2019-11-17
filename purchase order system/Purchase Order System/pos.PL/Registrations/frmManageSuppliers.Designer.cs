@@ -33,8 +33,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.gbControls = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtSupplierID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtSupplier = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -93,7 +91,6 @@
             this.gbControls.Size = new System.Drawing.Size(142, 201);
             this.gbControls.TabIndex = 66;
             this.gbControls.TabStop = false;
-            this.gbControls.Text = "Controls";
             // 
             // btnEdit
             // 
@@ -105,42 +102,25 @@
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 13);
-            this.label14.TabIndex = 50;
-            this.label14.Text = "Supplier ID";
-            // 
-            // txtSupplierID
-            // 
-            this.txtSupplierID.Location = new System.Drawing.Point(9, 40);
-            this.txtSupplierID.Name = "txtSupplierID";
-            this.txtSupplierID.ReadOnly = true;
-            this.txtSupplierID.Size = new System.Drawing.Size(172, 20);
-            this.txtSupplierID.TabIndex = 49;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(210, 24);
+            this.label13.Location = new System.Drawing.Point(79, 32);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 13);
+            this.label13.Size = new System.Drawing.Size(55, 13);
             this.label13.TabIndex = 28;
             this.label13.Text = "Supplier";
             // 
             // txtSupplier
             // 
-            this.txtSupplier.Location = new System.Drawing.Point(213, 40);
+            this.txtSupplier.Location = new System.Drawing.Point(140, 29);
             this.txtSupplier.Name = "txtSupplier";
-            this.txtSupplier.Size = new System.Drawing.Size(172, 20);
+            this.txtSupplier.Size = new System.Drawing.Size(284, 20);
             this.txtSupplier.TabIndex = 25;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(920, 165);
+            this.btnCancel.Location = new System.Drawing.Point(950, 174);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 48;
@@ -150,7 +130,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(823, 165);
+            this.btnSave.Location = new System.Drawing.Point(853, 174);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 47;
@@ -160,34 +140,34 @@
             // 
             // txtContactNumber
             // 
-            this.txtContactNumber.Location = new System.Drawing.Point(416, 41);
+            this.txtContactNumber.Location = new System.Drawing.Point(141, 55);
             this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.Size = new System.Drawing.Size(172, 20);
+            this.txtContactNumber.Size = new System.Drawing.Size(284, 20);
             this.txtContactNumber.TabIndex = 27;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(413, 75);
+            this.label11.Location = new System.Drawing.Point(463, 113);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 13);
+            this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 46;
             this.label11.Text = "Zip Code";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(413, 25);
+            this.label3.Location = new System.Drawing.Point(43, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 33;
             this.label3.Text = "Contact Number";
             // 
             // txtZipCode
             // 
-            this.txtZipCode.Location = new System.Drawing.Point(416, 94);
+            this.txtZipCode.Location = new System.Drawing.Point(524, 110);
             this.txtZipCode.Name = "txtZipCode";
-            this.txtZipCode.Size = new System.Drawing.Size(172, 20);
+            this.txtZipCode.Size = new System.Drawing.Size(284, 20);
             this.txtZipCode.TabIndex = 39;
             this.txtZipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZipCode_KeyPress);
             // 
@@ -202,35 +182,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(7, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 25);
+            this.label1.Size = new System.Drawing.Size(202, 24);
             this.label1.TabIndex = 61;
             this.label1.Text = "Manage Suppliers";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(209, 78);
+            this.label10.Location = new System.Drawing.Point(463, 87);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.Size = new System.Drawing.Size(55, 13);
             this.label10.TabIndex = 45;
             this.label10.Text = "Province";
             // 
             // txtProvince
             // 
-            this.txtProvince.Location = new System.Drawing.Point(212, 95);
+            this.txtProvince.Location = new System.Drawing.Point(524, 84);
             this.txtProvince.Name = "txtProvince";
-            this.txtProvince.Size = new System.Drawing.Size(172, 20);
+            this.txtProvince.Size = new System.Drawing.Size(284, 20);
             this.txtProvince.TabIndex = 38;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 78);
+            this.label9.Location = new System.Drawing.Point(487, 61);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(24, 13);
+            this.label9.Size = new System.Drawing.Size(31, 13);
             this.label9.TabIndex = 44;
             this.label9.Text = "City";
             // 
@@ -239,46 +219,44 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 268);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 63;
             this.label2.Text = "Search";
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(9, 94);
+            this.txtCity.Location = new System.Drawing.Point(524, 58);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(172, 20);
+            this.txtCity.Size = new System.Drawing.Size(284, 20);
             this.txtCity.TabIndex = 36;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(820, 24);
+            this.label8.Location = new System.Drawing.Point(469, 32);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 43;
             this.label8.Text = "Address";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(617, 24);
+            this.label6.Location = new System.Drawing.Point(49, 84);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.Size = new System.Drawing.Size(85, 13);
             this.label6.TabIndex = 41;
             this.label6.Text = "Email Address";
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(823, 40);
+            this.txtAddress.Location = new System.Drawing.Point(524, 29);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(172, 20);
+            this.txtAddress.Size = new System.Drawing.Size(284, 20);
             this.txtAddress.TabIndex = 35;
             // 
             // gbInformations
             // 
-            this.gbInformations.Controls.Add(this.label14);
-            this.gbInformations.Controls.Add(this.txtSupplierID);
             this.gbInformations.Controls.Add(this.label13);
             this.gbInformations.Controls.Add(this.txtSupplier);
             this.gbInformations.Controls.Add(this.btnCancel);
@@ -303,9 +281,9 @@
             // 
             // txtEmailAddress
             // 
-            this.txtEmailAddress.Location = new System.Drawing.Point(620, 40);
+            this.txtEmailAddress.Location = new System.Drawing.Point(140, 81);
             this.txtEmailAddress.Name = "txtEmailAddress";
-            this.txtEmailAddress.Size = new System.Drawing.Size(172, 20);
+            this.txtEmailAddress.Size = new System.Drawing.Size(284, 20);
             this.txtEmailAddress.TabIndex = 32;
             // 
             // dgv
@@ -338,12 +316,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 544);
+            this.Controls.Add(this.gbInformations);
             this.Controls.Add(this.gbControls);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.gbInformations);
             this.Controls.Add(this.dgv);
+            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageSuppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -365,8 +344,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox gbControls;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtSupplierID;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtSupplier;
         private System.Windows.Forms.Button btnCancel;
