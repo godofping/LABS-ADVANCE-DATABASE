@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mtbBirthDate = new System.Windows.Forms.DateTimePicker();
-            this.EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -39,7 +38,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtMiddleInitial = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -51,35 +49,27 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pnlCenter = new System.Windows.Forms.Panel();
+            this.dtpDateHired = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cbDesignation = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.mtbDateHired = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
             this.pnlCenter.SuspendLayout();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
-            // mtbBirthDate
+            // dtpBirthDate
             // 
-            this.mtbBirthDate.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.mtbBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.mtbBirthDate.Location = new System.Drawing.Point(30, 275);
-            this.mtbBirthDate.Name = "mtbBirthDate";
-            this.mtbBirthDate.Size = new System.Drawing.Size(232, 25);
-            this.mtbBirthDate.TabIndex = 4;
-            this.mtbBirthDate.Value = new System.DateTime(2019, 11, 26, 0, 0, 0, 0);
-            // 
-            // EDIT
-            // 
-            this.EDIT.HeaderText = "";
-            this.EDIT.Name = "EDIT";
-            this.EDIT.ReadOnly = true;
-            this.EDIT.Text = "EDIT";
-            this.EDIT.UseColumnTextForButtonValue = true;
+            this.dtpBirthDate.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthDate.Location = new System.Drawing.Point(30, 275);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(232, 25);
+            this.dtpBirthDate.TabIndex = 4;
+            this.dtpBirthDate.Value = new System.DateTime(2019, 11, 26, 0, 0, 0, 0);
             // 
             // label8
             // 
@@ -165,14 +155,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 5);
             this.panel1.TabIndex = 11;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Text = "DELETE";
-            this.Column2.UseColumnTextForButtonValue = true;
             // 
             // txtMiddleInitial
             // 
@@ -277,11 +259,11 @@
             // 
             // pnlCenter
             // 
-            this.pnlCenter.Controls.Add(this.mtbDateHired);
+            this.pnlCenter.Controls.Add(this.dtpDateHired);
             this.pnlCenter.Controls.Add(this.label10);
             this.pnlCenter.Controls.Add(this.label9);
             this.pnlCenter.Controls.Add(this.cbDesignation);
-            this.pnlCenter.Controls.Add(this.mtbBirthDate);
+            this.pnlCenter.Controls.Add(this.dtpBirthDate);
             this.pnlCenter.Controls.Add(this.txtAddress);
             this.pnlCenter.Controls.Add(this.label7);
             this.pnlCenter.Controls.Add(this.txtEmailAddress);
@@ -304,15 +286,35 @@
             this.pnlCenter.Size = new System.Drawing.Size(1001, 499);
             this.pnlCenter.TabIndex = 5;
             // 
+            // dtpDateHired
+            // 
+            this.dtpDateHired.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.dtpDateHired.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateHired.Location = new System.Drawing.Point(577, 156);
+            this.dtpDateHired.Name = "dtpDateHired";
+            this.dtpDateHired.Size = new System.Drawing.Size(232, 25);
+            this.dtpDateHired.TabIndex = 20;
+            this.dtpDateHired.Value = new System.DateTime(2019, 11, 26, 0, 0, 0, 0);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(574, 136);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(87, 17);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "DATE HIRED *";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(574, 82);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 17);
+            this.label9.Size = new System.Drawing.Size(99, 17);
             this.label9.TabIndex = 19;
-            this.label9.Text = "DESIGNATION";
+            this.label9.Text = "DESIGNATION *";
             // 
             // cbDesignation
             // 
@@ -350,9 +352,6 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EDIT,
-            this.Column2});
             this.dgv.Location = new System.Drawing.Point(18, 93);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
@@ -360,26 +359,6 @@
             this.dgv.Size = new System.Drawing.Size(1001, 418);
             this.dgv.TabIndex = 4;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
-            // 
-            // mtbDateHired
-            // 
-            this.mtbDateHired.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.mtbDateHired.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.mtbDateHired.Location = new System.Drawing.Point(577, 156);
-            this.mtbDateHired.Name = "mtbDateHired";
-            this.mtbDateHired.Size = new System.Drawing.Size(232, 25);
-            this.mtbDateHired.TabIndex = 20;
-            this.mtbDateHired.Value = new System.DateTime(2019, 11, 26, 0, 0, 0, 0);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(574, 136);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 17);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "DATE HIRED *";
             // 
             // frmStaffs
             // 
@@ -407,8 +386,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker mtbBirthDate;
-        private System.Windows.Forms.DataGridViewButtonColumn EDIT;
+        private System.Windows.Forms.DateTimePicker dtpBirthDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label7;
@@ -418,7 +396,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewButtonColumn Column2;
         private System.Windows.Forms.TextBox txtMiddleInitial;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFirstName;
@@ -435,7 +412,7 @@
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.ComboBox cbDesignation;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker mtbDateHired;
+        private System.Windows.Forms.DateTimePicker dtpDateHired;
         private System.Windows.Forms.Label label10;
     }
 }

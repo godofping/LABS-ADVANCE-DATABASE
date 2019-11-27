@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pnlCenter = new System.Windows.Forms.Panel();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.lblStaffName = new System.Windows.Forms.Label();
+            this.cbStaffName = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,10 +45,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblStaffName = new System.Windows.Forms.Label();
-            this.cbStaffName = new System.Windows.Forms.ComboBox();
             this.lblFullname = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.pnlTop.SuspendLayout();
             this.pnlCenter.SuspendLayout();
@@ -59,9 +57,6 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EDIT,
-            this.Column2});
             this.dgv.Location = new System.Drawing.Point(18, 93);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
@@ -69,22 +64,6 @@
             this.dgv.Size = new System.Drawing.Size(1001, 418);
             this.dgv.TabIndex = 7;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
-            // 
-            // EDIT
-            // 
-            this.EDIT.HeaderText = "";
-            this.EDIT.Name = "EDIT";
-            this.EDIT.ReadOnly = true;
-            this.EDIT.Text = "EDIT";
-            this.EDIT.UseColumnTextForButtonValue = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Text = "DELETE";
-            this.Column2.UseColumnTextForButtonValue = true;
             // 
             // pnlTop
             // 
@@ -130,12 +109,12 @@
             // pnlCenter
             // 
             this.pnlCenter.Controls.Add(this.txtFullName);
+            this.pnlCenter.Controls.Add(this.txtUsername);
             this.pnlCenter.Controls.Add(this.lblStaffName);
             this.pnlCenter.Controls.Add(this.cbStaffName);
             this.pnlCenter.Controls.Add(this.panel1);
             this.pnlCenter.Controls.Add(this.txtPassword);
             this.pnlCenter.Controls.Add(this.label2);
-            this.pnlCenter.Controls.Add(this.txtUsername);
             this.pnlCenter.Controls.Add(this.label1);
             this.pnlCenter.Controls.Add(this.lblTitle);
             this.pnlCenter.Controls.Add(this.btnSave);
@@ -145,6 +124,35 @@
             this.pnlCenter.Name = "pnlCenter";
             this.pnlCenter.Size = new System.Drawing.Size(1001, 499);
             this.pnlCenter.TabIndex = 8;
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullName.Location = new System.Drawing.Point(30, 102);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(486, 25);
+            this.txtFullName.TabIndex = 23;
+            // 
+            // lblStaffName
+            // 
+            this.lblStaffName.AutoSize = true;
+            this.lblStaffName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffName.Location = new System.Drawing.Point(27, 82);
+            this.lblStaffName.Name = "lblStaffName";
+            this.lblStaffName.Size = new System.Drawing.Size(91, 17);
+            this.lblStaffName.TabIndex = 21;
+            this.lblStaffName.Text = "STAFF NAME *";
+            // 
+            // cbStaffName
+            // 
+            this.cbStaffName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStaffName.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.cbStaffName.FormattingEnabled = true;
+            this.cbStaffName.Location = new System.Drawing.Point(30, 102);
+            this.cbStaffName.Name = "cbStaffName";
+            this.cbStaffName.Size = new System.Drawing.Size(486, 25);
+            this.cbStaffName.TabIndex = 20;
             // 
             // panel1
             // 
@@ -223,26 +231,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // lblStaffName
-            // 
-            this.lblStaffName.AutoSize = true;
-            this.lblStaffName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffName.Location = new System.Drawing.Point(27, 82);
-            this.lblStaffName.Name = "lblStaffName";
-            this.lblStaffName.Size = new System.Drawing.Size(82, 17);
-            this.lblStaffName.TabIndex = 21;
-            this.lblStaffName.Text = "STAFF NAME";
-            // 
-            // cbStaffName
-            // 
-            this.cbStaffName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStaffName.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.cbStaffName.FormattingEnabled = true;
-            this.cbStaffName.Location = new System.Drawing.Point(30, 102);
-            this.cbStaffName.Name = "cbStaffName";
-            this.cbStaffName.Size = new System.Drawing.Size(486, 25);
-            this.cbStaffName.TabIndex = 20;
-            // 
             // lblFullname
             // 
             this.lblFullname.AutoSize = true;
@@ -253,24 +241,15 @@
             this.lblFullname.TabIndex = 22;
             this.lblFullname.Text = "FULL NAME";
             // 
-            // txtFullName
-            // 
-            this.txtFullName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(30, 102);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(486, 25);
-            this.txtFullName.TabIndex = 23;
-            // 
             // frmStaffsAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 523);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.pnlCenter);
             this.Controls.Add(this.pnlTop);
-            this.Controls.Add(this.dgv);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmStaffsAccount";
@@ -288,8 +267,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewButtonColumn EDIT;
-        private System.Windows.Forms.DataGridViewButtonColumn Column2;
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSearch;

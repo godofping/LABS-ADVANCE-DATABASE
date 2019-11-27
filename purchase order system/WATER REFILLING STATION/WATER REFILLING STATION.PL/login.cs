@@ -30,23 +30,7 @@ namespace WATER_REFILLING_STATION.PL
 
         private void ClearControls()
         {
-            txtUsername.ResetText();
-            txtPassword.ResetText();
-            
-        }
-
-        private bool RequiredFields()
-        {
-            bool bol = true;
-            if
-                (
-                txtUsername.Text.Equals("") |
-                txtPassword.Text.Equals("")
-                )
-            {
-                bol = false;
-            }
-            return bol;
+            methods.ClearTXT(txtUsername, txtPassword);
         }
 
         public void LogOut()
@@ -64,7 +48,9 @@ namespace WATER_REFILLING_STATION.PL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(RequiredFields())
+            if(
+                methods.CheckRequiredTXT(txtUsername, txtPassword)
+                )
             {
                 staffsaccountEL.Username = txtUsername.Text;
                 staffsaccountEL.Password = txtPassword.Text;
@@ -99,6 +85,7 @@ namespace WATER_REFILLING_STATION.PL
             else
             {
                 MessageBox.Show("PLEASE COMPLETE ALL THE REQUIRED FIELDS (*).");
+                txtUsername.Focus();
             }
         }
 

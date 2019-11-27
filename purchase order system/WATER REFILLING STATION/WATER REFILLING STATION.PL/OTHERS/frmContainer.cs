@@ -32,7 +32,7 @@ namespace WATER_REFILLING_STATION.PL.OTHERS
         private void frmContainer_Load(object sender, EventArgs e)
         {
             lblHeader.Text = s;
-            methods.changePanelDisplay(frm, pnlMain);
+            methods.ChangePanelDisplay(frm, pnlMain);
         }
 
 

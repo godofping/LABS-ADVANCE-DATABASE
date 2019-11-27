@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
@@ -28,8 +21,7 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
 
         private void ClearControls()
         {
-            txtUsername.ResetText();
-            txtPassword.ResetText();
+            methods.ClearTXT(txtUsername, txtPassword);
         }
 
         private void FormActive(bool bol)
@@ -38,61 +30,48 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
             pnlTop.Visible = !bol;
             dgv.Visible = !bol;
             ClearControls();
-            
+
             if (s.Equals("ADD"))
             {
-                lblStaffName.Visible = true;
-                cbStaffName.Visible = true;
-                lblFullname.Visible = false;
-                txtFullName.Visible = false;
-                txtUsername.ReadOnly = false;
+                methods.VisibilityCB(true, cbStaffName);
+                methods.VisibilityLBL(true, lblStaffName);
+                methods.VisibilityLBL(false, lblFullname);
+                methods.VisibilityTXT(false, txtFullName);
+                methods.ReadOnlyTXT(false, txtUsername);
             }
             else if (s.Equals("EDIT"))
             {
-                lblStaffName.Visible = false;
-                cbStaffName.Visible = false;
-                lblFullname.Visible = true;
-                txtFullName.Visible = true;
-                txtUsername.ReadOnly = true;
+                methods.VisibilityCB(!true, cbStaffName);
+                methods.VisibilityLBL(!true, lblStaffName);
+                methods.VisibilityLBL(!false, lblFullname);
+                methods.VisibilityTXT(!false, txtFullName);
+                methods.ReadOnlyTXT(!false, txtUsername);
             }
-            
+
         }
 
         private void PopulateDGV()
         {
-            dgv.DataSource = staffsaccountBL.List(txtSearch.Text);
-            dgv.Columns["STAFF ACCOUNT ID"].Visible = false;
-            dgv.Columns["BASIC INFORMATION ID"].Visible = false;
-            dgv.Columns["DESIGNATION ID"].Visible = false;
-            dgv.Columns["STAFF ID"].Visible = false;
-            dgv.Columns["PASSWORD"].Visible = false;
-            dgv.Columns["BIRTH DATE"].Visible = false;
-            dgv.Columns["ADDRESS"].Visible = false;
-            dgv.Columns["CONTACT NUMBER"].Visible = false;
-            dgv.Columns["EMAIL ADDRESS"].Visible = false;
-            dgv.Columns["DATE HIRED"].Visible = false;
-            dgv.Columns["FULL NAME"].Visible = false;
+            methods.LoadDGV(dgv, staffsaccountBL.List(txtSearch.Text));
+            methods.DGVHiddenColumns(
+                dgv,
+                "STAFF ACCOUNT ID",
+                "BASIC INFORMATION ID",
+                "DESIGNATION ID",
+                "STAFF ID",
+                "PASSWORD",
+                "BIRTH DATE",
+                "ADDRESS",
+                "CONTACT NUMBER",
+                "EMAIL ADDRESS",
+                "DATE HIRED",
+                "FULL NAME"
+                );
         }
 
         private void PopulateCB()
         {
-            cbStaffName.DataSource = staffBL.List();
-            cbStaffName.DisplayMember = "FULL NAME";
-            cbStaffName.ValueMember = "STAFF ID";
-        }
-
-        private bool RequiredFields()
-        {
-            bool bol = true;
-            if
-                (
-                txtUsername.Text.Equals("") |
-                txtPassword.Text.Equals("")
-                )
-            {
-                bol = false;
-            }
-            return bol;
+            methods.LoadCB(cbStaffName, staffBL.List(), "FULL NAME", "STAFF ID");
         }
 
         private void frmStaffsAccount_Load(object sender, EventArgs e)
@@ -100,6 +79,7 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
             FormActive(false);
             PopulateDGV();
             PopulateCB();
+            methods.DGVAddButtons(dgv);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -117,14 +97,14 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (RequiredFields())
+            if (methods.CheckRequiredTXT(txtUsername, txtPassword))
             {
                 staffsaccountEL.Username = txtUsername.Text;
                 staffsaccountEL.Password = txtPassword.Text;
 
                 if (s.Equals("ADD"))
                 {
-                    if(staffsaccountBL.CheckUsername(staffsaccountEL).Rows.Count == 0)
+                    if (staffsaccountBL.CheckUsername(staffsaccountEL).Rows.Count == 0)
                     {
                         staffsaccountEL.Staffid = Convert.ToInt32(cbStaffName.SelectedValue);
 
@@ -211,6 +191,6 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
         }
 
 
-        
+
     }
 }

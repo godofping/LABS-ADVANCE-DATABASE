@@ -33,15 +33,11 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtParticularSRP = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtParticular = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlCenter = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.pnlTop.SuspendLayout();
@@ -98,26 +94,6 @@
             this.panel1.Size = new System.Drawing.Size(1000, 5);
             this.panel1.TabIndex = 11;
             // 
-            // txtParticularSRP
-            // 
-            this.txtParticularSRP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtParticularSRP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParticularSRP.Location = new System.Drawing.Point(30, 156);
-            this.txtParticularSRP.Name = "txtParticularSRP";
-            this.txtParticularSRP.Size = new System.Drawing.Size(232, 25);
-            this.txtParticularSRP.TabIndex = 2;
-            this.txtParticularSRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParticularSRP_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 136);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "PRICE *";
-            // 
             // txtParticular
             // 
             this.txtParticular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -169,27 +145,9 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Text = "DELETE";
-            this.Column2.UseColumnTextForButtonValue = true;
-            // 
-            // EDIT
-            // 
-            this.EDIT.HeaderText = "";
-            this.EDIT.Name = "EDIT";
-            this.EDIT.ReadOnly = true;
-            this.EDIT.Text = "EDIT";
-            this.EDIT.UseColumnTextForButtonValue = true;
-            // 
             // pnlCenter
             // 
             this.pnlCenter.Controls.Add(this.panel1);
-            this.pnlCenter.Controls.Add(this.txtParticularSRP);
-            this.pnlCenter.Controls.Add(this.label2);
             this.pnlCenter.Controls.Add(this.txtParticular);
             this.pnlCenter.Controls.Add(this.label1);
             this.pnlCenter.Controls.Add(this.lblTitle);
@@ -206,9 +164,6 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EDIT,
-            this.Column2});
             this.dgv.Location = new System.Drawing.Point(18, 93);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
@@ -223,8 +178,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 523);
-            this.Controls.Add(this.pnlCenter);
             this.Controls.Add(this.dgv);
+            this.Controls.Add(this.pnlCenter);
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -248,15 +203,11 @@
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtParticularSRP;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtParticular;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DataGridViewButtonColumn Column2;
-        private System.Windows.Forms.DataGridViewButtonColumn EDIT;
         private System.Windows.Forms.Panel pnlCenter;
         private System.Windows.Forms.DataGridView dgv;
     }

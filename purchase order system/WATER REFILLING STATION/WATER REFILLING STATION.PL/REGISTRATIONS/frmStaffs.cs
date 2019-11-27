@@ -11,7 +11,6 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
         EL.REGISTRATIONS.basicinformations basicinformationEL = new EL.REGISTRATIONS.basicinformations();
         EL.REGISTRATIONS.designations designationEL = new EL.REGISTRATIONS.designations();
 
-
         BL.REGISTRATIONS.staffs staffBL = new BL.REGISTRATIONS.staffs();
         BL.REGISTRATIONS.staffsaccount staffsaccountBL = new BL.REGISTRATIONS.staffsaccount();
         BL.REGISTRATIONS.basicinformations basicinformationBL = new BL.REGISTRATIONS.basicinformations();
@@ -24,16 +23,9 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
 
         private void ClearControls()
         {
-            txtFirstName.ResetText();
-            txtLastName.ResetText();
-            txtMiddleInitial.ResetText();
-            mtbBirthDate.ResetText();
-            txtAddress.ResetText();
-            txtContactNumber.ResetText();
-            txtEmailAddress.ResetText();
-            cbDesignation.ResetText();
-            cbDesignation.SelectedItem = -1;
-            mtbDateHired.ResetText();
+            methods.ClearTXT(txtLastName, txtFirstName, txtMiddleInitial, txtAddress, txtContactNumber, txtEmailAddress);
+            methods.ClearDTP(dtpBirthDate, dtpDateHired);
+            methods.ClearCB(cbDesignation);
         }
 
         private void FormActive(bool bol)
@@ -46,46 +38,29 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
 
         private void PopulateDGV()
         {
-            dgv.DataSource = staffBL.List(txtSearch.Text);
-            dgv.Columns["STAFF ID"].Visible = false;
-            dgv.Columns["BASIC INFORMATION ID"].Visible = false;
-            dgv.Columns["DESIGNATION ID"].Visible = false;
-            dgv.Columns["FULL NAME"].Visible = false;
+            methods.LoadDGV(dgv, staffBL.List(txtSearch.Text));
+            methods.DGVHiddenColumns(
+                dgv, 
+                "STAFF ID", 
+                "BASIC INFORMATION ID", 
+                "DESIGNATION ID", 
+                "FULL NAME"
+                );
         }
 
         private void PopulateCB()
         {
-            cbDesignation.DataSource = designationBL.List();
-            cbDesignation.DisplayMember = "designation";
-            cbDesignation.ValueMember = "designationid";
+            methods.LoadCB(cbDesignation, designationBL.List(), "designation", "designationid");
         }
 
-        private bool RequiredFields()
-        {
-            bool bol = true;
-            if
-                (
-                txtLastName.Text.Equals("") |
-                txtFirstName.Text.Equals("") |
-                txtMiddleInitial.Text.Equals("") |
-                mtbBirthDate.Text.Equals("") |
-                txtAddress.Text.Equals("") |
-                txtContactNumber.Text.Equals("") |
-                cbDesignation.Text.Equals("") |
-                mtbDateHired.Text.Equals("")
-
-                )
-            {
-                bol = false;
-            }
-            return bol;
-        }
 
         private void frmStaffs_Load(object sender, EventArgs e)
         {
             FormActive(false);
             PopulateDGV();
             PopulateCB();
+            methods.DGVAddButtons(dgv);
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -102,18 +77,22 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (RequiredFields())
+            if (
+                methods.CheckRequiredTXT(txtLastName, txtFirstName, txtMiddleInitial, txtAddress, txtContactNumber) &
+                methods.CheckRequiredDTP(dtpBirthDate, dtpDateHired) &
+                methods.CheckRequiredCB(cbDesignation)
+                )
             {
 
                 basicinformationEL.Lastname = txtLastName.Text;
                 basicinformationEL.Firstname = txtFirstName.Text;
                 basicinformationEL.Middleinitial = txtMiddleInitial.Text;
-                basicinformationEL.Birthdate = mtbBirthDate.Value.ToString("yy-MM-dd");
+                basicinformationEL.Birthdate = dtpBirthDate.Value.ToString("yy-MM-dd");
                 basicinformationEL.Address = txtAddress.Text;
                 basicinformationEL.Contactnumber = txtContactNumber.Text;
                 basicinformationEL.Emailaddress = txtEmailAddress.Text;
                 staffEL.Designationid = Convert.ToInt32(cbDesignation.SelectedValue);
-                staffEL.Datehired = mtbDateHired.Value.ToString("yy-MM-dd");
+                staffEL.Datehired = dtpDateHired.Value.ToString("yy-MM-dd");
 
 
                 if (s.Equals("ADD"))
@@ -149,8 +128,6 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
                         MessageBox.Show("FAILED");
                     }
                 }
-
-
             }
             else
             {
@@ -176,18 +153,16 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
                 txtLastName.Text = dgv.SelectedRows[0].Cells[5].Value.ToString();
                 txtFirstName.Text = dgv.SelectedRows[0].Cells[6].Value.ToString();
                 txtMiddleInitial.Text = dgv.SelectedRows[0].Cells[7].Value.ToString();
-                mtbBirthDate.Text = dgv.SelectedRows[0].Cells[8].Value.ToString();
+                dtpBirthDate.Text = dgv.SelectedRows[0].Cells[8].Value.ToString();
                 txtAddress.Text = dgv.SelectedRows[0].Cells[9].Value.ToString();
                 txtContactNumber.Text = dgv.SelectedRows[0].Cells[10].Value.ToString();
                 txtEmailAddress.Text = dgv.SelectedRows[0].Cells[11].Value.ToString();
                 cbDesignation.SelectedIndex = cbDesignation.FindString(dgv.SelectedRows[0].Cells[12].Value.ToString());
-                mtbBirthDate.Text = dgv.SelectedRows[0].Cells[13].Value.ToString();
+                dtpBirthDate.Text = dgv.SelectedRows[0].Cells[13].Value.ToString();
 
 
                 s = "EDIT";
                 lblTitle.Text = "UPDATE";
-
-
             }
 
             if (e.ColumnIndex == 1)
@@ -197,8 +172,6 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
                     case DialogResult.No:
                         break;
                     default:
-
-
                         staffEL.Staffid = Convert.ToInt32(dgv.SelectedRows[0].Cells[2].Value);
                         if (staffBL.Delete(staffEL))
                         {

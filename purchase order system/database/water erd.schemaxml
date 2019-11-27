@@ -16,8 +16,8 @@
   `dateregistered` date DEFAULT NULL,
   PRIMARY KEY (`customerid`),
   KEY `FK_customers` (`basicinformationid`),
-  CONSTRAINT `FK_customers` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+  CONSTRAINT `FK_customers` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="orders" view="colnames">
 <left>429</left>
@@ -51,6 +51,7 @@
 <sql_create_table>CREATE TABLE `containertypes` (
   `containertypeid` int(6) NOT NULL AUTO_INCREMENT,
   `containertype` varchar(60) DEFAULT NULL,
+  `containersrp` float DEFAULT NULL,
   PRIMARY KEY (`containertypeid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
@@ -61,7 +62,8 @@
 <height>112</height>
 <sql_create_table>CREATE TABLE `particulars` (
   `particularid` int(6) NOT NULL AUTO_INCREMENT,
-  `particulars` varchar(60) DEFAULT NULL,
+  `particular` varchar(60) DEFAULT NULL,
+  `particularsrp` float DEFAULT NULL,
   PRIMARY KEY (`particularid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
@@ -134,11 +136,11 @@
   `price` float DEFAULT NULL,
   PRIMARY KEY (`productid`),
   KEY `FK_products1` (`productcategoryid`),
-  KEY `FK_products` (`particularid`),
-  KEY `FK_products2` (`containertypeid`),
-  CONSTRAINT `FK_products` FOREIGN KEY (`particularid`) REFERENCES `particulars` (`particularid`),
+  KEY `FK_products3` (`particularid`),
+  KEY `FK_products4` (`containertypeid`),
   CONSTRAINT `FK_products1` FOREIGN KEY (`productcategoryid`) REFERENCES `productcategories` (`productcategoryid`),
-  CONSTRAINT `FK_products2` FOREIGN KEY (`containertypeid`) REFERENCES `containertypes` (`containertypeid`)
+  CONSTRAINT `FK_products3` FOREIGN KEY (`particularid`) REFERENCES `particulars` (`particularid`),
+  CONSTRAINT `FK_products4` FOREIGN KEY (`containertypeid`) REFERENCES `containertypes` (`containertypeid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="orderdeliveries" view="colnames">
@@ -172,11 +174,11 @@
   `designationid` int(6) DEFAULT NULL,
   `datehired` date DEFAULT NULL,
   PRIMARY KEY (`staffid`),
-  KEY `FK_staffs` (`basicinformationid`),
   KEY `FK_staffs2` (`designationid`),
-  CONSTRAINT `FK_staffs` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`),
+  KEY `FK_staffs` (`basicinformationid`),
+  CONSTRAINT `FK_staffs` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`) ON DELETE CASCADE,
   CONSTRAINT `FK_staffs2` FOREIGN KEY (`designationid`) REFERENCES `designations` (`designationid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="staffsaccount" view="colnames">
 <left>195</left>
@@ -188,11 +190,10 @@
   `staffid` int(6) DEFAULT NULL,
   `username` varchar(60) DEFAULT NULL,
   `password` varchar(60) DEFAULT NULL,
-  `isactive` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`staffaccountid`),
   KEY `FK_staffsaccount1` (`staffid`),
-  CONSTRAINT `FK_staffsaccount1` FOREIGN KEY (`staffid`) REFERENCES `staffs` (`staffid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+  CONSTRAINT `FK_staffsaccount1` FOREIGN KEY (`staffid`) REFERENCES `staffs` (`staffid`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="designations" view="colnames">
 <left>965</left>
@@ -220,7 +221,7 @@
   `contactnumber` varchar(60) DEFAULT NULL,
   `emailaddress` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`basicinformationid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="productcategories" view="colnames">
 <left>1294</left>

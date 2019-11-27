@@ -20,14 +20,8 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
 
         private void ClearControls()
         {
-            txtFirstName.ResetText();
-            txtLastName.ResetText();
-            txtMiddleInitial.ResetText();
-            mtbBirthDate.ResetText();
-            txtAddress.ResetText();
-            txtContactNumber.ResetText();
-            txtEmailAddress.ResetText();
-
+            methods.ClearTXT(txtLastName, txtMiddleInitial, txtFirstName, txtAddress, txtContactNumber, txtEmailAddress);
+            methods.ClearDTP(dtpBirthDate);
         }
 
         private void FormActive(bool bol)
@@ -36,42 +30,21 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
             pnlTop.Visible = !bol;
             dgv.Visible = !bol;
             ClearControls();
-           
+
         }
 
         private void PopulateDGV()
         {
-
-            dgv.DataSource = customerBL.List(txtSearch.Text);
-
-            dgv.Columns["CUSTOMER ID"].Visible = false;
-            dgv.Columns["BASIC INFORMATION ID"].Visible = false;
-
+            methods.LoadDGV(dgv, customerBL.List(txtSearch.Text));
+            methods.DGVHiddenColumns(dgv, "CUSTOMER ID", "BASIC INFORMATION ID");
         }
 
-        private bool RequiredFields()
-        {
-            bool bol = true;
-
-            if
-                (
-                txtLastName.Text.Equals("") |
-                txtFirstName.Text.Equals("") |
-                txtMiddleInitial.Text.Equals("") |
-                mtbBirthDate.Text.Equals("") |
-                txtAddress.Text.Equals("") |
-                txtContactNumber.Text.Equals("")
-                )
-            {
-                bol = false;
-            }
-            return bol;
-        }
 
         private void frmCustomers_Load(object sender, EventArgs e)
         {
             FormActive(false);
             PopulateDGV();
+            methods.DGVAddButtons(dgv);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -88,20 +61,23 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            if(RequiredFields())
+            if
+                (
+                methods.CheckRequiredTXT(txtLastName, txtFirstName, txtMiddleInitial, txtAddress, txtContactNumber) &
+                methods.CheckRequiredDTP(dtpBirthDate)
+                )
             {
 
                 basicinformationEL.Lastname = txtLastName.Text;
                 basicinformationEL.Firstname = txtFirstName.Text;
                 basicinformationEL.Middleinitial = txtMiddleInitial.Text;
-                basicinformationEL.Birthdate = mtbBirthDate.Value.ToString("yy-MM-dd");
+                basicinformationEL.Birthdate = dtpBirthDate.Value.ToString("yy-MM-dd");
                 basicinformationEL.Address = txtAddress.Text;
                 basicinformationEL.Contactnumber = txtContactNumber.Text;
                 basicinformationEL.Emailaddress = txtEmailAddress.Text;
 
 
-                if(s.Equals("ADD"))
+                if (s.Equals("ADD"))
                 {
                     if ((customerEL.Basicinformationid = Convert.ToInt32(basicinformationBL.Insert(basicinformationEL))) > 0)
                     {
@@ -123,7 +99,7 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
                 }
                 else if (s.Equals("EDIT"))
                 {
-                    if(basicinformationBL.Update(basicinformationEL))
+                    if (basicinformationBL.Update(basicinformationEL))
                     {
                         MessageBox.Show("UPDATED");
                         FormActive(false);
@@ -152,7 +128,6 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
         {
             if (e.ColumnIndex == 0)
             {
-
                 FormActive(true);
 
                 customerEL.Customerid = Convert.ToInt32(dgv.SelectedRows[0].Cells[2].Value);
@@ -160,15 +135,14 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
                 txtLastName.Text = dgv.SelectedRows[0].Cells[4].Value.ToString();
                 txtFirstName.Text = dgv.SelectedRows[0].Cells[5].Value.ToString();
                 txtMiddleInitial.Text = dgv.SelectedRows[0].Cells[6].Value.ToString();
-                mtbBirthDate.Text = dgv.SelectedRows[0].Cells[7].Value.ToString();
+                dtpBirthDate.Text = dgv.SelectedRows[0].Cells[7].Value.ToString();
                 txtAddress.Text = dgv.SelectedRows[0].Cells[8].Value.ToString();
                 txtContactNumber.Text = dgv.SelectedRows[0].Cells[9].Value.ToString();
                 txtEmailAddress.Text = dgv.SelectedRows[0].Cells[10].Value.ToString();
 
-
                 s = "EDIT";
                 lblTitle.Text = "UPDATE";
-                
+
 
             }
 
@@ -179,7 +153,6 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
                     case DialogResult.No:
                         break;
                     default:
-
 
                         customerEL.Customerid = Convert.ToInt32(dgv.SelectedRows[0].Cells[2].Value);
                         if (customerBL.Delete(customerEL))

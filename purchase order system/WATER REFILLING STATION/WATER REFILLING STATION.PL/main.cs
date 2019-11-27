@@ -21,12 +21,12 @@ namespace WATER_REFILLING_STATION.PL
             if (login.designationEL.Designation == "MANAGER")
             {
                 var frm = new PL.OTHERS.MENU_MANAGER(login);
-                methods.changePanelDisplay(frm, pnlMenu);
+                methods.ChangePanelDisplay(frm, pnlMenu);
             }
             else if (login.designationEL.Designation == "CASHIER")
             {
                 var frm = new PL.OTHERS.MENU_MANAGER(login);
-                methods.changePanelDisplay(frm, pnlMenu);
+                methods.ChangePanelDisplay(frm, pnlMenu);
             }
 
 
@@ -36,7 +36,7 @@ namespace WATER_REFILLING_STATION.PL
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm tt");
+            lblDate.Text = DateTime.Now.ToString("hh:mm tt dddd, dd MMMM yyyy");
         }
 
         

@@ -6,7 +6,7 @@ namespace WATER_REFILLING_STATION.DL.REGISTRATIONS
     {
         public DataTable List(string keywords)
         {
-            string sQuery = "SELECT * FROM particulars WHERE particular LIKE '%" + keywords + "%'";
+            string sQuery = "SELECT * FROM view_particulars WHERE `PARTICULAR` LIKE '%" + keywords + "%'";
             return Helper.executeQuery(sQuery);
         }
 

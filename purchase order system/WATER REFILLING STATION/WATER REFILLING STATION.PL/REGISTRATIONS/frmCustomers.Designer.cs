@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.EDIT = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlCenter = new System.Windows.Forms.Panel();
-            this.mtbBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
@@ -65,9 +63,6 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EDIT,
-            this.Column2});
             this.dgv.Location = new System.Drawing.Point(12, 94);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
@@ -76,25 +71,9 @@
             this.dgv.TabIndex = 1;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
-            // EDIT
-            // 
-            this.EDIT.HeaderText = "";
-            this.EDIT.Name = "EDIT";
-            this.EDIT.ReadOnly = true;
-            this.EDIT.Text = "EDIT";
-            this.EDIT.UseColumnTextForButtonValue = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Text = "DELETE";
-            this.Column2.UseColumnTextForButtonValue = true;
-            // 
             // pnlCenter
             // 
-            this.pnlCenter.Controls.Add(this.mtbBirthDate);
+            this.pnlCenter.Controls.Add(this.dtpBirthDate);
             this.pnlCenter.Controls.Add(this.txtAddress);
             this.pnlCenter.Controls.Add(this.label7);
             this.pnlCenter.Controls.Add(this.txtEmailAddress);
@@ -117,15 +96,15 @@
             this.pnlCenter.Size = new System.Drawing.Size(1001, 499);
             this.pnlCenter.TabIndex = 2;
             // 
-            // mtbBirthDate
+            // dtpBirthDate
             // 
-            this.mtbBirthDate.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.mtbBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.mtbBirthDate.Location = new System.Drawing.Point(30, 275);
-            this.mtbBirthDate.Name = "mtbBirthDate";
-            this.mtbBirthDate.Size = new System.Drawing.Size(232, 25);
-            this.mtbBirthDate.TabIndex = 4;
-            this.mtbBirthDate.Value = new System.DateTime(2019, 11, 26, 0, 0, 0, 0);
+            this.dtpBirthDate.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthDate.Location = new System.Drawing.Point(30, 275);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(232, 25);
+            this.dtpBirthDate.TabIndex = 4;
+            this.dtpBirthDate.Value = new System.DateTime(2019, 11, 26, 0, 0, 0, 0);
             // 
             // txtAddress
             // 
@@ -339,8 +318,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 523);
-            this.Controls.Add(this.pnlCenter);
             this.Controls.Add(this.dgv);
+            this.Controls.Add(this.pnlCenter);
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -381,8 +360,6 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridViewButtonColumn EDIT;
-        private System.Windows.Forms.DataGridViewButtonColumn Column2;
-        private System.Windows.Forms.DateTimePicker mtbBirthDate;
+        private System.Windows.Forms.DateTimePicker dtpBirthDate;
     }
 }
