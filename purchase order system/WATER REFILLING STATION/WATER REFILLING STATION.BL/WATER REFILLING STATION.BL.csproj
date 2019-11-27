@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>WATER_REFILLING_STATION.BL</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WATER REFILLING STATION.DL\WATER REFILLING STATION.DL.csproj" />
+    <ProjectReference Include="..\WATER REFILLING STATION.EL\WATER REFILLING STATION.EL.csproj" />
+  </ItemGroup>
+
+</Project>
