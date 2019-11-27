@@ -17,5 +17,9 @@ namespace WATER_REFILLING_STATION.PL
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
+
+        
+
+       
     }
 }

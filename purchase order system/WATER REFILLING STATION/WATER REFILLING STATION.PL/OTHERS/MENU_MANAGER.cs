@@ -1,29 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WATER_REFILLING_STATION.PL.OTHERS
 {
     public partial class MENU_MANAGER : Form
     {
-        public MENU_MANAGER()
+        login login;
+        public MENU_MANAGER(login _login)
         {
             InitializeComponent();
+            login = _login;
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            
+
+            switch (MessageBox.Show(this, "Are you sure to logout?", "Logging out", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    break;
+                default:
+                    login.LogOut();
+                    break;
+            }
         }
 
-   
-       
+
+
 
         private void mANAGESTAFFSToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -45,7 +49,15 @@ namespace WATER_REFILLING_STATION.PL.OTHERS
         {
             var frm = new PL.REGISTRATIONS.frmStaffsAccount();
 
-            var frmContainer = new PL.OTHERS.frmContainer("STAFFS ACCOUNTS", frm);
+            var frmContainer = new PL.OTHERS.frmContainer("MANAGE STAFFS ACCOUNTS", frm);
+            frmContainer.ShowDialog();
+        }
+
+        private void mANAGEPARTICULARSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new PL.REGISTRATIONS.frmParticulars();
+
+            var frmContainer = new PL.OTHERS.frmContainer("MANAGE PARTICULARS", frm);
             frmContainer.ShowDialog();
         }
     }

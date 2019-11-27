@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.msMenu = new System.Windows.Forms.MenuStrip();
-            this.sALESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cUSTOMERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGECUSTOMERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sTAFFSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +37,8 @@
             this.sETTINGSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mANAGEPARTICULARSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mANAGECONTAINERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,6 @@
             this.msMenu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msMenu.ImageScalingSize = new System.Drawing.Size(200, 200);
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sALESToolStripMenuItem,
             this.cUSTOMERSToolStripMenuItem,
             this.sTAFFSToolStripMenuItem,
             this.sETTINGSToolStripMenuItem,
@@ -63,14 +63,6 @@
             this.msMenu.Size = new System.Drawing.Size(1008, 87);
             this.msMenu.Stretch = false;
             this.msMenu.TabIndex = 0;
-            // 
-            // sALESToolStripMenuItem
-            // 
-            this.sALESToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.sALESToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.sALESToolStripMenuItem.Name = "sALESToolStripMenuItem";
-            this.sALESToolStripMenuItem.Size = new System.Drawing.Size(106, 83);
-            this.sALESToolStripMenuItem.Text = "SALES";
             // 
             // cUSTOMERSToolStripMenuItem
             // 
@@ -104,19 +96,22 @@
             // mANAGESTAFFSToolStripMenuItem
             // 
             this.mANAGESTAFFSToolStripMenuItem.Name = "mANAGESTAFFSToolStripMenuItem";
-            this.mANAGESTAFFSToolStripMenuItem.Size = new System.Drawing.Size(321, 42);
+            this.mANAGESTAFFSToolStripMenuItem.Size = new System.Drawing.Size(336, 42);
             this.mANAGESTAFFSToolStripMenuItem.Text = "MANAGE STAFFS";
             this.mANAGESTAFFSToolStripMenuItem.Click += new System.EventHandler(this.mANAGESTAFFSToolStripMenuItem_Click);
             // 
             // sTAFFSACCOUNTToolStripMenuItem
             // 
             this.sTAFFSACCOUNTToolStripMenuItem.Name = "sTAFFSACCOUNTToolStripMenuItem";
-            this.sTAFFSACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(336, 42);
-            this.sTAFFSACCOUNTToolStripMenuItem.Text = "STAFFS ACCOUNTS";
+            this.sTAFFSACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(461, 42);
+            this.sTAFFSACCOUNTToolStripMenuItem.Text = "MANAGE STAFFS ACCOUNTS";
             this.sTAFFSACCOUNTToolStripMenuItem.Click += new System.EventHandler(this.sTAFFSACCOUNTToolStripMenuItem_Click);
             // 
             // sETTINGSToolStripMenuItem
             // 
+            this.sETTINGSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mANAGEPARTICULARSToolStripMenuItem,
+            this.mANAGECONTAINERSToolStripMenuItem});
             this.sETTINGSToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.sETTINGSToolStripMenuItem.Name = "sETTINGSToolStripMenuItem";
             this.sETTINGSToolStripMenuItem.Size = new System.Drawing.Size(155, 83);
@@ -136,6 +131,19 @@
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(137, 83);
             this.logoutToolStripMenuItem.Text = "LOGOUT";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // mANAGEPARTICULARSToolStripMenuItem
+            // 
+            this.mANAGEPARTICULARSToolStripMenuItem.Name = "mANAGEPARTICULARSToolStripMenuItem";
+            this.mANAGEPARTICULARSToolStripMenuItem.Size = new System.Drawing.Size(399, 42);
+            this.mANAGEPARTICULARSToolStripMenuItem.Text = "MANAGE PARTICULARS";
+            this.mANAGEPARTICULARSToolStripMenuItem.Click += new System.EventHandler(this.mANAGEPARTICULARSToolStripMenuItem_Click);
+            // 
+            // mANAGECONTAINERSToolStripMenuItem
+            // 
+            this.mANAGECONTAINERSToolStripMenuItem.Name = "mANAGECONTAINERSToolStripMenuItem";
+            this.mANAGECONTAINERSToolStripMenuItem.Size = new System.Drawing.Size(399, 42);
+            this.mANAGECONTAINERSToolStripMenuItem.Text = "MANAGE CONTAINERS";
             // 
             // MENU_MANAGER
             // 
@@ -161,12 +169,13 @@
         private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.ToolStripMenuItem cUSTOMERSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sALESToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sTAFFSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sETTINGSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEPORTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mANAGESTAFFSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sTAFFSACCOUNTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mANAGECUSTOMERSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mANAGEPARTICULARSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mANAGECONTAINERSToolStripMenuItem;
     }
 }

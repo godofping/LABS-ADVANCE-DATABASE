@@ -30,7 +30,6 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
         {
             txtUsername.ResetText();
             txtPassword.ResetText();
-
         }
 
         private void FormActive(bool bol)
@@ -66,6 +65,7 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
             dgv.Columns["BASIC INFORMATION ID"].Visible = false;
             dgv.Columns["DESIGNATION ID"].Visible = false;
             dgv.Columns["STAFF ID"].Visible = false;
+            dgv.Columns["PASSWORD"].Visible = false;
             dgv.Columns["BIRTH DATE"].Visible = false;
             dgv.Columns["ADDRESS"].Visible = false;
             dgv.Columns["CONTACT NUMBER"].Visible = false;
