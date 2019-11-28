@@ -38,5 +38,13 @@ namespace WATER_REFILLING_STATION.PL.OTHERS
             var frmContainer = new PL.OTHERS.frmCommon("NEW ORDER", frm);
             frmContainer.ShowDialog();
         }
+
+        private void mANAGECUSTOMERSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new PL.REGISTRATIONS.frmCustomers();
+
+            var frmContainer = new PL.OTHERS.frmCommon("MANAGE CUSTOMERS", frm);
+            frmContainer.ShowDialog();
+        }
     }
 }

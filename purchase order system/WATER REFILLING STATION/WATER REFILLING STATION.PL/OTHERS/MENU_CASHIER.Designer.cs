@@ -35,6 +35,7 @@
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTOFORDERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dELIVERIESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,8 +49,9 @@
             this.msMenu.ImageScalingSize = new System.Drawing.Size(200, 200);
             this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nEWTRANSACTIONSToolStripMenuItem,
-            this.cUSTOMERSToolStripMenuItem,
             this.rEPORTSToolStripMenuItem,
+            this.dELIVERIESToolStripMenuItem,
+            this.cUSTOMERSToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.msMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.msMenu.Location = new System.Drawing.Point(0, 0);
@@ -83,6 +85,7 @@
             this.mANAGECUSTOMERSToolStripMenuItem.Name = "mANAGECUSTOMERSToolStripMenuItem";
             this.mANAGECUSTOMERSToolStripMenuItem.Size = new System.Drawing.Size(379, 42);
             this.mANAGECUSTOMERSToolStripMenuItem.Text = "MANAGE CUSTOMERS";
+            this.mANAGECUSTOMERSToolStripMenuItem.Click += new System.EventHandler(this.mANAGECUSTOMERSToolStripMenuItem_Click);
             // 
             // rEPORTSToolStripMenuItem
             // 
@@ -106,6 +109,12 @@
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(137, 83);
             this.logoutToolStripMenuItem.Text = "LOGOUT";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // dELIVERIESToolStripMenuItem
+            // 
+            this.dELIVERIESToolStripMenuItem.Name = "dELIVERIESToolStripMenuItem";
+            this.dELIVERIESToolStripMenuItem.Size = new System.Drawing.Size(174, 83);
+            this.dELIVERIESToolStripMenuItem.Text = "DELIVERIES";
             // 
             // MENU_CASHIER
             // 
@@ -133,5 +142,6 @@
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nEWTRANSACTIONSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lISTOFORDERSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dELIVERIESToolStripMenuItem;
     }
 }
