@@ -10,6 +10,12 @@ namespace WATER_REFILLING_STATION.DL.REGISTRATIONS
             return Helper.executeQuery(sQuery);
         }
 
+        public DataTable List()
+        {
+            string sQuery = "SELECT * FROM view_particulars";
+            return Helper.executeQuery(sQuery);
+        }
+
         public long Insert(EL.REGISTRATIONS.particulars particularEL)
         {
             return Helper.executeNonQueryLong("INSERT INTO particulars (particular) VALUES ('" + particularEL.Particular + "')");

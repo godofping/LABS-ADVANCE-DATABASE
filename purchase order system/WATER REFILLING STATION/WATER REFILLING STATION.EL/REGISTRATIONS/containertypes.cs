@@ -8,5 +8,8 @@ namespace WATER_REFILLING_STATION.EL.REGISTRATIONS
     {
         int containertypeid;
         string containertype;
+
+        public int Containertypeid { get => containertypeid; set => containertypeid = value; }
+        public string Containertype { get => containertype; set => containertype = value; }
     }
 }

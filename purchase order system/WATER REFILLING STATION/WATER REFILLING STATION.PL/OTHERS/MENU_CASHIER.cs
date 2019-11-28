@@ -12,9 +12,31 @@ namespace WATER_REFILLING_STATION.PL.OTHERS
 {
     public partial class MENU_CASHIER : Form
     {
-        public MENU_CASHIER()
+        login login;
+        public MENU_CASHIER(login _login)
         {
             InitializeComponent();
+            login = _login;
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (MessageBox.Show(this, "Are you sure to logout?", "Logging out", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    break;
+                default:
+                    login.LogOut();
+                    break;
+            }
+        }
+
+        private void nEWTRANSACTIONSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new PL.TRANSACTIONS.frmNewOrder();
+
+            var frmContainer = new PL.OTHERS.frmCommon("NEW ORDER", frm);
+            frmContainer.ShowDialog();
         }
     }
 }

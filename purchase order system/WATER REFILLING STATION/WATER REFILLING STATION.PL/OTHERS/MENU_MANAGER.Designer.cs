@@ -35,10 +35,11 @@
             this.mANAGESTAFFSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sTAFFSACCOUNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sETTINGSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGEPARTICULARSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGECONTAINERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mANAGEPRODUCTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +97,7 @@
             // mANAGESTAFFSToolStripMenuItem
             // 
             this.mANAGESTAFFSToolStripMenuItem.Name = "mANAGESTAFFSToolStripMenuItem";
-            this.mANAGESTAFFSToolStripMenuItem.Size = new System.Drawing.Size(336, 42);
+            this.mANAGESTAFFSToolStripMenuItem.Size = new System.Drawing.Size(461, 42);
             this.mANAGESTAFFSToolStripMenuItem.Text = "MANAGE STAFFS";
             this.mANAGESTAFFSToolStripMenuItem.Click += new System.EventHandler(this.mANAGESTAFFSToolStripMenuItem_Click);
             // 
@@ -111,11 +112,26 @@
             // 
             this.sETTINGSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mANAGEPARTICULARSToolStripMenuItem,
-            this.mANAGECONTAINERSToolStripMenuItem});
+            this.mANAGECONTAINERSToolStripMenuItem,
+            this.mANAGEPRODUCTSToolStripMenuItem});
             this.sETTINGSToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.sETTINGSToolStripMenuItem.Name = "sETTINGSToolStripMenuItem";
             this.sETTINGSToolStripMenuItem.Size = new System.Drawing.Size(155, 83);
             this.sETTINGSToolStripMenuItem.Text = "SETTINGS";
+            // 
+            // mANAGEPARTICULARSToolStripMenuItem
+            // 
+            this.mANAGEPARTICULARSToolStripMenuItem.Name = "mANAGEPARTICULARSToolStripMenuItem";
+            this.mANAGEPARTICULARSToolStripMenuItem.Size = new System.Drawing.Size(399, 42);
+            this.mANAGEPARTICULARSToolStripMenuItem.Text = "MANAGE PARTICULARS";
+            this.mANAGEPARTICULARSToolStripMenuItem.Click += new System.EventHandler(this.mANAGEPARTICULARSToolStripMenuItem_Click);
+            // 
+            // mANAGECONTAINERSToolStripMenuItem
+            // 
+            this.mANAGECONTAINERSToolStripMenuItem.Name = "mANAGECONTAINERSToolStripMenuItem";
+            this.mANAGECONTAINERSToolStripMenuItem.Size = new System.Drawing.Size(399, 42);
+            this.mANAGECONTAINERSToolStripMenuItem.Text = "MANAGE CONTAINERS";
+            this.mANAGECONTAINERSToolStripMenuItem.Click += new System.EventHandler(this.mANAGECONTAINERSToolStripMenuItem_Click);
             // 
             // rEPORTSToolStripMenuItem
             // 
@@ -132,18 +148,12 @@
             this.logoutToolStripMenuItem.Text = "LOGOUT";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // mANAGEPARTICULARSToolStripMenuItem
+            // mANAGEPRODUCTSToolStripMenuItem
             // 
-            this.mANAGEPARTICULARSToolStripMenuItem.Name = "mANAGEPARTICULARSToolStripMenuItem";
-            this.mANAGEPARTICULARSToolStripMenuItem.Size = new System.Drawing.Size(399, 42);
-            this.mANAGEPARTICULARSToolStripMenuItem.Text = "MANAGE PARTICULARS";
-            this.mANAGEPARTICULARSToolStripMenuItem.Click += new System.EventHandler(this.mANAGEPARTICULARSToolStripMenuItem_Click);
-            // 
-            // mANAGECONTAINERSToolStripMenuItem
-            // 
-            this.mANAGECONTAINERSToolStripMenuItem.Name = "mANAGECONTAINERSToolStripMenuItem";
-            this.mANAGECONTAINERSToolStripMenuItem.Size = new System.Drawing.Size(399, 42);
-            this.mANAGECONTAINERSToolStripMenuItem.Text = "MANAGE CONTAINERS";
+            this.mANAGEPRODUCTSToolStripMenuItem.Name = "mANAGEPRODUCTSToolStripMenuItem";
+            this.mANAGEPRODUCTSToolStripMenuItem.Size = new System.Drawing.Size(399, 42);
+            this.mANAGEPRODUCTSToolStripMenuItem.Text = "MANAGE PRODUCTS";
+            this.mANAGEPRODUCTSToolStripMenuItem.Click += new System.EventHandler(this.mANAGEPRODUCTSToolStripMenuItem_Click);
             // 
             // MENU_MANAGER
             // 
@@ -177,5 +187,6 @@
         private System.Windows.Forms.ToolStripMenuItem mANAGECUSTOMERSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mANAGEPARTICULARSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mANAGECONTAINERSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mANAGEPRODUCTSToolStripMenuItem;
     }
 }

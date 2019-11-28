@@ -1,6 +1,6 @@
 ﻿namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
 {
-    partial class frmParticulars
+    partial class frmContainerTypes
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.label8 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.pnlTop = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtParticular = new System.Windows.Forms.TextBox();
+            this.txtContainer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlCenter = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.pnlTop.SuspendLayout();
+            this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlCenter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -55,6 +55,16 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "SEARCH";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(140, 14);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(550, 43);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,26 +76,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // pnlTop
-            // 
-            this.pnlTop.Controls.Add(this.label8);
-            this.pnlTop.Controls.Add(this.txtSearch);
-            this.pnlTop.Controls.Add(this.btnAdd);
-            this.pnlTop.Location = new System.Drawing.Point(5, 11);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1013, 76);
-            this.pnlTop.TabIndex = 6;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(140, 14);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(550, 43);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
@@ -94,14 +84,14 @@
             this.panel1.Size = new System.Drawing.Size(1000, 5);
             this.panel1.TabIndex = 11;
             // 
-            // txtParticular
+            // txtContainer
             // 
-            this.txtParticular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtParticular.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParticular.Location = new System.Drawing.Point(30, 102);
-            this.txtParticular.Name = "txtParticular";
-            this.txtParticular.Size = new System.Drawing.Size(232, 25);
-            this.txtParticular.TabIndex = 1;
+            this.txtContainer.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtContainer.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContainer.Location = new System.Drawing.Point(30, 102);
+            this.txtContainer.Name = "txtContainer";
+            this.txtContainer.Size = new System.Drawing.Size(232, 25);
+            this.txtContainer.TabIndex = 1;
             // 
             // label1
             // 
@@ -111,7 +101,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 17);
             this.label1.TabIndex = 5;
-            this.label1.Text = "PARTICULAR *";
+            this.label1.Text = "CONTAINER *";
             // 
             // lblTitle
             // 
@@ -148,7 +138,7 @@
             // pnlCenter
             // 
             this.pnlCenter.Controls.Add(this.panel1);
-            this.pnlCenter.Controls.Add(this.txtParticular);
+            this.pnlCenter.Controls.Add(this.txtContainer);
             this.pnlCenter.Controls.Add(this.label1);
             this.pnlCenter.Controls.Add(this.lblTitle);
             this.pnlCenter.Controls.Add(this.btnSave);
@@ -172,26 +162,36 @@
             this.dgv.TabIndex = 4;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
-            // frmParticulars
+            // pnlTop
+            // 
+            this.pnlTop.Controls.Add(this.label8);
+            this.pnlTop.Controls.Add(this.txtSearch);
+            this.pnlTop.Controls.Add(this.btnAdd);
+            this.pnlTop.Location = new System.Drawing.Point(5, 11);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(1013, 76);
+            this.pnlTop.TabIndex = 6;
+            // 
+            // frmContainers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 523);
+            this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.pnlCenter);
-            this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmParticulars";
+            this.Name = "frmContainers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmParticulars";
-            this.Load += new System.EventHandler(this.frmParticulars_Load);
-            this.pnlTop.ResumeLayout(false);
-            this.pnlTop.PerformLayout();
+            this.Text = "frmContainers";
+            this.Load += new System.EventHandler(this.frmContainers_Load);
             this.pnlCenter.ResumeLayout(false);
             this.pnlCenter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -199,16 +199,16 @@
         #endregion
 
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtParticular;
+        private System.Windows.Forms.TextBox txtContainer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel pnlCenter;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Panel pnlTop;
     }
 }

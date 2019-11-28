@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace WATER_REFILLING_STATION.PL.OTHERS
 {
-    public partial class frmContainer : Form
+    public partial class frmCommon : Form
     {
         string s;
         Form frm;
         
-        public frmContainer(string _s, Form _frm)
+        public frmCommon(string _s, Form _frm)
         {
             InitializeComponent();
             s = _s;

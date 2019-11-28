@@ -281,7 +281,7 @@
             this.pnlCenter.Controls.Add(this.lblTitle);
             this.pnlCenter.Controls.Add(this.btnSave);
             this.pnlCenter.Controls.Add(this.btnCancel);
-            this.pnlCenter.Location = new System.Drawing.Point(18, 11);
+            this.pnlCenter.Location = new System.Drawing.Point(12, 12);
             this.pnlCenter.Name = "pnlCenter";
             this.pnlCenter.Size = new System.Drawing.Size(1001, 499);
             this.pnlCenter.TabIndex = 5;
@@ -352,7 +352,7 @@
             this.dgv.AllowUserToDeleteRows = false;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(18, 93);
+            this.dgv.Location = new System.Drawing.Point(12, 94);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

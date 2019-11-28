@@ -18,14 +18,14 @@ namespace WATER_REFILLING_STATION.PL
         private void main_Load(object sender, EventArgs e)
         {
 
-            if (login.designationEL.Designation == "MANAGER")
+            if (login.designationEL.Designation.Equals("MANAGER"))
             {
                 var frm = new PL.OTHERS.MENU_MANAGER(login);
                 methods.ChangePanelDisplay(frm, pnlMenu);
             }
-            else if (login.designationEL.Designation == "CASHIER")
+            else if (login.designationEL.Designation.Equals("CASHIER"))
             {
-                var frm = new PL.OTHERS.MENU_MANAGER(login);
+                var frm = new PL.OTHERS.MENU_CASHIER(login);
                 methods.ChangePanelDisplay(frm, pnlMenu);
             }
 

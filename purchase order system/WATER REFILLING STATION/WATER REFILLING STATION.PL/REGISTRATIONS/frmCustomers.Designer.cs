@@ -276,7 +276,7 @@
             this.pnlTop.Controls.Add(this.label8);
             this.pnlTop.Controls.Add(this.txtSearch);
             this.pnlTop.Controls.Add(this.btnAdd);
-            this.pnlTop.Location = new System.Drawing.Point(-1, 12);
+            this.pnlTop.Location = new System.Drawing.Point(5, 11);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(1013, 76);
             this.pnlTop.TabIndex = 3;
@@ -318,8 +318,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 523);
-            this.Controls.Add(this.dgv);
             this.Controls.Add(this.pnlCenter);
+            this.Controls.Add(this.dgv);
             this.Controls.Add(this.pnlTop);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -1,7 +1,6 @@
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\WATER REFILLING STATION\WATER REFILLING STATION.EL\bin\Debug\netstandard2.0\WATER REFILLING STATION.EL.deps.json
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\WATER REFILLING STATION\WATER REFILLING STATION.EL\bin\Debug\netstandard2.0\WATER REFILLING STATION.EL.dll
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\WATER REFILLING STATION\WATER REFILLING STATION.EL\bin\Debug\netstandard2.0\WATER REFILLING STATION.EL.pdb
-C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\WATER REFILLING STATION\WATER REFILLING STATION.EL\obj\Debug\netstandard2.0\WATER REFILLING STATION.EL.csprojAssemblyReference.cache
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\WATER REFILLING STATION\WATER REFILLING STATION.EL\obj\Debug\netstandard2.0\WATER REFILLING STATION.EL.AssemblyInfoInputs.cache
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\WATER REFILLING STATION\WATER REFILLING STATION.EL\obj\Debug\netstandard2.0\WATER REFILLING STATION.EL.AssemblyInfo.cs
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\WATER REFILLING STATION\WATER REFILLING STATION.EL\obj\Debug\netstandard2.0\WATER REFILLING STATION.EL.dll

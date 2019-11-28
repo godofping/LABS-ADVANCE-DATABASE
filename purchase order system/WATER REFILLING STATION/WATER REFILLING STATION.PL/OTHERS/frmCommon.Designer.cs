@@ -1,6 +1,6 @@
 ﻿namespace WATER_REFILLING_STATION.PL.OTHERS
 {
-    partial class frmContainer
+    partial class frmCommon
     {
         /// <summary>
         /// Required designer variable.
@@ -57,12 +57,16 @@
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(983, 15);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(29, 24);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "x";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblHeader
@@ -85,7 +89,7 @@
             this.pnlBottom.Size = new System.Drawing.Size(1024, 13);
             this.pnlBottom.TabIndex = 3;
             // 
-            // frmContainer
+            // frmCommon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,7 +100,7 @@
             this.Controls.Add(this.pnlMain);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmContainer";
+            this.Name = "frmCommon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmContainer";
             this.Load += new System.EventHandler(this.frmContainer_Load);

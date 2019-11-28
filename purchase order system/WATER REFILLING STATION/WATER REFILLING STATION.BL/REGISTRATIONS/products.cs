@@ -11,6 +11,11 @@ namespace WATER_REFILLING_STATION.BL.REGISTRATIONS
             return productDL.List(keywords);
         }
 
+        public DataTable IsExisting(EL.REGISTRATIONS.products productEL)
+        {
+            return productDL.IsExisting(productEL);
+        }
+
         public long Insert(EL.REGISTRATIONS.products productEL)
         {
             return productDL.Insert(productEL);    

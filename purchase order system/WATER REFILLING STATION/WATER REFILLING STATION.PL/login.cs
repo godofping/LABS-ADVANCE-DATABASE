@@ -84,7 +84,7 @@ namespace WATER_REFILLING_STATION.PL
             }
             else
             {
-                MessageBox.Show("PLEASE COMPLETE ALL THE REQUIRED FIELDS (*).");
+                MessageBox.Show("PLEASE COMPLETE ALL THE REQUIRED FIELDS (*)");
                 txtUsername.Focus();
             }
         }

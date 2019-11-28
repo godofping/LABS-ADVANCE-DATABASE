@@ -15,7 +15,6 @@ namespace WATER_REFILLING_STATION.PL.OTHERS
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-
             switch (MessageBox.Show(this, "Are you sure to logout?", "Logging out", MessageBoxButtons.YesNo))
             {
                 case DialogResult.No:
@@ -33,7 +32,7 @@ namespace WATER_REFILLING_STATION.PL.OTHERS
         {
             var frm = new PL.REGISTRATIONS.frmStaffs();
 
-            var frmContainer = new PL.OTHERS.frmContainer("MANAGE STAFFS", frm);
+            var frmContainer = new PL.OTHERS.frmCommon("MANAGE STAFFS", frm);
             frmContainer.ShowDialog();
         }
 
@@ -41,7 +40,7 @@ namespace WATER_REFILLING_STATION.PL.OTHERS
         {
             var frm = new PL.REGISTRATIONS.frmCustomers();
 
-            var frmContainer = new PL.OTHERS.frmContainer("MANAGE CUSTOMERS", frm);
+            var frmContainer = new PL.OTHERS.frmCommon("MANAGE CUSTOMERS", frm);
             frmContainer.ShowDialog();
         }
 
@@ -49,7 +48,7 @@ namespace WATER_REFILLING_STATION.PL.OTHERS
         {
             var frm = new PL.REGISTRATIONS.frmStaffsAccount();
 
-            var frmContainer = new PL.OTHERS.frmContainer("MANAGE STAFFS ACCOUNTS", frm);
+            var frmContainer = new PL.OTHERS.frmCommon("MANAGE STAFFS ACCOUNTS", frm);
             frmContainer.ShowDialog();
         }
 
@@ -57,7 +56,23 @@ namespace WATER_REFILLING_STATION.PL.OTHERS
         {
             var frm = new PL.REGISTRATIONS.frmParticulars();
 
-            var frmContainer = new PL.OTHERS.frmContainer("MANAGE PARTICULARS", frm);
+            var frmContainer = new PL.OTHERS.frmCommon("MANAGE PARTICULARS", frm);
+            frmContainer.ShowDialog();
+        }
+
+        private void mANAGECONTAINERSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new PL.REGISTRATIONS.frmContainerTypes();
+
+            var frmContainer = new PL.OTHERS.frmCommon("MANAGE CONTAINER TYPES", frm);
+            frmContainer.ShowDialog();
+        }
+
+        private void mANAGEPRODUCTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new PL.REGISTRATIONS.frmProducts();
+
+            var frmContainer = new PL.OTHERS.frmCommon("MANAGE PRODUCTS", frm);
             frmContainer.ShowDialog();
         }
     }

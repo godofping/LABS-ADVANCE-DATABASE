@@ -11,7 +11,6 @@ namespace WATER_REFILLING_STATION.DL
 
         public static long executeNonQueryLong(string _Query)
         {
-
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {
                 long rslt = 0;

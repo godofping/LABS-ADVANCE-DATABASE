@@ -11,6 +11,11 @@ namespace WATER_REFILLING_STATION.BL.REGISTRATIONS
             return particularDL.List(keywords);
         }
 
+        public DataTable List()
+        {
+            return particularDL.List();
+        }
+
         public long Insert(EL.REGISTRATIONS.particulars particularEL)
         {
             return particularDL.Insert(particularEL);

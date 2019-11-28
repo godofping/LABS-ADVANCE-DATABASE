@@ -6,7 +6,7 @@ namespace WATER_REFILLING_STATION.DL.REGISTRATIONS
     {
         public DataTable List()
         {
-            string sQuery = "SELECT * FROM productcategories";
+            string sQuery = "SELECT * FROM view_productcategories";
             return Helper.executeQuery(sQuery);
         }
     }

@@ -131,7 +131,7 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
             }
             else
             {
-                MessageBox.Show("PLEASE COMPLETE ALL THE REQUIRED FIELDS (*).");
+                MessageBox.Show("PLEASE COMPLETE ALL THE REQUIRED FIELDS (*)");
             }
         }
 

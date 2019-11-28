@@ -67,11 +67,11 @@
       <DependentUpon>main.cs</DependentUpon>
     </Compile>
     <Compile Include="methods.cs" />
-    <Compile Include="OTHERS\frmContainer.cs">
+    <Compile Include="OTHERS\frmCommon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OTHERS\frmContainer.Designer.cs">
-      <DependentUpon>frmContainer.cs</DependentUpon>
+    <Compile Include="OTHERS\frmCommon.Designer.cs">
+      <DependentUpon>frmCommon.cs</DependentUpon>
     </Compile>
     <Compile Include="OTHERS\MENU_CASHIER.cs">
       <SubType>Form</SubType>
@@ -87,6 +87,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REGISTRATIONS\frmContainerTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REGISTRATIONS\frmContainerTypes.Designer.cs">
+      <DependentUpon>frmContainerTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="REGISTRATIONS\frmCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="REGISTRATIONS\frmParticulars.Designer.cs">
       <DependentUpon>frmParticulars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REGISTRATIONS\frmProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REGISTRATIONS\frmProducts.Designer.cs">
+      <DependentUpon>frmProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="REGISTRATIONS\frmStaffs.cs">
       <SubType>Form</SubType>
@@ -111,14 +123,20 @@
     <Compile Include="REGISTRATIONS\frmStaffsAccount.Designer.cs">
       <DependentUpon>frmStaffsAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="TRANSACTIONS\frmNewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRANSACTIONS\frmNewOrder.Designer.cs">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OTHERS\frmContainer.resx">
-      <DependentUpon>frmContainer.cs</DependentUpon>
+    <EmbeddedResource Include="OTHERS\frmCommon.resx">
+      <DependentUpon>frmCommon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OTHERS\MENU_CASHIER.resx">
       <DependentUpon>MENU_CASHIER.cs</DependentUpon>
@@ -136,17 +154,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="REGISTRATIONS\frmContainerTypes.resx">
+      <DependentUpon>frmContainerTypes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REGISTRATIONS\frmCustomers.resx">
       <DependentUpon>frmCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REGISTRATIONS\frmParticulars.resx">
       <DependentUpon>frmParticulars.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REGISTRATIONS\frmProducts.resx">
+      <DependentUpon>frmProducts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REGISTRATIONS\frmStaffs.resx">
       <DependentUpon>frmStaffs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="REGISTRATIONS\frmStaffsAccount.resx">
       <DependentUpon>frmStaffsAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRANSACTIONS\frmNewOrder.resx">
+      <DependentUpon>frmNewOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -161,9 +188,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TRANSACTIONS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\WATER REFILLING STATION.BL\WATER REFILLING STATION.BL.csproj">
       <Project>{d1c643ed-fb3b-474a-b06b-24239866f7bf}</Project>

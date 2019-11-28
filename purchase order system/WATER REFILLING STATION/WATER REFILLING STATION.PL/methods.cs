@@ -67,9 +67,9 @@ namespace WATER_REFILLING_STATION.PL
             foreach (ComboBox d in i)
             {
                 d.ResetText();
-                d.SelectedItem = -1;
+                d.SelectedIndex = -1;
             }
-                
+
         }
 
         public static void DGVHiddenColumns(DataGridView dgv, params string[] i)
@@ -115,6 +115,37 @@ namespace WATER_REFILLING_STATION.PL
             btn1.UseColumnTextForButtonValue = true;
         }
 
+        public static void EnabledCB(bool bol, params ComboBox[] i)
+        {
+            foreach (ComboBox d in i)
+                d.Enabled = bol;
+        }
+
+        public static void EnabledDGV(bool bol, params DataGridView[] i)
+        {
+            foreach (DataGridView d in i)
+                d.Enabled = bol;
+        }
+
+        public static void EnabledDTP(bool bol, params DateTimePicker[] i)
+        {
+            foreach (DateTimePicker d in i)
+                d.Enabled = bol;
+        }
+
+        public static void EnabledTXT(bool bol, params TextBox[] i)
+        {
+            foreach (TextBox d in i)
+                d.Enabled = bol;
+        }
+
+        public static void EnabledGB(bool bol, params GroupBox[] i)
+        {
+            foreach (GroupBox d in i)
+                d.Enabled = bol;
+        }
+
+
         public static void LoadCB(ComboBox cb, DataTable dt, string dm, string vm)
         {
             cb.DataSource = dt;
@@ -126,6 +157,34 @@ namespace WATER_REFILLING_STATION.PL
         {
             dgv.DataSource = dt;
 
+        }
+
+        public static void NullCB(params ComboBox[] i)
+        {
+            foreach (ComboBox d in i)
+            {
+                d.SelectedItem = null;
+            }
+
+        }
+
+        public static void OnlyNumTXT(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        public static void OnlyDecimalTXT(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            { e.Handled = true; }
+            TextBox txtDecimal = sender as TextBox;
+            if (e.KeyChar == '.' && txtDecimal.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
 
         public static void ReadOnlyTXT(bool bol, params TextBox[] i)
@@ -152,7 +211,7 @@ namespace WATER_REFILLING_STATION.PL
                 d.Visible = bol;
         }
 
-        
+
 
     }
 }

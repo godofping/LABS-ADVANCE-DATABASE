@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.msMenu = new System.Windows.Forms.MenuStrip();
+            this.nEWTRANSACTIONSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cUSTOMERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGECUSTOMERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nEWTRANSACTIONSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTOFORDERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,13 @@
             this.msMenu.Size = new System.Drawing.Size(1008, 87);
             this.msMenu.Stretch = false;
             this.msMenu.TabIndex = 1;
+            // 
+            // nEWTRANSACTIONSToolStripMenuItem
+            // 
+            this.nEWTRANSACTIONSToolStripMenuItem.Name = "nEWTRANSACTIONSToolStripMenuItem";
+            this.nEWTRANSACTIONSToolStripMenuItem.Size = new System.Drawing.Size(189, 83);
+            this.nEWTRANSACTIONSToolStripMenuItem.Text = "NEW ORDER";
+            this.nEWTRANSACTIONSToolStripMenuItem.Click += new System.EventHandler(this.nEWTRANSACTIONSToolStripMenuItem_Click);
             // 
             // cUSTOMERSToolStripMenuItem
             // 
@@ -86,24 +93,19 @@
             this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(134, 83);
             this.rEPORTSToolStripMenuItem.Text = "ORDERS";
             // 
+            // lISTOFORDERSToolStripMenuItem
+            // 
+            this.lISTOFORDERSToolStripMenuItem.Name = "lISTOFORDERSToolStripMenuItem";
+            this.lISTOFORDERSToolStripMenuItem.Size = new System.Drawing.Size(301, 42);
+            this.lISTOFORDERSToolStripMenuItem.Text = "LIST OF ORDERS";
+            // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(137, 83);
             this.logoutToolStripMenuItem.Text = "LOGOUT";
-            // 
-            // nEWTRANSACTIONSToolStripMenuItem
-            // 
-            this.nEWTRANSACTIONSToolStripMenuItem.Name = "nEWTRANSACTIONSToolStripMenuItem";
-            this.nEWTRANSACTIONSToolStripMenuItem.Size = new System.Drawing.Size(189, 83);
-            this.nEWTRANSACTIONSToolStripMenuItem.Text = "NEW ORDER";
-            // 
-            // lISTOFORDERSToolStripMenuItem
-            // 
-            this.lISTOFORDERSToolStripMenuItem.Name = "lISTOFORDERSToolStripMenuItem";
-            this.lISTOFORDERSToolStripMenuItem.Size = new System.Drawing.Size(301, 42);
-            this.lISTOFORDERSToolStripMenuItem.Text = "LIST OF ORDERS";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // MENU_CASHIER
             // 
