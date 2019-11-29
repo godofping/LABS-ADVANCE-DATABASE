@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WATER_REFILLING_STATION.PL
@@ -72,16 +74,22 @@ namespace WATER_REFILLING_STATION.PL
 
         }
 
-        public static void DGVHiddenColumns(DataGridView dgv, params string[] i)
+        public static void DGVAddButton(DataGridView dgv)
         {
-            foreach (string d in i)
-                dgv.Columns[d].Visible = false;
-        }
 
-        public static void DGVHiddenColumns(DataGridView dgv, params int[] i)
-        {
-            foreach (int d in i)
-                dgv.Columns[d].Visible = false;
+            DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+            dgv.Columns.Add(btn1);
+            btn1.HeaderText = "";
+            btn1.Text = "ADD TO CART";
+            btn1.Name = "btn1";
+            btn1.FillWeight = 20;
+            btn1.ReadOnly = false;
+            btn1.DividerWidth = 0;
+            btn1.FillWeight = 10;
+            btn1.Frozen = false;
+            btn1.MinimumWidth = 5;
+            btn1.Width = 100;
+            btn1.UseColumnTextForButtonValue = true;
         }
 
         public static void DGVAddButtons(DataGridView dgv)
@@ -115,6 +123,35 @@ namespace WATER_REFILLING_STATION.PL
             btn1.UseColumnTextForButtonValue = true;
         }
 
+        public static void DGVFillWeights(DataGridView dgv,  int[] x, int[] y)
+        {
+            int m = 0;
+            foreach (int x1 in x)
+            {
+                dgv.Columns[x1].FillWeight = y[m];
+                m++;
+            }
+        }
+
+        public static void DGVHiddenColumns(DataGridView dgv, params string[] i)
+        {
+            foreach (string d in i)
+                dgv.Columns[d].Visible = false;
+        }
+
+        public static void DGVHiddenColumns(DataGridView dgv, params int[] i)
+        {
+            foreach (int d in i)
+                dgv.Columns[d].Visible = false;
+        }
+
+        public static void DGVTheme(DataGridView dgv)
+        {
+            dgv.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+        }
+
+
         public static void EnabledCB(bool bol, params ComboBox[] i)
         {
             foreach (ComboBox d in i)
@@ -143,6 +180,60 @@ namespace WATER_REFILLING_STATION.PL
         {
             foreach (GroupBox d in i)
                 d.Enabled = bol;
+        }
+
+        public static DialogResult InputBox(string title, string promptText, ref string value)
+        {
+            Form form = new Form();
+            Label label = new Label();
+            TextBox textBox = new TextBox();
+            Button buttonOk = new Button();
+            Button buttonCancel = new Button();
+
+    
+            textBox.KeyPress += (sender, args) =>
+            {
+                OnlyNumTXT(sender, args);
+
+            };
+
+            form.Text = title;
+            label.Text = promptText;
+            textBox.Text = value;
+
+            buttonOk.Text = "OK";
+            buttonCancel.Text = "Cancel";
+            buttonOk.DialogResult = DialogResult.OK;
+            buttonCancel.DialogResult = DialogResult.Cancel;
+
+            label.SetBounds(9, 10, 372, 13);
+            textBox.SetBounds(12, 36, 372, 20);
+            buttonOk.SetBounds(228, 72, 75, 27);
+            buttonCancel.SetBounds(309, 72, 75, 27);
+
+            label.AutoSize = true;
+            textBox.Anchor = textBox.Anchor | AnchorStyles.Right;
+            buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+
+            form.ClientSize = new Size(396, 107);
+            form.Controls.AddRange(new Control[] { label, textBox, buttonOk, buttonCancel });
+            form.ClientSize = new Size(Math.Max(300, label.Right + 10), form.ClientSize.Height);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+            form.AcceptButton = buttonOk;
+            form.CancelButton = buttonCancel;
+
+            form.BackColor = Color.White;
+            form.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+
+
+
+            DialogResult dialogResult = form.ShowDialog();
+            value = textBox.Text;
+            return dialogResult;
         }
 
 
@@ -193,6 +284,7 @@ namespace WATER_REFILLING_STATION.PL
                 d.ReadOnly = bol;
         }
 
+  
         public static void VisibilityCB(bool bol, params ComboBox[] i)
         {
             foreach (ComboBox d in i)
@@ -210,6 +302,8 @@ namespace WATER_REFILLING_STATION.PL
             foreach (TextBox d in i)
                 d.Visible = bol;
         }
+
+        
 
 
 

@@ -132,11 +132,11 @@
   KEY `FK_purchaseord2erdetails` (`purchaseorderdetailprice`),
   CONSTRAINT `FK_purchaseorderdetails` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`),
   CONSTRAINT `FK_purchaseorderdetails1` FOREIGN KEY (`purchaseorderid`) REFERENCES `purchaseorders` (`purchaseorderid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="basicinformations" view="colnames">
-<left>1255</left>
-<top>180</top>
+<left>1185</left>
+<top>148</top>
 <width>150</width>
 <height>202</height>
 <sql_create_table>CREATE TABLE `basicinformations` (
@@ -184,7 +184,7 @@
   CONSTRAINT `FK_purchaseorders2` FOREIGN KEY (`paymentmethodid`) REFERENCES `paymentmethods` (`paymentmethodid`),
   CONSTRAINT `FK_purchaseorders3` FOREIGN KEY (`supplierid`) REFERENCES `suppliers` (`supplierid`),
   CONSTRAINT `FK_purchaseorders4` FOREIGN KEY (`staffid`) REFERENCES `staffs` (`staffid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="inventories" view="colnames">
 <left>551</left>

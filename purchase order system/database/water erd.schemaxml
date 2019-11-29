@@ -6,8 +6,8 @@
 <canvas zoom="100">
 <tables>
 <table name="customers" view="colnames">
-<left>23</left>
-<top>49</top>
+<left>6</left>
+<top>46</top>
 <width>196</width>
 <height>229</height>
 <sql_create_table>CREATE TABLE `customers` (
@@ -45,27 +45,25 @@
 </table>
 <table name="containertypes" view="colnames">
 <left>1298</left>
-<top>295</top>
-<width>140</width>
+<top>477</top>
+<width>146</width>
 <height>116</height>
 <sql_create_table>CREATE TABLE `containertypes` (
   `containertypeid` int(6) NOT NULL AUTO_INCREMENT,
   `containertype` varchar(60) DEFAULT NULL,
-  `containersrp` float DEFAULT NULL,
   PRIMARY KEY (`containertypeid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="particulars" view="colnames">
-<left>1301</left>
-<top>157</top>
-<width>139</width>
+<left>1299</left>
+<top>355</top>
+<width>147</width>
 <height>112</height>
 <sql_create_table>CREATE TABLE `particulars` (
   `particularid` int(6) NOT NULL AUTO_INCREMENT,
   `particular` varchar(60) DEFAULT NULL,
-  `particularsrp` float DEFAULT NULL,
   PRIMARY KEY (`particularid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="orderdetails" view="colnames">
 <left>652</left>
@@ -86,8 +84,8 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="deliverymodetypes" view="colnames">
-<left>653</left>
-<top>523</top>
+<left>678</left>
+<top>524</top>
 <width>160</width>
 <height>112</height>
 <sql_create_table>CREATE TABLE `deliverymodetypes` (
@@ -97,8 +95,8 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="customertypes" view="colnames">
-<left>655</left>
-<top>391</top>
+<left>677</left>
+<top>397</top>
 <width>162</width>
 <height>111</height>
 <sql_create_table>CREATE TABLE `customertypes` (
@@ -141,11 +139,11 @@
   CONSTRAINT `FK_products1` FOREIGN KEY (`productcategoryid`) REFERENCES `productcategories` (`productcategoryid`),
   CONSTRAINT `FK_products3` FOREIGN KEY (`particularid`) REFERENCES `particulars` (`particularid`),
   CONSTRAINT `FK_products4` FOREIGN KEY (`containertypeid`) REFERENCES `containertypes` (`containertypeid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="orderdeliveries" view="colnames">
-<left>895</left>
-<top>402</top>
+<left>1001</left>
+<top>369</top>
 <width>159</width>
 <height>192</height>
 <sql_create_table>CREATE TABLE `orderdeliveries` (
@@ -178,11 +176,11 @@
   KEY `FK_staffs` (`basicinformationid`),
   CONSTRAINT `FK_staffs` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`) ON DELETE CASCADE,
   CONSTRAINT `FK_staffs2` FOREIGN KEY (`designationid`) REFERENCES `designations` (`designationid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="staffsaccount" view="colnames">
-<left>195</left>
-<top>453</top>
+<left>225</left>
+<top>465</top>
 <width>183</width>
 <height>129</height>
 <sql_create_table>CREATE TABLE `staffsaccount` (
@@ -193,7 +191,7 @@
   PRIMARY KEY (`staffaccountid`),
   KEY `FK_staffsaccount1` (`staffid`),
   CONSTRAINT `FK_staffsaccount1` FOREIGN KEY (`staffid`) REFERENCES `staffs` (`staffid`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="designations" view="colnames">
 <left>965</left>
@@ -207,8 +205,8 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="basicinformations" view="colnames">
-<left>70</left>
-<top>590</top>
+<left>220</left>
+<top>609</top>
 <width>150</width>
 <height>214</height>
 <sql_create_table>CREATE TABLE `basicinformations` (
@@ -221,11 +219,11 @@
   `contactnumber` varchar(60) DEFAULT NULL,
   `emailaddress` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`basicinformationid`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="productcategories" view="colnames">
-<left>1294</left>
-<top>12</top>
+<left>1298</left>
+<top>235</top>
 <width>149</width>
 <height>112</height>
 <sql_create_table>CREATE TABLE `productcategories` (
@@ -233,6 +231,20 @@
   `productcategory` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`productcategoryid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="stocks" view="colnames">
+<left>1297</left>
+<top>101</top>
+<width>149</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `stocks` (
+  `stockid` int(6) NOT NULL AUTO_INCREMENT,
+  `productid` int(6) DEFAULT NULL,
+  `stock` int(6) DEFAULT NULL,
+  PRIMARY KEY (`stockid`),
+  KEY `FK_stocks` (`productid`),
+  CONSTRAINT `FK_stocks` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 </tables>
 </canvas>
