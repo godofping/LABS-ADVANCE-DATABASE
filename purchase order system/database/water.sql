@@ -29,11 +29,11 @@ CREATE TABLE `basicinformations` (
   `contactnumber` varchar(60) DEFAULT NULL,
   `emailaddress` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`basicinformationid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 /*Data for the table `basicinformations` */
 
-insert  into `basicinformations`(`basicinformationid`,`lastname`,`firstname`,`middleinitial`,`birthdate`,`address`,`contactnumber`,`emailaddress`) values (1,'LN_MANAGER','FN_MANAGER','MI_','1997-09-23','ST_MANAGER','CN_MANAGER','EA_MANAGER'),(2,'A','B','C','0000-00-00','A','A','A'),(3,'RONCESVALLES','REX LOUIS','P','0000-00-00','','',''),(4,'LN','FN','MI','0000-00-00','ADD','CN','EA'),(5,'A','AA','AA','0000-00-00','AAA','AAA','AAA'),(6,'ASD','ASDA','ASD','2019-11-26','ASD','ASD','ASD'),(7,'ASD1','ASD1','ASD','1998-11-21','ASD1','ASD1','ASD1');
+insert  into `basicinformations`(`basicinformationid`,`lastname`,`firstname`,`middleinitial`,`birthdate`,`address`,`contactnumber`,`emailaddress`) values (1,'RONCESVALLES','REX LOUIS','P','2019-11-26','ST_MANAGER','CN_MANAGER','EA_MANAGER'),(2,'A','B','C','0000-00-00','A','A','A'),(3,'RONCESVALLES','REX LOUIS','P','0000-00-00','','',''),(4,'LN','FN','MI','0000-00-00','ADD','CN','EA'),(5,'A','AA','AA','0000-00-00','AAA','AAA','AAA'),(6,'RONCESVALLES','RONCESVALLES','P','1997-12-23','PUROK 3','09754363944','REXMICROSOFT@YAHOO.COM.PH'),(7,'ASD1','ASD1','AS2','1998-11-21','ASD3','ASD14','ASD15'),(8,'A','B','C','2019-05-07','ASDAS','AD','SDASD'),(9,'ASDASD','ASDASD','ASD','2019-11-26','ASD','ASD','asd'),(10,'JADRAQUE','CLARIE JANE','S','1995-11-27','MIDSAYAP','09152525252',''),(11,'','','','2019-11-26','','',''),(12,'LN','FN','MI','1998-11-11','ADDRESS','CN','ea'),(13,'A','A','ABB','2019-11-26','A','A',''),(14,'A1','A1','A2','2019-11-27','A3','A','b'),(15,'A1','A','A','2019-11-27','A','A','a');
 
 /*Table structure for table `containertypes` */
 
@@ -43,7 +43,7 @@ CREATE TABLE `containertypes` (
   `containertypeid` int(6) NOT NULL AUTO_INCREMENT,
   `containertype` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`containertypeid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `containertypes` */
 
@@ -77,11 +77,11 @@ CREATE TABLE `customers` (
   PRIMARY KEY (`customerid`),
   KEY `FK_customers` (`basicinformationid`),
   CONSTRAINT `FK_customers` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `customers` */
 
-insert  into `customers`(`customerid`,`basicinformationid`,`dateregistered`) values (5,6,'2019-11-26'),(6,7,'2019-11-26');
+insert  into `customers`(`customerid`,`basicinformationid`,`dateregistered`) values (5,6,'2019-11-26'),(6,7,'2019-11-26'),(7,13,'2019-11-26');
 
 /*Table structure for table `customertypes` */
 
@@ -109,7 +109,7 @@ CREATE TABLE `deliverymodetypes` (
 
 /*Data for the table `deliverymodetypes` */
 
-insert  into `deliverymodetypes`(`deliverymodetypeid`,`modetype`) values (1,'DELIVERY'),(2,'PICKUP');
+insert  into `deliverymodetypes`(`deliverymodetypeid`,`modetype`) values (1,'HOME DELIVERY'),(2,'PICK AND CARRY');
 
 /*Table structure for table `designations` */
 
@@ -178,7 +178,6 @@ CREATE TABLE `orders` (
   `totalamount` float DEFAULT NULL,
   `cashtendered` float DEFAULT NULL,
   `change` float DEFAULT NULL,
-  `isvoid` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`orderid`),
   KEY `FK_orders2` (`deliverymodetypeid`),
   KEY `FK_orders4` (`customertypeid`),
@@ -198,11 +197,11 @@ CREATE TABLE `particulars` (
   `particularid` int(6) NOT NULL AUTO_INCREMENT,
   `particular` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`particularid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `particulars` */
 
-insert  into `particulars`(`particularid`,`particular`) values (1,'DISTILLED'),(2,'PURIFIED'),(3,'MINERAL');
+insert  into `particulars`(`particularid`,`particular`) values (2,'MINERAL'),(3,'PURIFIED'),(10,'DISTILLED'),(11,'NOT AVAILABLE');
 
 /*Table structure for table `productcategories` */
 
@@ -216,7 +215,7 @@ CREATE TABLE `productcategories` (
 
 /*Data for the table `productcategories` */
 
-insert  into `productcategories`(`productcategoryid`,`productcategory`) values (1,'REFILL ONLY'),(2,'CONTAINER ONLY'),(3,'REFILL AND CONTAINER');
+insert  into `productcategories`(`productcategoryid`,`productcategory`) values (1,'REFILL ONLY'),(2,'NEW CONTAINER ONLY'),(3,'NEW CONTAINER WITH REFILL');
 
 /*Table structure for table `products` */
 
@@ -230,14 +229,16 @@ CREATE TABLE `products` (
   `price` float DEFAULT NULL,
   PRIMARY KEY (`productid`),
   KEY `FK_products1` (`productcategoryid`),
-  KEY `FK_products` (`particularid`),
-  KEY `FK_products2` (`containertypeid`),
-  CONSTRAINT `FK_products` FOREIGN KEY (`particularid`) REFERENCES `particulars` (`particularid`),
+  KEY `FK_products3` (`particularid`),
+  KEY `FK_products4` (`containertypeid`),
   CONSTRAINT `FK_products1` FOREIGN KEY (`productcategoryid`) REFERENCES `productcategories` (`productcategoryid`),
-  CONSTRAINT `FK_products2` FOREIGN KEY (`containertypeid`) REFERENCES `containertypes` (`containertypeid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `FK_products3` FOREIGN KEY (`particularid`) REFERENCES `particulars` (`particularid`),
+  CONSTRAINT `FK_products4` FOREIGN KEY (`containertypeid`) REFERENCES `containertypes` (`containertypeid`)
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
 
 /*Data for the table `products` */
+
+insert  into `products`(`productid`,`productcategoryid`,`particularid`,`containertypeid`,`price`) values (46,1,2,3,25),(47,1,3,3,28),(48,1,10,3,35),(49,1,3,1,20),(50,1,3,1,23),(51,1,10,1,25),(52,1,2,2,15),(53,1,3,2,18),(54,1,10,2,20),(55,2,11,3,150),(56,2,11,1,150),(57,2,11,2,120),(58,3,2,3,175),(59,3,3,3,178),(60,3,10,3,185),(61,3,2,1,170),(62,3,3,1,173),(63,3,10,1,175),(64,3,2,2,135),(65,3,3,2,138),(66,3,10,2,140);
 
 /*Table structure for table `staffs` */
 
@@ -249,15 +250,15 @@ CREATE TABLE `staffs` (
   `designationid` int(6) DEFAULT NULL,
   `datehired` date DEFAULT NULL,
   PRIMARY KEY (`staffid`),
-  KEY `FK_staffs` (`basicinformationid`),
   KEY `FK_staffs2` (`designationid`),
-  CONSTRAINT `FK_staffs` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`),
+  KEY `FK_staffs` (`basicinformationid`),
+  CONSTRAINT `FK_staffs` FOREIGN KEY (`basicinformationid`) REFERENCES `basicinformations` (`basicinformationid`) ON DELETE CASCADE,
   CONSTRAINT `FK_staffs2` FOREIGN KEY (`designationid`) REFERENCES `designations` (`designationid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `staffs` */
 
-insert  into `staffs`(`staffid`,`basicinformationid`,`designationid`,`datehired`) values (1,1,1,'2019-11-26');
+insert  into `staffs`(`staffid`,`basicinformationid`,`designationid`,`datehired`) values (1,1,1,'2019-11-27'),(4,10,2,'2019-11-28');
 
 /*Table structure for table `staffsaccount` */
 
@@ -270,12 +271,39 @@ CREATE TABLE `staffsaccount` (
   `password` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`staffaccountid`),
   KEY `FK_staffsaccount1` (`staffid`),
-  CONSTRAINT `FK_staffsaccount1` FOREIGN KEY (`staffid`) REFERENCES `staffs` (`staffid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  CONSTRAINT `FK_staffsaccount1` FOREIGN KEY (`staffid`) REFERENCES `staffs` (`staffid`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `staffsaccount` */
 
-insert  into `staffsaccount`(`staffaccountid`,`staffid`,`username`,`password`) values (1,1,'MANAGER','MANAGER');
+insert  into `staffsaccount`(`staffaccountid`,`staffid`,`username`,`password`) values (1,1,'admin','admin'),(4,4,'a','a');
+
+/*Table structure for table `stocks` */
+
+DROP TABLE IF EXISTS `stocks`;
+
+CREATE TABLE `stocks` (
+  `stockid` int(6) NOT NULL AUTO_INCREMENT,
+  `productid` int(6) DEFAULT NULL,
+  `stocks` int(6) DEFAULT NULL,
+  PRIMARY KEY (`stockid`),
+  KEY `FK_stocks` (`productid`),
+  CONSTRAINT `FK_stocks` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `stocks` */
+
+/*Table structure for table `view_containertypes` */
+
+DROP TABLE IF EXISTS `view_containertypes`;
+
+/*!50001 DROP VIEW IF EXISTS `view_containertypes` */;
+/*!50001 DROP TABLE IF EXISTS `view_containertypes` */;
+
+/*!50001 CREATE TABLE  `view_containertypes`(
+ `CONTAINER TYPE ID` int(6) ,
+ `CONTAINER TYPE` varchar(60) 
+)*/;
 
 /*Table structure for table `view_customers` */
 
@@ -297,6 +325,72 @@ DROP TABLE IF EXISTS `view_customers`;
  `DATE REGISTERED` date 
 )*/;
 
+/*Table structure for table `view_particulars` */
+
+DROP TABLE IF EXISTS `view_particulars`;
+
+/*!50001 DROP VIEW IF EXISTS `view_particulars` */;
+/*!50001 DROP TABLE IF EXISTS `view_particulars` */;
+
+/*!50001 CREATE TABLE  `view_particulars`(
+ `PARTICULAR ID` int(6) ,
+ `PARTICULAR` varchar(60) 
+)*/;
+
+/*Table structure for table `view_productcategories` */
+
+DROP TABLE IF EXISTS `view_productcategories`;
+
+/*!50001 DROP VIEW IF EXISTS `view_productcategories` */;
+/*!50001 DROP TABLE IF EXISTS `view_productcategories` */;
+
+/*!50001 CREATE TABLE  `view_productcategories`(
+ `PRODUCT CATEGORY ID` int(6) ,
+ `PRODUCT CATEGORY` varchar(60) 
+)*/;
+
+/*Table structure for table `view_products` */
+
+DROP TABLE IF EXISTS `view_products`;
+
+/*!50001 DROP VIEW IF EXISTS `view_products` */;
+/*!50001 DROP TABLE IF EXISTS `view_products` */;
+
+/*!50001 CREATE TABLE  `view_products`(
+ `PRODUCT ID` int(6) ,
+ `PRODUCT CATEGORY ID` int(6) ,
+ `PARTICULAR ID` int(6) ,
+ `CONTAINER TYPE ID` int(6) ,
+ `PRODUCT CATEGORY` varchar(60) ,
+ `PARTICULAR` varchar(60) ,
+ `CONTAINER TYPE` varchar(60) ,
+ `PRICE` float ,
+ `STOCKS` int(6) 
+)*/;
+
+/*Table structure for table `view_staffs` */
+
+DROP TABLE IF EXISTS `view_staffs`;
+
+/*!50001 DROP VIEW IF EXISTS `view_staffs` */;
+/*!50001 DROP TABLE IF EXISTS `view_staffs` */;
+
+/*!50001 CREATE TABLE  `view_staffs`(
+ `STAFF ID` int(6) ,
+ `BASIC INFORMATION ID` int(6) ,
+ `DESIGNATION ID` int(6) ,
+ `LAST NAME` varchar(60) ,
+ `FIRST NAME` varchar(60) ,
+ `MIDDLE INITIAL` varchar(3) ,
+ `BIRTH DATE` date ,
+ `ADDRESS` varchar(250) ,
+ `CONTACT NUMBER` varchar(60) ,
+ `EMAIL ADDRESS` varchar(60) ,
+ `DESIGNATION` varchar(60) ,
+ `DATE HIRED` date ,
+ `FULL NAME` varchar(126) 
+)*/;
+
 /*Table structure for table `view_staffsaccount` */
 
 DROP TABLE IF EXISTS `view_staffsaccount`;
@@ -306,21 +400,29 @@ DROP TABLE IF EXISTS `view_staffsaccount`;
 
 /*!50001 CREATE TABLE  `view_staffsaccount`(
  `STAFF ACCOUNT ID` int(6) ,
+ `BASIC INFORMATION ID` int(6) ,
+ `DESIGNATION ID` int(6) ,
  `STAFF ID` int(6) ,
  `USERNAME` varchar(60) ,
  `PASSWORD` varchar(60) ,
- `BASIC INFORMATION ID` int(6) ,
- `DESIGNATION ID` int(6) ,
- `DATE HIRED` date ,
- `DESIGNATION` varchar(60) ,
- `LASTNAME` varchar(60) ,
- `FIRSTNAME` varchar(60) ,
- `MIDDLE INTIAL` varchar(3) ,
+ `LAST NAME` varchar(60) ,
+ `FIRST NAME` varchar(60) ,
+ `MIDDLE INITIAL` varchar(3) ,
  `BIRTH DATE` date ,
  `ADDRESS` varchar(250) ,
  `CONTACT NUMBER` varchar(60) ,
- `EMAIL ADDRESS` varchar(60) 
+ `EMAIL ADDRESS` varchar(60) ,
+ `DESIGNATION` varchar(60) ,
+ `DATE HIRED` date ,
+ `FULL NAME` varchar(126) 
 )*/;
+
+/*View structure for view view_containertypes */
+
+/*!50001 DROP TABLE IF EXISTS `view_containertypes` */;
+/*!50001 DROP VIEW IF EXISTS `view_containertypes` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_containertypes` AS select `containertypes`.`containertypeid` AS `CONTAINER TYPE ID`,`containertypes`.`containertype` AS `CONTAINER TYPE` from `containertypes` */;
 
 /*View structure for view view_customers */
 
@@ -329,12 +431,40 @@ DROP TABLE IF EXISTS `view_staffsaccount`;
 
 /*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_customers` AS select `customers`.`customerid` AS `CUSTOMER ID`,`customers`.`basicinformationid` AS `BASIC INFORMATION ID`,`basicinformations`.`lastname` AS `LAST NAME`,`basicinformations`.`firstname` AS `FIRST NAME`,`basicinformations`.`middleinitial` AS `MIDDLE INITIAL`,`basicinformations`.`birthdate` AS `BIRTH DATE`,`basicinformations`.`address` AS `ADDRESS`,`basicinformations`.`contactnumber` AS `CONTACT NUMBER`,`basicinformations`.`emailaddress` AS `EMAIL ADDRESS`,`customers`.`dateregistered` AS `DATE REGISTERED` from (`customers` join `basicinformations` on((`customers`.`basicinformationid` = `basicinformations`.`basicinformationid`))) */;
 
+/*View structure for view view_particulars */
+
+/*!50001 DROP TABLE IF EXISTS `view_particulars` */;
+/*!50001 DROP VIEW IF EXISTS `view_particulars` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_particulars` AS select `particulars`.`particularid` AS `PARTICULAR ID`,`particulars`.`particular` AS `PARTICULAR` from `particulars` */;
+
+/*View structure for view view_productcategories */
+
+/*!50001 DROP TABLE IF EXISTS `view_productcategories` */;
+/*!50001 DROP VIEW IF EXISTS `view_productcategories` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_productcategories` AS select `productcategories`.`productcategoryid` AS `PRODUCT CATEGORY ID`,`productcategories`.`productcategory` AS `PRODUCT CATEGORY` from `productcategories` */;
+
+/*View structure for view view_products */
+
+/*!50001 DROP TABLE IF EXISTS `view_products` */;
+/*!50001 DROP VIEW IF EXISTS `view_products` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_products` AS select `products`.`productid` AS `PRODUCT ID`,`products`.`productcategoryid` AS `PRODUCT CATEGORY ID`,`products`.`particularid` AS `PARTICULAR ID`,`products`.`containertypeid` AS `CONTAINER TYPE ID`,`productcategories`.`productcategory` AS `PRODUCT CATEGORY`,`particulars`.`particular` AS `PARTICULAR`,`containertypes`.`containertype` AS `CONTAINER TYPE`,`products`.`price` AS `PRICE`,`stocks`.`stocks` AS `STOCKS` from ((((`products` join `particulars` on((`products`.`particularid` = `particulars`.`particularid`))) left join `stocks` on((`stocks`.`productid` = `products`.`productid`))) join `containertypes` on((`products`.`containertypeid` = `containertypes`.`containertypeid`))) join `productcategories` on((`products`.`productcategoryid` = `productcategories`.`productcategoryid`))) */;
+
+/*View structure for view view_staffs */
+
+/*!50001 DROP TABLE IF EXISTS `view_staffs` */;
+/*!50001 DROP VIEW IF EXISTS `view_staffs` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_staffs` AS select `staffs`.`staffid` AS `STAFF ID`,`staffs`.`basicinformationid` AS `BASIC INFORMATION ID`,`staffs`.`designationid` AS `DESIGNATION ID`,`basicinformations`.`lastname` AS `LAST NAME`,`basicinformations`.`firstname` AS `FIRST NAME`,`basicinformations`.`middleinitial` AS `MIDDLE INITIAL`,`basicinformations`.`birthdate` AS `BIRTH DATE`,`basicinformations`.`address` AS `ADDRESS`,`basicinformations`.`contactnumber` AS `CONTACT NUMBER`,`basicinformations`.`emailaddress` AS `EMAIL ADDRESS`,`designations`.`designation` AS `DESIGNATION`,`staffs`.`datehired` AS `DATE HIRED`,concat(`basicinformations`.`lastname`,', ',`basicinformations`.`firstname`,' ',`basicinformations`.`middleinitial`) AS `FULL NAME` from ((`staffs` join `basicinformations` on((`staffs`.`basicinformationid` = `basicinformations`.`basicinformationid`))) join `designations` on((`staffs`.`designationid` = `designations`.`designationid`))) */;
+
 /*View structure for view view_staffsaccount */
 
 /*!50001 DROP TABLE IF EXISTS `view_staffsaccount` */;
 /*!50001 DROP VIEW IF EXISTS `view_staffsaccount` */;
 
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_staffsaccount` AS select `staffsaccount`.`staffaccountid` AS `STAFF ACCOUNT ID`,`staffsaccount`.`staffid` AS `STAFF ID`,`staffsaccount`.`username` AS `USERNAME`,`staffsaccount`.`password` AS `PASSWORD`,`staffs`.`basicinformationid` AS `BASIC INFORMATION ID`,`staffs`.`designationid` AS `DESIGNATION ID`,`staffs`.`datehired` AS `DATE HIRED`,`designations`.`designation` AS `DESIGNATION`,`basicinformations`.`lastname` AS `LASTNAME`,`basicinformations`.`firstname` AS `FIRSTNAME`,`basicinformations`.`middleinitial` AS `MIDDLE INTIAL`,`basicinformations`.`birthdate` AS `BIRTH DATE`,`basicinformations`.`address` AS `ADDRESS`,`basicinformations`.`contactnumber` AS `CONTACT NUMBER`,`basicinformations`.`emailaddress` AS `EMAIL ADDRESS` from (((`staffs` join `designations` on((`staffs`.`designationid` = `designations`.`designationid`))) join `staffsaccount` on((`staffsaccount`.`staffid` = `staffs`.`staffid`))) join `basicinformations` on((`staffs`.`basicinformationid` = `basicinformations`.`basicinformationid`))) */;
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_staffsaccount` AS select `staffsaccount`.`staffaccountid` AS `STAFF ACCOUNT ID`,`staffs`.`basicinformationid` AS `BASIC INFORMATION ID`,`staffs`.`designationid` AS `DESIGNATION ID`,`staffsaccount`.`staffid` AS `STAFF ID`,`staffsaccount`.`username` AS `USERNAME`,`staffsaccount`.`password` AS `PASSWORD`,`basicinformations`.`lastname` AS `LAST NAME`,`basicinformations`.`firstname` AS `FIRST NAME`,`basicinformations`.`middleinitial` AS `MIDDLE INITIAL`,`basicinformations`.`birthdate` AS `BIRTH DATE`,`basicinformations`.`address` AS `ADDRESS`,`basicinformations`.`contactnumber` AS `CONTACT NUMBER`,`basicinformations`.`emailaddress` AS `EMAIL ADDRESS`,`designations`.`designation` AS `DESIGNATION`,`staffs`.`datehired` AS `DATE HIRED`,concat(`basicinformations`.`lastname`,', ',`basicinformations`.`firstname`,' ',`basicinformations`.`middleinitial`) AS `FULL NAME` from (((`staffs` join `designations` on((`staffs`.`designationid` = `designations`.`designationid`))) join `staffsaccount` on((`staffsaccount`.`staffid` = `staffs`.`staffid`))) join `basicinformations` on((`staffs`.`basicinformationid` = `basicinformations`.`basicinformationid`))) where ((`designations`.`designation` = 'MANAGER') or (`designations`.`designation` = 'CASHIER')) */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
