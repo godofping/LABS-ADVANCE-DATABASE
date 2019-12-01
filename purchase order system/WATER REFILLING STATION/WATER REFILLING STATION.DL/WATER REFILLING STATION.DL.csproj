@@ -57,6 +57,7 @@
     <Compile Include="REGISTRATIONS\products.cs" />
     <Compile Include="REGISTRATIONS\staffs.cs" />
     <Compile Include="REGISTRATIONS\staffsaccount.cs" />
+    <Compile Include="REGISTRATIONS\stocks.cs" />
     <Compile Include="TRANSACTIONS\customerorders.cs" />
     <Compile Include="TRANSACTIONS\orderdeliveries.cs" />
     <Compile Include="TRANSACTIONS\orderdetails.cs" />

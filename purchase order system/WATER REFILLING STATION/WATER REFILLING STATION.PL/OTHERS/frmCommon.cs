@@ -14,14 +14,23 @@ namespace WATER_REFILLING_STATION.PL.OTHERS
     {
         string s;
         Form frm;
-        
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;     
+                return handleParam;
+            }
+        }
+
         public frmCommon(string _s, Form _frm)
         {
             InitializeComponent();
             s = _s;
             frm = _frm;
         }
-
 
 
         private void btnClose_Click(object sender, EventArgs e)

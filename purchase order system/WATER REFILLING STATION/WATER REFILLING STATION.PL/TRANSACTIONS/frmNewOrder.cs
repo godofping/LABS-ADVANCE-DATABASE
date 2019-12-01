@@ -10,7 +10,11 @@ namespace WATER_REFILLING_STATION.PL.TRANSACTIONS
 
         BL.REGISTRATIONS.productcategories productcategoryBL = new BL.REGISTRATIONS.productcategories();
         BL.REGISTRATIONS.products productBL = new BL.REGISTRATIONS.products();
-        string s;
+        BL.REGISTRATIONS.customertypes customertypeBL = new BL.REGISTRATIONS.customertypes();
+        BL.REGISTRATIONS.deliverymodetypes deliverymodetypeBL = new BL.REGISTRATIONS.deliverymodetypes();
+
+        string s = "";
+
         public frmNewOrder()
         {
             InitializeComponent();
@@ -20,39 +24,41 @@ namespace WATER_REFILLING_STATION.PL.TRANSACTIONS
         private void PopulateDGV()
         {
             methods.LoadDGV(dgvProducts, productBL.List(txtSearch.Text));
+        }
+
+        private void PopulateCB()
+        {
+            methods.LoadCB(cbCustomerType, customertypeBL.List(), "CUSTOMER TYPE", "CUSTOMER TYPE ID");
+            methods.LoadCB(cbDeliveryMode, deliverymodetypeBL.List(), "MODE TYPE", "DELIVERY MODE TYPE ID");
+        }
+
+        private void ManageDGV()
+        {
             methods.DGVHiddenColumns(
                 dgvProducts,
                 "PRODUCT ID",
                 "PRODUCT CATEGORY ID",
                 "PARTICULAR ID",
-                "CONTAINER TYPE ID"
+                "CONTAINER TYPE ID",
+                "STOCK ID"
                 );
-        }
 
-        private void PopulateCB()
-        {
-            methods.LoadCB(cbCustomerType, productcategoryBL.List(), "PRODUCT CATEGORY", "PRODUCT CATEGORY ID");
-        }
-
-        private void ManageDGV()
-        {
             methods.DGVFillWeights(
-                dgvProducts, 
-                new int[] {4,     5,      6,      7,    8   }, 
-                new int[] {25,    17,     35,     10,   13  }
+                dgvProducts,
+                new string[] { "PRODUCT CATEGORY", "PARTICULAR", "CONTAINER TYPE", "PRICE", "STOCK" },
+                new int[] { 25, 17, 35, 10, 13 }
                 );
 
             methods.DGVTheme(dgvProducts);
             methods.DGVAddButton(dgvProducts);
         }
 
-
-
         private void frmNewOrder_Load(object sender, EventArgs e)
         {
             PopulateDGV();
             PopulateCB();
             ManageDGV();
+          
 
         }
 
@@ -72,6 +78,9 @@ namespace WATER_REFILLING_STATION.PL.TRANSACTIONS
 
         }
 
+        private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

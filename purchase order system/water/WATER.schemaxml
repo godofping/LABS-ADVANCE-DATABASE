@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">waterrefillingstation</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="products" view="colnames">
+<left>864</left>
+<top>189</top>
+<width>192</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `products` (
+  `productid` int(6) NOT NULL AUTO_INCREMENT,
+  `productcode` varchar(60) DEFAULT NULL,
+  `productname` varchar(60) DEFAULT NULL,
+  `price` float DEFAULT NULL,
+  `stock` int(6) DEFAULT NULL,
+  PRIMARY KEY (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="customers" view="colnames">
+<left>220</left>
+<top>160</top>
+<width>131</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `customers` (
+  `customerid` int(6) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(60) DEFAULT NULL,
+  `middlename` varchar(60) DEFAULT NULL,
+  `lastname` varchar(60) DEFAULT NULL,
+  `contactnumber` varchar(60) DEFAULT NULL,
+  `address` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`customerid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="orders" view="colnames">
+<left>463</left>
+<top>149</top>
+<width>117</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `orders` (
+  `orderid` int(6) NOT NULL AUTO_INCREMENT,
+  `customerid` int(6) DEFAULT NULL,
+  `totalamount` float DEFAULT NULL,
+  `dateandtime` datetime DEFAULT NULL,
+  PRIMARY KEY (`orderid`),
+  KEY `FK_orders` (`customerid`),
+  CONSTRAINT `FK_orders` FOREIGN KEY (`customerid`) REFERENCES `customers` (`customerid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="orderdetails" view="colnames">
+<left>641</left>
+<top>147</top>
+<width>118</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `orderdetails` (
+  `orderdetailid` int(6) NOT NULL AUTO_INCREMENT,
+  `orderid` int(6) DEFAULT NULL,
+  `productid` int(6) DEFAULT NULL,
+  `quantity` int(6) DEFAULT NULL,
+  `price` int(6) DEFAULT NULL,
+  PRIMARY KEY (`orderdetailid`),
+  KEY `FK_orderdetails` (`orderid`),
+  KEY `FK_orderdetails1` (`productid`),
+  CONSTRAINT `FK_orderdetails` FOREIGN KEY (`orderid`) REFERENCES `orders` (`orderid`),
+  CONSTRAINT `FK_orderdetails1` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

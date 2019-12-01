@@ -38,6 +38,8 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.pnlCenter = new System.Windows.Forms.Panel();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.lblStock = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbContainerType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -148,6 +150,8 @@
             // 
             // pnlCenter
             // 
+            this.pnlCenter.Controls.Add(this.txtStock);
+            this.pnlCenter.Controls.Add(this.lblStock);
             this.pnlCenter.Controls.Add(this.label4);
             this.pnlCenter.Controls.Add(this.cbContainerType);
             this.pnlCenter.Controls.Add(this.label1);
@@ -164,6 +168,27 @@
             this.pnlCenter.Name = "pnlCenter";
             this.pnlCenter.Size = new System.Drawing.Size(1001, 499);
             this.pnlCenter.TabIndex = 8;
+            // 
+            // txtStock
+            // 
+            this.txtStock.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtStock.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStock.Location = new System.Drawing.Point(30, 329);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.ShortcutsEnabled = false;
+            this.txtStock.Size = new System.Drawing.Size(232, 25);
+            this.txtStock.TabIndex = 30;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(27, 309);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(60, 17);
+            this.lblStock.TabIndex = 31;
+            this.lblStock.Text = "STOCK  *";
             // 
             // label4
             // 
@@ -211,6 +236,7 @@
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.Location = new System.Drawing.Point(30, 271);
             this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ShortcutsEnabled = false;
             this.txtPrice.Size = new System.Drawing.Size(232, 25);
             this.txtPrice.TabIndex = 22;
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
@@ -244,6 +270,7 @@
             this.cbProductCategory.Name = "cbProductCategory";
             this.cbProductCategory.Size = new System.Drawing.Size(486, 25);
             this.cbProductCategory.TabIndex = 20;
+            this.cbProductCategory.SelectedIndexChanged += new System.EventHandler(this.cbProductCategory_SelectedIndexChanged);
             // 
             // frmProducts
             // 
@@ -289,5 +316,7 @@
         private System.Windows.Forms.ComboBox cbContainerType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbParticular;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.Label lblStock;
     }
 }

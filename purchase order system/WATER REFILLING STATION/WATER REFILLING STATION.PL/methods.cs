@@ -123,10 +123,20 @@ namespace WATER_REFILLING_STATION.PL
             btn1.UseColumnTextForButtonValue = true;
         }
 
-        public static void DGVFillWeights(DataGridView dgv,  int[] x, int[] y)
+        public static void DGVFillWeights(DataGridView dgv, int[] x, int[] y)
         {
             int m = 0;
             foreach (int x1 in x)
+            {
+                dgv.Columns[x1].FillWeight = y[m];
+                m++;
+            }
+        }
+
+        public static void DGVFillWeights(DataGridView dgv, string[] x, int[] y)
+        {
+            int m = 0;
+            foreach (string x1 in x)
             {
                 dgv.Columns[x1].FillWeight = y[m];
                 m++;
@@ -190,7 +200,7 @@ namespace WATER_REFILLING_STATION.PL
             Button buttonOk = new Button();
             Button buttonCancel = new Button();
 
-    
+
             textBox.KeyPress += (sender, args) =>
             {
                 OnlyNumTXT(sender, args);
@@ -278,13 +288,21 @@ namespace WATER_REFILLING_STATION.PL
             }
         }
 
+        public static void OnlyIntTXT(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
         public static void ReadOnlyTXT(bool bol, params TextBox[] i)
         {
             foreach (TextBox d in i)
                 d.ReadOnly = bol;
         }
 
-  
+
         public static void VisibilityCB(bool bol, params ComboBox[] i)
         {
             foreach (ComboBox d in i)
@@ -303,7 +321,7 @@ namespace WATER_REFILLING_STATION.PL
                 d.Visible = bol;
         }
 
-        
+
 
 
 

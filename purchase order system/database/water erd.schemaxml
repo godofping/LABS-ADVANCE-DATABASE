@@ -33,7 +33,6 @@
   `totalamount` float DEFAULT NULL,
   `cashtendered` float DEFAULT NULL,
   `change` float DEFAULT NULL,
-  `isvoid` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`orderid`),
   KEY `FK_orders2` (`deliverymodetypeid`),
   KEY `FK_orders4` (`customertypeid`),
