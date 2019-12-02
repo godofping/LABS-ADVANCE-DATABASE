@@ -15,3 +15,6 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\wate
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\water\pos\pos.PL\bin\Debug\MySql.Data.dll
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\water\pos\pos.PL\bin\Debug\pos.DL.pdb
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\water\pos\pos.PL\obj\Debug\pos.PL.Registrations.frmProducts.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\water\pos\pos.PL\obj\Debug\pos.PL.Transactions.frmOrders.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\water\pos\pos.PL\obj\Debug\pos.PL.Transactions.frmSelectCustomers.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\water\pos\pos.PL\obj\Debug\pos.PL.Transactions.frmAddProducts.resources

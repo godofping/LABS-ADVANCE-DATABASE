@@ -22,6 +22,13 @@ namespace pos.PL.Registrations
             InitializeComponent();
         }
 
+        private void EnableForm(bool bol)
+        {
+            gbInfo.Enabled = bol;
+            gbButtons.Enabled = !bol;
+            gbDGV.Enabled = !bol;
+        }
+
         private void ClearForm()
         {
             txtProductID.ResetText();
@@ -38,12 +45,6 @@ namespace pos.PL.Registrations
             dgv.Columns["C"].Visible = false;
         }
 
-        private void EnableForm(bool bol)
-        {
-            gbInfo.Enabled = bol;
-            gbButtons.Enabled = !bol;
-            gbDGV.Enabled = !bol;
-        }
 
         private bool Validations()
         {
@@ -112,7 +113,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                MessageBox.Show("PLEASE COMPLETE ALL THE FIELDS REQUIRED ( * )");
+                MessageBox.Show("PLEASE COMPLETE ALL THE REQUIRED FIELDS ( * )");
             }
         }
 

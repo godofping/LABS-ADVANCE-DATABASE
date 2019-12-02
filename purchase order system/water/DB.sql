@@ -27,11 +27,11 @@ CREATE TABLE `customers` (
   `contactnumber` varchar(60) DEFAULT NULL,
   `address` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`customerid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 /*Data for the table `customers` */
 
-insert  into `customers`(`customerid`,`firstname`,`middlename`,`lastname`,`contactnumber`,`address`) values (3,'rex','para','ronc','0975455','asd5a4d5a4sd5');
+insert  into `customers`(`customerid`,`firstname`,`middlename`,`lastname`,`contactnumber`,`address`) values (3,'rex','para','ronc','0975455','asd5a4d5a4sd5'),(5,'asdasd','sdasdasd','sdasda','asdasd','asdasd'),(6,'asd','dasd','sddd','dd','ddd'),(7,'asda','asdasd','asd','asd','asd'),(8,'asd','ad','sdasd','asdasd','asdasd');
 
 /*Table structure for table `orderdetails` */
 
@@ -83,7 +83,7 @@ CREATE TABLE `products` (
 
 /*Data for the table `products` */
 
-insert  into `products`(`productid`,`productcode`,`productname`,`price`,`stock`) values (1,'aa11','aa asdasd11',23.95,0),(2,'aa','asdasdasd',23,51);
+insert  into `products`(`productid`,`productcode`,`productname`,`price`,`stock`) values (1,'aa11','aa asdasd11',23.95,10),(2,'aa','asdasdasd',23,51);
 
 /*Table structure for table `view_customers` */
 
@@ -100,6 +100,24 @@ DROP TABLE IF EXISTS `view_customers`;
  `CONTACT NUMBER` varchar(60) ,
  `ADDRESS` varchar(60) ,
  `C` varchar(311) 
+)*/;
+
+/*Table structure for table `view_orders` */
+
+DROP TABLE IF EXISTS `view_orders`;
+
+/*!50001 DROP VIEW IF EXISTS `view_orders` */;
+/*!50001 DROP TABLE IF EXISTS `view_orders` */;
+
+/*!50001 CREATE TABLE  `view_orders`(
+ `ORDER ID` int(6) ,
+ `CUSTOMER ID` int(6) ,
+ `TOTAL AMOUNT` float ,
+ `DATE AND TIME` datetime ,
+ `FULL NAME` varchar(182) ,
+ `CONTACT NUMBER` varchar(60) ,
+ `ADDRESS` varchar(60) ,
+ `C` varchar(344) 
 )*/;
 
 /*Table structure for table `view_products` */
@@ -124,6 +142,13 @@ DROP TABLE IF EXISTS `view_products`;
 /*!50001 DROP VIEW IF EXISTS `view_customers` */;
 
 /*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_customers` AS select `customers`.`customerid` AS `CUSTOMER ID`,`customers`.`firstname` AS `FIRST NAME`,`customers`.`middlename` AS `MIDDLE NAME`,`customers`.`lastname` AS `LAST NAME`,`customers`.`contactnumber` AS `CONTACT NUMBER`,`customers`.`address` AS `ADDRESS`,concat(`customers`.`customerid`,`customers`.`firstname`,`customers`.`middlename`,`customers`.`lastname`,`customers`.`contactnumber`,`customers`.`address`) AS `C` from `customers` */;
+
+/*View structure for view view_orders */
+
+/*!50001 DROP TABLE IF EXISTS `view_orders` */;
+/*!50001 DROP VIEW IF EXISTS `view_orders` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_orders` AS select `orders`.`orderid` AS `ORDER ID`,`orders`.`customerid` AS `CUSTOMER ID`,`orders`.`totalamount` AS `TOTAL AMOUNT`,`orders`.`dateandtime` AS `DATE AND TIME`,concat(`customers`.`firstname`,' ',`customers`.`middlename`,' ',`customers`.`lastname`) AS `FULL NAME`,`customers`.`contactnumber` AS `CONTACT NUMBER`,`customers`.`address` AS `ADDRESS`,concat(`orders`.`orderid`,`orders`.`totalamount`,`orders`.`dateandtime`,concat(`customers`.`firstname`,' ',`customers`.`middlename`,' ',`customers`.`lastname`),`customers`.`contactnumber`,`customers`.`address`) AS `C` from (`orders` join `customers` on((`orders`.`customerid` = `customers`.`customerid`))) */;
 
 /*View structure for view view_products */
 

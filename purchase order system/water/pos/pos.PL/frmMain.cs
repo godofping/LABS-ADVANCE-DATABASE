@@ -18,7 +18,8 @@ namespace pos.PL
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            
+            Transactions.frmOrders frm = new Transactions.frmOrders();
+            frm.ShowDialog();
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)

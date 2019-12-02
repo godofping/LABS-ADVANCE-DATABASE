@@ -113,7 +113,7 @@ namespace pos.PL.Registrations
             }
             else
             {
-                MessageBox.Show("PLEASE COMPLETE ALL THE FIELDS REQUIRED ( * )");
+                MessageBox.Show("PLEASE COMPLETE ALL THE REQUIRED FIELDS ( * )");
             }
         }
 
