@@ -11,17 +11,35 @@ namespace pos.PL.Transactions
 {
     public partial class frmOrders : Form
     {
-        pos.EL.Registrations.customers customerEL = new pos.EL.Registrations.customers();
+        pos.EL.Registrations.customers customerEL;
         pos.EL.Transactions.orders orderEL = new pos.EL.Transactions.orders();
         pos.EL.Transactions.orderdetails orderdetailEL = new pos.EL.Transactions.orderdetails();
+        pos.EL.Registrations.products productEL = new pos.EL.Registrations.products();
 
         pos.BL.Registrations.customers customerBL = new pos.BL.Registrations.customers();
         pos.BL.Transactions.orders orderBL = new pos.BL.Transactions.orders();
         pos.BL.Transactions.orderdetails orderdetailBL = new pos.BL.Transactions.orderdetails();
+        pos.BL.Registrations.products productBL = new pos.BL.Registrations.products();
 
         public frmOrders()
         {
             InitializeComponent();
+        }
+
+        private void ClearForm()
+        {
+            txtFullName.ResetText();
+            txtAddress.ResetText();
+            txtContactNumber.ResetText();
+            dgvCart.Rows.Clear();
+            lblTotalAmount.Text = "0";
+        }
+
+        private void DGVLoad(string keywords)
+        {
+            dgv.DataSource = orderBL.List(keywords);
+            dgv.Columns["CUSTOMER ID"].Visible = false;
+            dgv.Columns["C"].Visible = false;
         }
 
         private void EnableForm(bool bol)
@@ -31,14 +49,7 @@ namespace pos.PL.Transactions
             gbDGV.Enabled = !bol;
         }
 
-        private void ClearForm()
-        {
-            txtFullName.ResetText();
-            txtAddress.ResetText();
-            txtContactNumber.ResetText();
-            dgv.Rows.Clear();
-        }
-
+       
         public void GetTotalAmount()
         {
             lblTotalAmount.Text = dgvCart.Rows.Cast<DataGridViewRow>().Sum(t => Math.Round(Convert.ToSingle(t.Cells[5].Value),2)).ToString();
@@ -59,6 +70,7 @@ namespace pos.PL.Transactions
 
         private void frmOrders_Load(object sender, EventArgs e)
         {
+            DGVLoad(txtSearch.Text);
             EnableForm(false);
             GetTotalAmount();
         }
@@ -66,32 +78,17 @@ namespace pos.PL.Transactions
         private void btnAdd_Click(object sender, EventArgs e)
         {
             EnableForm(true);
+            customerEL = new pos.EL.Registrations.customers();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if (dgvCart.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("NO SELECTED ITEM");
-            }
-            else
-            {
-                switch (MessageBox.Show(this, "Are you sure to delete this?", "Confirming", MessageBoxButtons.YesNo))
-                {
-                    case DialogResult.No:
-                        break;
-                    default:
-                        dgvCart.Rows.RemoveAt(dgvCart.SelectedRows[0].Index);
-                        GetTotalAmount();
-                        ClearForm();
-                        break;
-                }
-            }
+            dgvCart.Rows.RemoveAt(dgvCart.SelectedRows[0].Index);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtFullName.Equals(""))
+            if (!(customerEL.Customerid > 0))
             {
                 MessageBox.Show("NO SELECTED CUSTOMER");
             }
@@ -106,7 +103,7 @@ namespace pos.PL.Transactions
 
                     orderEL.Customerid = customerEL.Customerid;
                     orderEL.Totalamount = Convert.ToSingle(lblTotalAmount.Text);
-
+                    orderEL.Dateandtime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                     orderEL.Orderid = Convert.ToInt32(orderBL.Insert(orderEL));
 
                     if (orderEL.Orderid > 0)
@@ -117,10 +114,18 @@ namespace pos.PL.Transactions
                         foreach (DataGridViewRow row in dgvCart.Rows)
                         {
                             orderdetailEL.Orderid = orderEL.Orderid;
-                            orderdetailEL.Productid = Convert.ToInt32(row.Cells["PRODUCT ID"].Value);
-                            orderdetailEL.Quantity = Convert.ToInt32(row.Cells["QUANTITY"].Value);
-                            orderdetailEL.Quantity = Convert.ToInt32(row.Cells["PRICE"].Value);
+                            orderdetailEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
+                            orderdetailEL.Quantity = Convert.ToInt32(row.Cells["quantity"].Value);
+                            orderdetailEL.Price = Convert.ToInt32(row.Cells["price"].Value);
 
+                            DataTable dt = productBL.Select(orderdetailEL.Productid);
+                            productEL.Productid = Convert.ToInt32(orderdetailEL.Productid);
+                            productEL.Productcode = dt.Rows[0]["PRODUCT CODE"].ToString();
+                            productEL.Productname = dt.Rows[0]["PRODUCT NAME"].ToString();
+                            productEL.Price = Convert.ToSingle(dt.Rows[0]["PRICE"]);
+                            productEL.Stock = Convert.ToInt32(dt.Rows[0]["STOCK"]) - Convert.ToInt32(row.Cells["quantity"].Value);
+
+                            productBL.Update(productEL);
 
                             if (orderdetailBL.Insert(orderdetailEL) == 0)
                             {
@@ -130,7 +135,10 @@ namespace pos.PL.Transactions
 
                         if (stat)
                         {
-                            MessageBox.Show("INSERTED");
+                            ClearForm();
+                            EnableForm(false);
+                            DGVLoad(txtSearch.Text);
+                            MessageBox.Show("ORDER SAVED");
                         }
                         else
                         {
@@ -144,6 +152,18 @@ namespace pos.PL.Transactions
                     }
                 }
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+            EnableForm(false);
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            Transactions.frmViewOrder frm = new Transactions.frmViewOrder(Convert.ToInt32(dgv.SelectedRows[0].Cells["ORDER ID"].Value));
+            frm.ShowDialog();
         }
     }
 }

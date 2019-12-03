@@ -15,10 +15,17 @@ namespace pos.DL.Transactions
             return Helper.executeQuery(sQuery);
         }
 
+        public DataTable List(int id)
+        {
+            string sQuery = "SELECT * FROM view_orders WHERE `ORDER ID` = '" + id + "' ";
+
+            return Helper.executeQuery(sQuery);
+        }
+
 
         public long Insert(pos.EL.Transactions.orders orderEL)
         {
-            return Helper.executeNonQueryLong("INSET INTO orders (customerid, totalamount, dateandtime) VALUES ('" + orderEL.Orderid + "', '" + orderEL.Customerid + "', '" + DateTime.Now + "')");
+            return Helper.executeNonQueryLong("INSERT INTO orders (customerid, totalamount, dateandtime) VALUES ('" + orderEL.Customerid + "', '" + orderEL.Totalamount + "', '" + orderEL.Dateandtime + "')");
         }
 
     }

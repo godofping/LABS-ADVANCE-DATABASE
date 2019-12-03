@@ -77,6 +77,7 @@
             this.Controls.Add(this.btnProducts);
             this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.btnCustomers);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS";

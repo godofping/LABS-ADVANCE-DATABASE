@@ -15,6 +15,12 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
+        public DataTable Select(int id)
+        {
+            string sQuery = "SELECT * FROM view_products WHERE `PRODUCT ID` = '" + id + "'  ";
+
+            return Helper.executeQuery(sQuery);
+        }
 
         public long Insert(pos.EL.Registrations.products productEL)
         {

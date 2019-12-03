@@ -34,23 +34,29 @@ namespace pos.PL.Transactions
         private void frmAddProducts_Load(object sender, EventArgs e)
         {
             DGVLoad(txtSearch.Text);
+            txtQuantity.Focus();
         }
 
         private void GetData()
         {
 
+            if (dgv.SelectedRows.Count > 0)
+            {
+                productEL.Productid = Convert.ToInt32(dgv.SelectedRows[0].Cells["PRODUCT ID"].Value);
+                productEL.Productcode = dgv.SelectedRows[0].Cells["PRODUCT CODE"].Value.ToString();
+                productEL.Productname = dgv.SelectedRows[0].Cells["PRODUCT NAME"].Value.ToString();
+                productEL.Price = Convert.ToSingle(dgv.SelectedRows[0].Cells["PRICE"].Value);
+                productEL.Stock = Convert.ToInt32(dgv.SelectedRows[0].Cells["STOCK"].Value);
 
-            productEL.Productid = Convert.ToInt32(dgv.SelectedRows[0].Cells["PRODUCT ID"].Value);
-            productEL.Productcode = dgv.SelectedRows[0].Cells["PRODUCT CODE"].Value.ToString();
-            productEL.Productname = dgv.SelectedRows[0].Cells["PRODUCT NAME"].Value.ToString();
-            productEL.Price = Convert.ToSingle(dgv.SelectedRows[0].Cells["PRICE"].Value);
-            productEL.Stock = Convert.ToInt32(dgv.SelectedRows[0].Cells["STOCK"].Value);
+                txtProductID.Text = productEL.Productid.ToString();
+                txtProductCode.Text = productEL.Productcode;
+                txtProductName.Text = productEL.Productname;
+                txtPrice.Text = productEL.Price.ToString();
+                txtRemainingStock.Text = productEL.Stock.ToString();
+            }
 
-            txtProductID.Text = productEL.Productid.ToString();
-            txtProductCode.Text = productEL.Productcode;
-            txtProductName.Text = productEL.Productname;
-            txtPrice.Text = productEL.Price.ToString();
-            txtRemainingStock.Text = productEL.Stock.ToString();
+
+            
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -128,10 +134,6 @@ namespace pos.PL.Transactions
             GetData();
         }
 
-        private void dgv_SelectionChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -139,6 +141,16 @@ namespace pos.PL.Transactions
             {
                 e.Handled = true;
             }
+        }
+
+        private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetData();
+        }
+
+        private void dgv_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            GetData();
         }
 
 
