@@ -22,6 +22,12 @@ namespace pos.DL.Transactions
             return Helper.executeQuery(sQuery);
         }
 
+        public DataTable List(string keyword, string keyword1)
+        {
+            string sQuery = "SELECT * FROM view_orders WHERE `DATE AND TIME` like '%" + keyword + "%' ";
+
+            return Helper.executeQuery(sQuery);
+        }
 
         public long Insert(pos.EL.Transactions.orders orderEL)
         {

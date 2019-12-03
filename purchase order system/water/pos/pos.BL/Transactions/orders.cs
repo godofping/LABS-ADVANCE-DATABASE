@@ -20,6 +20,11 @@ namespace pos.BL.Transactions
             return orderDL.List(id);
         }
 
+        public DataTable List(string keyword, string keyword1)
+        {
+            return orderDL.List(keyword, keyword1);
+        }
+
 
         public long Insert(pos.EL.Transactions.orders orderEL)
         {

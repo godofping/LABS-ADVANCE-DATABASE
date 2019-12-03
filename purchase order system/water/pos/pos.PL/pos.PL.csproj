@@ -80,6 +80,10 @@
       <DependentUpon>frmOrders.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmSelectCustomers.resx">
       <DependentUpon>frmSelectCustomers.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -124,6 +128,12 @@
     </Compile>
     <Compile Include="Transactions\frmOrders.Designer.cs">
       <DependentUpon>frmOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactions\frmSelectCustomers.cs">
       <SubType>Form</SubType>

@@ -125,9 +125,9 @@ namespace pos.PL.Transactions
                             productEL.Price = Convert.ToSingle(dt.Rows[0]["PRICE"]);
                             productEL.Stock = Convert.ToInt32(dt.Rows[0]["STOCK"]) - Convert.ToInt32(row.Cells["quantity"].Value);
 
-                            productBL.Update(productEL);
 
-                            if (orderdetailBL.Insert(orderdetailEL) == 0)
+
+                            if (orderdetailBL.Insert(orderdetailEL) == 0 & !productBL.Update(productEL))
                             {
                                 stat = false;
                             }

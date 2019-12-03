@@ -33,5 +33,11 @@ namespace pos.PL
             Registrations.frmProducts frm = new Registrations.frmProducts();
             frm.ShowDialog();
         }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Transactions.frmReports frm = new Transactions.frmReports();
+            frm.ShowDialog();
+        }
     }
 }
