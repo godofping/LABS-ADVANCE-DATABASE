@@ -51,6 +51,7 @@ namespace pos.PL.Transactions
         {
            LBLLoad();
            DGVLoad();
+           this.Text = "VIEW ORDER ID " + orderid;
         }
 
        

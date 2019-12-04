@@ -162,8 +162,15 @@ namespace pos.PL.Transactions
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            Transactions.frmViewOrder frm = new Transactions.frmViewOrder(Convert.ToInt32(dgv.SelectedRows[0].Cells["ORDER ID"].Value));
-            frm.ShowDialog();
+            if (dgv.SelectedRows.Count > 0)
+            {
+                Transactions.frmViewOrder frm = new Transactions.frmViewOrder(Convert.ToInt32(dgv.SelectedRows[0].Cells["ORDER ID"].Value));
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("NO SELECTED ITEM");
+            }
         }
     }
 }

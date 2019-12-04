@@ -40,12 +40,27 @@ namespace pos.PL.Transactions
 
         private void frmReports_Load(object sender, EventArgs e)
         {
+            dtpDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             DGVLoad();
+            
         }
 
         private void dtpDate_ValueChanged(object sender, EventArgs e)
         {
             DGVLoad();
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count > 0)
+            {
+                Transactions.frmViewOrder frm = new Transactions.frmViewOrder(Convert.ToInt32(dgv.SelectedRows[0].Cells["ORDER ID"].Value));
+            frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("NO SELECTED ITEM");
+            }
         }
     }
 }

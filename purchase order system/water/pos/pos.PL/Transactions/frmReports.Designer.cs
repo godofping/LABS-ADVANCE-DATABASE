@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalSales = new System.Windows.Forms.Label();
+            this.btnView = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(605, 8);
+            this.label2.Location = new System.Drawing.Point(234, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 20;
@@ -84,17 +85,28 @@
             // 
             this.lblTotalSales.AutoSize = true;
             this.lblTotalSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalSales.Location = new System.Drawing.Point(601, 24);
+            this.lblTotalSales.Location = new System.Drawing.Point(230, 24);
             this.lblTotalSales.Name = "lblTotalSales";
             this.lblTotalSales.Size = new System.Drawing.Size(259, 39);
             this.lblTotalSales.TabIndex = 21;
             this.lblTotalSales.Text = "TOTAL SALES";
+            // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(882, 33);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(114, 36);
+            this.btnView.TabIndex = 22;
+            this.btnView.Text = "VIEW";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // frmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.btnView);
             this.Controls.Add(this.lblTotalSales);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -118,5 +130,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTotalSales;
+        private System.Windows.Forms.Button btnView;
     }
 }
