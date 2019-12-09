@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 namespace student.DL.Registrations
 {
@@ -29,6 +30,7 @@ namespace student.DL.Registrations
                 studentEL.Contactnumber = dt.Rows[0]["CONTACT NUMBER"].ToString();
                 studentEL.Lastschoolattended = dt.Rows[0]["LAST SCHOOL ATTENDED"].ToString();
                 studentEL.Schoolyear = dt.Rows[0]["SCHOOL YEAR"].ToString();
+                studentEL.Yearlevel = dt.Rows[0]["YEAR LEVEL"].ToString();
                 return studentEL;
             }
             else

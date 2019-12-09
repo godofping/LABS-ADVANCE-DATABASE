@@ -38,7 +38,16 @@ namespace student.PL.Registrations
         private void PopulateDGV()
         {
             methods.LoadDGV(dgv, strandBL.List(txtSearch.Text));
+        }
+
+        private void ManageDGV()
+        {
+
             methods.DGVHiddenColumns(dgv, "STRAND ID", "C");
+            methods.DGVTheme(dgv);
+            methods.DGVFillWeights(dgv, new string[] { "STRAND" , "DESCRIPTION" }, new int[] { 20 ,80 });
+            methods.DGVAddButtons(dgv);
+            PopulateDGV();
         }
 
         private void ShowResult(bool bol)
@@ -58,10 +67,10 @@ namespace student.PL.Registrations
 
         private void frmStrands_Load(object sender, EventArgs e)
         {
+            PopulateDGV();
             ShowForm(false);
-            PopulateDGV();
-            methods.DGVAddButtons(dgv);
-            PopulateDGV();
+            ManageDGV();
+
         }
 
 
@@ -105,8 +114,10 @@ namespace student.PL.Registrations
                 s = "EDIT";
                 ShowForm(true);
 
-                txtStrand.Text = dgv.SelectedRows[0].Cells["STRAND"].Value.ToString();
-                txtDescription.Text = dgv.SelectedRows[0].Cells["DESCRIPTION"].Value.ToString();
+                strandEL = strandBL.Select(strandEL);
+
+                txtStrand.Text = strandEL.Strand;
+                txtDescription.Text = strandEL.Stranddescription;
             }
 
             if (e.ColumnIndex == 1)

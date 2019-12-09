@@ -29,6 +29,24 @@
         private void InitializeComponent()
         {
             this.pnlCRUD = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbYearLevel = new System.Windows.Forms.ComboBox();
+            this.cbPreferredStrand = new System.Windows.Forms.ComboBox();
+            this.txtSchoolYear = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtLastSchoolAttended = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtContactNumber = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtParentsOrGuardian = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtMiddleInitial = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -41,24 +59,6 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtMiddleInitial = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtParentsOrGuardian = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtContactNumber = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtLastSchoolAttended = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtSchoolYear = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbPreferredStrand = new System.Windows.Forms.ComboBox();
-            this.cbYearLevel = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.pnlCRUD.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -95,6 +95,158 @@
             this.pnlCRUD.Name = "pnlCRUD";
             this.pnlCRUD.Size = new System.Drawing.Size(984, 537);
             this.pnlCRUD.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(420, 101);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 13);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "YEAR LEVEL *";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(420, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(128, 13);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "PREFERRED STRAND *";
+            // 
+            // cbYearLevel
+            // 
+            this.cbYearLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYearLevel.FormattingEnabled = true;
+            this.cbYearLevel.Items.AddRange(new object[] {
+            "GRADE 11",
+            "GRADE 12"});
+            this.cbYearLevel.Location = new System.Drawing.Point(423, 117);
+            this.cbYearLevel.Name = "cbYearLevel";
+            this.cbYearLevel.Size = new System.Drawing.Size(335, 21);
+            this.cbYearLevel.TabIndex = 28;
+            // 
+            // cbPreferredStrand
+            // 
+            this.cbPreferredStrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPreferredStrand.FormattingEnabled = true;
+            this.cbPreferredStrand.Location = new System.Drawing.Point(423, 71);
+            this.cbPreferredStrand.Name = "cbPreferredStrand";
+            this.cbPreferredStrand.Size = new System.Drawing.Size(335, 21);
+            this.cbPreferredStrand.TabIndex = 27;
+            // 
+            // txtSchoolYear
+            // 
+            this.txtSchoolYear.Location = new System.Drawing.Point(7, 436);
+            this.txtSchoolYear.Name = "txtSchoolYear";
+            this.txtSchoolYear.Size = new System.Drawing.Size(335, 20);
+            this.txtSchoolYear.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(4, 419);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "SCHOOL YEAR *";
+            // 
+            // txtLastSchoolAttended
+            // 
+            this.txtLastSchoolAttended.Location = new System.Drawing.Point(7, 391);
+            this.txtLastSchoolAttended.Name = "txtLastSchoolAttended";
+            this.txtLastSchoolAttended.Size = new System.Drawing.Size(335, 20);
+            this.txtLastSchoolAttended.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 374);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(150, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "LAST SCHOOL ATTENDED *";
+            // 
+            // txtContactNumber
+            // 
+            this.txtContactNumber.Location = new System.Drawing.Point(7, 346);
+            this.txtContactNumber.Name = "txtContactNumber";
+            this.txtContactNumber.Size = new System.Drawing.Size(335, 20);
+            this.txtContactNumber.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 329);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(115, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "CONTACT NUMBER *";
+            // 
+            // txtParentsOrGuardian
+            // 
+            this.txtParentsOrGuardian.Location = new System.Drawing.Point(7, 300);
+            this.txtParentsOrGuardian.Name = "txtParentsOrGuardian";
+            this.txtParentsOrGuardian.Size = new System.Drawing.Size(335, 20);
+            this.txtParentsOrGuardian.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 283);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(137, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "PARENTS OR GUARDIAN";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(7, 253);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(335, 20);
+            this.txtAddress.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 236);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "ADDRESS *";
+            // 
+            // txtMiddleInitial
+            // 
+            this.txtMiddleInitial.Location = new System.Drawing.Point(7, 208);
+            this.txtMiddleInitial.MaxLength = 3;
+            this.txtMiddleInitial.Name = "txtMiddleInitial";
+            this.txtMiddleInitial.Size = new System.Drawing.Size(335, 20);
+            this.txtMiddleInitial.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 191);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "MIDDLE INITIAL *";
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(7, 162);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(335, 20);
+            this.txtFirstName.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "FIRST NAME *";
             // 
             // txtLastName
             // 
@@ -208,152 +360,6 @@
             this.dgv.Size = new System.Drawing.Size(978, 499);
             this.dgv.TabIndex = 3;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(7, 162);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(335, 20);
-            this.txtFirstName.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 145);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "FIRST NAME *";
-            // 
-            // txtMiddleInitial
-            // 
-            this.txtMiddleInitial.Location = new System.Drawing.Point(7, 208);
-            this.txtMiddleInitial.Name = "txtMiddleInitial";
-            this.txtMiddleInitial.Size = new System.Drawing.Size(335, 20);
-            this.txtMiddleInitial.TabIndex = 16;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(4, 191);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "MIDDLE INITIAL *";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(7, 253);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(335, 20);
-            this.txtAddress.TabIndex = 18;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 236);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 13);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "ADDRESS *";
-            // 
-            // txtParentsOrGuardian
-            // 
-            this.txtParentsOrGuardian.Location = new System.Drawing.Point(7, 300);
-            this.txtParentsOrGuardian.Name = "txtParentsOrGuardian";
-            this.txtParentsOrGuardian.Size = new System.Drawing.Size(335, 20);
-            this.txtParentsOrGuardian.TabIndex = 20;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 283);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "PARENTS OR GUARDIAN";
-            // 
-            // txtContactNumber
-            // 
-            this.txtContactNumber.Location = new System.Drawing.Point(7, 346);
-            this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.Size = new System.Drawing.Size(335, 20);
-            this.txtContactNumber.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 329);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 13);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "CONTACT NUMBER *";
-            // 
-            // txtLastSchoolAttended
-            // 
-            this.txtLastSchoolAttended.Location = new System.Drawing.Point(7, 391);
-            this.txtLastSchoolAttended.Name = "txtLastSchoolAttended";
-            this.txtLastSchoolAttended.Size = new System.Drawing.Size(335, 20);
-            this.txtLastSchoolAttended.TabIndex = 24;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 374);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(150, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "LAST SCHOOL ATTENDED *";
-            // 
-            // txtSchoolYear
-            // 
-            this.txtSchoolYear.Location = new System.Drawing.Point(7, 436);
-            this.txtSchoolYear.Name = "txtSchoolYear";
-            this.txtSchoolYear.Size = new System.Drawing.Size(335, 20);
-            this.txtSchoolYear.TabIndex = 26;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(4, 419);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 13);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "SCHOOL YEAR *";
-            // 
-            // cbPreferredStrand
-            // 
-            this.cbPreferredStrand.FormattingEnabled = true;
-            this.cbPreferredStrand.Location = new System.Drawing.Point(423, 71);
-            this.cbPreferredStrand.Name = "cbPreferredStrand";
-            this.cbPreferredStrand.Size = new System.Drawing.Size(335, 21);
-            this.cbPreferredStrand.TabIndex = 27;
-            // 
-            // cbYearLevel
-            // 
-            this.cbYearLevel.FormattingEnabled = true;
-            this.cbYearLevel.Location = new System.Drawing.Point(423, 117);
-            this.cbYearLevel.Name = "cbYearLevel";
-            this.cbYearLevel.Size = new System.Drawing.Size(335, 21);
-            this.cbYearLevel.TabIndex = 28;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(420, 55);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(128, 13);
-            this.label11.TabIndex = 29;
-            this.label11.Text = "PREFERRED STRAND *";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(420, 101);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 13);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "YEAR LEVEL *";
             // 
             // frmRegisteredStudents
             // 

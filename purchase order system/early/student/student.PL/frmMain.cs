@@ -24,7 +24,8 @@ namespace student.PL
 
         private void rEGISTEREDSTUDENTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var frm = new Registrations.frmRegisteredStudents();
+            frm.ShowDialog();
         }
 
       
