@@ -33,7 +33,7 @@ namespace pos.PL.Transactions
         private void LoadReport()
         {
             crPurchaseOrder crPurchaseOrder = new crPurchaseOrder();
-            dsPurchaseOrder dsPurchaseOrder = new dsPurchaseOrder();
+          
 
 
             crPurchaseOrder.Database.Tables["dtPurchaseorderdetails_view"].SetDataSource(purchaseOrderDetailBL.List(purchaseOrderEL.Purchaseorderid));
@@ -44,12 +44,6 @@ namespace pos.PL.Transactions
             crvPurchaseOrder.Refresh();
         }
         #endregion
-
-
-
-
-
-
 
         #region "Events"
         private void frmCrystalReportViewerPurchaseOrder_Load(object sender, EventArgs e)

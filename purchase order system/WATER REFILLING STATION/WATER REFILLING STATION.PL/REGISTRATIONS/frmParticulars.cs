@@ -46,7 +46,7 @@ namespace WATER_REFILLING_STATION.PL.REGISTRATIONS
             s = "ADD";
             lblTitle.Text = "CREATE";
             FormActive(true);
-        }
+        }   
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

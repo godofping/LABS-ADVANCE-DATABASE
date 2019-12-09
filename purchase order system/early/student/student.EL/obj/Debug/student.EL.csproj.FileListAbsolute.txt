@@ -1,0 +1,5 @@
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.EL\bin\Debug\student.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.EL\bin\Debug\student.EL.pdb
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.EL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.EL\obj\Debug\student.EL.dll
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.EL\obj\Debug\student.EL.pdb
