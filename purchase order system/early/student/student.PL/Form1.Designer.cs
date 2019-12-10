@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.rEGISTEREDSTUDENTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sTRANDSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEGISTEREDSTUDENTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +48,13 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // rEGISTEREDSTUDENTSToolStripMenuItem
+            // 
+            this.rEGISTEREDSTUDENTSToolStripMenuItem.Name = "rEGISTEREDSTUDENTSToolStripMenuItem";
+            this.rEGISTEREDSTUDENTSToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
+            this.rEGISTEREDSTUDENTSToolStripMenuItem.Text = "REGISTERED STUDENTS";
+            this.rEGISTEREDSTUDENTSToolStripMenuItem.Click += new System.EventHandler(this.rEGISTEREDSTUDENTSToolStripMenuItem_Click);
+            // 
             // sTRANDSToolStripMenuItem
             // 
             this.sTRANDSToolStripMenuItem.Name = "sTRANDSToolStripMenuItem";
@@ -56,16 +64,18 @@
             // 
             // rEPORTSToolStripMenuItem
             // 
+            this.rEPORTSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem});
             this.rEPORTSToolStripMenuItem.Name = "rEPORTSToolStripMenuItem";
             this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.rEPORTSToolStripMenuItem.Text = "REPORTS";
             // 
-            // rEGISTEREDSTUDENTSToolStripMenuItem
+            // lISTOFREGISTEREDSTUDENTSToolStripMenuItem
             // 
-            this.rEGISTEREDSTUDENTSToolStripMenuItem.Name = "rEGISTEREDSTUDENTSToolStripMenuItem";
-            this.rEGISTEREDSTUDENTSToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
-            this.rEGISTEREDSTUDENTSToolStripMenuItem.Text = "REGISTERED STUDENTS";
-            this.rEGISTEREDSTUDENTSToolStripMenuItem.Click += new System.EventHandler(this.rEGISTEREDSTUDENTSToolStripMenuItem_Click);
+            this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem.Name = "lISTOFREGISTEREDSTUDENTSToolStripMenuItem";
+            this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem.Text = "LIST OF REGISTERED STUDENTS";
+            this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem.Click += new System.EventHandler(this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -90,6 +100,7 @@
         private System.Windows.Forms.ToolStripMenuItem sTRANDSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEPORTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEGISTEREDSTUDENTSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lISTOFREGISTEREDSTUDENTSToolStripMenuItem;
     }
 }
 

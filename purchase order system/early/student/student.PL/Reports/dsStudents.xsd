@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsStudents" targetNamespace="http://tempuri.org/dsStudents.xsd" xmlns:mstns="http://tempuri.org/dsStudents.xsd" xmlns="http://tempuri.org/dsStudents.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsStudents" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsStudents" msprop:Generator_UserDSName="dsStudents" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="students_view" msprop:Generator_UserTableName="students_view" msprop:Generator_RowDeletedName="students_viewRowDeleted" msprop:Generator_TableClassName="students_viewDataTable" msprop:Generator_RowChangedName="students_viewRowChanged" msprop:Generator_RowClassName="students_viewRow" msprop:Generator_RowChangingName="students_viewRowChanging" msprop:Generator_RowEvArgName="students_viewRowChangeEvent" msprop:Generator_RowEvHandlerName="students_viewRowChangeEventHandler" msprop:Generator_TablePropName="students_view" msprop:Generator_TableVarName="tablestudents_view" msprop:Generator_RowDeletingName="students_viewRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STUDENT_x0020_ID" msprop:Generator_UserColumnName="STUDENT ID" msprop:Generator_ColumnPropNameInRow="STUDENT_ID" msprop:Generator_ColumnVarNameInTable="columnSTUDENT_ID" msprop:Generator_ColumnPropNameInTable="STUDENT_IDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="STRAND_x0020_ID" msprop:Generator_UserColumnName="STRAND ID" msprop:Generator_ColumnPropNameInRow="STRAND_ID" msprop:Generator_ColumnVarNameInTable="columnSTRAND_ID" msprop:Generator_ColumnPropNameInTable="STRAND_IDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LRN" msprop:Generator_UserColumnName="LRN" msprop:Generator_ColumnPropNameInRow="LRN" msprop:Generator_ColumnVarNameInTable="columnLRN" msprop:Generator_ColumnPropNameInTable="LRNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FULL_x0020_NAME" msprop:Generator_UserColumnName="FULL NAME" msprop:Generator_ColumnPropNameInRow="FULL_NAME" msprop:Generator_ColumnVarNameInTable="columnFULL_NAME" msprop:Generator_ColumnPropNameInTable="FULL_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LAST_x0020_NAME" msprop:Generator_UserColumnName="LAST NAME" msprop:Generator_ColumnPropNameInRow="LAST_NAME" msprop:Generator_ColumnVarNameInTable="columnLAST_NAME" msprop:Generator_ColumnPropNameInTable="LAST_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FIRST_x0020_NAME" msprop:Generator_UserColumnName="FIRST NAME" msprop:Generator_ColumnPropNameInRow="FIRST_NAME" msprop:Generator_ColumnVarNameInTable="columnFIRST_NAME" msprop:Generator_ColumnPropNameInTable="FIRST_NAMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MIDDLE_x0020_INITIAL" msprop:Generator_UserColumnName="MIDDLE INITIAL" msprop:Generator_ColumnPropNameInRow="MIDDLE_INITIAL" msprop:Generator_ColumnVarNameInTable="columnMIDDLE_INITIAL" msprop:Generator_ColumnPropNameInTable="MIDDLE_INITIALColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ADDRESS" msprop:Generator_UserColumnName="ADDRESS" msprop:Generator_ColumnPropNameInRow="ADDRESS" msprop:Generator_ColumnVarNameInTable="columnADDRESS" msprop:Generator_ColumnPropNameInTable="ADDRESSColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PARENTS_x0020_OR_x0020_GUARDIAN" msprop:Generator_UserColumnName="PARENTS OR GUARDIAN" msprop:Generator_ColumnPropNameInRow="PARENTS_OR_GUARDIAN" msprop:Generator_ColumnVarNameInTable="columnPARENTS_OR_GUARDIAN" msprop:Generator_ColumnPropNameInTable="PARENTS_OR_GUARDIANColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CONTACT_x0020_NUMBER" msprop:Generator_UserColumnName="CONTACT NUMBER" msprop:Generator_ColumnPropNameInRow="CONTACT_NUMBER" msprop:Generator_ColumnVarNameInTable="columnCONTACT_NUMBER" msprop:Generator_ColumnPropNameInTable="CONTACT_NUMBERColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LAST_x0020_SCHOOL_x0020_ATTENDED" msprop:Generator_UserColumnName="LAST SCHOOL ATTENDED" msprop:Generator_ColumnPropNameInRow="LAST_SCHOOL_ATTENDED" msprop:Generator_ColumnVarNameInTable="columnLAST_SCHOOL_ATTENDED" msprop:Generator_ColumnPropNameInTable="LAST_SCHOOL_ATTENDEDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SCHOOL_x0020_YEAR" msprop:Generator_UserColumnName="SCHOOL YEAR" msprop:Generator_ColumnPropNameInRow="SCHOOL_YEAR" msprop:Generator_ColumnVarNameInTable="columnSCHOOL_YEAR" msprop:Generator_ColumnPropNameInTable="SCHOOL_YEARColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="STRAND" msprop:Generator_UserColumnName="STRAND" msprop:Generator_ColumnPropNameInRow="STRAND" msprop:Generator_ColumnVarNameInTable="columnSTRAND" msprop:Generator_ColumnPropNameInTable="STRANDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="YEAR_x0020_LEVEL" msprop:Generator_UserColumnName="YEAR LEVEL" msprop:Generator_ColumnPropNameInRow="YEAR_LEVEL" msprop:Generator_ColumnVarNameInTable="columnYEAR_LEVEL" msprop:Generator_ColumnPropNameInTable="YEAR_LEVELColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DESCRIPTION" msprop:Generator_UserColumnName="DESCRIPTION" msprop:Generator_ColumnPropNameInRow="DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnDESCRIPTION" msprop:Generator_ColumnPropNameInTable="DESCRIPTIONColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DATE_x0020_ADDED" msprop:Generator_UserColumnName="DATE ADDED" msprop:Generator_ColumnPropNameInRow="DATE_ADDED" msprop:Generator_ColumnVarNameInTable="columnDATE_ADDED" msprop:Generator_ColumnPropNameInTable="DATE_ADDEDColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

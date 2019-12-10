@@ -15,3 +15,4 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\earl
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.PL\obj\Debug\student.PL.exe
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.PL\obj\Debug\student.PL.pdb
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.PL\obj\Debug\student.PL.Registrations.frmRegisteredStudents.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.PL\obj\Debug\student.PL.Reports.frmRegisteredStudents.resources
