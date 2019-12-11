@@ -48,7 +48,16 @@ namespace student.PL.Registrations
             var dt = studentBL.Counter(txtSearch.Text);
             totalentries = Convert.ToInt32(dt.Rows[0]["Total"].ToString());
 
-            lblEntries.Text = "Showing " + (counter + (dgv.Rows.Count % counter)) + " to " + (dgv.Rows.Count + counter) + " of " + totalentries.ToString() + " entries.";
+            if (totalentries < 21)
+            {
+                lblEntries.Text = "Showing " + dgv.Rows.Count + " to " + (dgv.Rows.Count + counter) + " of " + totalentries.ToString() + " entries.";
+            }
+            else 
+            {
+                lblEntries.Text = "Showing " + (counter + 1) + " to " + (dgv.Rows.Count + counter) + " of " + totalentries.ToString() + " entries.";
+            }
+
+            
             
         }
 
