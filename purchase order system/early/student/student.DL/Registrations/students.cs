@@ -11,7 +11,17 @@ namespace student.DL.Registrations
 
         public DataTable List(string keyword)
         {
-            return Helper.executeQuery("select * from students_view where `C` like '%" + keyword + "%'");
+            return Helper.executeQuery("select `STUDENT ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `C` like '%" + keyword + "%' LIMIT 20");
+        }
+
+        public DataTable List(string keyword, int offset)
+        {
+            return Helper.executeQuery("select `STUDENT ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `C` like '%" + keyword + "%' LIMIT 20 OFFSET " + offset + "");
+        }
+
+        public DataTable Counter(string keyword)
+        {
+            return Helper.executeQuery("select count(*) as `Total`  from students_view where `C` like '%" + keyword + "%'");
         }
 
         public EL.Registrations.students Select(EL.Registrations.students studentEL)
@@ -41,6 +51,11 @@ namespace student.DL.Registrations
 
         public long Insert(EL.Registrations.students studentEL)
         {
+            //for (int x = 1; x <= 1000; x++)
+            //{
+            //    Helper.executeNonQueryLong("insert into students (strandid, lrn, lastname, firstname, middleinitial, address, parentsorguardian, contactnumber, lastschoolattended, schoolyear, yearlevel, dateadded) values ('" + studentEL.Strandid + "', '" + studentEL.Lrn + "', '" + studentEL.Lastname + "', '" + studentEL.Firstname + "', '" + studentEL.Middleinitial + "', '" + studentEL.Address + "', '" + studentEL.Parentsorguardian + "', '" + studentEL.Contactnumber + "', '" + studentEL.Lastschoolattended + "', '" + studentEL.Schoolyear + "', '" + studentEL.Yearlevel + "', '" + studentEL.Dateadded + "')");
+            //}
+
             return Helper.executeNonQueryLong("insert into students (strandid, lrn, lastname, firstname, middleinitial, address, parentsorguardian, contactnumber, lastschoolattended, schoolyear, yearlevel, dateadded) values ('" + studentEL.Strandid + "', '" + studentEL.Lrn + "', '" + studentEL.Lastname + "', '" + studentEL.Firstname + "', '" + studentEL.Middleinitial + "', '" + studentEL.Address + "', '" + studentEL.Parentsorguardian + "', '" + studentEL.Contactnumber + "', '" + studentEL.Lastschoolattended + "', '" + studentEL.Schoolyear + "', '" + studentEL.Yearlevel + "', '" + studentEL.Dateadded + "')");
         }
 

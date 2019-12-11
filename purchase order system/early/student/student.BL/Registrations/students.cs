@@ -15,6 +15,16 @@ namespace student.BL.Registrations
             return studentDL.List(keyword);
         }
 
+        public DataTable List(string keyword, int offset)
+        {
+            return studentDL.List(keyword, offset);
+        }
+
+        public DataTable Counter(string keyword)
+        {
+            return studentDL.Counter(keyword);
+        }
+
         public EL.Registrations.students Select(EL.Registrations.students studentEL)
         {
             return studentDL.Select(studentEL);

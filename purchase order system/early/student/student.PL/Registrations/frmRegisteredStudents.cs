@@ -19,6 +19,9 @@ namespace student.PL.Registrations
 
         string s = "";
 
+        int counter = 0;
+        int totalentries = 0;
+
         public frmRegisteredStudents()
         {
             InitializeComponent();
@@ -40,8 +43,16 @@ namespace student.PL.Registrations
 
         private void PopulateDGV()
         {
-            methods.LoadDGV(dgv, studentBL.List(txtSearch.Text));
+            methods.LoadDGV(dgv, studentBL.List(txtSearch.Text, counter));
+
+            var dt = studentBL.Counter(txtSearch.Text);
+            totalentries = Convert.ToInt32(dt.Rows[0]["Total"].ToString());
+
+            lblEntries.Text = "Showing " + (counter + (dgv.Rows.Count % counter)) + " to " + (dgv.Rows.Count + counter) + " of " + totalentries.ToString() + " entries.";
+            
         }
+
+
 
 
         private void PopulateCB()
@@ -52,12 +63,13 @@ namespace student.PL.Registrations
 
         private void ManageDGV()
         {
-            
-            methods.DGVHiddenColumns(dgv, "STUDENT ID", "STRAND ID", "C", "FIRST NAME", "MIDDLE INITIAL", "LAST NAME", "ADDRESS", "PARENTS OR GUARDIAN", "CONTACT NUMBER", "LAST SCHOOL ATTENDED", "SCHOOL YEAR", "DESCRIPTION");
+            PopulateDGV();
+            methods.DGVHiddenColumns(dgv, "C");
             methods.DGVTheme(dgv);
-            methods.DGVFillWeights(dgv, new string[] { "LRN", "FULL NAME", "STRAND", "YEAR LEVEL", "DATE ADDED" }, new int[] { 20, 35, 15, 25, 15 });
+            methods.DGVFillWeights(dgv, new string[] { "STUDENT ID", "LRN", "FULL NAME", "STRAND", "YEAR LEVEL", "DATE ADDED" }, new int[] { 10,15, 30, 15, 25, 15 });
             methods.DGVAddButtons(dgv);
             PopulateDGV();
+
         }
 
         private void ShowResult(bool bol)
@@ -76,10 +88,12 @@ namespace student.PL.Registrations
 
         private void frmRegisteredStudents_Load(object sender, EventArgs e)
         {
-            PopulateDGV();
+          
             ShowForm(false);
             ManageDGV();
             PopulateCB();
+
+            ManagePagingButtons();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -123,6 +137,29 @@ namespace student.PL.Registrations
 
         }
 
+  
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            PopulateDGV();
+            counter = 0;
+        }
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            lblTitle.Text = "ADD STUDENT INFORMATION";
+            s = "ADD";
+            ShowForm(true);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ShowForm(false);
+        }
+
+
+
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             studentEL.Studentid = Convert.ToInt32(dgv.SelectedRows[0].Cells["STUDENT ID"].Value);
@@ -163,23 +200,52 @@ namespace student.PL.Registrations
             }
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void ManagePagingButtons()
         {
+            if (counter != 0)
+            {
+                btnPrevious.Enabled = true;
+            }
+            else
+            {
+                btnPrevious.Enabled = false;
+            }
+
+            if ((counter + 20) > totalentries)
+            {
+                btnNext.Enabled = false;
+            }
+            else
+            {
+                btnNext.Enabled = true;
+            }
+
+        }
+
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (counter != 0)
+            {
+                counter = counter - 20;
+                PopulateDGV();
+            }
+            ManagePagingButtons();
+
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            counter = counter + 20;
             PopulateDGV();
-        }
+
+            ManagePagingButtons();
 
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            lblTitle.Text = "ADD STUDENT INFORMATION";
-            s = "ADD";
-            ShowForm(true);
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            ShowForm(false);
-        }
+  
+
 
 
 
