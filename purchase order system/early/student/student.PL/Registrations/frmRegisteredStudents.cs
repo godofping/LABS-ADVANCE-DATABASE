@@ -122,11 +122,13 @@ namespace student.PL.Registrations
                 studentEL.Lastschoolattended = txtLastSchoolAttended.Text;
                 studentEL.Schoolyear = txtSchoolYear.Text;
                 studentEL.Yearlevel = cbYearLevel.Text;
-                studentEL.Dateadded = DateTime.Now.ToString("yyyy-MM-dd");
+
+                
 
 
                 if (s.Equals("ADD"))
                 {
+                    studentEL.Dateadded = DateTime.Now.ToString("yyyy-MM-dd");
                     bol = studentBL.Insert(studentEL) > 0;
                 }
                 else if (s.Equals("EDIT"))
@@ -172,7 +174,7 @@ namespace student.PL.Registrations
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             studentEL.Studentid = Convert.ToInt32(dgv.SelectedRows[0].Cells["STUDENT ID"].Value);
-
+         
             if (e.ColumnIndex == 0)
             {
                 lblTitle.Text = "EDIT STUDENT INFORMATION";
