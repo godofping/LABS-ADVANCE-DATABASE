@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">pos_musical_instruments_db</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="products" view="colnames">
+<left>268</left>
+<top>82</top>
+<width>121</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `products` (
+  `productid` int(6) NOT NULL AUTO_INCREMENT,
+  `categoryid` int(6) DEFAULT NULL,
+  `productname` varchar(60) DEFAULT NULL,
+  `price` float DEFAULT NULL,
+  `stocks` int(11) DEFAULT NULL,
+  PRIMARY KEY (`productid`),
+  KEY `FK_products` (`categoryid`),
+  CONSTRAINT `FK_products` FOREIGN KEY (`categoryid`) REFERENCES `categories` (`categoryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="categories" view="colnames">
+<left>122</left>
+<top>234</top>
+<width>106</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `categories` (
+  `categoryid` int(6) NOT NULL AUTO_INCREMENT,
+  `category` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`categoryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="transactions" view="colnames">
+<left>644</left>
+<top>329</top>
+<width>159</width>
+<height>147</height>
+<sql_create_table>CREATE TABLE `transactions` (
+  `transactionid` int(6) NOT NULL AUTO_INCREMENT,
+  `customerid` int(6) DEFAULT NULL,
+  `transactiondatetime` datetime DEFAULT NULL,
+  `totalamount` float DEFAULT NULL,
+  PRIMARY KEY (`transactionid`),
+  KEY `FK_transactions` (`customerid`),
+  CONSTRAINT `FK_transactions` FOREIGN KEY (`customerid`) REFERENCES `customers` (`customerid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="productsintransactions" view="colnames">
+<left>442</left>
+<top>185</top>
+<width>172</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `productsintransactions` (
+  `productintransactionid` int(6) NOT NULL AUTO_INCREMENT,
+  `transactionid` int(6) DEFAULT NULL,
+  `productid` int(6) DEFAULT NULL,
+  `soldprice` float DEFAULT NULL,
+  `quantity` int(6) DEFAULT NULL,
+  `amount` float DEFAULT NULL,
+  PRIMARY KEY (`productintransactionid`),
+  KEY `FK_productsintransactions` (`productid`),
+  KEY `FK_productsintransactions1` (`transactionid`),
+  CONSTRAINT `FK_productsintransactions` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`),
+  CONSTRAINT `FK_productsintransactions1` FOREIGN KEY (`transactionid`) REFERENCES `transactions` (`transactionid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="customers" view="colnames">
+<left>957</left>
+<top>170</top>
+<width>131</width>
+<height>149</height>
+<sql_create_table>CREATE TABLE `customers` (
+  `customerid` int(6) NOT NULL,
+  `fullname` varchar(60) DEFAULT NULL,
+  `contactnumber` varchar(60) DEFAULT NULL,
+  `address` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`customerid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">barangay_profiling_db</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="accomplishments" view="colnames">
+<left>63</left>
+<top>69</top>
+<width>197</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `accomplishments` (
+  `accomplishmentid` int(6) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) DEFAULT NULL,
+  `dateaccomplished` date DEFAULT NULL,
+  `filelocation` text,
+  PRIMARY KEY (`accomplishmentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="residents" view="colnames">
+<left>575</left>
+<top>86</top>
+<width>254</width>
+<height>605</height>
+<sql_create_table>CREATE TABLE `residents` (
+  `residentid` int(6) NOT NULL AUTO_INCREMENT,
+  `barangayid` varchar(20) DEFAULT NULL,
+  `lastname` varchar(60) DEFAULT NULL,
+  `firstname` varchar(60) DEFAULT NULL,
+  `middlename` varchar(60) DEFAULT NULL,
+  `citizenship` varchar(60) DEFAULT NULL,
+  `religion` varchar(60) DEFAULT NULL,
+  `birthplace` varchar(200) DEFAULT NULL,
+  `birthdate` date DEFAULT NULL,
+  `sex` varchar(60) DEFAULT NULL,
+  `height` varchar(20) DEFAULT NULL,
+  `civilstatus` varchar(60) DEFAULT NULL,
+  `educationalattainment` varchar(60) DEFAULT NULL,
+  `yeargraduated` date DEFAULT NULL,
+  `course` varchar(100) DEFAULT NULL,
+  `professionoroccupation` varchar(100) DEFAULT NULL,
+  `houseno` varchar(60) DEFAULT NULL,
+  `street` varchar(60) DEFAULT NULL,
+  `subdivision` varchar(60) DEFAULT NULL,
+  `purok` varchar(60) DEFAULT NULL,
+  `cityortown` varchar(60) DEFAULT NULL,
+  `province` varchar(60) DEFAULT NULL,
+  `precintno` varchar(60) DEFAULT NULL,
+  `emailaddress` varchar(60) DEFAULT NULL,
+  `phonenumber` varchar(60) DEFAULT NULL,
+  `cellphonenumber` varchar(60) DEFAULT NULL,
+  `ctcnumber` varchar(60) DEFAULT NULL,
+  `dateaccomplished` date DEFAULT NULL,
+  PRIMARY KEY (`residentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
