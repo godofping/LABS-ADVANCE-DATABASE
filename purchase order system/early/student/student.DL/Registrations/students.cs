@@ -11,12 +11,17 @@ namespace student.DL.Registrations
 
         public DataTable List(string keyword)
         {
-            return Helper.executeQuery("select `STUDENT ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `C` like '%" + keyword + "%' LIMIT 60");
+            return Helper.executeQuery("select `STUDENT ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `C` like '%" + keyword + "%'");
         }
 
-        public DataTable List(string keyword, int offset)
+        public DataTable List(EL.Registrations.students studentEL)
         {
-            return Helper.executeQuery("select `STUDENT ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `C` like '%" + keyword + "%' LIMIT 20 OFFSET " + offset + "");
+            return Helper.executeQuery("select `STUDENT ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `STRAND ID` = '" + studentEL.Strandid + "' and `YEAR LEVEL` = '" + studentEL.Yearlevel + "'");
+        }
+
+        public DataTable List(string keyword, int limit, int offset)
+        {
+            return Helper.executeQuery("select `STUDENT ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `C` like '%" + keyword + "%' LIMIT " + limit + " OFFSET " + offset + "");
         }
 
         public DataTable Counter(string keyword)

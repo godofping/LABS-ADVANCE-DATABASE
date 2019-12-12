@@ -33,6 +33,7 @@
             this.sTRANDSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@
             // rEPORTSToolStripMenuItem
             // 
             this.rEPORTSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem});
+            this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem,
+            this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem});
             this.rEPORTSToolStripMenuItem.Name = "rEPORTSToolStripMenuItem";
             this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.rEPORTSToolStripMenuItem.Text = "REPORTS";
@@ -73,9 +75,16 @@
             // lISTOFREGISTEREDSTUDENTSToolStripMenuItem
             // 
             this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem.Name = "lISTOFREGISTEREDSTUDENTSToolStripMenuItem";
-            this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
             this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem.Text = "LIST OF REGISTERED STUDENTS";
             this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem.Click += new System.EventHandler(this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem_Click);
+            // 
+            // lISTOFPOPULATIONSPERSTRANDToolStripMenuItem
+            // 
+            this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem.Name = "lISTOFPOPULATIONSPERSTRANDToolStripMenuItem";
+            this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem.Size = new System.Drawing.Size(263, 22);
+            this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem.Text = "LIST OF POPULATIONS PER STRAND";
+            this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem.Click += new System.EventHandler(this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -101,6 +110,7 @@
         private System.Windows.Forms.ToolStripMenuItem rEPORTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEGISTEREDSTUDENTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lISTOFREGISTEREDSTUDENTSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lISTOFPOPULATIONSPERSTRANDToolStripMenuItem;
     }
 }
 

@@ -21,6 +21,8 @@ namespace student.PL.Registrations
 
         int counter = 0;
         int totalentries = 0;
+        int limit = 20;
+        int offset = 20;
 
         public frmRegisteredStudents()
         {
@@ -43,26 +45,20 @@ namespace student.PL.Registrations
 
         private void PopulateDGV()
         {
-            methods.LoadDGV(dgv, studentBL.List(txtSearch.Text, counter));
+            methods.LoadDGV(dgv, studentBL.List(txtSearch.Text, limit, counter));
 
             var dt = studentBL.Counter(txtSearch.Text);
             totalentries = Convert.ToInt32(dt.Rows[0]["Total"].ToString());
 
-            if (totalentries < 21)
+            if (totalentries < (offset + 1))
             {
                 lblEntries.Text = "Showing " + dgv.Rows.Count + " to " + (dgv.Rows.Count + counter) + " of " + totalentries.ToString() + " entries.";
             }
             else 
             {
                 lblEntries.Text = "Showing " + (counter + 1) + " to " + (dgv.Rows.Count + counter) + " of " + totalentries.ToString() + " entries.";
-            }
-
-            
-            
+            } 
         }
-
-
-
 
         private void PopulateCB()
         {
@@ -123,9 +119,6 @@ namespace student.PL.Registrations
                 studentEL.Schoolyear = txtSchoolYear.Text;
                 studentEL.Yearlevel = cbYearLevel.Text;
 
-                
-
-
                 if (s.Equals("ADD"))
                 {
                     studentEL.Dateadded = DateTime.Now.ToString("yyyy-MM-dd");
@@ -138,8 +131,6 @@ namespace student.PL.Registrations
 
                 ShowForm(false);
                 ShowResult(bol);
-
-
             }
             else
             {
@@ -148,7 +139,6 @@ namespace student.PL.Registrations
 
         }
 
-  
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -222,7 +212,7 @@ namespace student.PL.Registrations
                 btnPrevious.Enabled = false;
             }
 
-            if ((counter + 20) > totalentries)
+            if ((counter + offset) > totalentries)
             {
                 btnNext.Enabled = false;
             }
@@ -238,7 +228,7 @@ namespace student.PL.Registrations
         {
             if (counter != 0)
             {
-                counter = counter - 20;
+                counter = counter - offset;
                 PopulateDGV();
             }
             ManagePagingButtons();
@@ -247,18 +237,11 @@ namespace student.PL.Registrations
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            counter = counter + 20;
+            counter = counter + offset;
             PopulateDGV();
 
             ManagePagingButtons();
 
-
         }
-
-  
-
-
-
-
     }
 }

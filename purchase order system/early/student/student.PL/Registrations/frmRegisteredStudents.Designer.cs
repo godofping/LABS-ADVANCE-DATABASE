@@ -55,13 +55,13 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.lblEntries = new System.Windows.Forms.Label();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblEntries = new System.Windows.Forms.Label();
             this.pnlCRUD.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -334,6 +334,15 @@
             this.pnlMain.Size = new System.Drawing.Size(984, 537);
             this.pnlMain.TabIndex = 9;
             // 
+            // lblEntries
+            // 
+            this.lblEntries.AutoSize = true;
+            this.lblEntries.Location = new System.Drawing.Point(613, 34);
+            this.lblEntries.Name = "lblEntries";
+            this.lblEntries.Size = new System.Drawing.Size(145, 13);
+            this.lblEntries.TabIndex = 9;
+            this.lblEntries.Text = "Showing 1 to 10 of 57 entries";
+            // 
             // btnPrevious
             // 
             this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -398,15 +407,6 @@
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Search";
-            // 
-            // lblEntries
-            // 
-            this.lblEntries.AutoSize = true;
-            this.lblEntries.Location = new System.Drawing.Point(613, 34);
-            this.lblEntries.Name = "lblEntries";
-            this.lblEntries.Size = new System.Drawing.Size(145, 13);
-            this.lblEntries.TabIndex = 9;
-            this.lblEntries.Text = "Showing 1 to 10 of 57 entries";
             // 
             // frmRegisteredStudents
             // 

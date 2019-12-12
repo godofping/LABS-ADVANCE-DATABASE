@@ -1,6 +1,6 @@
 ﻿namespace student.PL.Reports
 {
-    partial class frmRegisteredStudents
+    partial class frmReportRegisteredStudents
     {
         /// <summary>
         /// Required designer variable.
@@ -45,8 +45,6 @@
             this.crv.AutoSize = true;
             this.crv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crv.DisplayGroupTree = false;
-            this.crv.DisplayStatusBar = false;
-            this.crv.DisplayToolbar = false;
             this.crv.Location = new System.Drawing.Point(12, 57);
             this.crv.Name = "crv";
             this.crv.SelectionFormula = "";
@@ -59,18 +57,18 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(369, 12);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 13);
+            this.label12.Size = new System.Drawing.Size(79, 13);
             this.label12.TabIndex = 34;
-            this.label12.Text = "YEAR LEVEL";
+            this.label12.Text = "YEAR LEVEL *";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(9, 12);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 13);
+            this.label11.Size = new System.Drawing.Size(59, 13);
             this.label11.TabIndex = 33;
-            this.label11.Text = "STRAND";
+            this.label11.Text = "STRAND *";
             // 
             // cbYearLevel
             // 
@@ -104,7 +102,7 @@
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
-            // frmRegisteredStudents
+            // frmReportRegisteredStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,7 +114,7 @@
             this.Controls.Add(this.cbPreferredStrand);
             this.Controls.Add(this.crv);
             this.MinimumSize = new System.Drawing.Size(1024, 600);
-            this.Name = "frmRegisteredStudents";
+            this.Name = "frmReportRegisteredStudents";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LIST OF REGISTERED STUDENTS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

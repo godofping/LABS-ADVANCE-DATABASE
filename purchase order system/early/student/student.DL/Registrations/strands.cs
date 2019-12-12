@@ -13,6 +13,12 @@ namespace student.DL.Registrations
             return Helper.executeQuery("select * from strands_view where `C` like '%" + keyword + "%'");
         }
 
+        public DataTable Populations()
+        {
+            return Helper.executeQuery("select * from strandspopulation_view");
+        }
+        
+
         public EL.Registrations.strands Select(EL.Registrations.strands strandEL)
         {
             var dt = Helper.executeQuery("select * from strands_view where `STRAND ID` = '" + strandEL.Strandid + "'");

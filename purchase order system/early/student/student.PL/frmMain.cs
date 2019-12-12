@@ -30,7 +30,13 @@ namespace student.PL
 
         private void lISTOFREGISTEREDSTUDENTSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new Reports.frmRegisteredStudents();
+            var frm = new Reports.frmReportRegisteredStudents();
+            frm.ShowDialog();
+        }
+
+        private void lISTOFPOPULATIONSPERSTRANDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Reports.frmStrandsPopulations();
             frm.ShowDialog();
         }
 

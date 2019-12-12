@@ -15,6 +15,11 @@ namespace student.BL.Registrations
             return strandDL.List(keyword);
         }
 
+        public DataTable Populations()
+        {
+            return strandDL.Populations();
+        }
+
         public EL.Registrations.strands Select(EL.Registrations.strands strandEL)
         {
             return strandDL.Select(strandEL);
