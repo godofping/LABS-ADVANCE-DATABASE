@@ -11,6 +11,7 @@ namespace pos.DL.Registrations
     {
         public DataTable List(string keywords)
         {
+            keywords = MySql.Data.MySqlClient.MySqlHelper.EscapeString(keywords);
             return Helper.executeQuery("select * from customers_view where c like '%" + keywords + "%'");
         }
 
@@ -34,11 +35,15 @@ namespace pos.DL.Registrations
 
         public long Insert(EL.Registrations.customers customerEL)
         {
-            return Helper.executeNonQueryLong("insert into customers values ('" + customerEL.Fullname + "', '" + customerEL.Contactnumber + "')");
+            customerEL.Fullname = MySql.Data.MySqlClient.MySqlHelper.EscapeString(customerEL.Fullname);
+            customerEL.Fullname = MySql.Data.MySqlClient.MySqlHelper.EscapeString(customerEL.Fullname);
+            return Helper.executeNonQueryLong("insert into customers (fullname, contactnumber) values ('" + customerEL.Fullname + "', '" + customerEL.Contactnumber + "')");
         }
 
         public bool Update(EL.Registrations.customers customerEL)
         {
+            customerEL.Fullname = MySql.Data.MySqlClient.MySqlHelper.EscapeString(customerEL.Fullname);
+            customerEL.Fullname = MySql.Data.MySqlClient.MySqlHelper.EscapeString(customerEL.Fullname);
             return Helper.executeNonQueryBool("update customers set fullname = '" + customerEL.Fullname + "', contactnumber = '" + customerEL.Contactnumber + "' where customerid = '" + customerEL.Customerid + "'");
         }
 

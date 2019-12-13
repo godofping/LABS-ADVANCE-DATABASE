@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 
 namespace student.PL
 {
@@ -161,12 +162,27 @@ namespace student.PL
         public static void DGVTheme(DataGridView dgv)
         {
             dgv.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(228, 235, 250);
+            dgv.MultiSelect = false;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AllowUserToResizeColumns = false;
+            dgv.AllowUserToOrderColumns = false;
+            dgv.AllowUserToResizeRows = false;
+            dgv.ReadOnly = true;
 
             foreach (DataGridViewColumn column in dgv.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+
+            Type dgvType = dgv.GetType();
+            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered",
+                BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(dgv, true, null);
         }
 
 

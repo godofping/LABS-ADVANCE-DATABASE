@@ -1,6 +1,6 @@
 ﻿namespace pos.PL.Registrations
 {
-    partial class frmCategories
+    partial class frmCustomers
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pnlAddEdit = new System.Windows.Forms.Panel();
+            this.pnlSeparator = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pnlAddEdit = new System.Windows.Forms.Panel();
-            this.pnlSeparator = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCategory = new System.Windows.Forms.TextBox();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtContactNumber = new System.Windows.Forms.TextBox();
+            this.pnlAddEdit.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            this.pnlAddEdit.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pnlAddEdit
+            // 
+            this.pnlAddEdit.Controls.Add(this.label2);
+            this.pnlAddEdit.Controls.Add(this.txtContactNumber);
+            this.pnlAddEdit.Controls.Add(this.pnlSeparator);
+            this.pnlAddEdit.Controls.Add(this.btnCancel);
+            this.pnlAddEdit.Controls.Add(this.label3);
+            this.pnlAddEdit.Controls.Add(this.txtFullName);
+            this.pnlAddEdit.Controls.Add(this.lblTitle);
+            this.pnlAddEdit.Controls.Add(this.btnSave);
+            this.pnlAddEdit.Location = new System.Drawing.Point(12, 12);
+            this.pnlAddEdit.Name = "pnlAddEdit";
+            this.pnlAddEdit.Size = new System.Drawing.Size(984, 537);
+            this.pnlAddEdit.TabIndex = 3;
+            // 
+            // pnlSeparator
+            // 
+            this.pnlSeparator.BackColor = System.Drawing.Color.Black;
+            this.pnlSeparator.Location = new System.Drawing.Point(0, 50);
+            this.pnlSeparator.Name = "pnlSeparator";
+            this.pnlSeparator.Size = new System.Drawing.Size(983, 3);
+            this.pnlSeparator.TabIndex = 5;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(906, 511);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(20, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "FULL NAME *";
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Location = new System.Drawing.Point(23, 108);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(306, 20);
+            this.txtFullName.TabIndex = 2;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(19, 15);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(34, 24);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "<>";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(825, 511);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnlMain
             // 
@@ -54,7 +125,7 @@
             this.pnlMain.Location = new System.Drawing.Point(12, 12);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(984, 537);
-            this.pnlMain.TabIndex = 0;
+            this.pnlMain.TabIndex = 2;
             // 
             // dgv
             // 
@@ -92,107 +163,57 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search";
             // 
-            // pnlAddEdit
+            // label2
             // 
-            this.pnlAddEdit.Controls.Add(this.pnlSeparator);
-            this.pnlAddEdit.Controls.Add(this.btnCancel);
-            this.pnlAddEdit.Controls.Add(this.label3);
-            this.pnlAddEdit.Controls.Add(this.txtCategory);
-            this.pnlAddEdit.Controls.Add(this.lblTitle);
-            this.pnlAddEdit.Controls.Add(this.btnSave);
-            this.pnlAddEdit.Location = new System.Drawing.Point(12, 12);
-            this.pnlAddEdit.Name = "pnlAddEdit";
-            this.pnlAddEdit.Size = new System.Drawing.Size(984, 537);
-            this.pnlAddEdit.TabIndex = 1;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 146);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "CONTACT NUMBER *";
             // 
-            // pnlSeparator
+            // txtContactNumber
             // 
-            this.pnlSeparator.BackColor = System.Drawing.Color.Black;
-            this.pnlSeparator.Location = new System.Drawing.Point(0, 50);
-            this.pnlSeparator.Name = "pnlSeparator";
-            this.pnlSeparator.Size = new System.Drawing.Size(983, 3);
-            this.pnlSeparator.TabIndex = 5;
+            this.txtContactNumber.Location = new System.Drawing.Point(23, 162);
+            this.txtContactNumber.Name = "txtContactNumber";
+            this.txtContactNumber.Size = new System.Drawing.Size(306, 20);
+            this.txtContactNumber.TabIndex = 6;
             // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(906, 511);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "CANCEL";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "CATEGORY *";
-            // 
-            // txtCategory
-            // 
-            this.txtCategory.Location = new System.Drawing.Point(23, 108);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(306, 20);
-            this.txtCategory.TabIndex = 2;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(19, 15);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(34, 24);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "<>";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(825, 511);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // frmCategories
+            // frmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.pnlAddEdit);
             this.Controls.Add(this.pnlMain);
-            this.MinimumSize = new System.Drawing.Size(1024, 600);
-            this.Name = "frmCategories";
+            this.Controls.Add(this.pnlAddEdit);
+            this.Name = "frmCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CATEGORIES";
-            this.Load += new System.EventHandler(this.frmCategories_Load);
+            this.Text = "CUSTOMERS";
+            this.Load += new System.EventHandler(this.frmCustomers_Load);
+            this.pnlAddEdit.ResumeLayout(false);
+            this.pnlAddEdit.PerformLayout();
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            this.pnlAddEdit.ResumeLayout(false);
-            this.pnlAddEdit.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel pnlAddEdit;
+        private System.Windows.Forms.Panel pnlSeparator;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel pnlAddEdit;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCategory;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Panel pnlSeparator;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtContactNumber;
     }
 }

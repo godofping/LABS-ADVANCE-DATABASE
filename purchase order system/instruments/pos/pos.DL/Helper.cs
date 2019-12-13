@@ -6,7 +6,7 @@ namespace pos.DL
 {
     public class Helper
     {
-        public static string ConnectionString { get { return "Server=localhost;port=3306;UID=root;PWD=;database=pos_musical_instruments_dbpos_musical_instruments_db;Convert Zero Datetime=True"; } }
+        public static string ConnectionString { get { return "Server=localhost;port=3306;UID=root;PWD=;database=pos_musical_instruments_db;Convert Zero Datetime=True"; } }
        
 
         public static long executeNonQueryLong(string _Query)
@@ -50,7 +50,7 @@ namespace pos.DL
             }
         }
 
-        public static bool executeNonQueryBool(string _Query)
+        public static bool executeNonQueryBool(String _Query)
         {
             using (MySqlConnection con = new MySqlConnection(ConnectionString))
             {

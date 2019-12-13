@@ -11,6 +11,7 @@ namespace pos.DL.Registrations
     {
         public DataTable List(string keywords)
         {
+            keywords = MySql.Data.MySqlClient.MySqlHelper.EscapeString(keywords);
             return Helper.executeQuery("select * from products_view where c like '%" + keywords + "%'");
         }
 
@@ -37,11 +38,15 @@ namespace pos.DL.Registrations
 
         public long Insert(EL.Registrations.products productEL)
         {
-            return Helper.executeNonQueryLong("insert into products values ('" + productEL.Categoryid + "', '" + productEL.Productname + "', '" + productEL.Description + "', '" + productEL.Price + "', '" + productEL.Stocks + "')");
+            productEL.Productname = MySql.Data.MySqlClient.MySqlHelper.EscapeString(productEL.Productname);
+            productEL.Description = MySql.Data.MySqlClient.MySqlHelper.EscapeString(productEL.Description);
+            return Helper.executeNonQueryLong("insert into products (categoryid, productname, description, price, stocks) values ('" + productEL.Categoryid + "', '" + productEL.Productname + "', '" + productEL.Description + "', '" + productEL.Price + "', '" + productEL.Stocks + "')");
         }
 
         public bool Update(EL.Registrations.products productEL)
         {
+            productEL.Productname = MySql.Data.MySqlClient.MySqlHelper.EscapeString(productEL.Productname);
+            productEL.Description = MySql.Data.MySqlClient.MySqlHelper.EscapeString(productEL.Description);
             return Helper.executeNonQueryBool("update products set categoryid = '" + productEL.Categoryid + "', productname = '" + productEL.Productname + "', description = '" + productEL.Description + "', price = '" + productEL.Price + "', stocks = '" + productEL.Stocks + "' where productid = '" + productEL.Productid + "'");
         }
 

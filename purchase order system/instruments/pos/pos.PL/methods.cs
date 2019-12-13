@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 
 namespace pos.PL
 {
@@ -77,14 +78,14 @@ namespace pos.PL
 
         }
 
-        public static void DGVAddButton(DataGridView dgv)
+        public static void DGVBUTTONAdd(DataGridView dgv)
         {
 
             DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
             dgv.Columns.Add(btn1);
             btn1.HeaderText = "";
             btn1.Text = "ADD TO CART";
-            btn1.Name = "btn1";
+            btn1.Name = "btnAdd";
             btn1.FillWeight = 20;
             btn1.ReadOnly = false;
             btn1.DividerWidth = 0;
@@ -95,13 +96,13 @@ namespace pos.PL
             btn1.UseColumnTextForButtonValue = true;
         }
 
-        public static void DGVAddButtons(DataGridView dgv)
+        public static void DGVBUTTONAddEdit(DataGridView dgv)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             dgv.Columns.Add(btn);
             btn.HeaderText = "";
             btn.Text = "EDIT";
-            btn.Name = "btn";
+            btn.Name = "btnEdit";
             btn.FillWeight = 20;
             btn.ReadOnly = false;
             btn.DividerWidth = 0;
@@ -115,7 +116,25 @@ namespace pos.PL
             dgv.Columns.Add(btn1);
             btn1.HeaderText = "";
             btn1.Text = "DELETE";
-            btn1.Name = "btn1";
+            btn1.Name = "btnDelete";
+            btn1.FillWeight = 20;
+            btn1.ReadOnly = false;
+            btn1.DividerWidth = 0;
+            btn1.FillWeight = 10;
+            btn1.Frozen = false;
+            btn1.MinimumWidth = 5;
+            btn1.Width = 100;
+            btn1.UseColumnTextForButtonValue = true;
+        }
+
+        public static void DGVBUTTONRemove(DataGridView dgv)
+        {
+
+            DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+            dgv.Columns.Add(btn1);
+            btn1.HeaderText = "";
+            btn1.Text = "Remove";
+            btn1.Name = "btnRemove";
             btn1.FillWeight = 20;
             btn1.ReadOnly = false;
             btn1.DividerWidth = 0;
@@ -161,12 +180,49 @@ namespace pos.PL
         public static void DGVTheme(DataGridView dgv)
         {
             dgv.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(228, 235, 250);
+            dgv.MultiSelect = false;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AllowUserToResizeColumns = false;
+            dgv.AllowUserToOrderColumns = false;
+            dgv.AllowUserToResizeRows = false;
+            dgv.ReadOnly = true;
 
             foreach (DataGridViewColumn column in dgv.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+
+            Type dgvType = dgv.GetType();
+            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered",
+                BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(dgv, true, null);
+
+
+            if (dgv.Columns.Contains("btnEdit") && dgv.Columns["btnDelete"].Visible)
+            {
+                dgv.Columns["btnEdit"].DisplayIndex = dgv.ColumnCount - 2;
+                dgv.Columns["btnDelete"].DisplayIndex = dgv.ColumnCount - 1;
+            }
+            else if (dgv.Columns.Contains("btnAdd"))
+            {
+                dgv.Columns["btnAdd"].DisplayIndex = dgv.ColumnCount - 2;
+            }
+
+            if (dgv.Columns.Contains("btnRemove"))
+            {
+                dgv.Columns["btnRemove"].DisplayIndex = dgv.ColumnCount - 2;
+            }
+
+            if (dgv.Columns.Contains("btnSet"))
+            {
+                dgv.Columns["btnSet"].DisplayIndex = dgv.ColumnCount - 2;
+            }
+
         }
 
 

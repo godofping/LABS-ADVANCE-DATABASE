@@ -23,22 +23,22 @@ CREATE TABLE `categories` (
   `categoryid` int(6) NOT NULL AUTO_INCREMENT,
   `category` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`categoryid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `categories` */
 
-insert  into `categories`(`categoryid`,`category`) values (1,'A'),(2,'B');
+insert  into `categories`(`categoryid`,`category`) values (1,'Percussion'),(2,'Stagg'),(7,'Acoustic Guitar'),(8,'Keyboard'),(9,'Bass Guitar'),(10,'Electric Guitar'),(11,'Ukulele');
 
 /*Table structure for table `customers` */
 
 DROP TABLE IF EXISTS `customers`;
 
 CREATE TABLE `customers` (
-  `customerid` int(6) NOT NULL,
+  `customerid` int(6) NOT NULL AUTO_INCREMENT,
   `fullname` varchar(60) DEFAULT NULL,
   `contactnumber` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`customerid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `customers` */
 
@@ -50,15 +50,17 @@ CREATE TABLE `products` (
   `productid` int(6) NOT NULL AUTO_INCREMENT,
   `categoryid` int(6) DEFAULT NULL,
   `productname` varchar(60) DEFAULT NULL,
-  `description` varchar(250) DEFAULT NULL,
+  `description` text,
   `price` float DEFAULT NULL,
   `stocks` int(11) DEFAULT NULL,
   PRIMARY KEY (`productid`),
   KEY `FK_products` (`categoryid`),
   CONSTRAINT `FK_products` FOREIGN KEY (`categoryid`) REFERENCES `categories` (`categoryid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 /*Data for the table `products` */
+
+insert  into `products`(`productid`,`categoryid`,`productname`,`description`,`price`,`stocks`) values (1,1,'guitar','red guitar wahahah',95000,200);
 
 /*Table structure for table `productsintransactions` */
 
@@ -136,11 +138,11 @@ DROP TABLE IF EXISTS `products_view`;
  `PRODUCT ID` int(6) ,
  `CATEGORY ID` int(6) ,
  `PRODUCT NAME` varchar(60) ,
- `DESCRIPTION` varchar(250) ,
+ `DESCRIPTION` text ,
  `PRICE` float ,
  `STOCKS` int(11) ,
  `CATEGORY` varchar(60) ,
- `C` varchar(404) 
+ `C` mediumtext 
 )*/;
 
 /*View structure for view categories_view */

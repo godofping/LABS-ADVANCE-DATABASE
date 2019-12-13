@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace pos.DL.Registrations
 {
     public class categories
@@ -12,13 +13,14 @@ namespace pos.DL.Registrations
 
         public DataTable List(string keywords)
         {
-            return Helper.executeQuery("select * from categories_view where c like '%" + keywords + "%'");
+            keywords = MySql.Data.MySqlClient.MySqlHelper.EscapeString(keywords);
+            return Helper.executeQuery("select * from categories_view where `C` like '%" + keywords + "%'");
         }
 
         public EL.Registrations.categories Select(EL.Registrations.categories categoryEL)
         {
             var dt = Helper.executeQuery("select * from categories where categoryid = '" + categoryEL.Categoryid + "'");
-
+            
             if (dt.Rows.Count > 0)
             {
                 categoryEL.Categoryid = Convert.ToInt32(dt.Rows[0]["categoryid"].ToString());
@@ -34,11 +36,13 @@ namespace pos.DL.Registrations
 
         public long Insert(EL.Registrations.categories categoryEL)
         {
-            return Helper.executeNonQueryLong("insert into categories values ('" + categoryEL.Category + "')");
+            categoryEL.Category = MySql.Data.MySqlClient.MySqlHelper.EscapeString(categoryEL.Category);
+            return Helper.executeNonQueryLong("insert into categories (category) values ('" + categoryEL.Category + "')");
         }
 
         public bool Update(EL.Registrations.categories categoryEL)
         {
+            categoryEL.Category = MySql.Data.MySqlClient.MySqlHelper.EscapeString(categoryEL.Category);
             return Helper.executeNonQueryBool("update categories set category = '" + categoryEL.Category + "' where categoryid = '" + categoryEL.Categoryid + "'");
         }
 

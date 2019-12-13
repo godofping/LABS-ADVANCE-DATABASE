@@ -61,6 +61,18 @@
     <Compile Include="Registrations\frmCategories.Designer.cs">
       <DependentUpon>frmCategories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registrations\frmCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrations\frmCustomers.Designer.cs">
+      <DependentUpon>frmCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registrations\frmProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrations\frmProducts.Designer.cs">
+      <DependentUpon>frmProducts.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +87,12 @@
     </Compile>
     <EmbeddedResource Include="Registrations\frmCategories.resx">
       <DependentUpon>frmCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrations\frmCustomers.resx">
+      <DependentUpon>frmCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrations\frmProducts.resx">
+      <DependentUpon>frmProducts.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

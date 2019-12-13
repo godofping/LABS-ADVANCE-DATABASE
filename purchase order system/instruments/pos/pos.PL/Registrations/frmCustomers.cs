@@ -10,28 +10,28 @@ using System.Windows.Forms;
 
 namespace pos.PL.Registrations
 {
-    public partial class frmCategories : Form
+    public partial class frmCustomers : Form
     {
+        EL.Registrations.customers customerEL = new EL.Registrations.customers();
 
-        EL.Registrations.categories categoryEL = new EL.Registrations.categories();
-
-        BL.Registrations.categories categoryBL = new BL.Registrations.categories();
+        BL.Registrations.customers customerBL = new BL.Registrations.customers();
 
         string s = "";
 
-        public frmCategories()
+        public frmCustomers()
         {
             InitializeComponent();
         }
 
         private void ResetForm()
         {
-            txtCategory.ResetText();
+            txtFullName.ResetText();
+            txtContactNumber.ResetText();
         }
 
         private void PopulateDGV()
         {
-            dgv.DataSource = categoryBL.List(txtSearch.Text);
+            dgv.DataSource = customerBL.List(txtSearch.Text);
         }
 
         private void ManageDGV()
@@ -40,11 +40,11 @@ namespace pos.PL.Registrations
             PopulateDGV();
             methods.DGVHiddenColumns(dgv, "C");
             methods.DGVTheme(dgv);
-            methods.DGVFillWeights(dgv, new string[] { "CATEGORY ID", "CATEGORY" }, new int[] { 30,70 });
+            methods.DGVFillWeights(dgv, new string[] { "CUSTOMER ID", "FULL NAME", "CONTACT NUMBER" }, new int[] { 30, 35, 35 });
         }
 
         private void ShowForm(bool bol)
-        { 
+        {
             ResetForm();
             pnlAddEdit.Visible = bol;
             pnlMain.Visible = !bol;
@@ -64,7 +64,7 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void frmCategories_Load(object sender, EventArgs e)
+        private void frmCustomers_Load(object sender, EventArgs e)
         {
             ShowForm(false);
             ManageDGV();
@@ -85,16 +85,17 @@ namespace pos.PL.Registrations
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0 | e.ColumnIndex == 1)
-                categoryEL.Categoryid = Convert.ToInt32(dgv.SelectedRows[0].Cells["CATEGORY ID"].Value);
+                customerEL.Customerid = Convert.ToInt32(dgv.SelectedRows[0].Cells["CUSTOMER ID"].Value);
 
             if (e.ColumnIndex == 0)
             {
                 s = "EDIT";
-                lblTitle.Text = "UPDATE CATEGORY";
+                lblTitle.Text = "UPDATE CUSTOMER";
                 ShowForm(true);
 
-                categoryEL = categoryBL.Select(categoryEL);
-                txtCategory.Text = categoryEL.Category;
+                customerEL = customerBL.Select(customerEL);
+                txtFullName.Text = customerEL.Fullname;
+                txtContactNumber.Text = customerEL.Contactnumber;
 
             }
             else if (e.ColumnIndex == 1)
@@ -102,41 +103,43 @@ namespace pos.PL.Registrations
                 DialogResult dialogResult = MessageBox.Show("ARE YOU SURE TO DELETE THIS SELECTED ITEM?", "DELETING", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    ShowResult(categoryBL.Delete(categoryEL));
+                    ShowResult(customerBL.Delete(customerEL));
                 }
-               
+
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             ShowForm(false);
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             bool bol = false;
 
-            if (methods.CheckRequiredTXT(txtCategory))
+            if (methods.CheckRequiredTXT(txtFullName, txtContactNumber))
             {
-                categoryEL.Category = txtCategory.Text;
+                customerEL.Fullname = txtFullName.Text;
+                customerEL.Contactnumber = txtContactNumber.Text;
 
                 if (s.Equals("ADD"))
                 {
-                    bol = categoryBL.Insert(categoryEL) > 0;
+                    bol = customerBL.Insert(customerEL) > 0;
                 }
                 else if (s.Equals("EDIT"))
                 {
-                    bol = categoryBL.Update(categoryEL);
+                    bol = customerBL.Update(customerEL);
                 }
 
                 ShowResult(bol);
-                
+
             }
             else
             {
                 MessageBox.Show("PLEASE COMPLETE ALL REQUIRED FIELDS WITH AN ASTERISK");
             }
-        }
+        }  
     }
 }
