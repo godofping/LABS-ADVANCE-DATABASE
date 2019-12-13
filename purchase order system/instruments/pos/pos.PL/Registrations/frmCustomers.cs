@@ -25,8 +25,7 @@ namespace pos.PL.Registrations
 
         private void ResetForm()
         {
-            txtFullName.ResetText();
-            txtContactNumber.ResetText();
+            methods.ClearTXT(txtFullName,txtContactNumber);
         }
 
         private void PopulateDGV()

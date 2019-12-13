@@ -27,7 +27,8 @@ namespace pos.PL.Registrations
 
         private void ResetForm()
         {
-            txtProductName.ResetText();
+            methods.ClearTXT(txtProductName, txtDescription, txtPrice, txtStocks);
+            methods.ClearCB(cbCategory);
         }
 
         private void PopulateDGV()
@@ -115,7 +116,7 @@ namespace pos.PL.Registrations
                 DialogResult dialogResult = MessageBox.Show("ARE YOU SURE TO DELETE THIS SELECTED ITEM?", "DELETING", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    ShowResult(categoryBL.Delete(categoryEL));
+                    ShowResult(productBL.Delete(productEL));
                 }
 
             }

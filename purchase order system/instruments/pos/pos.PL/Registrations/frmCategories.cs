@@ -26,7 +26,7 @@ namespace pos.PL.Registrations
 
         private void ResetForm()
         {
-            txtCategory.ResetText();
+            methods.ClearTXT(txtCategory);
         }
 
         private void PopulateDGV()

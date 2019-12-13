@@ -71,7 +71,7 @@ namespace student.PL.Registrations
             PopulateDGV();
             methods.DGVHiddenColumns(dgv, "C");
             methods.DGVTheme(dgv);
-            methods.DGVFillWeights(dgv, new string[] { "STUDENT ID", "LRN", "FULL NAME", "STRAND", "YEAR LEVEL", "DATE ADDED" }, new int[] { 10,15, 30, 15, 25, 15 });
+            methods.DGVFillWeights(dgv, new string[] { "ID", "LRN", "FULL NAME", "STRAND", "YEAR LEVEL", "DATE ADDED" }, new int[] { 10,15, 30, 15, 25, 15 });
             methods.DGVAddButtons(dgv);
             PopulateDGV();
 
@@ -163,7 +163,7 @@ namespace student.PL.Registrations
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            studentEL.Studentid = Convert.ToInt32(dgv.SelectedRows[0].Cells["STUDENT ID"].Value);
+            studentEL.Studentid = Convert.ToInt32(dgv.SelectedRows[0].Cells["ID"].Value);
          
             if (e.ColumnIndex == 0)
             {

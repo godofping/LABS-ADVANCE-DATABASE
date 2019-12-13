@@ -11,17 +11,17 @@ namespace student.DL.Registrations
 
         public DataTable List(string keyword)
         {
-            return Helper.executeQuery("select `STUDENT ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `C` like '%" + keyword + "%'");
+            return Helper.executeQuery("select `ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `C` like '%" + keyword + "%'");
         }
 
         public DataTable List(EL.Registrations.students studentEL)
         {
-            return Helper.executeQuery("select `STUDENT ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `STRAND ID` = '" + studentEL.Strandid + "' and `YEAR LEVEL` = '" + studentEL.Yearlevel + "'");
+            return Helper.executeQuery("select `ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `STRAND ID` = '" + studentEL.Strandid + "' and `YEAR LEVEL` = '" + studentEL.Yearlevel + "'");
         }
 
         public DataTable List(string keyword, int limit, int offset)
         {
-            return Helper.executeQuery("select `STUDENT ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `C` like '%" + keyword + "%' LIMIT " + limit + " OFFSET " + offset + "");
+            return Helper.executeQuery("select `ID`, `LRN`, `FULL NAME`, `STRAND`, `YEAR LEVEL`,`DATE ADDED`, `C`  from students_view where `C` like '%" + keyword + "%' LIMIT " + limit + " OFFSET " + offset + "");
         }
 
         public DataTable Counter(string keyword)
@@ -31,10 +31,10 @@ namespace student.DL.Registrations
 
         public EL.Registrations.students Select(EL.Registrations.students studentEL)
         {
-            var dt = Helper.executeQuery("select * from students_view where `STUDENT ID` = '" + studentEL.Studentid + "'");
+            var dt = Helper.executeQuery("select * from students_view where `ID` = '" + studentEL.Studentid + "'");
             if (dt.Rows.Count > 0)
             {
-                studentEL.Studentid = Convert.ToInt32(dt.Rows[0]["STUDENT ID"].ToString());
+                studentEL.Studentid = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
                 studentEL.Strandid = Convert.ToInt32(dt.Rows[0]["STRAND ID"].ToString());
                 studentEL.Lrn = dt.Rows[0]["LRN"].ToString();
                 studentEL.Lastname = dt.Rows[0]["LAST NAME"].ToString();

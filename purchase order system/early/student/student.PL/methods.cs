@@ -161,7 +161,6 @@ namespace student.PL
 
         public static void DGVTheme(DataGridView dgv)
         {
-            dgv.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(228, 235, 250);
             dgv.MultiSelect = false;
