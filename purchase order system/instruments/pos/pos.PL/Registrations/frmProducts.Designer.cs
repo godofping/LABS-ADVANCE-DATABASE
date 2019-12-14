@@ -35,19 +35,19 @@
             this.dgv = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlAddEdit = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtStocks = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
             this.pbClose = new System.Windows.Forms.PictureBox();
             this.pbSave = new System.Windows.Forms.PictureBox();
             this.pnlSeparator = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtStocks = new System.Windows.Forms.TextBox();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
@@ -93,6 +93,7 @@
             // 
             // pbAdd
             // 
+            this.pbAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbAdd.Image = global::pos.PL.Properties.Resources.add;
             this.pbAdd.Location = new System.Drawing.Point(896, 3);
@@ -147,8 +148,86 @@
             this.pnlAddEdit.Size = new System.Drawing.Size(984, 537);
             this.pnlAddEdit.TabIndex = 3;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(385, 199);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 21);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "STOCKS *";
+            // 
+            // txtStocks
+            // 
+            this.txtStocks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStocks.Location = new System.Drawing.Point(389, 223);
+            this.txtStocks.Name = "txtStocks";
+            this.txtStocks.Size = new System.Drawing.Size(306, 29);
+            this.txtStocks.TabIndex = 5;
+            this.txtStocks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStocks_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(385, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 21);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "PRICE *";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(389, 136);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(306, 29);
+            this.txtPrice.TabIndex = 4;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 280);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 21);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "DESCRIPTION *";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(23, 304);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(672, 138);
+            this.txtDescription.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "CATEGORY *";
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(23, 136);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(306, 29);
+            this.cbCategory.TabIndex = 1;
+            // 
             // pbClose
             // 
+            this.pbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbClose.Image = global::pos.PL.Properties.Resources.close;
             this.pbClose.Location = new System.Drawing.Point(896, 474);
@@ -161,6 +240,7 @@
             // 
             // pbSave
             // 
+            this.pbSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSave.Image = global::pos.PL.Properties.Resources.check;
             this.pbSave.Location = new System.Drawing.Point(806, 474);
@@ -201,83 +281,6 @@
             this.label3.Size = new System.Drawing.Size(139, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "PRODUCT NAME *";
-            // 
-            // cbCategory
-            // 
-            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategory.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(23, 136);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(306, 29);
-            this.cbCategory.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 21);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "CATEGORY *";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 280);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 21);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "DESCRIPTION *";
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(23, 304);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(672, 138);
-            this.txtDescription.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(385, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 21);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "PRICE *";
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(389, 136);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(306, 29);
-            this.txtPrice.TabIndex = 4;
-            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(385, 199);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 21);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "STOCKS *";
-            // 
-            // txtStocks
-            // 
-            this.txtStocks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStocks.Location = new System.Drawing.Point(389, 223);
-            this.txtStocks.Name = "txtStocks";
-            this.txtStocks.Size = new System.Drawing.Size(306, 29);
-            this.txtStocks.TabIndex = 5;
-            this.txtStocks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStocks_KeyPress);
             // 
             // frmProducts
             // 

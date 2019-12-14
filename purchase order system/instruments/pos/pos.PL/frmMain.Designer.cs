@@ -52,12 +52,15 @@
             this.lblTotalCustomersValue = new System.Windows.Forms.Label();
             this.lblTotalProductsValue = new System.Windows.Forms.Label();
             this.lblTodaySalesValue = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
             this.pnlReports.SuspendLayout();
             this.pnlCategories.SuspendLayout();
@@ -65,12 +68,15 @@
             this.pnlCustomers.SuspendLayout();
             this.pnlTransactions.SuspendLayout();
             this.pnlBottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -268,65 +274,78 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semilight", 26.25F);
-            this.label8.Location = new System.Drawing.Point(435, 54);
+            this.label8.Font = new System.Drawing.Font("Segoe UI Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(525, 43);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(324, 47);
+            this.label8.Size = new System.Drawing.Size(188, 47);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Today Sales ...............";
+            this.label8.Text = "Today Sales";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semilight", 26.25F);
-            this.label9.Location = new System.Drawing.Point(435, 180);
+            this.label9.Font = new System.Drawing.Font("Segoe UI Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(525, 173);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(326, 47);
+            this.label9.Size = new System.Drawing.Size(254, 47);
             this.label9.TabIndex = 4;
-            this.label9.Text = "Total Customers .......";
+            this.label9.Text = "Total Customers";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semilight", 26.25F);
-            this.label10.Location = new System.Drawing.Point(435, 317);
+            this.label10.Font = new System.Drawing.Font("Segoe UI Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(525, 311);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(322, 47);
+            this.label10.Size = new System.Drawing.Size(225, 47);
             this.label10.TabIndex = 5;
-            this.label10.Text = "Total Products ..........";
+            this.label10.Text = "Total Products";
             // 
             // lblTotalCustomersValue
             // 
             this.lblTotalCustomersValue.AutoSize = true;
-            this.lblTotalCustomersValue.Font = new System.Drawing.Font("Segoe UI Light", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCustomersValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTotalCustomersValue.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalCustomersValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(97)))), ((int)(((byte)(183)))));
-            this.lblTotalCustomersValue.Location = new System.Drawing.Point(751, 166);
+            this.lblTotalCustomersValue.Location = new System.Drawing.Point(581, 220);
             this.lblTotalCustomersValue.Name = "lblTotalCustomersValue";
-            this.lblTotalCustomersValue.Size = new System.Drawing.Size(98, 65);
+            this.lblTotalCustomersValue.Size = new System.Drawing.Size(96, 67);
             this.lblTotalCustomersValue.TabIndex = 6;
-            this.lblTotalCustomersValue.Text = "100";
+            this.lblTotalCustomersValue.Text = "<>";
             // 
             // lblTotalProductsValue
             // 
             this.lblTotalProductsValue.AutoSize = true;
-            this.lblTotalProductsValue.Font = new System.Drawing.Font("Segoe UI Light", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProductsValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTotalProductsValue.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalProductsValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(97)))), ((int)(((byte)(183)))));
-            this.lblTotalProductsValue.Location = new System.Drawing.Point(751, 303);
+            this.lblTotalProductsValue.Location = new System.Drawing.Point(581, 358);
             this.lblTotalProductsValue.Name = "lblTotalProductsValue";
-            this.lblTotalProductsValue.Size = new System.Drawing.Size(98, 65);
+            this.lblTotalProductsValue.Size = new System.Drawing.Size(96, 67);
             this.lblTotalProductsValue.TabIndex = 8;
-            this.lblTotalProductsValue.Text = "100";
+            this.lblTotalProductsValue.Text = "<>";
             // 
             // lblTodaySalesValue
             // 
             this.lblTodaySalesValue.AutoSize = true;
-            this.lblTodaySalesValue.Font = new System.Drawing.Font("Segoe UI Light", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodaySalesValue.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTodaySalesValue.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodaySalesValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(97)))), ((int)(((byte)(183)))));
-            this.lblTodaySalesValue.Location = new System.Drawing.Point(751, 40);
+            this.lblTodaySalesValue.Location = new System.Drawing.Point(581, 91);
             this.lblTodaySalesValue.Name = "lblTodaySalesValue";
-            this.lblTodaySalesValue.Size = new System.Drawing.Size(98, 65);
+            this.lblTodaySalesValue.Size = new System.Drawing.Size(96, 67);
             this.lblTodaySalesValue.TabIndex = 9;
-            this.lblTodaySalesValue.Text = "100";
+            this.lblTodaySalesValue.Text = "<>";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::pos.PL.Properties.Resources.time;
+            this.pictureBox7.Location = new System.Drawing.Point(454, 43);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(65, 45);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 10;
+            this.pictureBox7.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -390,12 +409,35 @@
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::pos.PL.Properties.Resources.time;
+            this.pictureBox8.Location = new System.Drawing.Point(454, 175);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(65, 45);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 11;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::pos.PL.Properties.Resources.time;
+            this.pictureBox9.Location = new System.Drawing.Point(454, 311);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(65, 45);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 12;
+            this.pictureBox9.TabStop = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 552);
+            this.Controls.Add(this.pictureBox9);
+            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.lblTodaySalesValue);
             this.Controls.Add(this.lblTotalProductsValue);
             this.Controls.Add(this.lblTotalCustomersValue);
@@ -425,12 +467,15 @@
             this.pnlTransactions.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,6 +512,9 @@
         private System.Windows.Forms.Label lblTotalProductsValue;
         private System.Windows.Forms.Label lblTodaySalesValue;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }
 

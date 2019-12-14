@@ -37,9 +37,9 @@
             this.pbClose = new System.Windows.Forms.PictureBox();
             this.pbSave = new System.Windows.Forms.PictureBox();
             this.pnlSeparator = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCategory = new System.Windows.Forms.TextBox();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
@@ -77,6 +77,7 @@
             // 
             // pbAdd
             // 
+            this.pbAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbAdd.Image = global::pos.PL.Properties.Resources.add;
             this.pbAdd.Location = new System.Drawing.Point(896, 3);
@@ -125,6 +126,7 @@
             // 
             // pbClose
             // 
+            this.pbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbClose.Image = global::pos.PL.Properties.Resources.close;
             this.pbClose.Location = new System.Drawing.Point(896, 474);
@@ -137,6 +139,7 @@
             // 
             // pbSave
             // 
+            this.pbSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSave.Image = global::pos.PL.Properties.Resources.check;
             this.pbSave.Location = new System.Drawing.Point(806, 474);
@@ -157,6 +160,17 @@
             this.pnlSeparator.Size = new System.Drawing.Size(984, 53);
             this.pnlSeparator.TabIndex = 5;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(18, 14);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(43, 30);
+            this.lblTitle.TabIndex = 2;
+            this.lblTitle.Text = "<>";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -175,25 +189,14 @@
             this.txtCategory.Size = new System.Drawing.Size(306, 29);
             this.txtCategory.TabIndex = 1;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(18, 14);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(43, 30);
-            this.lblTitle.TabIndex = 2;
-            this.lblTitle.Text = "<>";
-            // 
             // frmCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlAddEdit);
+            this.Controls.Add(this.pnlMain);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.MinimumSize = new System.Drawing.Size(1024, 600);

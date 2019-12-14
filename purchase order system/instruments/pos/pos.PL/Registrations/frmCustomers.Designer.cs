@@ -35,13 +35,13 @@
             this.dgv = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlAddEdit = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtContactNumber = new System.Windows.Forms.TextBox();
             this.pbClose = new System.Windows.Forms.PictureBox();
             this.pbSave = new System.Windows.Forms.PictureBox();
             this.pnlSeparator = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtContactNumber = new System.Windows.Forms.TextBox();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
@@ -87,6 +87,7 @@
             // 
             // pbAdd
             // 
+            this.pbAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbAdd.Image = global::pos.PL.Properties.Resources.add;
             this.pbAdd.Location = new System.Drawing.Point(896, 3);
@@ -135,8 +136,27 @@
             this.pnlAddEdit.Size = new System.Drawing.Size(984, 537);
             this.pnlAddEdit.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 187);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 21);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "CONTACT NUMBER *";
+            // 
+            // txtContactNumber
+            // 
+            this.txtContactNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContactNumber.Location = new System.Drawing.Point(23, 211);
+            this.txtContactNumber.Name = "txtContactNumber";
+            this.txtContactNumber.Size = new System.Drawing.Size(306, 29);
+            this.txtContactNumber.TabIndex = 2;
+            // 
             // pbClose
             // 
+            this.pbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbClose.Image = global::pos.PL.Properties.Resources.close;
             this.pbClose.Location = new System.Drawing.Point(896, 474);
@@ -149,6 +169,7 @@
             // 
             // pbSave
             // 
+            this.pbSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbSave.Image = global::pos.PL.Properties.Resources.check;
             this.pbSave.Location = new System.Drawing.Point(806, 474);
@@ -189,24 +210,6 @@
             this.label3.Size = new System.Drawing.Size(102, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "FULL NAME *";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 187);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 21);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "CONTACT NUMBER *";
-            // 
-            // txtContactNumber
-            // 
-            this.txtContactNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContactNumber.Location = new System.Drawing.Point(23, 211);
-            this.txtContactNumber.Name = "txtContactNumber";
-            this.txtContactNumber.Size = new System.Drawing.Size(306, 29);
-            this.txtContactNumber.TabIndex = 2;
             // 
             // frmCustomers
             // 

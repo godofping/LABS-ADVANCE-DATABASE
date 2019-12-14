@@ -23,6 +23,7 @@ namespace pos.PL
 
         private void GetInformations()
         {
+            lblTodaySalesValue.Text = "76000.00";
             lblTotalCustomersValue.Text = customerBL.List("").Rows.Count.ToString();
             lblTotalProductsValue.Text = productBL.List("").Rows.Count.ToString();
         }
