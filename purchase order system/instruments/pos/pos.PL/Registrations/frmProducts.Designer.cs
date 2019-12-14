@@ -250,8 +250,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.pnlAddEdit);
             this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlAddEdit);
             this.MinimumSize = new System.Drawing.Size(1024, 600);
             this.Name = "frmProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

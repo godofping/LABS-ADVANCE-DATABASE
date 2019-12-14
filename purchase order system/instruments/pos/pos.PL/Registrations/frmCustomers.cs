@@ -39,7 +39,7 @@ namespace pos.PL.Registrations
             PopulateDGV();
             methods.DGVHiddenColumns(dgv, "C");
             methods.DGVTheme(dgv);
-            methods.DGVFillWeights(dgv, new string[] { "CUSTOMER ID", "FULL NAME", "CONTACT NUMBER" }, new int[] { 30, 35, 35 });
+            methods.DGVFillWeights(dgv, new string[] { "CUSTOMER ID", "FULL NAME", "CONTACT NUMBER" }, new int[] { 20, 50, 30 });
         }
 
         private void ShowForm(bool bol)

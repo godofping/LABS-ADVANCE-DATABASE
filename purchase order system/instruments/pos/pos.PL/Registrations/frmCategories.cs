@@ -75,13 +75,6 @@ namespace pos.PL.Registrations
             PopulateDGV();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            s = "ADD";
-            lblTitle.Text = "ADD CATEGORY";
-            ShowForm(true);
-        }
-
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0 | e.ColumnIndex == 1)
@@ -108,12 +101,15 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+
+        private void pbAdd_Click(object sender, EventArgs e)
         {
-            ShowForm(false);
+            s = "ADD";
+            lblTitle.Text = "ADD CATEGORY";
+            ShowForm(true);
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void pbSave_Click(object sender, EventArgs e)
         {
             bool bol = false;
 
@@ -131,12 +127,17 @@ namespace pos.PL.Registrations
                 }
 
                 ShowResult(bol);
-                
+
             }
             else
             {
                 MessageBox.Show("PLEASE COMPLETE ALL REQUIRED FIELDS WITH AN ASTERISK");
             }
+        }
+
+        private void pbClose_Click(object sender, EventArgs e)
+        {
+            ShowForm(false);
         }
     }
 }

@@ -89,10 +89,11 @@ namespace pos.PL
             btn1.FillWeight = 20;
             btn1.ReadOnly = false;
             btn1.DividerWidth = 0;
-            btn1.FillWeight = 10;
+            btn1.FillWeight = 20;
             btn1.Frozen = false;
             btn1.MinimumWidth = 5;
             btn1.Width = 100;
+            btn1.FlatStyle = FlatStyle.Popup;
             btn1.UseColumnTextForButtonValue = true;
         }
 
@@ -110,6 +111,7 @@ namespace pos.PL
             btn.Frozen = false;
             btn.MinimumWidth = 5;
             btn.Width = 100;
+            btn.FlatStyle = FlatStyle.Popup;
             btn.UseColumnTextForButtonValue = true;
 
             DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
@@ -124,6 +126,7 @@ namespace pos.PL
             btn1.Frozen = false;
             btn1.MinimumWidth = 5;
             btn1.Width = 100;
+            btn1.FlatStyle = FlatStyle.Popup;
             btn1.UseColumnTextForButtonValue = true;
         }
 
@@ -142,6 +145,45 @@ namespace pos.PL
             btn1.Frozen = false;
             btn1.MinimumWidth = 5;
             btn1.Width = 100;
+            btn1.FlatStyle = FlatStyle.Popup;
+            btn1.UseColumnTextForButtonValue = true;
+        }
+
+        public static void DGVBUTTONSelect(DataGridView dgv)
+        {
+
+            DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+            dgv.Columns.Add(btn1);
+            btn1.HeaderText = "";
+            btn1.Text = "Select";
+            btn1.Name = "btnSelect";
+            btn1.FillWeight = 20;
+            btn1.ReadOnly = false;
+            btn1.DividerWidth = 0;
+            btn1.FillWeight = 10;
+            btn1.Frozen = false;
+            btn1.MinimumWidth = 5;
+            btn1.Width = 100;
+            btn1.FlatStyle = FlatStyle.Popup;
+            btn1.UseColumnTextForButtonValue = true;
+        }
+
+        public static void DGVBUTTONSet(DataGridView dgv)
+        {
+
+            DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+            dgv.Columns.Add(btn1);
+            btn1.HeaderText = "";
+            btn1.Text = "Set";
+            btn1.Name = "btnSet";
+            btn1.FillWeight = 20;
+            btn1.ReadOnly = false;
+            btn1.DividerWidth = 0;
+            btn1.FillWeight = 10;
+            btn1.Frozen = false;
+            btn1.MinimumWidth = 5;
+            btn1.Width = 100;
+            btn1.FlatStyle = FlatStyle.Popup;
             btn1.UseColumnTextForButtonValue = true;
         }
 
@@ -189,6 +231,7 @@ namespace pos.PL
             dgv.AllowUserToOrderColumns = false;
             dgv.AllowUserToResizeRows = false;
             dgv.ReadOnly = true;
+            dgv.BackgroundColor = Color.White;
 
             foreach (DataGridViewColumn column in dgv.Columns)
             {
@@ -217,10 +260,17 @@ namespace pos.PL
                 dgv.Columns["btnRemove"].DisplayIndex = dgv.ColumnCount - 2;
             }
 
+            if (dgv.Columns.Contains("btnSelect"))
+            {
+                dgv.Columns["btnSelect"].DisplayIndex = dgv.ColumnCount - 2;
+            }
+
             if (dgv.Columns.Contains("btnSet"))
             {
                 dgv.Columns["btnSet"].DisplayIndex = dgv.ColumnCount - 2;
             }
+
+            
 
         }
 
