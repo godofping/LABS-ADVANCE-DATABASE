@@ -173,7 +173,7 @@
             this.txtCategory.Location = new System.Drawing.Point(23, 132);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(306, 29);
-            this.txtCategory.TabIndex = 2;
+            this.txtCategory.TabIndex = 1;
             // 
             // lblTitle
             // 
@@ -192,8 +192,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.pnlAddEdit);
             this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlAddEdit);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.MinimumSize = new System.Drawing.Size(1024, 600);

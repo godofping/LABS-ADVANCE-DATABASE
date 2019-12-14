@@ -74,7 +74,7 @@ namespace pos.PL.Registrations
             PopulateDGV();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void pbAdd_Click(object sender, EventArgs e)
         {
             s = "ADD";
             lblTitle.Text = "ADD CATEGORY";
@@ -108,13 +108,12 @@ namespace pos.PL.Registrations
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void pbClose_Click(object sender, EventArgs e)
         {
             ShowForm(false);
-
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void pbSave_Click(object sender, EventArgs e)
         {
             bool bol = false;
 
@@ -139,6 +138,6 @@ namespace pos.PL.Registrations
             {
                 MessageBox.Show("PLEASE COMPLETE ALL REQUIRED FIELDS WITH AN ASTERISK");
             }
-        }  
+        }
     }
 }
