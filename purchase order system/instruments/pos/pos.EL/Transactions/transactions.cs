@@ -12,6 +12,10 @@ namespace pos.EL.Transactions
         int customerid;
         string transactiondatetime;
         float totalamount;
+        float amounttendered;
+        float change;
+        int isvoid;
+
 
         public int Transactionid
         {
@@ -62,6 +66,45 @@ namespace pos.EL.Transactions
             set
             {
                 totalamount = value;
+            }
+        }
+
+        public float Amounttendered
+        {
+            get
+            {
+                return amounttendered;
+            }
+
+            set
+            {
+                amounttendered = value;
+            }
+        }
+
+        public float Change
+        {
+            get
+            {
+                return change;
+            }
+
+            set
+            {
+                change = value;
+            }
+        }
+
+        public int Isvoid
+        {
+            get
+            {
+                return isvoid;
+            }
+
+            set
+            {
+                isvoid = value;
             }
         }
     }

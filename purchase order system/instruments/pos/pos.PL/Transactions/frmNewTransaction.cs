@@ -18,6 +18,11 @@ namespace pos.PL.Transactions
         BL.Registrations.customers customerBL = new BL.Registrations.customers();
         BL.Registrations.products productBL = new BL.Registrations.products();
 
+        float totalamount = 0;
+        float amounttendered = 0;
+        float change = 0;
+
+
         public frmNewTransaction()
         {
             InitializeComponent();
@@ -101,14 +106,17 @@ namespace pos.PL.Transactions
         private void CalculateCart()
         {
             lblTotalItems.Text = dgvCart.RowCount.ToString();
-           
-            lblTotalAmount.Text = methods.ConvertToMoneyFormat(dgvCart.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells["PRICE"].Value)));
+
+            totalamount = dgvCart.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells["PRICE"].Value) * Convert.ToInt32(t.Cells["QTY"].Value));
+
+            lblTotalAmount.Text = methods.ConvertToMoneyFormat(totalamount);
         }
 
         private void frmNewTransaction_Load(object sender, EventArgs e)
         {
             ShowSelectCustomers(false);
             ManageDGV();
+            CalculateCart();
 
         }
 
@@ -131,7 +139,6 @@ namespace pos.PL.Transactions
         {
             if (e.ColumnIndex == 0)
             {
-
                 productEL.Productid = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["PRODUCT ID"].Value);
 
                 if (CheckIfHasDuplicate(productEL.Productid))
@@ -141,13 +148,37 @@ namespace pos.PL.Transactions
                 else
                 {
                     productEL = productBL.Select(productEL);
-                    dgvCart.Rows.Add(productEL.Productid, productEL.Productname, 1, productEL.Price);
-                    CalculateCart();
+
+                    if (productEL.Stocks != 0)
+                    {
+                        string value = "0";
+
+                        if (methods.InputBox("ENTER QUANTITY", "QUANTITY:", ref value) == DialogResult.OK)
+                            {
+                                if (Convert.ToInt32(value) > 0)
+                                {
+                                    if (Convert.ToInt32(value) <= productEL.Stocks)
+                                    {
+                                        dgvCart.Rows.Add(productEL.Productid, productEL.Productname, Convert.ToInt32(value), productEL.Price);
+                                        CalculateCart();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("NOT ENOUGH STOCKS");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("PLEASE ADD QUANITY GREATER THAN 0");
+                                }
+                            } 
+                        }
+                        else
+                        {
+                            MessageBox.Show("NO STOCKS");
+                        }
+
                 }
-
-                
-
-
             }
         }
 
@@ -174,10 +205,34 @@ namespace pos.PL.Transactions
 
         private void lblPay_Click(object sender, EventArgs e)
         {
-            string value = "0";
-            if (methods.InputBox("ENTER AMOUNT TENDERED", "AMOUNT:", ref value) == DialogResult.OK)
+            if (customerEL.Customerid > 0)
             {
-                MessageBox.Show(value);
+                if (dgvCart.RowCount > 0)
+                {
+                    string value = "0";
+                    if (methods.InputBox("ENTER AMOUNT TENDERED", "AMOUNT:", ref value) == DialogResult.OK)
+                    {
+                        amounttendered = Convert.ToSingle(value);
+
+                        if (amounttendered >= totalamount)
+                        {
+                            change = amounttendered - totalamount;
+                            MessageBox.Show("CHANGE IS " + methods.ConvertToMoneyFormat(change));
+                        }
+                        else
+                        {
+                            MessageBox.Show("AMOUNT TENDERED IS INSUFFICIENT OF " + methods.ConvertToMoneyFormat(totalamount - amounttendered));
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("NO PRODUCTS IN THE CART");
+                }
+            }
+            else
+            {
+                MessageBox.Show("PLEASE ADD CUSTOMER");
             }
         }
 

@@ -47,12 +47,6 @@ namespace pos.PL
             pnl.ShowDialog();
         }
 
-        private void lblTransactions_Click(object sender, EventArgs e)
-        {
-            var pnl = new Transactions.frmNewTransaction();
-            pnl.ShowDialog();
-        }
-
         private void lblProducts_Click(object sender, EventArgs e)
         {
             var pnl = new Registrations.frmProducts();
@@ -68,6 +62,12 @@ namespace pos.PL
         private void lblReports_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblNewTransaction_Click(object sender, EventArgs e)
+        {
+            var pnl = new Transactions.frmNewTransaction();
+            pnl.ShowDialog();
         }
     }
 }

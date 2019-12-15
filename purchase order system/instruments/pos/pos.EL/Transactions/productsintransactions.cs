@@ -14,8 +14,6 @@ namespace pos.EL.Transactions
         float soldprice;
         int quantity;
         float amount;
-        float cashtendered;
-        float change;
 
         public int Productintransactionid
         {
@@ -92,32 +90,6 @@ namespace pos.EL.Transactions
             set
             {
                 amount = value;
-            }
-        }
-
-        public float Cashtendered
-        {
-            get
-            {
-                return cashtendered;
-            }
-
-            set
-            {
-                cashtendered = value;
-            }
-        }
-
-        public float Change
-        {
-            get
-            {
-                return change;
-            }
-
-            set
-            {
-                change = value;
             }
         }
     }
