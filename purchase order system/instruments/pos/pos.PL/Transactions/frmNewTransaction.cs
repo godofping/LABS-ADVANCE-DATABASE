@@ -54,6 +54,10 @@ namespace pos.PL.Transactions
 
             methods.DGVTheme(dgvCart);
 
+            methods.DGVBUTTONRemove(dgvCart);
+            methods.DGVFillWeights(dgvCart, new int[] { 1, 2, 3, 4 }, new int[] { 45, 15, 20, 20});
+            
+
         }
 
         private void ShowSelectCustomers(bool bol)
@@ -76,6 +80,31 @@ namespace pos.PL.Transactions
             }
         }
 
+
+        private bool CheckIfHasDuplicate(int id)
+        {
+            bool bol = false;
+
+            foreach (DataGridViewRow row in dgvCart.Rows)
+            {
+                if (Convert.ToInt32(row.Cells[0].Value) == id)
+                {
+                    bol = true;
+                }
+            }
+
+            return bol;
+
+        }
+
+
+        private void CalculateCart()
+        {
+            lblTotalItems.Text = dgvCart.RowCount.ToString();
+           
+            lblTotalAmount.Text = methods.ConvertToMoneyFormat(dgvCart.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells["PRICE"].Value)));
+        }
+
         private void frmNewTransaction_Load(object sender, EventArgs e)
         {
             ShowSelectCustomers(false);
@@ -83,10 +112,7 @@ namespace pos.PL.Transactions
 
         }
 
-        private void txtSearchCustomers_TextChanged(object sender, EventArgs e)
-        {
-            PopulateDGVCustomers();
-        }
+
 
         private void dgvCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -100,29 +126,72 @@ namespace pos.PL.Transactions
             }
         }
 
-        private void btnSelectCustomer_Click(object sender, EventArgs e)
-        {
-            ShowSelectCustomers(true);
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            ShowSelectCustomers(false);
-        }
 
         private void dgvProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
+
+                productEL.Productid = Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["PRODUCT ID"].Value);
+
+                if (CheckIfHasDuplicate(productEL.Productid))
+                {
+                    MessageBox.Show("ITEM IS ALREADY IN THE CART");
+                }
+                else
+                {
+                    productEL = productBL.Select(productEL);
+                    dgvCart.Rows.Add(productEL.Productid, productEL.Productname, 1, productEL.Price);
+                    CalculateCart();
+                }
+
                 
 
 
             }
         }
 
-        private void btnPay_Click(object sender, EventArgs e)
+
+        private void pnlSelectCustomer_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(customerEL.Customerid.ToString());
+            ShowSelectCustomers(true);
+        }
+
+        private void pbBack_Click(object sender, EventArgs e)
+        {
+            ShowSelectCustomers(false);
+        }
+
+        private void txtSearchCustomers_TextChanged_1(object sender, EventArgs e)
+        {
+            PopulateDGVCustomers();
+        }
+
+        private void txtSearchProducts_TextChanged(object sender, EventArgs e)
+        {
+            PopulateDGVProducts();
+        }
+
+        private void lblPay_Click(object sender, EventArgs e)
+        {
+            string value = "0";
+            if (methods.InputBox("ENTER AMOUNT TENDERED", "AMOUNT:", ref value) == DialogResult.OK)
+            {
+                MessageBox.Show(value);
+            }
+        }
+
+        private void dgvCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (MessageBox.Show(this, "ARE YOU SURE TO REMOVE THIS SELECTED ITEM?", "REMOVING", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    break;
+                default:
+                    dgvCart.Rows.RemoveAt(dgvCart.SelectedRows[0].Index);
+                    CalculateCart();
+                    break;
+            }
         }
     }
 }

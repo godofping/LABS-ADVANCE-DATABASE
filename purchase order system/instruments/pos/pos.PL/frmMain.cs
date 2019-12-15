@@ -23,7 +23,7 @@ namespace pos.PL
 
         private void GetInformations()
         {
-            lblTodaySalesValue.Text = "76000.00";
+            lblTodaySalesValue.Text = "76,000.00";
             lblTotalCustomersValue.Text = customerBL.List("").Rows.Count.ToString();
             lblTotalProductsValue.Text = productBL.List("").Rows.Count.ToString();
         }
@@ -37,6 +37,7 @@ namespace pos.PL
         private void timerDate_Tick(object sender, EventArgs e)
         {
             lblDateTime.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy hh:mm tt");
+            GetInformations();
         }
 
 

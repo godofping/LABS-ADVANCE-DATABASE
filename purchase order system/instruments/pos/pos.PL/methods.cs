@@ -78,6 +78,11 @@ namespace pos.PL
 
         }
 
+        public static string ConvertToMoneyFormat(object obj)
+        {
+            return  "₱" + String.Format("{0:n}", obj);
+        }
+
         public static void DGVBUTTONAdd(DataGridView dgv)
         {
 
@@ -222,7 +227,7 @@ namespace pos.PL
         public static void DGVTheme(DataGridView dgv)
         {
 
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Italic);
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Regular);
 
             

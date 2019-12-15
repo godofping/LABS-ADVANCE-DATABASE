@@ -83,7 +83,7 @@
             // pbSearch
             // 
             this.pbSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pbSearch.Image = global::pos.PL.Properties.Resources.magnifying_glass;
+            this.pbSearch.Image = global::pos.PL.Properties.Resources.search;
             this.pbSearch.Location = new System.Drawing.Point(7, 14);
             this.pbSearch.Name = "pbSearch";
             this.pbSearch.Size = new System.Drawing.Size(37, 41);
@@ -288,8 +288,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.pnlAddEdit);
             this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlAddEdit);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(1024, 600);
             this.Name = "frmProducts";

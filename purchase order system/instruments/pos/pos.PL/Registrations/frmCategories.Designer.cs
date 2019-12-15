@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
-            this.pbAdd = new System.Windows.Forms.PictureBox();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlAddEdit = new System.Windows.Forms.Panel();
-            this.pbClose = new System.Windows.Forms.PictureBox();
-            this.pbSave = new System.Windows.Forms.PictureBox();
             this.pnlSeparator = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCategory = new System.Windows.Forms.TextBox();
+            this.pbClose = new System.Windows.Forms.PictureBox();
+            this.pbSave = new System.Windows.Forms.PictureBox();
+            this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.pbAdd = new System.Windows.Forms.PictureBox();
             this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.pnlAddEdit.SuspendLayout();
+            this.pnlSeparator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
-            this.pnlSeparator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -63,30 +63,6 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(984, 537);
             this.pnlMain.TabIndex = 0;
-            // 
-            // pbSearch
-            // 
-            this.pbSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pbSearch.Image = global::pos.PL.Properties.Resources.magnifying_glass;
-            this.pbSearch.Location = new System.Drawing.Point(7, 14);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(37, 41);
-            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSearch.TabIndex = 5;
-            this.pbSearch.TabStop = false;
-            // 
-            // pbAdd
-            // 
-            this.pbAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAdd.Image = global::pos.PL.Properties.Resources.add;
-            this.pbAdd.Location = new System.Drawing.Point(896, 3);
-            this.pbAdd.Name = "pbAdd";
-            this.pbAdd.Size = new System.Drawing.Size(84, 60);
-            this.pbAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAdd.TabIndex = 4;
-            this.pbAdd.TabStop = false;
-            this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
             // 
             // dgv
             // 
@@ -123,32 +99,6 @@
             this.pnlAddEdit.Name = "pnlAddEdit";
             this.pnlAddEdit.Size = new System.Drawing.Size(984, 537);
             this.pnlAddEdit.TabIndex = 1;
-            // 
-            // pbClose
-            // 
-            this.pbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbClose.Image = global::pos.PL.Properties.Resources.close;
-            this.pbClose.Location = new System.Drawing.Point(896, 474);
-            this.pbClose.Name = "pbClose";
-            this.pbClose.Size = new System.Drawing.Size(84, 60);
-            this.pbClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbClose.TabIndex = 7;
-            this.pbClose.TabStop = false;
-            this.pbClose.Click += new System.EventHandler(this.pbClose_Click);
-            // 
-            // pbSave
-            // 
-            this.pbSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSave.Image = global::pos.PL.Properties.Resources.check;
-            this.pbSave.Location = new System.Drawing.Point(806, 474);
-            this.pbSave.Name = "pbSave";
-            this.pbSave.Size = new System.Drawing.Size(84, 60);
-            this.pbSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSave.TabIndex = 6;
-            this.pbSave.TabStop = false;
-            this.pbSave.Click += new System.EventHandler(this.pbSave_Click);
             // 
             // pnlSeparator
             // 
@@ -189,14 +139,64 @@
             this.txtCategory.Size = new System.Drawing.Size(306, 29);
             this.txtCategory.TabIndex = 1;
             // 
+            // pbClose
+            // 
+            this.pbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbClose.Image = global::pos.PL.Properties.Resources.close;
+            this.pbClose.Location = new System.Drawing.Point(896, 474);
+            this.pbClose.Name = "pbClose";
+            this.pbClose.Size = new System.Drawing.Size(84, 60);
+            this.pbClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbClose.TabIndex = 7;
+            this.pbClose.TabStop = false;
+            this.pbClose.Click += new System.EventHandler(this.pbClose_Click);
+            // 
+            // pbSave
+            // 
+            this.pbSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSave.Image = global::pos.PL.Properties.Resources.check;
+            this.pbSave.Location = new System.Drawing.Point(806, 474);
+            this.pbSave.Name = "pbSave";
+            this.pbSave.Size = new System.Drawing.Size(84, 60);
+            this.pbSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSave.TabIndex = 6;
+            this.pbSave.TabStop = false;
+            this.pbSave.Click += new System.EventHandler(this.pbSave_Click);
+            // 
+            // pbSearch
+            // 
+            this.pbSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pbSearch.Image = global::pos.PL.Properties.Resources.search;
+            this.pbSearch.Location = new System.Drawing.Point(7, 14);
+            this.pbSearch.Name = "pbSearch";
+            this.pbSearch.Size = new System.Drawing.Size(37, 41);
+            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSearch.TabIndex = 5;
+            this.pbSearch.TabStop = false;
+            // 
+            // pbAdd
+            // 
+            this.pbAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbAdd.Image = global::pos.PL.Properties.Resources.add;
+            this.pbAdd.Location = new System.Drawing.Point(896, 3);
+            this.pbAdd.Name = "pbAdd";
+            this.pbAdd.Size = new System.Drawing.Size(84, 60);
+            this.pbAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAdd.TabIndex = 4;
+            this.pbAdd.TabStop = false;
+            this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
+            // 
             // frmCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.pnlAddEdit);
             this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlAddEdit);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.MinimumSize = new System.Drawing.Size(1024, 600);
@@ -206,15 +206,15 @@
             this.Load += new System.EventHandler(this.frmCategories_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.pnlAddEdit.ResumeLayout(false);
             this.pnlAddEdit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSave)).EndInit();
             this.pnlSeparator.ResumeLayout(false);
             this.pnlSeparator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSave)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).EndInit();
             this.ResumeLayout(false);
 
         }
