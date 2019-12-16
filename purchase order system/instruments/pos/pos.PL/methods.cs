@@ -192,6 +192,59 @@ namespace pos.PL
             btn1.UseColumnTextForButtonValue = true;
         }
 
+        public static void DGVBUTTONView(DataGridView dgv)
+        {
+
+            DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+            dgv.Columns.Add(btn1);
+            btn1.HeaderText = "";
+            btn1.Text = "View";
+            btn1.Name = "btnView";
+            btn1.FillWeight = 20;
+            btn1.ReadOnly = false;
+            btn1.DividerWidth = 0;
+            btn1.FillWeight = 10;
+            btn1.Frozen = false;
+            btn1.MinimumWidth = 5;
+            btn1.Width = 100;
+            btn1.FlatStyle = FlatStyle.Popup;
+            btn1.UseColumnTextForButtonValue = true;
+        }
+
+        public static void DGVBUTTONViewVoid(DataGridView dgv)
+        {
+
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            dgv.Columns.Add(btn);
+            btn.HeaderText = "";
+            btn.Text = "View";
+            btn.Name = "btnView";
+            btn.FillWeight = 20;
+            btn.ReadOnly = false;
+            btn.DividerWidth = 0;
+            btn.FillWeight = 10;
+            btn.Frozen = false;
+            btn.MinimumWidth = 5;
+            btn.Width = 100;
+            btn.FlatStyle = FlatStyle.Popup;
+            btn.UseColumnTextForButtonValue = true;
+
+            DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+            dgv.Columns.Add(btn1);
+            btn1.HeaderText = "";
+            btn1.Text = "Void";
+            btn1.Name = "btnVoid";
+            btn1.FillWeight = 20;
+            btn1.ReadOnly = false;
+            btn1.DividerWidth = 0;
+            btn1.FillWeight = 10;
+            btn1.Frozen = false;
+            btn1.MinimumWidth = 5;
+            btn1.Width = 100;
+            btn1.FlatStyle = FlatStyle.Popup;
+            btn1.UseColumnTextForButtonValue = true;
+        }
+
         public static void DGVFillWeights(DataGridView dgv, int[] x, int[] y)
         {
             int m = 0;
@@ -294,7 +347,16 @@ namespace pos.PL
                 dgv.Columns["btnSet"].DisplayIndex = dgv.ColumnCount - 2;
             }
 
-            
+            if (dgv.Columns.Contains("btnView") && dgv.Columns["btnVoid"].Visible)
+            {
+                dgv.Columns["btnView"].DisplayIndex = dgv.ColumnCount - 2;
+                dgv.Columns["btnVoid"].DisplayIndex = dgv.ColumnCount - 1;
+            }
+            else if (dgv.Columns.Contains("btnView"))
+            {
+                dgv.Columns["btnView"].DisplayIndex = dgv.ColumnCount - 2;
+            }
+
 
         }
 

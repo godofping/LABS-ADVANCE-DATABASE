@@ -31,45 +31,45 @@
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlSeparator = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.pbSearch = new System.Windows.Forms.PictureBox();
             this.txtSearchProducts = new System.Windows.Forms.TextBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlPay = new System.Windows.Forms.Panel();
             this.lblPay = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnlSelectCustomer = new System.Windows.Forms.PictureBox();
             this.dgvCart = new System.Windows.Forms.DataGridView();
+            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNameAndNumber = new System.Windows.Forms.Label();
             this.lblTotalItems = new System.Windows.Forms.Label();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlCustomers = new System.Windows.Forms.Panel();
+            this.pbBack = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearchCustomers = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
-            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pnlSelectCustomer = new System.Windows.Forms.PictureBox();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
-            this.pbBack = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
             this.pnlSeparator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.pnlRight.SuspendLayout();
             this.pnlPay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
-            this.pnlCustomers.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlSelectCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
+            this.pnlCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLeft
@@ -104,6 +104,17 @@
             this.lblTitle.Size = new System.Drawing.Size(169, 30);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "PRODUCTS LIST";
+            // 
+            // pbSearch
+            // 
+            this.pbSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pbSearch.Image = global::pos.PL.Properties.Resources.search;
+            this.pbSearch.Location = new System.Drawing.Point(17, 63);
+            this.pbSearch.Name = "pbSearch";
+            this.pbSearch.Size = new System.Drawing.Size(37, 41);
+            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSearch.TabIndex = 7;
+            this.pbSearch.TabStop = false;
             // 
             // txtSearchProducts
             // 
@@ -164,6 +175,29 @@
             this.lblPay.Text = "PAY";
             this.lblPay.Click += new System.EventHandler(this.lblPay_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::pos.PL.Properties.Resources.donation;
+            this.pictureBox2.Location = new System.Drawing.Point(59, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(56, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pnlSelectCustomer
+            // 
+            this.pnlSelectCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSelectCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlSelectCustomer.Image = global::pos.PL.Properties.Resources.human_resources;
+            this.pnlSelectCustomer.Location = new System.Drawing.Point(237, 2);
+            this.pnlSelectCustomer.Name = "pnlSelectCustomer";
+            this.pnlSelectCustomer.Size = new System.Drawing.Size(69, 60);
+            this.pnlSelectCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pnlSelectCustomer.TabIndex = 13;
+            this.pnlSelectCustomer.TabStop = false;
+            this.pnlSelectCustomer.Click += new System.EventHandler(this.pnlSelectCustomer_Click);
+            // 
             // dgvCart
             // 
             this.dgvCart.BackgroundColor = System.Drawing.Color.White;
@@ -178,6 +212,27 @@
             this.dgvCart.Size = new System.Drawing.Size(300, 294);
             this.dgvCart.TabIndex = 8;
             this.dgvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellContentClick);
+            // 
+            // productid
+            // 
+            this.productid.HeaderText = "PRODUCT ID";
+            this.productid.Name = "productid";
+            this.productid.Visible = false;
+            // 
+            // productname
+            // 
+            this.productname.HeaderText = "PRODUCT NAME";
+            this.productname.Name = "productname";
+            // 
+            // qty
+            // 
+            this.qty.HeaderText = "QTY";
+            this.qty.Name = "qty";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "PRICE";
+            this.price.Name = "price";
             // 
             // lblNameAndNumber
             // 
@@ -241,6 +296,30 @@
             this.pnlCustomers.Size = new System.Drawing.Size(984, 537);
             this.pnlCustomers.TabIndex = 3;
             // 
+            // pbBack
+            // 
+            this.pbBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBack.Image = global::pos.PL.Properties.Resources.left_arrow;
+            this.pbBack.Location = new System.Drawing.Point(896, 59);
+            this.pbBack.Name = "pbBack";
+            this.pbBack.Size = new System.Drawing.Size(84, 60);
+            this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbBack.TabIndex = 18;
+            this.pbBack.TabStop = false;
+            this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox1.Image = global::pos.PL.Properties.Resources.search;
+            this.pictureBox1.Location = new System.Drawing.Point(17, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // txtSearchCustomers
             // 
             this.txtSearchCustomers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,94 +359,15 @@
             this.dgvCustomers.TabIndex = 3;
             this.dgvCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellContentClick);
             // 
-            // productid
-            // 
-            this.productid.HeaderText = "PRODUCT ID";
-            this.productid.Name = "productid";
-            this.productid.Visible = false;
-            // 
-            // productname
-            // 
-            this.productname.HeaderText = "PRODUCT NAME";
-            this.productname.Name = "productname";
-            // 
-            // qty
-            // 
-            this.qty.HeaderText = "QTY";
-            this.qty.Name = "qty";
-            // 
-            // price
-            // 
-            this.price.HeaderText = "PRICE";
-            this.price.Name = "price";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::pos.PL.Properties.Resources.donation;
-            this.pictureBox2.Location = new System.Drawing.Point(59, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 60);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pnlSelectCustomer
-            // 
-            this.pnlSelectCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSelectCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlSelectCustomer.Image = global::pos.PL.Properties.Resources.human_resources;
-            this.pnlSelectCustomer.Location = new System.Drawing.Point(237, 2);
-            this.pnlSelectCustomer.Name = "pnlSelectCustomer";
-            this.pnlSelectCustomer.Size = new System.Drawing.Size(69, 60);
-            this.pnlSelectCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pnlSelectCustomer.TabIndex = 13;
-            this.pnlSelectCustomer.TabStop = false;
-            this.pnlSelectCustomer.Click += new System.EventHandler(this.pnlSelectCustomer_Click);
-            // 
-            // pbSearch
-            // 
-            this.pbSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pbSearch.Image = global::pos.PL.Properties.Resources.search;
-            this.pbSearch.Location = new System.Drawing.Point(17, 63);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(37, 41);
-            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSearch.TabIndex = 7;
-            this.pbSearch.TabStop = false;
-            // 
-            // pbBack
-            // 
-            this.pbBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBack.Image = global::pos.PL.Properties.Resources.left_arrow;
-            this.pbBack.Location = new System.Drawing.Point(896, 59);
-            this.pbBack.Name = "pbBack";
-            this.pbBack.Size = new System.Drawing.Size(84, 60);
-            this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBack.TabIndex = 18;
-            this.pbBack.TabStop = false;
-            this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Image = global::pos.PL.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmNewTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.pnlCustomers);
             this.Controls.Add(this.pnlRight);
             this.Controls.Add(this.pnlLeft);
-            this.Controls.Add(this.pnlCustomers);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(1024, 600);
             this.Name = "frmNewTransaction";
@@ -378,22 +378,22 @@
             this.pnlLeft.PerformLayout();
             this.pnlSeparator.ResumeLayout(false);
             this.pnlSeparator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.pnlRight.ResumeLayout(false);
             this.pnlRight.PerformLayout();
             this.pnlPay.ResumeLayout(false);
             this.pnlPay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlSelectCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
             this.pnlCustomers.ResumeLayout(false);
             this.pnlCustomers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pnlSelectCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

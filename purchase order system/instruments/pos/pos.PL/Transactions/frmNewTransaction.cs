@@ -14,13 +14,17 @@ namespace pos.PL.Transactions
     {
         EL.Registrations.customers customerEL = new EL.Registrations.customers();
         EL.Registrations.products productEL = new EL.Registrations.products();
+        EL.Transactions.transactions transactionEL = new EL.Transactions.transactions();
+        EL.Transactions.productsintransactions productsintransactionEL = new EL.Transactions.productsintransactions();
 
         BL.Registrations.customers customerBL = new BL.Registrations.customers();
         BL.Registrations.products productBL = new BL.Registrations.products();
+        BL.Transactions.transactions transactionBL = new BL.Transactions.transactions();
+        BL.Transactions.productsintransactions productsintransactionBL = new BL.Transactions.productsintransactions();
 
         float totalamount = 0;
         float amounttendered = 0;
-        float change = 0;
+        float changeamount = 0;
 
 
         public frmNewTransaction()
@@ -30,7 +34,24 @@ namespace pos.PL.Transactions
 
         private void ResetForm()
         {
-         
+            lblTotalItems.ResetText();
+            lblTotalAmount.ResetText();
+            dgvCart.Rows.Clear();
+            lblNameAndNumber.ResetText();
+
+            CalculateCart();
+
+            txtSearchCustomers.ResetText();
+            txtSearchProducts.ResetText();
+
+            PopulateDGVCustomers();
+            PopulateDGVProducts();
+
+            customerEL = new EL.Registrations.customers();
+            productEL = new EL.Registrations.products();
+            transactionEL = new EL.Transactions.transactions();
+            productsintransactionEL = new EL.Transactions.productsintransactions();
+
         }
 
         private void PopulateDGVCustomers()
@@ -72,19 +93,6 @@ namespace pos.PL.Transactions
             pnlRight.Visible = !bol;
         }
 
-        private void ShowResult(bool bol)
-        {
-            if (bol)
-            {
-                MessageBox.Show("SUCCESS");
-                PopulateDGVCustomers();
-            }
-            else
-            {
-                MessageBox.Show("ERROR");
-            }
-        }
-
 
         private bool CheckIfHasDuplicate(int id)
         {
@@ -110,6 +118,45 @@ namespace pos.PL.Transactions
             totalamount = dgvCart.Rows.Cast<DataGridViewRow>().Sum(t => Convert.ToInt32(t.Cells["PRICE"].Value) * Convert.ToInt32(t.Cells["QTY"].Value));
 
             lblTotalAmount.Text = methods.ConvertToMoneyFormat(totalamount);
+        }
+
+
+        private void InsertItemToCart(int x, string w)
+        {
+            string value = x.ToString();
+            if (methods.InputBox("ENTER QUANTITY", "QUANTITY:", ref value) == DialogResult.OK)
+            {
+                if (Convert.ToInt32(value) > 0)
+                {
+                    if (Convert.ToInt32(value) <= productEL.Stocks)
+                    {
+                        if (w.Equals("ADD"))
+                        {
+                            dgvCart.Rows.Add(productEL.Productid, productEL.Productname, Convert.ToInt32(value), productEL.Price);
+                            CalculateCart();
+                        }
+                        else if (w.Equals("EDIT"))
+                        {
+                            foreach (DataGridViewRow row in dgvCart.Rows)
+                            {
+                                if (Convert.ToInt32(row.Cells["productid"].Value) == Convert.ToInt32(dgvProducts.SelectedRows[0].Cells["PRODUCT ID"].Value))
+                                {
+                                    row.Cells["QTY"].Value = Convert.ToInt32(value);
+                                }
+                            }  
+                        }
+                        CalculateCart();
+                    }
+                    else
+                    {
+                        MessageBox.Show("NOT ENOUGH STOCKS");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("PLEASE ADD QUANITY GREATER THAN 0");
+                }
+            }
         }
 
         private void frmNewTransaction_Load(object sender, EventArgs e)
@@ -143,7 +190,8 @@ namespace pos.PL.Transactions
 
                 if (CheckIfHasDuplicate(productEL.Productid))
                 {
-                    MessageBox.Show("ITEM IS ALREADY IN THE CART");
+
+                    InsertItemToCart(Convert.ToInt32(dgvCart.SelectedRows[0].Cells["QTY"].Value), "EDIT");
                 }
                 else
                 {
@@ -151,32 +199,12 @@ namespace pos.PL.Transactions
 
                     if (productEL.Stocks != 0)
                     {
-                        string value = "0";
-
-                        if (methods.InputBox("ENTER QUANTITY", "QUANTITY:", ref value) == DialogResult.OK)
-                            {
-                                if (Convert.ToInt32(value) > 0)
-                                {
-                                    if (Convert.ToInt32(value) <= productEL.Stocks)
-                                    {
-                                        dgvCart.Rows.Add(productEL.Productid, productEL.Productname, Convert.ToInt32(value), productEL.Price);
-                                        CalculateCart();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("NOT ENOUGH STOCKS");
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("PLEASE ADD QUANITY GREATER THAN 0");
-                                }
-                            } 
-                        }
-                        else
-                        {
-                            MessageBox.Show("NO STOCKS");
-                        }
+                        InsertItemToCart(1, "ADD");
+                    }
+                    else
+                    {
+                        MessageBox.Show("NO STOCKS");
+                    }
 
                 }
             }
@@ -216,8 +244,54 @@ namespace pos.PL.Transactions
 
                         if (amounttendered >= totalamount)
                         {
-                            change = amounttendered - totalamount;
-                            MessageBox.Show("CHANGE IS " + methods.ConvertToMoneyFormat(change));
+                            changeamount = amounttendered - totalamount;
+
+                            transactionEL.Customerid = customerEL.Customerid;
+                            transactionEL.Transactiondatetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                            transactionEL.Totalamount = totalamount;
+                            transactionEL.Amounttendered = amounttendered;
+                            transactionEL.ChangeAmount = changeamount;
+                            transactionEL.Isvoid = 0;
+
+                            if ((transactionEL.Transactionid = Convert.ToInt32(transactionBL.Insert(transactionEL))) > 0)
+                            {
+                                bool bol = true;
+                                foreach (DataGridViewRow row in dgvCart.Rows)
+                                {
+                                    productsintransactionEL.Transactionid = transactionEL.Transactionid;
+                                    productsintransactionEL.Productid = Convert.ToInt32(row.Cells["productid"].Value);
+                                    productsintransactionEL.Soldprice = Convert.ToSingle(row.Cells["PRICE"].Value);
+                                    productsintransactionEL.Quantity = Convert.ToInt32(row.Cells["QTY"].Value);
+                                    productsintransactionEL.Amount = Convert.ToSingle(row.Cells["PRICE"].Value) * Convert.ToInt32(row.Cells["QTY"].Value);
+
+                                    if (productsintransactionBL.Insert(productsintransactionEL) <= 0)
+                                    {
+                                        bol = false;
+                                    }
+                                    else
+                                    {
+                                        productEL.Productid = productsintransactionEL.Productid;
+                                        productEL = productBL.Select(productEL);
+                                        productEL.Stocks = productEL.Stocks - productsintransactionEL.Quantity;
+                                        productBL.Update(productEL);
+                                    }
+
+                                }
+
+                                if (bol)
+                                {
+                                    MessageBox.Show("TRANSACTION ID " + transactionEL.Transactionid + " IS SUCCESSFULLY SAVED \n CHANGE IS " + methods.ConvertToMoneyFormat(changeamount));
+                                    ResetForm();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("ERROR");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("ERROR");
+                            }
                         }
                         else
                         {
@@ -238,14 +312,17 @@ namespace pos.PL.Transactions
 
         private void dgvCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            switch (MessageBox.Show(this, "ARE YOU SURE TO REMOVE THIS SELECTED ITEM?", "REMOVING", MessageBoxButtons.YesNo))
+            if (e.ColumnIndex == 4)
             {
-                case DialogResult.No:
-                    break;
-                default:
-                    dgvCart.Rows.RemoveAt(dgvCart.SelectedRows[0].Index);
-                    CalculateCart();
-                    break;
+                switch (MessageBox.Show(this, "ARE YOU SURE TO REMOVE THIS SELECTED ITEM?", "REMOVING", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.No:
+                        break;
+                    default:
+                        dgvCart.Rows.RemoveAt(dgvCart.SelectedRows[0].Index);
+                        CalculateCart();
+                        break;
+                }
             }
         }
     }

@@ -13,7 +13,7 @@ namespace pos.EL.Transactions
         string transactiondatetime;
         float totalamount;
         float amounttendered;
-        float change;
+        float changeamount;
         int isvoid;
 
 
@@ -82,16 +82,16 @@ namespace pos.EL.Transactions
             }
         }
 
-        public float Change
+        public float ChangeAmount
         {
             get
             {
-                return change;
+                return changeamount;
             }
 
             set
             {
-                change = value;
+                changeamount = value;
             }
         }
 

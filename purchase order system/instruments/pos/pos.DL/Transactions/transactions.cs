@@ -23,11 +23,11 @@ namespace pos.DL.Transactions
             {
                 transactionEL.Transactionid = Convert.ToInt32(dt.Rows[0]["transactionid"].ToString());
                 transactionEL.Customerid = Convert.ToInt32(dt.Rows[0]["customerid"].ToString());
-                transactionEL.Transactiondatetime = dt.Rows[0]["transactiondateandtime"].ToString();
+                transactionEL.Transactiondatetime = dt.Rows[0]["transactiondatetime"].ToString();
                 transactionEL.Totalamount = Convert.ToSingle(dt.Rows[0]["totalamount"].ToString());
                 transactionEL.Amounttendered = Convert.ToSingle(dt.Rows[0]["amounttendered"].ToString());
-                transactionEL.Change = Convert.ToSingle(dt.Rows[0]["change"].ToString());
-                transactionEL.Isvoid = Convert.ToInt32(dt.Rows[0]["isvoid"].ToString());
+                transactionEL.ChangeAmount = Convert.ToSingle(dt.Rows[0]["changeamount"].ToString());
+                transactionEL.Isvoid = Convert.ToInt32(dt.Rows[0]["isvoid"]);
 
                 return transactionEL;
             }
@@ -38,21 +38,25 @@ namespace pos.DL.Transactions
 
         }
 
-        public long Insert(EL.Registrations.categories categoryEL)
+        public long Insert(EL.Transactions.transactions transactionEL)
         {
-            categoryEL.Category = MySql.Data.MySqlClient.MySqlHelper.EscapeString(categoryEL.Category);
-            return Helper.executeNonQueryLong("insert into categories (category) values ('" + categoryEL.Category + "')");
+            return Helper.executeNonQueryLong("insert into transactions (customerid, transactiondatetime, totalamount, amounttendered, changeamount, isvoid) values ('" + transactionEL.Customerid + "', '" + transactionEL.Transactiondatetime + "', '" + transactionEL.Totalamount + "', '" + transactionEL.Amounttendered + "', '" + transactionEL.ChangeAmount + "', '" + transactionEL.Isvoid + "')");
         }
 
-        public bool Update(EL.Registrations.categories categoryEL)
+        public bool Update(EL.Transactions.transactions transactionEL)
         {
-            categoryEL.Category = MySql.Data.MySqlClient.MySqlHelper.EscapeString(categoryEL.Category);
-            return Helper.executeNonQueryBool("update categories set category = '" + categoryEL.Category + "' where categoryid = '" + categoryEL.Categoryid + "'");
+            return Helper.executeNonQueryBool("update transactions set customerid = '" + transactionEL.Customerid + "', transactiondatetime = '" + transactionEL.Transactiondatetime + "', totalamount = '" + transactionEL.Totalamount + "', amounttendered = '" + transactionEL.Amounttendered + "', changeamount = '" + transactionEL.ChangeAmount + "', isvoid = '" + transactionEL.Isvoid + "' where transactionid = '" + transactionEL.Transactionid + "'");
         }
 
-        public bool Delete(EL.Registrations.categories categoryEL)
+        public bool Delete(EL.Transactions.transactions transactionEL)
         {
-            return Helper.executeNonQueryBool("delete from categories where categoryid = '" + categoryEL.Categoryid + "'");
+            return Helper.executeNonQueryBool("delete from transactions where transactionid = '" + transactionEL.Transactionid + "'");
+        }
+
+        public DataTable TodaySales(string keywords)
+        {
+            keywords = MySql.Data.MySqlClient.MySqlHelper.EscapeString(keywords);
+            return Helper.executeQuery("select COALESCE(sum(`TOTAL AMOUNT`), 0) AS `SALES` from transactions_view where `TRANSACTION DATE AND TIME` like '%" + keywords + "%' and `IS VOID` = 0");
         }
     }
 }

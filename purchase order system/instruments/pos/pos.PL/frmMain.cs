@@ -14,7 +14,7 @@ namespace pos.PL
     {
         BL.Registrations.products productBL = new BL.Registrations.products();
         BL.Registrations.customers customerBL = new BL.Registrations.customers();
-
+        BL.Transactions.transactions transactionBL = new BL.Transactions.transactions();
 
         public frmMain()
         {
@@ -23,7 +23,7 @@ namespace pos.PL
 
         private void GetInformations()
         {
-            lblTodaySalesValue.Text = "76,000.00";
+            lblTodaySalesValue.Text = methods.ConvertToMoneyFormat(Convert.ToInt32(transactionBL.TodaySales(DateTime.Now.ToString("yyyy-MM-dd")).Rows[0]["SALES"].ToString()));
             lblTotalCustomersValue.Text = customerBL.List("").Rows.Count.ToString();
             lblTotalProductsValue.Text = productBL.List("").Rows.Count.ToString();
         }
@@ -67,6 +67,12 @@ namespace pos.PL
         private void lblNewTransaction_Click(object sender, EventArgs e)
         {
             var pnl = new Transactions.frmNewTransaction();
+            pnl.ShowDialog();
+        }
+
+        private void lblTransactions_Click(object sender, EventArgs e)
+        {
+            var pnl = new Transactions.frmTransactions();
             pnl.ShowDialog();
         }
     }

@@ -32,6 +32,8 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlReports = new System.Windows.Forms.Panel();
+            this.lblInventory = new System.Windows.Forms.Label();
+            this.lblDailySales = new System.Windows.Forms.Label();
             this.lblReports = new System.Windows.Forms.Label();
             this.pnlCategories = new System.Windows.Forms.Panel();
             this.lblCategories = new System.Windows.Forms.Label();
@@ -39,6 +41,8 @@
             this.lblProducts = new System.Windows.Forms.Label();
             this.pnlCustomers = new System.Windows.Forms.Panel();
             this.lblCustomers = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblTransactions = new System.Windows.Forms.Label();
             this.pnlNewTransaction = new System.Windows.Forms.Panel();
             this.lblNewTransaction = new System.Windows.Forms.Label();
             this.pnlBottom = new System.Windows.Forms.Panel();
@@ -56,8 +60,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblTransactions = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -69,19 +71,17 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.lblDailySales = new System.Windows.Forms.Label();
-            this.lblInventory = new System.Windows.Forms.Label();
             this.pnlLeft.SuspendLayout();
             this.pnlReports.SuspendLayout();
             this.pnlCategories.SuspendLayout();
             this.pnlProducts.SuspendLayout();
             this.pnlCustomers.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.pnlNewTransaction.SuspendLayout();
             this.pnlBottom.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -131,6 +131,28 @@
             this.pnlReports.Name = "pnlReports";
             this.pnlReports.Size = new System.Drawing.Size(273, 121);
             this.pnlReports.TabIndex = 0;
+            // 
+            // lblInventory
+            // 
+            this.lblInventory.AutoSize = true;
+            this.lblInventory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblInventory.Font = new System.Drawing.Font("Segoe UI Semilight", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInventory.Location = new System.Drawing.Point(85, 81);
+            this.lblInventory.Name = "lblInventory";
+            this.lblInventory.Size = new System.Drawing.Size(104, 25);
+            this.lblInventory.TabIndex = 3;
+            this.lblInventory.Text = "INVENTORY";
+            // 
+            // lblDailySales
+            // 
+            this.lblDailySales.AutoSize = true;
+            this.lblDailySales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDailySales.Font = new System.Drawing.Font("Segoe UI Semilight", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDailySales.Location = new System.Drawing.Point(85, 49);
+            this.lblDailySales.Name = "lblDailySales";
+            this.lblDailySales.Size = new System.Drawing.Size(107, 25);
+            this.lblDailySales.TabIndex = 2;
+            this.lblDailySales.Text = "DAILY SALES";
             // 
             // lblReports
             // 
@@ -212,6 +234,29 @@
             this.lblCustomers.TabIndex = 1;
             this.lblCustomers.Text = "CUSTOMERS";
             this.lblCustomers.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblTransactions);
+            this.panel4.Controls.Add(this.pictureBox11);
+            this.panel4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 62);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(273, 62);
+            this.panel4.TabIndex = 2;
+            // 
+            // lblTransactions
+            // 
+            this.lblTransactions.AutoSize = true;
+            this.lblTransactions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblTransactions.Font = new System.Drawing.Font("Segoe UI Semilight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransactions.Location = new System.Drawing.Point(57, 17);
+            this.lblTransactions.Name = "lblTransactions";
+            this.lblTransactions.Size = new System.Drawing.Size(159, 30);
+            this.lblTransactions.TabIndex = 1;
+            this.lblTransactions.Text = "TRANSACTIONS";
+            this.lblTransactions.Click += new System.EventHandler(this.lblTransactions_Click);
             // 
             // pnlNewTransaction
             // 
@@ -397,28 +442,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "DASHBOARD";
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.lblTransactions);
-            this.panel4.Controls.Add(this.pictureBox11);
-            this.panel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 62);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(273, 62);
-            this.panel4.TabIndex = 2;
-            // 
-            // lblTransactions
-            // 
-            this.lblTransactions.AutoSize = true;
-            this.lblTransactions.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblTransactions.Font = new System.Drawing.Font("Segoe UI Semilight", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactions.Location = new System.Drawing.Point(57, 17);
-            this.lblTransactions.Name = "lblTransactions";
-            this.lblTransactions.Size = new System.Drawing.Size(159, 30);
-            this.lblTransactions.TabIndex = 1;
-            this.lblTransactions.Text = "TRANSACTIONS";
-            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::pos.PL.Properties.Resources.speedometer;
@@ -511,7 +534,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::pos.PL.Properties.Resources.add1;
+            this.pictureBox2.Image = global::pos.PL.Properties.Resources.shopping_cart__1_;
             this.pictureBox2.Location = new System.Drawing.Point(16, 14);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 36);
@@ -530,28 +553,6 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
-            // 
-            // lblDailySales
-            // 
-            this.lblDailySales.AutoSize = true;
-            this.lblDailySales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDailySales.Font = new System.Drawing.Font("Segoe UI Semilight", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDailySales.Location = new System.Drawing.Point(85, 49);
-            this.lblDailySales.Name = "lblDailySales";
-            this.lblDailySales.Size = new System.Drawing.Size(107, 25);
-            this.lblDailySales.TabIndex = 2;
-            this.lblDailySales.Text = "DAILY SALES";
-            // 
-            // lblInventory
-            // 
-            this.lblInventory.AutoSize = true;
-            this.lblInventory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblInventory.Font = new System.Drawing.Font("Segoe UI Semilight", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInventory.Location = new System.Drawing.Point(85, 81);
-            this.lblInventory.Name = "lblInventory";
-            this.lblInventory.Size = new System.Drawing.Size(104, 25);
-            this.lblInventory.TabIndex = 3;
-            this.lblInventory.Text = "INVENTORY";
             // 
             // frmMain
             // 
@@ -583,6 +584,8 @@
             this.pnlProducts.PerformLayout();
             this.pnlCustomers.ResumeLayout(false);
             this.pnlCustomers.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.pnlNewTransaction.ResumeLayout(false);
             this.pnlNewTransaction.PerformLayout();
             this.pnlBottom.ResumeLayout(false);
@@ -593,8 +596,6 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
