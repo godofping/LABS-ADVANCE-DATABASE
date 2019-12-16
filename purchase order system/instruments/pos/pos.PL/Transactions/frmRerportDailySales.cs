@@ -36,7 +36,7 @@ namespace pos.PL.Transactions
 
         private void frmRerportDailySales_Load(object sender, EventArgs e)
         {
-
+            dtpDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
 
         private void pbGenerateReport_Click(object sender, EventArgs e)
