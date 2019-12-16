@@ -487,13 +487,7 @@ namespace pos.PL
             }
         }
 
-        public static void OnlyIntTXT(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-        }
+
 
         public static void ReadOnlyTXT(bool bol, params TextBox[] i)
         {

@@ -56,8 +56,7 @@ CREATE TABLE `products` (
   `price` float DEFAULT NULL,
   `stocks` int(11) DEFAULT NULL,
   PRIMARY KEY (`productid`),
-  KEY `FK_products` (`categoryid`),
-  CONSTRAINT `FK_products` FOREIGN KEY (`categoryid`) REFERENCES `categories` (`categoryid`)
+  KEY `FK_products` (`categoryid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 /*Data for the table `products` */
@@ -77,9 +76,7 @@ CREATE TABLE `productsintransactions` (
   `amount` float DEFAULT NULL,
   PRIMARY KEY (`productintransactionid`),
   KEY `FK_productsintransactions` (`productid`),
-  KEY `FK_productsintransactions1` (`transactionid`),
-  CONSTRAINT `FK_productsintransactions` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`),
-  CONSTRAINT `FK_productsintransactions1` FOREIGN KEY (`transactionid`) REFERENCES `transactions` (`transactionid`)
+  KEY `FK_productsintransactions1` (`transactionid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 /*Data for the table `productsintransactions` */
@@ -99,8 +96,7 @@ CREATE TABLE `transactions` (
   `changeamount` float DEFAULT NULL,
   `isvoid` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`transactionid`),
-  KEY `FK_transactions` (`customerid`),
-  CONSTRAINT `FK_transactions` FOREIGN KEY (`customerid`) REFERENCES `customers` (`customerid`)
+  KEY `FK_transactions` (`customerid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 /*Data for the table `transactions` */

@@ -176,7 +176,7 @@ namespace pos.PL.Registrations
 
         private void txtStocks_KeyPress(object sender, KeyPressEventArgs e)
         {
-            methods.OnlyIntTXT(sender, e);
+            methods.OnlyNumTXT(sender, e);
         }
     }
 }

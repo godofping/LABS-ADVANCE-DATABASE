@@ -62,7 +62,7 @@
   KEY `FK_productsintransactions1` (`transactionid`),
   CONSTRAINT `FK_productsintransactions` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`),
   CONSTRAINT `FK_productsintransactions1` FOREIGN KEY (`transactionid`) REFERENCES `transactions` (`transactionid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="transactions" view="colnames">
 <left>403</left>
@@ -75,12 +75,12 @@
   `transactiondatetime` datetime DEFAULT NULL,
   `totalamount` float DEFAULT NULL,
   `amounttendered` float DEFAULT NULL,
-  `change` float DEFAULT NULL,
-  `isvoid` bit(1) DEFAULT NULL,
+  `changeamount` float DEFAULT NULL,
+  `isvoid` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`transactionid`),
   KEY `FK_transactions` (`customerid`),
   CONSTRAINT `FK_transactions` FOREIGN KEY (`customerid`) REFERENCES `customers` (`customerid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 </tables>
 </canvas>

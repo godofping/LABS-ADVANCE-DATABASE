@@ -164,7 +164,7 @@ namespace pos.PL.Transactions
                 }
                 else
                 {
-                    MessageBox.Show("PLEASE ADD QUANITY GREATER THAN 0");
+                    MessageBox.Show("PLEASE ADD QUANTITY GREATER THAN 0");
                 }
             }
         }
