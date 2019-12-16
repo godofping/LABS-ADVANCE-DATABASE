@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlReports = new System.Windows.Forms.Panel();
@@ -153,6 +154,7 @@
             this.lblDailySales.Size = new System.Drawing.Size(107, 25);
             this.lblDailySales.TabIndex = 2;
             this.lblDailySales.Text = "DAILY SALES";
+            this.lblDailySales.Click += new System.EventHandler(this.lblDailySales_Click);
             // 
             // lblReports
             // 
@@ -569,6 +571,7 @@
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlBottom);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1024, 564);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

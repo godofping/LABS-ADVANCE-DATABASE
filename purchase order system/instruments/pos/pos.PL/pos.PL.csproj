@@ -79,6 +79,12 @@
     <Compile Include="Transactions\frmNewTransaction.Designer.cs">
       <DependentUpon>frmNewTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactions\frmRerportDailySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmRerportDailySales.Designer.cs">
+      <DependentUpon>frmRerportDailySales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\frmTransactions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmNewTransaction.resx">
       <DependentUpon>frmNewTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmRerportDailySales.resx">
+      <DependentUpon>frmRerportDailySales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmTransactions.resx">
       <DependentUpon>frmTransactions.cs</DependentUpon>

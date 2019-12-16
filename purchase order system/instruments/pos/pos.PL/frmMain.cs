@@ -21,6 +21,16 @@ namespace pos.PL
             InitializeComponent();
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
         private void GetInformations()
         {
             lblTodaySalesValue.Text = methods.ConvertToMoneyFormat(Convert.ToInt32(transactionBL.TodaySales(DateTime.Now.ToString("yyyy-MM-dd")).Rows[0]["SALES"].ToString()));
@@ -73,6 +83,12 @@ namespace pos.PL
         private void lblTransactions_Click(object sender, EventArgs e)
         {
             var pnl = new Transactions.frmTransactions();
+            pnl.ShowDialog();
+        }
+
+        private void lblDailySales_Click(object sender, EventArgs e)
+        {
+            var pnl = new Transactions.frmRerportDailySales();
             pnl.ShowDialog();
         }
     }
