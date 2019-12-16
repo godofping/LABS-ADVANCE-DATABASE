@@ -91,5 +91,11 @@ namespace pos.PL
             var pnl = new Transactions.frmRerportDailySales();
             pnl.ShowDialog();
         }
+
+        private void lblInventory_Click(object sender, EventArgs e)
+        {
+            var pnl = new Transactions.frmReportInventory();
+            pnl.ShowDialog();
+        }
     }
 }

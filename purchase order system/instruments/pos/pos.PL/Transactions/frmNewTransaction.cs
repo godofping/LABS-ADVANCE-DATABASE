@@ -263,6 +263,7 @@ namespace pos.PL.Transactions
                             transactionEL.ChangeAmount = changeamount;
                             transactionEL.Isvoid = 0;
 
+
                             if ((transactionEL.Transactionid = Convert.ToInt32(transactionBL.Insert(transactionEL))) > 0)
                             {
                                 bool bol = true;

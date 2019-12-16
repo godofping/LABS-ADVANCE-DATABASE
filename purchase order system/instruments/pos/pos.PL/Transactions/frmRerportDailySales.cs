@@ -12,6 +12,13 @@ namespace pos.PL.Transactions
 {
     public partial class frmRerportDailySales : Form
     {
+        EL.Transactions.productsintransactions productsintransactionEL = new EL.Transactions.productsintransactions();
+        EL.Transactions.transactions transactionEL = new EL.Transactions.transactions();
+
+        BL.Transactions.productsintransactions productsintransactionBL = new BL.Transactions.productsintransactions();
+        BL.Transactions.transactions transactionBL = new BL.Transactions.transactions();
+
+
         public frmRerportDailySales()
         {
             InitializeComponent();
@@ -32,6 +39,19 @@ namespace pos.PL.Transactions
 
         }
 
-      
+        private void pbGenerateReport_Click(object sender, EventArgs e)
+        {
+            crDailySales crDailySales = new crDailySales();
+
+
+            crDailySales.Database.Tables["transactions_view"].SetDataSource(transactionBL.DailySales(dtpDate.Text));
+            crDailySales.Database.Tables["SALES"].SetDataSource(transactionBL.TodaySales(dtpDate.Text));
+
+            crvDailySales.ReportSource = null;
+            crvDailySales.ReportSource = crDailySales;
+            crvDailySales.Refresh();
+        }
+
+    
     }
 }

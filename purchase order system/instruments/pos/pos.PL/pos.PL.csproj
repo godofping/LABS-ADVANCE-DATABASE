@@ -33,8 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,11 +80,37 @@
     <Compile Include="Registrations\frmProducts.Designer.cs">
       <DependentUpon>frmProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transactions\crDailySales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crDailySales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transactions\crInventory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crInventory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transactions\dsDailySales.cs">
+      <DependentUpon>dsDailySales.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\dsDailySales.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDailySales.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\frmNewTransaction.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transactions\frmNewTransaction.Designer.cs">
       <DependentUpon>frmNewTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmReportInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmReportInventory.Designer.cs">
+      <DependentUpon>frmReportInventory.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactions\frmRerportDailySales.cs">
       <SubType>Form</SubType>
@@ -113,8 +146,19 @@
     <EmbeddedResource Include="Registrations\frmProducts.resx">
       <DependentUpon>frmProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\crDailySales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crDailySales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\crInventory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crInventory.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmNewTransaction.resx">
       <DependentUpon>frmNewTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmReportInventory.resx">
+      <DependentUpon>frmReportInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmRerportDailySales.resx">
       <DependentUpon>frmRerportDailySales.cs</DependentUpon>
@@ -131,6 +175,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Transactions\dsDailySales.xsc">
+      <DependentUpon>dsDailySales.xsd</DependentUpon>
+    </None>
+    <None Include="Transactions\dsDailySales.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDailySales.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Transactions\dsDailySales.xss">
+      <DependentUpon>dsDailySales.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -222,6 +277,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save-money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

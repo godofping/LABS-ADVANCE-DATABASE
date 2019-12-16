@@ -41,5 +41,10 @@ namespace pos.BL.Transactions
         {
             return transactionDL.TodaySales(keywords);
         }
+
+        public DataTable DailySales(string keywords)
+        {
+            return transactionDL.DailySales(keywords);
+        }
     }
 }

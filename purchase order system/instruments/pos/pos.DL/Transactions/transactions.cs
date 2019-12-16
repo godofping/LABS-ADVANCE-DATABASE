@@ -58,5 +58,11 @@ namespace pos.DL.Transactions
             keywords = MySql.Data.MySqlClient.MySqlHelper.EscapeString(keywords);
             return Helper.executeQuery("select COALESCE(sum(`TOTAL AMOUNT`), 0) AS `SALES` from transactions_view where `TRANSACTION DATE AND TIME` like '%" + keywords + "%' and `IS VOID` = 0");
         }
+
+        public DataTable DailySales(string keywords)
+        {
+            keywords = MySql.Data.MySqlClient.MySqlHelper.EscapeString(keywords);
+            return Helper.executeQuery("select * from transactions_view where `TRANSACTION DATE AND TIME` like '%" + keywords + "%' and `IS VOID` = 0");
+        }
     }
 }
