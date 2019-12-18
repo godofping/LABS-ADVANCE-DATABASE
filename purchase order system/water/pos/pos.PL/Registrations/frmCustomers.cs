@@ -174,5 +174,10 @@ namespace pos.PL.Registrations
                 MessageBox.Show("NO SELECTED ITEM");
             }
         }
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            DGVLoad(txtSearch.Text);
+        }
     }
 }

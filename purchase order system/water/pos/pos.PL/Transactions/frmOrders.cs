@@ -172,5 +172,10 @@ namespace pos.PL.Transactions
                 MessageBox.Show("NO SELECTED ITEM");
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            DGVLoad(txtSearch.Text);
+        }
     }
 }

@@ -224,7 +224,7 @@
             // txtMiddleInitial
             // 
             this.txtMiddleInitial.Location = new System.Drawing.Point(7, 208);
-            this.txtMiddleInitial.MaxLength = 3;
+            this.txtMiddleInitial.MaxLength = 1;
             this.txtMiddleInitial.Name = "txtMiddleInitial";
             this.txtMiddleInitial.Size = new System.Drawing.Size(335, 20);
             this.txtMiddleInitial.TabIndex = 16;
@@ -413,8 +413,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlCRUD);
+            this.Controls.Add(this.pnlMain);
             this.MinimumSize = new System.Drawing.Size(1024, 600);
             this.Name = "frmRegisteredStudents";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

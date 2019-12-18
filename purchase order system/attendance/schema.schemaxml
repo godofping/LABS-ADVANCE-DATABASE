@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">students_attendance_db</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="commondetails" view="colnames">
+<left>771</left>
+<top>48</top>
+<width>150</width>
+<height>196</height>
+<sql_create_table>CREATE TABLE `commondetails` (
+  `commondetailid` int(6) NOT NULL AUTO_INCREMENT,
+  `addressid` int(6) DEFAULT NULL,
+  `lastname` varchar(60) DEFAULT NULL,
+  `firstname` varchar(60) DEFAULT NULL,
+  `middlename` varchar(60) DEFAULT NULL,
+  `birthdate` date DEFAULT NULL,
+  `gender` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`commondetailid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="students" view="colnames">
+<left>970</left>
+<top>56</top>
+<width>142</width>
+<height>154</height>
+<sql_create_table>CREATE TABLE `students` (
+  `studentid` int(6) NOT NULL AUTO_INCREMENT,
+  `commondetailid` int(6) DEFAULT NULL,
+  `studentidnumber` varchar(20) DEFAULT NULL,
+  `rfid` varchar(200) DEFAULT NULL,
+  `imagelocation` text,
+  PRIMARY KEY (`studentid`),
+  KEY `FK_students` (`commondetailid`),
+  CONSTRAINT `FK_students` FOREIGN KEY (`commondetailid`) REFERENCES `commondetails` (`commondetailid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="users" view="colnames">
+<left>25</left>
+<top>669</top>
+<width>134</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `users` (
+  `userid` int(6) NOT NULL AUTO_INCREMENT,
+  `username` varchar(60) DEFAULT NULL,
+  `password` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="teachers" view="colnames">
+<left>604</left>
+<top>29</top>
+<width>136</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `teachers` (
+  `teacherid` int(6) NOT NULL AUTO_INCREMENT,
+  `commondetailid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`teacherid`),
+  KEY `FK_teachers` (`commondetailid`),
+  CONSTRAINT `FK_teachers` FOREIGN KEY (`commondetailid`) REFERENCES `commondetails` (`commondetailid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="attendances" view="colnames">
+<left>6</left>
+<top>33</top>
+<width>233</width>
+<height>187</height>
+<sql_create_table>CREATE TABLE `attendances` (
+  `attendanceid` int(6) NOT NULL AUTO_INCREMENT,
+  `subjectsscheduleid` int(6) DEFAULT NULL,
+  `seatassignmentid` int(6) DEFAULT NULL,
+  `attendancedatetime` datetime DEFAULT NULL,
+  `inorout` varchar(20) DEFAULT NULL,
+  `status` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`attendanceid`),
+  KEY `FK_attendances` (`subjectsscheduleid`),
+  KEY `FK_attendances1` (`seatassignmentid`),
+  CONSTRAINT `FK_attendances` FOREIGN KEY (`subjectsscheduleid`) REFERENCES `subjectsschedules` (`subjectscheduleid`),
+  CONSTRAINT `FK_attendances1` FOREIGN KEY (`seatassignmentid`) REFERENCES `seatassignments` (`seatassignmentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="studentsubjectsenrolled" view="colnames">
+<left>771</left>
+<top>268</top>
+<width>225</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `studentsubjectsenrolled` (
+  `studentsubjectenrolledid` int(6) NOT NULL AUTO_INCREMENT,
+  `enrollmentid` int(6) DEFAULT NULL,
+  `subjectscheduleid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`studentsubjectenrolledid`),
+  KEY `FK_studentsubjectsenrolled` (`subjectscheduleid`),
+  KEY `FK_studentsubjectsenrolled1` (`enrollmentid`),
+  CONSTRAINT `FK_studentsubjectsenrolled` FOREIGN KEY (`subjectscheduleid`) REFERENCES `subjectsschedules` (`subjectscheduleid`),
+  CONSTRAINT `FK_studentsubjectsenrolled1` FOREIGN KEY (`enrollmentid`) REFERENCES `enrollments` (`enrollmentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="courses" view="colnames">
+<left>1335</left>
+<top>399</top>
+<width>146</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `courses` (
+  `courseid` int(6) NOT NULL AUTO_INCREMENT,
+  `coursecode` varchar(20) DEFAULT NULL,
+  `coursedescription` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`courseid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="enrollments" view="colnames">
+<left>1152</left>
+<top>202</top>
+<width>125</width>
+<height>180</height>
+<sql_create_table>CREATE TABLE `enrollments` (
+  `enrollmentid` int(6) NOT NULL AUTO_INCREMENT,
+  `studentid` int(6) DEFAULT NULL,
+  `schoolyearid` int(6) DEFAULT NULL,
+  `semesterid` int(6) DEFAULT NULL,
+  `yearlevelid` int(6) DEFAULT NULL,
+  `courseid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`enrollmentid`),
+  KEY `FK_enrollments` (`semesterid`),
+  KEY `FK_enrollments1` (`yearlevelid`),
+  KEY `FK_enrollments3` (`schoolyearid`),
+  KEY `FK_enrollments2` (`studentid`),
+  KEY `FK_enrollments4` (`courseid`),
+  CONSTRAINT `FK_enrollments` FOREIGN KEY (`semesterid`) REFERENCES `semesters` (`semesterid`),
+  CONSTRAINT `FK_enrollments1` FOREIGN KEY (`yearlevelid`) REFERENCES `yearlevels` (`yearlevelid`),
+  CONSTRAINT `FK_enrollments2` FOREIGN KEY (`studentid`) REFERENCES `students` (`studentid`),
+  CONSTRAINT `FK_enrollments3` FOREIGN KEY (`schoolyearid`) REFERENCES `schoolyears` (`schoolyearid`),
+  CONSTRAINT `FK_enrollments4` FOREIGN KEY (`courseid`) REFERENCES `courses` (`courseid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="schoolyears" view="colnames">
+<left>1330</left>
+<top>16</top>
+<width>155</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `schoolyears` (
+  `schoolyearid` int(6) NOT NULL AUTO_INCREMENT,
+  `schoolyear` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`schoolyearid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="semesters" view="colnames">
+<left>1333</left>
+<top>148</top>
+<width>151</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `semesters` (
+  `semesterid` int(6) NOT NULL AUTO_INCREMENT,
+  `semester` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`semesterid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="yearlevels" view="colnames">
+<left>1334</left>
+<top>272</top>
+<width>148</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `yearlevels` (
+  `yearlevelid` int(6) NOT NULL AUTO_INCREMENT,
+  `yearlevel` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`yearlevelid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="rooms" view="colnames">
+<left>623</left>
+<top>464</top>
+<width>143</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `rooms` (
+  `roomid` int(6) NOT NULL AUTO_INCREMENT,
+  `room` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`roomid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="computers" view="colnames">
+<left>503</left>
+<top>661</top>
+<width>110</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `computers` (
+  `computerid` int(6) NOT NULL AUTO_INCREMENT,
+  `computer` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`computerid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="seats" view="colnames">
+<left>1184</left>
+<top>664</top>
+<width>135</width>
+<height>105</height>
+<sql_create_table>CREATE TABLE `seats` (
+  `seatid` int(6) NOT NULL AUTO_INCREMENT,
+  `seat` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`seatid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="subjectsschedules" view="colnames">
+<left>408</left>
+<top>332</top>
+<width>149</width>
+<height>299</height>
+<sql_create_table>CREATE TABLE `subjectsschedules` (
+  `subjectscheduleid` int(6) NOT NULL AUTO_INCREMENT,
+  `subjectid` int(6) DEFAULT NULL,
+  `teacherid` int(6) DEFAULT NULL,
+  `roomid` int(6) DEFAULT NULL,
+  `start` datetime DEFAULT NULL,
+  `end` datetime DEFAULT NULL,
+  `Monday` tinyint(1) DEFAULT NULL,
+  `Tuesday` tinyint(1) DEFAULT NULL,
+  `Wednesday` tinyint(1) DEFAULT NULL,
+  `Thursday` tinyint(1) DEFAULT NULL,
+  `Friday` tinyint(1) DEFAULT NULL,
+  `Saturday` tinyint(1) DEFAULT NULL,
+  `Sunday` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`subjectscheduleid`),
+  KEY `FK_subjects` (`teacherid`),
+  KEY `FK_subjectsschedules1` (`subjectid`),
+  KEY `FK_subjectsschedules3` (`roomid`),
+  CONSTRAINT `FK_subjects` FOREIGN KEY (`teacherid`) REFERENCES `teachers` (`teacherid`),
+  CONSTRAINT `FK_subjectsschedules1` FOREIGN KEY (`subjectid`) REFERENCES `subjects` (`subjectid`),
+  CONSTRAINT `FK_subjectsschedules3` FOREIGN KEY (`roomid`) REFERENCES `rooms` (`roomid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="subjects" view="colnames">
+<left>190</left>
+<top>629</top>
+<width>149</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `subjects` (
+  `subjectid` int(6) NOT NULL AUTO_INCREMENT,
+  `subjectcode` varchar(20) DEFAULT NULL,
+  `subjectdescription` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`subjectid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="seatassignments" view="colnames">
+<left>1061</left>
+<top>493</top>
+<width>252</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `seatassignments` (
+  `seatassignmentid` int(6) NOT NULL AUTO_INCREMENT,
+  `roomeatcomputerassignmentid` int(6) DEFAULT NULL,
+  `studentsubjectenrolledid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`seatassignmentid`),
+  KEY `FK_seatassignments` (`studentsubjectenrolledid`),
+  KEY `FK_seatassignments1` (`roomeatcomputerassignmentid`),
+  CONSTRAINT `FK_seatassignments` FOREIGN KEY (`studentsubjectenrolledid`) REFERENCES `studentsubjectsenrolled` (`studentsubjectenrolledid`),
+  CONSTRAINT `FK_seatassignments1` FOREIGN KEY (`roomeatcomputerassignmentid`) REFERENCES `roomseatcomputersassignment` (`roomeatcomputerassignmentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="roomseatcomputersassignment" view="colnames">
+<left>802</left>
+<top>610</top>
+<width>195</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `roomseatcomputersassignment` (
+  `roomeatcomputerassignmentid` int(6) NOT NULL AUTO_INCREMENT,
+  `roomid` int(6) DEFAULT NULL,
+  `seatid` int(6) DEFAULT NULL,
+  `computerid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`roomeatcomputerassignmentid`),
+  KEY `FK_roomseatcomputersassignment` (`roomid`),
+  KEY `FK_roomseatcomputersassignment1` (`seatid`),
+  KEY `FK_roomseatcomputersassignment2` (`computerid`),
+  CONSTRAINT `FK_roomseatcomputersassignment` FOREIGN KEY (`roomid`) REFERENCES `rooms` (`roomid`),
+  CONSTRAINT `FK_roomseatcomputersassignment1` FOREIGN KEY (`seatid`) REFERENCES `seats` (`seatid`),
+  CONSTRAINT `FK_roomseatcomputersassignment2` FOREIGN KEY (`computerid`) REFERENCES `computers` (`computerid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="smsdeliverieshistory" view="colnames">
+<left>373</left>
+<top>28</top>
+<width>164</width>
+<height>152</height>
+<sql_create_table>CREATE TABLE `smsdeliverieshistory` (
+  `smsdeliveryhistoryid` int(6) NOT NULL AUTO_INCREMENT,
+  `attendanceid` int(6) DEFAULT NULL,
+  `deliverydatetime` datetime DEFAULT NULL,
+  `deliverystatus` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`smsdeliveryhistoryid`),
+  KEY `FK_smsdeliverieshistory` (`attendanceid`),
+  CONSTRAINT `FK_smsdeliverieshistory` FOREIGN KEY (`attendanceid`) REFERENCES `attendances` (`attendanceid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="contactphonenumbers" view="colnames">
+<left>10</left>
+<top>260</top>
+<width>176</width>
+<height>146</height>
+<sql_create_table>CREATE TABLE `contactphonenumbers` (
+  `contactphonenumberid` int(6) NOT NULL AUTO_INCREMENT,
+  `studentid` int(6) DEFAULT NULL,
+  `contactphonenumber` varchar(60) DEFAULT NULL,
+  `relationid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`contactphonenumberid`),
+  KEY `FK_contactphonenumbers` (`relationid`),
+  KEY `FK_contactphonenumbers1` (`studentid`),
+  CONSTRAINT `FK_contactphonenumbers` FOREIGN KEY (`relationid`) REFERENCES `relations` (`relationid`),
+  CONSTRAINT `FK_contactphonenumbers1` FOREIGN KEY (`studentid`) REFERENCES `students` (`studentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="relations" view="colnames">
+<left>230</left>
+<top>373</top>
+<width>99</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `relations` (
+  `relationid` int(6) NOT NULL AUTO_INCREMENT,
+  `relation` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`relationid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
