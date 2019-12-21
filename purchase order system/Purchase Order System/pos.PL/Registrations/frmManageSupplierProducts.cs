@@ -94,7 +94,7 @@ namespace pos.PL.Registrations
         {
             cbProductName.DisplayMember = "Product Name";
             cbProductName.ValueMember = "Product ID";
-            cbProductName.DataSource = inventoryBL.List(Convert.ToInt32(cbSubCategoryName.SelectedValue));
+            cbProductName.DataSource = productBL.ProductsList(Convert.ToInt32(cbSubCategoryName.SelectedValue));
         }
 
         private void GetProductInfo()

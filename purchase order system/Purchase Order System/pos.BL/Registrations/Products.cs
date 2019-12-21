@@ -15,6 +15,11 @@ namespace pos.BL.Registrations
             return ProductDL.List(id);
         }
 
+        public DataTable ProductsList(int id)
+        {
+            return ProductDL.ProductsList(id);
+        }
+
         public long Insert(EL.Registrations.Products productEL)
         {
             return ProductDL.Insert(productEL);

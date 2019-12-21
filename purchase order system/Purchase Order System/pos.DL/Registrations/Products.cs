@@ -15,6 +15,12 @@ namespace pos.DL.Registrations
             return Helper.executeQuery(sQuery);
         }
 
+        public DataTable ProductsList(int id)
+        {
+            string sQuery = "select * from products_view where `subcategoryid` = " + id + "";
+            return Helper.executeQuery(sQuery);
+        }
+
         public long Insert(EL.Registrations.Products productEL)
         {
             return Helper.executeNonQueryLong("insert into products (productname, productdescription, subcategoryid, productsku, productprice) values ('" + productEL.Productname + "', '" + productEL.Productdescription + "', '" + productEL.Subcategoryid + "', '" + productEL.Productsku + "', '" + productEL.Productprice + "')");
