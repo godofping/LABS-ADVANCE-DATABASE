@@ -10,5 +10,8 @@ namespace barangay.EL.Registrations
     {
         int citizenshipid;
         string citizenship;
+
+        public int Citizenshipid { get => citizenshipid; set => citizenshipid = value; }
+        public string Citizenship { get => citizenship; set => citizenship = value; }
     }
 }

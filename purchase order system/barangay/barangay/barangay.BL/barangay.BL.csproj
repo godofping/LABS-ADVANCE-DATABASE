@@ -42,6 +42,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrations\Accomplishments.cs" />
+    <Compile Include="Registrations\Accounts.cs" />
+    <Compile Include="Registrations\Birthinformations.cs" />
+    <Compile Include="Registrations\Citizenships.cs" />
+    <Compile Include="Registrations\Civilstatuses.cs" />
+    <Compile Include="Registrations\Contactdetails.cs" />
+    <Compile Include="Registrations\Educationalattainments.cs" />
+    <Compile Include="Registrations\Educations.cs" />
+    <Compile Include="Registrations\Filelocations.cs" />
+    <Compile Include="Registrations\Homeaddressess.cs" />
+    <Compile Include="Registrations\Householdmembers.cs" />
+    <Compile Include="Registrations\Households.cs" />
+    <Compile Include="Registrations\Imagelocations.cs" />
+    <Compile Include="Registrations\Provincialaddresses.cs" />
+    <Compile Include="Registrations\Puroks.cs" />
+    <Compile Include="Registrations\Religions.cs" />
+    <Compile Include="Registrations\Residents.cs" />
+    <Compile Include="Registrations\Residentscitizenship.cs" />
+    <Compile Include="Registrations\Residentscivilstatus.cs" />
+    <Compile Include="Registrations\Residentshousehold.cs" />
+    <Compile Include="Registrations\Residentshouseholdmember.cs" />
+    <Compile Include="Registrations\Residentsreligion.cs" />
+    <Compile Include="Registrations\Residentssex.cs" />
+    <Compile Include="Registrations\Sex.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\barangay.DL\barangay.DL.csproj">
@@ -52,6 +76,9 @@
       <Project>{0509fb52-c556-4ce3-a7c0-a9e6800be452}</Project>
       <Name>barangay.EL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Transactions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

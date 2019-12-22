@@ -359,6 +359,16 @@ namespace barangay.PL
 
         }
 
+        public static void DGVRenameColumns(DataGridView dgv, params String[] s)
+        {
+            int i = 0;
+            foreach (string d in s)
+            {
+                dgv.Columns[i].HeaderCell.Value = d;
+                i += 1;
+            }
+        }
+
 
         public static void EnabledCB(bool bol, params ComboBox[] i)
         {

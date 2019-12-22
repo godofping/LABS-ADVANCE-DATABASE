@@ -10,5 +10,8 @@ namespace barangay.EL.Registrations
     {
         int religionid;
         string religion;
+
+        public int Religionid { get => religionid; set => religionid = value; }
+        public string Religion { get => religion; set => religion = value; }
     }
 }

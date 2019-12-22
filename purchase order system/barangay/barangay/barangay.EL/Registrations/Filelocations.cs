@@ -12,5 +12,8 @@ namespace barangay.EL.Registrations
         int accomplishmentid;
         string filelocation;
 
+        public int Filelocationid { get => filelocationid; set => filelocationid = value; }
+        public int Accomplishmentid { get => accomplishmentid; set => accomplishmentid = value; }
+        public string Filelocation { get => filelocation; set => filelocation = value; }
     }
 }
