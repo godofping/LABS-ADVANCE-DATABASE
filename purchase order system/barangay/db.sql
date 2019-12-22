@@ -298,23 +298,6 @@ CREATE TABLE `residentscivilstatus` (
 
 /*Data for the table `residentscivilstatus` */
 
-/*Table structure for table `residentsex` */
-
-DROP TABLE IF EXISTS `residentsex`;
-
-CREATE TABLE `residentsex` (
-  `residentsexid` int(6) NOT NULL AUTO_INCREMENT,
-  `residentid` int(6) DEFAULT NULL,
-  `sexid` int(6) DEFAULT NULL,
-  PRIMARY KEY (`residentsexid`),
-  KEY `FK_residentsex` (`sexid`),
-  KEY `FK_residentsex1` (`residentid`),
-  CONSTRAINT `FK_residentsex` FOREIGN KEY (`sexid`) REFERENCES `sex` (`sexid`),
-  CONSTRAINT `FK_residentsex1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `residentsex` */
-
 /*Table structure for table `residentshousehold` */
 
 DROP TABLE IF EXISTS `residentshousehold`;
@@ -366,17 +349,35 @@ CREATE TABLE `residentsreligion` (
 
 /*Data for the table `residentsreligion` */
 
-/*Table structure for table `sex` */
+/*Table structure for table `residentssex` */
 
-DROP TABLE IF EXISTS `sex`;
+DROP TABLE IF EXISTS `residentssex`;
 
-CREATE TABLE `sex` (
+CREATE TABLE `residentssex` (
+  `residentsexid` int(6) NOT NULL AUTO_INCREMENT,
+  `residentid` int(6) DEFAULT NULL,
+  `sexid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`residentsexid`),
+  KEY `FK_residentsex1` (`residentid`),
+  KEY `FK_residentssex` (`sexid`),
+  CONSTRAINT `FK_residentsex` FOREIGN KEY (`sexid`) REFERENCES `sexes` (`sexid`),
+  CONSTRAINT `FK_residentsex1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`),
+  CONSTRAINT `FK_residentssex` FOREIGN KEY (`sexid`) REFERENCES `sexes` (`sexid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `residentssex` */
+
+/*Table structure for table `sexes` */
+
+DROP TABLE IF EXISTS `sexes`;
+
+CREATE TABLE `sexes` (
   `sexid` int(6) NOT NULL AUTO_INCREMENT,
   `sex` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`sexid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*Data for the table `sex` */
+/*Data for the table `sexes` */
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

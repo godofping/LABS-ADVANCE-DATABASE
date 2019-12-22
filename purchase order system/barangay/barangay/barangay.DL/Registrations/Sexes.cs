@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace barangay.DL.Registrations
 {
-    public class Sex
+    public class Sexes
     {
         public DataTable List()
         {
-            return Helper.executeQuery("select * from sex");
+            return Helper.executeQuery("select * from sexes");
         }
 
-        public EL.Registrations.Sex Select(EL.Registrations.Sex sexEL)
+        public EL.Registrations.Sexes Select(EL.Registrations.Sexes sexEL)
         {
-            DataTable dt = Helper.executeQuery("select * from sex where sexid = '" + sexEL.Sexid + "'");
+            DataTable dt = Helper.executeQuery("select * from sexes where sexid = '" + sexEL.Sexid + "'");
 
             if (dt.Rows.Count > 0)
             {

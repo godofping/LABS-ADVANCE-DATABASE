@@ -16,7 +16,7 @@ namespace barangay.DL.Registrations
 
         public EL.Registrations.Householdmembers Select(EL.Registrations.Householdmembers householdmemberEL)
         {
-            DataTable dt = Helper.executeQuery("select * from householdmembers where householdmemberid = '" + householdmemberEL.householdmemberid + "'");
+            DataTable dt = Helper.executeQuery("select * from householdmembers where householdmemberid = '" + householdmemberEL.Householdmemberid + "'");
 
             if (dt.Rows.Count > 0)
             {

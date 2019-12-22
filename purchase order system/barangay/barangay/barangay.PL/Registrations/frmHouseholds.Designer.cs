@@ -32,27 +32,27 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlSearch = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.pnlForm = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlFormGroup = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtHouseholdNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtHousehold = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMain.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.pnlForm.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlFormGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitle
@@ -89,23 +89,23 @@
             // 
             // pnlMain
             // 
-            this.pnlMain.Controls.Add(this.panel2);
+            this.pnlMain.Controls.Add(this.pnlSearch);
             this.pnlMain.Controls.Add(this.dgv);
             this.pnlMain.Location = new System.Drawing.Point(3, 80);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1102, 663);
             this.pnlMain.TabIndex = 7;
             // 
-            // panel2
+            // pnlSearch
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(11, 19);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1084, 100);
-            this.panel2.TabIndex = 7;
+            this.pnlSearch.BackColor = System.Drawing.Color.White;
+            this.pnlSearch.Controls.Add(this.btnAdd);
+            this.pnlSearch.Controls.Add(this.label1);
+            this.pnlSearch.Controls.Add(this.txtSearch);
+            this.pnlSearch.Location = new System.Drawing.Point(11, 19);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(1084, 100);
+            this.pnlSearch.TabIndex = 7;
             // 
             // btnAdd
             // 
@@ -135,13 +135,13 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Search";
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(89, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(406, 33);
-            this.textBox1.TabIndex = 10;
+            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(89, 61);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(406, 33);
+            this.txtSearch.TabIndex = 10;
             // 
             // dgv
             // 
@@ -153,25 +153,25 @@
             // 
             // pnlForm
             // 
-            this.pnlForm.Controls.Add(this.panel1);
+            this.pnlForm.Controls.Add(this.pnlFormGroup);
             this.pnlForm.Location = new System.Drawing.Point(3, 80);
             this.pnlForm.Name = "pnlForm";
             this.pnlForm.Size = new System.Drawing.Size(1102, 663);
             this.pnlForm.TabIndex = 8;
             // 
-            // panel1
+            // pnlFormGroup
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(11, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1082, 650);
-            this.panel1.TabIndex = 13;
+            this.pnlFormGroup.BackColor = System.Drawing.Color.White;
+            this.pnlFormGroup.Controls.Add(this.btnSave);
+            this.pnlFormGroup.Controls.Add(this.btnClose);
+            this.pnlFormGroup.Controls.Add(this.txtHouseholdNumber);
+            this.pnlFormGroup.Controls.Add(this.label4);
+            this.pnlFormGroup.Controls.Add(this.txtHousehold);
+            this.pnlFormGroup.Controls.Add(this.label3);
+            this.pnlFormGroup.Location = new System.Drawing.Point(11, 3);
+            this.pnlFormGroup.Name = "pnlFormGroup";
+            this.pnlFormGroup.Size = new System.Drawing.Size(1082, 650);
+            this.pnlFormGroup.TabIndex = 13;
             // 
             // btnSave
             // 
@@ -209,37 +209,37 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // textBox3
+            // txtHouseholdNumber
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(18, 138);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(406, 27);
-            this.textBox3.TabIndex = 12;
+            this.txtHouseholdNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHouseholdNumber.Location = new System.Drawing.Point(61, 77);
+            this.txtHouseholdNumber.Name = "txtHouseholdNumber";
+            this.txtHouseholdNumber.Size = new System.Drawing.Size(406, 27);
+            this.txtHouseholdNumber.TabIndex = 12;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 113);
+            this.label4.Location = new System.Drawing.Point(57, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(185, 22);
             this.label4.TabIndex = 13;
             this.label4.Text = "Household Number";
             // 
-            // textBox2
+            // txtHousehold
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(18, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(406, 27);
-            this.textBox2.TabIndex = 10;
+            this.txtHousehold.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHousehold.Location = new System.Drawing.Point(61, 159);
+            this.txtHousehold.Name = "txtHousehold";
+            this.txtHousehold.Size = new System.Drawing.Size(406, 27);
+            this.txtHousehold.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 38);
+            this.label3.Location = new System.Drawing.Point(57, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 22);
             this.label3.TabIndex = 11;
@@ -276,12 +276,12 @@
             this.pnlTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMain.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlSearch.ResumeLayout(false);
+            this.pnlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.pnlForm.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlFormGroup.ResumeLayout(false);
+            this.pnlFormGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -293,17 +293,17 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Panel pnlForm;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlFormGroup;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtHousehold;
+        private System.Windows.Forms.TextBox txtHouseholdNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

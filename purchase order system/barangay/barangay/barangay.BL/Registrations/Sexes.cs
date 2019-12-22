@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace barangay.BL.Registrations
 {
-    public class Sex
+    public class Sexes
     {
-        DL.Registrations.Sex sexDL = new DL.Registrations.Sex();
+        DL.Registrations.Sexes sexDL = new DL.Registrations.Sexes();
         public DataTable List()
         {
             return sexDL.List();
         }
 
-        public EL.Registrations.Sex Select(EL.Registrations.Sex sexEL)
+        public EL.Registrations.Sexes Select(EL.Registrations.Sexes sexEL)
         {
             return sexDL.Select(sexEL);
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace barangay.EL.Registrations
 {
-    public class Sex
+    public class Sexes
     {
         int sexid;
         string sex;

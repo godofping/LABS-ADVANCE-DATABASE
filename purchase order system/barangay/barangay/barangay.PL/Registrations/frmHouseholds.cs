@@ -12,9 +12,32 @@ namespace barangay.PL.Registrations
 {
     public partial class frmHouseholds : Form
     {
+        EL.Registrations.Households householdEL = new EL.Registrations.Households();
+
+        BL.Registrations.Households householdBL = new BL.Registrations.Households();
+
+        string s = "";
+
         public frmHouseholds()
         {
             InitializeComponent();
+        }
+
+        private void ClearForm()
+        {
+            methods.ClearTXT(txtHousehold, txtHouseholdNumber);
+        }
+
+        private void DGVPopulate()
+        {
+            methods.LoadDGV(dgv, householdBL.List(txtSearch.Text));
+        }
+
+        private void DGVManage()
+        {
+            DGVPopulate();
+            methods.DGVTheme(dgv);
+            methods.DGVBUTTONAddEdit(dgv);
         }
 
         private void ShowForm(bool bol)
@@ -25,6 +48,7 @@ namespace barangay.PL.Registrations
 
         private void frmHouseholds_Load(object sender, EventArgs e)
         {
+            DGVManage();
             ShowForm(false);
         }
 

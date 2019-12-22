@@ -65,7 +65,7 @@
     <Compile Include="Registrations\Residentshouseholdmember.cs" />
     <Compile Include="Registrations\Residentsreligion.cs" />
     <Compile Include="Registrations\Residentssex.cs" />
-    <Compile Include="Registrations\Sex.cs" />
+    <Compile Include="Registrations\Sexes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Transactions\" />

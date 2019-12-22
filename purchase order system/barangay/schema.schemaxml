@@ -18,9 +18,9 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="residents" view="colnames">
-<left>587</left>
+<left>581</left>
 <top>7</top>
-<width>197</width>
+<width>203</width>
 <height>357</height>
 <sql_create_table>CREATE TABLE `residents` (
   `residentid` int(6) NOT NULL AUTO_INCREMENT,
@@ -261,17 +261,6 @@
   CONSTRAINT `FK_residentscivilstatus1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
-<table name="sex" view="colnames">
-<left>16</left>
-<top>471</top>
-<width>184</width>
-<height>112</height>
-<sql_create_table>CREATE TABLE `sex` (
-  `sexid` int(6) NOT NULL AUTO_INCREMENT,
-  `sex` varchar(15) DEFAULT NULL,
-  PRIMARY KEY (`sexid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
-</table>
 <table name="citizenships" view="colnames">
 <left>13</left>
 <top>617</top>
@@ -338,10 +327,22 @@
   `residentid` int(6) DEFAULT NULL,
   `sexid` int(6) DEFAULT NULL,
   PRIMARY KEY (`residentsexid`),
-  KEY `FK_residentsex` (`sexid`),
   KEY `FK_residentsex1` (`residentid`),
-  CONSTRAINT `FK_residentsex` FOREIGN KEY (`sexid`) REFERENCES `sex` (`sexid`),
-  CONSTRAINT `FK_residentsex1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
+  KEY `FK_residentssex` (`sexid`),
+  CONSTRAINT `FK_residentsex` FOREIGN KEY (`sexid`) REFERENCES `sexes` (`sexid`),
+  CONSTRAINT `FK_residentsex1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`),
+  CONSTRAINT `FK_residentssex` FOREIGN KEY (`sexid`) REFERENCES `sexes` (`sexid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="sexes" view="colnames">
+<left>10</left>
+<top>478</top>
+<width>192</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `sexes` (
+  `sexid` int(6) NOT NULL AUTO_INCREMENT,
+  `sex` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`sexid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 </tables>
