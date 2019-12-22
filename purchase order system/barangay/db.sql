@@ -23,7 +23,6 @@ CREATE TABLE `accomplishments` (
   `accomplishmentid` int(6) NOT NULL AUTO_INCREMENT,
   `title` varchar(200) DEFAULT NULL,
   `dateaccomplished` date DEFAULT NULL,
-  `filelocation` text,
   PRIMARY KEY (`accomplishmentid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -129,6 +128,21 @@ CREATE TABLE `educations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `educations` */
+
+/*Table structure for table `filelocations` */
+
+DROP TABLE IF EXISTS `filelocations`;
+
+CREATE TABLE `filelocations` (
+  `filelocationid` int(6) NOT NULL AUTO_INCREMENT,
+  `accomplishmentid` int(6) DEFAULT NULL,
+  `filelocation` text,
+  PRIMARY KEY (`filelocationid`),
+  KEY `FK_filelocations` (`accomplishmentid`),
+  CONSTRAINT `FK_filelocations` FOREIGN KEY (`accomplishmentid`) REFERENCES `accomplishments` (`accomplishmentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `filelocations` */
 
 /*Table structure for table `homeaddressess` */
 

@@ -6,25 +6,22 @@
 <canvas zoom="100">
 <tables>
 <table name="accomplishments" view="colnames">
-<left>588</left>
-<top>407</top>
-<width>197</width>
+<left>504</left>
+<top>606</top>
+<width>166</width>
 <height>146</height>
 <sql_create_table>CREATE TABLE `accomplishments` (
   `accomplishmentid` int(6) NOT NULL AUTO_INCREMENT,
-  `accountid` int(6) DEFAULT NULL,
   `title` varchar(200) DEFAULT NULL,
   `dateaccomplished` date DEFAULT NULL,
-  `filelocation` text,
-  PRIMARY KEY (`accomplishmentid`),
-  KEY `FK_accomplishments` (`accountid`)
+  PRIMARY KEY (`accomplishmentid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="residents" view="colnames">
-<left>585</left>
-<top>18</top>
-<width>199</width>
-<height>359</height>
+<left>587</left>
+<top>7</top>
+<width>197</width>
+<height>357</height>
 <sql_create_table>CREATE TABLE `residents` (
   `residentid` int(6) NOT NULL AUTO_INCREMENT,
   `barangayidnumber` varchar(20) DEFAULT NULL,
@@ -40,23 +37,22 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="accounts" view="colnames">
-<left>613</left>
-<top>572</top>
-<width>103</width>
-<height>158</height>
+<left>583</left>
+<top>380</top>
+<width>200</width>
+<height>156</height>
 <sql_create_table>CREATE TABLE `accounts` (
   `accountid` int(6) NOT NULL AUTO_INCREMENT,
   `username` varchar(60) DEFAULT NULL,
   `password` varchar(60) DEFAULT NULL,
-  `fullname` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`accountid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="homeaddressess" view="colnames">
-<left>934</left>
-<top>146</top>
-<width>199</width>
-<height>175</height>
+<left>935</left>
+<top>147</top>
+<width>197</width>
+<height>173</height>
 <sql_create_table>CREATE TABLE `homeaddressess` (
   `homeaddressid` int(6) NOT NULL AUTO_INCREMENT,
   `residentid` int(6) DEFAULT NULL,
@@ -72,10 +68,10 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="householdmembers" view="colnames">
-<left>1255</left>
-<top>-6</top>
-<width>201</width>
-<height>131</height>
+<left>1198</left>
+<top>0</top>
+<width>200</width>
+<height>129</height>
 <sql_create_table>CREATE TABLE `householdmembers` (
   `householdmemberid` int(6) NOT NULL AUTO_INCREMENT,
   `householdmember` varchar(60) DEFAULT NULL,
@@ -83,10 +79,10 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="households" view="colnames">
-<left>1254</left>
-<top>300</top>
-<width>199</width>
-<height>133</height>
+<left>1199</left>
+<top>324</top>
+<width>200</width>
+<height>132</height>
 <sql_create_table>CREATE TABLE `households` (
   `householdid` int(6) NOT NULL AUTO_INCREMENT,
   `household` varchar(60) DEFAULT NULL,
@@ -95,10 +91,10 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="puroks" view="colnames">
-<left>1254</left>
-<top>137</top>
-<width>202</width>
-<height>139</height>
+<left>1199</left>
+<top>154</top>
+<width>200</width>
+<height>137</height>
 <sql_create_table>CREATE TABLE `puroks` (
   `purokid` int(6) NOT NULL AUTO_INCREMENT,
   `purok` varchar(60) DEFAULT NULL,
@@ -108,8 +104,8 @@
 <table name="provincialaddresses" view="colnames">
 <left>936</left>
 <top>465</top>
-<width>193</width>
-<height>129</height>
+<width>192</width>
+<height>128</height>
 <sql_create_table>CREATE TABLE `provincialaddresses` (
   `provincialaddressid` int(6) NOT NULL AUTO_INCREMENT,
   `residentid` int(6) DEFAULT NULL,
@@ -124,7 +120,7 @@
 <left>935</left>
 <top>607</top>
 <width>196</width>
-<height>146</height>
+<height>144</height>
 <sql_create_table>CREATE TABLE `contactdetails` (
   `contactdetailid` int(6) NOT NULL AUTO_INCREMENT,
   `residentid` int(6) DEFAULT NULL,
@@ -139,8 +135,8 @@
 <table name="educations" view="colnames">
 <left>247</left>
 <top>5</top>
-<width>189</width>
-<height>171</height>
+<width>188</width>
+<height>169</height>
 <sql_create_table>CREATE TABLE `educations` (
   `educationid` int(6) NOT NULL AUTO_INCREMENT,
   `residentid` int(6) DEFAULT NULL,
@@ -168,7 +164,7 @@
 <table name="imagelocations" view="colnames">
 <left>252</left>
 <top>752</top>
-<width>179</width>
+<width>177</width>
 <height>132</height>
 <sql_create_table>CREATE TABLE `imagelocations` (
   `imagelocationid` int(6) NOT NULL,
@@ -183,7 +179,7 @@
 <left>936</left>
 <top>332</top>
 <width>200</width>
-<height>129</height>
+<height>128</height>
 <sql_create_table>CREATE TABLE `residentshousehold` (
   `residenthouseholdid` int(6) NOT NULL AUTO_INCREMENT,
   `residentid` int(6) DEFAULT NULL,
@@ -196,9 +192,9 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="religions" view="colnames">
-<left>10</left>
-<top>138</top>
-<width>185</width>
+<left>11</left>
+<top>139</top>
+<width>184</width>
 <height>112</height>
 <sql_create_table>CREATE TABLE `religions` (
   `religionid` int(6) NOT NULL AUTO_INCREMENT,
@@ -223,10 +219,10 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="residentsreligion" view="colnames">
-<left>250</left>
+<left>251</left>
 <top>191</top>
 <width>184</width>
-<height>129</height>
+<height>128</height>
 <sql_create_table>CREATE TABLE `residentsreligion` (
   `residentreligionid` int(6) NOT NULL AUTO_INCREMENT,
   `residentid` int(6) DEFAULT NULL,
@@ -241,7 +237,7 @@
 <table name="civilstatuses" view="colnames">
 <left>13</left>
 <top>328</top>
-<width>187</width>
+<width>185</width>
 <height>112</height>
 <sql_create_table>CREATE TABLE `civilstatuses` (
   `civilstatusid` int(6) NOT NULL AUTO_INCREMENT,
@@ -250,10 +246,10 @@
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="residentscivilstatus" view="colnames">
-<left>250</left>
+<left>251</left>
 <top>341</top>
 <width>184</width>
-<height>129</height>
+<height>128</height>
 <sql_create_table>CREATE TABLE `residentscivilstatus` (
   `residentcivilstatusid` int(6) NOT NULL AUTO_INCREMENT,
   `residentid` int(6) DEFAULT NULL,
@@ -276,22 +272,6 @@
   PRIMARY KEY (`sexid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
-<table name="residentsex" view="colnames">
-<left>252</left>
-<top>475</top>
-<width>181</width>
-<height>129</height>
-<sql_create_table>CREATE TABLE `residentsex` (
-  `residentsexid` int(6) NOT NULL AUTO_INCREMENT,
-  `residentid` int(6) DEFAULT NULL,
-  `sexid` int(6) DEFAULT NULL,
-  PRIMARY KEY (`residentsexid`),
-  KEY `FK_residentsex` (`sexid`),
-  KEY `FK_residentsex1` (`residentid`),
-  CONSTRAINT `FK_residentsex` FOREIGN KEY (`sexid`) REFERENCES `sex` (`sexid`),
-  CONSTRAINT `FK_residentsex1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
-</table>
 <table name="citizenships" view="colnames">
 <left>13</left>
 <top>617</top>
@@ -306,8 +286,8 @@
 <table name="residentscitizenship" view="colnames">
 <left>252</left>
 <top>613</top>
-<width>179</width>
-<height>129</height>
+<width>177</width>
+<height>128</height>
 <sql_create_table>CREATE TABLE `residentscitizenship` (
   `residentcitizenshipid` int(6) NOT NULL AUTO_INCREMENT,
   `residentid` int(6) DEFAULT NULL,
@@ -322,8 +302,8 @@
 <table name="birthinformations" view="colnames">
 <left>937</left>
 <top>761</top>
-<width>198</width>
-<height>146</height>
+<width>196</width>
+<height>144</height>
 <sql_create_table>CREATE TABLE `birthinformations` (
   `birthinformationid` int(6) NOT NULL AUTO_INCREMENT,
   `residentid` int(6) DEFAULT NULL,
@@ -332,6 +312,36 @@
   PRIMARY KEY (`birthinformationid`),
   KEY `FK_birthinformations` (`residentid`),
   CONSTRAINT `FK_birthinformations` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="filelocations" view="colnames">
+<left>709</left>
+<top>604</top>
+<width>156</width>
+<height>147</height>
+<sql_create_table>CREATE TABLE `filelocations` (
+  `filelocationid` int(6) NOT NULL AUTO_INCREMENT,
+  `accomplishmentid` int(6) DEFAULT NULL,
+  `filelocation` text,
+  PRIMARY KEY (`filelocationid`),
+  KEY `FK_filelocations` (`accomplishmentid`),
+  CONSTRAINT `FK_filelocations` FOREIGN KEY (`accomplishmentid`) REFERENCES `accomplishments` (`accomplishmentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="residentssex" view="colnames">
+<left>252</left>
+<top>483</top>
+<width>184</width>
+<height>122</height>
+<sql_create_table>CREATE TABLE `residentssex` (
+  `residentsexid` int(6) NOT NULL AUTO_INCREMENT,
+  `residentid` int(6) DEFAULT NULL,
+  `sexid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`residentsexid`),
+  KEY `FK_residentsex` (`sexid`),
+  KEY `FK_residentsex1` (`residentid`),
+  CONSTRAINT `FK_residentsex` FOREIGN KEY (`sexid`) REFERENCES `sex` (`sexid`),
+  CONSTRAINT `FK_residentsex1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 </tables>
