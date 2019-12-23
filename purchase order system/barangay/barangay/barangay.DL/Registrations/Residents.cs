@@ -11,7 +11,7 @@ namespace barangay.DL.Registrations
     {
         public DataTable List(String keyword)
         {
-            return Helper.executeQuery("select * from residents where lastname like '" + keyword + "%'");
+            return Helper.executeQuery("select * from residents where barangayidnumber like '" + keyword + "%' or lastname like '" + keyword + "%' or firstname like '" + keyword + "%' or middlename like '" + keyword + "%' or dateaccomplished like '" + keyword + "%' or daterecorded like '" + keyword + "%'");
         }
 
         public EL.Registrations.Residents Select(EL.Registrations.Residents residentEL)
@@ -46,7 +46,7 @@ namespace barangay.DL.Registrations
 
         public Boolean Update(EL.Registrations.Residents residentEL)
         {
-            return Helper.executeNonQueryBool("update residents set barangayidnumber = '" + residentEL.Barangayidnumber + "', lastname = '" + residentEL.Lastname + "', firstname = '" + residentEL.Firstname + "', middlename = '" + residentEL.Middlename + "', height = '" + residentEL.Height + "', precintnumber = '" + residentEL.Precintnumber + "', ctcnumber = '" + residentEL.Ctcnumber + "', dateaccomplished = '" + residentEL.Dateaccomplished + "', dateordered = '" + residentEL.Daterecorded + "' where residentid = '" + residentEL.Residentid + "'");
+            return Helper.executeNonQueryBool("update residents set barangayidnumber = '" + residentEL.Barangayidnumber + "', lastname = '" + residentEL.Lastname + "', firstname = '" + residentEL.Firstname + "', middlename = '" + residentEL.Middlename + "', height = '" + residentEL.Height + "', precintnumber = '" + residentEL.Precintnumber + "', ctcnumber = '" + residentEL.Ctcnumber + "', dateaccomplished = '" + residentEL.Dateaccomplished + "' where residentid = '" + residentEL.Residentid + "'");
         }
 
         public Boolean Delete(EL.Registrations.Residents residentEL)

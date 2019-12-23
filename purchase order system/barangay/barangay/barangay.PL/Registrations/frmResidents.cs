@@ -88,15 +88,15 @@ namespace barangay.PL.Registrations
 
         private void ClearForm()
         {
-            methods.ClearTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtYearGraduated, txtCourse);
-            methods.ClearCB(cbCitizenship, cbReligion, cbSex, cbCivilStatus, cbEducationalAttainment, cbProfessionOrOccupation);
-            methods.ClearDTP(dtpBirthDate);
+            methods.ClearTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtCourse, txtHouseNumber, txtStreet, txtSubdivision, txtMunicipality, txtProvince, txtPrecintNumber, txtPhoneNumber, txtCellphoneNumber, txtEmailAddress, txtCTCNumber);
+            methods.ClearCB(cbCitizenship, cbReligion, cbSex, cbCivilStatus, cbEducationalAttainment, cbProfessionOrOccupation, cbPurok, cbHouseholdMember);
+            methods.ClearDTP(dtpBirthDate, dtpYearGraduated, dtpDateAccomplished);
             lblTitle.Text = "";
         }
 
         private void PopulateDGV()
         {
-            methods.LoadDGV(dgv, householdBL.List(txtSearch.Text));
+            methods.LoadDGV(dgv, residentBL.List(txtSearch.Text));
         }
 
         private void PopulateCB()
@@ -107,13 +107,15 @@ namespace barangay.PL.Registrations
             methods.LoadCB(cbCivilStatus, civilstatusBL.List(), "civilstatus", "civilstatusid");
             methods.LoadCB(cbEducationalAttainment, educationalattainmentBL.List(), "educationalattainment", "educationalattainmentid");
             methods.LoadCB(cbProfessionOrOccupation, occupationBL.List(), "occupation", "occupationid");
+            methods.LoadCB(cbPurok, purokBL.List(), "purok", "purokid");
+            methods.LoadCB(cbHouseholdMember, householdmemberBL.List(), "householdmember", "householdmemberid");
         }
 
         private void DGVManage()
         {
             PopulateDGV();
-            methods.DGVHiddenColumns(dgv, "householdid");
-            methods.DGVRenameColumns(dgv, "householdid", "Household", "Household Number");
+            methods.DGVHiddenColumns(dgv, "residentid", "height", "precintnumber", "ctcnumber");
+            methods.DGVRenameColumns(dgv, "residentid", "Barangay ID Number", "Last Name", "First Name", "Middle Name", "Height", "Precint Number", "CTC Number", "Date Accomplished", "Date Recorded");
             methods.DGVTheme(dgv);
             methods.DGVBUTTONAddEdit(dgv);
         }
@@ -122,6 +124,10 @@ namespace barangay.PL.Registrations
         {
             pnlMain.Visible = !bol;
             pnlForm.Visible = bol;
+
+            pnlFormGroupStep1.Visible = bol;
+            pnlFormGroupStep2.Visible = !bol;
+            pnlFormGroupStep3.Visible = !bol;
 
             ClearForm();
         }
@@ -155,49 +161,89 @@ namespace barangay.PL.Registrations
             lblTitle.Text = "Adding Resident";
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            bool bol = false;
-
-            if (methods.CheckRequiredTXT(txtBarangayIDNumber, txtLastName))
-            {
-                householdEL.Household = txtBarangayIDNumber.Text;
-                householdEL.Householdnumber = txtLastName.Text;
-
-                if (s.Equals("ADD"))
-                {
-                    bol = householdBL.Insert(householdEL) > 0;
-                }
-                else if (s.Equals("EDIT"))
-                {
-                    bol = householdBL.Update(householdEL);
-                }
-
-                ShowResult(bol);
-            }
-            else
-            {
-                MessageBox.Show("PLEASE COMPLETE ALL REQUIRED FIELDS WITH AN ASTERISK");
-            }
-        }
-
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            householdEL.Householdid = Convert.ToInt32(dgv.SelectedRows[0].Cells["householdid"].Value);
+            residentEL.Residentid = Convert.ToInt32(dgv.SelectedRows[0].Cells["residentid"].Value);
+            educationEL.Residentid = residentEL.Residentid;
+            residentreligionEL.Residentid = residentEL.Residentid;
+            residentcivilstatusEL.Residentid = residentEL.Residentid;
+            residentsexEL.Residentid = residentEL.Residentid;
+            residentcitizenshipEL.Residentid = residentEL.Residentid;
+            residenthouseholdmemberEL.Residentid = residentEL.Residentid;
+            residentoccupationEL.Residentid = residentEL.Residentid;
+            homeaddressEL.Residentid = residentEL.Residentid;
+            residenthouseholdEL.Residentid = residentEL.Residentid;
+            provincialaddressEL.Residentid = residentEL.Residentid;
+            contactdetailEL.Residentid = residentEL.Residentid;
+            birthinformationEL.Residentid = residentEL.Residentid;
+
+
 
             if (e.ColumnIndex == 0)
             {
                 s = "EDIT";
                 ShowForm(true);
-                lblTitle.Text = "Updating Household";
+                lblTitle.Text = "Updating Resident";
+                residentEL = residentBL.Select(residentEL);
+                educationEL = educationBL.Select(educationEL);
+                residentreligionEL = residentreligionBL.Select(residentreligionEL);
+                residentcivilstatusEL = residentcivilstatusBL.Select(residentcivilstatusEL);
+                residentsexEL = residentsexBL.Select(residentsexEL);
+                residentcitizenshipEL = residentcitizenshipBL.Select(residentcitizenshipEL);
+                residenthouseholdmemberEL = residenthouseholdmemberBL.Select(residenthouseholdmemberEL);
+                residentoccupationEL = residentoccupationBL.Select(residentoccupationEL);
+                homeaddressEL = homeaddressBL.Select(homeaddressEL);
+                residenthouseholdEL = residenthouseholdBL.Select(residenthouseholdEL);
+                provincialaddressEL = provincialaddressBL.Select(provincialaddressEL);
+                contactdetailEL = contactdetailBL.Select(contactdetailEL);
+                birthinformationEL = birthinformationBL.Select(birthinformationEL);
 
 
+                txtBarangayIDNumber.Text = residentEL.Barangayidnumber;
+                txtLastName.Text = residentEL.Lastname;
+                txtFirstName.Text = residentEL.Firstname;
+                txtMiddleName.Text = residentEL.Middlename;
+                txtHeight.Text = residentEL.Height;
+                txtPrecintNumber.Text = residentEL.Precintnumber;
+                txtCTCNumber.Text = residentEL.Ctcnumber;
+                dtpDateAccomplished.Text = residentEL.Dateaccomplished;
 
-                householdEL = householdBL.Select(householdEL);
-                txtBarangayIDNumber.Text = householdEL.Household;
-                txtLastName.Text = householdEL.Householdnumber;
 
+                
+
+                cbEducationalAttainment.SelectedValue = educationEL.Educationalattainmentid.ToString();
+                txtCourse.Text = educationEL.Course;
+                dtpYearGraduated.Value = new DateTime(Convert.ToInt32(educationEL.Yeargraduated),1,1);
+
+                cbReligion.SelectedValue = residentreligionEL.Religionid.ToString();
+
+                cbCivilStatus.SelectedValue = residentcivilstatusEL.Civilstatusid;
+
+                cbSex.SelectedValue = residentsexEL.Sexid;
+
+                cbCitizenship.SelectedValue = residentcitizenshipEL.Citizenshipid;
+
+                cbHouseholdMember.SelectedValue = residenthouseholdmemberEL.Householdmemberid;
+
+                cbProfessionOrOccupation.SelectedValue = residentoccupationEL.Occupationid;
+
+                cbPurok.SelectedValue = homeaddressEL.Purokid;
+                txtHouseNumber.Text = homeaddressEL.Housenumber;
+                txtStreet.Text = homeaddressEL.Street;
+                txtSubdivision.Text = homeaddressEL.Subdivision;
+
+                cbHouseholdMember.SelectedValue = residenthouseholdEL.Householdid;
+
+                txtProvince.Text = provincialaddressEL.Province;
+                txtMunicipality.Text = provincialaddressEL.Municipality;
+
+                txtEmailAddress.Text = contactdetailEL.Emailaddress;
+                txtPhoneNumber.Text = contactdetailEL.Phonenumber;
+                txtCellphoneNumber.Text = contactdetailEL.Cellphonenumber;
+
+                txtBirthPlace.Text = birthinformationEL.Birthplace;
+                dtpBirthDate.Text = birthinformationEL.Birthdate;
 
             }
             else if (e.ColumnIndex == 1)
@@ -205,7 +251,20 @@ namespace barangay.PL.Registrations
                 DialogResult dialogResult = MessageBox.Show("ARE YOU SURE TO DELETE THIS SELECTED ITEM?", "DELETING", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    ShowResult(householdBL.Delete(householdEL));
+                    ShowResult((birthinformationBL.Delete(birthinformationEL)) &
+                        (educationBL.Delete(educationEL)) &
+                        (residentreligionBL.Delete(residentreligionEL)) &
+                        (residentcivilstatusBL.Delete(residentcivilstatusEL)) &
+                        (residentsexBL.Delete(residentsexEL)) &
+                        (residentcitizenshipBL.Delete(residentcitizenshipEL)) &
+                        (residenthouseholdmemberBL.Delete(residenthouseholdmemberEL)) &
+                        (residentoccupationBL.Delete(residentoccupationEL)) &
+                        (homeaddressBL.Delete(homeaddressEL)) &
+                        (residenthouseholdBL.Delete(residenthouseholdEL)) &
+                        (provincialaddressBL.Delete(provincialaddressEL)) &
+                        (contactdetailBL.Delete(contactdetailEL)) &
+                        (residentBL.Delete(residentEL)));
+                   
                 }
             }
         }
@@ -217,17 +276,170 @@ namespace barangay.PL.Registrations
 
         private void btnNextStep1_Click(object sender, EventArgs e)
         {
-            pnlFormGroupStep1.Visible = false;
-            pnlFormGroupStep2.Visible = true;
+            if (methods.CheckRequiredTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtCourse) &
+                methods.CheckRequiredCB(cbSex, cbCivilStatus, cbCitizenship, cbReligion, cbEducationalAttainment, cbProfessionOrOccupation) &
+                methods.CheckRequiredDTP(dtpBirthDate, dtpYearGraduated))
+            {
+                pnlFormGroupStep1.Visible = false;
+                pnlFormGroupStep2.Visible = true;
+                pnlFormGroupStep3.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("PLEASE COMPLETE ALL REQUIRED FIELDS WITH AN ASTERISK");
+            }
+
         }
 
+        private void btnNextStep2_Click(object sender, EventArgs e)
+        {
+            if (methods.CheckRequiredTXT(txtHouseNumber, txtStreet, txtMunicipality, txtProvince, txtPrecintNumber, txtEmailAddress, txtPhoneNumber, txtCellphoneNumber, txtCTCNumber) &
+                methods.CheckRequiredCB(cbPurok, cbHouseholdMember) &
+                methods.CheckRequiredDTP(dtpDateAccomplished))
+            {
+                pnlFormGroupStep1.Visible = false;
+                pnlFormGroupStep2.Visible = false;
+                pnlFormGroupStep3.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("PLEASE COMPLETE ALL REQUIRED FIELDS WITH AN ASTERISK");
+            }
+        }
 
         private void btnPreviousStep2_Click(object sender, EventArgs e)
         {
             pnlFormGroupStep1.Visible = true;
             pnlFormGroupStep2.Visible = false;
+            pnlFormGroupStep3.Visible = false;
         }
 
-        
+        private void btnPreviousStep3_Click(object sender, EventArgs e)
+        {
+            pnlFormGroupStep1.Visible = false;
+            pnlFormGroupStep2.Visible = true;
+            pnlFormGroupStep3.Visible = false;
+        }
+
+            
+        private void btnCloseStep1_Click(object sender, EventArgs e)
+        {
+            ShowForm(false);
+        }
+
+        private void btnCloseStep3_Click(object sender, EventArgs e)
+        {
+            ShowForm(false);
+        }
+
+        private void btnCloseStep2_Click(object sender, EventArgs e)
+        {
+            ShowForm(false);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            bool bol = false;
+
+            residentEL.Barangayidnumber = txtBarangayIDNumber.Text;
+            residentEL.Lastname = txtLastName.Text;
+            residentEL.Firstname = txtFirstName.Text;
+            residentEL.Middlename = txtMiddleName.Text;
+            residentEL.Height = txtHeight.Text;
+            residentEL.Precintnumber = txtPrecintNumber.Text;
+            residentEL.Ctcnumber = txtCTCNumber.Text;
+            residentEL.Dateaccomplished = dtpDateAccomplished.Text;
+            residentEL.Daterecorded = DateTime.Now.ToString("yyyy-MM-dd");
+
+            educationEL.Educationalattainmentid = Convert.ToInt32(cbEducationalAttainment.SelectedValue);
+            educationEL.Course = txtCourse.Text;
+            educationEL.Yeargraduated = dtpYearGraduated.Text;
+
+            residentreligionEL.Religionid = Convert.ToInt32(cbReligion.SelectedValue);
+
+            residentcivilstatusEL.Civilstatusid = Convert.ToInt32(cbCivilStatus.SelectedValue);
+
+            residentsexEL.Sexid = Convert.ToInt32(cbSex.SelectedValue);
+
+            residentcitizenshipEL.Citizenshipid = Convert.ToInt32(cbCitizenship.SelectedValue);
+
+            residenthouseholdmemberEL.Householdmemberid = Convert.ToInt32(cbHouseholdMember.SelectedValue);
+
+            residentoccupationEL.Occupationid = Convert.ToInt32(cbProfessionOrOccupation.SelectedValue);
+
+            homeaddressEL.Purokid = Convert.ToInt32(cbPurok.SelectedValue);
+            homeaddressEL.Housenumber = txtHouseNumber.Text;
+            homeaddressEL.Street = txtStreet.Text;
+            homeaddressEL.Subdivision = txtSubdivision.Text;
+
+            residenthouseholdEL.Householdid = Convert.ToInt32(cbHouseholdMember.SelectedValue);
+
+            provincialaddressEL.Province = txtProvince.Text;
+            provincialaddressEL.Municipality = txtMunicipality.Text;
+
+            contactdetailEL.Emailaddress = txtEmailAddress.Text;
+            contactdetailEL.Phonenumber = txtPhoneNumber.Text;
+            contactdetailEL.Cellphonenumber = txtCellphoneNumber.Text;
+
+            birthinformationEL.Birthplace = txtBirthPlace.Text;
+            birthinformationEL.Birthdate = dtpBirthDate.Text;
+
+            if (s.Equals("ADD"))
+            {
+                residentEL.Residentid = Convert.ToInt32(residentBL.Insert(residentEL));
+
+                if (residentEL.Residentid > 0)
+                {
+                    educationEL.Residentid = residentEL.Residentid;
+                    residentreligionEL.Residentid = residentEL.Residentid;
+                    residentcivilstatusEL.Residentid = residentEL.Residentid;
+                    residentsexEL.Residentid = residentEL.Residentid;
+                    residentcitizenshipEL.Residentid = residentEL.Residentid;
+                    residenthouseholdmemberEL.Residentid = residentEL.Residentid;
+                    residentoccupationEL.Residentid = residentEL.Residentid;
+                    homeaddressEL.Residentid = residentEL.Residentid;
+                    residenthouseholdEL.Residentid = residentEL.Residentid;
+                    provincialaddressEL.Residentid = residentEL.Residentid;
+                    contactdetailEL.Residentid = residentEL.Residentid;
+                    birthinformationEL.Residentid = residentEL.Residentid;
+                    
+
+                    bol = ((educationBL.Insert(educationEL) > 0) &
+                        (residentreligionBL.Insert(residentreligionEL) > 0) &
+                        (residentcivilstatusBL.Insert(residentcivilstatusEL) > 0) &
+                        (residentsexBL.Insert(residentsexEL) > 0) &
+                        (residentcitizenshipBL.Insert(residentcitizenshipEL) > 0) &
+                        (residenthouseholdmemberBL.Insert(residenthouseholdmemberEL) > 0) &
+                        (residentoccupationBL.Insert(residentoccupationEL) > 0) &
+                        (homeaddressBL.Insert(homeaddressEL) > 0) &
+                        (residenthouseholdBL.Insert(residenthouseholdEL) > 0) &
+                        (provincialaddressBL.Insert(provincialaddressEL) > 0) &
+                        (contactdetailBL.Insert(contactdetailEL) > 0) &
+                        (birthinformationBL.Insert(birthinformationEL) > 0));
+                }
+
+
+
+            }
+            else if (s.Equals("EDIT"))
+            {
+                bol = ((residentBL.Update(residentEL)) & 
+                        (educationBL.Update(educationEL)) &
+                        (residentreligionBL.Update(residentreligionEL)) &
+                        (residentcivilstatusBL.Update(residentcivilstatusEL)) &
+                        (residentsexBL.Update(residentsexEL)) &
+                        (residentcitizenshipBL.Update(residentcitizenshipEL)) &
+                        (residenthouseholdmemberBL.Update(residenthouseholdmemberEL)) &
+                        (residentoccupationBL.Update(residentoccupationEL)) &
+                        (homeaddressBL.Update(homeaddressEL)) &
+                        (residenthouseholdBL.Update(residenthouseholdEL)) &
+                        (provincialaddressBL.Update(provincialaddressEL)) &
+                        (contactdetailBL.Update(contactdetailEL)) &
+                        (birthinformationBL.Update(birthinformationEL)));
+            }
+
+            ShowResult(bol);
+
+        }
     }
 }

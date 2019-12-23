@@ -32,12 +32,13 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlFormGroupStep1 = new System.Windows.Forms.Panel();
+            this.btnCloseStep1 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.dtpYearGraduated = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.cbProfessionOrOccupation = new System.Windows.Forms.ComboBox();
             this.txtCourse = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtYearGraduated = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.cbEducationalAttainment = new System.Windows.Forms.ComboBox();
@@ -73,7 +74,17 @@
             this.pnlMain = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlForm = new System.Windows.Forms.Panel();
+            this.pnlFormGroupStep3 = new System.Windows.Forms.Panel();
+            this.btnCloseStep3 = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnPreviousStep3 = new System.Windows.Forms.Button();
+            this.label46 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.pnlFormGroupStep2 = new System.Windows.Forms.Panel();
+            this.btnCloseStep2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtCellphoneNumber = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
@@ -117,6 +128,9 @@
             this.pnlSearch.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.pnlForm.SuspendLayout();
+            this.pnlFormGroupStep3.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlFormGroupStep2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -159,6 +173,7 @@
             // pnlFormGroupStep1
             // 
             this.pnlFormGroupStep1.BackColor = System.Drawing.Color.White;
+            this.pnlFormGroupStep1.Controls.Add(this.btnCloseStep1);
             this.pnlFormGroupStep1.Controls.Add(this.groupBox7);
             this.pnlFormGroupStep1.Controls.Add(this.groupBox6);
             this.pnlFormGroupStep1.Controls.Add(this.groupBox5);
@@ -169,13 +184,31 @@
             this.pnlFormGroupStep1.Size = new System.Drawing.Size(1082, 650);
             this.pnlFormGroupStep1.TabIndex = 13;
             // 
+            // btnCloseStep1
+            // 
+            this.btnCloseStep1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnCloseStep1.FlatAppearance.BorderSize = 0;
+            this.btnCloseStep1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseStep1.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseStep1.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCloseStep1.Image = global::barangay.PL.Properties.Resources.delete_button;
+            this.btnCloseStep1.Location = new System.Drawing.Point(962, 572);
+            this.btnCloseStep1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCloseStep1.Name = "btnCloseStep1";
+            this.btnCloseStep1.Size = new System.Drawing.Size(113, 73);
+            this.btnCloseStep1.TabIndex = 106;
+            this.btnCloseStep1.Text = "CLOSE";
+            this.btnCloseStep1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnCloseStep1.UseVisualStyleBackColor = false;
+            this.btnCloseStep1.Click += new System.EventHandler(this.btnCloseStep1_Click);
+            // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.dtpYearGraduated);
             this.groupBox7.Controls.Add(this.label17);
             this.groupBox7.Controls.Add(this.cbProfessionOrOccupation);
             this.groupBox7.Controls.Add(this.txtCourse);
             this.groupBox7.Controls.Add(this.label16);
-            this.groupBox7.Controls.Add(this.txtYearGraduated);
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Controls.Add(this.label14);
             this.groupBox7.Controls.Add(this.cbEducationalAttainment);
@@ -185,6 +218,16 @@
             this.groupBox7.Size = new System.Drawing.Size(461, 320);
             this.groupBox7.TabIndex = 105;
             this.groupBox7.TabStop = false;
+            // 
+            // dtpYearGraduated
+            // 
+            this.dtpYearGraduated.CustomFormat = "yyyy";
+            this.dtpYearGraduated.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.dtpYearGraduated.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpYearGraduated.Location = new System.Drawing.Point(29, 123);
+            this.dtpYearGraduated.Name = "dtpYearGraduated";
+            this.dtpYearGraduated.Size = new System.Drawing.Size(403, 27);
+            this.dtpYearGraduated.TabIndex = 13;
             // 
             // label17
             // 
@@ -206,7 +249,7 @@
             this.cbProfessionOrOccupation.Location = new System.Drawing.Point(28, 263);
             this.cbProfessionOrOccupation.Name = "cbProfessionOrOccupation";
             this.cbProfessionOrOccupation.Size = new System.Drawing.Size(406, 29);
-            this.cbProfessionOrOccupation.TabIndex = 115;
+            this.cbProfessionOrOccupation.TabIndex = 15;
             // 
             // txtCourse
             // 
@@ -214,7 +257,7 @@
             this.txtCourse.Location = new System.Drawing.Point(29, 196);
             this.txtCourse.Name = "txtCourse";
             this.txtCourse.Size = new System.Drawing.Size(406, 27);
-            this.txtCourse.TabIndex = 113;
+            this.txtCourse.TabIndex = 14;
             // 
             // label16
             // 
@@ -225,14 +268,6 @@
             this.label16.Size = new System.Drawing.Size(88, 22);
             this.label16.TabIndex = 114;
             this.label16.Text = "Course *";
-            // 
-            // txtYearGraduated
-            // 
-            this.txtYearGraduated.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYearGraduated.Location = new System.Drawing.Point(29, 123);
-            this.txtYearGraduated.Name = "txtYearGraduated";
-            this.txtYearGraduated.Size = new System.Drawing.Size(406, 27);
-            this.txtYearGraduated.TabIndex = 111;
             // 
             // label15
             // 
@@ -264,7 +299,7 @@
             this.cbEducationalAttainment.Location = new System.Drawing.Point(29, 47);
             this.cbEducationalAttainment.Name = "cbEducationalAttainment";
             this.cbEducationalAttainment.Size = new System.Drawing.Size(406, 29);
-            this.cbEducationalAttainment.TabIndex = 109;
+            this.cbEducationalAttainment.TabIndex = 12;
             // 
             // groupBox6
             // 
@@ -301,7 +336,7 @@
             this.cbCivilStatus.Location = new System.Drawing.Point(26, 46);
             this.cbCivilStatus.Name = "cbCivilStatus";
             this.cbCivilStatus.Size = new System.Drawing.Size(406, 29);
-            this.cbCivilStatus.TabIndex = 103;
+            this.cbCivilStatus.TabIndex = 9;
             // 
             // label8
             // 
@@ -323,7 +358,7 @@
             this.cbReligion.Location = new System.Drawing.Point(26, 175);
             this.cbReligion.Name = "cbReligion";
             this.cbReligion.Size = new System.Drawing.Size(406, 29);
-            this.cbReligion.TabIndex = 91;
+            this.cbReligion.TabIndex = 11;
             // 
             // label7
             // 
@@ -345,7 +380,7 @@
             this.cbCitizenship.Location = new System.Drawing.Point(28, 110);
             this.cbCitizenship.Name = "cbCitizenship";
             this.cbCitizenship.Size = new System.Drawing.Size(406, 29);
-            this.cbCitizenship.TabIndex = 89;
+            this.cbCitizenship.TabIndex = 10;
             // 
             // groupBox5
             // 
@@ -379,7 +414,7 @@
             this.txtLastName.Location = new System.Drawing.Point(28, 118);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(406, 27);
-            this.txtLastName.TabIndex = 59;
+            this.txtLastName.TabIndex = 2;
             // 
             // label4
             // 
@@ -397,7 +432,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(28, 185);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(406, 27);
-            this.txtFirstName.TabIndex = 63;
+            this.txtFirstName.TabIndex = 3;
             // 
             // label5
             // 
@@ -415,7 +450,7 @@
             this.txtMiddleName.Location = new System.Drawing.Point(28, 253);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(406, 27);
-            this.txtMiddleName.TabIndex = 65;
+            this.txtMiddleName.TabIndex = 4;
             // 
             // label6
             // 
@@ -437,7 +472,7 @@
             this.cbSex.Location = new System.Drawing.Point(28, 322);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(194, 29);
-            this.cbSex.TabIndex = 75;
+            this.cbSex.TabIndex = 5;
             // 
             // label11
             // 
@@ -457,7 +492,7 @@
             this.dtpBirthDate.Location = new System.Drawing.Point(245, 322);
             this.dtpBirthDate.Name = "dtpBirthDate";
             this.dtpBirthDate.Size = new System.Drawing.Size(189, 27);
-            this.dtpBirthDate.TabIndex = 73;
+            this.dtpBirthDate.TabIndex = 6;
             // 
             // label10
             // 
@@ -476,7 +511,7 @@
             this.txtHeight.Location = new System.Drawing.Point(28, 450);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(406, 27);
-            this.txtHeight.TabIndex = 77;
+            this.txtHeight.TabIndex = 8;
             // 
             // label12
             // 
@@ -494,7 +529,7 @@
             this.txtBirthPlace.Location = new System.Drawing.Point(28, 383);
             this.txtBirthPlace.Name = "txtBirthPlace";
             this.txtBirthPlace.Size = new System.Drawing.Size(406, 27);
-            this.txtBirthPlace.TabIndex = 71;
+            this.txtBirthPlace.TabIndex = 7;
             // 
             // label9
             // 
@@ -512,7 +547,7 @@
             this.txtBarangayIDNumber.Location = new System.Drawing.Point(28, 52);
             this.txtBarangayIDNumber.Name = "txtBarangayIDNumber";
             this.txtBarangayIDNumber.Size = new System.Drawing.Size(406, 27);
-            this.txtBarangayIDNumber.TabIndex = 61;
+            this.txtBarangayIDNumber.TabIndex = 1;
             // 
             // label3
             // 
@@ -520,9 +555,9 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(24, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 22);
+            this.label3.Size = new System.Drawing.Size(229, 22);
             this.label3.TabIndex = 62;
-            this.label3.Text = "Barangay I.D. No. *";
+            this.label3.Text = "Barangay I.D. Number *";
             // 
             // label18
             // 
@@ -542,7 +577,7 @@
             this.btnNextStep1.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextStep1.ForeColor = System.Drawing.SystemColors.Window;
             this.btnNextStep1.Image = global::barangay.PL.Properties.Resources.right_arrow;
-            this.btnNextStep1.Location = new System.Drawing.Point(904, 569);
+            this.btnNextStep1.Location = new System.Drawing.Point(785, 572);
             this.btnNextStep1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNextStep1.Name = "btnNextStep1";
             this.btnNextStep1.Size = new System.Drawing.Size(171, 73);
@@ -613,16 +648,151 @@
             // 
             // pnlForm
             // 
-            this.pnlForm.Controls.Add(this.pnlFormGroupStep1);
             this.pnlForm.Controls.Add(this.pnlFormGroupStep2);
+            this.pnlForm.Controls.Add(this.pnlFormGroupStep1);
+            this.pnlForm.Controls.Add(this.pnlFormGroupStep3);
             this.pnlForm.Location = new System.Drawing.Point(3, 80);
             this.pnlForm.Name = "pnlForm";
             this.pnlForm.Size = new System.Drawing.Size(1102, 663);
             this.pnlForm.TabIndex = 12;
             // 
+            // pnlFormGroupStep3
+            // 
+            this.pnlFormGroupStep3.BackColor = System.Drawing.Color.White;
+            this.pnlFormGroupStep3.Controls.Add(this.btnCloseStep3);
+            this.pnlFormGroupStep3.Controls.Add(this.groupBox8);
+            this.pnlFormGroupStep3.Controls.Add(this.btnPreviousStep3);
+            this.pnlFormGroupStep3.Controls.Add(this.label46);
+            this.pnlFormGroupStep3.Controls.Add(this.btnSave);
+            this.pnlFormGroupStep3.Location = new System.Drawing.Point(11, 3);
+            this.pnlFormGroupStep3.Name = "pnlFormGroupStep3";
+            this.pnlFormGroupStep3.Size = new System.Drawing.Size(1082, 650);
+            this.pnlFormGroupStep3.TabIndex = 49;
+            // 
+            // btnCloseStep3
+            // 
+            this.btnCloseStep3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnCloseStep3.FlatAppearance.BorderSize = 0;
+            this.btnCloseStep3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseStep3.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseStep3.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCloseStep3.Image = global::barangay.PL.Properties.Resources.delete_button;
+            this.btnCloseStep3.Location = new System.Drawing.Point(963, 570);
+            this.btnCloseStep3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCloseStep3.Name = "btnCloseStep3";
+            this.btnCloseStep3.Size = new System.Drawing.Size(113, 73);
+            this.btnCloseStep3.TabIndex = 61;
+            this.btnCloseStep3.Text = "CLOSE";
+            this.btnCloseStep3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnCloseStep3.UseVisualStyleBackColor = false;
+            this.btnCloseStep3.Click += new System.EventHandler(this.btnCloseStep3_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.button4);
+            this.groupBox8.Controls.Add(this.button3);
+            this.groupBox8.Controls.Add(this.pictureBox2);
+            this.groupBox8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(34, 56);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(1003, 414);
+            this.groupBox8.TabIndex = 60;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Capture Image";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 39.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Window;
+            this.button4.Image = global::barangay.PL.Properties.Resources.clear_button;
+            this.button4.Location = new System.Drawing.Point(656, 220);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(341, 182);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Clear";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 39.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Window;
+            this.button3.Image = global::barangay.PL.Properties.Resources.photo_camera;
+            this.button3.Location = new System.Drawing.Point(656, 23);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(341, 182);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Capture";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pictureBox2.Location = new System.Drawing.Point(7, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(643, 379);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnPreviousStep3
+            // 
+            this.btnPreviousStep3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
+            this.btnPreviousStep3.FlatAppearance.BorderSize = 0;
+            this.btnPreviousStep3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreviousStep3.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreviousStep3.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnPreviousStep3.Image = global::barangay.PL.Properties.Resources.left_arrow__1_;
+            this.btnPreviousStep3.Location = new System.Drawing.Point(7, 569);
+            this.btnPreviousStep3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPreviousStep3.Name = "btnPreviousStep3";
+            this.btnPreviousStep3.Size = new System.Drawing.Size(171, 73);
+            this.btnPreviousStep3.TabIndex = 48;
+            this.btnPreviousStep3.Text = "PREVIOUS STEP";
+            this.btnPreviousStep3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnPreviousStep3.UseVisualStyleBackColor = false;
+            this.btnPreviousStep3.Click += new System.EventHandler(this.btnPreviousStep3_Click);
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(29, 16);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(74, 25);
+            this.label46.TabIndex = 47;
+            this.label46.Text = "Step 3";
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSave.Image = global::barangay.PL.Properties.Resources.save;
+            this.btnSave.Location = new System.Drawing.Point(786, 570);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(171, 73);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // pnlFormGroupStep2
             // 
             this.pnlFormGroupStep2.BackColor = System.Drawing.Color.White;
+            this.pnlFormGroupStep2.Controls.Add(this.btnCloseStep2);
             this.pnlFormGroupStep2.Controls.Add(this.groupBox4);
             this.pnlFormGroupStep2.Controls.Add(this.groupBox3);
             this.pnlFormGroupStep2.Controls.Add(this.groupBox2);
@@ -634,6 +804,24 @@
             this.pnlFormGroupStep2.Name = "pnlFormGroupStep2";
             this.pnlFormGroupStep2.Size = new System.Drawing.Size(1082, 650);
             this.pnlFormGroupStep2.TabIndex = 48;
+            // 
+            // btnCloseStep2
+            // 
+            this.btnCloseStep2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnCloseStep2.FlatAppearance.BorderSize = 0;
+            this.btnCloseStep2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseStep2.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseStep2.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCloseStep2.Image = global::barangay.PL.Properties.Resources.delete_button;
+            this.btnCloseStep2.Location = new System.Drawing.Point(962, 569);
+            this.btnCloseStep2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCloseStep2.Name = "btnCloseStep2";
+            this.btnCloseStep2.Size = new System.Drawing.Size(113, 73);
+            this.btnCloseStep2.TabIndex = 62;
+            this.btnCloseStep2.Text = "CLOSE";
+            this.btnCloseStep2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnCloseStep2.UseVisualStyleBackColor = false;
+            this.btnCloseStep2.Click += new System.EventHandler(this.btnCloseStep2_Click);
             // 
             // groupBox4
             // 
@@ -659,7 +847,7 @@
             this.txtCellphoneNumber.Location = new System.Drawing.Point(29, 261);
             this.txtCellphoneNumber.Name = "txtCellphoneNumber";
             this.txtCellphoneNumber.Size = new System.Drawing.Size(406, 27);
-            this.txtCellphoneNumber.TabIndex = 62;
+            this.txtCellphoneNumber.TabIndex = 25;
             // 
             // txtPhoneNumber
             // 
@@ -667,7 +855,7 @@
             this.txtPhoneNumber.Location = new System.Drawing.Point(29, 189);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(406, 27);
-            this.txtPhoneNumber.TabIndex = 61;
+            this.txtPhoneNumber.TabIndex = 24;
             // 
             // txtPrecintNumber
             // 
@@ -675,7 +863,7 @@
             this.txtPrecintNumber.Location = new System.Drawing.Point(29, 50);
             this.txtPrecintNumber.Name = "txtPrecintNumber";
             this.txtPrecintNumber.Size = new System.Drawing.Size(406, 27);
-            this.txtPrecintNumber.TabIndex = 60;
+            this.txtPrecintNumber.TabIndex = 22;
             // 
             // label23
             // 
@@ -703,7 +891,7 @@
             this.txtEmailAddress.Location = new System.Drawing.Point(29, 116);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(406, 27);
-            this.txtEmailAddress.TabIndex = 56;
+            this.txtEmailAddress.TabIndex = 23;
             // 
             // label25
             // 
@@ -751,7 +939,7 @@
             this.cbHouseholdMember.Location = new System.Drawing.Point(29, 177);
             this.cbHouseholdMember.Name = "cbHouseholdMember";
             this.cbHouseholdMember.Size = new System.Drawing.Size(406, 29);
-            this.cbHouseholdMember.TabIndex = 63;
+            this.cbHouseholdMember.TabIndex = 28;
             // 
             // label22
             // 
@@ -782,7 +970,7 @@
             this.dtpDateAccomplished.Location = new System.Drawing.Point(29, 112);
             this.dtpDateAccomplished.Name = "dtpDateAccomplished";
             this.dtpDateAccomplished.Size = new System.Drawing.Size(406, 27);
-            this.dtpDateAccomplished.TabIndex = 59;
+            this.dtpDateAccomplished.TabIndex = 27;
             // 
             // txtCTCNumber
             // 
@@ -790,7 +978,7 @@
             this.txtCTCNumber.Location = new System.Drawing.Point(29, 47);
             this.txtCTCNumber.Name = "txtCTCNumber";
             this.txtCTCNumber.Size = new System.Drawing.Size(406, 27);
-            this.txtCTCNumber.TabIndex = 57;
+            this.txtCTCNumber.TabIndex = 26;
             // 
             // label21
             // 
@@ -830,7 +1018,7 @@
             this.cbPurok.Location = new System.Drawing.Point(29, 276);
             this.cbPurok.Name = "cbPurok";
             this.cbPurok.Size = new System.Drawing.Size(406, 29);
-            this.cbPurok.TabIndex = 59;
+            this.cbPurok.TabIndex = 19;
             // 
             // label31
             // 
@@ -848,7 +1036,7 @@
             this.txtSubdivision.Location = new System.Drawing.Point(29, 203);
             this.txtSubdivision.Name = "txtSubdivision";
             this.txtSubdivision.Size = new System.Drawing.Size(406, 27);
-            this.txtSubdivision.TabIndex = 56;
+            this.txtSubdivision.TabIndex = 18;
             // 
             // label32
             // 
@@ -866,7 +1054,7 @@
             this.txtHouseNumber.Location = new System.Drawing.Point(29, 54);
             this.txtHouseNumber.Name = "txtHouseNumber";
             this.txtHouseNumber.Size = new System.Drawing.Size(406, 27);
-            this.txtHouseNumber.TabIndex = 54;
+            this.txtHouseNumber.TabIndex = 16;
             // 
             // label33
             // 
@@ -884,7 +1072,7 @@
             this.txtStreet.Location = new System.Drawing.Point(29, 126);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(406, 27);
-            this.txtStreet.TabIndex = 52;
+            this.txtStreet.TabIndex = 17;
             // 
             // label34
             // 
@@ -916,7 +1104,7 @@
             this.txtProvince.Location = new System.Drawing.Point(27, 123);
             this.txtProvince.Name = "txtProvince";
             this.txtProvince.Size = new System.Drawing.Size(406, 27);
-            this.txtProvince.TabIndex = 54;
+            this.txtProvince.TabIndex = 21;
             // 
             // txtMunicipality
             // 
@@ -924,7 +1112,7 @@
             this.txtMunicipality.Location = new System.Drawing.Point(28, 52);
             this.txtMunicipality.Name = "txtMunicipality";
             this.txtMunicipality.Size = new System.Drawing.Size(406, 27);
-            this.txtMunicipality.TabIndex = 53;
+            this.txtMunicipality.TabIndex = 20;
             // 
             // label29
             // 
@@ -982,7 +1170,7 @@
             this.btnNextStep2.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextStep2.ForeColor = System.Drawing.SystemColors.Window;
             this.btnNextStep2.Image = global::barangay.PL.Properties.Resources.right_arrow;
-            this.btnNextStep2.Location = new System.Drawing.Point(904, 569);
+            this.btnNextStep2.Location = new System.Drawing.Point(785, 569);
             this.btnNextStep2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNextStep2.Name = "btnNextStep2";
             this.btnNextStep2.Size = new System.Drawing.Size(171, 73);
@@ -990,6 +1178,7 @@
             this.btnNextStep2.Text = "NEXT STEP";
             this.btnNextStep2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnNextStep2.UseVisualStyleBackColor = false;
+            this.btnNextStep2.Click += new System.EventHandler(this.btnNextStep2_Click);
             // 
             // pnlTitle
             // 
@@ -1017,8 +1206,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1108, 745);
-            this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlTitle);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1041,6 +1230,10 @@
             this.pnlSearch.PerformLayout();
             this.pnlMain.ResumeLayout(false);
             this.pnlForm.ResumeLayout(false);
+            this.pnlFormGroupStep3.ResumeLayout(false);
+            this.pnlFormGroupStep3.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlFormGroupStep2.ResumeLayout(false);
             this.pnlFormGroupStep2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1135,11 +1328,22 @@
         private System.Windows.Forms.ComboBox cbProfessionOrOccupation;
         private System.Windows.Forms.TextBox txtCourse;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtYearGraduated;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cbEducationalAttainment;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbCivilStatus;
+        private System.Windows.Forms.Panel pnlFormGroupStep3;
+        private System.Windows.Forms.Button btnPreviousStep3;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCloseStep3;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnCloseStep2;
+        private System.Windows.Forms.Button btnCloseStep1;
+        private System.Windows.Forms.DateTimePicker dtpYearGraduated;
     }
 }

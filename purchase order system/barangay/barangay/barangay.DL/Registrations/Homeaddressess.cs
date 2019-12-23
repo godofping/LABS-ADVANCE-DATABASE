@@ -15,7 +15,7 @@ namespace barangay.DL.Registrations
 
             if (dt.Rows.Count > 0)
             {
-                homeaddressEL.Homeaddressid = Convert.ToInt32(dt.Rows[0]["educationid"]);
+                homeaddressEL.Homeaddressid = Convert.ToInt32(dt.Rows[0]["homeaddressid"]);
                 homeaddressEL.Residentid = Convert.ToInt32(dt.Rows[0]["residentid"]);
                 homeaddressEL.Purokid = Convert.ToInt32(dt.Rows[0]["purokid"]);
                 homeaddressEL.Housenumber = dt.Rows[0]["housenumber"].ToString();
