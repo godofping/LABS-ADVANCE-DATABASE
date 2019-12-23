@@ -20,7 +20,7 @@ namespace barangay.DL.Registrations
 
             if (dt.Rows.Count > 0)
             {
-                householdEL.Householdid = Convert.ToInt32(dt.Rows[0]["householdEL"]);
+                householdEL.Householdid = Convert.ToInt32(dt.Rows[0]["householdid"]);
                 householdEL.Household = dt.Rows[0]["household"].ToString();
                 householdEL.Householdnumber = dt.Rows[0]["householdnumber"].ToString();
 

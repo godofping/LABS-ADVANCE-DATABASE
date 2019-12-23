@@ -103,6 +103,16 @@ namespace barangay.PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap employee__64_ {
+            get {
+                object obj = ResourceManager.GetObject("employee (64)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap family {
             get {
                 object obj = ResourceManager.GetObject("family", resourceCulture);
@@ -143,6 +153,16 @@ namespace barangay.PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap left_arrow__1_ {
+            get {
+                object obj = ResourceManager.GetObject("left-arrow (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout__3_ {
             get {
                 object obj = ResourceManager.GetObject("logout (3)", resourceCulture);
@@ -166,6 +186,16 @@ namespace barangay.PL.Properties {
         internal static System.Drawing.Bitmap plus_sign_in_circle__2_ {
             get {
                 object obj = ResourceManager.GetObject("plus-sign-in-circle (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_arrow {
+            get {
+                object obj = ResourceManager.GetObject("right-arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

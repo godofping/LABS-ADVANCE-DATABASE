@@ -23,19 +23,40 @@ namespace barangay.PL.Registrations
             InitializeComponent();
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        public class BufferedPanel : Panel
+        {
+            public BufferedPanel()
+            {
+                DoubleBuffered = true;
+            }
+        }
+
         private void ClearForm()
         {
             methods.ClearTXT(txtHousehold, txtHouseholdNumber);
+            lblTitle.Text = "";
         }
 
-        private void DGVPopulate()
+        private void PopulateDGV()
         {
             methods.LoadDGV(dgv, householdBL.List(txtSearch.Text));
         }
 
         private void DGVManage()
         {
-            DGVPopulate();
+            PopulateDGV();
+            methods.DGVHiddenColumns(dgv, "householdid");
+            methods.DGVRenameColumns(dgv, "householdid", "Household", "Household Number");
             methods.DGVTheme(dgv);
             methods.DGVBUTTONAddEdit(dgv);
         }
@@ -44,6 +65,22 @@ namespace barangay.PL.Registrations
         {
             pnlMain.Visible = !bol;
             pnlForm.Visible = bol;
+
+            ClearForm();
+        }
+
+        private void ShowResult(bool bol)
+        {
+            if (bol)
+            {
+                MessageBox.Show("SUCCESS");
+                PopulateDGV();
+                ShowForm(false);
+            }
+            else
+            {
+                MessageBox.Show("FAILED");
+            }
         }
 
         private void frmHouseholds_Load(object sender, EventArgs e)
@@ -54,12 +91,36 @@ namespace barangay.PL.Registrations
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            s = "ADD";
             ShowForm(true);
+            lblTitle.Text = "Adding Household";
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            ShowForm(false);
+            bool bol = false;
+
+            if (methods.CheckRequiredTXT(txtHousehold, txtHouseholdNumber))
+            {
+                householdEL.Household = txtHousehold.Text;
+                householdEL.Householdnumber = txtHouseholdNumber.Text;
+
+                if (s.Equals("ADD"))
+                {
+                    bol =  householdBL.Insert(householdEL) > 0;
+                }
+                else if (s.Equals("EDIT"))
+                {
+                    bol = householdBL.Update(householdEL);
+                }
+
+                ShowResult(bol);
+            }
+            else
+            {
+                MessageBox.Show("PLEASE COMPLETE ALL REQUIRED FIELDS WITH AN ASTERISK");
+            }  
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -67,6 +128,38 @@ namespace barangay.PL.Registrations
             ShowForm(false);
         }
 
-        
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            householdEL.Householdid = Convert.ToInt32(dgv.SelectedRows[0].Cells["householdid"].Value);
+
+            if (e.ColumnIndex == 0)
+            {
+                s = "EDIT";
+                ShowForm(true);
+                lblTitle.Text = "Updating Household";
+                
+
+
+                householdEL = householdBL.Select(householdEL);
+                txtHousehold.Text = householdEL.Household;
+                txtHouseholdNumber.Text = householdEL.Householdnumber;
+
+                
+            }
+            else if (e.ColumnIndex == 1)
+            {
+                DialogResult dialogResult = MessageBox.Show("ARE YOU SURE TO DELETE THIS SELECTED ITEM?", "DELETING", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ShowResult(householdBL.Delete(householdEL));
+                }
+            }
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            PopulateDGV();
+        }
     }
 }

@@ -65,9 +65,11 @@ CREATE TABLE `citizenships` (
   `citizenshipid` int(6) NOT NULL AUTO_INCREMENT,
   `citizenship` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`citizenshipid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `citizenships` */
+
+insert  into `citizenships`(`citizenshipid`,`citizenship`) values (1,'FILIPINO'),(2,'ALIEN');
 
 /*Table structure for table `civilstatuses` */
 
@@ -77,9 +79,11 @@ CREATE TABLE `civilstatuses` (
   `civilstatusid` int(6) NOT NULL AUTO_INCREMENT,
   `civilstatus` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`civilstatusid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `civilstatuses` */
+
+insert  into `civilstatuses`(`civilstatusid`,`civilstatus`) values (1,'SINGLE'),(2,'MARRIED'),(3,'IN A CIVIL UNION'),(4,'ADOPTED'),(5,'DIVORCED');
 
 /*Table structure for table `contactdetails` */
 
@@ -106,9 +110,11 @@ CREATE TABLE `educationalattainments` (
   `educationalattainmentid` int(6) NOT NULL AUTO_INCREMENT,
   `educationalattainment` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`educationalattainmentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `educationalattainments` */
+
+insert  into `educationalattainments`(`educationalattainmentid`,`educationalattainment`) values (1,'ELEMENTARY LEVEL'),(2,'ELEMENTARY GRADUATE'),(3,'HIGH SCHOOL LEVEL'),(4,'HIGH SCHOOL GRADUATE'),(5,'COLLEGE LEVEL'),(6,'COLLEGE GRADUATE'),(7,'OUT OF SCHOOL YOUTH');
 
 /*Table structure for table `educations` */
 
@@ -172,9 +178,11 @@ CREATE TABLE `householdmembers` (
   `householdmemberid` int(6) NOT NULL AUTO_INCREMENT,
   `householdmember` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`householdmemberid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `householdmembers` */
+
+insert  into `householdmembers`(`householdmemberid`,`householdmember`) values (1,'HEAD'),(2,'HUSBAND'),(3,'WIFE'),(4,'SON'),(5,'DAUGHTER');
 
 /*Table structure for table `households` */
 
@@ -185,9 +193,11 @@ CREATE TABLE `households` (
   `household` varchar(60) DEFAULT NULL,
   `householdnumber` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`householdid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `households` */
+
+insert  into `households`(`householdid`,`household`,`householdnumber`) values (1,'MORALES','M10-0021'),(3,'RONCESVALLES','M10-0022'),(4,'PARADERO','M10-0023'),(5,'JADRAQUE','M10-0024'),(6,'MALINAO','M10-0025');
 
 /*Table structure for table `imagelocations` */
 
@@ -203,6 +213,18 @@ CREATE TABLE `imagelocations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `imagelocations` */
+
+/*Table structure for table `occupations` */
+
+DROP TABLE IF EXISTS `occupations`;
+
+CREATE TABLE `occupations` (
+  `occupationid` int(6) NOT NULL AUTO_INCREMENT,
+  `occupation` varchar(80) DEFAULT NULL,
+  PRIMARY KEY (`occupationid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `occupations` */
 
 /*Table structure for table `provincialaddresses` */
 
@@ -228,9 +250,11 @@ CREATE TABLE `puroks` (
   `purokid` int(6) NOT NULL AUTO_INCREMENT,
   `purok` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`purokid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `puroks` */
+
+insert  into `puroks`(`purokid`,`purok`) values (1,'MALIGAYA'),(2,'MABUHAY'),(3,'BAGONG SILANG'),(4,'BAGONG SIKAT'),(5,'PAG-ASA'),(6,'MABUHAY'),(7,'TAGUMPAY'),(8,'MASAGANA'),(9,'KAUNLARAN'),(10,'SITIO EL-ULIT');
 
 /*Table structure for table `religions` */
 
@@ -240,9 +264,11 @@ CREATE TABLE `religions` (
   `religionid` int(6) NOT NULL AUTO_INCREMENT,
   `religion` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`religionid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `religions` */
+
+insert  into `religions`(`religionid`,`religion`) values (1,'ROMAN CATHOLIC CHRISTIANITY'),(2,'PROTESTANT CHRISTIANITY'),(3,'ISLAM'),(4,'OTHER'),(5,'TRIBAL RELIGIONS'),(6,'NONE');
 
 /*Table structure for table `residents` */
 
@@ -332,6 +358,23 @@ CREATE TABLE `residentshouseholdmember` (
 
 /*Data for the table `residentshouseholdmember` */
 
+/*Table structure for table `residentsoccupation` */
+
+DROP TABLE IF EXISTS `residentsoccupation`;
+
+CREATE TABLE `residentsoccupation` (
+  `residentoccupationid` int(6) NOT NULL AUTO_INCREMENT,
+  `residentid` int(6) DEFAULT NULL,
+  `occupationid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`residentoccupationid`),
+  KEY `FK_residentsoccupation` (`occupationid`),
+  KEY `FK_residentsoccupation1` (`residentid`),
+  CONSTRAINT `FK_residentsoccupation` FOREIGN KEY (`occupationid`) REFERENCES `occupations` (`occupationid`),
+  CONSTRAINT `FK_residentsoccupation1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `residentsoccupation` */
+
 /*Table structure for table `residentsreligion` */
 
 DROP TABLE IF EXISTS `residentsreligion`;
@@ -375,9 +418,11 @@ CREATE TABLE `sexes` (
   `sexid` int(6) NOT NULL AUTO_INCREMENT,
   `sex` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`sexid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sexes` */
+
+insert  into `sexes`(`sexid`,`sex`) values (1,'MALE'),(2,'FEMALE');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

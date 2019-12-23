@@ -76,7 +76,7 @@
   `householdmemberid` int(6) NOT NULL AUTO_INCREMENT,
   `householdmember` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`householdmemberid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="households" view="colnames">
 <left>1199</left>
@@ -88,7 +88,7 @@
   `household` varchar(60) DEFAULT NULL,
   `householdnumber` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`householdid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="puroks" view="colnames">
 <left>1199</left>
@@ -99,7 +99,7 @@
   `purokid` int(6) NOT NULL AUTO_INCREMENT,
   `purok` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`purokid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="provincialaddresses" view="colnames">
 <left>936</left>
@@ -159,7 +159,7 @@
   `educationalattainmentid` int(6) NOT NULL AUTO_INCREMENT,
   `educationalattainment` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`educationalattainmentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="imagelocations" view="colnames">
 <left>252</left>
@@ -200,7 +200,7 @@
   `religionid` int(6) NOT NULL AUTO_INCREMENT,
   `religion` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`religionid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="residentshouseholdmember" view="colnames">
 <left>928</left>
@@ -243,7 +243,7 @@
   `civilstatusid` int(6) NOT NULL AUTO_INCREMENT,
   `civilstatus` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`civilstatusid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="residentscivilstatus" view="colnames">
 <left>251</left>
@@ -270,7 +270,7 @@
   `citizenshipid` int(6) NOT NULL AUTO_INCREMENT,
   `citizenship` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`citizenshipid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="residentscitizenship" view="colnames">
 <left>252</left>
@@ -343,6 +343,33 @@
   `sexid` int(6) NOT NULL AUTO_INCREMENT,
   `sex` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`sexid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="occupations" view="colnames">
+<left>1375</left>
+<top>517</top>
+<width>117</width>
+<height>112</height>
+<sql_create_table>CREATE TABLE `occupations` (
+  `occupationid` int(6) NOT NULL AUTO_INCREMENT,
+  `occupation` varchar(80) DEFAULT NULL,
+  PRIMARY KEY (`occupationid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+</table>
+<table name="residentsoccupation" view="colnames">
+<left>1178</left>
+<top>516</top>
+<width>163</width>
+<height>129</height>
+<sql_create_table>CREATE TABLE `residentsoccupation` (
+  `residentoccupationid` int(6) NOT NULL AUTO_INCREMENT,
+  `residentid` int(6) DEFAULT NULL,
+  `occupationid` int(6) DEFAULT NULL,
+  PRIMARY KEY (`residentoccupationid`),
+  KEY `FK_residentsoccupation` (`occupationid`),
+  KEY `FK_residentsoccupation1` (`residentid`),
+  CONSTRAINT `FK_residentsoccupation` FOREIGN KEY (`occupationid`) REFERENCES `occupations` (`occupationid`),
+  CONSTRAINT `FK_residentsoccupation1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 </tables>

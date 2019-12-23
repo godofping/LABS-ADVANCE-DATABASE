@@ -55,6 +55,7 @@
     <Compile Include="Registrations\Householdmembers.cs" />
     <Compile Include="Registrations\Households.cs" />
     <Compile Include="Registrations\Imagelocations.cs" />
+    <Compile Include="Registrations\Occupations.cs" />
     <Compile Include="Registrations\Provincialaddresses.cs" />
     <Compile Include="Registrations\Puroks.cs" />
     <Compile Include="Registrations\Religions.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Registrations\Residentscivilstatus.cs" />
     <Compile Include="Registrations\Residentshousehold.cs" />
     <Compile Include="Registrations\Residentshouseholdmember.cs" />
+    <Compile Include="Registrations\Residentsoccupation.cs" />
     <Compile Include="Registrations\Residentsreligion.cs" />
     <Compile Include="Registrations\Residentssex.cs" />
     <Compile Include="Registrations\Sexes.cs" />

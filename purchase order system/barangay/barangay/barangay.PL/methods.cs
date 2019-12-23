@@ -277,9 +277,14 @@ namespace barangay.PL
         public static void DGVTheme(DataGridView dgv)
         {
 
-            dgv.BackgroundColor = Color.White;
+            dgv.DefaultCellStyle.SelectionBackColor = ColorTranslator.FromHtml("#fd66a6");
+            dgv.DefaultCellStyle.SelectionForeColor = ColorTranslator.FromHtml("#fff");
 
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 12, FontStyle.Italic);
+
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 13, FontStyle.Underline);
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#fd66a6");
+
+
             dgv.DefaultCellStyle.Font = new Font("Century Gothic", 11, FontStyle.Regular);
 
 
@@ -313,6 +318,8 @@ namespace barangay.PL
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+
 
 
             Type dgvType = dgv.GetType();
