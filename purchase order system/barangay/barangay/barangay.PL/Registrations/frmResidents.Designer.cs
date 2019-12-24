@@ -32,7 +32,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlFormGroupStep1 = new System.Windows.Forms.Panel();
-            this.btnCloseStep1 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dtpYearGraduated = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
@@ -67,15 +66,12 @@
             this.txtBarangayIDNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnNextStep1 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlForm = new System.Windows.Forms.Panel();
             this.pnlFormGroupStep2 = new System.Windows.Forms.Panel();
-            this.btnCloseStep2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtCellphoneNumber = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
@@ -105,9 +101,7 @@
             this.txtMunicipality = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.btnPreviousStep2 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.btnNextStep2 = new System.Windows.Forms.Button();
             this.pnlFormGroupStep3 = new System.Windows.Forms.Panel();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnSelectHousehold = new System.Windows.Forms.Button();
@@ -115,20 +109,13 @@
             this.label22 = new System.Windows.Forms.Label();
             this.txtHousehold = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.btnCloseStep3 = new System.Windows.Forms.Button();
             this.gbCaptureImage = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnPreviousStep3 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
             this.gbSearchHousehold = new System.Windows.Forms.GroupBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txtSearchHousehold = new System.Windows.Forms.TextBox();
             this.dgvHousehold = new System.Windows.Forms.DataGridView();
             this.pnlTitle = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.rbNone = new System.Windows.Forms.RadioButton();
             this.rbPWD = new System.Windows.Forms.RadioButton();
@@ -137,6 +124,19 @@
             this.rbWomen = new System.Windows.Forms.RadioButton();
             this.rbHouseholdHeads = new System.Windows.Forms.RadioButton();
             this.btnCancelSearchHousehold = new System.Windows.Forms.Button();
+            this.btnCloseStep3 = new System.Windows.Forms.Button();
+            this.btnPreviousStep3 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnCloseStep1 = new System.Windows.Forms.Button();
+            this.btnNextStep1 = new System.Windows.Forms.Button();
+            this.btnCloseStep2 = new System.Windows.Forms.Button();
+            this.btnPreviousStep2 = new System.Windows.Forms.Button();
+            this.btnNextStep2 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.pnlFormGroupStep1.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -153,12 +153,12 @@
             this.pnlFormGroupStep3.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.gbCaptureImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gbSearchHousehold.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHousehold)).BeginInit();
             this.pnlTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
@@ -204,24 +204,6 @@
             this.pnlFormGroupStep1.Name = "pnlFormGroupStep1";
             this.pnlFormGroupStep1.Size = new System.Drawing.Size(1082, 650);
             this.pnlFormGroupStep1.TabIndex = 13;
-            // 
-            // btnCloseStep1
-            // 
-            this.btnCloseStep1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnCloseStep1.FlatAppearance.BorderSize = 0;
-            this.btnCloseStep1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseStep1.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseStep1.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCloseStep1.Image = global::barangay.PL.Properties.Resources.delete_button;
-            this.btnCloseStep1.Location = new System.Drawing.Point(962, 569);
-            this.btnCloseStep1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCloseStep1.Name = "btnCloseStep1";
-            this.btnCloseStep1.Size = new System.Drawing.Size(113, 73);
-            this.btnCloseStep1.TabIndex = 106;
-            this.btnCloseStep1.Text = "CLOSE";
-            this.btnCloseStep1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnCloseStep1.UseVisualStyleBackColor = false;
-            this.btnCloseStep1.Click += new System.EventHandler(this.btnCloseStep1_Click);
             // 
             // groupBox7
             // 
@@ -591,24 +573,6 @@
             this.label18.TabIndex = 47;
             this.label18.Text = "Step 1";
             // 
-            // btnNextStep1
-            // 
-            this.btnNextStep1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
-            this.btnNextStep1.FlatAppearance.BorderSize = 0;
-            this.btnNextStep1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextStep1.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextStep1.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnNextStep1.Image = global::barangay.PL.Properties.Resources.right_arrow;
-            this.btnNextStep1.Location = new System.Drawing.Point(785, 569);
-            this.btnNextStep1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnNextStep1.Name = "btnNextStep1";
-            this.btnNextStep1.Size = new System.Drawing.Size(171, 73);
-            this.btnNextStep1.TabIndex = 17;
-            this.btnNextStep1.Text = "NEXT STEP";
-            this.btnNextStep1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnNextStep1.UseVisualStyleBackColor = false;
-            this.btnNextStep1.Click += new System.EventHandler(this.btnNextStep1_Click);
-            // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -629,24 +593,6 @@
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(1084, 100);
             this.pnlSearch.TabIndex = 7;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAdd.Image = global::barangay.PL.Properties.Resources.plus_sign_in_circle__2_;
-            this.btnAdd.Location = new System.Drawing.Point(966, 15);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(113, 73);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // pnlMain
             // 
@@ -694,24 +640,6 @@
             this.pnlFormGroupStep2.Name = "pnlFormGroupStep2";
             this.pnlFormGroupStep2.Size = new System.Drawing.Size(1082, 650);
             this.pnlFormGroupStep2.TabIndex = 48;
-            // 
-            // btnCloseStep2
-            // 
-            this.btnCloseStep2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnCloseStep2.FlatAppearance.BorderSize = 0;
-            this.btnCloseStep2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseStep2.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseStep2.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCloseStep2.Image = global::barangay.PL.Properties.Resources.delete_button;
-            this.btnCloseStep2.Location = new System.Drawing.Point(962, 569);
-            this.btnCloseStep2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCloseStep2.Name = "btnCloseStep2";
-            this.btnCloseStep2.Size = new System.Drawing.Size(113, 73);
-            this.btnCloseStep2.TabIndex = 62;
-            this.btnCloseStep2.Text = "CLOSE";
-            this.btnCloseStep2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnCloseStep2.UseVisualStyleBackColor = false;
-            this.btnCloseStep2.Click += new System.EventHandler(this.btnCloseStep2_Click);
             // 
             // groupBox4
             // 
@@ -1012,24 +940,6 @@
             this.label30.TabIndex = 51;
             this.label30.Text = "City/Town *";
             // 
-            // btnPreviousStep2
-            // 
-            this.btnPreviousStep2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
-            this.btnPreviousStep2.FlatAppearance.BorderSize = 0;
-            this.btnPreviousStep2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreviousStep2.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreviousStep2.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnPreviousStep2.Image = global::barangay.PL.Properties.Resources.left_arrow__1_;
-            this.btnPreviousStep2.Location = new System.Drawing.Point(7, 569);
-            this.btnPreviousStep2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPreviousStep2.Name = "btnPreviousStep2";
-            this.btnPreviousStep2.Size = new System.Drawing.Size(171, 73);
-            this.btnPreviousStep2.TabIndex = 48;
-            this.btnPreviousStep2.Text = "PREVIOUS STEP";
-            this.btnPreviousStep2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnPreviousStep2.UseVisualStyleBackColor = false;
-            this.btnPreviousStep2.Click += new System.EventHandler(this.btnPreviousStep2_Click);
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -1039,24 +949,6 @@
             this.label19.Size = new System.Drawing.Size(74, 25);
             this.label19.TabIndex = 47;
             this.label19.Text = "Step 2";
-            // 
-            // btnNextStep2
-            // 
-            this.btnNextStep2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
-            this.btnNextStep2.FlatAppearance.BorderSize = 0;
-            this.btnNextStep2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNextStep2.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextStep2.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnNextStep2.Image = global::barangay.PL.Properties.Resources.right_arrow;
-            this.btnNextStep2.Location = new System.Drawing.Point(785, 569);
-            this.btnNextStep2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnNextStep2.Name = "btnNextStep2";
-            this.btnNextStep2.Size = new System.Drawing.Size(171, 73);
-            this.btnNextStep2.TabIndex = 17;
-            this.btnNextStep2.Text = "NEXT STEP";
-            this.btnNextStep2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnNextStep2.UseVisualStyleBackColor = false;
-            this.btnNextStep2.Click += new System.EventHandler(this.btnNextStep2_Click);
             // 
             // pnlFormGroupStep3
             // 
@@ -1145,24 +1037,6 @@
             this.label36.TabIndex = 53;
             this.label36.Text = "Household *";
             // 
-            // btnCloseStep3
-            // 
-            this.btnCloseStep3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnCloseStep3.FlatAppearance.BorderSize = 0;
-            this.btnCloseStep3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseStep3.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseStep3.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCloseStep3.Image = global::barangay.PL.Properties.Resources.delete_button;
-            this.btnCloseStep3.Location = new System.Drawing.Point(963, 569);
-            this.btnCloseStep3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCloseStep3.Name = "btnCloseStep3";
-            this.btnCloseStep3.Size = new System.Drawing.Size(113, 73);
-            this.btnCloseStep3.TabIndex = 61;
-            this.btnCloseStep3.Text = "CLOSE";
-            this.btnCloseStep3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnCloseStep3.UseVisualStyleBackColor = false;
-            this.btnCloseStep3.Click += new System.EventHandler(this.btnCloseStep3_Click);
-            // 
             // gbCaptureImage
             // 
             this.gbCaptureImage.Controls.Add(this.button4);
@@ -1176,67 +1050,6 @@
             this.gbCaptureImage.TabStop = false;
             this.gbCaptureImage.Text = "Capture Image";
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(147)))), ((int)(((byte)(209)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Window;
-            this.button4.Image = global::barangay.PL.Properties.Resources.clear_button;
-            this.button4.Location = new System.Drawing.Point(229, 338);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(224, 116);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Clear";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(147)))), ((int)(((byte)(209)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.Image = global::barangay.PL.Properties.Resources.photo_camera;
-            this.button3.Location = new System.Drawing.Point(8, 339);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(215, 116);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Capture";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 20);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(445, 312);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnPreviousStep3
-            // 
-            this.btnPreviousStep3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
-            this.btnPreviousStep3.FlatAppearance.BorderSize = 0;
-            this.btnPreviousStep3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreviousStep3.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreviousStep3.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnPreviousStep3.Image = global::barangay.PL.Properties.Resources.left_arrow__1_;
-            this.btnPreviousStep3.Location = new System.Drawing.Point(7, 569);
-            this.btnPreviousStep3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnPreviousStep3.Name = "btnPreviousStep3";
-            this.btnPreviousStep3.Size = new System.Drawing.Size(171, 73);
-            this.btnPreviousStep3.TabIndex = 48;
-            this.btnPreviousStep3.Text = "PREVIOUS STEP";
-            this.btnPreviousStep3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnPreviousStep3.UseVisualStyleBackColor = false;
-            this.btnPreviousStep3.Click += new System.EventHandler(this.btnPreviousStep3_Click);
-            // 
             // label46
             // 
             this.label46.AutoSize = true;
@@ -1246,24 +1059,6 @@
             this.label46.Size = new System.Drawing.Size(74, 25);
             this.label46.TabIndex = 47;
             this.label46.Text = "Step 3";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSave.Image = global::barangay.PL.Properties.Resources.save;
-            this.btnSave.Location = new System.Drawing.Point(786, 569);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(171, 73);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Save";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // gbSearchHousehold
             // 
@@ -1314,16 +1109,6 @@
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(261, 74);
             this.pnlTitle.TabIndex = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::barangay.PL.Properties.Resources.employee__64_;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 59);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // groupBox8
             // 
@@ -1433,14 +1218,229 @@
             this.btnCancelSearchHousehold.Text = "Cancel";
             this.btnCancelSearchHousehold.UseVisualStyleBackColor = false;
             // 
+            // btnCloseStep3
+            // 
+            this.btnCloseStep3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnCloseStep3.FlatAppearance.BorderSize = 0;
+            this.btnCloseStep3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseStep3.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseStep3.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCloseStep3.Image = global::barangay.PL.Properties.Resources.delete_button;
+            this.btnCloseStep3.Location = new System.Drawing.Point(963, 569);
+            this.btnCloseStep3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCloseStep3.Name = "btnCloseStep3";
+            this.btnCloseStep3.Size = new System.Drawing.Size(113, 73);
+            this.btnCloseStep3.TabIndex = 61;
+            this.btnCloseStep3.Text = "CLOSE";
+            this.btnCloseStep3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnCloseStep3.UseVisualStyleBackColor = false;
+            this.btnCloseStep3.Click += new System.EventHandler(this.btnCloseStep3_Click);
+            // 
+            // btnPreviousStep3
+            // 
+            this.btnPreviousStep3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
+            this.btnPreviousStep3.FlatAppearance.BorderSize = 0;
+            this.btnPreviousStep3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreviousStep3.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreviousStep3.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnPreviousStep3.Image = global::barangay.PL.Properties.Resources.left_arrow__1_;
+            this.btnPreviousStep3.Location = new System.Drawing.Point(7, 569);
+            this.btnPreviousStep3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPreviousStep3.Name = "btnPreviousStep3";
+            this.btnPreviousStep3.Size = new System.Drawing.Size(171, 73);
+            this.btnPreviousStep3.TabIndex = 48;
+            this.btnPreviousStep3.Text = "PREVIOUS STEP";
+            this.btnPreviousStep3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnPreviousStep3.UseVisualStyleBackColor = false;
+            this.btnPreviousStep3.Click += new System.EventHandler(this.btnPreviousStep3_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSave.Image = global::barangay.PL.Properties.Resources.save;
+            this.btnSave.Location = new System.Drawing.Point(786, 569);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(171, 73);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(147)))), ((int)(((byte)(209)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Window;
+            this.button4.Image = global::barangay.PL.Properties.Resources.clear_button;
+            this.button4.Location = new System.Drawing.Point(229, 338);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(224, 116);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "Clear";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(147)))), ((int)(((byte)(209)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Window;
+            this.button3.Image = global::barangay.PL.Properties.Resources.photo_camera;
+            this.button3.Location = new System.Drawing.Point(8, 339);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(215, 116);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Capture";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pictureBox2.Location = new System.Drawing.Point(8, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(445, 312);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnCloseStep1
+            // 
+            this.btnCloseStep1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnCloseStep1.FlatAppearance.BorderSize = 0;
+            this.btnCloseStep1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseStep1.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseStep1.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCloseStep1.Image = global::barangay.PL.Properties.Resources.delete_button;
+            this.btnCloseStep1.Location = new System.Drawing.Point(962, 569);
+            this.btnCloseStep1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCloseStep1.Name = "btnCloseStep1";
+            this.btnCloseStep1.Size = new System.Drawing.Size(113, 73);
+            this.btnCloseStep1.TabIndex = 106;
+            this.btnCloseStep1.Text = "CLOSE";
+            this.btnCloseStep1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnCloseStep1.UseVisualStyleBackColor = false;
+            this.btnCloseStep1.Click += new System.EventHandler(this.btnCloseStep1_Click);
+            // 
+            // btnNextStep1
+            // 
+            this.btnNextStep1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
+            this.btnNextStep1.FlatAppearance.BorderSize = 0;
+            this.btnNextStep1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextStep1.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextStep1.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnNextStep1.Image = global::barangay.PL.Properties.Resources.right_arrow;
+            this.btnNextStep1.Location = new System.Drawing.Point(785, 569);
+            this.btnNextStep1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNextStep1.Name = "btnNextStep1";
+            this.btnNextStep1.Size = new System.Drawing.Size(171, 73);
+            this.btnNextStep1.TabIndex = 17;
+            this.btnNextStep1.Text = "NEXT STEP";
+            this.btnNextStep1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnNextStep1.UseVisualStyleBackColor = false;
+            this.btnNextStep1.Click += new System.EventHandler(this.btnNextStep1_Click);
+            // 
+            // btnCloseStep2
+            // 
+            this.btnCloseStep2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnCloseStep2.FlatAppearance.BorderSize = 0;
+            this.btnCloseStep2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseStep2.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseStep2.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCloseStep2.Image = global::barangay.PL.Properties.Resources.delete_button;
+            this.btnCloseStep2.Location = new System.Drawing.Point(962, 569);
+            this.btnCloseStep2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCloseStep2.Name = "btnCloseStep2";
+            this.btnCloseStep2.Size = new System.Drawing.Size(113, 73);
+            this.btnCloseStep2.TabIndex = 62;
+            this.btnCloseStep2.Text = "CLOSE";
+            this.btnCloseStep2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnCloseStep2.UseVisualStyleBackColor = false;
+            this.btnCloseStep2.Click += new System.EventHandler(this.btnCloseStep2_Click);
+            // 
+            // btnPreviousStep2
+            // 
+            this.btnPreviousStep2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
+            this.btnPreviousStep2.FlatAppearance.BorderSize = 0;
+            this.btnPreviousStep2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreviousStep2.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreviousStep2.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnPreviousStep2.Image = global::barangay.PL.Properties.Resources.left_arrow__1_;
+            this.btnPreviousStep2.Location = new System.Drawing.Point(7, 569);
+            this.btnPreviousStep2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPreviousStep2.Name = "btnPreviousStep2";
+            this.btnPreviousStep2.Size = new System.Drawing.Size(171, 73);
+            this.btnPreviousStep2.TabIndex = 48;
+            this.btnPreviousStep2.Text = "PREVIOUS STEP";
+            this.btnPreviousStep2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnPreviousStep2.UseVisualStyleBackColor = false;
+            this.btnPreviousStep2.Click += new System.EventHandler(this.btnPreviousStep2_Click);
+            // 
+            // btnNextStep2
+            // 
+            this.btnNextStep2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(231)))), ((int)(((byte)(121)))));
+            this.btnNextStep2.FlatAppearance.BorderSize = 0;
+            this.btnNextStep2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextStep2.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextStep2.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnNextStep2.Image = global::barangay.PL.Properties.Resources.right_arrow;
+            this.btnNextStep2.Location = new System.Drawing.Point(785, 569);
+            this.btnNextStep2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNextStep2.Name = "btnNextStep2";
+            this.btnNextStep2.Size = new System.Drawing.Size(171, 73);
+            this.btnNextStep2.TabIndex = 17;
+            this.btnNextStep2.Text = "NEXT STEP";
+            this.btnNextStep2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnNextStep2.UseVisualStyleBackColor = false;
+            this.btnNextStep2.Click += new System.EventHandler(this.btnNextStep2_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnAdd.Image = global::barangay.PL.Properties.Resources.plus_sign_in_circle__2_;
+            this.btnAdd.Location = new System.Drawing.Point(966, 15);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(113, 73);
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::barangay.PL.Properties.Resources.employee__64_;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmResidents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1108, 745);
-            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlForm);
+            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlTitle);
             this.DoubleBuffered = true;
@@ -1479,15 +1479,15 @@
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.gbCaptureImage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gbSearchHousehold.ResumeLayout(false);
             this.gbSearchHousehold.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHousehold)).EndInit();
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -128,7 +128,7 @@ namespace barangay.PL.Registrations
 
         private void PopulateDGVHousehold()
         {
-            methods.LoadDGV(dgvHousehold, householdBL.List(txtSearch.Text));
+            methods.LoadDGV(dgvHousehold, householdBL.List(txtSearchHousehold.Text));
         }
 
         private void PopulateCB()
@@ -325,19 +325,26 @@ namespace barangay.PL.Registrations
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             
-            CalculateAfterStopTyping();
+            CalculateAfterStopTypingDGV();
         }
 
-        Thread delayedCalculationThread;
+        private void txtSearchHousehold_TextChanged(object sender, EventArgs e)
+        {
+            CalculateAfterStopTypingDGVHousehold();
+        }
+
+        Thread delayedCalculationThreadDGV;
+        Thread delayedCalculationThreadDGVHousehold;
 
         int delay = 0;
-        private void CalculateAfterStopTyping()
+        int delay1 = 0;
+        private void CalculateAfterStopTypingDGV()
         {
             delay += 200;
-            if (delayedCalculationThread != null && delayedCalculationThread.IsAlive)
+            if (delayedCalculationThreadDGV != null && delayedCalculationThreadDGV.IsAlive)
                 return;
 
-            delayedCalculationThread = new Thread(() =>
+            delayedCalculationThreadDGV = new Thread(() =>
             {
                 while (delay >= 200)
                 {
@@ -354,7 +361,33 @@ namespace barangay.PL.Registrations
                 }));
             });
 
-            delayedCalculationThread.Start();
+            delayedCalculationThreadDGV.Start();
+        }
+
+        private void CalculateAfterStopTypingDGVHousehold()
+        {
+            delay1 += 200;
+            if (delayedCalculationThreadDGVHousehold != null && delayedCalculationThreadDGVHousehold.IsAlive)
+                return;
+
+            delayedCalculationThreadDGVHousehold = new Thread(() =>
+            {
+                while (delay1 >= 200)
+                {
+                    delay1 = delay1 - 200;
+                    try
+                    {
+                        Thread.Sleep(200);
+                    }
+                    catch (Exception) { }
+                }
+                Invoke(new Action(() =>
+                {
+                    PopulateDGVHousehold();
+                }));
+            });
+
+            delayedCalculationThreadDGVHousehold.Start();
         }
 
         private void btnNextStep1_Click(object sender, EventArgs e)
@@ -547,10 +580,6 @@ namespace barangay.PL.Registrations
             }
         }
 
-        private void txtSearchHousehold_TextChanged(object sender, EventArgs e)
-        {
-            PopulateDGVHousehold();
-        }
 
         private void txtHeight_KeyPress(object sender, KeyPressEventArgs e)
         {

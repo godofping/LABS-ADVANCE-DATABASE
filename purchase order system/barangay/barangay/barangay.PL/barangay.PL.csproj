@@ -119,6 +119,9 @@
     <EmbeddedResource Include="Transactions\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -195,6 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clear-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\market-positioning %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

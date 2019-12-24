@@ -72,16 +72,22 @@ namespace barangay.PL
         private void btnAccomplishments_Click(object sender, EventArgs e)
         {
             ChangePanelLocation(pnlRedSide, btnAccomplishments);
+            var frm = new Registrations.frmAccomplishments();
+            methods.ChangePanelDisplay(frm, pnlMain);
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
             ChangePanelLocation(pnlRedSide, btnReports);
+            var frm = new Transactions.frmReports();
+            methods.ChangePanelDisplay(frm, pnlMain);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
             ChangePanelLocation(pnlRedSide, btnSettings);
+            var frm = new Registrations.frmSettings();
+            methods.ChangePanelDisplay(frm, pnlMain);
         }
 
         
