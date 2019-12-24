@@ -48,6 +48,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cbReligion = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbCitizenship = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -85,6 +86,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbIsPwd = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
             this.dtpDateAccomplished = new System.Windows.Forms.DateTimePicker();
             this.txtCTCNumber = new System.Windows.Forms.TextBox();
@@ -107,27 +109,33 @@
             this.label19 = new System.Windows.Forms.Label();
             this.btnNextStep2 = new System.Windows.Forms.Button();
             this.pnlFormGroupStep3 = new System.Windows.Forms.Panel();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btnSelectHousehold = new System.Windows.Forms.Button();
+            this.cbHouseholdMember = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtHousehold = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.btnCloseStep3 = new System.Windows.Forms.Button();
             this.gbCaptureImage = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnPreviousStep3 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.pnlTitle = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbCitizenship = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.txtHousehold = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.cbHouseholdMember = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.btnSelectHousehold = new System.Windows.Forms.Button();
-            this.dgvHousehold = new System.Windows.Forms.DataGridView();
             this.gbSearchHousehold = new System.Windows.Forms.GroupBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txtSearchHousehold = new System.Windows.Forms.TextBox();
+            this.dgvHousehold = new System.Windows.Forms.DataGridView();
+            this.pnlTitle = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.rbNone = new System.Windows.Forms.RadioButton();
+            this.rbPWD = new System.Windows.Forms.RadioButton();
+            this.rbOutOfSchoolYouth = new System.Windows.Forms.RadioButton();
+            this.rbSeniorCitizen = new System.Windows.Forms.RadioButton();
+            this.rbWomen = new System.Windows.Forms.RadioButton();
+            this.rbHouseholdHeads = new System.Windows.Forms.RadioButton();
             this.btnCancelSearchHousehold = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.pnlFormGroupStep1.SuspendLayout();
@@ -143,13 +151,14 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.pnlFormGroupStep3.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.gbCaptureImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.gbSearchHousehold.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHousehold)).BeginInit();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHousehold)).BeginInit();
-            this.gbSearchHousehold.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv
@@ -204,7 +213,7 @@
             this.btnCloseStep1.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseStep1.ForeColor = System.Drawing.SystemColors.Window;
             this.btnCloseStep1.Image = global::barangay.PL.Properties.Resources.delete_button;
-            this.btnCloseStep1.Location = new System.Drawing.Point(962, 572);
+            this.btnCloseStep1.Location = new System.Drawing.Point(962, 569);
             this.btnCloseStep1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCloseStep1.Name = "btnCloseStep1";
             this.btnCloseStep1.Size = new System.Drawing.Size(113, 73);
@@ -382,6 +391,18 @@
             this.label7.TabIndex = 90;
             this.label7.Text = "Citizenship *";
             // 
+            // cbCitizenship
+            // 
+            this.cbCitizenship.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cbCitizenship.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCitizenship.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCitizenship.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbCitizenship.FormattingEnabled = true;
+            this.cbCitizenship.Location = new System.Drawing.Point(28, 110);
+            this.cbCitizenship.Name = "cbCitizenship";
+            this.cbCitizenship.Size = new System.Drawing.Size(406, 29);
+            this.cbCitizenship.TabIndex = 10;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.txtLastName);
@@ -403,7 +424,7 @@
             this.groupBox5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(34, 52);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(461, 506);
+            this.groupBox5.Size = new System.Drawing.Size(461, 565);
             this.groupBox5.TabIndex = 58;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Personal Details";
@@ -411,7 +432,7 @@
             // txtLastName
             // 
             this.txtLastName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLastName.Location = new System.Drawing.Point(28, 118);
+            this.txtLastName.Location = new System.Drawing.Point(28, 125);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(406, 27);
             this.txtLastName.TabIndex = 2;
@@ -420,7 +441,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 93);
+            this.label4.Location = new System.Drawing.Point(24, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 22);
             this.label4.TabIndex = 60;
@@ -429,7 +450,7 @@
             // txtFirstName
             // 
             this.txtFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstName.Location = new System.Drawing.Point(28, 185);
+            this.txtFirstName.Location = new System.Drawing.Point(28, 201);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(406, 27);
             this.txtFirstName.TabIndex = 3;
@@ -438,7 +459,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 160);
+            this.label5.Location = new System.Drawing.Point(24, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 22);
             this.label5.TabIndex = 64;
@@ -447,7 +468,7 @@
             // txtMiddleName
             // 
             this.txtMiddleName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMiddleName.Location = new System.Drawing.Point(28, 253);
+            this.txtMiddleName.Location = new System.Drawing.Point(28, 275);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(406, 27);
             this.txtMiddleName.TabIndex = 4;
@@ -456,7 +477,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 228);
+            this.label6.Location = new System.Drawing.Point(24, 250);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(146, 22);
             this.label6.TabIndex = 66;
@@ -469,7 +490,7 @@
             this.cbSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbSex.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.cbSex.FormattingEnabled = true;
-            this.cbSex.Location = new System.Drawing.Point(28, 322);
+            this.cbSex.Location = new System.Drawing.Point(28, 347);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(194, 29);
             this.cbSex.TabIndex = 5;
@@ -478,7 +499,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(24, 297);
+            this.label11.Location = new System.Drawing.Point(24, 322);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 22);
             this.label11.TabIndex = 76;
@@ -489,7 +510,7 @@
             this.dtpBirthDate.CustomFormat = "yyyy-MM-dd";
             this.dtpBirthDate.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBirthDate.Location = new System.Drawing.Point(245, 322);
+            this.dtpBirthDate.Location = new System.Drawing.Point(244, 352);
             this.dtpBirthDate.Name = "dtpBirthDate";
             this.dtpBirthDate.Size = new System.Drawing.Size(189, 27);
             this.dtpBirthDate.TabIndex = 6;
@@ -499,7 +520,7 @@
             this.label10.AutoSize = true;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(241, 296);
+            this.label10.Location = new System.Drawing.Point(240, 326);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 22);
             this.label10.TabIndex = 74;
@@ -508,25 +529,26 @@
             // txtHeight
             // 
             this.txtHeight.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHeight.Location = new System.Drawing.Point(28, 450);
+            this.txtHeight.Location = new System.Drawing.Point(29, 508);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(406, 27);
             this.txtHeight.TabIndex = 8;
+            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(24, 425);
+            this.label12.Location = new System.Drawing.Point(24, 477);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 22);
+            this.label12.Size = new System.Drawing.Size(132, 22);
             this.label12.TabIndex = 78;
-            this.label12.Text = "Height *";
+            this.label12.Text = "Height (cm) *";
             // 
             // txtBirthPlace
             // 
             this.txtBirthPlace.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBirthPlace.Location = new System.Drawing.Point(28, 383);
+            this.txtBirthPlace.Location = new System.Drawing.Point(28, 428);
             this.txtBirthPlace.Name = "txtBirthPlace";
             this.txtBirthPlace.Size = new System.Drawing.Size(406, 27);
             this.txtBirthPlace.TabIndex = 7;
@@ -535,7 +557,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 358);
+            this.label9.Location = new System.Drawing.Point(24, 403);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 22);
             this.label9.TabIndex = 72;
@@ -577,7 +599,7 @@
             this.btnNextStep1.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextStep1.ForeColor = System.Drawing.SystemColors.Window;
             this.btnNextStep1.Image = global::barangay.PL.Properties.Resources.right_arrow;
-            this.btnNextStep1.Location = new System.Drawing.Point(785, 572);
+            this.btnNextStep1.Location = new System.Drawing.Point(785, 569);
             this.btnNextStep1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNextStep1.Name = "btnNextStep1";
             this.btnNextStep1.Size = new System.Drawing.Size(171, 73);
@@ -599,6 +621,7 @@
             // pnlSearch
             // 
             this.pnlSearch.BackColor = System.Drawing.Color.White;
+            this.pnlSearch.Controls.Add(this.groupBox8);
             this.pnlSearch.Controls.Add(this.btnAdd);
             this.pnlSearch.Controls.Add(this.label1);
             this.pnlSearch.Controls.Add(this.txtSearch);
@@ -714,7 +737,7 @@
             this.txtCellphoneNumber.Location = new System.Drawing.Point(29, 285);
             this.txtCellphoneNumber.Name = "txtCellphoneNumber";
             this.txtCellphoneNumber.Size = new System.Drawing.Size(406, 27);
-            this.txtCellphoneNumber.TabIndex = 9;
+            this.txtCellphoneNumber.TabIndex = 10;
             // 
             // txtPhoneNumber
             // 
@@ -722,7 +745,7 @@
             this.txtPhoneNumber.Location = new System.Drawing.Point(29, 206);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(406, 27);
-            this.txtPhoneNumber.TabIndex = 8;
+            this.txtPhoneNumber.TabIndex = 9;
             // 
             // txtPrecintNumber
             // 
@@ -730,7 +753,7 @@
             this.txtPrecintNumber.Location = new System.Drawing.Point(29, 55);
             this.txtPrecintNumber.Name = "txtPrecintNumber";
             this.txtPrecintNumber.Size = new System.Drawing.Size(406, 27);
-            this.txtPrecintNumber.TabIndex = 6;
+            this.txtPrecintNumber.TabIndex = 7;
             // 
             // label23
             // 
@@ -758,7 +781,7 @@
             this.txtEmailAddress.Location = new System.Drawing.Point(29, 130);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(406, 27);
-            this.txtEmailAddress.TabIndex = 7;
+            this.txtEmailAddress.TabIndex = 8;
             // 
             // label25
             // 
@@ -782,6 +805,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cbIsPwd);
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.dtpDateAccomplished);
             this.groupBox3.Controls.Add(this.txtCTCNumber);
@@ -789,17 +813,28 @@
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(540, 349);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(461, 195);
+            this.groupBox3.Size = new System.Drawing.Size(461, 209);
             this.groupBox3.TabIndex = 59;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Etc";
+            // 
+            // cbIsPwd
+            // 
+            this.cbIsPwd.AutoSize = true;
+            this.cbIsPwd.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.cbIsPwd.Location = new System.Drawing.Point(29, 162);
+            this.cbIsPwd.Name = "cbIsPwd";
+            this.cbIsPwd.Size = new System.Drawing.Size(243, 26);
+            this.cbIsPwd.TabIndex = 61;
+            this.cbIsPwd.Text = "Is Person With Disability?";
+            this.cbIsPwd.UseVisualStyleBackColor = true;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(25, 106);
+            this.label20.Location = new System.Drawing.Point(25, 92);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(206, 22);
             this.label20.TabIndex = 60;
@@ -810,10 +845,10 @@
             this.dtpDateAccomplished.CustomFormat = "yyyy-MM-dd";
             this.dtpDateAccomplished.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dtpDateAccomplished.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateAccomplished.Location = new System.Drawing.Point(29, 131);
+            this.dtpDateAccomplished.Location = new System.Drawing.Point(29, 117);
             this.dtpDateAccomplished.Name = "dtpDateAccomplished";
             this.dtpDateAccomplished.Size = new System.Drawing.Size(406, 27);
-            this.dtpDateAccomplished.TabIndex = 11;
+            this.dtpDateAccomplished.TabIndex = 12;
             // 
             // txtCTCNumber
             // 
@@ -821,7 +856,7 @@
             this.txtCTCNumber.Location = new System.Drawing.Point(29, 48);
             this.txtCTCNumber.Name = "txtCTCNumber";
             this.txtCTCNumber.Size = new System.Drawing.Size(406, 27);
-            this.txtCTCNumber.TabIndex = 10;
+            this.txtCTCNumber.TabIndex = 11;
             // 
             // label21
             // 
@@ -947,7 +982,7 @@
             this.txtProvince.Location = new System.Drawing.Point(27, 123);
             this.txtProvince.Name = "txtProvince";
             this.txtProvince.Size = new System.Drawing.Size(406, 27);
-            this.txtProvince.TabIndex = 5;
+            this.txtProvince.TabIndex = 6;
             // 
             // txtMunicipality
             // 
@@ -955,7 +990,7 @@
             this.txtMunicipality.Location = new System.Drawing.Point(28, 52);
             this.txtMunicipality.Name = "txtMunicipality";
             this.txtMunicipality.Size = new System.Drawing.Size(406, 27);
-            this.txtMunicipality.TabIndex = 4;
+            this.txtMunicipality.TabIndex = 5;
             // 
             // label29
             // 
@@ -1028,15 +1063,87 @@
             this.pnlFormGroupStep3.BackColor = System.Drawing.Color.White;
             this.pnlFormGroupStep3.Controls.Add(this.groupBox9);
             this.pnlFormGroupStep3.Controls.Add(this.btnCloseStep3);
-            this.pnlFormGroupStep3.Controls.Add(this.gbCaptureImage);
             this.pnlFormGroupStep3.Controls.Add(this.btnPreviousStep3);
             this.pnlFormGroupStep3.Controls.Add(this.label46);
             this.pnlFormGroupStep3.Controls.Add(this.btnSave);
             this.pnlFormGroupStep3.Controls.Add(this.gbSearchHousehold);
+            this.pnlFormGroupStep3.Controls.Add(this.gbCaptureImage);
             this.pnlFormGroupStep3.Location = new System.Drawing.Point(11, 3);
             this.pnlFormGroupStep3.Name = "pnlFormGroupStep3";
             this.pnlFormGroupStep3.Size = new System.Drawing.Size(1082, 650);
             this.pnlFormGroupStep3.TabIndex = 49;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.btnSelectHousehold);
+            this.groupBox9.Controls.Add(this.cbHouseholdMember);
+            this.groupBox9.Controls.Add(this.label22);
+            this.groupBox9.Controls.Add(this.txtHousehold);
+            this.groupBox9.Controls.Add(this.label36);
+            this.groupBox9.Controls.Add(this.btnCancelSearchHousehold);
+            this.groupBox9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.Location = new System.Drawing.Point(34, 52);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(461, 212);
+            this.groupBox9.TabIndex = 65;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Household";
+            // 
+            // btnSelectHousehold
+            // 
+            this.btnSelectHousehold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btnSelectHousehold.FlatAppearance.BorderSize = 0;
+            this.btnSelectHousehold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectHousehold.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectHousehold.ForeColor = System.Drawing.Color.White;
+            this.btnSelectHousehold.Location = new System.Drawing.Point(358, 87);
+            this.btnSelectHousehold.Name = "btnSelectHousehold";
+            this.btnSelectHousehold.Size = new System.Drawing.Size(75, 28);
+            this.btnSelectHousehold.TabIndex = 67;
+            this.btnSelectHousehold.Text = "Select";
+            this.btnSelectHousehold.UseVisualStyleBackColor = false;
+            this.btnSelectHousehold.Click += new System.EventHandler(this.btnSelectHousehold_Click);
+            // 
+            // cbHouseholdMember
+            // 
+            this.cbHouseholdMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cbHouseholdMember.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHouseholdMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbHouseholdMember.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbHouseholdMember.FormattingEnabled = true;
+            this.cbHouseholdMember.Location = new System.Drawing.Point(27, 156);
+            this.cbHouseholdMember.Name = "cbHouseholdMember";
+            this.cbHouseholdMember.Size = new System.Drawing.Size(406, 29);
+            this.cbHouseholdMember.TabIndex = 2;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(23, 131);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(202, 22);
+            this.label22.TabIndex = 66;
+            this.label22.Text = "Household Member *";
+            // 
+            // txtHousehold
+            // 
+            this.txtHousehold.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHousehold.Location = new System.Drawing.Point(27, 55);
+            this.txtHousehold.Name = "txtHousehold";
+            this.txtHousehold.ReadOnly = true;
+            this.txtHousehold.Size = new System.Drawing.Size(406, 27);
+            this.txtHousehold.TabIndex = 1;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(23, 30);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(120, 22);
+            this.label36.TabIndex = 53;
+            this.label36.Text = "Household *";
             // 
             // btnCloseStep3
             // 
@@ -1046,7 +1153,7 @@
             this.btnCloseStep3.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseStep3.ForeColor = System.Drawing.SystemColors.Window;
             this.btnCloseStep3.Image = global::barangay.PL.Properties.Resources.delete_button;
-            this.btnCloseStep3.Location = new System.Drawing.Point(963, 570);
+            this.btnCloseStep3.Location = new System.Drawing.Point(963, 569);
             this.btnCloseStep3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCloseStep3.Name = "btnCloseStep3";
             this.btnCloseStep3.Size = new System.Drawing.Size(113, 73);
@@ -1064,17 +1171,51 @@
             this.gbCaptureImage.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbCaptureImage.Location = new System.Drawing.Point(540, 12);
             this.gbCaptureImage.Name = "gbCaptureImage";
-            this.gbCaptureImage.Size = new System.Drawing.Size(461, 406);
+            this.gbCaptureImage.Size = new System.Drawing.Size(461, 465);
             this.gbCaptureImage.TabIndex = 60;
             this.gbCaptureImage.TabStop = false;
             this.gbCaptureImage.Text = "Capture Image";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(147)))), ((int)(((byte)(209)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Window;
+            this.button4.Image = global::barangay.PL.Properties.Resources.clear_button;
+            this.button4.Location = new System.Drawing.Point(229, 338);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(224, 116);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "Clear";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(147)))), ((int)(((byte)(209)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Window;
+            this.button3.Image = global::barangay.PL.Properties.Resources.photo_camera;
+            this.button3.Location = new System.Drawing.Point(8, 339);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(215, 116);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Capture";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox2.Location = new System.Drawing.Point(8, 20);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(445, 244);
+            this.pictureBox2.Size = new System.Drawing.Size(445, 312);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -1114,7 +1255,7 @@
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
             this.btnSave.Image = global::barangay.PL.Properties.Resources.save;
-            this.btnSave.Location = new System.Drawing.Point(786, 570);
+            this.btnSave.Location = new System.Drawing.Point(786, 569);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(171, 73);
@@ -1123,6 +1264,46 @@
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // gbSearchHousehold
+            // 
+            this.gbSearchHousehold.Controls.Add(this.label27);
+            this.gbSearchHousehold.Controls.Add(this.txtSearchHousehold);
+            this.gbSearchHousehold.Controls.Add(this.dgvHousehold);
+            this.gbSearchHousehold.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbSearchHousehold.Location = new System.Drawing.Point(540, 12);
+            this.gbSearchHousehold.Name = "gbSearchHousehold";
+            this.gbSearchHousehold.Size = new System.Drawing.Size(461, 426);
+            this.gbSearchHousehold.TabIndex = 68;
+            this.gbSearchHousehold.TabStop = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(8, 27);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(74, 22);
+            this.label27.TabIndex = 68;
+            this.label27.Text = "Search";
+            // 
+            // txtSearchHousehold
+            // 
+            this.txtSearchHousehold.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchHousehold.Location = new System.Drawing.Point(88, 22);
+            this.txtSearchHousehold.Name = "txtSearchHousehold";
+            this.txtSearchHousehold.Size = new System.Drawing.Size(365, 33);
+            this.txtSearchHousehold.TabIndex = 67;
+            this.txtSearchHousehold.TextChanged += new System.EventHandler(this.txtSearchHousehold_TextChanged);
+            // 
+            // dgvHousehold
+            // 
+            this.dgvHousehold.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHousehold.Location = new System.Drawing.Point(8, 61);
+            this.dgvHousehold.Name = "dgvHousehold";
+            this.dgvHousehold.Size = new System.Drawing.Size(445, 355);
+            this.dgvHousehold.TabIndex = 66;
+            this.dgvHousehold.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHousehold_CellContentClick);
             // 
             // pnlTitle
             // 
@@ -1144,162 +1325,99 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // cbCitizenship
+            // groupBox8
             // 
-            this.cbCitizenship.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cbCitizenship.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCitizenship.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCitizenship.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.cbCitizenship.FormattingEnabled = true;
-            this.cbCitizenship.Location = new System.Drawing.Point(28, 110);
-            this.cbCitizenship.Name = "cbCitizenship";
-            this.cbCitizenship.Size = new System.Drawing.Size(406, 29);
-            this.cbCitizenship.TabIndex = 10;
+            this.groupBox8.Controls.Add(this.rbNone);
+            this.groupBox8.Controls.Add(this.rbPWD);
+            this.groupBox8.Controls.Add(this.rbOutOfSchoolYouth);
+            this.groupBox8.Controls.Add(this.rbSeniorCitizen);
+            this.groupBox8.Controls.Add(this.rbWomen);
+            this.groupBox8.Controls.Add(this.rbHouseholdHeads);
+            this.groupBox8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(518, 3);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(365, 91);
+            this.groupBox8.TabIndex = 61;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Filter";
             // 
-            // button4
+            // rbNone
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(147)))), ((int)(((byte)(209)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Window;
-            this.button4.Image = global::barangay.PL.Properties.Resources.clear_button;
-            this.button4.Location = new System.Drawing.Point(229, 275);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(224, 116);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Clear";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button4.UseVisualStyleBackColor = false;
+            this.rbNone.AutoSize = true;
+            this.rbNone.Checked = true;
+            this.rbNone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNone.Location = new System.Drawing.Point(6, 15);
+            this.rbNone.Name = "rbNone";
+            this.rbNone.Size = new System.Drawing.Size(70, 25);
+            this.rbNone.TabIndex = 24;
+            this.rbNone.TabStop = true;
+            this.rbNone.Text = "None";
+            this.rbNone.UseVisualStyleBackColor = true;
+            this.rbNone.CheckedChanged += new System.EventHandler(this.rbNone_CheckedChanged);
             // 
-            // button3
+            // rbPWD
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(147)))), ((int)(((byte)(209)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.Image = global::barangay.PL.Properties.Resources.photo_camera;
-            this.button3.Location = new System.Drawing.Point(8, 276);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(215, 116);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Capture";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button3.UseVisualStyleBackColor = false;
+            this.rbPWD.AutoSize = true;
+            this.rbPWD.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPWD.Location = new System.Drawing.Point(214, 59);
+            this.rbPWD.Name = "rbPWD";
+            this.rbPWD.Size = new System.Drawing.Size(64, 25);
+            this.rbPWD.TabIndex = 23;
+            this.rbPWD.TabStop = true;
+            this.rbPWD.Text = "PWD";
+            this.rbPWD.UseVisualStyleBackColor = true;
+            this.rbPWD.CheckedChanged += new System.EventHandler(this.rbPWD_CheckedChanged);
             // 
-            // groupBox9
+            // rbOutOfSchoolYouth
             // 
-            this.groupBox9.Controls.Add(this.btnSelectHousehold);
-            this.groupBox9.Controls.Add(this.cbHouseholdMember);
-            this.groupBox9.Controls.Add(this.label22);
-            this.groupBox9.Controls.Add(this.txtHousehold);
-            this.groupBox9.Controls.Add(this.label36);
-            this.groupBox9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(34, 52);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(461, 212);
-            this.groupBox9.TabIndex = 65;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Household";
+            this.rbOutOfSchoolYouth.AutoSize = true;
+            this.rbOutOfSchoolYouth.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOutOfSchoolYouth.Location = new System.Drawing.Point(6, 61);
+            this.rbOutOfSchoolYouth.Name = "rbOutOfSchoolYouth";
+            this.rbOutOfSchoolYouth.Size = new System.Drawing.Size(185, 25);
+            this.rbOutOfSchoolYouth.TabIndex = 22;
+            this.rbOutOfSchoolYouth.TabStop = true;
+            this.rbOutOfSchoolYouth.Text = "Out of School Youth";
+            this.rbOutOfSchoolYouth.UseVisualStyleBackColor = true;
+            this.rbOutOfSchoolYouth.CheckedChanged += new System.EventHandler(this.rbOutOfSchoolYouth_CheckedChanged);
             // 
-            // txtHousehold
+            // rbSeniorCitizen
             // 
-            this.txtHousehold.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHousehold.Location = new System.Drawing.Point(27, 55);
-            this.txtHousehold.Name = "txtHousehold";
-            this.txtHousehold.ReadOnly = true;
-            this.txtHousehold.Size = new System.Drawing.Size(406, 27);
-            this.txtHousehold.TabIndex = 2;
+            this.rbSeniorCitizen.AutoSize = true;
+            this.rbSeniorCitizen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbSeniorCitizen.Location = new System.Drawing.Point(214, 15);
+            this.rbSeniorCitizen.Name = "rbSeniorCitizen";
+            this.rbSeniorCitizen.Size = new System.Drawing.Size(131, 25);
+            this.rbSeniorCitizen.TabIndex = 21;
+            this.rbSeniorCitizen.TabStop = true;
+            this.rbSeniorCitizen.Text = "Senior Citizen";
+            this.rbSeniorCitizen.UseVisualStyleBackColor = true;
+            this.rbSeniorCitizen.CheckedChanged += new System.EventHandler(this.rbSeniorCitizen_CheckedChanged);
             // 
-            // label36
+            // rbWomen
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(23, 30);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(120, 22);
-            this.label36.TabIndex = 53;
-            this.label36.Text = "Household *";
+            this.rbWomen.AutoSize = true;
+            this.rbWomen.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbWomen.Location = new System.Drawing.Point(214, 39);
+            this.rbWomen.Name = "rbWomen";
+            this.rbWomen.Size = new System.Drawing.Size(88, 25);
+            this.rbWomen.TabIndex = 20;
+            this.rbWomen.TabStop = true;
+            this.rbWomen.Text = "Women";
+            this.rbWomen.UseVisualStyleBackColor = true;
+            this.rbWomen.CheckedChanged += new System.EventHandler(this.rbWomen_CheckedChanged);
             // 
-            // cbHouseholdMember
+            // rbHouseholdHeads
             // 
-            this.cbHouseholdMember.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cbHouseholdMember.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbHouseholdMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbHouseholdMember.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.cbHouseholdMember.FormattingEnabled = true;
-            this.cbHouseholdMember.Location = new System.Drawing.Point(27, 156);
-            this.cbHouseholdMember.Name = "cbHouseholdMember";
-            this.cbHouseholdMember.Size = new System.Drawing.Size(406, 29);
-            this.cbHouseholdMember.TabIndex = 65;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(23, 131);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(202, 22);
-            this.label22.TabIndex = 66;
-            this.label22.Text = "Household Member *";
-            // 
-            // btnSelectHousehold
-            // 
-            this.btnSelectHousehold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.btnSelectHousehold.FlatAppearance.BorderSize = 0;
-            this.btnSelectHousehold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectHousehold.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectHousehold.ForeColor = System.Drawing.Color.White;
-            this.btnSelectHousehold.Location = new System.Drawing.Point(358, 87);
-            this.btnSelectHousehold.Name = "btnSelectHousehold";
-            this.btnSelectHousehold.Size = new System.Drawing.Size(75, 28);
-            this.btnSelectHousehold.TabIndex = 67;
-            this.btnSelectHousehold.Text = "Select";
-            this.btnSelectHousehold.UseVisualStyleBackColor = false;
-            this.btnSelectHousehold.Click += new System.EventHandler(this.btnSelectHousehold_Click);
-            // 
-            // dgvHousehold
-            // 
-            this.dgvHousehold.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHousehold.Location = new System.Drawing.Point(8, 61);
-            this.dgvHousehold.Name = "dgvHousehold";
-            this.dgvHousehold.Size = new System.Drawing.Size(445, 355);
-            this.dgvHousehold.TabIndex = 66;
-            this.dgvHousehold.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHousehold_CellContentClick);
-            // 
-            // gbSearchHousehold
-            // 
-            this.gbSearchHousehold.Controls.Add(this.btnCancelSearchHousehold);
-            this.gbSearchHousehold.Controls.Add(this.label27);
-            this.gbSearchHousehold.Controls.Add(this.txtSearchHousehold);
-            this.gbSearchHousehold.Controls.Add(this.dgvHousehold);
-            this.gbSearchHousehold.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSearchHousehold.Location = new System.Drawing.Point(540, 12);
-            this.gbSearchHousehold.Name = "gbSearchHousehold";
-            this.gbSearchHousehold.Size = new System.Drawing.Size(461, 465);
-            this.gbSearchHousehold.TabIndex = 68;
-            this.gbSearchHousehold.TabStop = false;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(8, 27);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(74, 22);
-            this.label27.TabIndex = 68;
-            this.label27.Text = "Search";
-            // 
-            // txtSearchHousehold
-            // 
-            this.txtSearchHousehold.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchHousehold.Location = new System.Drawing.Point(88, 22);
-            this.txtSearchHousehold.Name = "txtSearchHousehold";
-            this.txtSearchHousehold.Size = new System.Drawing.Size(365, 33);
-            this.txtSearchHousehold.TabIndex = 67;
+            this.rbHouseholdHeads.AutoSize = true;
+            this.rbHouseholdHeads.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbHouseholdHeads.Location = new System.Drawing.Point(6, 37);
+            this.rbHouseholdHeads.Name = "rbHouseholdHeads";
+            this.rbHouseholdHeads.Size = new System.Drawing.Size(162, 25);
+            this.rbHouseholdHeads.TabIndex = 19;
+            this.rbHouseholdHeads.Text = "Household Heads";
+            this.rbHouseholdHeads.UseVisualStyleBackColor = true;
+            this.rbHouseholdHeads.CheckedChanged += new System.EventHandler(this.rbHouseholdHeads_CheckedChanged);
             // 
             // btnCancelSearchHousehold
             // 
@@ -1308,13 +1426,12 @@
             this.btnCancelSearchHousehold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelSearchHousehold.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelSearchHousehold.ForeColor = System.Drawing.Color.White;
-            this.btnCancelSearchHousehold.Location = new System.Drawing.Point(378, 425);
+            this.btnCancelSearchHousehold.Location = new System.Drawing.Point(358, 87);
             this.btnCancelSearchHousehold.Name = "btnCancelSearchHousehold";
             this.btnCancelSearchHousehold.Size = new System.Drawing.Size(75, 28);
-            this.btnCancelSearchHousehold.TabIndex = 69;
+            this.btnCancelSearchHousehold.TabIndex = 70;
             this.btnCancelSearchHousehold.Text = "Cancel";
             this.btnCancelSearchHousehold.UseVisualStyleBackColor = false;
-            this.btnCancelSearchHousehold.Click += new System.EventHandler(this.btnCancelSearchHousehold_Click);
             // 
             // frmResidents
             // 
@@ -1326,6 +1443,7 @@
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlTitle);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1358,16 +1476,18 @@
             this.groupBox1.PerformLayout();
             this.pnlFormGroupStep3.ResumeLayout(false);
             this.pnlFormGroupStep3.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.gbCaptureImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.gbSearchHousehold.ResumeLayout(false);
+            this.gbSearchHousehold.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHousehold)).EndInit();
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHousehold)).EndInit();
-            this.gbSearchHousehold.ResumeLayout(false);
-            this.gbSearchHousehold.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1474,6 +1594,14 @@
         private System.Windows.Forms.DataGridView dgvHousehold;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txtSearchHousehold;
+        private System.Windows.Forms.CheckBox cbIsPwd;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.RadioButton rbNone;
+        private System.Windows.Forms.RadioButton rbPWD;
+        private System.Windows.Forms.RadioButton rbOutOfSchoolYouth;
+        private System.Windows.Forms.RadioButton rbSeniorCitizen;
+        private System.Windows.Forms.RadioButton rbWomen;
+        private System.Windows.Forms.RadioButton rbHouseholdHeads;
         private System.Windows.Forms.Button btnCancelSearchHousehold;
     }
 }

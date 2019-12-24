@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querybuilder version="8.3">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">barangay_profiling_db</database>
+</source>
+<canvas>
+<table tablename="residents" alias="" left="574" top="40" width="150" height="218" />
+<table tablename="educationalattainments" alias="" left="1072" top="187" width="150" height="113" />
+<table tablename="educations" alias="" left="845" top="107" width="150" height="143" />
+<table tablename="birthinformations" alias="" left="251" top="20" width="150" height="113" />
+<table tablename="residentshousehold" alias="" left="306" top="173" width="150" height="113" />
+<table tablename="households" alias="" left="66" top="93" width="150" height="113" />
+<table tablename="residentssex" alias="" left="384" top="315" width="150" height="113" />
+<table tablename="sexes" alias="" left="159" top="310" width="150" height="113" />
+<table tablename="householdmembers" alias="" left="44" top="209" width="150" height="113" />
+<join type = "Inner Join">
+<from tablename = "educations" alias = "">educationalattainmentid</from>
+<to tablename = "educationalattainments" alias = "">educationalattainmentid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "educations" alias = "">residentid</from>
+<to tablename = "residents" alias = "">residentid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "birthinformations" alias = "">residentid</from>
+<to tablename = "residents" alias = "">residentid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "residentshousehold" alias = "">residentid</from>
+<to tablename = "residents" alias = "">residentid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "residentshousehold" alias = "">householdid</from>
+<to tablename = "households" alias = "">householdid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "residentssex" alias = "">residentid</from>
+<to tablename = "residents" alias = "">residentid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "residentssex" alias = "">sexid</from>
+<to tablename = "sexes" alias = "">sexid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "residentshousehold" alias = "">householdmemberid</from>
+<to tablename = "householdmembers" alias = "">householdmemberid</to>
+</join>
+</canvas>
+<grid>
+<column id="1">
+<table tablename="residents"></table>
+<field>residentid</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="2">
+<table tablename="residents"></table>
+<field>lastname</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="3">
+<table tablename="residents"></table>
+<field>firstname</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="4">
+<table tablename="residents"></table>
+<field>middlename</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="5">
+<table tablename="residents"></table>
+<field>ispwd</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="6">
+<table tablename="educationalattainments"></table>
+<field>educationalattainment</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="7">
+<table tablename="birthinformations"></table>
+<field>birthdate</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="8">
+<table tablename="sexes"></table>
+<field>sex</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="9">
+<table tablename="householdmembers"></table>
+<field>householdmember</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="10">
+<table tablename="households"></table>
+<field>household</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="11">
+<table tablename="households"></table>
+<field>householdnumber</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+</grid>
+</querybuilder>

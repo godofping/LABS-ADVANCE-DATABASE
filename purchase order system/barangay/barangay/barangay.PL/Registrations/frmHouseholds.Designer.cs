@@ -46,6 +46,7 @@
             this.txtHouseholdNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMain.SuspendLayout();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.pnlForm.SuspendLayout();
             this.pnlFormGroup.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitle
@@ -164,12 +166,9 @@
             // pnlFormGroup
             // 
             this.pnlFormGroup.BackColor = System.Drawing.Color.White;
-            this.pnlFormGroup.Controls.Add(this.txtHousehold);
-            this.pnlFormGroup.Controls.Add(this.label3);
+            this.pnlFormGroup.Controls.Add(this.groupBox9);
             this.pnlFormGroup.Controls.Add(this.btnSave);
             this.pnlFormGroup.Controls.Add(this.btnClose);
-            this.pnlFormGroup.Controls.Add(this.txtHouseholdNumber);
-            this.pnlFormGroup.Controls.Add(this.label4);
             this.pnlFormGroup.Location = new System.Drawing.Point(11, 3);
             this.pnlFormGroup.Name = "pnlFormGroup";
             this.pnlFormGroup.Size = new System.Drawing.Size(1082, 650);
@@ -178,7 +177,7 @@
             // txtHousehold
             // 
             this.txtHousehold.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHousehold.Location = new System.Drawing.Point(61, 77);
+            this.txtHousehold.Location = new System.Drawing.Point(27, 61);
             this.txtHousehold.Name = "txtHousehold";
             this.txtHousehold.Size = new System.Drawing.Size(406, 27);
             this.txtHousehold.TabIndex = 19;
@@ -187,7 +186,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(57, 52);
+            this.label3.Location = new System.Drawing.Point(23, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 22);
             this.label3.TabIndex = 20;
@@ -232,7 +231,7 @@
             // txtHouseholdNumber
             // 
             this.txtHouseholdNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHouseholdNumber.Location = new System.Drawing.Point(61, 159);
+            this.txtHouseholdNumber.Location = new System.Drawing.Point(27, 143);
             this.txtHouseholdNumber.Name = "txtHouseholdNumber";
             this.txtHouseholdNumber.Size = new System.Drawing.Size(406, 27);
             this.txtHouseholdNumber.TabIndex = 12;
@@ -241,7 +240,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(57, 134);
+            this.label4.Location = new System.Drawing.Point(23, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(199, 22);
             this.label4.TabIndex = 13;
@@ -258,6 +257,20 @@
             this.lblTitle.Text = "Adding Household";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.label3);
+            this.groupBox9.Controls.Add(this.txtHousehold);
+            this.groupBox9.Controls.Add(this.label4);
+            this.groupBox9.Controls.Add(this.txtHouseholdNumber);
+            this.groupBox9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.Location = new System.Drawing.Point(34, 52);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(461, 212);
+            this.groupBox9.TabIndex = 66;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Household";
+            // 
             // frmHouseholds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -268,6 +281,7 @@
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlTitle);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -283,7 +297,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.pnlForm.ResumeLayout(false);
             this.pnlFormGroup.ResumeLayout(false);
-            this.pnlFormGroup.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -307,5 +322,6 @@
         private System.Windows.Forms.TextBox txtHousehold;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.GroupBox groupBox9;
     }
 }

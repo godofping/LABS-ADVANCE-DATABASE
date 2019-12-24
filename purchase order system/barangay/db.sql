@@ -53,9 +53,11 @@ CREATE TABLE `birthinformations` (
   PRIMARY KEY (`birthinformationid`),
   KEY `FK_birthinformations` (`residentid`),
   CONSTRAINT `FK_birthinformations` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `birthinformations` */
+
+insert  into `birthinformations`(`birthinformationid`,`residentid`,`birthplace`,`birthdate`) values (1,19,'Tacurong City','1960-09-23'),(2,20,'Isulan','1997-01-25'),(3,21,'Tacurong City','1997-12-24');
 
 /*Table structure for table `citizenships` */
 
@@ -98,9 +100,11 @@ CREATE TABLE `contactdetails` (
   PRIMARY KEY (`contactdetailid`),
   KEY `FK_contactdetails` (`residentid`),
   CONSTRAINT `FK_contactdetails` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `contactdetails` */
+
+insert  into `contactdetails`(`contactdetailid`,`residentid`,`emailaddress`,`phonenumber`,`cellphonenumber`) values (1,19,'rexmicrosoft@yahoo.com.ph','09754363944','09754363944'),(2,20,'rasol@yahoo.com','052-566-5052','09754363944'),(3,21,'vince@yahoo.com','055-555-5555','09754126366');
 
 /*Table structure for table `educationalattainments` */
 
@@ -110,11 +114,11 @@ CREATE TABLE `educationalattainments` (
   `educationalattainmentid` int(6) NOT NULL AUTO_INCREMENT,
   `educationalattainment` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`educationalattainmentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `educationalattainments` */
 
-insert  into `educationalattainments`(`educationalattainmentid`,`educationalattainment`) values (1,'ELEMENTARY LEVEL'),(2,'ELEMENTARY GRADUATE'),(3,'HIGH SCHOOL LEVEL'),(4,'HIGH SCHOOL GRADUATE'),(5,'COLLEGE LEVEL'),(6,'COLLEGE GRADUATE'),(7,'MASTERAL GRADUATE'),(8,'DOCTORAL GRADUATE'),(9,'OUT OF SCHOOL YOUTH');
+insert  into `educationalattainments`(`educationalattainmentid`,`educationalattainment`) values (1,'ELEMENTARY LEVEL'),(2,'ELEMENTARY GRADUATE'),(3,'HIGH SCHOOL LEVEL'),(4,'HIGH SCHOOL GRADUATE'),(5,'COLLEGE LEVEL'),(6,'COLLEGE GRADUATE'),(7,'MASTERAL GRADUATE'),(8,'DOCTORAL GRADUATE'),(9,'VOCATIONAL GRADUATE'),(11,'NONE');
 
 /*Table structure for table `educations` */
 
@@ -131,9 +135,11 @@ CREATE TABLE `educations` (
   KEY `FK_educations1` (`residentid`),
   CONSTRAINT `FK_educations` FOREIGN KEY (`educationalattainmentid`) REFERENCES `educationalattainments` (`educationalattainmentid`),
   CONSTRAINT `FK_educations1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `educations` */
+
+insert  into `educations`(`educationid`,`residentid`,`educationalattainmentid`,`course`,`yeargraduated`) values (1,19,5,'Bachelor of Science in Computer Science','2018'),(2,20,5,'BACHELOR OF SCIENCE IN COMPUTER SCIENCE','2019'),(3,21,2,'BACHELOR OF SCIENCE IN COMPUTER SCIENCE','2019');
 
 /*Table structure for table `filelocations` */
 
@@ -166,9 +172,11 @@ CREATE TABLE `homeaddressess` (
   KEY `FK_homeaddressess1` (`residentid`),
   CONSTRAINT `FK_homeaddressess` FOREIGN KEY (`purokid`) REFERENCES `puroks` (`purokid`),
   CONSTRAINT `FK_homeaddressess1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `homeaddressess` */
+
+insert  into `homeaddressess`(`homeaddressid`,`residentid`,`purokid`,`housenumber`,`street`,`subdivision`) values (1,19,7,'44','Ledesma Street','none'),(2,20,2,'60','Barracks','none'),(3,21,8,'55','National Highway','none');
 
 /*Table structure for table `householdmembers` */
 
@@ -240,9 +248,11 @@ CREATE TABLE `provincialaddresses` (
   PRIMARY KEY (`provincialaddressid`),
   KEY `FK_provincialaddresses` (`residentid`),
   CONSTRAINT `FK_provincialaddresses` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `provincialaddresses` */
+
+insert  into `provincialaddresses`(`provincialaddressid`,`residentid`,`municipality`,`province`) values (1,19,'Tacurong City','Province'),(2,20,'Isulan','Sultan Kudarat'),(3,21,'Tacurong City','Sultan Kudarat');
 
 /*Table structure for table `puroks` */
 
@@ -287,10 +297,13 @@ CREATE TABLE `residents` (
   `ctcnumber` varchar(60) DEFAULT NULL,
   `dateaccomplished` date DEFAULT NULL,
   `daterecorded` date DEFAULT NULL,
+  `ispwd` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 /*Data for the table `residents` */
+
+insert  into `residents`(`residentid`,`barangayidnumber`,`lastname`,`firstname`,`middlename`,`height`,`precintnumber`,`ctcnumber`,`dateaccomplished`,`daterecorded`,`ispwd`) values (19,'1000-101-256','Roncesvalles','Rex Louis','Paradero','165','Precint-AB','100-20-5000','2019-12-24','2019-12-24',0),(20,'2365623','Masukat','Rasol','Napi','185','AB','100-500-2200','2019-12-24','2019-12-24',0),(21,'505-505-500','Ancheta','Vince Leu French','Libre','155','AB','505-100-500656','2019-12-24','2019-12-24',1);
 
 /*Table structure for table `residentscitizenship` */
 
@@ -305,9 +318,11 @@ CREATE TABLE `residentscitizenship` (
   KEY `FK_residentscitizenship1` (`residentid`),
   CONSTRAINT `FK_residentscitizenship` FOREIGN KEY (`citizenshipid`) REFERENCES `citizenships` (`citizenshipid`),
   CONSTRAINT `FK_residentscitizenship1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentscitizenship` */
+
+insert  into `residentscitizenship`(`residentcitizenshipid`,`residentid`,`citizenshipid`) values (1,19,1),(2,20,1),(3,21,1);
 
 /*Table structure for table `residentscivilstatus` */
 
@@ -322,9 +337,11 @@ CREATE TABLE `residentscivilstatus` (
   KEY `FK_residentscivilstatus1` (`residentid`),
   CONSTRAINT `FK_residentscivilstatus` FOREIGN KEY (`civilstatusid`) REFERENCES `civilstatuses` (`civilstatusid`),
   CONSTRAINT `FK_residentscivilstatus1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentscivilstatus` */
+
+insert  into `residentscivilstatus`(`residentcivilstatusid`,`residentid`,`civilstatusid`) values (1,19,1),(2,20,1),(3,21,1);
 
 /*Table structure for table `residentshousehold` */
 
@@ -342,9 +359,11 @@ CREATE TABLE `residentshousehold` (
   CONSTRAINT `FK_residentshousehold` FOREIGN KEY (`householdid`) REFERENCES `households` (`householdid`),
   CONSTRAINT `FK_residentshousehold1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`),
   CONSTRAINT `FK_residentshousehold2` FOREIGN KEY (`householdmemberid`) REFERENCES `householdmembers` (`householdmemberid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentshousehold` */
+
+insert  into `residentshousehold`(`residenthouseholdid`,`residentid`,`householdid`,`householdmemberid`) values (1,19,5,1),(2,20,6,2),(3,21,4,1);
 
 /*Table structure for table `residentsoccupation` */
 
@@ -359,9 +378,11 @@ CREATE TABLE `residentsoccupation` (
   KEY `FK_residentsoccupation1` (`residentid`),
   CONSTRAINT `FK_residentsoccupation` FOREIGN KEY (`occupationid`) REFERENCES `occupations` (`occupationid`),
   CONSTRAINT `FK_residentsoccupation1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentsoccupation` */
+
+insert  into `residentsoccupation`(`residentoccupationid`,`residentid`,`occupationid`) values (1,19,37),(2,20,51),(3,21,26);
 
 /*Table structure for table `residentsreligion` */
 
@@ -376,9 +397,11 @@ CREATE TABLE `residentsreligion` (
   KEY `FK_residentsreligion1` (`residentid`),
   CONSTRAINT `FK_residentsreligion` FOREIGN KEY (`religionid`) REFERENCES `religions` (`religionid`),
   CONSTRAINT `FK_residentsreligion1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentsreligion` */
+
+insert  into `residentsreligion`(`residentreligionid`,`residentid`,`religionid`) values (1,19,1),(2,20,1),(3,21,1);
 
 /*Table structure for table `residentssex` */
 
@@ -394,9 +417,11 @@ CREATE TABLE `residentssex` (
   CONSTRAINT `FK_residentsex` FOREIGN KEY (`sexid`) REFERENCES `sexes` (`sexid`),
   CONSTRAINT `FK_residentsex1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`),
   CONSTRAINT `FK_residentssex` FOREIGN KEY (`sexid`) REFERENCES `sexes` (`sexid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentssex` */
+
+insert  into `residentssex`(`residentsexid`,`residentid`,`sexid`) values (1,19,2),(2,20,1),(3,21,1);
 
 /*Table structure for table `sexes` */
 
@@ -411,6 +436,36 @@ CREATE TABLE `sexes` (
 /*Data for the table `sexes` */
 
 insert  into `sexes`(`sexid`,`sex`) values (1,'MALE'),(2,'FEMALE');
+
+/*Table structure for table `residents_view` */
+
+DROP TABLE IF EXISTS `residents_view`;
+
+/*!50001 DROP VIEW IF EXISTS `residents_view` */;
+/*!50001 DROP TABLE IF EXISTS `residents_view` */;
+
+/*!50001 CREATE TABLE  `residents_view`(
+ `residentid` int(6) ,
+ `householdnumber` varchar(60) ,
+ `householdmember` varchar(60) ,
+ `lastname` varchar(60) ,
+ `firstname` varchar(60) ,
+ `middlename` varchar(60) ,
+ `ispwd` tinyint(1) ,
+ `educationalattainment` varchar(60) ,
+ `birthdate` date ,
+ `age` bigint(21) ,
+ `sex` varchar(15) ,
+ `household` varchar(60) ,
+ `purok` varchar(60) 
+)*/;
+
+/*View structure for view residents_view */
+
+/*!50001 DROP TABLE IF EXISTS `residents_view` */;
+/*!50001 DROP VIEW IF EXISTS `residents_view` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `residents_view` AS select `residents`.`residentid` AS `residentid`,`households`.`householdnumber` AS `householdnumber`,`householdmembers`.`householdmember` AS `householdmember`,`residents`.`lastname` AS `lastname`,`residents`.`firstname` AS `firstname`,`residents`.`middlename` AS `middlename`,`residents`.`ispwd` AS `ispwd`,`educationalattainments`.`educationalattainment` AS `educationalattainment`,`birthinformations`.`birthdate` AS `birthdate`,timestampdiff(YEAR,`birthinformations`.`birthdate`,curdate()) AS `age`,`sexes`.`sex` AS `sex`,`households`.`household` AS `household`,`puroks`.`purok` AS `purok` from ((((((((((`educations` join `educationalattainments` on((`educations`.`educationalattainmentid` = `educationalattainments`.`educationalattainmentid`))) join `residents` on((`educations`.`residentid` = `residents`.`residentid`))) join `birthinformations` on((`birthinformations`.`residentid` = `residents`.`residentid`))) join `residentshousehold` on((`residentshousehold`.`residentid` = `residents`.`residentid`))) join `households` on((`residentshousehold`.`householdid` = `households`.`householdid`))) join `residentssex` on((`residentssex`.`residentid` = `residents`.`residentid`))) join `sexes` on((`residentssex`.`sexid` = `sexes`.`sexid`))) join `householdmembers` on((`residentshousehold`.`householdmemberid` = `householdmembers`.`householdmemberid`))) join `homeaddressess` on((`homeaddressess`.`residentid` = `residents`.`residentid`))) join `puroks` on((`homeaddressess`.`purokid` = `puroks`.`purokid`))) */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

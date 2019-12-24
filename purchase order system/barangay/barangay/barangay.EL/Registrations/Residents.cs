@@ -18,6 +18,7 @@ namespace barangay.EL.Registrations
         string ctcnumber;
         string dateaccomplished;
         string daterecorded;
+        int ispwd;
 
         public int Residentid { get => residentid; set => residentid = value; }
         public string Barangayidnumber { get => barangayidnumber; set => barangayidnumber = value; }
@@ -29,5 +30,6 @@ namespace barangay.EL.Registrations
         public string Ctcnumber { get => ctcnumber; set => ctcnumber = value; }
         public string Dateaccomplished { get => dateaccomplished; set => dateaccomplished = value; }
         public string Daterecorded { get => daterecorded; set => daterecorded = value; }
+        public int Ispwd { get => ispwd; set => ispwd = value; }
     }
 }

@@ -15,6 +15,31 @@ namespace barangay.BL.Registrations
             return residentDL.List(keyword);
         }
 
+        public DataTable ListByHouseholdHeads(String keyword)
+        {
+            return residentDL.ListByHouseholdHeads(keyword);
+        }
+
+        public DataTable ListByOutOfSchoolYouth(String keyword)
+        {
+            return residentDL.ListByOutOfSchoolYouth(keyword);
+        }
+
+        public DataTable ListBySeniorCitizen(String keyword)
+        {
+            return residentDL.ListBySeniorCitizen(keyword);   
+        }
+
+        public DataTable ListByWomen(String keyword)
+        {
+            return residentDL.ListByWomen(keyword);
+        }
+
+        public DataTable ListByPWD(String keyword)
+        {
+            return residentDL.ListByPWD(keyword);
+        }
+
         public EL.Registrations.Residents Select(EL.Registrations.Residents residentEL)
         {
             return residentDL.Select(residentEL);

@@ -104,11 +104,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Registrations\frmAccomplishments.resx">
+      <DependentUpon>frmAccomplishments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registrations\frmHouseholds.resx">
       <DependentUpon>frmHouseholds.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registrations\frmResidents.resx">
       <DependentUpon>frmResidents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrations\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>

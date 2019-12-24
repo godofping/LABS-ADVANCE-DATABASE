@@ -31,15 +31,15 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.pnlMain = new System.Windows.Forms.Panel();
-            this.pnlRedSide = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.pnlRedSide = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnAccomplishments = new System.Windows.Forms.Button();
             this.btnHouseholds = new System.Windows.Forms.Button();
             this.btnResidents = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlLeft.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,24 +81,6 @@
             this.pnlLeft.Size = new System.Drawing.Size(258, 768);
             this.pnlLeft.TabIndex = 2;
             // 
-            // pnlMain
-            // 
-            this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(258, 13);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1108, 745);
-            this.pnlMain.TabIndex = 3;
-            // 
-            // pnlRedSide
-            // 
-            this.pnlRedSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(102)))), ((int)(((byte)(166)))));
-            this.pnlRedSide.Location = new System.Drawing.Point(0, 93);
-            this.pnlRedSide.Name = "pnlRedSide";
-            this.pnlRedSide.Size = new System.Drawing.Size(10, 73);
-            this.pnlRedSide.TabIndex = 7;
-            // 
             // btnSettings
             // 
             this.btnSettings.FlatAppearance.BorderSize = 0;
@@ -116,6 +98,14 @@
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // pnlRedSide
+            // 
+            this.pnlRedSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(102)))), ((int)(((byte)(166)))));
+            this.pnlRedSide.Location = new System.Drawing.Point(0, 93);
+            this.pnlRedSide.Name = "pnlRedSide";
+            this.pnlRedSide.Size = new System.Drawing.Size(10, 73);
+            this.pnlRedSide.TabIndex = 7;
             // 
             // btnLogout
             // 
@@ -221,6 +211,16 @@
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(258, 13);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(1108, 745);
+            this.pnlMain.TabIndex = 3;
             // 
             // frmMenu
             // 
