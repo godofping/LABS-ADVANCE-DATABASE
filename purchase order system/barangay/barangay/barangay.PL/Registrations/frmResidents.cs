@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -323,7 +324,37 @@ namespace barangay.PL.Registrations
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            PopulateDGV();
+            
+            CalculateAfterStopTyping();
+        }
+
+        Thread delayedCalculationThread;
+
+        int delay = 0;
+        private void CalculateAfterStopTyping()
+        {
+            delay += 200;
+            if (delayedCalculationThread != null && delayedCalculationThread.IsAlive)
+                return;
+
+            delayedCalculationThread = new Thread(() =>
+            {
+                while (delay >= 200)
+                {
+                    delay = delay - 200;
+                    try
+                    {
+                        Thread.Sleep(200);
+                    }
+                    catch (Exception) { }
+                }
+                Invoke(new Action(() =>
+                {
+                    PopulateDGV();
+                }));
+            });
+
+            delayedCalculationThread.Start();
         }
 
         private void btnNextStep1_Click(object sender, EventArgs e)
