@@ -67,7 +67,6 @@
     <Compile Include="Registrations\Residentscitizenship.cs" />
     <Compile Include="Registrations\Residentscivilstatus.cs" />
     <Compile Include="Registrations\Residentshousehold.cs" />
-    <Compile Include="Registrations\Residentshouseholdmember.cs" />
     <Compile Include="Registrations\Residentsoccupation.cs" />
     <Compile Include="Registrations\Residentsreligion.cs" />
     <Compile Include="Registrations\Residentssex.cs" />

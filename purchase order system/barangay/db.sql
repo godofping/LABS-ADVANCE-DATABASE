@@ -53,11 +53,9 @@ CREATE TABLE `birthinformations` (
   PRIMARY KEY (`birthinformationid`),
   KEY `FK_birthinformations` (`residentid`),
   CONSTRAINT `FK_birthinformations` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `birthinformations` */
-
-insert  into `birthinformations`(`birthinformationid`,`residentid`,`birthplace`,`birthdate`) values (1,1,'Tacurong City','1997-12-23'),(2,2,'Midsayap','1997-05-25');
 
 /*Table structure for table `citizenships` */
 
@@ -100,11 +98,9 @@ CREATE TABLE `contactdetails` (
   PRIMARY KEY (`contactdetailid`),
   KEY `FK_contactdetails` (`residentid`),
   CONSTRAINT `FK_contactdetails` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `contactdetails` */
-
-insert  into `contactdetails`(`contactdetailid`,`residentid`,`emailaddress`,`phonenumber`,`cellphonenumber`) values (1,1,'rexmicrosoft@yahoo.com.ph','none','09754363944'),(2,2,'clarity10@gmail.com','502-65-5044','09168545224');
 
 /*Table structure for table `educationalattainments` */
 
@@ -135,11 +131,9 @@ CREATE TABLE `educations` (
   KEY `FK_educations1` (`residentid`),
   CONSTRAINT `FK_educations` FOREIGN KEY (`educationalattainmentid`) REFERENCES `educationalattainments` (`educationalattainmentid`),
   CONSTRAINT `FK_educations1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `educations` */
-
-insert  into `educations`(`educationid`,`residentid`,`educationalattainmentid`,`course`,`yeargraduated`) values (1,1,6,'BACHELOR OF SCIENCE IN COMPUTER SCIENCE','2017'),(2,2,7,'BACHELOR OF SCIENCE IN NURSING','2018');
 
 /*Table structure for table `filelocations` */
 
@@ -172,11 +166,9 @@ CREATE TABLE `homeaddressess` (
   KEY `FK_homeaddressess1` (`residentid`),
   CONSTRAINT `FK_homeaddressess` FOREIGN KEY (`purokid`) REFERENCES `puroks` (`purokid`),
   CONSTRAINT `FK_homeaddressess1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `homeaddressess` */
-
-insert  into `homeaddressess`(`homeaddressid`,`residentid`,`purokid`,`housenumber`,`street`,`subdivision`) values (1,1,3,'44','LEDESMA STREET','POBLACION'),(2,2,4,'44','Ledesma Street','none');
 
 /*Table structure for table `householdmembers` */
 
@@ -248,11 +240,9 @@ CREATE TABLE `provincialaddresses` (
   PRIMARY KEY (`provincialaddressid`),
   KEY `FK_provincialaddresses` (`residentid`),
   CONSTRAINT `FK_provincialaddresses` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `provincialaddresses` */
-
-insert  into `provincialaddresses`(`provincialaddressid`,`residentid`,`municipality`,`province`) values (1,1,'TACURONG CITY','SULTAN KUDARAT'),(2,2,'Tacurong City','Sultan Kudarat');
 
 /*Table structure for table `puroks` */
 
@@ -298,11 +288,11 @@ CREATE TABLE `residents` (
   `dateaccomplished` date DEFAULT NULL,
   `daterecorded` date DEFAULT NULL,
   PRIMARY KEY (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 /*Data for the table `residents` */
 
-insert  into `residents`(`residentid`,`barangayidnumber`,`lastname`,`firstname`,`middlename`,`height`,`precintnumber`,`ctcnumber`,`dateaccomplished`,`daterecorded`) values (1,'1010','RONCESVALLES','REX LOUIS','PARADERO','165','PRECINT-AB','5000-51-200','2018-12-24','2019-12-23'),(2,'1001-250-55','JADRAQUE','CLARIE JANE','SAGOLILI','165','AB','253623-5243542','2019-11-12','2019-12-23');
+insert  into `residents`(`residentid`,`barangayidnumber`,`lastname`,`firstname`,`middlename`,`height`,`precintnumber`,`ctcnumber`,`dateaccomplished`,`daterecorded`) values (2,'1001-250-55','JADRAQUE','CLARIE JANE','SAGOLILI','165','AB','253623-5243542','2019-11-12','2019-12-23'),(3,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(4,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(5,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(6,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(9,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(10,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(11,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(12,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(13,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(14,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(15,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(16,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(17,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24'),(18,'B23-1997','Roncesvalles','Rex Louis','Paradero','165','AB','55','2019-12-24','2019-12-24');
 
 /*Table structure for table `residentscitizenship` */
 
@@ -317,11 +307,9 @@ CREATE TABLE `residentscitizenship` (
   KEY `FK_residentscitizenship1` (`residentid`),
   CONSTRAINT `FK_residentscitizenship` FOREIGN KEY (`citizenshipid`) REFERENCES `citizenships` (`citizenshipid`),
   CONSTRAINT `FK_residentscitizenship1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentscitizenship` */
-
-insert  into `residentscitizenship`(`residentcitizenshipid`,`residentid`,`citizenshipid`) values (1,1,1),(2,2,1);
 
 /*Table structure for table `residentscivilstatus` */
 
@@ -336,11 +324,9 @@ CREATE TABLE `residentscivilstatus` (
   KEY `FK_residentscivilstatus1` (`residentid`),
   CONSTRAINT `FK_residentscivilstatus` FOREIGN KEY (`civilstatusid`) REFERENCES `civilstatuses` (`civilstatusid`),
   CONSTRAINT `FK_residentscivilstatus1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentscivilstatus` */
-
-insert  into `residentscivilstatus`(`residentcivilstatusid`,`residentid`,`civilstatusid`) values (1,1,1),(2,2,1);
 
 /*Table structure for table `residentshousehold` */
 
@@ -350,35 +336,17 @@ CREATE TABLE `residentshousehold` (
   `residenthouseholdid` int(6) NOT NULL AUTO_INCREMENT,
   `residentid` int(6) DEFAULT NULL,
   `householdid` int(6) DEFAULT NULL,
+  `householdmemberid` int(6) DEFAULT NULL,
   PRIMARY KEY (`residenthouseholdid`),
   KEY `FK_residentshousehold` (`householdid`),
   KEY `FK_residentshousehold1` (`residentid`),
+  KEY `FK_residentshousehold2` (`householdmemberid`),
   CONSTRAINT `FK_residentshousehold` FOREIGN KEY (`householdid`) REFERENCES `households` (`householdid`),
-  CONSTRAINT `FK_residentshousehold1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  CONSTRAINT `FK_residentshousehold1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`),
+  CONSTRAINT `FK_residentshousehold2` FOREIGN KEY (`householdmemberid`) REFERENCES `householdmembers` (`householdmemberid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentshousehold` */
-
-insert  into `residentshousehold`(`residenthouseholdid`,`residentid`,`householdid`) values (1,1,1),(2,2,3);
-
-/*Table structure for table `residentshouseholdmember` */
-
-DROP TABLE IF EXISTS `residentshouseholdmember`;
-
-CREATE TABLE `residentshouseholdmember` (
-  `residenthouseholdmemberid` int(6) NOT NULL AUTO_INCREMENT,
-  `residentid` int(6) DEFAULT NULL,
-  `householdmemberid` int(6) DEFAULT NULL,
-  PRIMARY KEY (`residenthouseholdmemberid`),
-  KEY `FK_residenthouseholdsmembers` (`householdmemberid`),
-  KEY `FK_residentshouseholdmember` (`residentid`),
-  CONSTRAINT `FK_residenthouseholdsmembers` FOREIGN KEY (`householdmemberid`) REFERENCES `householdmembers` (`householdmemberid`),
-  CONSTRAINT `FK_residentshouseholdmember` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
-/*Data for the table `residentshouseholdmember` */
-
-insert  into `residentshouseholdmember`(`residenthouseholdmemberid`,`residentid`,`householdmemberid`) values (1,1,1),(2,2,3);
 
 /*Table structure for table `residentsoccupation` */
 
@@ -393,11 +361,9 @@ CREATE TABLE `residentsoccupation` (
   KEY `FK_residentsoccupation1` (`residentid`),
   CONSTRAINT `FK_residentsoccupation` FOREIGN KEY (`occupationid`) REFERENCES `occupations` (`occupationid`),
   CONSTRAINT `FK_residentsoccupation1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentsoccupation` */
-
-insert  into `residentsoccupation`(`residentoccupationid`,`residentid`,`occupationid`) values (1,1,51),(2,2,37);
 
 /*Table structure for table `residentsreligion` */
 
@@ -412,11 +378,9 @@ CREATE TABLE `residentsreligion` (
   KEY `FK_residentsreligion1` (`residentid`),
   CONSTRAINT `FK_residentsreligion` FOREIGN KEY (`religionid`) REFERENCES `religions` (`religionid`),
   CONSTRAINT `FK_residentsreligion1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentsreligion` */
-
-insert  into `residentsreligion`(`residentreligionid`,`residentid`,`religionid`) values (1,1,1),(2,2,2);
 
 /*Table structure for table `residentssex` */
 
@@ -432,11 +396,9 @@ CREATE TABLE `residentssex` (
   CONSTRAINT `FK_residentsex` FOREIGN KEY (`sexid`) REFERENCES `sexes` (`sexid`),
   CONSTRAINT `FK_residentsex1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`),
   CONSTRAINT `FK_residentssex` FOREIGN KEY (`sexid`) REFERENCES `sexes` (`sexid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `residentssex` */
-
-insert  into `residentssex`(`residentsexid`,`residentid`,`sexid`) values (1,1,1),(2,2,2);
 
 /*Table structure for table `sexes` */
 

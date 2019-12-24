@@ -30,7 +30,6 @@ namespace barangay.PL.Registrations
         EL.Registrations.Residentscitizenship residentcitizenshipEL = new EL.Registrations.Residentscitizenship();
         EL.Registrations.Residentscivilstatus residentcivilstatusEL = new EL.Registrations.Residentscivilstatus();
         EL.Registrations.Residentshousehold residenthouseholdEL = new EL.Registrations.Residentshousehold();
-        EL.Registrations.Residentshouseholdmember residenthouseholdmemberEL = new EL.Registrations.Residentshouseholdmember();
         EL.Registrations.Residentsoccupation residentoccupationEL = new EL.Registrations.Residentsoccupation();
         EL.Registrations.Residentsreligion residentreligionEL = new EL.Registrations.Residentsreligion();
         EL.Registrations.Residentssex residentsexEL = new EL.Registrations.Residentssex();
@@ -54,7 +53,6 @@ namespace barangay.PL.Registrations
         BL.Registrations.Residentscitizenship residentcitizenshipBL = new BL.Registrations.Residentscitizenship();
         BL.Registrations.Residentscivilstatus residentcivilstatusBL = new BL.Registrations.Residentscivilstatus();
         BL.Registrations.Residentshousehold residenthouseholdBL = new BL.Registrations.Residentshousehold();
-        BL.Registrations.Residentshouseholdmember residenthouseholdmemberBL = new BL.Registrations.Residentshouseholdmember();
         BL.Registrations.Residentsoccupation residentoccupationBL = new BL.Registrations.Residentsoccupation();
         BL.Registrations.Residentsreligion residentreligionBL = new BL.Registrations.Residentsreligion();
         BL.Registrations.Residentssex residentsexBL = new BL.Registrations.Residentssex();
@@ -99,6 +97,11 @@ namespace barangay.PL.Registrations
             methods.LoadDGV(dgv, residentBL.List(txtSearch.Text));
         }
 
+        private void PopulateDGVHousehold()
+        {
+            methods.LoadDGV(dgvHousehold, householdBL.List(txtSearch.Text));
+        }
+
         private void PopulateCB()
         {
             methods.LoadCB(cbCitizenship, citizenshipBL.List(), "citizenship", "citizenshipid");
@@ -118,6 +121,12 @@ namespace barangay.PL.Registrations
             methods.DGVRenameColumns(dgv, "residentid", "Barangay ID Number", "Last Name", "First Name", "Middle Name", "Height", "Precint Number", "CTC Number", "Date Accomplished", "Date Recorded");
             methods.DGVTheme(dgv);
             methods.DGVBUTTONAddEdit(dgv);
+
+            PopulateDGVHousehold();
+            methods.DGVHiddenColumns(dgvHousehold, "householdid");
+            methods.DGVRenameColumns(dgvHousehold, "householdid", "Household", "Household Number");
+            methods.DGVTheme(dgvHousehold);
+            methods.DGVBUTTONSelect(dgvHousehold);
         }
 
         private void ShowForm(bool bol)
@@ -130,6 +139,15 @@ namespace barangay.PL.Registrations
             pnlFormGroupStep3.Visible = !bol;
 
             ClearForm();
+        }
+
+        private void ShowHouseholds(bool bol)
+        {
+            gbCaptureImage.Visible = !bol;
+            gbSearchHousehold.Visible = bol;
+
+            txtSearchHousehold.ResetText();
+            
         }
 
         private void ShowResult(bool bol)
@@ -158,25 +176,29 @@ namespace barangay.PL.Registrations
         {
             s = "ADD";
             ShowForm(true);
+            ShowHouseholds(false);
             lblTitle.Text = "Adding Resident";
         }
 
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            residentEL.Residentid = Convert.ToInt32(dgv.SelectedRows[0].Cells["residentid"].Value);
-            educationEL.Residentid = residentEL.Residentid;
-            residentreligionEL.Residentid = residentEL.Residentid;
-            residentcivilstatusEL.Residentid = residentEL.Residentid;
-            residentsexEL.Residentid = residentEL.Residentid;
-            residentcitizenshipEL.Residentid = residentEL.Residentid;
-            residenthouseholdmemberEL.Residentid = residentEL.Residentid;
-            residentoccupationEL.Residentid = residentEL.Residentid;
-            homeaddressEL.Residentid = residentEL.Residentid;
-            residenthouseholdEL.Residentid = residentEL.Residentid;
-            provincialaddressEL.Residentid = residentEL.Residentid;
-            contactdetailEL.Residentid = residentEL.Residentid;
-            birthinformationEL.Residentid = residentEL.Residentid;
+
+            if (e.ColumnIndex == 0 | e.ColumnIndex == 1) 
+            {
+                residentEL.Residentid = Convert.ToInt32(dgv.SelectedRows[0].Cells["residentid"].Value);
+                educationEL.Residentid = residentEL.Residentid;
+                residentreligionEL.Residentid = residentEL.Residentid;
+                residentcivilstatusEL.Residentid = residentEL.Residentid;
+                residentsexEL.Residentid = residentEL.Residentid;
+                residentcitizenshipEL.Residentid = residentEL.Residentid;
+                residentoccupationEL.Residentid = residentEL.Residentid;
+                homeaddressEL.Residentid = residentEL.Residentid;
+                residenthouseholdEL.Residentid = residentEL.Residentid;
+                provincialaddressEL.Residentid = residentEL.Residentid;
+                contactdetailEL.Residentid = residentEL.Residentid;
+                birthinformationEL.Residentid = residentEL.Residentid;
+            }
 
 
 
@@ -184,14 +206,15 @@ namespace barangay.PL.Registrations
             {
                 s = "EDIT";
                 ShowForm(true);
+                ShowHouseholds(false);
                 lblTitle.Text = "Updating Resident";
+
                 residentEL = residentBL.Select(residentEL);
                 educationEL = educationBL.Select(educationEL);
                 residentreligionEL = residentreligionBL.Select(residentreligionEL);
                 residentcivilstatusEL = residentcivilstatusBL.Select(residentcivilstatusEL);
                 residentsexEL = residentsexBL.Select(residentsexEL);
                 residentcitizenshipEL = residentcitizenshipBL.Select(residentcitizenshipEL);
-                residenthouseholdmemberEL = residenthouseholdmemberBL.Select(residenthouseholdmemberEL);
                 residentoccupationEL = residentoccupationBL.Select(residentoccupationEL);
                 homeaddressEL = homeaddressBL.Select(homeaddressEL);
                 residenthouseholdEL = residenthouseholdBL.Select(residenthouseholdEL);
@@ -210,8 +233,6 @@ namespace barangay.PL.Registrations
                 dtpDateAccomplished.Text = residentEL.Dateaccomplished;
 
 
-                
-
                 cbEducationalAttainment.SelectedValue = educationEL.Educationalattainmentid.ToString();
                 txtCourse.Text = educationEL.Course;
                 dtpYearGraduated.Value = new DateTime(Convert.ToInt32(educationEL.Yeargraduated),1,1);
@@ -224,8 +245,6 @@ namespace barangay.PL.Registrations
 
                 cbCitizenship.SelectedValue = residentcitizenshipEL.Citizenshipid;
 
-                cbHouseholdMember.SelectedValue = residenthouseholdmemberEL.Householdmemberid;
-
                 cbProfessionOrOccupation.SelectedValue = residentoccupationEL.Occupationid;
 
                 cbPurok.SelectedValue = homeaddressEL.Purokid;
@@ -233,7 +252,11 @@ namespace barangay.PL.Registrations
                 txtStreet.Text = homeaddressEL.Street;
                 txtSubdivision.Text = homeaddressEL.Subdivision;
 
-                cbHouseholdMember.SelectedValue = residenthouseholdEL.Householdid;
+                householdEL.Householdid = residenthouseholdEL.Householdid;
+                householdEL = householdBL.Select(householdEL);
+                txtHousehold.Text = householdEL.Household + " (" + householdEL.Householdnumber + ")";
+
+                cbHouseholdMember.SelectedValue = residenthouseholdEL.Householdmemberid;
 
                 txtProvince.Text = provincialaddressEL.Province;
                 txtMunicipality.Text = provincialaddressEL.Municipality;
@@ -257,7 +280,6 @@ namespace barangay.PL.Registrations
                         (residentcivilstatusBL.Delete(residentcivilstatusEL)) &
                         (residentsexBL.Delete(residentsexEL)) &
                         (residentcitizenshipBL.Delete(residentcitizenshipEL)) &
-                        (residenthouseholdmemberBL.Delete(residenthouseholdmemberEL)) &
                         (residentoccupationBL.Delete(residentoccupationEL)) &
                         (homeaddressBL.Delete(homeaddressEL)) &
                         (residenthouseholdBL.Delete(residenthouseholdEL)) &
@@ -363,8 +385,6 @@ namespace barangay.PL.Registrations
 
             residentcitizenshipEL.Citizenshipid = Convert.ToInt32(cbCitizenship.SelectedValue);
 
-            residenthouseholdmemberEL.Householdmemberid = Convert.ToInt32(cbHouseholdMember.SelectedValue);
-
             residentoccupationEL.Occupationid = Convert.ToInt32(cbProfessionOrOccupation.SelectedValue);
 
             homeaddressEL.Purokid = Convert.ToInt32(cbPurok.SelectedValue);
@@ -372,7 +392,8 @@ namespace barangay.PL.Registrations
             homeaddressEL.Street = txtStreet.Text;
             homeaddressEL.Subdivision = txtSubdivision.Text;
 
-            residenthouseholdEL.Householdid = Convert.ToInt32(cbHouseholdMember.SelectedValue);
+            residenthouseholdEL.Householdid = householdEL.Householdid;
+            residenthouseholdEL.Householdmemberid = Convert.ToInt32(cbHouseholdMember.SelectedValue);
 
             provincialaddressEL.Province = txtProvince.Text;
             provincialaddressEL.Municipality = txtMunicipality.Text;
@@ -395,7 +416,6 @@ namespace barangay.PL.Registrations
                     residentcivilstatusEL.Residentid = residentEL.Residentid;
                     residentsexEL.Residentid = residentEL.Residentid;
                     residentcitizenshipEL.Residentid = residentEL.Residentid;
-                    residenthouseholdmemberEL.Residentid = residentEL.Residentid;
                     residentoccupationEL.Residentid = residentEL.Residentid;
                     homeaddressEL.Residentid = residentEL.Residentid;
                     residenthouseholdEL.Residentid = residentEL.Residentid;
@@ -409,7 +429,6 @@ namespace barangay.PL.Registrations
                         (residentcivilstatusBL.Insert(residentcivilstatusEL) > 0) &
                         (residentsexBL.Insert(residentsexEL) > 0) &
                         (residentcitizenshipBL.Insert(residentcitizenshipEL) > 0) &
-                        (residenthouseholdmemberBL.Insert(residenthouseholdmemberEL) > 0) &
                         (residentoccupationBL.Insert(residentoccupationEL) > 0) &
                         (homeaddressBL.Insert(homeaddressEL) > 0) &
                         (residenthouseholdBL.Insert(residenthouseholdEL) > 0) &
@@ -429,7 +448,6 @@ namespace barangay.PL.Registrations
                         (residentcivilstatusBL.Update(residentcivilstatusEL)) &
                         (residentsexBL.Update(residentsexEL)) &
                         (residentcitizenshipBL.Update(residentcitizenshipEL)) &
-                        (residenthouseholdmemberBL.Update(residenthouseholdmemberEL)) &
                         (residentoccupationBL.Update(residentoccupationEL)) &
                         (homeaddressBL.Update(homeaddressEL)) &
                         (residenthouseholdBL.Update(residenthouseholdEL)) &
@@ -440,6 +458,27 @@ namespace barangay.PL.Registrations
 
             ShowResult(bol);
 
+        }
+
+        private void btnSelectHousehold_Click(object sender, EventArgs e)
+        {
+            ShowHouseholds(true);
+        }
+
+        private void btnCancelSearchHousehold_Click(object sender, EventArgs e)
+        {
+            ShowHouseholds(false);
+        }
+
+        private void dgvHousehold_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                householdEL.Householdid = Convert.ToInt32(dgvHousehold.SelectedRows[0].Cells["householdid"].Value);
+                householdEL = householdBL.Select(householdEL);
+                txtHousehold.Text = householdEL.Household + " (" + householdEL.Householdnumber + ")";
+                ShowHouseholds(false);
+            }
         }
     }
 }

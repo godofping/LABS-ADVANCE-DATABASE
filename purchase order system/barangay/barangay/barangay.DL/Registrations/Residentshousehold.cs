@@ -18,6 +18,7 @@ namespace barangay.DL.Registrations
                 residenthouseholdEL.Residenthouseholdid = Convert.ToInt32(dt.Rows[0]["residenthouseholdid"]);
                 residenthouseholdEL.Residentid = Convert.ToInt32(dt.Rows[0]["residentid"]);
                 residenthouseholdEL.Householdid = Convert.ToInt32(dt.Rows[0]["householdid"]);
+                residenthouseholdEL.Householdmemberid = Convert.ToInt32(dt.Rows[0]["householdmemberid"]);
 
                 return residenthouseholdEL;
             }
@@ -29,12 +30,13 @@ namespace barangay.DL.Registrations
 
         public long Insert(EL.Registrations.Residentshousehold residenthouseholdEL)
         {
-            return Helper.executeNonQueryLong("insert into residentshousehold (residentid, householdid) values ('" + residenthouseholdEL.Residentid + "', '" + residenthouseholdEL.Householdid + "')");
+            Console.WriteLine("insert into residentshousehold (residentid, householdid, householdmemberid) values ('" + residenthouseholdEL.Residentid + "', '" + residenthouseholdEL.Householdid + "', '" + residenthouseholdEL.Householdmemberid + "')");
+            return Helper.executeNonQueryLong("insert into residentshousehold (residentid, householdid, householdmemberid) values ('" + residenthouseholdEL.Residentid + "', '" + residenthouseholdEL.Householdid + "', '" + residenthouseholdEL.Householdmemberid + "')");
         }
 
         public Boolean Update(EL.Registrations.Residentshousehold residenthouseholdEL)
         {
-            return Helper.executeNonQueryBool("update residentshousehold set householdid = '" + residenthouseholdEL.Householdid + "' where residentid = '" + residenthouseholdEL.Residentid + "'");
+            return Helper.executeNonQueryBool("update residentshousehold set householdid = '" + residenthouseholdEL.Householdid + "', householdmemberid = '" + residenthouseholdEL.Householdmemberid + "' where residentid = '" + residenthouseholdEL.Residentid + "'");
         }
 
         public Boolean Delete(EL.Registrations.Residentshousehold residenthouseholdEL)
