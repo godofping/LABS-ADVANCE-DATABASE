@@ -75,6 +75,15 @@ namespace barangay.PL
 
         }
 
+        public static void ClearRB(params RadioButton[] i)
+        {
+            foreach (RadioButton d in i)
+            {
+                d.Checked = false;
+            }
+
+        }
+
         public static string ConvertToMoneyFormat(object obj)
         {
             return "₱" + String.Format("{0:n}", obj);
@@ -242,6 +251,55 @@ namespace barangay.PL
             btn1.UseColumnTextForButtonValue = true;
         }
 
+        public static void DGVBUTTONViewEditDelete(DataGridView dgv)
+        {
+
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            dgv.Columns.Add(btn);
+            btn.HeaderText = "";
+            btn.Text = "View";
+            btn.Name = "btnViews";
+            btn.FillWeight = 20;
+            btn.ReadOnly = false;
+            btn.DividerWidth = 0;
+            btn.FillWeight = 10;
+            btn.Frozen = false;
+            btn.MinimumWidth = 5;
+            btn.Width = 100;
+            btn.FlatStyle = FlatStyle.Popup;
+            btn.UseColumnTextForButtonValue = true;
+
+            DataGridViewButtonColumn btn1 = new DataGridViewButtonColumn();
+            dgv.Columns.Add(btn1);
+            btn1.HeaderText = "";
+            btn1.Text = "Edit";
+            btn1.Name = "btnEdit";
+            btn1.FillWeight = 20;
+            btn1.ReadOnly = false;
+            btn1.DividerWidth = 0;
+            btn1.FillWeight = 10;
+            btn1.Frozen = false;
+            btn1.MinimumWidth = 5;
+            btn1.Width = 100;
+            btn1.FlatStyle = FlatStyle.Popup;
+            btn1.UseColumnTextForButtonValue = true;
+
+            DataGridViewButtonColumn btn2 = new DataGridViewButtonColumn();
+            dgv.Columns.Add(btn2);
+            btn2.HeaderText = "";
+            btn2.Text = "Delete";
+            btn2.Name = "btnDelete";
+            btn2.FillWeight = 20;
+            btn2.ReadOnly = false;
+            btn2.DividerWidth = 0;
+            btn2.FillWeight = 10;
+            btn2.Frozen = false;
+            btn2.MinimumWidth = 5;
+            btn2.Width = 100;
+            btn2.FlatStyle = FlatStyle.Popup;
+            btn2.UseColumnTextForButtonValue = true;
+        }
+
         public static void DGVFillWeights(DataGridView dgv, int[] x, int[] y)
         {
             int m = 0;
@@ -361,6 +419,13 @@ namespace barangay.PL
             else if (dgv.Columns.Contains("btnView"))
             {
                 dgv.Columns["btnView"].DisplayIndex = dgv.ColumnCount - 2;
+            }
+
+            if (dgv.Columns.Contains("btnViews") && dgv.Columns["btnEdit"].Visible && dgv.Columns["btnDelete"].Visible)
+            {
+                dgv.Columns["btnViews"].DisplayIndex = dgv.ColumnCount - 3;
+                dgv.Columns["btnEdit"].DisplayIndex = dgv.ColumnCount - 2;
+                dgv.Columns["btnDelete"].DisplayIndex = dgv.ColumnCount - 1;
             }
 
 

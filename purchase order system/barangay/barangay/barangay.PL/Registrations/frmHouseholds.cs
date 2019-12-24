@@ -14,8 +14,10 @@ namespace barangay.PL.Registrations
     public partial class frmHouseholds : Form
     {
         EL.Registrations.Households householdEL = new EL.Registrations.Households();
+        EL.Registrations.Residents residentEL = new EL.Registrations.Residents();
 
         BL.Registrations.Households householdBL = new BL.Registrations.Households();
+        BL.Registrations.Residents residentBL = new BL.Registrations.Residents();
 
         string s = "";
 
@@ -59,7 +61,8 @@ namespace barangay.PL.Registrations
             methods.DGVHiddenColumns(dgv, "householdid");
             methods.DGVRenameColumns(dgv, "householdid", "Household", "Household Number");
             methods.DGVTheme(dgv);
-            methods.DGVBUTTONAddEdit(dgv);
+            methods.DGVBUTTONViewEditDelete(dgv);
+            
         }
 
         private void ShowForm(bool bol)
@@ -68,6 +71,14 @@ namespace barangay.PL.Registrations
             pnlForm.Visible = bol;
 
             ClearForm();
+        }
+
+        private void ShowView(bool bol)
+        {
+            pnlMain.Visible = !bol;
+            pnlForm.Visible = !bol;
+            pnlView.Visible = bol;
+            
         }
 
         private void ShowResult(bool bol)
@@ -88,6 +99,7 @@ namespace barangay.PL.Registrations
         {
             DGVManage();
             ShowForm(false);
+            ShowView(false);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -131,23 +143,38 @@ namespace barangay.PL.Registrations
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.ColumnIndex == 0 | e.ColumnIndex == 1 | e.ColumnIndex == 2)
             householdEL.Householdid = Convert.ToInt32(dgv.SelectedRows[0].Cells["householdid"].Value);
 
             if (e.ColumnIndex == 0)
+            {
+                s = "VIEW";
+                ShowForm(false);
+                ShowView(true);
+                lblTitle.Text = "View Household";
+
+                householdEL = householdBL.Select(householdEL);
+
+                lblHousehold.Text = householdEL.Household;
+                lblHouseHoldNumber.Text = householdEL.Householdnumber;
+
+                methods.LoadDGV(dgvHouseholdmembers, residentBL.ListByHousehold(householdEL.Householdid));
+                methods.DGVRenameColumns(dgvHouseholdmembers, "Household Member", "Last Name", "First Name", "Middle Name");
+                methods.DGVTheme(dgvHouseholdmembers);
+
+
+            }
+            else if (e.ColumnIndex == 1)
             {
                 s = "EDIT";
                 ShowForm(true);
                 lblTitle.Text = "Updating Household";
                 
-
-
                 householdEL = householdBL.Select(householdEL);
                 txtHousehold.Text = householdEL.Household;
                 txtHouseholdNumber.Text = householdEL.Householdnumber;
-
-                
             }
-            else if (e.ColumnIndex == 1)
+            else if (e.ColumnIndex == 2)
             {
                 DialogResult dialogResult = MessageBox.Show("ARE YOU SURE TO DELETE THIS SELECTED ITEM?", "DELETING", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -190,6 +217,11 @@ namespace barangay.PL.Registrations
             });
 
             delayedCalculationThreadDGV.Start();
+        }
+
+        private void btnCloseView_Click(object sender, EventArgs e)
+        {
+            ShowView(false);
         }
     }
 }

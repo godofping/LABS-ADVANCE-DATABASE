@@ -146,7 +146,7 @@ namespace barangay.PL.Registrations
         private void DGVManage()
         {
             PopulateDGV();
-            methods.DGVHiddenColumns(dgv, "residentid", "ispwd", "age", "educationalattainment", "birthdate", "sex", "household", "purok");
+            methods.DGVHiddenColumns(dgv, "residentid", "ispwd", "age", "educationalattainment", "birthdate", "sex", "household", "purok", "householdid");
             methods.DGVRenameColumns(dgv, "residentid", "Household Number", "Household Member", "Last Name", "First Name", "Middle Name");
             methods.DGVTheme(dgv);
             methods.DGVBUTTONAddEdit(dgv);

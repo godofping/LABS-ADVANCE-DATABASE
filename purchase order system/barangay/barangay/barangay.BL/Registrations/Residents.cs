@@ -15,6 +15,11 @@ namespace barangay.BL.Registrations
             return residentDL.List(keyword);
         }
 
+        public DataTable ListByHousehold(int id)
+        {
+            return residentDL.ListByHousehold(id);
+        }
+
         public DataTable ListByHouseholdHeads(String keyword)
         {
             return residentDL.ListByHouseholdHeads(keyword);

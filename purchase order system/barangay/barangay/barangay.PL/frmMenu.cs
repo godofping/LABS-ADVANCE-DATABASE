@@ -12,6 +12,7 @@ namespace barangay.PL
 {
     public partial class frmMenu : Form
     {
+        
         public frmMenu()
         {
             InitializeComponent();
@@ -43,51 +44,93 @@ namespace barangay.PL
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
+            var pleaseWait = new frmLoading();
+            pleaseWait.Show();
+            Application.DoEvents();
+
             ChangePanelLocation(pnlRedSide, btnHome);
             var frm = new Transactions.frmHome();
             methods.ChangePanelDisplay(frm, pnlMain);
+
+            pleaseWait.Close();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            var pleaseWait = new frmLoading();
+            pleaseWait.Show();
+            Application.DoEvents();
+
             ChangePanelLocation(pnlRedSide, btnHome);
             var frm = new Transactions.frmHome();
             methods.ChangePanelDisplay(frm, pnlMain);
+
+            pleaseWait.Close();
         }
 
         private void btnResidents_Click(object sender, EventArgs e)
         {
+            var pleaseWait = new frmLoading();
+            pleaseWait.Show();
+            Application.DoEvents();
+
             ChangePanelLocation(pnlRedSide, btnResidents);
             var frm = new Registrations.frmResidents();
             methods.ChangePanelDisplay(frm, pnlMain);
+
+            pleaseWait.Close();
         }
 
         private void btnHouseholds_Click(object sender, EventArgs e)
         {
+            var pleaseWait = new frmLoading();
+            pleaseWait.Show();
+            Application.DoEvents();
+
             ChangePanelLocation(pnlRedSide, btnHouseholds);
             var frm = new Registrations.frmHouseholds();
             methods.ChangePanelDisplay(frm, pnlMain);
+
+            pleaseWait.Close();
         }
 
         private void btnAccomplishments_Click(object sender, EventArgs e)
         {
+            var pleaseWait = new frmLoading();
+            pleaseWait.Show();
+            Application.DoEvents();
+
             ChangePanelLocation(pnlRedSide, btnAccomplishments);
             var frm = new Registrations.frmAccomplishments();
             methods.ChangePanelDisplay(frm, pnlMain);
+
+            pleaseWait.Close();
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
+            var pleaseWait = new frmLoading();
+            pleaseWait.Show();
+            Application.DoEvents();
+
             ChangePanelLocation(pnlRedSide, btnReports);
             var frm = new Transactions.frmReports();
             methods.ChangePanelDisplay(frm, pnlMain);
+
+            pleaseWait.Close();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            var pleaseWait = new frmLoading();
+            pleaseWait.Show();
+            Application.DoEvents();
+
             ChangePanelLocation(pnlRedSide, btnSettings);
             var frm = new Registrations.frmSettings();
             methods.ChangePanelDisplay(frm, pnlMain);
+
+            pleaseWait.Close();
         }
 
         
