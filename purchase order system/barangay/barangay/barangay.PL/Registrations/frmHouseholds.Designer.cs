@@ -37,8 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.pnlForm = new System.Windows.Forms.Panel();
-            this.pnlFormGroup = new System.Windows.Forms.Panel();
+            this.pnlAddEdit = new System.Windows.Forms.Panel();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtHousehold = new System.Windows.Forms.TextBox();
@@ -48,19 +47,19 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlView = new System.Windows.Forms.Panel();
-            this.btnCloseView = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblHousehold = new System.Windows.Forms.Label();
-            this.lblHouseHoldNumber = new System.Windows.Forms.Label();
             this.dgvHouseholdmembers = new System.Windows.Forms.DataGridView();
+            this.lblHouseHoldNumber = new System.Windows.Forms.Label();
+            this.lblHousehold = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnCloseView = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            this.pnlForm.SuspendLayout();
-            this.pnlFormGroup.SuspendLayout();
+            this.pnlAddEdit.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.pnlView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHouseholdmembers)).BeginInit();
@@ -164,25 +163,17 @@
             this.dgv.TabIndex = 6;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
-            // pnlForm
+            // pnlAddEdit
             // 
-            this.pnlForm.Controls.Add(this.pnlFormGroup);
-            this.pnlForm.Location = new System.Drawing.Point(3, 80);
-            this.pnlForm.Name = "pnlForm";
-            this.pnlForm.Size = new System.Drawing.Size(1102, 663);
-            this.pnlForm.TabIndex = 8;
-            this.pnlForm.Visible = false;
-            // 
-            // pnlFormGroup
-            // 
-            this.pnlFormGroup.BackColor = System.Drawing.Color.White;
-            this.pnlFormGroup.Controls.Add(this.groupBox9);
-            this.pnlFormGroup.Controls.Add(this.btnSave);
-            this.pnlFormGroup.Controls.Add(this.btnClose);
-            this.pnlFormGroup.Location = new System.Drawing.Point(11, 3);
-            this.pnlFormGroup.Name = "pnlFormGroup";
-            this.pnlFormGroup.Size = new System.Drawing.Size(1082, 650);
-            this.pnlFormGroup.TabIndex = 13;
+            this.pnlAddEdit.BackColor = System.Drawing.Color.White;
+            this.pnlAddEdit.Controls.Add(this.groupBox9);
+            this.pnlAddEdit.Controls.Add(this.btnSave);
+            this.pnlAddEdit.Controls.Add(this.btnClose);
+            this.pnlAddEdit.Location = new System.Drawing.Point(14, 85);
+            this.pnlAddEdit.Name = "pnlAddEdit";
+            this.pnlAddEdit.Size = new System.Drawing.Size(1082, 650);
+            this.pnlAddEdit.TabIndex = 13;
+            this.pnlAddEdit.Visible = false;
             // 
             // groupBox9
             // 
@@ -284,17 +275,66 @@
             // pnlView
             // 
             this.pnlView.BackColor = System.Drawing.Color.White;
+            this.pnlView.Controls.Add(this.lblTotal);
             this.pnlView.Controls.Add(this.dgvHouseholdmembers);
             this.pnlView.Controls.Add(this.lblHouseHoldNumber);
             this.pnlView.Controls.Add(this.lblHousehold);
             this.pnlView.Controls.Add(this.label8);
             this.pnlView.Controls.Add(this.label7);
             this.pnlView.Controls.Add(this.btnCloseView);
-            this.pnlView.Location = new System.Drawing.Point(14, 82);
+            this.pnlView.Location = new System.Drawing.Point(14, 85);
             this.pnlView.Name = "pnlView";
             this.pnlView.Size = new System.Drawing.Size(1082, 650);
             this.pnlView.TabIndex = 67;
             this.pnlView.Visible = false;
+            // 
+            // dgvHouseholdmembers
+            // 
+            this.dgvHouseholdmembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHouseholdmembers.Location = new System.Drawing.Point(3, 123);
+            this.dgvHouseholdmembers.Name = "dgvHouseholdmembers";
+            this.dgvHouseholdmembers.Size = new System.Drawing.Size(1072, 439);
+            this.dgvHouseholdmembers.TabIndex = 71;
+            // 
+            // lblHouseHoldNumber
+            // 
+            this.lblHouseHoldNumber.AutoSize = true;
+            this.lblHouseHoldNumber.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHouseHoldNumber.Location = new System.Drawing.Point(474, 57);
+            this.lblHouseHoldNumber.Name = "lblHouseHoldNumber";
+            this.lblHouseHoldNumber.Size = new System.Drawing.Size(34, 22);
+            this.lblHouseHoldNumber.TabIndex = 70;
+            this.lblHouseHoldNumber.Text = "<>";
+            // 
+            // lblHousehold
+            // 
+            this.lblHousehold.AutoSize = true;
+            this.lblHousehold.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHousehold.Location = new System.Drawing.Point(30, 57);
+            this.lblHousehold.Name = "lblHousehold";
+            this.lblHousehold.Size = new System.Drawing.Size(34, 22);
+            this.lblHousehold.TabIndex = 69;
+            this.lblHousehold.Text = "<>";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(473, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(240, 28);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "Household Number";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(29, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(137, 28);
+            this.label7.TabIndex = 67;
+            this.label7.Text = "Household";
             // 
             // btnCloseView
             // 
@@ -314,53 +354,15 @@
             this.btnCloseView.UseVisualStyleBackColor = false;
             this.btnCloseView.Click += new System.EventHandler(this.btnCloseView_Click);
             // 
-            // label7
+            // lblTotal
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(29, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 28);
-            this.label7.TabIndex = 67;
-            this.label7.Text = "Household";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(473, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(240, 28);
-            this.label8.TabIndex = 68;
-            this.label8.Text = "Household Number";
-            // 
-            // lblHousehold
-            // 
-            this.lblHousehold.AutoSize = true;
-            this.lblHousehold.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHousehold.Location = new System.Drawing.Point(30, 57);
-            this.lblHousehold.Name = "lblHousehold";
-            this.lblHousehold.Size = new System.Drawing.Size(34, 22);
-            this.lblHousehold.TabIndex = 69;
-            this.lblHousehold.Text = "<>";
-            // 
-            // lblHouseHoldNumber
-            // 
-            this.lblHouseHoldNumber.AutoSize = true;
-            this.lblHouseHoldNumber.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHouseHoldNumber.Location = new System.Drawing.Point(474, 57);
-            this.lblHouseHoldNumber.Name = "lblHouseHoldNumber";
-            this.lblHouseHoldNumber.Size = new System.Drawing.Size(34, 22);
-            this.lblHouseHoldNumber.TabIndex = 70;
-            this.lblHouseHoldNumber.Text = "<>";
-            // 
-            // dgvHouseholdmembers
-            // 
-            this.dgvHouseholdmembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHouseholdmembers.Location = new System.Drawing.Point(3, 123);
-            this.dgvHouseholdmembers.Name = "dgvHouseholdmembers";
-            this.dgvHouseholdmembers.Size = new System.Drawing.Size(1072, 439);
-            this.dgvHouseholdmembers.TabIndex = 71;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(30, 595);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(34, 22);
+            this.lblTotal.TabIndex = 72;
+            this.lblTotal.Text = "<>";
             // 
             // frmHouseholds
             // 
@@ -370,7 +372,7 @@
             this.ClientSize = new System.Drawing.Size(1108, 745);
             this.Controls.Add(this.pnlView);
             this.Controls.Add(this.pnlMain);
-            this.Controls.Add(this.pnlForm);
+            this.Controls.Add(this.pnlAddEdit);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlTitle);
             this.DoubleBuffered = true;
@@ -387,8 +389,7 @@
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            this.pnlForm.ResumeLayout(false);
-            this.pnlFormGroup.ResumeLayout(false);
+            this.pnlAddEdit.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.pnlView.ResumeLayout(false);
@@ -403,8 +404,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Panel pnlForm;
-        private System.Windows.Forms.Panel pnlFormGroup;
+        private System.Windows.Forms.Panel pnlAddEdit;
         private System.Windows.Forms.TextBox txtHouseholdNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSave;
@@ -425,5 +425,6 @@
         private System.Windows.Forms.Label lblHouseHoldNumber;
         private System.Windows.Forms.Label lblHousehold;
         private System.Windows.Forms.DataGridView dgvHouseholdmembers;
+        private System.Windows.Forms.Label lblTotal;
     }
 }

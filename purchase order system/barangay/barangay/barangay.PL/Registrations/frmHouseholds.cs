@@ -65,20 +65,28 @@ namespace barangay.PL.Registrations
             
         }
 
-        private void ShowForm(bool bol)
+        private void ShowAddEdit()
         {
-            pnlMain.Visible = !bol;
-            pnlForm.Visible = bol;
-
+            pnlMain.Visible = false;
+            pnlView.Visible = false;
+            pnlAddEdit.Visible = true;
             ClearForm();
         }
 
-        private void ShowView(bool bol)
+        private void ShowMain()
         {
-            pnlMain.Visible = !bol;
-            pnlForm.Visible = !bol;
-            pnlView.Visible = bol;
-            
+            pnlMain.Visible = true;
+            pnlView.Visible = false;
+            pnlAddEdit.Visible = false;
+            ClearForm();
+            lblTitle.Text = "List of Households";
+        }
+
+        private void ShowView()
+        {
+            pnlMain.Visible = false;
+            pnlView.Visible = true;
+            pnlAddEdit.Visible = false;
         }
 
         private void ShowResult(bool bol)
@@ -87,7 +95,7 @@ namespace barangay.PL.Registrations
             {
                 MessageBox.Show("SUCCESS");
                 PopulateDGV();
-                ShowForm(false);
+                ShowMain();
             }
             else
             {
@@ -98,14 +106,13 @@ namespace barangay.PL.Registrations
         private void frmHouseholds_Load(object sender, EventArgs e)
         {
             DGVManage();
-            ShowForm(false);
-            ShowView(false);
+            ShowMain();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             s = "ADD";
-            ShowForm(true);
+            ShowAddEdit();
             lblTitle.Text = "Adding Household";
             
         }
@@ -138,7 +145,7 @@ namespace barangay.PL.Registrations
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            ShowForm(false);
+            ShowMain();
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -149,8 +156,7 @@ namespace barangay.PL.Registrations
             if (e.ColumnIndex == 0)
             {
                 s = "VIEW";
-                ShowForm(false);
-                ShowView(true);
+                ShowView();
                 lblTitle.Text = "View Household";
 
                 householdEL = householdBL.Select(householdEL);
@@ -158,7 +164,11 @@ namespace barangay.PL.Registrations
                 lblHousehold.Text = householdEL.Household;
                 lblHouseHoldNumber.Text = householdEL.Householdnumber;
 
-                methods.LoadDGV(dgvHouseholdmembers, residentBL.ListByHousehold(householdEL.Householdid));
+                var dt = residentBL.ListByHousehold(householdEL.Householdid);
+
+                lblTotal.Text = "Total Number of Family Member: " + dt.Rows.Count;
+
+                methods.LoadDGV(dgvHouseholdmembers, dt);
                 methods.DGVRenameColumns(dgvHouseholdmembers, "Household Member", "Last Name", "First Name", "Middle Name");
                 methods.DGVTheme(dgvHouseholdmembers);
 
@@ -167,7 +177,7 @@ namespace barangay.PL.Registrations
             else if (e.ColumnIndex == 1)
             {
                 s = "EDIT";
-                ShowForm(true);
+                ShowAddEdit();
                 lblTitle.Text = "Updating Household";
                 
                 householdEL = householdBL.Select(householdEL);
@@ -221,7 +231,7 @@ namespace barangay.PL.Registrations
 
         private void btnCloseView_Click(object sender, EventArgs e)
         {
-            ShowView(false);
+            ShowMain();
         }
     }
 }

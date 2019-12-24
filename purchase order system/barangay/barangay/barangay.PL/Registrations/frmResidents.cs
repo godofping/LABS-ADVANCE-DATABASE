@@ -149,7 +149,7 @@ namespace barangay.PL.Registrations
             methods.DGVHiddenColumns(dgv, "residentid", "ispwd", "age", "educationalattainment", "birthdate", "sex", "household", "purok", "householdid");
             methods.DGVRenameColumns(dgv, "residentid", "Household Number", "Household Member", "Last Name", "First Name", "Middle Name");
             methods.DGVTheme(dgv);
-            methods.DGVBUTTONAddEdit(dgv);
+            methods.DGVBUTTONViewEditDelete(dgv);
 
             PopulateDGVHousehold();
             methods.DGVHiddenColumns(dgvHousehold, "householdid");
@@ -158,17 +158,37 @@ namespace barangay.PL.Registrations
             methods.DGVBUTTONSelect(dgvHousehold);
         }
 
-        private void ShowForm(bool bol)
+        private void ShowAddEdit()
         {
-            pnlMain.Visible = !bol;
-            pnlForm.Visible = bol;
-
-            pnlFormGroupStep1.Visible = bol;
-            pnlFormGroupStep2.Visible = !bol;
-            pnlFormGroupStep3.Visible = !bol;
-
+            pnlMain.Visible = false;
+            pnlView.Visible = false;
+            pnlAddEditStep1.Visible = true;
+            pnlAddEditStep2.Visible = false;
+            pnlAddEditStep3.Visible = false;
             ClearForm();
         }
+
+        private void ShowMain()
+        {
+            pnlMain.Visible = true;
+            pnlView.Visible = false;
+            pnlAddEditStep1.Visible = false;
+            pnlAddEditStep2.Visible = false;
+            pnlAddEditStep3.Visible = false;
+            ClearForm();
+            lblTitle.Text = "List of Residents";
+        }
+
+        private void ShowView()
+        {
+            pnlMain.Visible = false;
+            pnlView.Visible = true;
+            pnlAddEditStep1.Visible = false;
+            pnlAddEditStep2.Visible = false;
+            pnlAddEditStep3.Visible = false;
+        }
+
+        
 
         private void ShowHouseholds(bool bol)
         {
@@ -176,8 +196,6 @@ namespace barangay.PL.Registrations
             gbSearchHousehold.Visible = bol;
 
             txtSearchHousehold.ResetText();
-
-            
         }
 
         private void ShowResult(bool bol)
@@ -186,7 +204,7 @@ namespace barangay.PL.Registrations
             {
                 MessageBox.Show("SUCCESS");
                 PopulateDGV();
-                ShowForm(false);
+                ShowMain();
             }
             else
             {
@@ -196,7 +214,7 @@ namespace barangay.PL.Registrations
 
         private void frmResidents_Load(object sender, EventArgs e)
         {
-            ShowForm(false);
+            ShowMain();
             PopulateCB();
             DGVManage();
             
@@ -205,7 +223,7 @@ namespace barangay.PL.Registrations
         private void btnAdd_Click(object sender, EventArgs e)
         {
             s = "ADD";
-            ShowForm(true);
+            ShowAddEdit();
             ShowHouseholds(false);
             lblTitle.Text = "Adding Resident";
         }
@@ -214,7 +232,7 @@ namespace barangay.PL.Registrations
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (e.ColumnIndex == 0 | e.ColumnIndex == 1) 
+            if (e.ColumnIndex == 0 | e.ColumnIndex == 1 | e.ColumnIndex == 2) 
             {
                 residentEL.Residentid = Convert.ToInt32(dgv.SelectedRows[0].Cells["residentid"].Value);
                 educationEL.Residentid = residentEL.Residentid;
@@ -231,11 +249,78 @@ namespace barangay.PL.Registrations
             }
 
 
-
             if (e.ColumnIndex == 0)
             {
+                s = "VIEW";
+                ShowView();
+                ShowHouseholds(false);
+                lblTitle.Text = "Updating Resident";
+
+                residentEL = residentBL.Select(residentEL);
+                educationEL = educationBL.Select(educationEL);
+                residentreligionEL = residentreligionBL.Select(residentreligionEL);
+                residentcivilstatusEL = residentcivilstatusBL.Select(residentcivilstatusEL);
+                residentsexEL = residentsexBL.Select(residentsexEL);
+                residentcitizenshipEL = residentcitizenshipBL.Select(residentcitizenshipEL);
+                residentoccupationEL = residentoccupationBL.Select(residentoccupationEL);
+                homeaddressEL = homeaddressBL.Select(homeaddressEL);
+                residenthouseholdEL = residenthouseholdBL.Select(residenthouseholdEL);
+                provincialaddressEL = provincialaddressBL.Select(provincialaddressEL);
+                contactdetailEL = contactdetailBL.Select(contactdetailEL);
+                birthinformationEL = birthinformationBL.Select(birthinformationEL);
+
+
+
+                txtBarangayIDNumber.Text = residentEL.Barangayidnumber;
+                txtLastName.Text = residentEL.Lastname;
+                txtFirstName.Text = residentEL.Firstname;
+                txtMiddleName.Text = residentEL.Middlename;
+                txtHeight.Text = residentEL.Height;
+                txtPrecintNumber.Text = residentEL.Precintnumber;
+                txtCTCNumber.Text = residentEL.Ctcnumber;
+                dtpDateAccomplished.Text = residentEL.Dateaccomplished;
+                cbIsPwd.Checked = Convert.ToBoolean(residentEL.Ispwd);
+
+                cbEducationalAttainment.SelectedValue = educationEL.Educationalattainmentid.ToString();
+                txtCourse.Text = educationEL.Course;
+                dtpYearGraduated.Value = new DateTime(Convert.ToInt32(educationEL.Yeargraduated), 1, 1);
+
+                cbReligion.SelectedValue = residentreligionEL.Religionid.ToString();
+
+                cbCivilStatus.SelectedValue = residentcivilstatusEL.Civilstatusid;
+
+                cbSex.SelectedValue = residentsexEL.Sexid;
+
+                cbCitizenship.SelectedValue = residentcitizenshipEL.Citizenshipid;
+
+                cbProfessionOrOccupation.SelectedValue = residentoccupationEL.Occupationid;
+
+                cbPurok.SelectedValue = homeaddressEL.Purokid;
+                txtHouseNumber.Text = homeaddressEL.Housenumber;
+                txtStreet.Text = homeaddressEL.Street;
+                txtSubdivision.Text = homeaddressEL.Subdivision;
+
+                householdEL.Householdid = residenthouseholdEL.Householdid;
+                householdEL = householdBL.Select(householdEL);
+                txtHousehold.Text = householdEL.Household + " (" + householdEL.Householdnumber + ")";
+
+                cbHouseholdMember.SelectedValue = residenthouseholdEL.Householdmemberid;
+
+                txtProvince.Text = provincialaddressEL.Province;
+                txtMunicipality.Text = provincialaddressEL.Municipality;
+
+                txtEmailAddress.Text = contactdetailEL.Emailaddress;
+                txtPhoneNumber.Text = contactdetailEL.Phonenumber;
+                txtCellphoneNumber.Text = contactdetailEL.Cellphonenumber;
+
+                txtBirthPlace.Text = birthinformationEL.Birthplace;
+                dtpBirthDate.Text = birthinformationEL.Birthdate;
+
+            }
+            else if (e.ColumnIndex == 1)
+            {
                 s = "EDIT";
-                ShowForm(true);
+                ShowAddEdit();
                 ShowHouseholds(false);
                 lblTitle.Text = "Updating Resident";
 
@@ -300,7 +385,7 @@ namespace barangay.PL.Registrations
                 dtpBirthDate.Text = birthinformationEL.Birthdate;
 
             }
-            else if (e.ColumnIndex == 1)
+            else if (e.ColumnIndex == 2)
             {
                 DialogResult dialogResult = MessageBox.Show("ARE YOU SURE TO DELETE THIS SELECTED ITEM?", "DELETING", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -396,9 +481,9 @@ namespace barangay.PL.Registrations
                 methods.CheckRequiredCB(cbSex, cbCivilStatus, cbCitizenship, cbReligion, cbEducationalAttainment, cbProfessionOrOccupation) &
                 methods.CheckRequiredDTP(dtpBirthDate, dtpYearGraduated))
             {
-                pnlFormGroupStep1.Visible = false;
-                pnlFormGroupStep2.Visible = true;
-                pnlFormGroupStep3.Visible = false;
+                pnlAddEditStep1.Visible = false;
+                pnlAddEditStep2.Visible = true;
+                pnlAddEditStep3.Visible = false;
             }
             else
             {
@@ -413,9 +498,9 @@ namespace barangay.PL.Registrations
                 methods.CheckRequiredCB(cbPurok) &
                 methods.CheckRequiredDTP(dtpDateAccomplished))
             {
-                pnlFormGroupStep1.Visible = false;
-                pnlFormGroupStep2.Visible = false;
-                pnlFormGroupStep3.Visible = true;
+                pnlAddEditStep1.Visible = false;
+                pnlAddEditStep2.Visible = false;
+                pnlAddEditStep3.Visible = true;
             }
             else
             {
@@ -425,32 +510,32 @@ namespace barangay.PL.Registrations
 
         private void btnPreviousStep2_Click(object sender, EventArgs e)
         {
-            pnlFormGroupStep1.Visible = true;
-            pnlFormGroupStep2.Visible = false;
-            pnlFormGroupStep3.Visible = false;
+            pnlAddEditStep1.Visible = true;
+            pnlAddEditStep2.Visible = false;
+            pnlAddEditStep3.Visible = false;
         }
 
         private void btnPreviousStep3_Click(object sender, EventArgs e)
         {
-            pnlFormGroupStep1.Visible = false;
-            pnlFormGroupStep2.Visible = true;
-            pnlFormGroupStep3.Visible = false;
+            pnlAddEditStep1.Visible = false;
+            pnlAddEditStep2.Visible = true;
+            pnlAddEditStep3.Visible = false;
         }
 
             
         private void btnCloseStep1_Click(object sender, EventArgs e)
         {
-            ShowForm(false);
+            ShowMain();
         }
 
         private void btnCloseStep3_Click(object sender, EventArgs e)
         {
-            ShowForm(false);
+            ShowMain();
         }
 
         private void btnCloseStep2_Click(object sender, EventArgs e)
         {
-            ShowForm(false);
+            ShowMain();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -615,5 +700,12 @@ namespace barangay.PL.Registrations
         {
             PopulateDGV();
         }
+
+        private void btnCloseView_Click(object sender, EventArgs e)
+        {
+            ShowMain();
+        }
+
+ 
     }
 }
