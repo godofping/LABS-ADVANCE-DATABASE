@@ -36,28 +36,36 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pnlFormGroup = new System.Windows.Forms.Panel();
+            this.pnlAddEdit = new System.Windows.Forms.Panel();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnlForm = new System.Windows.Forms.Panel();
             this.pnlTitle = new System.Windows.Forms.Panel();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlView = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCloseView = new System.Windows.Forms.Button();
+            this.lblTitleAccomplishment = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblDateAccomplished = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblFile = new System.Windows.Forms.TextBox();
             this.groupBox9.SuspendLayout();
-            this.pnlFormGroup.SuspendLayout();
+            this.pnlAddEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.pnlSearch.SuspendLayout();
             this.pnlMain.SuspendLayout();
-            this.pnlForm.SuspendLayout();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlView.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox9
@@ -144,16 +152,17 @@
             this.lblTitle.Text = "Adding Accomplishment";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pnlFormGroup
+            // pnlAddEdit
             // 
-            this.pnlFormGroup.BackColor = System.Drawing.Color.White;
-            this.pnlFormGroup.Controls.Add(this.groupBox9);
-            this.pnlFormGroup.Controls.Add(this.btnSave);
-            this.pnlFormGroup.Controls.Add(this.btnClose);
-            this.pnlFormGroup.Location = new System.Drawing.Point(11, 3);
-            this.pnlFormGroup.Name = "pnlFormGroup";
-            this.pnlFormGroup.Size = new System.Drawing.Size(1082, 650);
-            this.pnlFormGroup.TabIndex = 13;
+            this.pnlAddEdit.BackColor = System.Drawing.Color.White;
+            this.pnlAddEdit.Controls.Add(this.groupBox9);
+            this.pnlAddEdit.Controls.Add(this.btnSave);
+            this.pnlAddEdit.Controls.Add(this.btnClose);
+            this.pnlAddEdit.Location = new System.Drawing.Point(14, 85);
+            this.pnlAddEdit.Name = "pnlAddEdit";
+            this.pnlAddEdit.Size = new System.Drawing.Size(1082, 650);
+            this.pnlAddEdit.TabIndex = 13;
+            this.pnlAddEdit.Visible = false;
             // 
             // dgv
             // 
@@ -215,14 +224,6 @@
             this.label2.Text = "Accomplishments";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlForm
-            // 
-            this.pnlForm.Controls.Add(this.pnlFormGroup);
-            this.pnlForm.Location = new System.Drawing.Point(3, 80);
-            this.pnlForm.Name = "pnlForm";
-            this.pnlForm.Size = new System.Drawing.Size(1102, 663);
-            this.pnlForm.TabIndex = 12;
-            // 
             // pnlTitle
             // 
             this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(102)))), ((int)(((byte)(166)))));
@@ -232,10 +233,6 @@
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(340, 74);
             this.pnlTitle.TabIndex = 10;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // btnAdd
             // 
@@ -301,13 +298,121 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // pnlView
+            // 
+            this.pnlView.BackColor = System.Drawing.Color.White;
+            this.pnlView.Controls.Add(this.groupBox1);
+            this.pnlView.Controls.Add(this.btnCloseView);
+            this.pnlView.Location = new System.Drawing.Point(14, 85);
+            this.pnlView.Name = "pnlView";
+            this.pnlView.Size = new System.Drawing.Size(1082, 650);
+            this.pnlView.TabIndex = 14;
+            this.pnlView.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblFile);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.lblDateAccomplished);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.lblTitleAccomplishment);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(34, 52);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1025, 406);
+            this.groupBox1.TabIndex = 66;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Accomplishment";
+            // 
+            // btnCloseView
+            // 
+            this.btnCloseView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnCloseView.FlatAppearance.BorderSize = 0;
+            this.btnCloseView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseView.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseView.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCloseView.Image = global::barangay.PL.Properties.Resources.delete_button;
+            this.btnCloseView.Location = new System.Drawing.Point(962, 569);
+            this.btnCloseView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCloseView.Name = "btnCloseView";
+            this.btnCloseView.Size = new System.Drawing.Size(113, 73);
+            this.btnCloseView.TabIndex = 17;
+            this.btnCloseView.Text = "CLOSE";
+            this.btnCloseView.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnCloseView.UseVisualStyleBackColor = false;
+            this.btnCloseView.Click += new System.EventHandler(this.btnCloseView_Click);
+            // 
+            // lblTitleAccomplishment
+            // 
+            this.lblTitleAccomplishment.AutoSize = true;
+            this.lblTitleAccomplishment.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleAccomplishment.Location = new System.Drawing.Point(24, 79);
+            this.lblTitleAccomplishment.Name = "lblTitleAccomplishment";
+            this.lblTitleAccomplishment.Size = new System.Drawing.Size(34, 22);
+            this.lblTitleAccomplishment.TabIndex = 71;
+            this.lblTitleAccomplishment.Text = "<>";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(23, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 28);
+            this.label7.TabIndex = 70;
+            this.label7.Text = "Title";
+            // 
+            // lblDateAccomplished
+            // 
+            this.lblDateAccomplished.AutoSize = true;
+            this.lblDateAccomplished.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateAccomplished.Location = new System.Drawing.Point(24, 168);
+            this.lblDateAccomplished.Name = "lblDateAccomplished";
+            this.lblDateAccomplished.Size = new System.Drawing.Size(34, 22);
+            this.lblDateAccomplished.TabIndex = 73;
+            this.lblDateAccomplished.Text = "<>";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(23, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(252, 28);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "Date Accomplished";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(23, 231);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 28);
+            this.label10.TabIndex = 74;
+            this.label10.Text = "File";
+            // 
+            // lblFile
+            // 
+            this.lblFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblFile.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblFile.Location = new System.Drawing.Point(27, 273);
+            this.lblFile.Multiline = true;
+            this.lblFile.Name = "lblFile";
+            this.lblFile.Size = new System.Drawing.Size(969, 99);
+            this.lblFile.TabIndex = 75;
+            this.lblFile.TabStop = false;
+            // 
             // frmAccomplishments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1108, 745);
-            this.Controls.Add(this.pnlForm);
+            this.Controls.Add(this.pnlView);
+            this.Controls.Add(this.pnlAddEdit);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlTitle);
@@ -321,15 +426,17 @@
             this.Load += new System.EventHandler(this.frmAccomplishments_Load);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this.pnlFormGroup.ResumeLayout(false);
+            this.pnlAddEdit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             this.pnlMain.ResumeLayout(false);
-            this.pnlForm.ResumeLayout(false);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlView.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -345,18 +452,25 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Panel pnlFormGroup;
+        private System.Windows.Forms.Panel pnlAddEdit;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel pnlForm;
         private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.DateTimePicker dtpDateAccomplished;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtFile;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Panel pnlView;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnCloseView;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblDateAccomplished;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTitleAccomplishment;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox lblFile;
     }
 }

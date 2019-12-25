@@ -61,15 +61,31 @@ namespace barangay.PL.Registrations
             methods.DGVHiddenColumns(dgv, "accomplishmentid");
             methods.DGVRenameColumns(dgv, "accomplishmentid", "Title", "Date Accomplished");
             methods.DGVTheme(dgv);
-            methods.DGVBUTTONAddEdit(dgv);
+            methods.DGVBUTTONViewEditDelete(dgv);
         }
 
-        private void ShowForm(bool bol)
+        private void ShowAddEdit()
         {
-            pnlMain.Visible = !bol;
-            pnlForm.Visible = bol;
-
+            pnlMain.Visible = false;
+            pnlView.Visible = false;
+            pnlAddEdit.Visible = true;
             ClearForm();
+        }
+
+        private void ShowMain()
+        {
+            pnlMain.Visible = true;
+            pnlView.Visible = false;
+            pnlAddEdit.Visible = false;
+            ClearForm();
+            lblTitle.Text = "List of Households";
+        }
+
+        private void ShowView()
+        {
+            pnlMain.Visible = false;
+            pnlView.Visible = true;
+            pnlAddEdit.Visible = false;
         }
 
         private void ShowResult(bool bol)
@@ -78,7 +94,7 @@ namespace barangay.PL.Registrations
             {
                 MessageBox.Show("SUCCESS");
                 PopulateDGV();
-                ShowForm(false);
+                ShowMain();
             }
             else
             {
@@ -89,13 +105,13 @@ namespace barangay.PL.Registrations
         private void frmAccomplishments_Load(object sender, EventArgs e)
         {
             DGVManage();
-            ShowForm(false);
+            ShowMain();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             s = "ADD";
-            ShowForm(true);
+            ShowAddEdit();
             lblTitle.Text = "Adding Accomplishment";
         }
 
@@ -135,12 +151,12 @@ namespace barangay.PL.Registrations
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            ShowForm(false);
+            ShowMain();
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0 | e.ColumnIndex == 1)
+            if (e.ColumnIndex == 0 | e.ColumnIndex == 1 | e.ColumnIndex == 2)
             {
                 accomplishmentEL.Accomplishmentid = Convert.ToInt32(dgv.SelectedRows[0].Cells["accomplishmentid"].Value);
                 filelocationEL.Accomplishmentid = accomplishmentEL.Accomplishmentid;
@@ -148,8 +164,23 @@ namespace barangay.PL.Registrations
 
             if (e.ColumnIndex == 0)
             {
+                s = "VIEW";
+                ShowView();
+                lblTitle.Text = "View Accomplishment";
+
+                accomplishmentEL = accomplishmentBL.Select(accomplishmentEL);
+                lblTitleAccomplishment.Text = accomplishmentEL.Title;
+                lblDateAccomplished.Text = Convert.ToDateTime(accomplishmentEL.Dateaccomplished).ToString("mmmm dd, yyyy");
+
+                filelocationEL = filelocationBL.Select(filelocationEL);
+                lblFile.Text = filelocationEL.Filelocation;
+
+
+            }
+            else if (e.ColumnIndex == 1)
+            {
                 s = "EDIT";
-                ShowForm(true);
+                ShowAddEdit();
                 lblTitle.Text = "Updating Accomplishment";
 
                 accomplishmentEL = accomplishmentBL.Select(accomplishmentEL);
@@ -161,7 +192,7 @@ namespace barangay.PL.Registrations
 
 
             }
-            else if (e.ColumnIndex == 1)
+            else if (e.ColumnIndex == 2)
             {
                 DialogResult dialogResult = MessageBox.Show("ARE YOU SURE TO DELETE THIS SELECTED ITEM?", "DELETING", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -206,6 +237,9 @@ namespace barangay.PL.Registrations
             delayedCalculationThreadDGV.Start();
         }
 
-
+        private void btnCloseView_Click(object sender, EventArgs e)
+        {
+            ShowMain();
+        }
     }
 }
