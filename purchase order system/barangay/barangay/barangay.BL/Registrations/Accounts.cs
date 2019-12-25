@@ -15,6 +15,11 @@ namespace barangay.BL.Registrations
             return accountDL.List(keyword);
         }
 
+        public DataTable Login(EL.Registrations.Accounts accountEL)
+        {
+            return accountDL.Login(accountEL);
+        }
+
         public EL.Registrations.Accounts Select(EL.Registrations.Accounts accountEL)
         {
             return accountDL.Select(accountEL);

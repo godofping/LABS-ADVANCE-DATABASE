@@ -83,6 +83,16 @@ namespace barangay.PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap analysis__2_ {
+            get {
+                object obj = ResourceManager.GetObject("analysis (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clear_button {
             get {
                 object obj = ResourceManager.GetObject("clear-button", resourceCulture);
@@ -173,6 +183,16 @@ namespace barangay.PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap login {
+            get {
+                object obj = ResourceManager.GetObject("login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout__3_ {
             get {
                 object obj = ResourceManager.GetObject("logout (3)", resourceCulture);
@@ -196,6 +216,16 @@ namespace barangay.PL.Properties {
         internal static System.Drawing.Bitmap market_positioning__1_ {
             get {
                 object obj = ResourceManager.GetObject("market-positioning (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_exit_door {
+            get {
+                object obj = ResourceManager.GetObject("open-exit-door", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

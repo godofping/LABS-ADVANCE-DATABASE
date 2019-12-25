@@ -14,6 +14,11 @@ namespace barangay.DL.Registrations
             return Helper.executeQuery("select * from accounts where username like '" + keyword + "%'");
         }
 
+        public DataTable Login(EL.Registrations.Accounts accountEL)
+        {
+            return Helper.executeQuery("select * from accounts where username = '" + accountEL.Username + "' and password = '" + accountEL.Password + "'");
+        }
+
         public EL.Registrations.Accounts Select(EL.Registrations.Accounts accountEL)
         {
             DataTable dt = Helper.executeQuery("select * from accounts where accountid = '" + accountEL.Accountid + "'");

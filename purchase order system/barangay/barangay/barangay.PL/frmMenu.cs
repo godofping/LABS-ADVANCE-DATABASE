@@ -12,10 +12,11 @@ namespace barangay.PL
 {
     public partial class frmMenu : Form
     {
-        
-        public frmMenu()
+        frmLogin frmLogin;
+        public frmMenu(frmLogin _frmLogin)
         {
             InitializeComponent();
+            frmLogin = _frmLogin;
         }
 
         protected override CreateParams CreateParams
@@ -133,6 +134,10 @@ namespace barangay.PL
             pleaseWait.Close();
         }
 
-        
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmLogin.Show();
+        }
     }
 }
