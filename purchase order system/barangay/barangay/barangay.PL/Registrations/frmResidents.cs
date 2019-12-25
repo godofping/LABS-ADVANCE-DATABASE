@@ -89,9 +89,9 @@ namespace barangay.PL.Registrations
 
         private void ClearForm()
         {
-            methods.ClearTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtCourse, txtHouseNumber, txtStreet, txtSubdivision, txtMunicipality, txtProvince, txtPrecintNumber, txtPhoneNumber, txtCellphoneNumber, txtEmailAddress, txtCTCNumber, txtHousehold);
+            methods.ClearTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtCourse, txtHouseNumber, txtStreet, txtSubdivision, txtMunicipality, txtProvince, txtPrecintNumber, txtPhoneNumber, txtCellphoneNumber, txtEmailAddress, txtCTCNumber, txtHousehold, txtYearGraduated);
             methods.ClearCB(cbCitizenship, cbReligion, cbSex, cbCivilStatus, cbEducationalAttainment, cbProfessionOrOccupation, cbPurok, cbHouseholdMember);
-            methods.ClearDTP(dtpBirthDate, dtpYearGraduated, dtpDateAccomplished);
+            methods.ClearDTP(dtpBirthDate, dtpDateAccomplished);
             cbIsPwd.Checked = false;
             lblTitle.Text = "";
         }
@@ -254,7 +254,7 @@ namespace barangay.PL.Registrations
                 s = "VIEW";
                 ShowView();
                 ShowHouseholds(false);
-                lblTitle.Text = "Updating Resident";
+                lblTitle.Text = "View Resident Profile";
 
                 residentEL = residentBL.Select(residentEL);
                 educationEL = educationBL.Select(educationEL);
@@ -268,53 +268,62 @@ namespace barangay.PL.Registrations
                 provincialaddressEL = provincialaddressBL.Select(provincialaddressEL);
                 contactdetailEL = contactdetailBL.Select(contactdetailEL);
                 birthinformationEL = birthinformationBL.Select(birthinformationEL);
-
-
-
-                txtBarangayIDNumber.Text = residentEL.Barangayidnumber;
-                txtLastName.Text = residentEL.Lastname;
-                txtFirstName.Text = residentEL.Firstname;
-                txtMiddleName.Text = residentEL.Middlename;
-                txtHeight.Text = residentEL.Height;
-                txtPrecintNumber.Text = residentEL.Precintnumber;
-                txtCTCNumber.Text = residentEL.Ctcnumber;
-                dtpDateAccomplished.Text = residentEL.Dateaccomplished;
-                cbIsPwd.Checked = Convert.ToBoolean(residentEL.Ispwd);
-
-                cbEducationalAttainment.SelectedValue = educationEL.Educationalattainmentid.ToString();
-                txtCourse.Text = educationEL.Course;
-                dtpYearGraduated.Value = new DateTime(Convert.ToInt32(educationEL.Yeargraduated), 1, 1);
-
-                cbReligion.SelectedValue = residentreligionEL.Religionid.ToString();
-
-                cbCivilStatus.SelectedValue = residentcivilstatusEL.Civilstatusid;
-
-                cbSex.SelectedValue = residentsexEL.Sexid;
-
-                cbCitizenship.SelectedValue = residentcitizenshipEL.Citizenshipid;
-
-                cbProfessionOrOccupation.SelectedValue = residentoccupationEL.Occupationid;
-
-                cbPurok.SelectedValue = homeaddressEL.Purokid;
-                txtHouseNumber.Text = homeaddressEL.Housenumber;
-                txtStreet.Text = homeaddressEL.Street;
-                txtSubdivision.Text = homeaddressEL.Subdivision;
-
+                purokEL.Purokid = homeaddressEL.Purokid;
+                purokEL = purokBL.Select(purokEL);
+                citizenshipEL.Citizenshipid = residentcitizenshipEL.Citizenshipid;
+                citizenshipEL = citizenshipBL.Select(citizenshipEL);
                 householdEL.Householdid = residenthouseholdEL.Householdid;
                 householdEL = householdBL.Select(householdEL);
-                txtHousehold.Text = householdEL.Household + " (" + householdEL.Householdnumber + ")";
+                religionEL.Religionid = residentreligionEL.Religionid;
+                religionEL = religionBL.Select(religionEL);
+                sexEL.Sexid = residentsexEL.Sexid;
+                sexEL = sexBL.Select(sexEL);
+                civilstatusEL.Civilstatusid = residentcivilstatusEL.Civilstatusid;
+                civilstatusEL = civilstatusBL.Select(civilstatusEL);
+                educationalattainmentEL.Educationalattainmentid = educationEL.Educationalattainmentid;
+                educationalattainmentEL = educationalattainmentBL.Select(educationalattainmentEL);
+                occupationEL.Occupationid = residentoccupationEL.Occupationid;
+                occupationEL = occupationBL.Select(occupationEL);
 
-                cbHouseholdMember.SelectedValue = residenthouseholdEL.Householdmemberid;
+                lblBarangayIDNumber.Text = residentEL.Barangayidnumber;
+                lblFullName.Text = residentEL.Firstname + " " + residentEL.Middlename + " " + residentEL.Lastname;
+                lblHouseholdControl.Text = "Household Member Control: " + householdEL.Householdnumber  + " " + householdEL.Household;
+                lblAddress.Text = homeaddressEL.Housenumber + ", " + homeaddressEL.Street + ", " + homeaddressEL.Subdivision + ", " + purokEL.Purok + ", Barangay Bukay Pait, " + provincialaddressEL.Municipality + ", " + provincialaddressEL.Province; 
+                lblDateRecorded.Text = "Date Recorded: " + Convert.ToDateTime(residentEL.Daterecorded).ToString("MMMM dd, yyyy");
 
-                txtProvince.Text = provincialaddressEL.Province;
-                txtMunicipality.Text = provincialaddressEL.Municipality;
 
-                txtEmailAddress.Text = contactdetailEL.Emailaddress;
-                txtPhoneNumber.Text = contactdetailEL.Phonenumber;
-                txtCellphoneNumber.Text = contactdetailEL.Cellphonenumber;
+                lblBarangayIDNumber1.Text = residentEL.Barangayidnumber;
+                lblLastName.Text = residentEL.Lastname;
+                lblFirstName.Text = residentEL.Firstname;
+                lblMiddleName.Text = residentEL.Middlename;
+                lblCitizenship.Text = citizenshipEL.Citizenship;
+                lblReligion.Text = religionEL.Religion;
+                lblBirthPlace.Text = birthinformationEL.Birthplace;
+                lblBirthday.Text = Convert.ToDateTime(birthinformationEL.Birthdate).ToString("MMMM dd, yyyy");
+                lblGender.Text = sexEL.Sex;
+                lblHeight.Text = residentEL.Height;
+                lblCivilStatus.Text = civilstatusEL.Civilstatus;
+                lblEducationalAttainment.Text = educationalattainmentEL.Educationalattainment;
+                lblCourse.Text = educationEL.Course;
+                lblYear.Text = educationEL.Yeargraduated;
+                lblOccupation.Text = occupationEL.Occupation;
 
-                txtBirthPlace.Text = birthinformationEL.Birthplace;
-                dtpBirthDate.Text = birthinformationEL.Birthdate;
+                lblHouseNumber.Text = homeaddressEL.Housenumber;
+                lblStreet.Text = homeaddressEL.Street;
+                lblSubdivision.Text = homeaddressEL.Subdivision;
+                lblPurok.Text = purokEL.Purok;
+
+                lblMunicipality.Text = provincialaddressEL.Municipality;
+                lblProvince.Text = provincialaddressEL.Province;
+
+                lblPrecintNumber.Text = residentEL.Precintnumber;
+                lblEmailAddress.Text = contactdetailEL.Emailaddress;
+                lblPhoneNumber.Text = contactdetailEL.Phonenumber;
+                lblCellphoneNumber.Text = contactdetailEL.Cellphonenumber;
+
+                lblCTCNumber.Text = residentEL.Ctcnumber;
+                lblDateAccomplished.Text = Convert.ToDateTime(residentEL.Dateaccomplished).ToString("MMMM dd, yyyy");
+
 
             }
             else if (e.ColumnIndex == 1)
@@ -351,7 +360,7 @@ namespace barangay.PL.Registrations
 
                 cbEducationalAttainment.SelectedValue = educationEL.Educationalattainmentid.ToString();
                 txtCourse.Text = educationEL.Course;
-                dtpYearGraduated.Value = new DateTime(Convert.ToInt32(educationEL.Yeargraduated),1,1);
+                txtYearGraduated.Text = educationEL.Yeargraduated;
 
                 cbReligion.SelectedValue = residentreligionEL.Religionid.ToString();
 
@@ -477,9 +486,9 @@ namespace barangay.PL.Registrations
 
         private void btnNextStep1_Click(object sender, EventArgs e)
         {
-            if (methods.CheckRequiredTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtCourse) &
+            if (methods.CheckRequiredTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtCourse, txtYearGraduated) &
                 methods.CheckRequiredCB(cbSex, cbCivilStatus, cbCitizenship, cbReligion, cbEducationalAttainment, cbProfessionOrOccupation) &
-                methods.CheckRequiredDTP(dtpBirthDate, dtpYearGraduated))
+                methods.CheckRequiredDTP(dtpBirthDate))
             {
                 pnlAddEditStep1.Visible = false;
                 pnlAddEditStep2.Visible = true;
@@ -557,7 +566,7 @@ namespace barangay.PL.Registrations
 
                 educationEL.Educationalattainmentid = Convert.ToInt32(cbEducationalAttainment.SelectedValue);
                 educationEL.Course = txtCourse.Text;
-                educationEL.Yeargraduated = dtpYearGraduated.Text;
+                educationEL.Yeargraduated = txtYearGraduated.Text;
 
                 residentreligionEL.Religionid = Convert.ToInt32(cbReligion.SelectedValue);
 

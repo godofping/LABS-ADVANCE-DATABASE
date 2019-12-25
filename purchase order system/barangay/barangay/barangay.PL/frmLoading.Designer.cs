@@ -56,6 +56,7 @@
             this.Name = "frmLoading";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLoading";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

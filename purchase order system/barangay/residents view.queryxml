@@ -13,6 +13,8 @@
 <table tablename="residentssex" alias="" left="384" top="315" width="150" height="113" />
 <table tablename="sexes" alias="" left="159" top="310" width="150" height="113" />
 <table tablename="householdmembers" alias="" left="44" top="209" width="150" height="113" />
+<table tablename="homeaddressess" alias="" left="734" top="295" width="150" height="113" />
+<table tablename="puroks" alias="" left="997" top="335" width="150" height="113" />
 <join type = "Inner Join">
 <from tablename = "educations" alias = "">educationalattainmentid</from>
 <to tablename = "educationalattainments" alias = "">educationalattainmentid</to>
@@ -44,6 +46,14 @@
 <join type = "Inner Join">
 <from tablename = "residentshousehold" alias = "">householdmemberid</from>
 <to tablename = "householdmembers" alias = "">householdmemberid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "homeaddressess" alias = "">residentid</from>
+<to tablename = "residents" alias = "">residentid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "homeaddressess" alias = "">purokid</from>
+<to tablename = "puroks" alias = "">purokid</to>
 </join>
 </canvas>
 <grid>
@@ -200,6 +210,21 @@
 <column id="11">
 <table tablename="households"></table>
 <field>householdnumber</field>
+<alias></alias>
+<show>true</show>
+<sortorder></sortorder>
+<sort></sort>
+<groupby>false</groupby>
+<aggfunct></aggfunct>
+<criteria></criteria>
+<or1></or1>
+<or2></or2>
+<or3></or3>
+<or4></or4>
+</column>
+<column id="12">
+<table tablename="puroks"></table>
+<field>purok</field>
 <alias></alias>
 <show>true</show>
 <sortorder></sortorder>
