@@ -98,6 +98,14 @@
       <DependentUpon>crResidency.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Transactions\dsBarangay.cs">
+      <DependentUpon>dsBarangay.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\dsBarangay.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsBarangay.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Transactions\frmBarangayCertifications.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +174,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Transactions\dsBarangay.xsc">
+      <DependentUpon>dsBarangay.xsd</DependentUpon>
+    </None>
+    <None Include="Transactions\dsBarangay.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsBarangay.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Transactions\dsBarangay.xss">
+      <DependentUpon>dsBarangay.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

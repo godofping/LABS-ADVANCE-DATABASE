@@ -28,82 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBarangayCertifications = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.crv = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.btnResidency = new System.Windows.Forms.Button();
+            this.btnCedula = new System.Windows.Forms.Button();
             this.btnCloseView = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.crv = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // btnBarangayCertifications
+            // btnResidency
             // 
-            this.btnBarangayCertifications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnBarangayCertifications.FlatAppearance.BorderSize = 0;
-            this.btnBarangayCertifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBarangayCertifications.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBarangayCertifications.ForeColor = System.Drawing.Color.White;
-            this.btnBarangayCertifications.Location = new System.Drawing.Point(12, 12);
-            this.btnBarangayCertifications.Name = "btnBarangayCertifications";
-            this.btnBarangayCertifications.Size = new System.Drawing.Size(149, 73);
-            this.btnBarangayCertifications.TabIndex = 79;
-            this.btnBarangayCertifications.Text = "Residency";
-            this.btnBarangayCertifications.UseVisualStyleBackColor = false;
+            this.btnResidency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnResidency.FlatAppearance.BorderSize = 0;
+            this.btnResidency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResidency.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResidency.ForeColor = System.Drawing.Color.White;
+            this.btnResidency.Location = new System.Drawing.Point(12, 12);
+            this.btnResidency.Name = "btnResidency";
+            this.btnResidency.Size = new System.Drawing.Size(149, 73);
+            this.btnResidency.TabIndex = 79;
+            this.btnResidency.Text = "Residency";
+            this.btnResidency.UseVisualStyleBackColor = false;
+            this.btnResidency.Click += new System.EventHandler(this.btnResidency_Click);
             // 
-            // button1
+            // btnCedula
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(167, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 73);
-            this.button1.TabIndex = 80;
-            this.button1.Text = "Land Ownership";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(322, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 73);
-            this.button2.TabIndex = 81;
-            this.button2.Text = "Indigent";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(477, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(149, 73);
-            this.button3.TabIndex = 82;
-            this.button3.Text = "Death";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // crv
-            // 
-            this.crv.ActiveViewIndex = -1;
-            this.crv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.crv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crv.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crv.Location = new System.Drawing.Point(12, 95);
-            this.crv.Name = "crv";
-            this.crv.Size = new System.Drawing.Size(1000, 412);
-            this.crv.TabIndex = 83;
+            this.btnCedula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCedula.FlatAppearance.BorderSize = 0;
+            this.btnCedula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCedula.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCedula.ForeColor = System.Drawing.Color.White;
+            this.btnCedula.Location = new System.Drawing.Point(167, 12);
+            this.btnCedula.Name = "btnCedula";
+            this.btnCedula.Size = new System.Drawing.Size(149, 73);
+            this.btnCedula.TabIndex = 80;
+            this.btnCedula.Text = "Cedula";
+            this.btnCedula.UseVisualStyleBackColor = false;
             // 
             // btnCloseView
             // 
@@ -124,18 +83,42 @@
             this.btnCloseView.UseVisualStyleBackColor = false;
             this.btnCloseView.Click += new System.EventHandler(this.btnCloseView_Click);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
+            this.lblTitle.Location = new System.Drawing.Point(340, 24);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(672, 43);
+            this.lblTitle.TabIndex = 85;
+            this.lblTitle.Text = "Barangay Certification for IVY LAUREL MORALES";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // crv
+            // 
+            this.crv.ActiveViewIndex = -1;
+            this.crv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.crv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crv.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crv.Location = new System.Drawing.Point(12, 105);
+            this.crv.Name = "crv";
+            this.crv.Size = new System.Drawing.Size(1000, 402);
+            this.crv.TabIndex = 86;
+            // 
             // frmBarangayCertifications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 600);
-            this.Controls.Add(this.btnCloseView);
             this.Controls.Add(this.crv);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnBarangayCertifications);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.btnCloseView);
+            this.Controls.Add(this.btnCedula);
+            this.Controls.Add(this.btnResidency);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -150,11 +133,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnBarangayCertifications;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
+        private System.Windows.Forms.Button btnResidency;
+        private System.Windows.Forms.Button btnCedula;
         private System.Windows.Forms.Button btnCloseView;
+        private System.Windows.Forms.Label lblTitle;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
     }
 }

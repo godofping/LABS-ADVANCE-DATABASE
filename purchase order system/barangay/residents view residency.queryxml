@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<querybuilder version="8.3">
+<source>
+<database charset="latin1" collation="latin1_swedish_ci">barangay_profiling_db</database>
+</source>
+<canvas>
+<table tablename="residents" alias="" left="570" top="88" width="150" height="248" />
+<table tablename="civilstatuses" alias="" left="103" top="120" width="150" height="113" />
+<table tablename="residentscivilstatus" alias="" left="332" top="140" width="150" height="113" />
+<table tablename="homeaddressess" alias="" left="865" top="135" width="150" height="113" />
+<table tablename="puroks" alias="" left="1131" top="171" width="150" height="113" />
+<join type = "Inner Join">
+<from tablename = "residentscivilstatus" alias = "">civilstatusid</from>
+<to tablename = "civilstatuses" alias = "">civilstatusid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "residentscivilstatus" alias = "">residentid</from>
+<to tablename = "residents" alias = "">residentid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "homeaddressess" alias = "">residentid</from>
+<to tablename = "residents" alias = "">residentid</to>
+</join>
+<join type = "Inner Join">
+<from tablename = "homeaddressess" alias = "">purokid</from>
+<to tablename = "puroks" alias = "">purokid</to>
+</join>
+</canvas>
+<grid>
+</grid>
+</querybuilder>

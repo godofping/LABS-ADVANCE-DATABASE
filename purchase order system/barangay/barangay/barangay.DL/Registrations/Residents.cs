@@ -13,6 +13,10 @@ namespace barangay.DL.Registrations
         {
             return Helper.executeQuery("select * from residents_view where householdnumber like '" + keyword + "%' or householdmember like '" + keyword + "%' or lastname like '" + keyword + "%' or firstname like '" + keyword + "%' or middlename like '" + keyword + "%'");
         }
+        public DataTable ListResidencyCertification(int id)
+        {
+            return Helper.executeQuery("select * from residency_view where residentid = '" + id + "'");
+        }
         public DataTable ListByHousehold(int id)
         {
             return Helper.executeQuery("select householdmember, lastname, firstname, middlename from residents_view where householdid = '" + id + "'");
@@ -23,7 +27,7 @@ namespace barangay.DL.Registrations
         }
         public DataTable ListByOutOfSchoolYouth(String keyword)
         {
-            return Helper.executeQuery("select * from residents_view where (householdnumber like '" + keyword + "%' or householdmember like 'HEAD' or lastname like '" + keyword + "%' or firstname like '" + keyword + "%' or middlename like '" + keyword + "%') and ((educationalattainment = 'NONE' or educationalattainment = 'ELEMENTARY LEVEL' or educationalattainment = 'ELEMENTARY GRADUATE' or educationalattainment = 'HIGH SCHOOL LEVEL' or educationalattainment = 'HIGH SCHOOL GRADUATE' or educationalattainment = 'COLLEGE LEVEL') and (age <= 24 and age >= 12))");
+            return Helper.executeQuery("select * from residents_view where (householdnumber like '" + keyword + "%' or householdmember like 'HEAD' or lastname like '" + keyword + "%' or firstname like '" + keyword + "%' or middlename like '" + keyword + "%') and ((educationalattainment = 'none' or educationalattainment = 'Elementary Level' or educationalattainment = 'Elementary Graduate' or educationalattainment = 'High School Level' or educationalattainment = 'High School Graduate' or educationalattainment = 'College Level') and (age <= 24 and age >= 12))");
         }
         public DataTable ListBySeniorCitizen(String keyword)
         {
@@ -31,7 +35,7 @@ namespace barangay.DL.Registrations
         }
         public DataTable ListByWomen(String keyword)
         {
-            return Helper.executeQuery("select * from residents_view where (householdnumber like '" + keyword + "%' or householdmember like '" + keyword + "%' or lastname like '" + keyword + "%' or firstname like '" + keyword + "%' or middlename like '" + keyword + "%') and sex = 'FEMALE'");
+            return Helper.executeQuery("select * from residents_view where (householdnumber like '" + keyword + "%' or householdmember like '" + keyword + "%' or lastname like '" + keyword + "%' or firstname like '" + keyword + "%' or middlename like '" + keyword + "%') and sex = 'Female'");
         }
         public DataTable ListByPWD(String keyword)
         {
@@ -50,6 +54,7 @@ namespace barangay.DL.Registrations
                 residentEL.Firstname = dt.Rows[0]["firstname"].ToString();
                 residentEL.Middlename = dt.Rows[0]["middlename"].ToString();
                 residentEL.Height = dt.Rows[0]["height"].ToString();
+                residentEL.Weight = dt.Rows[0]["weight"].ToString();
                 residentEL.Precintnumber = dt.Rows[0]["precintnumber"].ToString();
                 residentEL.Ctcnumber = dt.Rows[0]["ctcnumber"].ToString();
                 residentEL.Dateaccomplished = dt.Rows[0]["dateaccomplished"].ToString();
@@ -66,12 +71,12 @@ namespace barangay.DL.Registrations
 
         public long Insert(EL.Registrations.Residents residentEL)
         {
-            return Helper.executeNonQueryLong("insert into residents (barangayidnumber, lastname, firstname, middlename, height, precintnumber, ctcnumber, dateaccomplished, daterecorded, ispwd) values ('" + residentEL.Barangayidnumber + "', '" + residentEL.Lastname + "', '" + residentEL.Firstname + "', '" + residentEL.Middlename + "', '" + residentEL.Height + "', '" + residentEL.Precintnumber + "', '" + residentEL.Ctcnumber + "', '" + residentEL.Dateaccomplished + "', '" + residentEL.Daterecorded + "', '" + residentEL.Ispwd + "')");
+            return Helper.executeNonQueryLong("insert into residents (barangayidnumber, lastname, firstname, middlename, height, weight, precintnumber, ctcnumber, dateaccomplished, daterecorded, ispwd) values ('" + residentEL.Barangayidnumber + "', '" + residentEL.Lastname + "', '" + residentEL.Firstname + "', '" + residentEL.Middlename + "', '" + residentEL.Height + "', '" + residentEL.Weight + "','" + residentEL.Precintnumber + "', '" + residentEL.Ctcnumber + "', '" + residentEL.Dateaccomplished + "', '" + residentEL.Daterecorded + "', '" + residentEL.Ispwd + "')");
         }
 
         public Boolean Update(EL.Registrations.Residents residentEL)
         {
-            return Helper.executeNonQueryBool("update residents set barangayidnumber = '" + residentEL.Barangayidnumber + "', lastname = '" + residentEL.Lastname + "', firstname = '" + residentEL.Firstname + "', middlename = '" + residentEL.Middlename + "', height = '" + residentEL.Height + "', precintnumber = '" + residentEL.Precintnumber + "', ctcnumber = '" + residentEL.Ctcnumber + "', dateaccomplished = '" + residentEL.Dateaccomplished + "', ispwd = '" + residentEL.Ispwd + "' where residentid = '" + residentEL.Residentid + "'");
+            return Helper.executeNonQueryBool("update residents set barangayidnumber = '" + residentEL.Barangayidnumber + "', lastname = '" + residentEL.Lastname + "', firstname = '" + residentEL.Firstname + "', middlename = '" + residentEL.Middlename + "', height = '" + residentEL.Height + "', weight = '" + residentEL.Weight + "', precintnumber = '" + residentEL.Precintnumber + "', ctcnumber = '" + residentEL.Ctcnumber + "', dateaccomplished = '" + residentEL.Dateaccomplished + "', ispwd = '" + residentEL.Ispwd + "' where residentid = '" + residentEL.Residentid + "'");
         }
 
         public Boolean Delete(EL.Registrations.Residents residentEL)

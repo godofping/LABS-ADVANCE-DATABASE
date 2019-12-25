@@ -205,6 +205,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblBarangayIDNumber = new System.Windows.Forms.Label();
             this.btnCloseView = new System.Windows.Forms.Button();
+            this.lblWeight = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtWeight = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.pnlAddEditStep1.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -474,6 +478,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.txtWeight);
+            this.groupBox5.Controls.Add(this.label28);
             this.groupBox5.Controls.Add(this.txtLastName);
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.txtFirstName);
@@ -600,7 +606,7 @@
             this.txtHeight.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHeight.Location = new System.Drawing.Point(29, 508);
             this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(406, 27);
+            this.txtHeight.Size = new System.Drawing.Size(196, 27);
             this.txtHeight.TabIndex = 8;
             this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
             // 
@@ -1544,6 +1550,8 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.lblWeight);
+            this.groupBox10.Controls.Add(this.label35);
             this.groupBox10.Controls.Add(this.lblDateAccomplished);
             this.groupBox10.Controls.Add(this.label96);
             this.groupBox10.Controls.Add(this.lblCTCNumber);
@@ -1614,7 +1622,7 @@
             // 
             this.lblDateAccomplished.AutoSize = true;
             this.lblDateAccomplished.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateAccomplished.Location = new System.Drawing.Point(676, 373);
+            this.lblDateAccomplished.Location = new System.Drawing.Point(676, 375);
             this.lblDateAccomplished.Name = "lblDateAccomplished";
             this.lblDateAccomplished.Size = new System.Drawing.Size(24, 17);
             this.lblDateAccomplished.TabIndex = 133;
@@ -1624,7 +1632,7 @@
             // 
             this.label96.AutoSize = true;
             this.label96.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label96.Location = new System.Drawing.Point(501, 372);
+            this.label96.Location = new System.Drawing.Point(501, 374);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(140, 17);
             this.label96.TabIndex = 132;
@@ -1634,7 +1642,7 @@
             // 
             this.lblCTCNumber.AutoSize = true;
             this.lblCTCNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCTCNumber.Location = new System.Drawing.Point(676, 354);
+            this.lblCTCNumber.Location = new System.Drawing.Point(676, 356);
             this.lblCTCNumber.Name = "lblCTCNumber";
             this.lblCTCNumber.Size = new System.Drawing.Size(24, 17);
             this.lblCTCNumber.TabIndex = 131;
@@ -1644,7 +1652,7 @@
             // 
             this.label94.AutoSize = true;
             this.label94.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label94.Location = new System.Drawing.Point(501, 352);
+            this.label94.Location = new System.Drawing.Point(501, 354);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(95, 17);
             this.label94.TabIndex = 130;
@@ -1654,7 +1662,7 @@
             // 
             this.lblCellphoneNumber.AutoSize = true;
             this.lblCellphoneNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCellphoneNumber.Location = new System.Drawing.Point(676, 313);
+            this.lblCellphoneNumber.Location = new System.Drawing.Point(676, 314);
             this.lblCellphoneNumber.Name = "lblCellphoneNumber";
             this.lblCellphoneNumber.Size = new System.Drawing.Size(24, 17);
             this.lblCellphoneNumber.TabIndex = 129;
@@ -1664,7 +1672,7 @@
             // 
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.Location = new System.Drawing.Point(676, 293);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(676, 294);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(24, 17);
             this.lblPhoneNumber.TabIndex = 128;
@@ -1674,7 +1682,7 @@
             // 
             this.label91.AutoSize = true;
             this.label91.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.Location = new System.Drawing.Point(501, 313);
+            this.label91.Location = new System.Drawing.Point(501, 314);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(135, 17);
             this.label91.TabIndex = 127;
@@ -1684,7 +1692,7 @@
             // 
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.Location = new System.Drawing.Point(501, 293);
+            this.label92.Location = new System.Drawing.Point(501, 294);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(109, 17);
             this.label92.TabIndex = 126;
@@ -1694,7 +1702,7 @@
             // 
             this.lblEmailAddress.AutoSize = true;
             this.lblEmailAddress.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailAddress.Location = new System.Drawing.Point(676, 273);
+            this.lblEmailAddress.Location = new System.Drawing.Point(676, 274);
             this.lblEmailAddress.Name = "lblEmailAddress";
             this.lblEmailAddress.Size = new System.Drawing.Size(24, 17);
             this.lblEmailAddress.TabIndex = 125;
@@ -1704,7 +1712,7 @@
             // 
             this.lblPrecintNumber.AutoSize = true;
             this.lblPrecintNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecintNumber.Location = new System.Drawing.Point(676, 253);
+            this.lblPrecintNumber.Location = new System.Drawing.Point(676, 254);
             this.lblPrecintNumber.Name = "lblPrecintNumber";
             this.lblPrecintNumber.Size = new System.Drawing.Size(24, 17);
             this.lblPrecintNumber.TabIndex = 124;
@@ -1714,7 +1722,7 @@
             // 
             this.label70.AutoSize = true;
             this.label70.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.Location = new System.Drawing.Point(501, 273);
+            this.label70.Location = new System.Drawing.Point(501, 274);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(100, 17);
             this.label70.TabIndex = 123;
@@ -1724,7 +1732,7 @@
             // 
             this.label71.AutoSize = true;
             this.label71.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label71.Location = new System.Drawing.Point(501, 253);
+            this.label71.Location = new System.Drawing.Point(501, 254);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(112, 17);
             this.label71.TabIndex = 122;
@@ -1734,7 +1742,7 @@
             // 
             this.label81.AutoSize = true;
             this.label81.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.Location = new System.Drawing.Point(500, 224);
+            this.label81.Location = new System.Drawing.Point(500, 225);
             this.label81.Name = "label81";
             this.label81.Size = new System.Drawing.Size(191, 19);
             this.label81.TabIndex = 121;
@@ -1744,7 +1752,7 @@
             // 
             this.lblProvince.AutoSize = true;
             this.lblProvince.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvince.Location = new System.Drawing.Point(676, 197);
+            this.lblProvince.Location = new System.Drawing.Point(676, 200);
             this.lblProvince.Name = "lblProvince";
             this.lblProvince.Size = new System.Drawing.Size(24, 17);
             this.lblProvince.TabIndex = 120;
@@ -1754,7 +1762,7 @@
             // 
             this.label84.AutoSize = true;
             this.label84.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.Location = new System.Drawing.Point(501, 191);
+            this.label84.Location = new System.Drawing.Point(501, 194);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(68, 17);
             this.label84.TabIndex = 119;
@@ -1764,7 +1772,7 @@
             // 
             this.lblMunicipality.AutoSize = true;
             this.lblMunicipality.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMunicipality.Location = new System.Drawing.Point(676, 177);
+            this.lblMunicipality.Location = new System.Drawing.Point(676, 180);
             this.lblMunicipality.Name = "lblMunicipality";
             this.lblMunicipality.Size = new System.Drawing.Size(24, 17);
             this.lblMunicipality.TabIndex = 118;
@@ -1774,7 +1782,7 @@
             // 
             this.label86.AutoSize = true;
             this.label86.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label86.Location = new System.Drawing.Point(501, 171);
+            this.label86.Location = new System.Drawing.Point(501, 174);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(81, 17);
             this.label86.TabIndex = 117;
@@ -1784,7 +1792,7 @@
             // 
             this.label87.AutoSize = true;
             this.label87.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(500, 142);
+            this.label87.Location = new System.Drawing.Point(500, 145);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(150, 19);
             this.label87.TabIndex = 116;
@@ -1884,7 +1892,7 @@
             // 
             this.lblOccupation.AutoSize = true;
             this.lblOccupation.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOccupation.Location = new System.Drawing.Point(193, 367);
+            this.lblOccupation.Location = new System.Drawing.Point(193, 375);
             this.lblOccupation.Name = "lblOccupation";
             this.lblOccupation.Size = new System.Drawing.Size(24, 17);
             this.lblOccupation.TabIndex = 106;
@@ -1894,7 +1902,7 @@
             // 
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(18, 368);
+            this.label69.Location = new System.Drawing.Point(18, 376);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(167, 16);
             this.label69.TabIndex = 105;
@@ -1904,7 +1912,7 @@
             // 
             this.lblYear.AutoSize = true;
             this.lblYear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYear.Location = new System.Drawing.Point(193, 336);
+            this.lblYear.Location = new System.Drawing.Point(193, 342);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(24, 17);
             this.lblYear.TabIndex = 104;
@@ -1914,7 +1922,7 @@
             // 
             this.label67.AutoSize = true;
             this.label67.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.Location = new System.Drawing.Point(18, 336);
+            this.label67.Location = new System.Drawing.Point(18, 342);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(40, 17);
             this.label67.TabIndex = 103;
@@ -1924,7 +1932,7 @@
             // 
             this.lblCourse.AutoSize = true;
             this.lblCourse.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCourse.Location = new System.Drawing.Point(193, 316);
+            this.lblCourse.Location = new System.Drawing.Point(193, 322);
             this.lblCourse.Name = "lblCourse";
             this.lblCourse.Size = new System.Drawing.Size(24, 17);
             this.lblCourse.TabIndex = 102;
@@ -1934,7 +1942,7 @@
             // 
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(18, 316);
+            this.label65.Location = new System.Drawing.Point(18, 322);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(57, 17);
             this.label65.TabIndex = 101;
@@ -1944,7 +1952,7 @@
             // 
             this.lblEducationalAttainment.AutoSize = true;
             this.lblEducationalAttainment.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEducationalAttainment.Location = new System.Drawing.Point(193, 290);
+            this.lblEducationalAttainment.Location = new System.Drawing.Point(193, 298);
             this.lblEducationalAttainment.Name = "lblEducationalAttainment";
             this.lblEducationalAttainment.Size = new System.Drawing.Size(24, 16);
             this.lblEducationalAttainment.TabIndex = 100;
@@ -1954,7 +1962,7 @@
             // 
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(18, 290);
+            this.label63.Location = new System.Drawing.Point(18, 298);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(165, 16);
             this.label63.TabIndex = 99;
@@ -1964,7 +1972,7 @@
             // 
             this.lblCivilStatus.AutoSize = true;
             this.lblCivilStatus.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCivilStatus.Location = new System.Drawing.Point(193, 256);
+            this.lblCivilStatus.Location = new System.Drawing.Point(193, 274);
             this.lblCivilStatus.Name = "lblCivilStatus";
             this.lblCivilStatus.Size = new System.Drawing.Size(24, 17);
             this.lblCivilStatus.TabIndex = 98;
@@ -1974,7 +1982,7 @@
             // 
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(18, 254);
+            this.label61.Location = new System.Drawing.Point(18, 274);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(82, 17);
             this.label61.TabIndex = 97;
@@ -2267,15 +2275,54 @@
             this.btnCloseView.UseVisualStyleBackColor = false;
             this.btnCloseView.Click += new System.EventHandler(this.btnCloseView_Click);
             // 
+            // lblWeight
+            // 
+            this.lblWeight.AutoSize = true;
+            this.lblWeight.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWeight.Location = new System.Drawing.Point(193, 254);
+            this.lblWeight.Name = "lblWeight";
+            this.lblWeight.Size = new System.Drawing.Size(24, 17);
+            this.lblWeight.TabIndex = 135;
+            this.lblWeight.Text = "<>";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(18, 254);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(58, 17);
+            this.label35.TabIndex = 134;
+            this.label35.Text = "Weight:";
+            // 
+            // txtWeight
+            // 
+            this.txtWeight.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWeight.Location = new System.Drawing.Point(239, 508);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(196, 27);
+            this.txtWeight.TabIndex = 79;
+            this.txtWeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbWeight_KeyPress);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(234, 477);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(130, 22);
+            this.label28.TabIndex = 80;
+            this.label28.Text = "Weight (kg) *";
+            // 
             // frmResidents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1108, 745);
+            this.Controls.Add(this.pnlAddEditStep1);
             this.Controls.Add(this.pnlView);
             this.Controls.Add(this.pnlAddEditStep3);
-            this.Controls.Add(this.pnlAddEditStep1);
             this.Controls.Add(this.pnlAddEditStep2);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lblTitle);
@@ -2512,5 +2559,9 @@
         private System.Windows.Forms.TextBox txtYearGraduated;
         private System.Windows.Forms.Button btnBarangayCertifications;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblWeight;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtWeight;
+        private System.Windows.Forms.Label label28;
     }
 }

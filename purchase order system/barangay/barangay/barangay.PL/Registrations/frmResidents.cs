@@ -89,7 +89,7 @@ namespace barangay.PL.Registrations
 
         private void ClearForm()
         {
-            methods.ClearTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtCourse, txtHouseNumber, txtStreet, txtSubdivision, txtMunicipality, txtProvince, txtPrecintNumber, txtPhoneNumber, txtCellphoneNumber, txtEmailAddress, txtCTCNumber, txtHousehold, txtYearGraduated);
+            methods.ClearTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtWeight, txtCourse, txtHouseNumber, txtStreet, txtSubdivision, txtMunicipality, txtProvince, txtPrecintNumber, txtPhoneNumber, txtCellphoneNumber, txtEmailAddress, txtCTCNumber, txtHousehold, txtYearGraduated);
             methods.ClearCB(cbCitizenship, cbReligion, cbSex, cbCivilStatus, cbEducationalAttainment, cbProfessionOrOccupation, cbPurok, cbHouseholdMember);
             methods.ClearDTP(dtpBirthDate, dtpDateAccomplished);
             cbIsPwd.Checked = false;
@@ -301,7 +301,8 @@ namespace barangay.PL.Registrations
                 lblBirthPlace.Text = birthinformationEL.Birthplace;
                 lblBirthday.Text = Convert.ToDateTime(birthinformationEL.Birthdate).ToString("MMMM dd, yyyy");
                 lblGender.Text = sexEL.Sex;
-                lblHeight.Text = residentEL.Height;
+                lblHeight.Text = residentEL.Height + " cm";
+                lblWeight.Text = residentEL.Weight + " kg";
                 lblCivilStatus.Text = civilstatusEL.Civilstatus;
                 lblEducationalAttainment.Text = educationalattainmentEL.Educationalattainment;
                 lblCourse.Text = educationEL.Course;
@@ -353,6 +354,7 @@ namespace barangay.PL.Registrations
                 txtFirstName.Text = residentEL.Firstname;
                 txtMiddleName.Text = residentEL.Middlename;
                 txtHeight.Text = residentEL.Height;
+                txtWeight.Text = residentEL.Weight;
                 txtPrecintNumber.Text = residentEL.Precintnumber;
                 txtCTCNumber.Text = residentEL.Ctcnumber;
                 dtpDateAccomplished.Text = residentEL.Dateaccomplished;
@@ -486,7 +488,7 @@ namespace barangay.PL.Registrations
 
         private void btnNextStep1_Click(object sender, EventArgs e)
         {
-            if (methods.CheckRequiredTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtCourse, txtYearGraduated) &
+            if (methods.CheckRequiredTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtHeight, txtCourse, txtYearGraduated) &
                 methods.CheckRequiredCB(cbSex, cbCivilStatus, cbCitizenship, cbReligion, cbEducationalAttainment, cbProfessionOrOccupation) &
                 methods.CheckRequiredDTP(dtpBirthDate))
             {
@@ -558,6 +560,7 @@ namespace barangay.PL.Registrations
                 residentEL.Firstname = txtFirstName.Text;
                 residentEL.Middlename = txtMiddleName.Text;
                 residentEL.Height = txtHeight.Text;
+                residentEL.Weight = txtWeight.Text;
                 residentEL.Precintnumber = txtPrecintNumber.Text;
                 residentEL.Ctcnumber = txtCTCNumber.Text;
                 residentEL.Dateaccomplished = dtpDateAccomplished.Text;
@@ -675,11 +678,6 @@ namespace barangay.PL.Registrations
         }
 
 
-        private void txtHeight_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            methods.OnlyNumTXT(sender, e);
-        }
-
         private void rbNone_CheckedChanged(object sender, EventArgs e)
         {
             PopulateDGV();
@@ -719,6 +717,16 @@ namespace barangay.PL.Registrations
         {
             Transactions.frmBarangayCertifications frmBarangayCertification = new Transactions.frmBarangayCertifications(residentEL);
             frmBarangayCertification.ShowDialog();
+        }
+
+        private void txtHeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            methods.OnlyNumTXT(sender, e);
+        }
+
+        private void tbWeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            methods.OnlyNumTXT(sender, e);
         }
     }
 }

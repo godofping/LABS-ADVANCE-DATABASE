@@ -1,0 +1,74 @@
+If (ToText(CurrentDateTime, "dd") = "1") then
+"1st"
+Else if (ToText(CurrentDateTime, "dd") = "2") then
+"2nd"
+Else if (ToText(CurrentDateTime, "dd") = "3") then
+"3rd"
+Else if (ToText(CurrentDateTime, "dd") = "4") then
+"4th"
+Else if (ToText(CurrentDateTime, "dd") = "5") then
+"5th"
+Else if (ToText(CurrentDateTime, "dd") = "6") then
+"6th"
+Else if (ToText(CurrentDateTime, "dd") = "7") then
+"7th"
+Else if (ToText(CurrentDateTime, "dd") = "8") then
+"8th"
+Else if (ToText(CurrentDateTime, "dd") = "9") then
+"9th"
+Else if (ToText(CurrentDateTime, "dd") = "10") then
+"10th"
+Else if (ToText(CurrentDateTime, "dd") = "11") then
+"11th"
+Else if (ToText(CurrentDateTime, "dd") = "12") then
+"12th"
+Else if (ToText(CurrentDateTime, "dd") = "13") then
+"13th"
+Else if (ToText(CurrentDateTime, "dd") = "14") then
+"14th"
+Else if (ToText(CurrentDateTime, "dd") = "15") then
+"15th"
+Else if (ToText(CurrentDateTime, "dd") = "16") then
+"16th"
+Else if (ToText(CurrentDateTime, "dd") = "17") then
+"17th"
+Else if (ToText(CurrentDateTime, "dd") = "18") then
+"18th"
+Else if (ToText(CurrentDateTime, "dd") = "19") then
+"19th"
+Else if (ToText(CurrentDateTime, "dd") = "20") then
+"20th"
+Else if (ToText(CurrentDateTime, "dd") = "21") then
+"21st"
+Else if (ToText(CurrentDateTime, "dd") = "22") then
+"22nd"
+Else if (ToText(CurrentDateTime, "dd") = "23") then
+"23rd"
+Else if (ToText(CurrentDateTime, "dd") = "24") then
+"24th"
+Else if (ToText(CurrentDateTime, "dd") = "25") then
+"25th"
+Else if (ToText(CurrentDateTime, "dd") = "26") then
+"26th"
+Else if (ToText(CurrentDateTime, "dd") = "27") then
+"27th"
+Else if (ToText(CurrentDateTime, "dd") = "28") then
+"28th"
+Else if (ToText(CurrentDateTime, "dd") = "29") then
+"29th"
+Else if (ToText(CurrentDateTime, "dd") = "30") then
+"30th"
+Else if (ToText(CurrentDateTime, "dd") = "31") then
+"31st"
+
+
+
+
+
+
+
+
+
+
+
+

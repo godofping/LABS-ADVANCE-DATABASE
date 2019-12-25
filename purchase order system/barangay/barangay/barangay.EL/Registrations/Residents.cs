@@ -14,6 +14,7 @@ namespace barangay.EL.Registrations
         string firstname;
         string middlename;
         string height;
+        string weight;
         string precintnumber;
         string ctcnumber;
         string dateaccomplished;
@@ -26,6 +27,7 @@ namespace barangay.EL.Registrations
         public string Firstname { get => firstname; set => firstname = value; }
         public string Middlename { get => middlename; set => middlename = value; }
         public string Height { get => height; set => height = value; }
+        public string Weight { get => weight; set => weight = value; }
         public string Precintnumber { get => precintnumber; set => precintnumber = value; }
         public string Ctcnumber { get => ctcnumber; set => ctcnumber = value; }
         public string Dateaccomplished { get => dateaccomplished; set => dateaccomplished = value; }
