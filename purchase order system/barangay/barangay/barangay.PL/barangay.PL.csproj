@@ -104,12 +104,6 @@
     <Compile Include="Registrations\frmSettings.Designer.cs">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transactions\crCedula.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crCedula.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Transactions\crIdentificationCard.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -130,11 +124,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsBarangay.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Transactions\frmBarangayCertifications.cs">
+    <Compile Include="Transactions\frmPrintables.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transactions\frmBarangayCertifications.Designer.cs">
-      <DependentUpon>frmBarangayCertifications.cs</DependentUpon>
+    <Compile Include="Transactions\frmPrintables.Designer.cs">
+      <DependentUpon>frmPrintables.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactions\frmHome.cs">
       <SubType>Form</SubType>
@@ -182,10 +176,6 @@
     <EmbeddedResource Include="Registrations\frmSettings.resx">
       <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transactions\crCedula.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crCedula.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Transactions\crIdentificationCard.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crIdentificationCard.cs</LastGenOutput>
@@ -194,8 +184,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crResidency.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transactions\frmBarangayCertifications.resx">
-      <DependentUpon>frmBarangayCertifications.cs</DependentUpon>
+    <EmbeddedResource Include="Transactions\frmPrintables.resx">
+      <DependentUpon>frmPrintables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>

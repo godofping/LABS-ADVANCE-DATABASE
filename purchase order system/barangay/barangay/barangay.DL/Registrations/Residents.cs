@@ -17,6 +17,11 @@ namespace barangay.DL.Registrations
         {
             return Helper.executeQuery("select * from residency_view where residentid = '" + id + "'");
         }
+        public DataTable ListIdentificationCard(int id)
+        {
+            return Helper.executeQuery("select * from identificationcard_view where residentid = '" + id + "'");
+        }
+
         public DataTable ListByHousehold(int id)
         {
             return Helper.executeQuery("select householdmember, lastname, firstname, middlename from residents_view where householdid = '" + id + "'");

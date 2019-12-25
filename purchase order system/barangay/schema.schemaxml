@@ -335,8 +335,8 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="occupations" view="colnames">
-<left>1215</left>
-<top>468</top>
+<left>1172</left>
+<top>523</top>
 <width>142</width>
 <height>112</height>
 <sql_create_table>CREATE TABLE `occupations` (

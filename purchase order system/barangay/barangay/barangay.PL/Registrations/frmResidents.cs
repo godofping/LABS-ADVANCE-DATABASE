@@ -713,11 +713,12 @@ namespace barangay.PL.Registrations
             ShowMain();
         }
 
-        private void btnBarangayCertifications_Click(object sender, EventArgs e)
+        private void btnPrintables_Click(object sender, EventArgs e)
         {
-            Transactions.frmBarangayCertifications frmBarangayCertification = new Transactions.frmBarangayCertifications(residentEL);
-            frmBarangayCertification.ShowDialog();
+            Transactions.frmPrintables frmPrintables = new Transactions.frmPrintables(residentEL);
+            frmPrintables.ShowDialog();
         }
+
 
         private void txtHeight_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -728,5 +729,7 @@ namespace barangay.PL.Registrations
         {
             methods.OnlyNumTXT(sender, e);
         }
+
+        
     }
 }

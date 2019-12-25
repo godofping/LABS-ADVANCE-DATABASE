@@ -18,6 +18,11 @@ namespace barangay.BL.Registrations
         {
             return residentDL.ListResidencyCertification(id);
         }
+        public DataTable ListIdentificationCard(int id)
+        {
+            return residentDL.ListIdentificationCard(id);
+        }
+
         public DataTable ListByHousehold(int id)
         {
             return residentDL.ListByHousehold(id);
