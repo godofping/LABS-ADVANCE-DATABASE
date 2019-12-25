@@ -33,6 +33,7 @@
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlRedSide = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnIssuances = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
@@ -66,6 +67,7 @@
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.pnlLeft.Controls.Add(this.btnIssuances);
             this.pnlLeft.Controls.Add(this.btnSettings);
             this.pnlLeft.Controls.Add(this.pnlRedSide);
             this.pnlLeft.Controls.Add(this.btnLogout);
@@ -84,9 +86,9 @@
             // pnlRedSide
             // 
             this.pnlRedSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(102)))), ((int)(((byte)(166)))));
-            this.pnlRedSide.Location = new System.Drawing.Point(0, 93);
+            this.pnlRedSide.Location = new System.Drawing.Point(0, 81);
             this.pnlRedSide.Name = "pnlRedSide";
-            this.pnlRedSide.Size = new System.Drawing.Size(10, 73);
+            this.pnlRedSide.Size = new System.Drawing.Size(10, 60);
             this.pnlRedSide.TabIndex = 7;
             // 
             // pnlMain
@@ -99,6 +101,24 @@
             this.pnlMain.Size = new System.Drawing.Size(1108, 745);
             this.pnlMain.TabIndex = 3;
             // 
+            // btnIssuances
+            // 
+            this.btnIssuances.FlatAppearance.BorderSize = 0;
+            this.btnIssuances.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIssuances.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssuances.ForeColor = System.Drawing.Color.White;
+            this.btnIssuances.Image = global::barangay.PL.Properties.Resources.file;
+            this.btnIssuances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIssuances.Location = new System.Drawing.Point(9, 353);
+            this.btnIssuances.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnIssuances.Name = "btnIssuances";
+            this.btnIssuances.Size = new System.Drawing.Size(246, 60);
+            this.btnIssuances.TabIndex = 9;
+            this.btnIssuances.Text = "          Issuances";
+            this.btnIssuances.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnIssuances.UseVisualStyleBackColor = true;
+            this.btnIssuances.Click += new System.EventHandler(this.btnIssuances_Click);
+            // 
             // btnSettings
             // 
             this.btnSettings.FlatAppearance.BorderSize = 0;
@@ -107,10 +127,10 @@
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Image = global::barangay.PL.Properties.Resources.settings__1_;
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(12, 498);
+            this.btnSettings.Location = new System.Drawing.Point(12, 489);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(246, 73);
+            this.btnSettings.Size = new System.Drawing.Size(246, 60);
             this.btnSettings.TabIndex = 8;
             this.btnSettings.Text = "          Settings";
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -141,10 +161,10 @@
             this.btnReports.ForeColor = System.Drawing.Color.White;
             this.btnReports.Image = global::barangay.PL.Properties.Resources.analysis;
             this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReports.Location = new System.Drawing.Point(12, 417);
+            this.btnReports.Location = new System.Drawing.Point(12, 421);
             this.btnReports.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(246, 73);
+            this.btnReports.Size = new System.Drawing.Size(246, 60);
             this.btnReports.TabIndex = 5;
             this.btnReports.Text = "          Reports";
             this.btnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -159,10 +179,10 @@
             this.btnAccomplishments.ForeColor = System.Drawing.Color.White;
             this.btnAccomplishments.Image = global::barangay.PL.Properties.Resources.market_positioning;
             this.btnAccomplishments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccomplishments.Location = new System.Drawing.Point(12, 336);
+            this.btnAccomplishments.Location = new System.Drawing.Point(12, 285);
             this.btnAccomplishments.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAccomplishments.Name = "btnAccomplishments";
-            this.btnAccomplishments.Size = new System.Drawing.Size(246, 73);
+            this.btnAccomplishments.Size = new System.Drawing.Size(246, 60);
             this.btnAccomplishments.TabIndex = 4;
             this.btnAccomplishments.Text = "          Accomplishments";
             this.btnAccomplishments.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -177,10 +197,10 @@
             this.btnHouseholds.ForeColor = System.Drawing.Color.White;
             this.btnHouseholds.Image = global::barangay.PL.Properties.Resources.family;
             this.btnHouseholds.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHouseholds.Location = new System.Drawing.Point(12, 255);
+            this.btnHouseholds.Location = new System.Drawing.Point(12, 217);
             this.btnHouseholds.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHouseholds.Name = "btnHouseholds";
-            this.btnHouseholds.Size = new System.Drawing.Size(246, 73);
+            this.btnHouseholds.Size = new System.Drawing.Size(246, 60);
             this.btnHouseholds.TabIndex = 3;
             this.btnHouseholds.Text = "          Households";
             this.btnHouseholds.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -195,10 +215,10 @@
             this.btnResidents.ForeColor = System.Drawing.Color.White;
             this.btnResidents.Image = global::barangay.PL.Properties.Resources.employee;
             this.btnResidents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResidents.Location = new System.Drawing.Point(12, 174);
+            this.btnResidents.Location = new System.Drawing.Point(12, 149);
             this.btnResidents.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnResidents.Name = "btnResidents";
-            this.btnResidents.Size = new System.Drawing.Size(246, 73);
+            this.btnResidents.Size = new System.Drawing.Size(246, 60);
             this.btnResidents.TabIndex = 2;
             this.btnResidents.Text = "          Residents";
             this.btnResidents.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -213,10 +233,10 @@
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = global::barangay.PL.Properties.Resources.home__4_;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(12, 93);
+            this.btnHome.Location = new System.Drawing.Point(12, 81);
             this.btnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(246, 73);
+            this.btnHome.Size = new System.Drawing.Size(246, 60);
             this.btnHome.TabIndex = 1;
             this.btnHome.Text = "          Home";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -258,6 +278,7 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel pnlRedSide;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnIssuances;
     }
 }
 

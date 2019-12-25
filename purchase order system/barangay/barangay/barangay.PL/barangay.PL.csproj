@@ -86,6 +86,12 @@
     <Compile Include="Registrations\frmHouseholds.Designer.cs">
       <DependentUpon>frmHouseholds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registrations\frmIssuances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registrations\frmIssuances.Designer.cs">
+      <DependentUpon>frmIssuances.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registrations\frmResidents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registrations\frmHouseholds.resx">
       <DependentUpon>frmHouseholds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registrations\frmIssuances.resx">
+      <DependentUpon>frmIssuances.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registrations\frmResidents.resx">
       <DependentUpon>frmResidents.cs</DependentUpon>
@@ -296,6 +305,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\analysis %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\writing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

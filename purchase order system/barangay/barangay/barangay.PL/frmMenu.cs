@@ -108,6 +108,19 @@ namespace barangay.PL
             pleaseWait.Close();
         }
 
+        private void btnIssuances_Click(object sender, EventArgs e)
+        {
+            var pleaseWait = new frmLoading();
+            pleaseWait.Show();
+            Application.DoEvents();
+
+            ChangePanelLocation(pnlRedSide, btnIssuances);
+            var frm = new Registrations.frmIssuances();
+            methods.ChangePanelDisplay(frm, pnlMain);
+
+            pleaseWait.Close();
+        }
+
         private void btnReports_Click(object sender, EventArgs e)
         {
             var pleaseWait = new frmLoading();
@@ -139,5 +152,7 @@ namespace barangay.PL
             this.Close();
             frmLogin.Show();
         }
+
+        
     }
 }
