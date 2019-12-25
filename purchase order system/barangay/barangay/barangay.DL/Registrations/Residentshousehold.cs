@@ -30,7 +30,6 @@ namespace barangay.DL.Registrations
 
         public long Insert(EL.Registrations.Residentshousehold residenthouseholdEL)
         {
-            Console.WriteLine("insert into residentshousehold (residentid, householdid, householdmemberid) values ('" + residenthouseholdEL.Residentid + "', '" + residenthouseholdEL.Householdid + "', '" + residenthouseholdEL.Householdmemberid + "')");
             return Helper.executeNonQueryLong("insert into residentshousehold (residentid, householdid, householdmemberid) values ('" + residenthouseholdEL.Residentid + "', '" + residenthouseholdEL.Householdid + "', '" + residenthouseholdEL.Householdmemberid + "')");
         }
 

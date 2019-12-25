@@ -34,6 +34,7 @@
             this.pnlAddEditStep1 = new System.Windows.Forms.Panel();
             this.btnCloseStep1 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txtYearGraduated = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.cbProfessionOrOccupation = new System.Windows.Forms.ComboBox();
             this.txtCourse = new System.Windows.Forms.TextBox();
@@ -136,6 +137,8 @@
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlView = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnBarangayCertifications = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.lblDateAccomplished = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
@@ -202,7 +205,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblBarangayIDNumber = new System.Windows.Forms.Label();
             this.btnCloseView = new System.Windows.Forms.Button();
-            this.txtYearGraduated = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.pnlAddEditStep1.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -308,6 +310,14 @@
             this.groupBox7.Size = new System.Drawing.Size(461, 320);
             this.groupBox7.TabIndex = 105;
             this.groupBox7.TabStop = false;
+            // 
+            // txtYearGraduated
+            // 
+            this.txtYearGraduated.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYearGraduated.Location = new System.Drawing.Point(28, 123);
+            this.txtYearGraduated.Name = "txtYearGraduated";
+            this.txtYearGraduated.Size = new System.Drawing.Size(406, 27);
+            this.txtYearGraduated.TabIndex = 117;
             // 
             // label17
             // 
@@ -1487,6 +1497,8 @@
             // pnlView
             // 
             this.pnlView.BackColor = System.Drawing.Color.White;
+            this.pnlView.Controls.Add(this.button2);
+            this.pnlView.Controls.Add(this.btnBarangayCertifications);
             this.pnlView.Controls.Add(this.groupBox10);
             this.pnlView.Controls.Add(this.lblHouseholdControl);
             this.pnlView.Controls.Add(this.lblDateRecorded);
@@ -1500,6 +1512,35 @@
             this.pnlView.Size = new System.Drawing.Size(1082, 650);
             this.pnlView.TabIndex = 50;
             this.pnlView.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(184, 571);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 73);
+            this.button2.TabIndex = 79;
+            this.button2.Text = "Identification Card";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // btnBarangayCertifications
+            // 
+            this.btnBarangayCertifications.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
+            this.btnBarangayCertifications.FlatAppearance.BorderSize = 0;
+            this.btnBarangayCertifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBarangayCertifications.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBarangayCertifications.ForeColor = System.Drawing.Color.White;
+            this.btnBarangayCertifications.Location = new System.Drawing.Point(13, 571);
+            this.btnBarangayCertifications.Name = "btnBarangayCertifications";
+            this.btnBarangayCertifications.Size = new System.Drawing.Size(149, 73);
+            this.btnBarangayCertifications.TabIndex = 78;
+            this.btnBarangayCertifications.Text = "Barangay Certifications";
+            this.btnBarangayCertifications.UseVisualStyleBackColor = false;
+            this.btnBarangayCertifications.Click += new System.EventHandler(this.btnBarangayCertifications_Click);
             // 
             // groupBox10
             // 
@@ -2226,14 +2267,6 @@
             this.btnCloseView.UseVisualStyleBackColor = false;
             this.btnCloseView.Click += new System.EventHandler(this.btnCloseView_Click);
             // 
-            // txtYearGraduated
-            // 
-            this.txtYearGraduated.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYearGraduated.Location = new System.Drawing.Point(28, 123);
-            this.txtYearGraduated.Name = "txtYearGraduated";
-            this.txtYearGraduated.Size = new System.Drawing.Size(406, 27);
-            this.txtYearGraduated.TabIndex = 117;
-            // 
             // frmResidents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2241,9 +2274,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1108, 745);
             this.Controls.Add(this.pnlView);
+            this.Controls.Add(this.pnlAddEditStep3);
             this.Controls.Add(this.pnlAddEditStep1);
             this.Controls.Add(this.pnlAddEditStep2);
-            this.Controls.Add(this.pnlAddEditStep3);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlTitle);
@@ -2477,5 +2510,7 @@
         private System.Windows.Forms.Label lblCTCNumber;
         private System.Windows.Forms.Label label94;
         private System.Windows.Forms.TextBox txtYearGraduated;
+        private System.Windows.Forms.Button btnBarangayCertifications;
+        private System.Windows.Forms.Button button2;
     }
 }

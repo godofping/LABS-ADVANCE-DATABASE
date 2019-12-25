@@ -715,6 +715,10 @@ namespace barangay.PL.Registrations
             ShowMain();
         }
 
- 
+        private void btnBarangayCertifications_Click(object sender, EventArgs e)
+        {
+            Transactions.frmBarangayCertifications frmBarangayCertification = new Transactions.frmBarangayCertifications(residentEL);
+            frmBarangayCertification.ShowDialog();
+        }
     }
 }
