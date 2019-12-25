@@ -63,6 +63,7 @@
             this.btnCedula.TabIndex = 80;
             this.btnCedula.Text = "Cedula";
             this.btnCedula.UseVisualStyleBackColor = false;
+            this.btnCedula.Click += new System.EventHandler(this.btnCedula_Click);
             // 
             // btnCloseView
             // 

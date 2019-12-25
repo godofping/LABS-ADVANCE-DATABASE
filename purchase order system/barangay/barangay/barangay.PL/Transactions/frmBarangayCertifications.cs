@@ -41,5 +41,15 @@ namespace barangay.PL.Transactions
             crv.ReportSource = crResidency;
             crv.Refresh();
         }
+
+        private void btnCedula_Click(object sender, EventArgs e)
+        {
+            crCedula crCedula = new crCedula();
+
+
+            crv.ReportSource = null;
+            crv.ReportSource = crCedula;
+            crv.Refresh();
+        }
     }
 }
