@@ -20,6 +20,11 @@ namespace barangay.BL.Registrations
             return residentDL.ListPopulationSummary();
         }
 
+        public DataTable ListPerPurokPopulations()
+        {
+            return residentDL.ListPerPurokPopulations();
+        }
+
         public DataTable ListNames(String keyword)
         {
             return residentDL.ListNames(keyword);

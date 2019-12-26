@@ -19,6 +19,11 @@ namespace barangay.DL.Registrations
             return Helper.executeQuery("select * from populationsummary_view");
         }
 
+        public DataTable ListPerPurokPopulations()
+        {
+            return Helper.executeQuery("select * from purokspopulation_view");
+        }
+
         public DataTable ListNames(String keyword)
         {
             return Helper.executeQuery("select residentid, lastname, firstname, middlename  from residents_view where lastname like '" + keyword + "%' or firstname like '" + keyword + "%' or middlename like '" + keyword + "%'");

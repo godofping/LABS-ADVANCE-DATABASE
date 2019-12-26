@@ -22,20 +22,22 @@ namespace barangay.PL.Transactions
             InitializeComponent();
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
-        {
-            crPopulationSummary crPopulationSummary = new crPopulationSummary();
-
-            crPopulationSummary.Database.Tables["populationsummary_view"].SetDataSource(residentBL.ListPopulationSummary());
-
-            crv.ReportSource = null;
-            crv.ReportSource = crPopulationSummary;
-            crv.Refresh();
-        }
 
         private void btnCloseView_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmPopulationSummary_Load(object sender, EventArgs e)
+        {
+            crPopulationSummary crPopulationSummary = new crPopulationSummary();
+
+            crPopulationSummary.Database.Tables["populationsummary_view"].SetDataSource(residentBL.ListPopulationSummary());
+            crPopulationSummary.Database.Tables["purokspopulation_view"].SetDataSource(residentBL.ListPerPurokPopulations());
+
+            crv.ReportSource = null;
+            crv.ReportSource = crPopulationSummary;
+            crv.Refresh();
         }
     }
 }
