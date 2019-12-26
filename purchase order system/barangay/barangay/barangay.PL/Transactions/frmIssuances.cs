@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace barangay.PL.Transactions
 {
-    public partial class frmReports : Form
+    public partial class frmIssuances : Form
     {
-        public frmReports()
+        public frmIssuances()
         {
             InitializeComponent();
-        }
-
-        private void btnResidency_Click(object sender, EventArgs e)
-        {
-            frmPopulationSummary frmPopulationSummary = new frmPopulationSummary();
-            frmPopulationSummary.ShowDialog();
         }
     }
 }

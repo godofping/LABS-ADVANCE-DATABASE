@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.btnResidency = new System.Windows.Forms.Button();
-            this.btnCloseView = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.crv = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.btnIdentificationCard = new System.Windows.Forms.Button();
+            this.btnCloseView = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnResidency
@@ -50,25 +50,6 @@
             this.btnResidency.UseVisualStyleBackColor = false;
             this.btnResidency.Click += new System.EventHandler(this.btnResidency_Click);
             // 
-            // btnCloseView
-            // 
-            this.btnCloseView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCloseView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnCloseView.FlatAppearance.BorderSize = 0;
-            this.btnCloseView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseView.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseView.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCloseView.Image = global::barangay.PL.Properties.Resources.delete_button;
-            this.btnCloseView.Location = new System.Drawing.Point(899, 514);
-            this.btnCloseView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCloseView.Name = "btnCloseView";
-            this.btnCloseView.Size = new System.Drawing.Size(113, 73);
-            this.btnCloseView.TabIndex = 84;
-            this.btnCloseView.Text = "CLOSE";
-            this.btnCloseView.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnCloseView.UseVisualStyleBackColor = false;
-            this.btnCloseView.Click += new System.EventHandler(this.btnCloseView_Click);
-            // 
             // lblTitle
             // 
             this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -78,7 +59,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(672, 43);
             this.lblTitle.TabIndex = 85;
-            this.lblTitle.Text = "Barangay Certification for IVY LAUREL MORALES";
+            this.lblTitle.Text = "Printables for IVY LAUREL MORALES";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // crv
@@ -108,6 +89,25 @@
             this.btnIdentificationCard.Text = "Identification Card";
             this.btnIdentificationCard.UseVisualStyleBackColor = false;
             this.btnIdentificationCard.Click += new System.EventHandler(this.btnIdentificationCard_Click);
+            // 
+            // btnCloseView
+            // 
+            this.btnCloseView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnCloseView.FlatAppearance.BorderSize = 0;
+            this.btnCloseView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseView.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseView.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCloseView.Image = global::barangay.PL.Properties.Resources.delete_button;
+            this.btnCloseView.Location = new System.Drawing.Point(899, 514);
+            this.btnCloseView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCloseView.Name = "btnCloseView";
+            this.btnCloseView.Size = new System.Drawing.Size(113, 73);
+            this.btnCloseView.TabIndex = 84;
+            this.btnCloseView.Text = "CLOSE";
+            this.btnCloseView.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnCloseView.UseVisualStyleBackColor = false;
+            this.btnCloseView.Click += new System.EventHandler(this.btnCloseView_Click);
             // 
             // frmPrintables
             // 

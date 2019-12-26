@@ -110,6 +110,12 @@
       <DependentUpon>crIdentificationCard.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Transactions\crPopulationSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crPopulationSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Transactions\crResidency.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +129,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsBarangay.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmIssuances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmIssuances.Designer.cs">
+      <DependentUpon>frmIssuances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmPopulationSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmPopulationSummary.Designer.cs">
+      <DependentUpon>frmPopulationSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="Transactions\frmPrintables.cs">
       <SubType>Form</SubType>
@@ -180,9 +198,19 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crIdentificationCard.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\crPopulationSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crPopulationSummary.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Transactions\crResidency.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crResidency.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmIssuances.resx">
+      <DependentUpon>frmIssuances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmPopulationSummary.resx">
+      <DependentUpon>frmPopulationSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\frmPrintables.resx">
       <DependentUpon>frmPrintables.cs</DependentUpon>
@@ -310,6 +338,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\file %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

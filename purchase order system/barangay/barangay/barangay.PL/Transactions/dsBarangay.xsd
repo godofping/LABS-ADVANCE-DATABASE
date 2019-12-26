@@ -51,6 +51,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="populationsummary_view" msprop:Generator_TableClassName="populationsummary_viewDataTable" msprop:Generator_TableVarName="tablepopulationsummary_view" msprop:Generator_TablePropName="populationsummary_view" msprop:Generator_RowDeletingName="populationsummary_viewRowDeleting" msprop:Generator_RowChangingName="populationsummary_viewRowChanging" msprop:Generator_RowEvHandlerName="populationsummary_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="populationsummary_viewRowDeleted" msprop:Generator_UserTableName="populationsummary_view" msprop:Generator_RowChangedName="populationsummary_viewRowChanged" msprop:Generator_RowEvArgName="populationsummary_viewRowChangeEvent" msprop:Generator_RowClassName="populationsummary_viewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Household" msprop:Generator_ColumnVarNameInTable="columnHousehold" msprop:Generator_ColumnPropNameInRow="Household" msprop:Generator_ColumnPropNameInTable="HouseholdColumn" msprop:Generator_UserColumnName="Household" type="xs:int" minOccurs="0" />
+              <xs:element name="Population" msprop:Generator_ColumnVarNameInTable="columnPopulation" msprop:Generator_ColumnPropNameInRow="Population" msprop:Generator_ColumnPropNameInTable="PopulationColumn" msprop:Generator_UserColumnName="Population" type="xs:int" minOccurs="0" />
+              <xs:element name="Male" msprop:Generator_ColumnVarNameInTable="columnMale" msprop:Generator_ColumnPropNameInRow="Male" msprop:Generator_ColumnPropNameInTable="MaleColumn" msprop:Generator_UserColumnName="Male" type="xs:int" minOccurs="0" />
+              <xs:element name="Female" msprop:Generator_ColumnVarNameInTable="columnFemale" msprop:Generator_ColumnPropNameInRow="Female" msprop:Generator_ColumnPropNameInTable="FemaleColumn" msprop:Generator_UserColumnName="Female" type="xs:int" minOccurs="0" />
+              <xs:element name="PWD" msprop:Generator_ColumnVarNameInTable="columnPWD" msprop:Generator_ColumnPropNameInRow="PWD" msprop:Generator_ColumnPropNameInTable="PWDColumn" msprop:Generator_UserColumnName="PWD" type="xs:int" minOccurs="0" />
+              <xs:element name="Out_x0020_of_x0020_School_x0020_Youth" msprop:Generator_ColumnVarNameInTable="columnOut_of_School_Youth" msprop:Generator_ColumnPropNameInRow="Out_of_School_Youth" msprop:Generator_ColumnPropNameInTable="Out_of_School_YouthColumn" msprop:Generator_UserColumnName="Out of School Youth" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

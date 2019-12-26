@@ -28,7 +28,7 @@ namespace barangay.PL.Transactions
 
         private void frmBarangayCertifications_Load(object sender, EventArgs e)
         {
-            lblTitle.Text = "Barangay Certifications for " + residentEL.Firstname + " " + residentEL.Middlename + " " + residentEL.Lastname;
+            lblTitle.Text = "Printables for " + residentEL.Firstname + " " + residentEL.Middlename + " " + residentEL.Lastname;
         }
 
         private void btnResidency_Click(object sender, EventArgs e)
