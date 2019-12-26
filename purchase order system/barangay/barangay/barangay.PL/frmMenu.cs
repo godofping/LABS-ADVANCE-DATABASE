@@ -13,10 +13,12 @@ namespace barangay.PL
     public partial class frmMenu : Form
     {
         frmLogin frmLogin;
-        public frmMenu(frmLogin _frmLogin)
+        EL.Registrations.Accounts accountEL;
+        public frmMenu(frmLogin _frmLogin, EL.Registrations.Accounts _accountEL)
         {
             InitializeComponent();
             frmLogin = _frmLogin;
+            accountEL = _accountEL;
         }
 
         protected override CreateParams CreateParams
@@ -52,6 +54,8 @@ namespace barangay.PL
             ChangePanelLocation(pnlRedSide, btnHome);
             var frm = new Transactions.frmHome();
             methods.ChangePanelDisplay(frm, pnlMain);
+
+            lblWelcome.Text = "Welcome, " + accountEL.Username + "!";
 
             pleaseWait.Close();
         }
@@ -141,7 +145,7 @@ namespace barangay.PL
             Application.DoEvents();
 
             ChangePanelLocation(pnlRedSide, btnSettings);
-            var frm = new Registrations.frmSettings();
+            var frm = new Registrations.frmSettings(accountEL);
             methods.ChangePanelDisplay(frm, pnlMain);
 
             pleaseWait.Close();

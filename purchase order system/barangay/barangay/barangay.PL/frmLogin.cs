@@ -39,7 +39,8 @@ namespace barangay.PL
                 if (dt.Rows.Count > 0)
                 {
                     accountEL.Accountid = Convert.ToInt32(dt.Rows[0]["accountid"]);
-                    frmMenu frmMenu = new frmMenu(this);
+                    accountEL.Username = dt.Rows[0]["username"].ToString();
+                    frmMenu frmMenu = new frmMenu(this, accountEL);
                     this.Hide();
                     frmMenu.ShowDialog();
 

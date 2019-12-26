@@ -41,6 +41,7 @@
             this.btnHouseholds = new System.Windows.Forms.Button();
             this.btnResidents = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.pnlLeft.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +68,7 @@
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.pnlLeft.Controls.Add(this.lblWelcome);
             this.pnlLeft.Controls.Add(this.btnIssuances);
             this.pnlLeft.Controls.Add(this.btnSettings);
             this.pnlLeft.Controls.Add(this.pnlRedSide);
@@ -243,6 +245,17 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // lblWelcome
+            // 
+            this.lblWelcome.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.White;
+            this.lblWelcome.Location = new System.Drawing.Point(9, 9);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(243, 68);
+            this.lblWelcome.TabIndex = 10;
+            this.lblWelcome.Text = "Welcome, Admin!";
+            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -279,6 +292,7 @@
         private System.Windows.Forms.Panel pnlRedSide;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnIssuances;
+        private System.Windows.Forms.Label lblWelcome;
     }
 }
 
