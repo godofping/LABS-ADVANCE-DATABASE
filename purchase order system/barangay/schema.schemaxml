@@ -48,7 +48,7 @@
   `username` varchar(60) DEFAULT NULL,
   `password` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`accountid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="homeaddressess" view="colnames">
 <left>928</left>
@@ -67,7 +67,7 @@
   KEY `FK_homeaddressess1` (`residentid`),
   CONSTRAINT `FK_homeaddressess` FOREIGN KEY (`purokid`) REFERENCES `puroks` (`purokid`),
   CONSTRAINT `FK_homeaddressess1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="householdmembers" view="colnames">
 <left>1199</left>
@@ -116,7 +116,7 @@
   PRIMARY KEY (`provincialaddressid`),
   KEY `FK_provincialaddresses` (`residentid`),
   CONSTRAINT `FK_provincialaddresses` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="contactdetails" view="colnames">
 <left>935</left>
@@ -132,7 +132,7 @@
   PRIMARY KEY (`contactdetailid`),
   KEY `FK_contactdetails` (`residentid`),
   CONSTRAINT `FK_contactdetails` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="educations" view="colnames">
 <left>247</left>
@@ -150,7 +150,7 @@
   KEY `FK_educations1` (`residentid`),
   CONSTRAINT `FK_educations` FOREIGN KEY (`educationalattainmentid`) REFERENCES `educationalattainments` (`educationalattainmentid`),
   CONSTRAINT `FK_educations1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="educationalattainments" view="colnames">
 <left>11</left>
@@ -164,8 +164,8 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="imagelocations" view="colnames">
-<left>125</left>
-<top>731</top>
+<left>102</left>
+<top>746</top>
 <width>177</width>
 <height>132</height>
 <sql_create_table>CREATE TABLE `imagelocations` (
@@ -194,7 +194,7 @@
   CONSTRAINT `FK_residentshousehold` FOREIGN KEY (`householdid`) REFERENCES `households` (`householdid`),
   CONSTRAINT `FK_residentshousehold1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`),
   CONSTRAINT `FK_residentshousehold2` FOREIGN KEY (`householdmemberid`) REFERENCES `householdmembers` (`householdmemberid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="religions" view="colnames">
 <left>11</left>
@@ -221,7 +221,7 @@
   KEY `FK_residentsreligion1` (`residentid`),
   CONSTRAINT `FK_residentsreligion` FOREIGN KEY (`religionid`) REFERENCES `religions` (`religionid`),
   CONSTRAINT `FK_residentsreligion1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="civilstatuses" view="colnames">
 <left>13</left>
@@ -248,7 +248,7 @@
   KEY `FK_residentscivilstatus1` (`residentid`),
   CONSTRAINT `FK_residentscivilstatus` FOREIGN KEY (`civilstatusid`) REFERENCES `civilstatuses` (`civilstatusid`),
   CONSTRAINT `FK_residentscivilstatus1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="citizenships" view="colnames">
 <left>13</left>
@@ -274,8 +274,8 @@
   KEY `FK_residentscitizenship` (`citizenshipid`),
   KEY `FK_residentscitizenship1` (`residentid`),
   CONSTRAINT `FK_residentscitizenship` FOREIGN KEY (`citizenshipid`) REFERENCES `citizenships` (`citizenshipid`),
-  CONSTRAINT `FK_residentscitizenship1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+  CONSTRAINT `FK_residentscitizenship1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="birthinformations" view="colnames">
 <left>1158</left>
@@ -290,7 +290,7 @@
   PRIMARY KEY (`birthinformationid`),
   KEY `FK_birthinformations` (`residentid`),
   CONSTRAINT `FK_birthinformations` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="filelocations" view="colnames">
 <left>709</left>
@@ -304,7 +304,7 @@
   PRIMARY KEY (`filelocationid`),
   KEY `FK_filelocations` (`accomplishmentid`),
   CONSTRAINT `FK_filelocations` FOREIGN KEY (`accomplishmentid`) REFERENCES `accomplishments` (`accomplishmentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="residentssex" view="colnames">
 <left>252</left>
@@ -321,7 +321,7 @@
   CONSTRAINT `FK_residentsex` FOREIGN KEY (`sexid`) REFERENCES `sexes` (`sexid`),
   CONSTRAINT `FK_residentsex1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`),
   CONSTRAINT `FK_residentssex` FOREIGN KEY (`sexid`) REFERENCES `sexes` (`sexid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="sexes" view="colnames">
 <left>10</left>
@@ -359,7 +359,7 @@
   KEY `FK_residentsoccupation1` (`residentid`),
   CONSTRAINT `FK_residentsoccupation` FOREIGN KEY (`occupationid`) REFERENCES `occupations` (`occupationid`),
   CONSTRAINT `FK_residentsoccupation1` FOREIGN KEY (`residentid`) REFERENCES `residents` (`residentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="issuances" view="colnames">
 <left>1351</left>
