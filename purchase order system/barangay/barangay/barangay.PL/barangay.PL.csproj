@@ -110,6 +110,12 @@
       <DependentUpon>crIdentificationCard.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Transactions\crIssuances.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crIssuances.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Transactions\crPopulationSummary.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -197,6 +203,10 @@
     <EmbeddedResource Include="Transactions\crIdentificationCard.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crIdentificationCard.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\crIssuances.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crIssuances.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions\crPopulationSummary.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

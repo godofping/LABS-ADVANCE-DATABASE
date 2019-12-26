@@ -52,6 +52,7 @@
             this.btnGenerate.Text = "GENERATE";
             this.btnGenerate.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnGenerate.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // label20
             // 
@@ -94,9 +95,9 @@
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
             this.lblTitle.Location = new System.Drawing.Point(670, 25);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(344, 43);
+            this.lblTitle.Size = new System.Drawing.Size(344, 61);
             this.lblTitle.TabIndex = 96;
-            this.lblTitle.Text = "Population Summary";
+            this.lblTitle.Text = "Report for Issuance of Barangay Certifications";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnCloseView
@@ -116,6 +117,7 @@
             this.btnCloseView.Text = "CLOSE";
             this.btnCloseView.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnCloseView.UseVisualStyleBackColor = false;
+            this.btnCloseView.Click += new System.EventHandler(this.btnCloseView_Click);
             // 
             // frmIssuances
             // 
@@ -136,6 +138,7 @@
             this.Name = "frmIssuances";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmIssuances";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

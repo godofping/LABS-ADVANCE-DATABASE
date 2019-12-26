@@ -22,5 +22,11 @@ namespace barangay.PL.Transactions
             frmPopulationSummary frmPopulationSummary = new frmPopulationSummary();
             frmPopulationSummary.ShowDialog();
         }
+
+        private void btnCedula_Click(object sender, EventArgs e)
+        {
+            frmIssuances frmIssuances = new frmIssuances();
+            frmIssuances.ShowDialog();
+        }
     }
 }

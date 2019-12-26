@@ -14,6 +14,11 @@ namespace barangay.DL.Registrations
             return Helper.executeQuery("select * from issuances_view where lastname like '" + keyword + "%' or firstname like '" + keyword + "%' or middlename like '" + keyword + "%' or certification like '" + keyword + "%' or issuancedateandtime like '" + keyword + "%'");
         }
 
+        public DataTable ListForReports(String keyword)
+        {
+            return Helper.executeQuery("select * from issuancesreports_view where issuancedateandtime like '%" + keyword + "%'");
+        }
+
         public EL.Registrations.Issuances Select(EL.Registrations.Issuances issuanceEL)
         {
             DataTable dt = Helper.executeQuery("select * from issuances where issuanceid = '" + issuanceEL.Issuanceid + "'");

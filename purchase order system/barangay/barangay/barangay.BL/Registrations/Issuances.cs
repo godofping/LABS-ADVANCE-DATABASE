@@ -15,6 +15,11 @@ namespace barangay.BL.Registrations
             return issuanceDL.List(keyword);
         }
 
+        public DataTable ListForReports(String keyword)
+        {
+            return issuanceDL.ListForReports(keyword);
+        }
+
         public EL.Registrations.Issuances Select(EL.Registrations.Issuances issuanceEL)
         {
             return issuanceDL.Select(issuanceEL);
