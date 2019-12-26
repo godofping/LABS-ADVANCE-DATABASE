@@ -32,7 +32,7 @@ namespace student.PL.Registrations
         private void ClearControls()
         {
             methods.ClearTXT(txtLRN, txtLastName, txtFirstName, txtMiddleInitial, txtAddress, txtParentsOrGuardian, txtContactNumber, txtLastSchoolAttended, txtSchoolYear);
-            methods.ClearCB(cbPreferredStrand, cbYearLevel);
+            methods.ClearCB(cbPreferredStrand, cbYearLevel, cbGender);
         }
 
         private void ShowForm(bool bol)
@@ -103,7 +103,7 @@ namespace student.PL.Registrations
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (methods.CheckRequiredTXT(txtLRN, txtLastName, txtFirstName, txtMiddleInitial, txtAddress, txtParentsOrGuardian, txtContactNumber, txtLastSchoolAttended, txtSchoolYear) & methods.CheckRequiredCB(cbPreferredStrand, cbYearLevel))
+            if (methods.CheckRequiredTXT(txtLRN, txtLastName, txtFirstName, txtMiddleInitial, txtAddress, txtParentsOrGuardian, txtContactNumber, txtLastSchoolAttended, txtSchoolYear) & methods.CheckRequiredCB(cbPreferredStrand, cbYearLevel, cbGender))
             {
                 bool bol = false;
 
@@ -112,6 +112,7 @@ namespace student.PL.Registrations
                 studentEL.Lastname = txtLastName.Text;
                 studentEL.Firstname = txtFirstName.Text;
                 studentEL.Middleinitial = txtMiddleInitial.Text;
+                studentEL.Gender = cbGender.Text;
                 studentEL.Address = txtAddress.Text;
                 studentEL.Parentsorguardian = txtParentsOrGuardian.Text;
                 studentEL.Contactnumber = txtContactNumber.Text;
@@ -179,6 +180,7 @@ namespace student.PL.Registrations
                 txtLastName.Text = studentEL.Lastname;
                 txtFirstName.Text = studentEL.Firstname;
                 txtMiddleInitial.Text = studentEL.Middleinitial;
+                cbGender.SelectedIndex = cbGender.FindString(studentEL.Gender);
                 txtAddress.Text = studentEL.Address;
                 txtParentsOrGuardian.Text = studentEL.Parentsorguardian;
                 txtContactNumber.Text = studentEL.Contactnumber;
@@ -243,5 +245,7 @@ namespace student.PL.Registrations
             ManagePagingButtons();
 
         }
+
+     
     }
 }

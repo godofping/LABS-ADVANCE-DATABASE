@@ -40,6 +40,7 @@ namespace student.DL.Registrations
                 studentEL.Lastname = dt.Rows[0]["LAST NAME"].ToString();
                 studentEL.Firstname = dt.Rows[0]["FIRST NAME"].ToString();
                 studentEL.Middleinitial = dt.Rows[0]["MIDDLE INITIAL"].ToString();
+                studentEL.Gender = dt.Rows[0]["GENDER"].ToString();
                 studentEL.Address = dt.Rows[0]["ADDRESS"].ToString();
                 studentEL.Parentsorguardian = dt.Rows[0]["PARENTS OR GUARDIAN"].ToString();
                 studentEL.Contactnumber = dt.Rows[0]["CONTACT NUMBER"].ToString();
@@ -56,12 +57,12 @@ namespace student.DL.Registrations
 
         public long Insert(EL.Registrations.students studentEL)
         {
-            return Helper.executeNonQueryLong("insert into students (strandid, lrn, lastname, firstname, middleinitial, address, parentsorguardian, contactnumber, lastschoolattended, schoolyear, yearlevel, dateadded) values ('" + studentEL.Strandid + "', '" + studentEL.Lrn + "', '" + studentEL.Lastname + "', '" + studentEL.Firstname + "', '" + studentEL.Middleinitial + "', '" + studentEL.Address + "', '" + studentEL.Parentsorguardian + "', '" + studentEL.Contactnumber + "', '" + studentEL.Lastschoolattended + "', '" + studentEL.Schoolyear + "', '" + studentEL.Yearlevel + "', '" + studentEL.Dateadded + "')");
+            return Helper.executeNonQueryLong("insert into students (strandid, lrn, lastname, firstname, middleinitial, gender, address, parentsorguardian, contactnumber, lastschoolattended, schoolyear, yearlevel, dateadded) values ('" + studentEL.Strandid + "', '" + studentEL.Lrn + "', '" + studentEL.Lastname + "', '" + studentEL.Firstname + "', '" + studentEL.Middleinitial + "', '" + studentEL.Gender + "','" + studentEL.Address + "', '" + studentEL.Parentsorguardian + "', '" + studentEL.Contactnumber + "', '" + studentEL.Lastschoolattended + "', '" + studentEL.Schoolyear + "', '" + studentEL.Yearlevel + "', '" + studentEL.Dateadded + "')");
         }
 
         public bool Update(EL.Registrations.students studentEL)
         {
-            return Helper.executeNonQueryBool("update students set strandid = '" + studentEL.Strandid + "', lastname = '" + studentEL.Lastname + "', firstname = '" + studentEL.Firstname + "', middleinitial = '" + studentEL.Middleinitial + "', address = '" + studentEL.Address + "', parentsorguardian = '" + studentEL.Parentsorguardian + "', contactnumber = '" + studentEL.Contactnumber + "', lastschoolattended = '" + studentEL.Lastschoolattended + "', schoolyear = '" + studentEL.Schoolyear + "', yearlevel = '" + studentEL.Yearlevel + "' where studentid = '" + studentEL.Studentid + "'");
+            return Helper.executeNonQueryBool("update students set strandid = '" + studentEL.Strandid + "', lastname = '" + studentEL.Lastname + "', firstname = '" + studentEL.Firstname + "', middleinitial = '" + studentEL.Middleinitial + "', gender = '" + studentEL.Gender + "',address = '" + studentEL.Address + "', parentsorguardian = '" + studentEL.Parentsorguardian + "', contactnumber = '" + studentEL.Contactnumber + "', lastschoolattended = '" + studentEL.Lastschoolattended + "', schoolyear = '" + studentEL.Schoolyear + "', yearlevel = '" + studentEL.Yearlevel + "' where studentid = '" + studentEL.Studentid + "'");
         }
 
         public bool Delete(EL.Registrations.students studentEL)

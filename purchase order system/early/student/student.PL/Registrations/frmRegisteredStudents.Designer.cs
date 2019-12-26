@@ -62,6 +62,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbGender = new System.Windows.Forms.ComboBox();
             this.pnlCRUD.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -72,6 +74,8 @@
             this.pnlCRUD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlCRUD.Controls.Add(this.label13);
+            this.pnlCRUD.Controls.Add(this.cbGender);
             this.pnlCRUD.Controls.Add(this.label12);
             this.pnlCRUD.Controls.Add(this.label11);
             this.pnlCRUD.Controls.Add(this.cbYearLevel);
@@ -101,6 +105,7 @@
             this.pnlCRUD.Name = "pnlCRUD";
             this.pnlCRUD.Size = new System.Drawing.Size(984, 537);
             this.pnlCRUD.TabIndex = 8;
+        
             // 
             // label12
             // 
@@ -143,7 +148,7 @@
             // 
             // txtSchoolYear
             // 
-            this.txtSchoolYear.Location = new System.Drawing.Point(7, 436);
+            this.txtSchoolYear.Location = new System.Drawing.Point(7, 483);
             this.txtSchoolYear.Name = "txtSchoolYear";
             this.txtSchoolYear.Size = new System.Drawing.Size(335, 20);
             this.txtSchoolYear.TabIndex = 26;
@@ -151,7 +156,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(4, 419);
+            this.label10.Location = new System.Drawing.Point(4, 466);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 13);
             this.label10.TabIndex = 25;
@@ -159,7 +164,7 @@
             // 
             // txtLastSchoolAttended
             // 
-            this.txtLastSchoolAttended.Location = new System.Drawing.Point(7, 391);
+            this.txtLastSchoolAttended.Location = new System.Drawing.Point(7, 438);
             this.txtLastSchoolAttended.Name = "txtLastSchoolAttended";
             this.txtLastSchoolAttended.Size = new System.Drawing.Size(335, 20);
             this.txtLastSchoolAttended.TabIndex = 24;
@@ -167,7 +172,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 374);
+            this.label9.Location = new System.Drawing.Point(4, 421);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(150, 13);
             this.label9.TabIndex = 23;
@@ -175,7 +180,7 @@
             // 
             // txtContactNumber
             // 
-            this.txtContactNumber.Location = new System.Drawing.Point(7, 346);
+            this.txtContactNumber.Location = new System.Drawing.Point(7, 393);
             this.txtContactNumber.Name = "txtContactNumber";
             this.txtContactNumber.Size = new System.Drawing.Size(335, 20);
             this.txtContactNumber.TabIndex = 22;
@@ -183,7 +188,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 329);
+            this.label8.Location = new System.Drawing.Point(4, 376);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(115, 13);
             this.label8.TabIndex = 21;
@@ -191,7 +196,7 @@
             // 
             // txtParentsOrGuardian
             // 
-            this.txtParentsOrGuardian.Location = new System.Drawing.Point(7, 300);
+            this.txtParentsOrGuardian.Location = new System.Drawing.Point(7, 347);
             this.txtParentsOrGuardian.Name = "txtParentsOrGuardian";
             this.txtParentsOrGuardian.Size = new System.Drawing.Size(335, 20);
             this.txtParentsOrGuardian.TabIndex = 20;
@@ -199,7 +204,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 283);
+            this.label7.Location = new System.Drawing.Point(4, 330);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(137, 13);
             this.label7.TabIndex = 19;
@@ -207,7 +212,7 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(7, 253);
+            this.txtAddress.Location = new System.Drawing.Point(7, 300);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(335, 20);
             this.txtAddress.TabIndex = 18;
@@ -215,7 +220,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 236);
+            this.label6.Location = new System.Drawing.Point(4, 283);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 13);
             this.label6.TabIndex = 17;
@@ -408,6 +413,27 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Search";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(4, 236);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(60, 13);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "GENDER *";
+            // 
+            // cbGender
+            // 
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "MALE",
+            "FEMALE"});
+            this.cbGender.Location = new System.Drawing.Point(7, 252);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(335, 21);
+            this.cbGender.TabIndex = 31;
+            // 
             // frmRegisteredStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,5 +491,7 @@
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblEntries;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbGender;
     }
 }

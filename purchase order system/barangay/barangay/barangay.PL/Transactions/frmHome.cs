@@ -36,29 +36,6 @@ namespace barangay.PL.Transactions
 
         }
 
-        private void lblOutofSchoolYouth_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPWD_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblFemale_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblMale_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPopulation_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

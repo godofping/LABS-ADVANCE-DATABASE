@@ -49,6 +49,15 @@ namespace student.EL.Registrations
             get { return middleinitial; }
             set { middleinitial = value; }
         }
+
+        string gender;
+
+        public string Gender
+        {
+            get { return gender; }
+            set { gender = value; }
+        }
+
         string address;
 
         public string Address

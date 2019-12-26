@@ -163,7 +163,7 @@
             this.lblPopulation.TabIndex = 4;
             this.lblPopulation.Text = "<>";
             this.lblPopulation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPopulation.Click += new System.EventHandler(this.lblPopulation_Click);
+      
             // 
             // lblHouseholds
             // 
@@ -198,7 +198,7 @@
             this.lblMale.TabIndex = 4;
             this.lblMale.Text = "<>";
             this.lblMale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblMale.Click += new System.EventHandler(this.lblMale_Click);
+
             // 
             // label6
             // 
@@ -233,7 +233,7 @@
             this.lblFemale.TabIndex = 4;
             this.lblFemale.Text = "<>";
             this.lblFemale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblFemale.Click += new System.EventHandler(this.lblFemale_Click);
+
             // 
             // label8
             // 
@@ -269,7 +269,7 @@
             this.lblPWD.TabIndex = 4;
             this.lblPWD.Text = "<>";
             this.lblPWD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblPWD.Click += new System.EventHandler(this.lblPWD_Click);
+
             // 
             // label10
             // 
@@ -304,7 +304,7 @@
             this.lblOutofSchoolYouth.TabIndex = 4;
             this.lblOutofSchoolYouth.Text = "<>";
             this.lblOutofSchoolYouth.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblOutofSchoolYouth.Click += new System.EventHandler(this.lblOutofSchoolYouth_Click);
+
             // 
             // label12
             // 
