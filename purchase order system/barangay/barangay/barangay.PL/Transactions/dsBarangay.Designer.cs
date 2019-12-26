@@ -1293,6 +1293,8 @@ namespace barangay.PL.Transactions {
             
             private global::System.Data.DataColumn columnOut_of_School_Youth;
             
+            private global::System.Data.DataColumn columnSenior_Citizen;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public populationsummary_viewDataTable() {
@@ -1376,6 +1378,14 @@ namespace barangay.PL.Transactions {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Senior_CitizenColumn {
+                get {
+                    return this.columnSenior_Citizen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1411,7 +1421,7 @@ namespace barangay.PL.Transactions {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public populationsummary_viewRow Addpopulationsummary_viewRow(int Household, int Population, int Male, int Female, int PWD, int Out_of_School_Youth) {
+            public populationsummary_viewRow Addpopulationsummary_viewRow(int Household, int Population, int Male, int Female, int PWD, int Out_of_School_Youth, int Senior_Citizen) {
                 populationsummary_viewRow rowpopulationsummary_viewRow = ((populationsummary_viewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Household,
@@ -1419,7 +1429,8 @@ namespace barangay.PL.Transactions {
                         Male,
                         Female,
                         PWD,
-                        Out_of_School_Youth};
+                        Out_of_School_Youth,
+                        Senior_Citizen};
                 rowpopulationsummary_viewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowpopulationsummary_viewRow);
                 return rowpopulationsummary_viewRow;
@@ -1448,6 +1459,7 @@ namespace barangay.PL.Transactions {
                 this.columnFemale = base.Columns["Female"];
                 this.columnPWD = base.Columns["PWD"];
                 this.columnOut_of_School_Youth = base.Columns["Out of School Youth"];
+                this.columnSenior_Citizen = base.Columns["Senior Citizen"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1465,6 +1477,8 @@ namespace barangay.PL.Transactions {
                 base.Columns.Add(this.columnPWD);
                 this.columnOut_of_School_Youth = new global::System.Data.DataColumn("Out of School Youth", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOut_of_School_Youth);
+                this.columnSenior_Citizen = new global::System.Data.DataColumn("Senior Citizen", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSenior_Citizen);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3169,6 +3183,23 @@ namespace barangay.PL.Transactions {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Senior_Citizen {
+                get {
+                    try {
+                        return ((int)(this[this.tablepopulationsummary_view.Senior_CitizenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Senior Citizen\' in table \'populationsummary_view\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablepopulationsummary_view.Senior_CitizenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsHouseholdNull() {
                 return this.IsNull(this.tablepopulationsummary_view.HouseholdColumn);
             }
@@ -3237,6 +3268,18 @@ namespace barangay.PL.Transactions {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetOut_of_School_YouthNull() {
                 this[this.tablepopulationsummary_view.Out_of_School_YouthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSenior_CitizenNull() {
+                return this.IsNull(this.tablepopulationsummary_view.Senior_CitizenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSenior_CitizenNull() {
+                this[this.tablepopulationsummary_view.Senior_CitizenColumn] = global::System.Convert.DBNull;
             }
         }
         

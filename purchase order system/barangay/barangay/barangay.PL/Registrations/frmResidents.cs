@@ -491,7 +491,7 @@ namespace barangay.PL.Registrations
 
         private void btnNextStep1_Click(object sender, EventArgs e)
         {
-            if (methods.CheckRequiredTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtHeight, txtCourse, txtYearGraduated) &
+            if (methods.CheckRequiredTXT(txtBarangayIDNumber, txtLastName, txtFirstName, txtMiddleName, txtBirthPlace, txtHeight, txtWeight, txtCourse, txtYearGraduated) &
                 methods.CheckRequiredCB(cbSex, cbCivilStatus, cbCitizenship, cbReligion, cbEducationalAttainment, cbProfessionOrOccupation) &
                 methods.CheckRequiredDTP(dtpBirthDate))
             {
