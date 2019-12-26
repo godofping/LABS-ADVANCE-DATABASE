@@ -195,6 +195,9 @@ namespace barangay.PL.Registrations
             gbCaptureImage.Visible = !bol;
             gbSearchHousehold.Visible = bol;
 
+            btnSelectHousehold.Visible = !bol;
+            btnCancelSearchHousehold.Visible = bol;
+
             txtSearchHousehold.ResetText();
         }
 

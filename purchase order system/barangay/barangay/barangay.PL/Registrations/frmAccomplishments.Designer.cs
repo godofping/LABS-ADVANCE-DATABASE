@@ -37,17 +37,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlAddEdit = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlTitle = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlView = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblFile = new System.Windows.Forms.TextBox();
@@ -56,16 +52,20 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblTitleAccomplishment = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnCloseView = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox9.SuspendLayout();
             this.pnlAddEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.pnlSearch.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.pnlTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlView.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox9
@@ -97,6 +97,7 @@
             // txtFile
             // 
             this.txtFile.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFile.ForeColor = System.Drawing.Color.Black;
             this.txtFile.Location = new System.Drawing.Point(27, 224);
             this.txtFile.Multiline = true;
             this.txtFile.Name = "txtFile";
@@ -126,6 +127,7 @@
             // txtTitle
             // 
             this.txtTitle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.ForeColor = System.Drawing.Color.Black;
             this.txtTitle.Location = new System.Drawing.Point(27, 59);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(406, 27);
@@ -164,42 +166,6 @@
             this.pnlAddEdit.TabIndex = 13;
             this.pnlAddEdit.Visible = false;
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(236)))), ((int)(((byte)(121)))));
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSave.Image = global::barangay.PL.Properties.Resources.save;
-            this.btnSave.Location = new System.Drawing.Point(843, 570);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(113, 73);
-            this.btnSave.TabIndex = 18;
-            this.btnSave.Text = "SAVE";
-            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnClose.Image = global::barangay.PL.Properties.Resources.delete_button;
-            this.btnClose.Location = new System.Drawing.Point(962, 569);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(113, 73);
-            this.btnClose.TabIndex = 17;
-            this.btnClose.Text = "CLOSE";
-            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -212,6 +178,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.Location = new System.Drawing.Point(89, 61);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(406, 33);
@@ -222,6 +189,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(9, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 22);
@@ -238,24 +206,6 @@
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(1084, 100);
             this.pnlSearch.TabIndex = 7;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAdd.Image = global::barangay.PL.Properties.Resources.plus_sign_in_circle__2_;
-            this.btnAdd.Location = new System.Drawing.Point(966, 15);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(113, 73);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // pnlMain
             // 
@@ -287,16 +237,6 @@
             this.pnlTitle.Name = "pnlTitle";
             this.pnlTitle.Size = new System.Drawing.Size(340, 74);
             this.pnlTitle.TabIndex = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::barangay.PL.Properties.Resources.market_positioning__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 59);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // pnlView
             // 
@@ -387,6 +327,24 @@
             this.label7.TabIndex = 70;
             this.label7.Text = "Title";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnAdd.Image = global::barangay.PL.Properties.Resources.plus_sign_in_circle__2_;
+            this.btnAdd.Location = new System.Drawing.Point(966, 15);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(113, 73);
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // btnCloseView
             // 
             this.btnCloseView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
@@ -405,19 +363,66 @@
             this.btnCloseView.UseVisualStyleBackColor = false;
             this.btnCloseView.Click += new System.EventHandler(this.btnCloseView_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(236)))), ((int)(((byte)(121)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSave.Image = global::barangay.PL.Properties.Resources.save;
+            this.btnSave.Location = new System.Drawing.Point(843, 570);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(113, 73);
+            this.btnSave.TabIndex = 18;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnClose.Image = global::barangay.PL.Properties.Resources.delete_button;
+            this.btnClose.Location = new System.Drawing.Point(962, 569);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(113, 73);
+            this.btnClose.TabIndex = 17;
+            this.btnClose.Text = "CLOSE";
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::barangay.PL.Properties.Resources.market_positioning__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmAccomplishments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1108, 745);
-            this.Controls.Add(this.pnlAddEdit);
             this.Controls.Add(this.pnlView);
             this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlAddEdit);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlTitle);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAccomplishments";
@@ -433,10 +438,10 @@
             this.pnlMain.ResumeLayout(false);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlView.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

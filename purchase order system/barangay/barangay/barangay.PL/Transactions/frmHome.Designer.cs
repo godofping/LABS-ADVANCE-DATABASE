@@ -85,6 +85,7 @@
             this.ClientSize = new System.Drawing.Size(1108, 745);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHome";
             this.Text = "frmHome";

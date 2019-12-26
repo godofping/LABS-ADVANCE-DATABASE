@@ -45,6 +45,7 @@
     <Compile Include="Registrations\Accomplishments.cs" />
     <Compile Include="Registrations\Accounts.cs" />
     <Compile Include="Registrations\Birthinformations.cs" />
+    <Compile Include="Registrations\Certifications.cs" />
     <Compile Include="Registrations\Citizenships.cs" />
     <Compile Include="Registrations\Civilstatuses.cs" />
     <Compile Include="Registrations\Contactdetails.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Registrations\Householdmembers.cs" />
     <Compile Include="Registrations\Households.cs" />
     <Compile Include="Registrations\Imagelocations.cs" />
+    <Compile Include="Registrations\Issuances.cs" />
     <Compile Include="Registrations\Occupations.cs" />
     <Compile Include="Registrations\Provincialaddresses.cs" />
     <Compile Include="Registrations\Puroks.cs" />

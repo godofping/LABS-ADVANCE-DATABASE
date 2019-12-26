@@ -258,6 +258,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(9, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 22);
@@ -317,6 +318,7 @@
             // txtYearGraduated
             // 
             this.txtYearGraduated.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYearGraduated.ForeColor = System.Drawing.Color.Black;
             this.txtYearGraduated.Location = new System.Drawing.Point(28, 123);
             this.txtYearGraduated.Name = "txtYearGraduated";
             this.txtYearGraduated.Size = new System.Drawing.Size(406, 27);
@@ -326,6 +328,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(24, 238);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(243, 22);
@@ -338,6 +341,7 @@
             this.cbProfessionOrOccupation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProfessionOrOccupation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbProfessionOrOccupation.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbProfessionOrOccupation.ForeColor = System.Drawing.Color.Black;
             this.cbProfessionOrOccupation.FormattingEnabled = true;
             this.cbProfessionOrOccupation.Location = new System.Drawing.Point(28, 263);
             this.cbProfessionOrOccupation.Name = "cbProfessionOrOccupation";
@@ -347,6 +351,7 @@
             // txtCourse
             // 
             this.txtCourse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCourse.ForeColor = System.Drawing.Color.Black;
             this.txtCourse.Location = new System.Drawing.Point(29, 196);
             this.txtCourse.Name = "txtCourse";
             this.txtCourse.Size = new System.Drawing.Size(406, 27);
@@ -356,6 +361,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
             this.label16.Location = new System.Drawing.Point(25, 171);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(88, 22);
@@ -366,6 +372,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(25, 98);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(177, 22);
@@ -376,6 +383,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(25, 22);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(244, 22);
@@ -388,6 +396,7 @@
             this.cbEducationalAttainment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEducationalAttainment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEducationalAttainment.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbEducationalAttainment.ForeColor = System.Drawing.Color.Black;
             this.cbEducationalAttainment.FormattingEnabled = true;
             this.cbEducationalAttainment.Location = new System.Drawing.Point(29, 47);
             this.cbEducationalAttainment.Name = "cbEducationalAttainment";
@@ -413,6 +422,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(22, 21);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(121, 22);
@@ -425,6 +435,7 @@
             this.cbCivilStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCivilStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCivilStatus.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbCivilStatus.ForeColor = System.Drawing.Color.Black;
             this.cbCivilStatus.FormattingEnabled = true;
             this.cbCivilStatus.Location = new System.Drawing.Point(26, 46);
             this.cbCivilStatus.Name = "cbCivilStatus";
@@ -435,6 +446,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(22, 150);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 22);
@@ -447,6 +459,7 @@
             this.cbReligion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbReligion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbReligion.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbReligion.ForeColor = System.Drawing.Color.Black;
             this.cbReligion.FormattingEnabled = true;
             this.cbReligion.Location = new System.Drawing.Point(26, 175);
             this.cbReligion.Name = "cbReligion";
@@ -457,6 +470,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(24, 85);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(119, 22);
@@ -469,6 +483,7 @@
             this.cbCitizenship.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCitizenship.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCitizenship.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbCitizenship.ForeColor = System.Drawing.Color.Black;
             this.cbCitizenship.FormattingEnabled = true;
             this.cbCitizenship.Location = new System.Drawing.Point(28, 110);
             this.cbCitizenship.Name = "cbCitizenship";
@@ -506,6 +521,7 @@
             // txtWeight
             // 
             this.txtWeight.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWeight.ForeColor = System.Drawing.Color.Black;
             this.txtWeight.Location = new System.Drawing.Point(239, 508);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(196, 27);
@@ -516,6 +532,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Black;
             this.label28.Location = new System.Drawing.Point(234, 477);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(130, 22);
@@ -525,6 +542,7 @@
             // txtLastName
             // 
             this.txtLastName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.ForeColor = System.Drawing.Color.Black;
             this.txtLastName.Location = new System.Drawing.Point(28, 125);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(406, 27);
@@ -534,6 +552,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(24, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 22);
@@ -543,6 +562,7 @@
             // txtFirstName
             // 
             this.txtFirstName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.ForeColor = System.Drawing.Color.Black;
             this.txtFirstName.Location = new System.Drawing.Point(28, 201);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(406, 27);
@@ -552,6 +572,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(24, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 22);
@@ -561,6 +582,7 @@
             // txtMiddleName
             // 
             this.txtMiddleName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiddleName.ForeColor = System.Drawing.Color.Black;
             this.txtMiddleName.Location = new System.Drawing.Point(28, 275);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(406, 27);
@@ -570,6 +592,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(24, 250);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(146, 22);
@@ -582,6 +605,7 @@
             this.cbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbSex.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbSex.ForeColor = System.Drawing.Color.Black;
             this.cbSex.FormattingEnabled = true;
             this.cbSex.Location = new System.Drawing.Point(28, 347);
             this.cbSex.Name = "cbSex";
@@ -592,6 +616,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(24, 322);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 22);
@@ -613,6 +638,7 @@
             this.label10.AutoSize = true;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(240, 326);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 22);
@@ -622,6 +648,7 @@
             // txtHeight
             // 
             this.txtHeight.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHeight.ForeColor = System.Drawing.Color.Black;
             this.txtHeight.Location = new System.Drawing.Point(29, 508);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(196, 27);
@@ -632,6 +659,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(24, 477);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(132, 22);
@@ -641,6 +669,7 @@
             // txtBirthPlace
             // 
             this.txtBirthPlace.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBirthPlace.ForeColor = System.Drawing.Color.Black;
             this.txtBirthPlace.Location = new System.Drawing.Point(28, 428);
             this.txtBirthPlace.Name = "txtBirthPlace";
             this.txtBirthPlace.Size = new System.Drawing.Size(406, 27);
@@ -650,6 +679,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(24, 403);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 22);
@@ -659,6 +689,7 @@
             // txtBarangayIDNumber
             // 
             this.txtBarangayIDNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBarangayIDNumber.ForeColor = System.Drawing.Color.Black;
             this.txtBarangayIDNumber.Location = new System.Drawing.Point(28, 52);
             this.txtBarangayIDNumber.Name = "txtBarangayIDNumber";
             this.txtBarangayIDNumber.Size = new System.Drawing.Size(406, 27);
@@ -668,6 +699,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(24, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(229, 22);
@@ -705,6 +737,7 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.Location = new System.Drawing.Point(89, 61);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(406, 33);
@@ -909,6 +942,7 @@
             this.cbHouseholdMember.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHouseholdMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbHouseholdMember.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbHouseholdMember.ForeColor = System.Drawing.Color.Black;
             this.cbHouseholdMember.FormattingEnabled = true;
             this.cbHouseholdMember.Location = new System.Drawing.Point(27, 156);
             this.cbHouseholdMember.Name = "cbHouseholdMember";
@@ -928,6 +962,7 @@
             // txtHousehold
             // 
             this.txtHousehold.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHousehold.ForeColor = System.Drawing.Color.Black;
             this.txtHousehold.Location = new System.Drawing.Point(27, 55);
             this.txtHousehold.Name = "txtHousehold";
             this.txtHousehold.ReadOnly = true;
@@ -957,6 +992,7 @@
             this.btnCancelSearchHousehold.TabIndex = 70;
             this.btnCancelSearchHousehold.Text = "Cancel";
             this.btnCancelSearchHousehold.UseVisualStyleBackColor = false;
+            this.btnCancelSearchHousehold.Click += new System.EventHandler(this.btnCancelSearchHousehold_Click);
             // 
             // btnCloseStep3
             // 
@@ -1038,6 +1074,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Black;
             this.label27.Location = new System.Drawing.Point(8, 27);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(74, 22);
@@ -1047,6 +1084,7 @@
             // txtSearchHousehold
             // 
             this.txtSearchHousehold.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchHousehold.ForeColor = System.Drawing.Color.Black;
             this.txtSearchHousehold.Location = new System.Drawing.Point(88, 22);
             this.txtSearchHousehold.Name = "txtSearchHousehold";
             this.txtSearchHousehold.Size = new System.Drawing.Size(365, 33);
@@ -1174,6 +1212,7 @@
             // txtCellphoneNumber
             // 
             this.txtCellphoneNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCellphoneNumber.ForeColor = System.Drawing.Color.Black;
             this.txtCellphoneNumber.Location = new System.Drawing.Point(29, 285);
             this.txtCellphoneNumber.Name = "txtCellphoneNumber";
             this.txtCellphoneNumber.Size = new System.Drawing.Size(406, 27);
@@ -1182,6 +1221,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.ForeColor = System.Drawing.Color.Black;
             this.txtPhoneNumber.Location = new System.Drawing.Point(29, 206);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(406, 27);
@@ -1190,6 +1230,7 @@
             // txtPrecintNumber
             // 
             this.txtPrecintNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecintNumber.ForeColor = System.Drawing.Color.Black;
             this.txtPrecintNumber.Location = new System.Drawing.Point(29, 55);
             this.txtPrecintNumber.Name = "txtPrecintNumber";
             this.txtPrecintNumber.Size = new System.Drawing.Size(406, 27);
@@ -1218,6 +1259,7 @@
             // txtEmailAddress
             // 
             this.txtEmailAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailAddress.ForeColor = System.Drawing.Color.Black;
             this.txtEmailAddress.Location = new System.Drawing.Point(29, 130);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(406, 27);
@@ -1293,6 +1335,7 @@
             // txtCTCNumber
             // 
             this.txtCTCNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCTCNumber.ForeColor = System.Drawing.Color.Black;
             this.txtCTCNumber.Location = new System.Drawing.Point(29, 48);
             this.txtCTCNumber.Name = "txtCTCNumber";
             this.txtCTCNumber.Size = new System.Drawing.Size(406, 27);
@@ -1332,6 +1375,7 @@
             this.cbPurok.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPurok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPurok.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.cbPurok.ForeColor = System.Drawing.Color.Black;
             this.cbPurok.FormattingEnabled = true;
             this.cbPurok.Location = new System.Drawing.Point(29, 276);
             this.cbPurok.Name = "cbPurok";
@@ -1351,6 +1395,7 @@
             // txtSubdivision
             // 
             this.txtSubdivision.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubdivision.ForeColor = System.Drawing.Color.Black;
             this.txtSubdivision.Location = new System.Drawing.Point(29, 203);
             this.txtSubdivision.Name = "txtSubdivision";
             this.txtSubdivision.Size = new System.Drawing.Size(406, 27);
@@ -1369,6 +1414,7 @@
             // txtHouseNumber
             // 
             this.txtHouseNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHouseNumber.ForeColor = System.Drawing.Color.Black;
             this.txtHouseNumber.Location = new System.Drawing.Point(29, 54);
             this.txtHouseNumber.Name = "txtHouseNumber";
             this.txtHouseNumber.Size = new System.Drawing.Size(406, 27);
@@ -1387,6 +1433,7 @@
             // txtStreet
             // 
             this.txtStreet.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStreet.ForeColor = System.Drawing.Color.Black;
             this.txtStreet.Location = new System.Drawing.Point(29, 126);
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(406, 27);
@@ -1419,6 +1466,7 @@
             // txtProvince
             // 
             this.txtProvince.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProvince.ForeColor = System.Drawing.Color.Black;
             this.txtProvince.Location = new System.Drawing.Point(27, 123);
             this.txtProvince.Name = "txtProvince";
             this.txtProvince.Size = new System.Drawing.Size(406, 27);
@@ -1427,6 +1475,7 @@
             // txtMunicipality
             // 
             this.txtMunicipality.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMunicipality.ForeColor = System.Drawing.Color.Black;
             this.txtMunicipality.Location = new System.Drawing.Point(28, 52);
             this.txtMunicipality.Name = "txtMunicipality";
             this.txtMunicipality.Size = new System.Drawing.Size(406, 27);
@@ -2304,15 +2353,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1108, 745);
-            this.Controls.Add(this.pnlView);
-            this.Controls.Add(this.pnlAddEditStep1);
             this.Controls.Add(this.pnlAddEditStep3);
-            this.Controls.Add(this.pnlAddEditStep2);
             this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlAddEditStep2);
+            this.Controls.Add(this.pnlAddEditStep1);
+            this.Controls.Add(this.pnlView);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pnlTitle);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmResidents";

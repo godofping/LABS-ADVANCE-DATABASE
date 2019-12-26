@@ -173,6 +173,26 @@ namespace barangay.PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file__1_ {
+            get {
+                object obj = ResourceManager.GetObject("file (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("file (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home__1_ {
             get {
                 object obj = ResourceManager.GetObject("home (1)", resourceCulture);

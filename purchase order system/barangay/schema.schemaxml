@@ -28,10 +28,10 @@
   `lastname` varchar(60) DEFAULT NULL,
   `firstname` varchar(60) DEFAULT NULL,
   `middlename` varchar(60) DEFAULT NULL,
-  `height` varchar(20) DEFAULT NULL,
-  `weight` varchar(20) DEFAULT NULL,
-  `precintnumber` varchar(60) DEFAULT NULL,
-  `ctcnumber` varchar(60) DEFAULT NULL,
+  `height` varchar(4) DEFAULT NULL,
+  `weight` varchar(4) DEFAULT NULL,
+  `precintnumber` varchar(10) DEFAULT NULL,
+  `ctcnumber` varchar(20) DEFAULT NULL,
   `dateaccomplished` date DEFAULT NULL,
   `daterecorded` date DEFAULT NULL,
   `ispwd` tinyint(1) DEFAULT NULL,
@@ -362,8 +362,8 @@
 ) ENGINE=InnoDB AUTO_INCREMENT=12006 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 <table name="issuances" view="colnames">
-<left>1387</left>
-<top>449</top>
+<left>1351</left>
+<top>444</top>
 <width>166</width>
 <height>146</height>
 <sql_create_table>CREATE TABLE `issuances` (
@@ -387,7 +387,7 @@
   `certificationid` int(6) NOT NULL AUTO_INCREMENT,
   `certification` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`certificationid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1</sql_create_table>
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1</sql_create_table>
 </table>
 </tables>
 </canvas>

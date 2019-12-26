@@ -13,6 +13,11 @@ namespace barangay.DL.Registrations
         {
             return Helper.executeQuery("select * from residents_view where householdnumber like '" + keyword + "%' or householdmember like '" + keyword + "%' or lastname like '" + keyword + "%' or firstname like '" + keyword + "%' or middlename like '" + keyword + "%'");
         }
+        public DataTable ListNames(String keyword)
+        {
+            return Helper.executeQuery("select residentid, lastname, firstname, middlename  from residents_view where lastname like '" + keyword + "%' or firstname like '" + keyword + "%' or middlename like '" + keyword + "%'");
+        }
+
         public DataTable ListResidencyCertification(int id)
         {
             return Helper.executeQuery("select * from residency_view where residentid = '" + id + "'");
@@ -21,7 +26,7 @@ namespace barangay.DL.Registrations
         {
             return Helper.executeQuery("select * from identificationcard_view where residentid = '" + id + "'");
         }
-
+  
         public DataTable ListByHousehold(int id)
         {
             return Helper.executeQuery("select householdmember, lastname, firstname, middlename from residents_view where householdid = '" + id + "'");
