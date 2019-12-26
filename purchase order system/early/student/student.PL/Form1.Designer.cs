@@ -34,6 +34,8 @@
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTOFREGISTEREDSTUDENTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aCCOUNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +44,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rEGISTEREDSTUDENTSToolStripMenuItem,
             this.sTRANDSToolStripMenuItem,
-            this.rEPORTSToolStripMenuItem});
+            this.rEPORTSToolStripMenuItem,
+            this.aCCOUNTSToolStripMenuItem,
+            this.lOGOUTToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
@@ -86,6 +90,20 @@
             this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem.Text = "LIST OF POPULATIONS PER STRAND";
             this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem.Click += new System.EventHandler(this.lISTOFPOPULATIONSPERSTRANDToolStripMenuItem_Click);
             // 
+            // aCCOUNTSToolStripMenuItem
+            // 
+            this.aCCOUNTSToolStripMenuItem.Name = "aCCOUNTSToolStripMenuItem";
+            this.aCCOUNTSToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.aCCOUNTSToolStripMenuItem.Text = "ACCOUNTS";
+            this.aCCOUNTSToolStripMenuItem.Click += new System.EventHandler(this.aCCOUNTSToolStripMenuItem_Click);
+            // 
+            // lOGOUTToolStripMenuItem
+            // 
+            this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
+            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
+            this.lOGOUTToolStripMenuItem.Click += new System.EventHandler(this.lOGOUTToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,6 +129,8 @@
         private System.Windows.Forms.ToolStripMenuItem rEGISTEREDSTUDENTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lISTOFREGISTEREDSTUDENTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lISTOFPOPULATIONSPERSTRANDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aCCOUNTSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lOGOUTToolStripMenuItem;
     }
 }
 

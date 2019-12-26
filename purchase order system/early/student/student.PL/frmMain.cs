@@ -11,9 +11,11 @@ namespace student.PL
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        frmLogin frmLogin;
+        public frmMain(frmLogin _frmLogin)
         {
             InitializeComponent();
+            frmLogin = _frmLogin;
         }
 
         private void sTRANDSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,6 +39,26 @@ namespace student.PL
         private void lISTOFPOPULATIONSPERSTRANDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new Reports.frmStrandsPopulations();
+            frm.ShowDialog();
+        }
+
+        private void lOGOUTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (MessageBox.Show(this, "ARE YOU SURE LOGOUT?", "LOGGING OUT", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    break;
+                default:
+                    this.Close();
+                    frmLogin.Show();
+                    break;
+            }
+            
+        }
+
+        private void aCCOUNTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new Registrations.frmAccounts();
             frm.ShowDialog();
         }
 

@@ -17,3 +17,5 @@ C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\earl
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.PL\obj\Debug\student.PL.pdb
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.PL\obj\Debug\student.PL.Reports.frmReportRegisteredStudents.resources
 C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.PL\obj\Debug\student.PL.Reports.frmStrandsPopulations.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.PL\obj\Debug\student.PL.frmLogin.resources
+C:\Users\Dade Murphy\Desktop\C#\LABS-ADVANCE-DATABASE\purchase order system\early\student\student.PL\obj\Debug\student.PL.Registrations.frmAccounts.resources
